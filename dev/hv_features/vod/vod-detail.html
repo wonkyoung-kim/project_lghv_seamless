@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/hv_index.css" />
+</head>
+
+<body>
+
+    <div id="root">
+        <!-- react 구조 -->
+
+        <!--vod 상세화면 / 단편 / 시리즈 -->
+        <div class="vod-detail-container">
+            <div class="gradient-bg">
+                <!--vod 이미지 배경 -->
+                <div class="vod-detail-bgimage" style="background-image: url(../../assets/images/temp/poster-vertical.png)"></div>
+            </div>
+            <!-- 콘텐츠 -->
+            <div class="contents">
+                <!--vod 포스터 -->
+                <div class="poster-vertical">
+                    <div class="poster-banner" style="background-image: url(../../assets/images/temp/poster-vertical.png)"></div>
+                </div>
+                <!--메타데이터 영역-->
+                <section class="content-info">        
+                    <!--타이틀 2줄일 경우 double-line클래스 추가-->               
+                    <h1 class="vod-title">원더우먼 1984</h1>
+                    <!--기본정보-->
+                    <div class="default-info">
+                        <span>2020</span>
+                        <span>일본</span>
+                        <span>애니메이션</span>
+                        <span>12세</span>
+                        <span>1시간 36분</span>
+                    </div>
+                    <!--메타태그-->
+                    <div class="meta-tag">
+                        <span class="ic-tag">HD</span>
+                        <span class="ic-tag">우리말</span>
+                        <span class="ic-tag">자막</span>
+                    </div>
+                    <!--마켓팅 메시지-->
+                    <p class="event-message">위협받는 인류, 위태로운 세상에 오직 원더우먼만이 희망이다!</p>
+                </section>
+                    
+                <!--구매버튼 영역-->
+                <section class="func-area">
+
+                    <div class="button-area">
+                        <!--대여버튼 default-->
+                        <button class="vod-button default-type focus">
+                            <div class="text">
+                                <p class="label">
+                                    <span class="label-text">대여</span>
+                                    <span class="period">(2일)</span>
+                                </p>
+                                <p class="price">
+                                    <span class="label-text">8,800원</span>
+                                    <span class="original">8,800원</span>
+                                </p>
+                            </div>
+                        </button>
+
+                        <!-- text-type 버튼은 small: 월정액/medium : 구매하기/large : 소장패키지 대여패키지 로 구분  -->
+                        <!--구매버튼/구매옵션 복수일 경우 /최저가 등 -->
+                        <!-- <button class="vod-button text-type">
+                            <div class="text">
+                                <p class="label">구매하기</p>
+                                <p class="price">8,000원~</p>
+                            </div>
+                        </button> -->
+
+                        <!-- <button class="vod-button texttype large">
+                            <div class="text">
+                                <p class="label">소장패키지</p>
+                                <p class="price">11,500원</p>
+                            </div>
+                        </button> -->
+                        <!--재생 버튼/ 콘텐츠 구매 후-->
+                        <!-- <button class="vod-button play focus">
+                            <p class="text">재생하기</p>
+                        </button>
+
+                        <button class="vod-button">
+                            <p class="text">추가상품 구매</p>
+                        </button> -->
+
+                        <!-- 구매불가 버튼 -->
+                        <!-- <button class="vod-button dimed">
+                            <p class="text">구매불가</p>
+                        </button> -->
+                        <!--툴팁-->
+                        <span class="tooltip">
+                            10% 할인 + 50% 추가 할인
+                        </span>
+
+                    </div>
+
+                    <!--구매하단 할인문구-->
+                    <div class="purchase-guide">
+                        <!-- 보유 코인, 포인트 안내 -->
+                        <!-- <p class="my-coin"><span>보유 TV코인 35,000원</span><span>보유 TV포인트 1,500원</span></p> -->
+
+                        <!--구매후 시청기간 안내-->
+                        <p class="remain-time">2021.01.31 오후 10:30까지 시청 가능</p>
+                    </div>
+
+                    <div class="purchased-info">
+                        <!-- 구매한 vod 프로그래스 바 -->
+                        <dl class="poster-time">
+                            <dt>30분 남음</dt>
+                            <dd class="poster-remaining"><span style="width: 50%;"></span></dd>
+                        </dl> 
+
+                        <!-- 시청완료  -->
+                        <!-- <p class="watch-complete">
+                            시청완료
+                        </p>                           -->
+                    </div>                              
+                </section>
+
+                <!--detail 정보-->
+                <section class="detail-info">
+                    <!--추가정보/기능 리스트버튼 영역-->
+                    <div class="detail-list-wrap">
+                        <ul class="vod-additional-list">                                
+                            <!-- 시리즈시 보여지는 탭영역 -->
+                            <!-- <li class="view-episode">전체회차 보기</li> -->
+                            <li class="view-more">부가 정보</li>
+                            <li class="scene">주요 장면</li>
+                            <li class="most-viewed">함께 많이 본 콘텐츠</li>
+                            <li class="wish-list add">찜한 영상에 추가</li><!--찜한영상에 추가시 add클래스, 찜한영상에서 삭제시 delete클래스-->
+                            <li class="rated like">좋아요
+                                <span class="count">999,999+</span>
+                            </li>                         
+                        </ul>
+                    </div>
+                    <div class="summary-info">
+                        <!--스탭 정보-->
+                        <div class="staff">
+                            <div class="director">
+                                <span class="label">감독</span>
+                                <span>유아사 마사아키</span>
+                            </div>
+                            <div class="cast">
+                                <span class="label">출연</span>
+                                <!--<span class="label">출연</span>-->
+                                <span class="cast-wrap">
+                                    <span class="subtitle">(자막) 카타요세 료타, 카와에이 리나</span>
+                                    <span class="dubbing">(우리말) 심규혁, 김영선</span>
+                                </span>
+                            </div>
+                        </div>
+                        <!--줄거리-->
+                        <div class="summary-wrap">
+                            <p class="summary">정신병동 보호사 문강태, 아름답지만 살벌한 동화작가 고문영, 전혀 다른 세계에서 살아가던 두 사람의 달콤 쌉쌀정신병동 보호사 문강태, 아름답지만 살벌한 동화작가 고문영, 전혀 다른 세계에서 살아가던 두 사람의 달콤 쌉쌀정신병동 보호사 문강태, 아름답지만 살벌한 동화작가 고문영, 전혀 다른 세계에서 살아가던 두 사람의 달콤 쌉쌀</p>
+                        </div>
+                    </div>
+
+                    <span class="tooltip">
+                        재미있게 봤다면 이 <em>콘텐츠</em>를 평가해보세요.<br>고객님에게 딱 맞는 콘텐츠를 추천해 드립니다.
+                    </span>
+                </section>
+            </div>  
+            <!--//콘텐츠 -->
+
+            <!--U+모바일로tv로 시청가능-->
+            <div class="mobile-message">
+                <p class="mobile-view-tip"><span>모바일로 시청 가능</span>'홈 > 마이메뉴'에서 연결 가능</p>
+            </div>
+            
+            <!--키고지-->
+            <div class="vod-layer-footer">
+                <p class="keyguide">
+                    <span class="ic-round color-key green"></span>이벤트 보기
+                    <span class="ic-round color-key blue"></span>모바일로 보기
+                </p>
+            </div>
+        </div>
+
+        
+    </div>
+    <!-- //root -->
+
+</body>
+
+</html>

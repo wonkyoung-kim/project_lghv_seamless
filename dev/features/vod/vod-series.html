@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+</head>
+
+<body>
+
+    <div id="root">
+        <!-- react 구조 -->
+
+
+        <!--vod 상세화면 / 시리즈 / 시즌제 -->
+
+        <div class="vod-detail-container video-type">
+            <!-- <div class="vod-detail-container video-type"> 영상 배경일 때 사용-->
+            
+            <!-- vod 이미지 배경
+            <div class="vod-detail-bgimage" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div> -->
+
+            <!-- 배경 그라데이션 -->
+            <div class="gradient-bg">
+  
+                <!-- 콘텐츠 -->
+                <div class="contents series">
+                    <section class="content-info">                    
+                        <!-- 로고타입 이미지인지 텍스트인지 구분, 이미지일 경우 image-logo 클래스 추가 / 
+                        텍스트 경우 2줄일 경우 doulbe-line 클래스 추가 -->
+                        <h1 class="vod-title image-logo" style="background-image:url(../../assets/images/temp/image-logo.png)">
+                            너와 파도를 탈 수 있다면
+                        </h1>
+                    <!--메타데이터 영역-->                
+                        <!--평점-->
+                        <div class="rating-info">
+                            <div class="watcha">
+                                <i class="rating-star full"></i>
+                                <p class="point">4.5<span class="base-point">5</span></p>
+                            </div>
+                            <div class="cine21">
+                                <i class="rating-star half"></i>
+                                <p class="point">4.5<span class="base-point">5</span></p>
+                            </div>
+                            <div class="imdb">
+                                <i class="rating-star empty"></i>
+                                <p class="point">1.0<span class="base-point">10</span></p>
+                            </div>
+                        </div>
+
+                        <!--기본정보-->
+                        <div class="default-info">
+                            <span class="year">2020</span>
+                            <span class="nation">일본</span>
+                            <span class="genre">애니메이션</span>
+                            <span class="age">12세</span>
+                            <span class="runningtime">1시간 36분</span>
+                        </div>
+
+                        <!--메타태그-->
+                        <div class="meta-tag">
+                            <span class="ic-tag dolby-vision"></span>
+                            <span class="ic-tag">5.1</span>
+                            <span class="ic-tag">우리말</span>
+                            <span class="ic-tag">자막</span>
+                            <span class="ic-tag">이거찾으세요?</span>
+                        </div>
+
+                        <div class="series-summary">
+                            정신 병동 보호사 강태와 사랑을 모르는 동화 작가 문영이 서로를치유해가는 한 편의 판타지 동화 같은 조금 이상한 로맨틱 코미디
+                        </div>
+
+                        <!--이벤트 메시지-->
+                        <p class="event-message">이벤트 대여상품 구매 시 피규어 증정!</p>
+                    </section>                                        
+
+                    <!--detail 정보-->
+                    <section class="detail-info">
+
+                        <!--추가정보/기능 리스트버튼 영역-->
+                        <div class="detail-list-wrap">
+                            <ul class="vod-additional-list">
+                                <li class="view-episode focus">전체회차 보기</li>
+                                <li class="view-rating">평점 및 감상평</li>
+                                <li class="cast-info">인물 정보</li>
+                                <li class="wish-list add">찜목록에 추가</li>
+                                <!--<li class="wish-list delete">찜목록에서 삭제</li>-->
+                                <li class="rate-contents">
+                                    <p>이 콘텐츠 평가하기</p>
+                                    <ul class="rate-contents-focus">
+                                        <li class="like focus">좋아요
+                                            <span class="count">999+</span>
+                                        </li>
+                                        <li class="dislike">싫어요
+                                            <span class="count">999+</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- <li class="rated like focus">좋아요
+                                    <span class="count">999+</span>
+                                </li>
+                                <li class="rated dislike focus">싫어요
+                                    <span class="count">999+</span>
+                                </li> -->                               
+                            </ul>
+                        </div>
+                        
+                    </section>
+
+                </div>  
+                <!--//콘텐츠 -->
+
+            </div>
+            <!--//그라데이션 배경-->
+            
+             <!--U+모바일로tv로 시청가능-->
+             <div class="mobile-message">
+                <p class="mobile-view-tip">'홈 > 마이메뉴'에서 연결 가능</p>
+                <!--모바일로 시청가능 tooltip-->
+                <p class="tooltip">
+                    이 영상을 무료로 이어보려면 TV와 휴대폰을 연결해보세요.<br/>
+                    ‘U+모바일tv로 시청 가능’ 표시가 있는 콘텐츠만 해당됩니다.
+                </p>
+            </div>
+
+            <!-- vod-layer 노출 시에 어두워지는 bg -->
+            <div class="vod-layer-dimmed"></div>
+
+        </div>
+        <!--//vod상세화면-->
+
+
+    </div>
+    <!-- //root -->
+
+</body>
+
+</html>

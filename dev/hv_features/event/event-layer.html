@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/hv_index.css" />
+</head>
+
+<body>
+
+    <div id="root">
+        <!-- react 구조 -->
+
+        <!-- 이벤트 -->
+        <div class="event-wrap">
+
+            <h2 class="skip">이벤트 퀴즈</h2>
+
+            <!-- 객관식이벤트-->
+            <div class="layer-page event-quiz-choice">
+                <div class="layer-header">
+                    <h3 class="title">영화 촬영지 맞추고 할인권 받아가자!</h3>
+                    <p>인피니티 워 영화 촬영지를 선택해주세요 (1개 선택)</p>
+                </div>
+                <div class="layer-body">
+                    <ul class="quiz-choice-items">
+                        <li class="focus">
+                            <input type="checkbox" name="" value="" class="input-checkbox" checked>
+                            <label>일이삼사오육</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="" value="" class="input-checkbox">
+                            <label>일이삼사오육</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="" value="" class="input-checkbox">
+                            <label>일이삼사오육</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="button-area">
+                    <button class="button-primary large">
+                        <p class="text">취소</p>
+                    </button>
+                    <button class="button-primary large focus">
+                        <p class="text">확인</p>
+                    </button>
+                </div>
+            </div>
+            <!-- //객관식이벤트 -->
+
+            <!-- 주관식이벤트 -->
+            <div class="layer-page event-quiz-write">
+                <div class="layer-header">
+                    <h3 class="title">영화 촬영지 맞추고 할인권 받아가자!</h3>
+                    <p>
+                        한석규와 김래원이 함께 출연한 영화!<br>
+                        감옥에서 시작되는 완전 범죄 영화제목은 무엇일까요?!
+                    </p>
+                </div>
+                <div class="layer-body">
+
+                    <!-- 검색창 -->
+                    <section class="search-input">
+                        <span class="icon">
+                            <i class="ic-keyboard focus">키보드버튼</i>
+                        </span>
+                        <!-- 검색필드 -->
+                        <!-- input-text클래스에 입력전이나 수정시 focus/ 키패드에 포커스시 selected -->
+                        <div class="input-text selected">
+                            <span class="placeholder">정답을 입력 해주세요</span>
+                            <p class="input-text-wrap">
+                                <span class="cursor"></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </p>
+                            <span class="lang">한글</span><!--숫자/기호일경우 num클래스 추가-->
+                        </div>
+                        <span class="icon">
+                            <i class="ic-voice">음성버튼</i>
+                        </span>
+                    </section>
+                    <!-- 가상 키보드 -->
+                    <section class="search-keypad">
+                        <!-- 유사 검색어 리스트 -->
+                        <div class="search-list-area">
+                            <div class="search-list">
+                                <ul>
+                                    <li class="focus">
+                                        <span><em>무한도</em>전 위대한 유산</span>
+                                    </li>
+                                    <li>
+                                        <span><em>무한도</em>전 재방송</span>
+                                    </li>
+                                    <li>
+                                        <span><em>무한도</em>전 스페셜 위대한 예능</span>
+                                    </li>
+                                    <li>
+                                        <span>잭 블랙<em>무한도</em>전 특집</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 키패드 -->
+                        <div class="keypad-area">
+                            <div class="keypad keypad-ko">
+                                <ul>
+                                    <li class="focus">
+                                        <span>ㄱ</span>
+                                        <span class="double">ㄲ</span>
+                                    </li>
+                                    <li><span>ㄴ</span></li>
+                                    <li>
+                                        <span>ㄷ</span>
+                                        <span class="double">ㄸ</span>
+                                    </li>
+                                    <li><span>ㄹ</span></li>
+                                    <li><span>ㅁ</span></li>
+                                    <li>
+                                        <span>ㅂ</span>
+                                        <span class="double">ㅃ</span>
+                                    </li>
+                                    <li>
+                                        <span>ㅅ</span>
+                                        <span class="double">ㅆ</span>
+                                    </li>
+                                    <li><span>ㅇ</span></li>
+                                    <li>
+                                        <span>ㅈ</span>
+                                        <span class="double">ㅉ</span>
+                                    </li>
+                                    <li><span>ㅊ</span></li>
+                                    <li><span>ㅋ</span></li>
+                                    <li><span>ㅌ</span></li>
+                                    <li><span>ㅍ</span></li>
+                                    <li><span>ㅎ</span></li>
+                                    <li>
+                                        <span>ㅏ</span>
+                                        <span class="double">ㅑ</span>
+                                    </li>
+                                    <li>
+                                        <span>ㅓ</span>
+                                        <span class="double">ㅕ</span>
+                                    </li>
+                                    <li>
+                                        <span>ㅗ</span>
+                                        <span class="double">ㅛ</span>
+                                    </li>
+                                    <li>
+                                        <span>ㅜ</span>
+                                        <span class="double">ㅠ</span>
+                                    </li>
+                                    <li><span>ㅡ</span></li>
+                                    <li><span>ㅣ</span></li>
+                                </ul>
+                            </div>
+                            <div class="keypad keypad-eng">
+                                <ul>
+                                    <li class="focus"><span>a</span></li>
+                                    <li><span>b</span></li>
+                                    <li><span>c</span></li>
+                                    <li><span>d</span></li>
+                                    <li><span>e</span></li>
+                                    <li><span>f</span></li>
+                                    <li><span>g</span></li>
+                                    <li><span>h</span></li>
+                                    <li><span>i</span></li>
+                                    <li><span>j</span></li>
+                                    <li><span>k</span></li>
+                                    <li><span>l</span></li>
+                                    <li><span>m</span></li>
+                                    <li><span>n</span></li>
+                                    <li><span>o</span></li>
+                                    <li><span>p</span></li>
+                                    <li><span>q</span></li>
+                                    <li><span>r</span></li>
+                                    <li><span>s</span></li>
+                                    <li><span>t</span></li>
+                                    <li><span>u</span></li>
+                                    <li><span>v</span></li>
+                                    <li><span>w</span></li>
+                                    <li><span>x</span></li>
+                                    <li><span>y</span></li>
+                                    <li><span>z</span></li>
+                                </ul>
+                            </div>
+                            <div class="keypad keypad-num">
+                                <ul>
+                                    <li class="focus"><span>1</span></li>
+                                    <li><span>2</span></li>
+                                    <li><span>3</span></li>
+                                    <li><span>4</span></li>
+                                    <li><span>5</span></li>
+                                    <li><span>6</span></li>
+                                    <li><span>7</span></li>
+                                    <li><span>8</span></li>
+                                    <li><span>9</span></li>
+                                    <li><span>0</span></li>
+                                    <li><span>!</span></li>
+                                    <li><span>?</span></li>
+                                    <li><span>:</span></li>
+                                    <li><span>;</span></li>
+                                    <li><span>-</span></li>
+                                    <li><span>&</span></li>
+                                    <li><span>,</span></li>
+                                    <li><span>.</span></li>
+                                    <li><span>'</span></li>
+                                    <li><span>"</span></li>
+                                </ul>
+                            </div>
+                            <div class="keypad-etc">
+                                <ul>
+                                    <li class="focus">띄어쓰기</li>
+                                    <li>한/영/숫자</li>
+                                    <li class="delete">지움</li>
+                                    <li>확인</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 키패드 툴팁 -->
+                        <div class="keypad-tooltip">
+                            <p class="tooltip">
+                                <span>
+                                    <em>쌍자음</em>을 입력하시려면<br>
+                                    <em>자음을 두번</em> 눌러주세요!
+                                </span>
+                            </p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!-- //주관식이벤트 -->
+
+            <!-- 스탬프이벤트 -->
+            <div class="layer-page event-stamp">
+                <div class="layer-header">
+                    <p class="stamp-count-box">
+                        <span class="count">4</span>
+                        <span>10</span>
+                    </p>
+                    <h3 class="title">VOD 10개를 구매하면 <em>15% 할인권</em> 제공!</h3>
+                    <p>현재 VOD를 4개 구매하셨네요. 1개만 더 구매하면 TV코인 500원을 드려요!</p>
+                </div>
+                <div class="layer-body">
+                    <!-- focus시 적립완료 쿠폰으로 변경 -->
+                    <div class="coupon-stamp">
+                        <ul>
+                            <li class="focus"></li>
+                            <li class="focus"></li>
+                            <li class="focus"></li>
+                            <li class="focus"></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="button-area">
+                    <button class="button-primary large">
+                        <p class="text">닫기</p>
+                    </button>
+                    <button class="button-primary large focus">
+                        <p class="text">상세보기</p>
+                    </button>
+                    <button class="button-primary large">
+                        <p class="text">참여</p>
+                    </button>
+                </div>
+                <p class="coupon-date">유효기간 : 2021.03.20 - 2021.06.30</p>
+            </div>
+            <!-- //스탬프이벤트 -->
+
+            <!-- 합산페이백이벤트 -->
+            <div class="layer-page event-payback">
+                <div class="layer-header">
+                    <h3 class="title">모두 다 함께 목표달성 이벤트!</h3>
+                    <p>조금만 더 모으면 깜짝 혜택을 드려요!</p>
+                </div>
+                <div class="layer-body">
+                    <!-- 현재금액 -->
+                    <p class="my-payback">
+                        현재 <span><em>8,000</em>원</span>
+                    </p>
+                    <!-- 페이백 프로그래스바 영역 -->
+                    <div class="progress-area">
+                        <span class="marker" style="left: 20%"></span>
+                        <div class="payback-progress">
+                            <span class="bar" style="width: 20%;"></span>
+                        </div>
+                        <!-- 목표달성금액이 있을경우 goal클래스 추가,
+                            goal1 = 천원적림, goal2 = 이천원적립, goal3 = 영화10프로할인 -->
+                        <ul class="progress-bg">
+                            <li class="start">
+                                <span>0</span>
+                            </li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li class="goal goal1">
+                                <span>5,000</span>
+                                <i class="ic-stamp"></i>
+                            </li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li class="goal goal2">
+                                <span>10,000</span>
+                                <i class="ic-stamp"></i>
+                            </li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li class="goal goal3">
+                                <span>15,000</span>
+                                <i class="ic-stamp"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="button-area">
+                    <button class="button-primary large">
+                        <p class="text">취소</p>
+                    </button>
+                    <button class="button-primary large focus">
+                        <p class="text">확인</p>
+                    </button>
+                </div>
+                <p class="coupon-date">유효기간 : 2021.03.20 - 2021.06.30</p>
+            </div>
+            <!-- //합산페이백이벤트 -->
+
+        </div>
+        <!--//이벤트 -->
+
+    </div>
+    <!-- //root -->
+
+</body>
+
+</html>

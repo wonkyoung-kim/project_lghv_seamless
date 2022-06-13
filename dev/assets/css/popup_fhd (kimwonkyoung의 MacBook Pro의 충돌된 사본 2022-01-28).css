@@ -1,0 +1,5004 @@
+@charset "UTF-8";
+/* variables */
+/* functions */
+/* mixins */
+/* toast 임시 */
+.full-popup-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(8, 13, 25, 0.9);
+}
+
+.popup-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(8, 13, 25, 0.75);
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.3);
+  background-color: #eee;
+}
+
+.popup.small {
+  width: 640px;
+}
+
+.popup.middle {
+  width: 750px;
+}
+
+.popup.large {
+  width: 960px;
+}
+
+.popup.xlarge {
+  width: 1240px;
+}
+
+.popup .popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 89px;
+  border-bottom: 2px solid rgba(183, 181, 189, 0.3);
+}
+
+.popup .popup-header h3 {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 3.2rem;
+  color: #080d19;
+}
+
+.popup .popup-body {
+  padding: 52px 40px;
+  font-size: 2.8rem;
+  color: #353539;
+}
+
+.popup .popup-body.text-center p {
+  text-align: center;
+}
+
+.popup .popup-body.text-center span {
+  display: block;
+  text-align: center;
+}
+
+.popup .scroll-contents {
+  position: relative;
+  height: 418px;
+  overflow: hidden;
+}
+
+.popup .scroll-contents::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), #eee 90%);
+  background-size: 100% 80px;
+  content: none;
+}
+
+.popup .scroll-contents::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: unset;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #eee 90%);
+  background-size: 100% 80px;
+  content: none;
+}
+
+.popup .scroll-contents.low-height {
+  height: 282px;
+}
+
+.popup .scroll-contents.top-cover::before {
+  content: '';
+  z-index: 1;
+}
+
+.popup .scroll-contents.bottom-cover::after {
+  content: '';
+}
+
+.popup .scroll-contents .body-text {
+  text-align: left;
+}
+
+.popup .body-text {
+  width: 100%;
+  font-size: 2.8rem;
+  line-height: 38px;
+}
+
+.popup .body-text + .sub-text {
+  margin-top: 20px;
+}
+
+.popup .body-text + .body-text {
+  margin-top: 20px;
+}
+
+.popup .body-text .small-text {
+  font-size: 2rem;
+  color: #999;
+}
+
+.popup .text-center {
+  text-align: center;
+}
+
+.popup .sub-text {
+  font-size: 2.4rem;
+  line-height: 1.35;
+  color: #999;
+}
+
+.popup .sub-text .small-text {
+  font-size: 2.0rem;
+  color: #999;
+}
+
+.popup .highlight {
+  color: #ef3484;
+}
+
+.popup em {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.popup .scroll {
+  display: block;
+  position: absolute;
+  top: 143px;
+  right: 16px;
+  width: 8px;
+  height: calc(100% - (102px + 89px + 52px * 2));
+  border-radius: calc(8px / 2);
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1;
+}
+
+.popup .scroll span {
+  display: inline-block;
+  width: 100%;
+  border-radius: calc(8px / 2);
+  background-color: rgba(169, 169, 169, 0.3);
+}
+
+.popup .active .scroll {
+  opacity: 1;
+}
+
+.popup-footer {
+  display: flex;
+  height: 102px;
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+  overflow: hidden;
+  background-color: #ddd;
+}
+
+.popup-footer .popup-button {
+  position: relative;
+  flex: 1;
+  color: #080d19;
+  font-size: 3.4rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.popup-footer .popup-button:first-child::after {
+  content: none;
+}
+
+.popup-footer .popup-button::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  left: -2px;
+  top: 22px;
+  right: unset;
+  width: 4px;
+  height: 60px;
+  border-radius: 2px;
+  background-color: rgba(153, 153, 153, 0.2);
+}
+
+.popup-footer .popup-button.focus, .popup-footer .channel-edit .channel-edit-body .category ul .popup-button.selected, .channel-edit .channel-edit-body .category ul .popup-footer .popup-button.selected, .popup-footer .channel-edit2 .channel-edit-body .category ul .popup-button.selected, .channel-edit2 .channel-edit-body .category ul .popup-footer .popup-button.selected {
+  font-size: 3.6rem;
+  background-color: #ef3484;
+  color: #eee;
+}
+
+.popup-footer .popup-button.focus:nth-last-child(2):after, .popup-footer .channel-edit .channel-edit-body .category ul .popup-button.selected:nth-last-child(2):after, .channel-edit .channel-edit-body .category ul .popup-footer .popup-button.selected:nth-last-child(2):after, .popup-footer .channel-edit2 .channel-edit-body .category ul .popup-button.selected:nth-last-child(2):after, .channel-edit2 .channel-edit-body .category ul .popup-footer .popup-button.selected:nth-last-child(2):after {
+  display: none;
+}
+
+.popup-footer .popup-button.focus:last-child::after, .popup-footer .channel-edit .channel-edit-body .category ul .popup-button.selected:last-child::after, .channel-edit .channel-edit-body .category ul .popup-footer .popup-button.selected:last-child::after, .popup-footer .channel-edit2 .channel-edit-body .category ul .popup-button.selected:last-child::after, .channel-edit2 .channel-edit-body .category ul .popup-footer .popup-button.selected:last-child::after {
+  display: none;
+}
+
+.popup-footer .popup-button.focus + .popup-button::after, .popup-footer .channel-edit .channel-edit-body .category ul .popup-button.selected + .popup-button::after, .channel-edit .channel-edit-body .category ul .popup-footer .popup-button.selected + .popup-button::after, .popup-footer .channel-edit2 .channel-edit-body .category ul .popup-button.selected + .popup-button::after, .channel-edit2 .channel-edit-body .category ul .popup-footer .popup-button.selected + .popup-button::after {
+  display: none;
+}
+
+.password-default {
+  display: flex;
+  align-items: center;
+  height: 104px;
+}
+
+.password-default.focus label, .channel-edit .channel-edit-body .category ul .password-default.selected label, .channel-edit2 .channel-edit-body .category ul .password-default.selected label {
+  color: #ef3484;
+}
+
+.password-default p {
+  position: relative;
+  width: 104px;
+  height: 104px;
+  margin-right: 20px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #ddd;
+}
+
+.password-default p:last-child {
+  margin-right: 0;
+}
+
+.password-default p.focus, .password-default .channel-edit .channel-edit-body .category ul p.selected, .channel-edit .channel-edit-body .category ul .password-default p.selected, .password-default .channel-edit2 .channel-edit-body .category ul p.selected, .channel-edit2 .channel-edit-body .category ul .password-default p.selected {
+  background-color: #eee;
+}
+
+.password-default p.focus.entered, .password-default .channel-edit .channel-edit-body .category ul p.entered.selected, .channel-edit .channel-edit-body .category ul .password-default p.entered.selected, .password-default .channel-edit2 .channel-edit-body .category ul p.entered.selected, .channel-edit2 .channel-edit-body .category ul .password-default p.entered.selected {
+  background: #eee url(../images/common/ic-password.png) no-repeat center;
+  background-size: 38px;
+}
+
+.password-default p.focus.entered .cursor::before, .password-default .channel-edit .channel-edit-body .category ul p.entered.selected .cursor::before, .channel-edit .channel-edit-body .category ul .password-default p.entered.selected .cursor::before, .password-default .channel-edit2 .channel-edit-body .category ul p.entered.selected .cursor::before, .channel-edit2 .channel-edit-body .category ul .password-default p.entered.selected .cursor::before {
+  content: none;
+}
+
+.password-default p.focus::after, .password-default .channel-edit .channel-edit-body .category ul p.selected::after, .channel-edit .channel-edit-body .category ul .password-default p.selected::after, .password-default .channel-edit2 .channel-edit-body .category ul p.selected::after, .channel-edit2 .channel-edit-body .category ul .password-default p.selected::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 0 10px #eee;
+  border-radius: 8px;
+  box-shadow: 0px 0px 0px 6px #ef3484;
+}
+
+.password-default p.focus span, .password-default .channel-edit .channel-edit-body .category ul p.selected span, .channel-edit .channel-edit-body .category ul .password-default p.selected span, .password-default .channel-edit2 .channel-edit-body .category ul p.selected span, .channel-edit2 .channel-edit-body .category ul .password-default p.selected span {
+  position: unset;
+}
+
+.password-default p.focus span::before, .password-default .channel-edit .channel-edit-body .category ul p.selected span::before, .channel-edit .channel-edit-body .category ul .password-default p.selected span::before, .password-default .channel-edit2 .channel-edit-body .category ul p.selected span::before, .channel-edit2 .channel-edit-body .category ul .password-default p.selected span::before {
+  height: 40px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #eee;
+}
+
+.password-default p.entered {
+  background: #ddd url(../images/common/ic-password.png) no-repeat center;
+  background-size: 38px;
+}
+
+.password-default input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 104px;
+  height: 104px;
+  opacity: 0;
+  z-index: 10;
+}
+
+.password-default label {
+  height: 104px;
+  line-height: 104px;
+  font-size: 3.2rem;
+  color: #777;
+}
+
+.password-default .container {
+  display: flex;
+}
+
+.password-default-center {
+  display: flex;
+  align-items: center;
+  height: 104px;
+  justify-content: center;
+}
+
+.password-default-center.focus label, .channel-edit .channel-edit-body .category ul .password-default-center.selected label, .channel-edit2 .channel-edit-body .category ul .password-default-center.selected label {
+  color: #ef3484;
+}
+
+.password-default-center p {
+  position: relative;
+  width: 104px;
+  height: 104px;
+  margin-right: 20px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #ddd;
+}
+
+.password-default-center p:last-child {
+  margin-right: 0;
+}
+
+.password-default-center p.focus, .password-default-center .channel-edit .channel-edit-body .category ul p.selected, .channel-edit .channel-edit-body .category ul .password-default-center p.selected, .password-default-center .channel-edit2 .channel-edit-body .category ul p.selected, .channel-edit2 .channel-edit-body .category ul .password-default-center p.selected {
+  background-color: #eee;
+}
+
+.password-default-center p.focus.entered, .password-default-center .channel-edit .channel-edit-body .category ul p.entered.selected, .channel-edit .channel-edit-body .category ul .password-default-center p.entered.selected, .password-default-center .channel-edit2 .channel-edit-body .category ul p.entered.selected, .channel-edit2 .channel-edit-body .category ul .password-default-center p.entered.selected {
+  background: #eee url(../images/common/ic-password.png) no-repeat center;
+  background-size: 38px;
+}
+
+.password-default-center p.focus.entered .cursor::before, .password-default-center .channel-edit .channel-edit-body .category ul p.entered.selected .cursor::before, .channel-edit .channel-edit-body .category ul .password-default-center p.entered.selected .cursor::before, .password-default-center .channel-edit2 .channel-edit-body .category ul p.entered.selected .cursor::before, .channel-edit2 .channel-edit-body .category ul .password-default-center p.entered.selected .cursor::before {
+  content: none;
+}
+
+.password-default-center p.focus::after, .password-default-center .channel-edit .channel-edit-body .category ul p.selected::after, .channel-edit .channel-edit-body .category ul .password-default-center p.selected::after, .password-default-center .channel-edit2 .channel-edit-body .category ul p.selected::after, .channel-edit2 .channel-edit-body .category ul .password-default-center p.selected::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 0 10px #eee;
+  border-radius: 8px;
+  box-shadow: 0px 0px 0px 6px #ef3484;
+}
+
+.password-default-center p.focus span, .password-default-center .channel-edit .channel-edit-body .category ul p.selected span, .channel-edit .channel-edit-body .category ul .password-default-center p.selected span, .password-default-center .channel-edit2 .channel-edit-body .category ul p.selected span, .channel-edit2 .channel-edit-body .category ul .password-default-center p.selected span {
+  position: unset;
+}
+
+.password-default-center p.focus span::before, .password-default-center .channel-edit .channel-edit-body .category ul p.selected span::before, .channel-edit .channel-edit-body .category ul .password-default-center p.selected span::before, .password-default-center .channel-edit2 .channel-edit-body .category ul p.selected span::before, .channel-edit2 .channel-edit-body .category ul .password-default-center p.selected span::before {
+  height: 52px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #eee;
+}
+
+.password-default-center p.entered {
+  background: #ddd url(../images/common/ic-password.png) no-repeat center;
+  background-size: 38px;
+}
+
+.password-default-center input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 104px;
+  height: 104px;
+  opacity: 0;
+  z-index: 10;
+}
+
+.password-default-center label {
+  height: 104px;
+  line-height: 104px;
+  font-size: 3.2rem;
+  color: #777;
+}
+
+.password-default-center .container {
+  display: flex;
+}
+
+.password-default.list-focus .auth-label {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  color: #ef3484;
+}
+
+.password-small {
+  display: flex;
+  align-items: center;
+  height: 86px;
+}
+
+.password-small.focus label, .channel-edit .channel-edit-body .category ul .password-small.selected label, .channel-edit2 .channel-edit-body .category ul .password-small.selected label {
+  color: #ef3484;
+}
+
+.password-small p {
+  position: relative;
+  width: 86px;
+  height: 86px;
+  margin-right: 20px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #ddd;
+}
+
+.password-small p:last-child {
+  margin-right: 0;
+}
+
+.password-small p.focus, .password-small .channel-edit .channel-edit-body .category ul p.selected, .channel-edit .channel-edit-body .category ul .password-small p.selected, .password-small .channel-edit2 .channel-edit-body .category ul p.selected, .channel-edit2 .channel-edit-body .category ul .password-small p.selected {
+  background-color: #eee;
+}
+
+.password-small p.focus.entered, .password-small .channel-edit .channel-edit-body .category ul p.entered.selected, .channel-edit .channel-edit-body .category ul .password-small p.entered.selected, .password-small .channel-edit2 .channel-edit-body .category ul p.entered.selected, .channel-edit2 .channel-edit-body .category ul .password-small p.entered.selected {
+  background: #eee url(../images/common/ic-password.png) no-repeat center;
+  background-size: 38px;
+}
+
+.password-small p.focus.entered .cursor::before, .password-small .channel-edit .channel-edit-body .category ul p.entered.selected .cursor::before, .channel-edit .channel-edit-body .category ul .password-small p.entered.selected .cursor::before, .password-small .channel-edit2 .channel-edit-body .category ul p.entered.selected .cursor::before, .channel-edit2 .channel-edit-body .category ul .password-small p.entered.selected .cursor::before {
+  content: none;
+}
+
+.password-small p.focus::after, .password-small .channel-edit .channel-edit-body .category ul p.selected::after, .channel-edit .channel-edit-body .category ul .password-small p.selected::after, .password-small .channel-edit2 .channel-edit-body .category ul p.selected::after, .channel-edit2 .channel-edit-body .category ul .password-small p.selected::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 0 10px #eee;
+  border-radius: 8px;
+  box-shadow: 0px 0px 0px 6px #ef3484;
+}
+
+.password-small p.focus span, .password-small .channel-edit .channel-edit-body .category ul p.selected span, .channel-edit .channel-edit-body .category ul .password-small p.selected span, .password-small .channel-edit2 .channel-edit-body .category ul p.selected span, .channel-edit2 .channel-edit-body .category ul .password-small p.selected span {
+  position: unset;
+}
+
+.password-small p.focus span::before, .password-small .channel-edit .channel-edit-body .category ul p.selected span::before, .channel-edit .channel-edit-body .category ul .password-small p.selected span::before, .password-small .channel-edit2 .channel-edit-body .category ul p.selected span::before, .channel-edit2 .channel-edit-body .category ul .password-small p.selected span::before {
+  height: 40px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #eee;
+}
+
+.password-small p.entered {
+  background: #ddd url(../images/common/ic-password.png) no-repeat center;
+  background-size: 38px;
+}
+
+.password-small input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 86px;
+  height: 86px;
+  opacity: 0;
+  z-index: 10;
+}
+
+.password-small label {
+  height: 86px;
+  line-height: 86px;
+  font-size: 3.2rem;
+  color: #777;
+}
+
+.password-small .container {
+  display: flex;
+}
+
+.password-smaller {
+  display: flex;
+  align-items: center;
+  height: 84px;
+}
+
+.password-smaller.focus label, .channel-edit .channel-edit-body .category ul .password-smaller.selected label, .channel-edit2 .channel-edit-body .category ul .password-smaller.selected label {
+  color: #ef3484;
+}
+
+.password-smaller p {
+  position: relative;
+  width: 84px;
+  height: 84px;
+  margin-right: 20px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #ddd;
+}
+
+.password-smaller p:last-child {
+  margin-right: 0;
+}
+
+.password-smaller p.focus, .password-smaller .channel-edit .channel-edit-body .category ul p.selected, .channel-edit .channel-edit-body .category ul .password-smaller p.selected, .password-smaller .channel-edit2 .channel-edit-body .category ul p.selected, .channel-edit2 .channel-edit-body .category ul .password-smaller p.selected {
+  background-color: #eee;
+}
+
+.password-smaller p.focus.entered, .password-smaller .channel-edit .channel-edit-body .category ul p.entered.selected, .channel-edit .channel-edit-body .category ul .password-smaller p.entered.selected, .password-smaller .channel-edit2 .channel-edit-body .category ul p.entered.selected, .channel-edit2 .channel-edit-body .category ul .password-smaller p.entered.selected {
+  background: #eee url(../images/common/ic-password.png) no-repeat center;
+  background-size: 38px;
+}
+
+.password-smaller p.focus.entered .cursor::before, .password-smaller .channel-edit .channel-edit-body .category ul p.entered.selected .cursor::before, .channel-edit .channel-edit-body .category ul .password-smaller p.entered.selected .cursor::before, .password-smaller .channel-edit2 .channel-edit-body .category ul p.entered.selected .cursor::before, .channel-edit2 .channel-edit-body .category ul .password-smaller p.entered.selected .cursor::before {
+  content: none;
+}
+
+.password-smaller p.focus::after, .password-smaller .channel-edit .channel-edit-body .category ul p.selected::after, .channel-edit .channel-edit-body .category ul .password-smaller p.selected::after, .password-smaller .channel-edit2 .channel-edit-body .category ul p.selected::after, .channel-edit2 .channel-edit-body .category ul .password-smaller p.selected::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 0 10px #eee;
+  border-radius: 8px;
+  box-shadow: 0px 0px 0px 6px #ef3484;
+}
+
+.password-smaller p.focus span, .password-smaller .channel-edit .channel-edit-body .category ul p.selected span, .channel-edit .channel-edit-body .category ul .password-smaller p.selected span, .password-smaller .channel-edit2 .channel-edit-body .category ul p.selected span, .channel-edit2 .channel-edit-body .category ul .password-smaller p.selected span {
+  position: unset;
+}
+
+.password-smaller p.focus span::before, .password-smaller .channel-edit .channel-edit-body .category ul p.selected span::before, .channel-edit .channel-edit-body .category ul .password-smaller p.selected span::before, .password-smaller .channel-edit2 .channel-edit-body .category ul p.selected span::before, .channel-edit2 .channel-edit-body .category ul .password-smaller p.selected span::before {
+  height: 40px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #eee;
+}
+
+.password-smaller p.entered {
+  background: #ddd url(../images/common/ic-password.png) no-repeat center;
+  background-size: 38px;
+}
+
+.password-smaller input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 84px;
+  height: 84px;
+  opacity: 0;
+  z-index: 10;
+}
+
+.password-smaller label {
+  height: 84px;
+  line-height: 84px;
+  font-size: 3.2rem;
+  color: #777;
+}
+
+.password-smaller .container {
+  display: flex;
+}
+
+.password-smaller.list-focus .auth-label {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  color: #ef3484;
+}
+
+.password-wrap div {
+  margin-bottom: 20px;
+}
+
+.password-wrap div:last-child {
+  margin-bottom: 0;
+}
+
+.loading-popup .popup-body {
+  border-radius: 16px;
+  background-color: #eee;
+  text-align: center;
+}
+
+.loading-popup .popup-body .body-text {
+  margin-bottom: 2px;
+  font-size: 2.8rem;
+}
+
+.loading-popup .popup-body p:nth-of-type(2) {
+  margin-bottom: 20px;
+}
+
+.loading-popup .popup-body img {
+  width: 96px;
+  height: 96px;
+}
+
+.auth-popup .body-text {
+  margin-bottom: 52px;
+}
+
+.auth-popup .body-text p {
+  margin-bottom: 3px;
+}
+
+.auth-popup .body-text p:last-child {
+  margin-bottom: 0;
+}
+
+.auth-popup .sub-text p {
+  line-height: 32px;
+  margin-bottom: 2px;
+}
+
+.auth-popup .sub-text p:last-child {
+  margin-bottom: 0;
+}
+
+.type-purchase .popup-body {
+  padding: 52px 119px;
+}
+
+.type-purchase-bill .tooltip-area {
+  position: absolute;
+  left: 0px;
+  bottom: -118px;
+}
+
+.type-purchase-bill .tooltip-area .tooltip {
+  position: relative;
+  display: inline-block;
+  font-family: "Yoon Gothic 750", "YoonGothic 700 50", "Yoon윤고딕 750", "YoonGothic 750", "YOONGOTHICPRO750";
+  font-size: 2rem;
+  line-height: 1.5;
+  padding: 12px 18px;
+  background-color: #2A2C3E;
+  border-radius: 16px;
+  font-size: 2.6rem;
+  padding: 22px 30px;
+  margin-left: unset;
+}
+
+.type-purchase-bill .tooltip-area .tooltip::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: 18px;
+  left: -3px;
+  width: 18px;
+  height: 18px;
+  border-left: 8px solid #2A2C3E;
+  border-bottom: 8px solid #2A2C3E;
+  border-radius: 4px;
+  transform: rotate(54deg) skewY(-20deg);
+}
+
+.type-purchase-bill .tooltip-area .tooltip em {
+  color: #ef3484;
+}
+
+.type-purchase-bill .tooltip-area .tooltip em {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.type-purchase-bill .tooltip-area .tooltip::before {
+  top: -7px;
+  left: 147px;
+  transform: rotate(144deg) skewY(-20deg);
+}
+
+.setting-password label {
+  font-size: 2.8rem;
+}
+
+.setting-password .password-smaller {
+  justify-content: space-between;
+}
+
+.setting-password .password-smaller.focus .auth-label, .setting-password .channel-edit .channel-edit-body .category ul .password-smaller.selected .auth-label, .channel-edit .channel-edit-body .category ul .setting-password .password-smaller.selected .auth-label, .setting-password .channel-edit2 .channel-edit-body .category ul .password-smaller.selected .auth-label, .channel-edit2 .channel-edit-body .category ul .setting-password .password-smaller.selected .auth-label {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.setting-password .input-text {
+  width: auto;
+}
+
+.lock-password .popup-body .text {
+  margin-bottom: 16px;
+}
+
+.setting-auth .popup-body {
+  padding: 52px 69px;
+}
+
+.setting-auth .password-wrap .password-default {
+  justify-content: space-between;
+  margin-bottom: 38px;
+}
+
+.setting-auth .password-wrap div:last-child {
+  margin-bottom: 0;
+}
+
+.setting-auth .password-wrap .input-text {
+  width: auto;
+}
+
+.setting-auth .body-text {
+  margin-bottom: 31px;
+}
+
+.moreinfo-popup .contents, .imdb-popup .contents {
+  position: relative;
+  height: 418px;
+  overflow: hidden;
+}
+
+.moreinfo-popup .contents::after, .imdb-popup .contents::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: unset;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #eee 90%);
+  background-size: 100% 80px;
+}
+
+.moreinfo-popup .staff, .imdb-popup .staff {
+  font-size: 2.6rem;
+  color: #353539;
+  line-height: 36px;
+  margin-bottom: 38px;
+}
+
+.moreinfo-popup .staff > div, .imdb-popup .staff > div {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 15px;
+}
+
+.moreinfo-popup .staff > div:last-child, .imdb-popup .staff > div:last-child {
+  margin-bottom: 0;
+}
+
+.moreinfo-popup .staff .label, .imdb-popup .staff .label {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  white-space: nowrap;
+  margin-right: 6px;
+}
+
+.moreinfo-popup .staff .cast-wrap, .imdb-popup .staff .cast-wrap {
+  display: inline-block;
+}
+
+.moreinfo-popup h4, .imdb-popup h4 {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 2.8rem;
+  color: #353539;
+  line-height: 40px;
+  margin-bottom: 4px;
+}
+
+.moreinfo-popup h4 span::before, .imdb-popup h4 span::before {
+  display: inline-block;
+  content: '';
+  content: "|";
+  margin-left: 15px;
+  padding-right: 8px;
+}
+
+.moreinfo-popup .summary, .imdb-popup .summary {
+  font-size: 2.8rem;
+  color: #777;
+  line-height: 40px;
+}
+
+.moreinfo-popup h3, .imdb-popup h3 {
+  display: flex;
+}
+
+.moreinfo-popup .logo, .imdb-popup .logo {
+  display: inline-block;
+  width: 86px;
+  height: 42px;
+  margin-right: 12px;
+  background-image: url("../images/vod/logo-imdb-black.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 0;
+  color: rgba(0, 0, 0, 0);
+}
+
+.moreinfo-popup .comment-header, .imdb-popup .comment-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.moreinfo-popup .comment-header .name, .imdb-popup .comment-header .name {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 2.6rem;
+  color: #353539;
+  margin-right: 12px;
+}
+
+.moreinfo-popup .comment-header .rating-star, .imdb-popup .comment-header .rating-star {
+  background-image: url("../images/vod/ic-ratingstar-full.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.moreinfo-popup .comment-header .point, .imdb-popup .comment-header .point {
+  font-size: 2.4rem;
+  color: #353539;
+}
+
+.moreinfo-popup .comment-header .point .base-point, .imdb-popup .comment-header .point .base-point {
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+  color: #a9a9a9;
+  padding-left: 10px;
+  margin-left: 2px;
+}
+
+.moreinfo-popup .comment-header .point .base-point::before, .imdb-popup .comment-header .point .base-point::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  content: '/';
+}
+
+.moreinfo-popup .comment, .imdb-popup .comment {
+  font-size: 2.8rem;
+  color: #777;
+  line-height: 40px;
+  margin-bottom: 20px;
+}
+
+.moreinfo-popup .comment .label, .imdb-popup .comment .label {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  color: #353539;
+  line-height: 40px;
+  margin-bottom: 4px;
+}
+
+.moreinfo-popup .scroll, .imdb-popup .scroll {
+  opacity: 1;
+}
+
+.setting-notice-image .image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 670px;
+  height: 304px;
+}
+
+.setting-notice-all .popup-body {
+  padding: 27px 40px 53px;
+  height: 587px;
+}
+
+.setting-notice-all .contents-all {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.setting-notice-all .content-title {
+  margin-bottom: 27px;
+}
+
+.setting-notice-all .content-title .title {
+  margin-bottom: 7px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 2.8rem;
+  height: 38px;
+}
+
+.setting-notice-all .content-title .date {
+  color: #999;
+  font-size: 2.6rem;
+}
+
+.setting-notice-all .content-body {
+  max-height: 338px;
+  overflow: hidden;
+}
+
+.setting-notice-all .body-text {
+  margin-bottom: 20px;
+  font-size: 2.6rem;
+  line-height: 37px;
+  color: #535458;
+}
+
+.setting-notice-all .scroll-contents {
+  margin-bottom: 54px;
+  height: 304px;
+  overflow: hidden;
+}
+
+.setting-notice-all .scroll-contents .image-wrap {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 25px;
+}
+
+.setting-notice-all .scroll-contents .image-wrap::before {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  background-image: url(../images/setting/img-launcher-on.png);
+  width: 100%;
+  height: 100%;
+  content: '';
+}
+
+.setting-notice-all .scroll-contents .image-wrap .image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  height: 100%;
+}
+
+.setting-notice-all .scroll {
+  position: absolute;
+  top: 104px;
+  right: -14px;
+  width: 6px;
+  height: 304px;
+  border-radius: calc(6px / 2);
+  background-color: rgba(154, 154, 154, 0.18);
+  z-index: 1;
+  opacity: 1;
+}
+
+.setting-notice-all .scroll span {
+  display: inline-block;
+  width: 100%;
+  border-radius: calc(6px / 2);
+  background-color: rgba(154, 154, 154, 0.8);
+}
+
+.setting-notice-all .scroll span {
+  height: 160px;
+}
+
+.popup-page-index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.popup-page-index .pagination {
+  order: 2;
+}
+
+.popup-page-index .ic-arrow {
+  display: block;
+  width: 38px;
+  height: 30px;
+  background-image: url("../images/vod/ic-season-arrow.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 0;
+  color: rgba(0, 0, 0, 0);
+}
+
+.popup-page-index .ic-arrow.pre {
+  order: 1;
+  margin-right: 18px;
+}
+
+.popup-page-index .ic-arrow.next {
+  transform: rotate(180deg);
+  order: 3;
+  margin-left: 18px;
+}
+
+.popup-page-index .ic-arrow.focus, .popup-page-index .channel-edit .channel-edit-body .category ul .ic-arrow.selected, .channel-edit .channel-edit-body .category ul .popup-page-index .ic-arrow.selected, .popup-page-index .channel-edit2 .channel-edit-body .category ul .ic-arrow.selected, .channel-edit2 .channel-edit-body .category ul .popup-page-index .ic-arrow.selected {
+  background-image: url("../images/vod/ic-season-arrow.png");
+}
+
+.popup-page-index .count {
+  position: relative;
+  width: 120px;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #ddd;
+}
+
+.popup-page-index .count.focus, .popup-page-index .channel-edit .channel-edit-body .category ul .count.selected, .channel-edit .channel-edit-body .category ul .popup-page-index .count.selected, .popup-page-index .channel-edit2 .channel-edit-body .category ul .count.selected, .channel-edit2 .channel-edit-body .category ul .popup-page-index .count.selected {
+  position: relative;
+  background-color: #fff;
+}
+
+.popup-page-index .count.focus::after, .popup-page-index .channel-edit .channel-edit-body .category ul .count.selected::after, .channel-edit .channel-edit-body .category ul .popup-page-index .count.selected::after, .popup-page-index .channel-edit2 .channel-edit-body .category ul .count.selected::after, .channel-edit2 .channel-edit-body .category ul .popup-page-index .count.selected::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 0 10px #eee;
+  border-radius: 8px;
+  box-shadow: 0px 0px 0px 7px #ef3484;
+}
+
+.setting-popup-time .title {
+  font-size: 3.0rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.setting-popup-time .popup-body .select-time {
+  border-bottom: 0;
+}
+
+.setting-popup-time .popup-body .body-text {
+  margin-bottom: 42px;
+  text-align: center;
+}
+
+.select-popup .cancel-reason {
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+.select-popup .cancel-reason .text {
+  display: inline-block;
+}
+
+.select-popup .input-field .radio-list {
+  height: auto;
+  margin: 0;
+}
+
+.select-popup .input-field .radio-list ul {
+  width: 100%;
+}
+
+.select-popup .input-field .radio-list li {
+  height: 90px;
+  justify-content: start;
+}
+
+.select-popup .input-field .radio-list li.focus .input-radio::before, .select-popup .input-field .radio-list .channel-edit .channel-edit-body .category ul li.selected .input-radio::before, .channel-edit .channel-edit-body .category ul .select-popup .input-field .radio-list li.selected .input-radio::before, .select-popup .input-field .radio-list .channel-edit2 .channel-edit-body .category ul li.selected .input-radio::before, .channel-edit2 .channel-edit-body .category ul .select-popup .input-field .radio-list li.selected .input-radio::before {
+  background-color: #eee;
+}
+
+.select-popup .input-field .radio-list .input-radio {
+  margin-right: 0px;
+}
+
+.select-popup .input-field .radio-list .text {
+  display: inline;
+  text-align: center;
+  font-size: 3.4rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.select-popup .input-field .radio-list::after {
+  content: none;
+}
+
+.select-popup .input-field .checkbox-list {
+  height: calc((90px * 4) + (20px * 3));
+}
+
+.select-popup .input-field .checkbox-list.active ul {
+  width: 100%;
+}
+
+.select-popup .input-field .checkbox-list ul {
+  width: 100%;
+}
+
+.select-popup .input-field .checkbox-list ul li {
+  justify-content: unset;
+  height: 90px;
+  padding: 0 30px;
+}
+
+.select-popup .input-field .checkbox-list ul li.focus .input-checkbox[type=checkbox]:checked::before, .select-popup .input-field .checkbox-list .channel-edit .channel-edit-body .category ul li.selected .input-checkbox[type=checkbox]:checked::before, .channel-edit .channel-edit-body .category .select-popup .input-field .checkbox-list ul li.selected .input-checkbox[type=checkbox]:checked::before, .select-popup .input-field .checkbox-list .channel-edit2 .channel-edit-body .category ul li.selected .input-checkbox[type=checkbox]:checked::before, .channel-edit2 .channel-edit-body .category .select-popup .input-field .checkbox-list ul li.selected .input-checkbox[type=checkbox]:checked::before {
+  background-image: url(../images/common/ic-check-focus.png);
+}
+
+.select-popup .input-field .checkbox-list ul li.focus .name, .select-popup .input-field .checkbox-list .channel-edit .channel-edit-body .category ul li.selected .name, .channel-edit .channel-edit-body .category .select-popup .input-field .checkbox-list ul li.selected .name, .select-popup .input-field .checkbox-list .channel-edit2 .channel-edit-body .category ul li.selected .name, .channel-edit2 .channel-edit-body .category .select-popup .input-field .checkbox-list ul li.selected .name {
+  color: #eee;
+}
+
+.select-popup .input-field .checkbox-list ul li.focus .ic-tag, .select-popup .input-field .checkbox-list .channel-edit .channel-edit-body .category ul li.selected .ic-tag, .channel-edit .channel-edit-body .category .select-popup .input-field .checkbox-list ul li.selected .ic-tag, .select-popup .input-field .checkbox-list .channel-edit2 .channel-edit-body .category ul li.selected .ic-tag, .channel-edit2 .channel-edit-body .category .select-popup .input-field .checkbox-list ul li.selected .ic-tag {
+  opacity: 1;
+  border-color: #eee;
+  color: #ef3484;
+  background-color: #eee;
+}
+
+.select-popup .input-field .checkbox-list ul li .input-checkbox {
+  margin-right: 24px;
+}
+
+.select-popup .input-field .checkbox-list ul li .input-checkbox[type=checkbox]:checked::before {
+  background-image: url(../images/common/ic-check.png);
+}
+
+.select-popup .input-field .checkbox-list ul li .name {
+  width: 298px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 3.4rem;
+}
+
+.select-popup .input-field .checkbox-list ul li .ic-tag {
+  position: absolute;
+  right: 30px;
+  min-width: 72px;
+  height: 38px;
+  line-height: 34px;
+  text-align: center;
+  border: solid 2px rgba(53, 53, 57, 0.7);
+  border-radius: 4px;
+  color: rgba(53, 53, 57, 0.98);
+}
+
+.select-popup .scroll {
+  position: absolute;
+  top: 143px;
+  right: 16px;
+  width: 8px;
+  height: calc(100% - (102px + 89px + 52px * 2));
+  border-radius: calc(8px / 2);
+  background-color: rgba(169, 169, 169, 0.18);
+  z-index: 1;
+}
+
+.select-popup .scroll span {
+  display: inline-block;
+  width: 100%;
+  border-radius: calc(8px / 2);
+  background-color: rgba(169, 169, 169, 0.8);
+}
+
+.set-continue-popup .text {
+  margin-bottom: 52px;
+  font-size: 2.8rem;
+  color: #353539;
+}
+
+.set-continue-popup ul {
+  display: flex;
+  justify-content: center;
+}
+
+.set-continue-popup ul li {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 201px;
+  height: 201px;
+  border-radius: 8px;
+  background-color: #ddd;
+}
+
+.set-continue-popup ul li:first-child {
+  margin-right: 76px;
+}
+
+.set-continue-popup ul li.focus, .set-continue-popup .channel-edit .channel-edit-body .category ul li.selected, .channel-edit .channel-edit-body .category .set-continue-popup ul li.selected, .set-continue-popup .channel-edit2 .channel-edit-body .category ul li.selected, .channel-edit2 .channel-edit-body .category .set-continue-popup ul li.selected {
+  background-color: #ef3484;
+}
+
+.set-continue-popup ul li.focus p.ic-book, .set-continue-popup .channel-edit .channel-edit-body .category ul li.selected p.ic-book, .channel-edit .channel-edit-body .category .set-continue-popup ul li.selected p.ic-book, .set-continue-popup .channel-edit2 .channel-edit-body .category ul li.selected p.ic-book, .channel-edit2 .channel-edit-body .category .set-continue-popup ul li.selected p.ic-book {
+  background-image: url("../images/common/ic-readingbook-focus.png");
+}
+
+.set-continue-popup ul li.focus p.ic-vod, .set-continue-popup .channel-edit .channel-edit-body .category ul li.selected p.ic-vod, .channel-edit .channel-edit-body .category .set-continue-popup ul li.selected p.ic-vod, .set-continue-popup .channel-edit2 .channel-edit-body .category ul li.selected p.ic-vod, .channel-edit2 .channel-edit-body .category .set-continue-popup ul li.selected p.ic-vod {
+  background-image: url("../images/common/ic-vod-focus.png");
+}
+
+.set-continue-popup ul li.focus span, .set-continue-popup .channel-edit .channel-edit-body .category ul li.selected span, .channel-edit .channel-edit-body .category .set-continue-popup ul li.selected span, .set-continue-popup .channel-edit2 .channel-edit-body .category ul li.selected span, .channel-edit2 .channel-edit-body .category .set-continue-popup ul li.selected span {
+  color: #eee;
+}
+
+.set-continue-popup ul li p {
+  width: 141px;
+  height: 141px;
+  margin: 10px 0 8px 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.set-continue-popup ul li p.ic-book {
+  background-image: url("../images/common/ic-readingbook.png");
+}
+
+.set-continue-popup ul li p.ic-vod {
+  background-image: url("../images/common/ic-vod.png");
+}
+
+.set-continue-popup ul li span {
+  font-family: 'YoonGothicPro770';
+  font-size: 2.2rem;
+  color: #353539;
+}
+
+.checkuser-number {
+  text-align: center;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 4.8rem;
+  color: #353539;
+}
+
+.mg-top20 {
+  margin-top: 20px;
+}
+
+.button-area {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.button-area .button-primary {
+  position: relative;
+  height: 86px;
+  font-size: 3.2rem;
+  padding: 0 40px;
+  border-radius: 8px;
+  background-color: #2A2C3E;
+  color: #a9a9a9;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.button-area .button-primary .text {
+  min-width: 220px;
+  line-height: 86px;
+}
+
+.button-area .button-primary.dimmed {
+  background-color: rgba(8, 13, 25, 0.4);
+}
+
+.button-area .button-primary.focus, .button-area .channel-edit .channel-edit-body .category ul .button-primary.selected, .channel-edit .channel-edit-body .category ul .button-area .button-primary.selected, .button-area .channel-edit2 .channel-edit-body .category ul .button-primary.selected, .channel-edit2 .channel-edit-body .category ul .button-area .button-primary.selected {
+  color: #080d19;
+  background-color: #eee;
+  height: calc(86px + 12px);
+  font-size: calc(3.2rem + 0.2rem);
+}
+
+.button-area .button-primary.small {
+  position: relative;
+  height: 52px;
+  font-size: 2rem;
+  padding: 0 40px;
+  border-radius: 8px;
+  background-color: #2A2C3E;
+  color: #a9a9a9;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.button-area .button-primary.small .text {
+  min-width: 115px;
+  line-height: 52px;
+}
+
+.button-area .button-primary.small.dimmed {
+  background-color: rgba(8, 13, 25, 0.4);
+}
+
+.button-area .button-primary.small.focus, .button-area .channel-edit .channel-edit-body .category ul .button-primary.small.selected, .channel-edit .channel-edit-body .category ul .button-area .button-primary.small.selected, .button-area .channel-edit2 .channel-edit-body .category ul .button-primary.small.selected, .channel-edit2 .channel-edit-body .category ul .button-area .button-primary.small.selected {
+  color: #080d19;
+  background-color: #eee;
+  height: calc(52px + 12px);
+  font-size: calc(2rem + 0.2rem);
+}
+
+.button-area .button-primary.middle {
+  position: relative;
+  height: 86px;
+  font-size: 3rem;
+  padding: 0 40px;
+  border-radius: 8px;
+  background-color: #2A2C3E;
+  color: #a9a9a9;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.button-area .button-primary.middle .text {
+  min-width: 165px;
+  line-height: 86px;
+}
+
+.button-area .button-primary.middle.dimmed {
+  background-color: rgba(8, 13, 25, 0.4);
+}
+
+.button-area .button-primary.middle.focus, .button-area .channel-edit .channel-edit-body .category ul .button-primary.middle.selected, .channel-edit .channel-edit-body .category ul .button-area .button-primary.middle.selected, .button-area .channel-edit2 .channel-edit-body .category ul .button-primary.middle.selected, .channel-edit2 .channel-edit-body .category ul .button-area .button-primary.middle.selected {
+  color: #080d19;
+  background-color: #eee;
+  height: calc(86px + 12px);
+  font-size: calc(3rem + 0.2rem);
+}
+
+.button-area .button-primary.large {
+  position: relative;
+  height: 86px;
+  font-size: 3.2rem;
+  padding: 0 40px;
+  border-radius: 8px;
+  background-color: #2A2C3E;
+  color: #a9a9a9;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.button-area .button-primary.large .text {
+  min-width: 220px;
+  line-height: 86px;
+}
+
+.button-area .button-primary.large.dimmed {
+  background-color: rgba(8, 13, 25, 0.4);
+}
+
+.button-area .button-primary.large.focus, .button-area .channel-edit .channel-edit-body .category ul .button-primary.large.selected, .channel-edit .channel-edit-body .category ul .button-area .button-primary.large.selected, .button-area .channel-edit2 .channel-edit-body .category ul .button-primary.large.selected, .channel-edit2 .channel-edit-body .category ul .button-area .button-primary.large.selected {
+  color: #080d19;
+  background-color: #eee;
+  height: calc(86px + 12px);
+  font-size: calc(3.2rem + 0.2rem);
+}
+
+.button-alt {
+  margin-top: 29px;
+}
+
+.button-alt .button {
+  width: 264px;
+  height: 68px;
+  position: relative;
+  font-size: 2.6rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  color: #353539;
+  border-radius: 8px;
+  border: 2px solid rgba(119, 119, 119, 0.5);
+}
+
+.button-alt .button.focus, .button-alt .channel-edit .channel-edit-body .category ul .button.selected, .channel-edit .channel-edit-body .category ul .button-alt .button.selected, .button-alt .channel-edit2 .channel-edit-body .category ul .button.selected, .channel-edit2 .channel-edit-body .category ul .button-alt .button.selected {
+  font-size: 2.8rem;
+  border: none;
+}
+
+.button-alt .button.focus::before, .button-alt .channel-edit .channel-edit-body .category ul .button.selected::before, .channel-edit .channel-edit-body .category ul .button-alt .button.selected::before, .button-alt .channel-edit2 .channel-edit-body .category ul .button.selected::before, .channel-edit2 .channel-edit-body .category ul .button-alt .button.selected::before {
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  border-radius: 8px;
+  border: 6px solid #ef3484;
+  display: block;
+  content: '';
+}
+
+.setting-container .button-area {
+  justify-content: flex-start;
+}
+
+.reservation-popup .popup-body {
+  padding: 42px 40px;
+}
+
+.reservation-popup .body-text {
+  margin-bottom: 20px;
+}
+
+.reservation-popup .select-time {
+  margin-bottom: 2px;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.reservation-popup .select-time:not(:last-child) {
+  padding-bottom: 40px;
+}
+
+.reservation-popup .select-time > div {
+  margin: 0 auto;
+}
+
+.reservation-popup .select-time > p {
+  position: relative;
+}
+
+.reservation-popup .select-time .focus, .reservation-popup .select-time .channel-edit .channel-edit-body .category ul .selected, .channel-edit .channel-edit-body .category ul .reservation-popup .select-time .selected, .reservation-popup .select-time .channel-edit2 .channel-edit-body .category ul .selected, .channel-edit2 .channel-edit-body .category ul .reservation-popup .select-time .selected {
+  border: none;
+  color: #080d19;
+}
+
+.reservation-popup .select-time .focus .input-text-wrap, .reservation-popup .select-time .channel-edit .channel-edit-body .category ul .selected .input-text-wrap, .channel-edit .channel-edit-body .category ul .reservation-popup .select-time .selected .input-text-wrap, .reservation-popup .select-time .channel-edit2 .channel-edit-body .category ul .selected .input-text-wrap, .channel-edit2 .channel-edit-body .category ul .reservation-popup .select-time .selected .input-text-wrap {
+  color: #080d19;
+}
+
+.reservation-popup .select-time .focus::before, .reservation-popup .select-time .channel-edit .channel-edit-body .category ul .selected::before, .channel-edit .channel-edit-body .category ul .reservation-popup .select-time .selected::before, .reservation-popup .select-time .channel-edit2 .channel-edit-body .category ul .selected::before, .channel-edit2 .channel-edit-body .category ul .reservation-popup .select-time .selected::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 0 10px #eee;
+  border-radius: 8px;
+  box-shadow: 0 0 0 6px #ef3484;
+}
+
+.reservation-popup .select-time .focus .input[type=text], .reservation-popup .select-time .channel-edit .channel-edit-body .category ul .selected .input[type=text], .channel-edit .channel-edit-body .category ul .reservation-popup .select-time .selected .input[type=text], .reservation-popup .select-time .channel-edit2 .channel-edit-body .category ul .selected .input[type=text], .channel-edit2 .channel-edit-body .category ul .reservation-popup .select-time .selected .input[type=text] {
+  box-shadow: 0 0 0 6px #ef3484;
+}
+
+.reservation-popup .select-time .input {
+  background: none;
+  position: relative;
+  line-height: 68px;
+  justify-content: center;
+  text-align: center;
+  color: #777;
+  font-size: 3.4rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  border-radius: 8px;
+  border: 1px solid #d6d6d6;
+}
+
+.reservation-popup .select-time .input-apm {
+  width: 340px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+.reservation-popup .select-time .input-apm .apm {
+  width: 300px;
+  color: #080d19;
+  font-size: 2.8rem;
+}
+
+.reservation-popup .select-time .input-apm .prev, .reservation-popup .select-time .input-apm .next {
+  display: flex;
+  align-items: center;
+}
+
+.reservation-popup .select-time .input-apm .prev button, .reservation-popup .select-time .input-apm .next button {
+  position: relative;
+  width: 20px;
+  height: 30px;
+  font-size: 0;
+  color: rgba(0, 0, 0, 0);
+}
+
+.reservation-popup .select-time .input-apm .prev button::before, .reservation-popup .select-time .input-apm .next button::before {
+  width: 20px;
+  height: 20px;
+  border-top: 4px solid #999;
+  border-right: 4px solid #999;
+  position: absolute;
+  display: block;
+  content: '';
+}
+
+.reservation-popup .select-time .input-apm .prev button::before {
+  top: 5px;
+  left: -32px;
+  transform: rotate(225deg);
+}
+
+.reservation-popup .select-time .input-apm .next button::before {
+  top: 5px;
+  left: 32px;
+  transform: rotate(45deg);
+}
+
+.reservation-popup .select-time .input-time {
+  width: 300px;
+  margin-top: 20px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+.reservation-popup .select-time .input-time .input-text, .reservation-popup .select-time .input-time .input {
+  width: 140px;
+}
+
+.reservation-popup .select-time .input-time .input-text .input-text-wrap, .reservation-popup .select-time .input-time .input .input-text-wrap {
+  border-radius: 8px;
+  border: 1px solid #d6d6d6;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  height: 68px;
+  color: #777;
+  font-size: 3.4rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.reservation-popup .select-time .input-time .input-text .input-text-wrap.focus, .reservation-popup .select-time .input-time .input-text .channel-edit .channel-edit-body .category ul .input-text-wrap.selected, .channel-edit .channel-edit-body .category ul .reservation-popup .select-time .input-time .input-text .input-text-wrap.selected, .reservation-popup .select-time .input-time .input-text .channel-edit2 .channel-edit-body .category ul .input-text-wrap.selected, .channel-edit2 .channel-edit-body .category ul .reservation-popup .select-time .input-time .input-text .input-text-wrap.selected, .reservation-popup .select-time .input-time .input .input-text-wrap.focus, .reservation-popup .select-time .input-time .input .channel-edit .channel-edit-body .category ul .input-text-wrap.selected, .channel-edit .channel-edit-body .category ul .reservation-popup .select-time .input-time .input .input-text-wrap.selected, .reservation-popup .select-time .input-time .input .channel-edit2 .channel-edit-body .category ul .input-text-wrap.selected, .channel-edit2 .channel-edit-body .category ul .reservation-popup .select-time .input-time .input .input-text-wrap.selected {
+  line-height: 69px;
+  box-shadow: 0 0 0 6px #ef3484;
+  border: unset;
+  color: #353539;
+}
+
+.reservation-popup .select-time .input-time .hour {
+  order: 1;
+}
+
+.reservation-popup .select-time .input-time .minute {
+  order: 3;
+}
+
+.reservation-popup .select-time .input-time::after {
+  order: 2;
+  display: block;
+  width: auto;
+  height: 100%;
+  content: ':';
+  font-size: 3.2rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.reservation-popup .select-day {
+  position: relative;
+  overflow: hidden;
+  height: calc(90px * 4);
+  margin: 0 -40px;
+}
+
+.reservation-popup .select-day .input-checkbox {
+  margin-right: 14px;
+  background-color: #eee;
+  position: relative;
+  width: 46px;
+  height: 46px;
+  border: 3px solid #a9a9a9;
+  border-radius: 2px;
+}
+
+.reservation-popup .select-day .input-checkbox::before {
+  width: calc(46px - 14px);
+  height: calc(46px - 14px);
+  border-radius: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  content: '';
+}
+
+.reservation-popup .select-day .input-checkbox[type=checkbox]::before {
+  width: 46px;
+  height: 46px;
+}
+
+.reservation-popup .select-day .input-checkbox:checked {
+  border: 3px solid #a9a9a9;
+}
+
+.reservation-popup .select-day .input-checkbox[type=radio]:checked::before {
+  background-color: #a9a9a9;
+}
+
+.reservation-popup .select-day .input-checkbox[type=checkbox]:checked::before {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/purchase/ic-check-focus2.png);
+}
+
+.reservation-popup .select-day .input-checkbox[type=checkbox]:checked::before {
+  background-image: url(../images/my/ic-my-selectedect-focus.png);
+  background-size: 75%;
+}
+
+.reservation-popup .select-day .scroll {
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  width: 8px;
+  height: 100%;
+  border-radius: calc(8px / 2);
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1;
+}
+
+.reservation-popup .select-day .scroll span {
+  display: inline-block;
+  width: 100%;
+  border-radius: calc(8px / 2);
+  background-color: rgba(169, 169, 169, 0.3);
+}
+
+.reservation-popup .select-day.active .scroll {
+  opacity: 1;
+}
+
+.reservation-popup .select-day ul {
+  width: 484px;
+  margin: 0 auto;
+}
+
+.reservation-popup .select-day ul li {
+  height: 90px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 3.2rem;
+}
+
+.reservation-popup .select-day ul li label {
+  line-height: 46px;
+  position: relative;
+  top: -1px;
+}
+
+.reservation-popup .select-day ul li.focus, .reservation-popup .select-day .channel-edit .channel-edit-body .category ul li.selected, .channel-edit .channel-edit-body .category .reservation-popup .select-day ul li.selected, .reservation-popup .select-day .channel-edit2 .channel-edit-body .category ul li.selected, .channel-edit2 .channel-edit-body .category .reservation-popup .select-day ul li.selected {
+  border-radius: 8px;
+  background-color: #ef3484;
+  color: #eee;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.reservation-popup .reservation-program {
+  border-radius: 8px;
+  border: 1px solid rgba(119, 119, 119, 0.5);
+  overflow: hidden;
+  font-size: 2.6rem;
+  width: 510px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.reservation-popup .reservation-program:last-child {
+  margin-bottom: 0;
+}
+
+.reservation-popup .reservation-program li {
+  border-top: 1px solid rgba(119, 119, 119, 0.5);
+}
+
+.reservation-popup .reservation-program li:first-child {
+  border-top: none;
+}
+
+.reservation-popup .reservation-program .time {
+  padding: 18px 0;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.reservation-popup .reservation-program .time::before {
+  width: 31px;
+  height: 31px;
+  margin-right: 10px;
+  background-image: url(../images/channel/ic-clock.png);
+  display: block;
+  content: '';
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.reservation-popup .reservation-program .time span {
+  margin-right: 10px;
+}
+
+.reservation-popup .reservation-program .data {
+  display: flex;
+  align-items: center;
+}
+
+.reservation-popup .reservation-program .data .number {
+  width: 198px;
+  padding: 22px 18px;
+  background-color: #ddd;
+}
+
+.reservation-popup .reservation-program .data .number span {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.reservation-popup .reservation-program .data .program {
+  flex: 1;
+  padding: 0px 18px;
+  overflow: hidden;
+  display: -webkit-box;
+  white-space: normal;
+  /*! autoprefixer: off */
+  -webkit-line-clamp: 2;
+  /*! autoprefixer: on */
+  -webkit-box-orient: vertical;
+}
+
+.channel-edit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1282px;
+  height: 860px;
+  border-radius: 20px;
+  background-color: #191b2b;
+  flex-direction: column;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.channel-edit > div {
+  width: 100%;
+}
+
+.channel-edit .channel-edit-header {
+  height: 100px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #2A2C3E;
+}
+
+.channel-edit .channel-edit-header h2 {
+  font-size: 3.8rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.channel-edit .channel-edit-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.channel-edit .channel-edit-body > div {
+  height: 100%;
+}
+
+.channel-edit .channel-edit-body .category {
+  position: relative;
+  background-color: #080d19;
+  width: 306px;
+  font-size: 3.0rem;
+  color: #a9a9a9;
+  overflow: hidden;
+  padding-top: 22px;
+  height: 762px;
+}
+
+.channel-edit .channel-edit-body .category .scroll {
+  opacity: 0;
+  position: absolute;
+  top: 52px;
+  right: 20px;
+  width: 4px;
+  height: 646px;
+  border-radius: calc(4px / 2);
+  background-color: rgba(255, 255, 255, 0.12);
+  z-index: 1;
+}
+
+.channel-edit .channel-edit-body .category .scroll span {
+  display: inline-block;
+  width: 100%;
+  border-radius: calc(4px / 2);
+  background-color: #a9a9a9;
+}
+
+.channel-edit .channel-edit-body .category.active .scroll {
+  opacity: 1;
+}
+
+.channel-edit .channel-edit-body .category ul {
+  position: relative;
+  top: 0;
+}
+
+.channel-edit .channel-edit-body .category ul li {
+  position: relative;
+  height: 86px;
+  padding-left: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.channel-edit .channel-edit-body .category ul li.two-line {
+  height: 128px;
+  word-break: keep-all;
+}
+
+.channel-edit .channel-edit-body .category ul li.two-line.focus::before, .channel-edit .channel-edit-body .category ul li.two-line.selected::before {
+  height: 84px;
+  margin-top: calc(-84px / 2);
+}
+
+.channel-edit .channel-edit-body .category ul .focus, .channel-edit .channel-edit-body .category ul .selected {
+  color: #eee;
+  font-size: 3.2rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.channel-edit .channel-edit-body .category ul .focus::before, .channel-edit .channel-edit-body .category ul .selected::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: 50%;
+  left: 28px;
+  width: 6px;
+  height: 42px;
+  margin-top: calc(-42px / 2);
+  border-radius: 3px;
+  background-color: #eee;
+}
+
+.channel-edit .channel-edit-body .category ul .selected::before {
+  content: none;
+}
+
+.channel-edit .channel-edit-body .edit-schedule-wrap {
+  flex: 1;
+  padding: 52px 0 60px 22px;
+  display: flex;
+  align-items: center;
+}
+
+.channel-edit .channel-edit-body .edit-schedule-wrap .mask {
+  height: 6px;
+}
+
+.channel-edit .channel-edit-body .edit-schedule-wrap .button-area {
+  height: 100%;
+  width: 296px;
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  padding-right: 12px;
+}
+
+.channel-edit .channel-edit-body .edit-schedule-wrap .button-area button {
+  margin-left: 0;
+  margin-bottom: 10px;
+}
+
+.channel-edit .channel-edit-body .edit-schedule-wrap .button-area button:last-child {
+  margin-bottom: 0;
+}
+
+.channel-edit .channel-edit-body .edit-schedule-wrap .button-area .button-primary.focus, .channel-edit .channel-edit-body .edit-schedule-wrap .button-area .category ul .button-primary.selected, .channel-edit .channel-edit-body .category ul .edit-schedule-wrap .button-area .button-primary.selected {
+  background-color: unset;
+  height: unset;
+}
+
+.channel-edit .channel-edit-body .edit-schedule-wrap .button-area .button-primary.focus::before, .channel-edit .channel-edit-body .edit-schedule-wrap .button-area .category ul .button-primary.selected::before, .channel-edit .channel-edit-body .category ul .edit-schedule-wrap .button-area .button-primary.selected::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: -6px;
+  background-color: #eee;
+  width: 100%;
+  height: calc(86px + 12px);
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.channel-edit .channel-edit-body .edit-schedule-wrap .button-area::before {
+  flex: 1;
+  order: 3;
+  display: block;
+  content: '';
+}
+
+.channel-edit .channel-edit-body .edit-schedule-wrap .button-area .sort1 {
+  order: 1;
+}
+
+.channel-edit .channel-edit-body .edit-schedule-wrap .button-area .sort2 {
+  order: 2;
+}
+
+.channel-edit .channel-edit-body .edit-schedule-wrap .button-area .sort4 {
+  order: 4;
+}
+
+.channel-edit .channel-edit-body .edit-schedule-wrap .button-area .sort5 {
+  order: 5;
+}
+
+.channel-edit .channel-edit-body .edit-schedule-wrap.empty-list .edit-schedule {
+  display: none;
+}
+
+.channel-edit .channel-edit-body .edit-schedule-wrap.empty-list .info-empty {
+  display: block;
+}
+
+.channel-edit .channel-edit-body .info-empty {
+  display: none;
+  flex: 1;
+  text-align: center;
+}
+
+.channel-edit .channel-edit-body .info-empty::before {
+  width: 120px;
+  height: 120px;
+  display: block;
+  content: '';
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  background-image: url(../images/common/ic-noti.png);
+}
+
+.channel-edit .channel-edit-body .info-empty .exp {
+  font-size: 2.6rem;
+  color: #a9a9a9;
+  margin-bottom: 60px;
+}
+
+.channel-edit .channel-edit-body .info-empty .exp p {
+  line-height: 40px;
+  margin-bottom: 6px;
+}
+
+.channel-edit .channel-edit-body .info-empty .exp p:last-child {
+  margin-bottom: 0;
+}
+
+.channel-edit .channel-edit-body .edit-schedule {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  height: calc(646px + 5px);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.channel-edit .channel-edit-body .edit-schedule .input-checkbox {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: 3px solid #5d6577;
+  border-radius: 50%;
+  margin-right: 48px;
+}
+
+.channel-edit .channel-edit-body .edit-schedule .input-checkbox::before {
+  width: calc(40px - 14px);
+  height: calc(40px - 14px);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  content: '';
+}
+
+.channel-edit .channel-edit-body .edit-schedule .input-checkbox[type=checkbox]::before {
+  width: 40px;
+  height: 40px;
+}
+
+.channel-edit .channel-edit-body .edit-schedule .input-checkbox:checked {
+  border: 3px solid #ef3484;
+}
+
+.channel-edit .channel-edit-body .edit-schedule .input-checkbox[type=radio]:checked::before {
+  background-color: #ef3484;
+}
+
+.channel-edit .channel-edit-body .edit-schedule .input-checkbox[type=checkbox]:checked::before {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/purchase/ic-check-focus2.png);
+}
+
+.channel-edit .channel-edit-body .edit-schedule .input-checkbox::before {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/purchase/ic-check2.png);
+}
+
+.channel-edit .channel-edit-body .edit-schedule .scroll {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 100%;
+  border-radius: calc(4px / 2);
+  background-color: rgba(255, 255, 255, 0.12);
+  z-index: 1;
+}
+
+.channel-edit .channel-edit-body .edit-schedule .scroll span {
+  display: inline-block;
+  width: 100%;
+  border-radius: calc(4px / 2);
+  background-color: #a9a9a9;
+}
+
+.channel-edit .channel-edit-body .edit-schedule.active .scroll {
+  opacity: 1;
+}
+
+.channel-edit .channel-edit-body .edit-schedule ul {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 604px;
+  padding-top: 5px;
+}
+
+.channel-edit .channel-edit-body .edit-schedule li {
+  position: relative;
+  color: #a9a9a9;
+  padding-left: 24px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.channel-edit .channel-edit-body .edit-schedule li p {
+  font-size: 3.2rem;
+}
+
+.channel-edit .channel-edit-body .edit-schedule li .number {
+  margin-right: 30px;
+}
+
+.channel-edit .channel-edit-body .edit-schedule li .name {
+  margin-right: 18px;
+  max-width: 250px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.channel-edit .channel-edit-body .edit-schedule li .ic-tag {
+  color: #a9a9a9;
+}
+
+.channel-edit .channel-edit-body .edit-schedule li.focus, .channel-edit .channel-edit-body .edit-schedule .category ul li.selected, .channel-edit .channel-edit-body .category ul .edit-schedule li.selected {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.channel-edit .channel-edit-body .edit-schedule li.focus::before, .channel-edit .channel-edit-body .edit-schedule .category ul li.selected::before, .channel-edit .channel-edit-body .category ul .edit-schedule li.selected::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: -5px;
+  width: 100%;
+  height: 90px;
+  box-shadow: inset 0 0 0 4px #eee;
+  background-color: #2A2C3E;
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.channel-edit .channel-edit-body .edit-schedule li.focus .input-checkbox, .channel-edit .channel-edit-body .edit-schedule .category ul li.selected .input-checkbox, .channel-edit .channel-edit-body .category ul .edit-schedule li.selected .input-checkbox {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: 3px solid #5d6577;
+  border-radius: 50%;
+}
+
+.channel-edit .channel-edit-body .edit-schedule li.focus .input-checkbox::before, .channel-edit .channel-edit-body .edit-schedule .category ul li.selected .input-checkbox::before, .channel-edit .channel-edit-body .category ul .edit-schedule li.selected .input-checkbox::before {
+  width: calc(40px - 14px);
+  height: calc(40px - 14px);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  content: '';
+}
+
+.channel-edit .channel-edit-body .edit-schedule li.focus .input-checkbox[type=checkbox]::before, .channel-edit .channel-edit-body .edit-schedule .category ul li.selected .input-checkbox[type=checkbox]::before, .channel-edit .channel-edit-body .category ul .edit-schedule li.selected .input-checkbox[type=checkbox]::before {
+  width: 40px;
+  height: 40px;
+}
+
+.channel-edit .channel-edit-body .edit-schedule li.focus .input-checkbox:checked, .channel-edit .channel-edit-body .edit-schedule .category ul li.selected .input-checkbox:checked, .channel-edit .channel-edit-body .category ul .edit-schedule li.selected .input-checkbox:checked {
+  border: 3px solid #ef3484;
+}
+
+.channel-edit .channel-edit-body .edit-schedule li.focus .input-checkbox[type=radio]:checked::before, .channel-edit .channel-edit-body .edit-schedule .category ul li.selected .input-checkbox[type=radio]:checked::before, .channel-edit .channel-edit-body .category ul .edit-schedule li.selected .input-checkbox[type=radio]:checked::before {
+  background-color: #ef3484;
+}
+
+.channel-edit .channel-edit-body .edit-schedule li.focus .input-checkbox[type=checkbox]:checked::before, .channel-edit .channel-edit-body .edit-schedule .category ul li.selected .input-checkbox[type=checkbox]:checked::before, .channel-edit .channel-edit-body .category ul .edit-schedule li.selected .input-checkbox[type=checkbox]:checked::before {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/purchase/ic-check-focus2.png);
+}
+
+.channel-edit .channel-edit-body .edit-schedule li.focus p, .channel-edit .channel-edit-body .edit-schedule .category ul li.selected p, .channel-edit .channel-edit-body .category ul .edit-schedule li.selected p {
+  color: #eee;
+}
+
+.channel-edit .channel-edit-body .edit-schedule li.focus .ic-tag, .channel-edit .channel-edit-body .edit-schedule .category ul li.selected .ic-tag, .channel-edit .channel-edit-body .category ul .edit-schedule li.selected .ic-tag {
+  color: #eee;
+  background-color: #ef3484;
+  border: 1px solid #ef3484;
+}
+
+.channel-edit2 {
+  background-color: #080d19;
+}
+
+.channel-edit2 .channel-edit-header h2 {
+  text-align: center;
+  padding-top: 51px;
+  font-size: 5.2rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.channel-edit2 .channel-edit-header h2::after {
+  display: block;
+  content: '';
+  width: 82px;
+  height: 4px;
+  background-color: rgba(238, 238, 238, 0.3);
+  margin: 48px auto 52px auto;
+}
+
+.channel-edit2 .channel-edit-body {
+  display: flex;
+  justify-content: center;
+}
+
+.channel-edit2 .channel-edit-body .category {
+  position: relative;
+  background-color: #080d19;
+  width: 306px;
+  font-size: 3.0rem;
+  color: #a9a9a9;
+  overflow: hidden;
+  height: 804px;
+}
+
+.channel-edit2 .channel-edit-body .category .scroll {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 804px;
+  border-radius: calc(4px / 2);
+  background-color: rgba(255, 255, 255, 0.12);
+  z-index: 1;
+}
+
+.channel-edit2 .channel-edit-body .category .scroll span {
+  display: inline-block;
+  width: 100%;
+  border-radius: calc(4px / 2);
+  background-color: #a9a9a9;
+}
+
+.channel-edit2 .channel-edit-body .category.active .scroll {
+  opacity: 1;
+}
+
+.channel-edit2 .channel-edit-body .category ul {
+  position: relative;
+  top: 0;
+}
+
+.channel-edit2 .channel-edit-body .category ul li {
+  position: relative;
+  height: 86px;
+  padding-left: 22px;
+  display: flex;
+  align-items: center;
+}
+
+.channel-edit2 .channel-edit-body .category ul li.two-line {
+  height: 128px;
+  word-break: keep-all;
+}
+
+.channel-edit2 .channel-edit-body .category ul li.two-line.focus::before, .channel-edit2 .channel-edit-body .category ul li.two-line.selected::before {
+  height: 84px;
+  margin-top: calc(-84px / 2);
+}
+
+.channel-edit2 .channel-edit-body .category ul .focus, .channel-edit2 .channel-edit-body .category ul .selected {
+  color: #eee;
+  font-size: 3.2rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.channel-edit2 .channel-edit-body .category ul .focus::before, .channel-edit2 .channel-edit-body .category ul .selected::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: 50%;
+  width: 6px;
+  height: 42px;
+  margin-top: calc(-42px / 2);
+  border-radius: 3px;
+  background-color: #eee;
+}
+
+.channel-edit2 .channel-edit-body .category ul .selected::before {
+  content: none;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule-wrap {
+  display: flex;
+  align-items: center;
+  height: 806px;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule-wrap .mask {
+  height: 6px;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule-wrap .button-area {
+  height: 100%;
+  width: 245px;
+  margin-left: 30px;
+  padding: 8px 0;
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule-wrap .button-area button {
+  margin-left: 0;
+  margin-bottom: 10px;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule-wrap .button-area button:last-child {
+  margin-bottom: 0;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule-wrap .button-area .button-primary.focus::before, .channel-edit2 .channel-edit-body .edit-schedule-wrap .button-area .category ul .button-primary.selected::before, .channel-edit2 .channel-edit-body .category ul .edit-schedule-wrap .button-area .button-primary.selected::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: -6px;
+  background-color: #eee;
+  width: 100%;
+  height: calc(86px + 12px);
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule-wrap .button-area::before {
+  flex: 1;
+  order: 3;
+  display: block;
+  content: '';
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule-wrap .button-area .sort1 {
+  order: 1;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule-wrap .button-area .sort2 {
+  order: 2;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule-wrap .button-area .sort4 {
+  order: 4;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule-wrap .button-area .sort5 {
+  order: 5;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule-wrap.empty-list .edit-schedule {
+  display: none;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule-wrap.empty-list .info-empty {
+  display: block;
+}
+
+.channel-edit2 .channel-edit-body .info-empty {
+  display: none;
+  width: 1172px;
+  text-align: center;
+}
+
+.channel-edit2 .channel-edit-body .info-empty::before {
+  width: 120px;
+  height: 120px;
+  display: block;
+  content: '';
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  background-image: url(../images/common/ic-noti.png);
+}
+
+.channel-edit2 .channel-edit-body .info-empty .exp {
+  font-size: 2.6rem;
+  color: #a9a9a9;
+  margin-bottom: 60px;
+}
+
+.channel-edit2 .channel-edit-body .info-empty .exp p {
+  line-height: 40px;
+  margin-bottom: 6px;
+}
+
+.channel-edit2 .channel-edit-body .info-empty .exp p:last-child {
+  margin-bottom: 0;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  height: calc(801px + 5px);
+  padding-left: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule .input-checkbox {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: 3px solid #5d6577;
+  border-radius: 50%;
+  margin-right: 48px;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule .input-checkbox::before {
+  width: calc(40px - 14px);
+  height: calc(40px - 14px);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  content: '';
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule .input-checkbox[type=checkbox]::before {
+  width: 40px;
+  height: 40px;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule .input-checkbox:checked {
+  border: 3px solid #ef3484;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule .input-checkbox[type=radio]:checked::before {
+  background-color: #ef3484;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule .input-checkbox[type=checkbox]:checked::before {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/purchase/ic-check-focus2.png);
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule .input-checkbox::before {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/purchase/ic-check2.png);
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule .scroll {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 100%;
+  border-radius: calc(4px / 2);
+  background-color: rgba(255, 255, 255, 0.12);
+  z-index: 1;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule .scroll span {
+  display: inline-block;
+  width: 100%;
+  border-radius: calc(4px / 2);
+  background-color: #a9a9a9;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule.active .scroll {
+  opacity: 1;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule:nth-of-type(1) {
+  min-width: 582px;
+  border-right: 2px solid rgba(255, 255, 255, 0.12);
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule:nth-of-type(2) {
+  width: 590px;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule li {
+  position: relative;
+  width: 520px;
+  height: 80px;
+  padding-left: 24px;
+  color: #a9a9a9;
+  display: flex;
+  align-items: center;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule li p {
+  font-size: 3.2rem;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule li .number {
+  margin-right: 30px;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule li .name {
+  margin-right: 18px;
+  max-width: 150px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule li .ic-tag {
+  color: #a9a9a9;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule li.focus, .channel-edit2 .channel-edit-body .edit-schedule .category ul li.selected, .channel-edit2 .channel-edit-body .category ul .edit-schedule li.selected {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule li.focus::before, .channel-edit2 .channel-edit-body .edit-schedule .category ul li.selected::before, .channel-edit2 .channel-edit-body .category ul .edit-schedule li.selected::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: -5px;
+  width: 100%;
+  height: 90px;
+  box-shadow: inset 0 0 0 4px #eee;
+  background-color: #2A2C3E;
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule li.focus .input-checkbox, .channel-edit2 .channel-edit-body .edit-schedule .category ul li.selected .input-checkbox, .channel-edit2 .channel-edit-body .category ul .edit-schedule li.selected .input-checkbox {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: 3px solid #5d6577;
+  border-radius: 50%;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule li.focus .input-checkbox::before, .channel-edit2 .channel-edit-body .edit-schedule .category ul li.selected .input-checkbox::before, .channel-edit2 .channel-edit-body .category ul .edit-schedule li.selected .input-checkbox::before {
+  width: calc(40px - 14px);
+  height: calc(40px - 14px);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  content: '';
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule li.focus .input-checkbox[type=checkbox]::before, .channel-edit2 .channel-edit-body .edit-schedule .category ul li.selected .input-checkbox[type=checkbox]::before, .channel-edit2 .channel-edit-body .category ul .edit-schedule li.selected .input-checkbox[type=checkbox]::before {
+  width: 40px;
+  height: 40px;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule li.focus .input-checkbox:checked, .channel-edit2 .channel-edit-body .edit-schedule .category ul li.selected .input-checkbox:checked, .channel-edit2 .channel-edit-body .category ul .edit-schedule li.selected .input-checkbox:checked {
+  border: 3px solid #ef3484;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule li.focus .input-checkbox[type=radio]:checked::before, .channel-edit2 .channel-edit-body .edit-schedule .category ul li.selected .input-checkbox[type=radio]:checked::before, .channel-edit2 .channel-edit-body .category ul .edit-schedule li.selected .input-checkbox[type=radio]:checked::before {
+  background-color: #ef3484;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule li.focus .input-checkbox[type=checkbox]:checked::before, .channel-edit2 .channel-edit-body .edit-schedule .category ul li.selected .input-checkbox[type=checkbox]:checked::before, .channel-edit2 .channel-edit-body .category ul .edit-schedule li.selected .input-checkbox[type=checkbox]:checked::before {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/purchase/ic-check-focus2.png);
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule li.focus p, .channel-edit2 .channel-edit-body .edit-schedule .category ul li.selected p, .channel-edit2 .channel-edit-body .category ul .edit-schedule li.selected p {
+  color: #eee;
+}
+
+.channel-edit2 .channel-edit-body .edit-schedule li.focus .ic-tag, .channel-edit2 .channel-edit-body .edit-schedule .category ul li.selected .ic-tag, .channel-edit2 .channel-edit-body .category ul .edit-schedule li.selected .ic-tag {
+  color: #eee;
+  background-color: #ef3484;
+  border: 1px solid #ef3484;
+}
+
+.channel-option-popup > div.popup {
+  width: 580px;
+}
+
+.channel-option-popup > div.popup .popup-body {
+  position: relative;
+  padding: 28px 0;
+  font-size: 3.2rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.channel-option-popup > div.popup .popup-body .contents {
+  position: relative;
+  overflow: hidden;
+  height: calc(90px * 6);
+}
+
+.channel-option-popup > div.popup .popup-body .contents .scroll {
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  right: 11px;
+  width: 8px;
+  height: 100%;
+  border-radius: calc(8px / 2);
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1;
+}
+
+.channel-option-popup > div.popup .popup-body .contents .scroll span {
+  display: inline-block;
+  width: 100%;
+  border-radius: calc(8px / 2);
+  background-color: rgba(169, 169, 169, 0.3);
+}
+
+.channel-option-popup > div.popup .popup-body .contents.active .scroll {
+  opacity: 1;
+}
+
+.channel-option-popup > div.popup .popup-body ul {
+  margin: 0 30px;
+}
+
+.channel-option-popup > div.popup .popup-body ul li {
+  height: 90px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.channel-option-popup > div.popup .popup-body ul li.focus, .channel-option-popup > div.popup .popup-body .channel-edit .channel-edit-body .category ul li.selected, .channel-edit .channel-edit-body .category .channel-option-popup > div.popup .popup-body ul li.selected, .channel-option-popup > div.popup .popup-body .channel-edit2 .channel-edit-body .category ul li.selected, .channel-edit2 .channel-edit-body .category .channel-option-popup > div.popup .popup-body ul li.selected {
+  border-radius: 8px;
+  background-color: #ef3484;
+  color: #eee;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.channel-option-popup.no-scroll .contents {
+  height: unset !important;
+}
+
+.channel-option-popup.no-scroll .scroll {
+  display: none;
+}
+
+.channel-subscribe-guide-popoup > div.popup .popup-body {
+  position: relative;
+  padding: 52px 0;
+}
+
+.channel-subscribe-guide-popoup > div.popup .popup-body .contents {
+  position: relative;
+}
+
+.channel-subscribe-guide-popoup > div.popup .popup-body ol {
+  margin: 0 40px;
+  position: relative;
+}
+
+.channel-subscribe-guide-popoup > div.popup .popup-body ol li {
+  margin-bottom: 20px;
+}
+
+.channel-subscribe-guide-popoup > div.popup .popup-body ol::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 36px;
+  background: #eeeeee;
+  background: linear-gradient(180deg, rgba(238, 238, 238, 0) 0%, #eeeeee 99%);
+}
+
+.channel-subscribe-guide-popoup > div.popup .popup-body .scroll {
+  position: absolute;
+  top: 0px;
+  right: 21px;
+  width: 8px;
+  height: 100%;
+  border-radius: calc(8px / 2);
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1;
+}
+
+.channel-subscribe-guide-popoup > div.popup .popup-body .scroll span {
+  display: inline-block;
+  width: 100%;
+  border-radius: calc(8px / 2);
+  background-color: rgba(169, 169, 169, 0.3);
+}
+
+.channel-subscribe-guide-popoup > div.popup .popup-body .scroll span {
+  display: block;
+}
+
+.channel-subscribe-popoup > div.popup .popup-header {
+  border-bottom: 2px solid rgba(183, 181, 189, 0.3);
+}
+
+.channel-subscribe-popoup > div.popup .popup-body {
+  position: relative;
+  display: flex;
+  height: 552px;
+  padding-top: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.channel-subscribe-popoup > div.popup .popup-body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 360px;
+  width: 2px;
+  height: 500px;
+  background-color: #b7b5bd;
+  opacity: 0.3;
+}
+
+.channel-subscribe-popoup > div.popup .popup-body .pricelist {
+  width: 410px;
+  padding-top: 38px;
+}
+
+.channel-subscribe-popoup > div.popup .popup-body .pricelist li {
+  width: 310px;
+  font-size: 3.2rem;
+  padding: 22px 0px;
+  padding-left: 26px;
+}
+
+.channel-subscribe-popoup > div.popup .popup-body .pricelist li.focus, .channel-subscribe-popoup > div.popup .popup-body .pricelist .channel-edit .channel-edit-body .category ul li.selected, .channel-edit .channel-edit-body .category ul .channel-subscribe-popoup > div.popup .popup-body .pricelist li.selected, .channel-subscribe-popoup > div.popup .popup-body .pricelist .channel-edit2 .channel-edit-body .category ul li.selected, .channel-edit2 .channel-edit-body .category ul .channel-subscribe-popoup > div.popup .popup-body .pricelist li.selected {
+  border-radius: 8px;
+  background-color: #ef3484;
+  color: #eee;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.channel-subscribe-popoup > div.popup .popup-body .explanation {
+  width: 650px;
+  height: 210px;
+  padding-top: 60px;
+}
+
+.channel-subscribe-popoup > div.popup .popup-body .explanation > ul li:last-child {
+  color: #777;
+}
+
+.channel-subscribe-popoup > div.popup .popup-body .explanation > div {
+  position: relative;
+  height: 156px;
+  border-bottom: 2px solid rgba(183, 181, 189, 0.3);
+}
+
+.channel-subscribe-popoup > div.popup .popup-body .explanation > div p span {
+  display: inline-block;
+  width: 49%;
+  font-size: 2.4rem;
+}
+
+.channel-subscribe-popoup > div.popup .popup-body .explanation > div p span.channel {
+  margin-bottom: 10px;
+  text-align: right;
+  font-size: 2.6rem;
+  color: #777;
+}
+
+.channel-subscribe-popoup > div.popup .popup-body .explanation > div p.price {
+  text-align: right;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 4.8rem;
+  color: #ef3484;
+}
+
+.channel-subscribe-popoup > div.popup .popup-body .explanation > ul {
+  margin-top: 52px;
+  margin-left: 24px;
+  font-size: 2rem;
+}
+
+.channel-subscribe-popoup > div.popup .popup-body .explanation > ul li {
+  margin-bottom: 15px;
+}
+
+.channel-subscribe-popoup > div.popup .popup-body .explanation > ul li::before {
+  content: '•';
+  width: 10px;
+  height: 10px;
+}
+
+.channel-subscribe-popoup > div.popup .popup-body .explanation > ul li:last-child {
+  margin-bottom: 27px;
+}
+
+.channel-subscribe-popoup > div.popup .popup-body .explanation > p {
+  margin-left: 24px;
+  font-size: 1.6rem;
+  color: #999;
+}
+
+.channel-subscribe-popoup > div.popup .popup-footer button {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 3.4rem;
+}
+
+.popup .mg-top {
+  margin-top: 50px;
+}
+
+.popup .mg-none {
+  margin-bottom: 0;
+}
+
+.list-guide {
+  position: relative;
+}
+
+.list-guide li {
+  font-size: 2.8rem;
+  line-height: 36px;
+  margin-top: 20px;
+}
+
+.list-guide li:first-child {
+  margin-top: 0;
+}
+
+.word-break {
+  word-break: keep-all;
+}
+
+.event-payment {
+  margin: 0 -15px;
+  width: 100%px;
+  height: 174px;
+  border-radius: 8px;
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 2.8rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  margin-bottom: 20px;
+  background-color: #93a7bc;
+}
+
+.event-payment p {
+  line-height: 30px;
+  margin-top: 8px;
+}
+
+.event-payment p:first-child {
+  margin-top: 0;
+}
+
+.sub-text-box p {
+  margin-top: 2px;
+}
+
+.sub-text-box p:first-child {
+  margin-top: 0;
+}
+
+.info-roundbox {
+  margin-bottom: 20px;
+}
+
+.info-roundbox li {
+  margin: 0 auto;
+  margin-top: 20px;
+  height: 164px;
+  width: 536px;
+  border-radius: 8px;
+  background-color: #ddd;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-roundbox li:first-child {
+  margin-top: 0;
+}
+
+.info-roundbox li .body-text {
+  margin-bottom: 12px;
+}
+
+.info-roundbox li em {
+  color: #ef3484;
+  font-size: 4.2rem;
+  line-height: 56px;
+}
+
+.form-bill dl {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+.form-bill .title {
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgba(183, 181, 189, 0.3);
+}
+
+.form-bill .title dd {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.form-bill .details {
+  height: 170px;
+  padding: 20px 17px;
+}
+
+.form-bill .details dl {
+  margin-bottom: 20px;
+  line-height: 30px;
+}
+
+.form-bill .details dl:last-child {
+  margin-bottom: 0;
+}
+
+.form-bill .total {
+  padding-top: 20px;
+  border-top: 2px solid #b7b5bd;
+}
+
+.form-bill .total dd {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  color: #ef3484;
+}
+
+.input-field.add-margin {
+  margin: 0 50px;
+}
+
+.input-field.side-margin {
+  margin: 0 24px;
+}
+
+.input-field.add-margin .input-field.add-margin-left {
+  margin-left: 45px;
+}
+
+.input-field .text-center {
+  text-align: center;
+}
+
+.input-field .text-right {
+  text-align: right;
+}
+
+.input-field .align-right {
+  justify-content: flex-end;
+}
+
+.input-field input[type=text], .input-field input[type=password], .input-field input[type=number] {
+  background: none;
+  width: 180px;
+  line-height: 64px;
+  text-align: center;
+  border: 3px solid #b2b2b2;
+  border-radius: 8px;
+  color: #353539;
+  position: relative;
+  z-index: 1;
+  font-size: 2.6rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.input-field input[type=text]::placeholder, .input-field input[type=password]::placeholder, .input-field input[type=number]::placeholder {
+  color: #999;
+  font-family: "Yoon Gothic 750", "YoonGothic 700 50", "Yoon윤고딕 750", "YoonGothic 750", "YOONGOTHICPRO750";
+}
+
+.input-field input[type=text].focus, .input-field .channel-edit .channel-edit-body .category ul input.selected[type=text], .channel-edit .channel-edit-body .category ul .input-field input.selected[type=text], .input-field .channel-edit2 .channel-edit-body .category ul input.selected[type=text], .channel-edit2 .channel-edit-body .category ul .input-field input.selected[type=text], .input-field input[type=password].focus, .input-field .channel-edit .channel-edit-body .category ul input.selected[type=password], .channel-edit .channel-edit-body .category ul .input-field input.selected[type=password], .input-field .channel-edit2 .channel-edit-body .category ul input.selected[type=password], .channel-edit2 .channel-edit-body .category ul .input-field input.selected[type=password], .input-field input[type=number].focus, .input-field .channel-edit .channel-edit-body .category ul input.selected[type=number], .channel-edit .channel-edit-body .category ul .input-field input.selected[type=number], .input-field .channel-edit2 .channel-edit-body .category ul input.selected[type=number], .channel-edit2 .channel-edit-body .category ul .input-field input.selected[type=number] {
+  border: none;
+  box-shadow: 0 0 0 6px #ef3484;
+}
+
+.input-field .mg-top {
+  margin-top: 50px;
+}
+
+.input-field .input-split {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
+.input-field .input-split.coupon-registration .input-text {
+  position: relative;
+  width: 170px;
+  height: 84px;
+}
+
+.input-field .input-split.coupon-registration .input-text .input-text-wrap {
+  height: 84px;
+}
+
+.input-field .input-split.coupon-registration .input-text:first-child::before {
+  content: unset;
+}
+
+.input-field .input-split.coupon-registration .input-text::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  left: calc(-15px + -18px);
+  top: calc(50% - 1px);
+  width: 15px;
+  height: 2px;
+  background-color: #777;
+}
+
+.input-field .input-split .input-text {
+  width: 180px;
+  line-height: calc(68px - 4px);
+  height: 68px;
+  border-radius: 8px;
+  color: #353539;
+  font-size: 2.6rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.input-field .input-split .input-text span:not(.cursor) {
+  padding: 0 1px;
+}
+
+.input-field .input-split .input-text-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #b2b2b2;
+  border-radius: 8px;
+  height: 68px;
+}
+
+.input-field .input-split .double {
+  width: 380px;
+}
+
+.input-field .input-split .focus, .input-field .input-split .channel-edit .channel-edit-body .category ul .selected, .channel-edit .channel-edit-body .category ul .input-field .input-split .selected, .input-field .input-split .channel-edit2 .channel-edit-body .category ul .selected, .channel-edit2 .channel-edit-body .category ul .input-field .input-split .selected {
+  box-shadow: 0 0 0 6px #ef3484;
+  border: unset;
+}
+
+.input-field .input-checkbox-min {
+  margin-top: 21px;
+  display: flex;
+  align-items: center;
+}
+
+.input-field .input-checkbox-min input {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #979797;
+  border-radius: 4px;
+}
+
+.input-field .input-checkbox-min input::before {
+  width: calc(30px - 14px);
+  height: calc(30px - 14px);
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  content: '';
+}
+
+.input-field .input-checkbox-min input[type=checkbox]::before {
+  width: 30px;
+  height: 30px;
+}
+
+.input-field .input-checkbox-min input:checked {
+  border: 1px solid #535458;
+}
+
+.input-field .input-checkbox-min input[type=radio]:checked::before {
+  background-color: #535458;
+}
+
+.input-field .input-checkbox-min input[type=checkbox]:checked::before {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/purchase/ic-check-focus2.png);
+}
+
+.input-field .input-checkbox-min input:checked {
+  border-color: #979797;
+}
+
+.input-field .input-checkbox-min input[type=checkbox]:checked::before {
+  background-image: url(../images/purchase/ic-check-focus-min.png);
+}
+
+.input-field .input-checkbox-min input.focus, .input-field .input-checkbox-min .channel-edit .channel-edit-body .category ul input.selected, .channel-edit .channel-edit-body .category ul .input-field .input-checkbox-min input.selected, .input-field .input-checkbox-min .channel-edit2 .channel-edit-body .category ul input.selected, .channel-edit2 .channel-edit-body .category ul .input-field .input-checkbox-min input.selected {
+  box-shadow: 0 0 0 6px #ef3484;
+  border: unset;
+}
+
+.input-field .input-checkbox-min input.focus + .sub-text, .input-field .input-checkbox-min .channel-edit .channel-edit-body .category ul input.selected + .sub-text, .channel-edit .channel-edit-body .category ul .input-field .input-checkbox-min input.selected + .sub-text, .input-field .input-checkbox-min .channel-edit2 .channel-edit-body .category ul input.selected + .sub-text, .channel-edit2 .channel-edit-body .category ul .input-field .input-checkbox-min input.selected + .sub-text {
+  color: #353539;
+}
+
+.input-field .input-checkbox-min label {
+  display: inline-block;
+  margin-left: 12px;
+  height: 30px;
+  line-height: 29px;
+}
+
+.input-field .input-box em {
+  font-size: 3.0rem;
+}
+
+.input-field .input-box input[type=text], .input-field .input-box input[type=password], .input-field .input-box input[type=number] {
+  line-height: 78px;
+  width: 245px;
+}
+
+.input-field .input-box input[type=text].single, .input-field .input-box input[type=password].single, .input-field .input-box input[type=number].single {
+  width: 84px;
+}
+
+.input-field .input-box .button {
+  width: 245px;
+  line-height: 84px;
+  text-align: center;
+  background-color: #ddd;
+  color: #080d19;
+  border-radius: 8px;
+  font-size: 3.0rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.input-field .input-box .button.focus, .input-field .input-box .channel-edit .channel-edit-body .category ul .button.selected, .channel-edit .channel-edit-body .category ul .input-field .input-box .button.selected, .input-field .input-box .channel-edit2 .channel-edit-body .category ul .button.selected, .channel-edit2 .channel-edit-body .category ul .input-field .input-box .button.selected {
+  background-color: #ef3484;
+  color: #eee;
+}
+
+.input-field .input-box dl {
+  height: 84px;
+  margin-top: 20px;
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+}
+
+.input-field .input-box dl:first-child {
+  margin-top: 0;
+}
+
+.input-field .input-box dl.selected dt {
+  color: #ef3484;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.input-field .input-box dl dt {
+  min-width: 180px;
+  margin-right: 54px;
+}
+
+.input-field .input-box dl dd {
+  width: 490px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+.input-field .input-box dl dd .input-text {
+  border-radius: 8px;
+  color: #353539;
+  font-size: 2.6rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.input-field .input-box dl dd .input-text span:not(.cursor) {
+  padding: 0 1px;
+}
+
+.input-field .input-box dl dd .input-text.focus .input-text-wrap, .input-field .input-box dl dd .channel-edit .channel-edit-body .category ul .input-text.selected .input-text-wrap, .channel-edit .channel-edit-body .category ul .input-field .input-box dl dd .input-text.selected .input-text-wrap, .input-field .input-box dl dd .channel-edit2 .channel-edit-body .category ul .input-text.selected .input-text-wrap, .channel-edit2 .channel-edit-body .category ul .input-field .input-box dl dd .input-text.selected .input-text-wrap {
+  border: unset;
+}
+
+.input-field .input-box dl dd .input-text-wrap {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  border: 3px solid #b2b2b2;
+  border-radius: 8px;
+  height: 84px;
+}
+
+.input-field .input-box dl dd .focus, .input-field .input-box dl dd .channel-edit .channel-edit-body .category ul .selected, .channel-edit .channel-edit-body .category ul .input-field .input-box dl dd .selected, .input-field .input-box dl dd .channel-edit2 .channel-edit-body .category ul .selected, .channel-edit2 .channel-edit-body .category ul .input-field .input-box dl dd .selected {
+  box-shadow: 0 0 0 6px #ef3484;
+  border: unset;
+}
+
+.input-field .input-box .agency dd {
+  justify-content: flex-start;
+}
+
+.input-field .input-box .agency span {
+  width: 180px;
+  margin-left: 49px;
+}
+
+.input-field .input-box .agency button {
+  line-height: 72px;
+}
+
+.input-field .input-box .agency button.focus, .input-field .input-box .agency .channel-edit .channel-edit-body .category ul button.selected, .channel-edit .channel-edit-body .category ul .input-field .input-box .agency button.selected, .input-field .input-box .agency .channel-edit2 .channel-edit-body .category ul button.selected, .channel-edit2 .channel-edit-body .category ul .input-field .input-box .agency button.selected {
+  line-height: 84px;
+  box-shadow: unset;
+}
+
+.input-field .input-box .resident dd {
+  display: flex;
+  align-items: center;
+}
+
+.input-field .input-box .resident dd .input-text {
+  width: 245px;
+}
+
+.input-field .input-box .resident dd .input-text:nth-child(2) {
+  width: 84px;
+  order: 3;
+}
+
+.input-field .input-box .resident dd > span {
+  order: 4;
+  margin-left: 15px;
+}
+
+.input-field .input-box .resident dd::before {
+  order: 2;
+  background-color: #777;
+  width: 15px;
+  height: 2px;
+  display: block;
+  content: '';
+}
+
+.input-field .input-box .auth dd .input-text {
+  width: 245px;
+  z-index: 1;
+}
+
+.input-field .input-box .auth dd .button.focus, .input-field .input-box .auth dd .channel-edit .channel-edit-body .category ul .button.selected, .channel-edit .channel-edit-body .category ul .input-field .input-box .auth dd .button.selected, .input-field .input-box .auth dd .channel-edit2 .channel-edit-body .category ul .button.selected, .channel-edit2 .channel-edit-body .category ul .input-field .input-box .auth dd .button.selected {
+  line-height: 86px;
+  box-shadow: unset;
+}
+
+.input-field .input-box .alt {
+  margin: 46px 0;
+  display: flex;
+  align-items: center;
+}
+
+.input-field .input-box .alt input[type=text], .input-field .input-box .alt input[type=password], .input-field .input-box .alt input[type=number] {
+  font-size: 3.4rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  flex: 1;
+}
+
+.input-field .input-box .alt dl.focus .input-text-wrap, .input-field .input-box .alt .channel-edit .channel-edit-body .category ul dl.selected .input-text-wrap, .channel-edit .channel-edit-body .category ul .input-field .input-box .alt dl.selected .input-text-wrap, .input-field .input-box .alt .channel-edit2 .channel-edit-body .category ul dl.selected .input-text-wrap, .channel-edit2 .channel-edit-body .category ul .input-field .input-box .alt dl.selected .input-text-wrap {
+  border: 6px solid #ef3484;
+}
+
+.input-field .input-box .alt dl dd {
+  width: 410px;
+}
+
+.input-field .input-box .alt dl dd .input-text {
+  width: 100%;
+}
+
+.input-field .coupon-list {
+  position: relative;
+  height: calc(120px * 3 + 20px + 20px);
+  overflow: hidden;
+}
+
+.input-field .coupon-list::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: unset;
+  bottom: 0;
+  width: 808px;
+  height: 80px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #eee);
+  background-size: 100% 80px;
+  display: none;
+}
+
+.input-field .coupon-list .scroll {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 4px;
+  width: 8px;
+  height: 100%;
+  border-radius: calc(8px / 2);
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1;
+}
+
+.input-field .coupon-list .scroll span {
+  display: inline-block;
+  width: 100%;
+  border-radius: calc(8px / 2);
+  background-color: rgba(169, 169, 169, 0.3);
+}
+
+.input-field .coupon-list .scroll span {
+  display: block;
+}
+
+.input-field .coupon-list.active::after {
+  display: block;
+  opacity: 1;
+}
+
+.input-field .coupon-list.active ul {
+  width: 808px;
+}
+
+.input-field .coupon-list.active .scroll {
+  opacity: 1;
+}
+
+.input-field .coupon-list .body-text em {
+  display: block;
+  max-width: 746px;
+  font-size: 3.4rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.input-field .coupon-list .input-radio, .input-field .coupon-list .input-checkbox {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: 3px solid #535458;
+  border-radius: 50%;
+  margin-right: 40px;
+}
+
+.input-field .coupon-list .input-radio::before, .input-field .coupon-list .input-checkbox::before {
+  width: calc(40px - 14px);
+  height: calc(40px - 14px);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  content: '';
+}
+
+.input-field .coupon-list .input-radio[type=checkbox]::before, .input-field .coupon-list .input-checkbox[type=checkbox]::before {
+  width: 40px;
+  height: 40px;
+}
+
+.input-field .coupon-list .input-radio:checked, .input-field .coupon-list .input-checkbox:checked {
+  border: 3px solid #535458;
+}
+
+.input-field .coupon-list .input-radio[type=radio]:checked::before, .input-field .coupon-list .input-checkbox[type=radio]:checked::before {
+  background-color: #535458;
+}
+
+.input-field .coupon-list .input-radio[type=checkbox]:checked::before, .input-field .coupon-list .input-checkbox[type=checkbox]:checked::before {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/purchase/ic-check-focus2.png);
+}
+
+.input-field .coupon-list ul {
+  width: 100%;
+}
+
+.input-field .coupon-list li {
+  height: 120px;
+  margin-bottom: 20px;
+  padding: 0 43px 0 40px;
+  border-radius: 8px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+.input-field .coupon-list li .text {
+  flex: 1;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  line-height: 24px;
+}
+
+.input-field .coupon-list li .text .body-text {
+  width: 430px;
+  line-height: 38px;
+  text-align: left;
+}
+
+.input-field .coupon-list li .text .sub-text {
+  margin-top: 0;
+  line-height: 32px;
+}
+
+.input-field .coupon-list li .text span {
+  display: block;
+}
+
+.input-field .coupon-list li .input-radio {
+  margin-right: 24px;
+}
+
+.input-field .coupon-list li:last-child {
+  margin-bottom: 0;
+}
+
+.input-field .coupon-list li.selected, .input-field .coupon-list li.focus, .input-field .coupon-list .channel-edit .channel-edit-body .category ul li.selected, .channel-edit .channel-edit-body .category ul .input-field .coupon-list li.selected, .input-field .coupon-list .channel-edit2 .channel-edit-body .category ul li.selected, .channel-edit2 .channel-edit-body .category ul .input-field .coupon-list li.selected {
+  background-color: #ef3484;
+}
+
+.input-field .coupon-list li.selected .text, .input-field .coupon-list li.selected .sub-text, .input-field .coupon-list li.focus .text, .input-field .coupon-list .channel-edit .channel-edit-body .category ul li.selected .text, .channel-edit .channel-edit-body .category ul .input-field .coupon-list li.selected .text, .input-field .coupon-list .channel-edit2 .channel-edit-body .category ul li.selected .text, .channel-edit2 .channel-edit-body .category ul .input-field .coupon-list li.selected .text, .input-field .coupon-list li.focus .sub-text, .input-field .coupon-list .channel-edit .channel-edit-body .category ul li.selected .sub-text, .channel-edit .channel-edit-body .category ul .input-field .coupon-list li.selected .sub-text, .input-field .coupon-list .channel-edit2 .channel-edit-body .category ul li.selected .sub-text, .channel-edit2 .channel-edit-body .category ul .input-field .coupon-list li.selected .sub-text {
+  color: #eee;
+}
+
+.input-field .coupon-list li.selected .input-radio, .input-field .coupon-list li.selected .input-checkbox, .input-field .coupon-list li.focus .input-radio, .input-field .coupon-list .channel-edit .channel-edit-body .category ul li.selected .input-radio, .channel-edit .channel-edit-body .category ul .input-field .coupon-list li.selected .input-radio, .input-field .coupon-list .channel-edit2 .channel-edit-body .category ul li.selected .input-radio, .channel-edit2 .channel-edit-body .category ul .input-field .coupon-list li.selected .input-radio, .input-field .coupon-list li.focus .input-checkbox, .input-field .coupon-list .channel-edit .channel-edit-body .category ul li.selected .input-checkbox, .channel-edit .channel-edit-body .category ul .input-field .coupon-list li.selected .input-checkbox, .input-field .coupon-list .channel-edit2 .channel-edit-body .category ul li.selected .input-checkbox, .channel-edit2 .channel-edit-body .category ul .input-field .coupon-list li.selected .input-checkbox {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: 3px solid #eee;
+  border-radius: 50%;
+}
+
+.input-field .coupon-list li.selected .input-radio::before, .input-field .coupon-list li.selected .input-checkbox::before, .input-field .coupon-list li.focus .input-radio::before, .input-field .coupon-list .channel-edit .channel-edit-body .category ul li.selected .input-radio::before, .channel-edit .channel-edit-body .category ul .input-field .coupon-list li.selected .input-radio::before, .input-field .coupon-list .channel-edit2 .channel-edit-body .category ul li.selected .input-radio::before, .channel-edit2 .channel-edit-body .category ul .input-field .coupon-list li.selected .input-radio::before, .input-field .coupon-list li.focus .input-checkbox::before, .input-field .coupon-list .channel-edit .channel-edit-body .category ul li.selected .input-checkbox::before, .channel-edit .channel-edit-body .category ul .input-field .coupon-list li.selected .input-checkbox::before, .input-field .coupon-list .channel-edit2 .channel-edit-body .category ul li.selected .input-checkbox::before, .channel-edit2 .channel-edit-body .category ul .input-field .coupon-list li.selected .input-checkbox::before {
+  width: calc(40px - 14px);
+  height: calc(40px - 14px);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  content: '';
+}
+
+.input-field .coupon-list li.selected .input-radio[type=checkbox]::before, .input-field .coupon-list li.selected .input-checkbox[type=checkbox]::before, .input-field .coupon-list li.focus .input-radio[type=checkbox]::before, .input-field .coupon-list .channel-edit .channel-edit-body .category ul li.selected .input-radio[type=checkbox]::before, .channel-edit .channel-edit-body .category ul .input-field .coupon-list li.selected .input-radio[type=checkbox]::before, .input-field .coupon-list .channel-edit2 .channel-edit-body .category ul li.selected .input-radio[type=checkbox]::before, .channel-edit2 .channel-edit-body .category ul .input-field .coupon-list li.selected .input-radio[type=checkbox]::before, .input-field .coupon-list li.focus .input-checkbox[type=checkbox]::before, .input-field .coupon-list .channel-edit .channel-edit-body .category ul li.selected .input-checkbox[type=checkbox]::before, .channel-edit .channel-edit-body .category ul .input-field .coupon-list li.selected .input-checkbox[type=checkbox]::before, .input-field .coupon-list .channel-edit2 .channel-edit-body .category ul li.selected .input-checkbox[type=checkbox]::before, .channel-edit2 .channel-edit-body .category ul .input-field .coupon-list li.selected .input-checkbox[type=checkbox]::before {
+  width: 40px;
+  height: 40px;
+}
+
+.input-field .coupon-list li.selected .input-radio:checked, .input-field .coupon-list li.selected .input-checkbox:checked, .input-field .coupon-list li.focus .input-radio:checked, .input-field .coupon-list .channel-edit .channel-edit-body .category ul li.selected .input-radio:checked, .channel-edit .channel-edit-body .category ul .input-field .coupon-list li.selected .input-radio:checked, .input-field .coupon-list .channel-edit2 .channel-edit-body .category ul li.selected .input-radio:checked, .channel-edit2 .channel-edit-body .category ul .input-field .coupon-list li.selected .input-radio:checked, .input-field .coupon-list li.focus .input-checkbox:checked, .input-field .coupon-list .channel-edit .channel-edit-body .category ul li.selected .input-checkbox:checked, .channel-edit .channel-edit-body .category ul .input-field .coupon-list li.selected .input-checkbox:checked, .input-field .coupon-list .channel-edit2 .channel-edit-body .category ul li.selected .input-checkbox:checked, .channel-edit2 .channel-edit-body .category ul .input-field .coupon-list li.selected .input-checkbox:checked {
+  border: 3px solid #eee;
+}
+
+.input-field .coupon-list li.selected .input-radio[type=radio]:checked::before, .input-field .coupon-list li.selected .input-checkbox[type=radio]:checked::before, .input-field .coupon-list li.focus .input-radio[type=radio]:checked::before, .input-field .coupon-list .channel-edit .channel-edit-body .category ul li.selected .input-radio[type=radio]:checked::before, .channel-edit .channel-edit-body .category ul .input-field .coupon-list li.selected .input-radio[type=radio]:checked::before, .input-field .coupon-list .channel-edit2 .channel-edit-body .category ul li.selected .input-radio[type=radio]:checked::before, .channel-edit2 .channel-edit-body .category ul .input-field .coupon-list li.selected .input-radio[type=radio]:checked::before, .input-field .coupon-list li.focus .input-checkbox[type=radio]:checked::before, .input-field .coupon-list .channel-edit .channel-edit-body .category ul li.selected .input-checkbox[type=radio]:checked::before, .channel-edit .channel-edit-body .category ul .input-field .coupon-list li.selected .input-checkbox[type=radio]:checked::before, .input-field .coupon-list .channel-edit2 .channel-edit-body .category ul li.selected .input-checkbox[type=radio]:checked::before, .channel-edit2 .channel-edit-body .category ul .input-field .coupon-list li.selected .input-checkbox[type=radio]:checked::before {
+  background-color: #eee;
+}
+
+.input-field .coupon-list li.selected .input-radio[type=checkbox]:checked::before, .input-field .coupon-list li.selected .input-checkbox[type=checkbox]:checked::before, .input-field .coupon-list li.focus .input-radio[type=checkbox]:checked::before, .input-field .coupon-list .channel-edit .channel-edit-body .category ul li.selected .input-radio[type=checkbox]:checked::before, .channel-edit .channel-edit-body .category ul .input-field .coupon-list li.selected .input-radio[type=checkbox]:checked::before, .input-field .coupon-list .channel-edit2 .channel-edit-body .category ul li.selected .input-radio[type=checkbox]:checked::before, .channel-edit2 .channel-edit-body .category ul .input-field .coupon-list li.selected .input-radio[type=checkbox]:checked::before, .input-field .coupon-list li.focus .input-checkbox[type=checkbox]:checked::before, .input-field .coupon-list .channel-edit .channel-edit-body .category ul li.selected .input-checkbox[type=checkbox]:checked::before, .channel-edit .channel-edit-body .category ul .input-field .coupon-list li.selected .input-checkbox[type=checkbox]:checked::before, .input-field .coupon-list .channel-edit2 .channel-edit-body .category ul li.selected .input-checkbox[type=checkbox]:checked::before, .channel-edit2 .channel-edit-body .category ul .input-field .coupon-list li.selected .input-checkbox[type=checkbox]:checked::before {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/purchase/ic-check-focus2.png);
+}
+
+.purchase-tvcoupon-popup .coupon-list {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.purchase-tvcoupon-popup .coupon-list.active {
+  padding-right: 0;
+}
+
+.popup-buy-coupon .coupon-img {
+  margin-bottom: 40px;
+  position: relative;
+  width: 100%;
+  height: 233px;
+  background-color: #2A2C3E;
+  border-radius: 8px;
+  padding: 0 80px;
+  color: #a9a9a9;
+}
+
+.popup-buy-coupon .coupon-img .price {
+  padding: 20px 0 16px 0;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.12);
+}
+
+.popup-buy-coupon .coupon-img .price em {
+  display: block;
+  line-height: 61px;
+  color: #ef3484;
+  font-size: 4.6rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.popup-buy-coupon .coupon-img .price span {
+  display: block;
+  color: #eee;
+  font-size: 3.0rem;
+  margin-top: 2px;
+  line-height: 38px;
+}
+
+.popup-buy-coupon .coupon-img .details {
+  margin-top: 16px;
+  font-size: 2.4rem;
+}
+
+.popup-buy-coupon .coupon-img .details p {
+  line-height: 27px;
+  margin-top: 4px;
+}
+
+.popup-buy-coupon .coupon-img .details p:first-child {
+  margin-top: 0;
+}
+
+.popup-buy-coupon .coupon-img::before {
+  width: 164px;
+  height: 164px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+}
+
+.popup-buy-coupon .coupon-img.more-5::before {
+  background-image: url(../images/my/tag-my-sale-5-focus.png);
+}
+
+.popup-buy-coupon .coupon-img.more-10::before {
+  background-image: url(../images/my/tag-my-sale-10-focus.png);
+}
+
+.popup-buy-coupon .input-password {
+  display: flex;
+  align-items: center;
+  height: 104px;
+}
+
+.popup-buy-coupon .input-password.focus label, .popup-buy-coupon .channel-edit .channel-edit-body .category ul .input-password.selected label, .channel-edit .channel-edit-body .category ul .popup-buy-coupon .input-password.selected label, .popup-buy-coupon .channel-edit2 .channel-edit-body .category ul .input-password.selected label, .channel-edit2 .channel-edit-body .category ul .popup-buy-coupon .input-password.selected label {
+  color: #ef3484;
+}
+
+.popup-buy-coupon .input-password p {
+  position: relative;
+  width: 104px;
+  height: 104px;
+  margin-right: 26px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #ddd;
+}
+
+.popup-buy-coupon .input-password p:last-child {
+  margin-right: 0;
+}
+
+.popup-buy-coupon .input-password p.focus, .popup-buy-coupon .input-password .channel-edit .channel-edit-body .category ul p.selected, .channel-edit .channel-edit-body .category ul .popup-buy-coupon .input-password p.selected, .popup-buy-coupon .input-password .channel-edit2 .channel-edit-body .category ul p.selected, .channel-edit2 .channel-edit-body .category ul .popup-buy-coupon .input-password p.selected {
+  background-color: #eee;
+}
+
+.popup-buy-coupon .input-password p.focus.entered, .popup-buy-coupon .input-password .channel-edit .channel-edit-body .category ul p.entered.selected, .channel-edit .channel-edit-body .category ul .popup-buy-coupon .input-password p.entered.selected, .popup-buy-coupon .input-password .channel-edit2 .channel-edit-body .category ul p.entered.selected, .channel-edit2 .channel-edit-body .category ul .popup-buy-coupon .input-password p.entered.selected {
+  background: #eee url(../images/common/ic-password.png) no-repeat center;
+  background-size: 38px;
+}
+
+.popup-buy-coupon .input-password p.focus.entered .cursor::before, .popup-buy-coupon .input-password .channel-edit .channel-edit-body .category ul p.entered.selected .cursor::before, .channel-edit .channel-edit-body .category ul .popup-buy-coupon .input-password p.entered.selected .cursor::before, .popup-buy-coupon .input-password .channel-edit2 .channel-edit-body .category ul p.entered.selected .cursor::before, .channel-edit2 .channel-edit-body .category ul .popup-buy-coupon .input-password p.entered.selected .cursor::before {
+  content: none;
+}
+
+.popup-buy-coupon .input-password p.focus::after, .popup-buy-coupon .input-password .channel-edit .channel-edit-body .category ul p.selected::after, .channel-edit .channel-edit-body .category ul .popup-buy-coupon .input-password p.selected::after, .popup-buy-coupon .input-password .channel-edit2 .channel-edit-body .category ul p.selected::after, .channel-edit2 .channel-edit-body .category ul .popup-buy-coupon .input-password p.selected::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 0 10px #eee;
+  border-radius: 8px;
+  box-shadow: 0px 0px 0px 6px #ef3484;
+}
+
+.popup-buy-coupon .input-password p.focus span, .popup-buy-coupon .input-password .channel-edit .channel-edit-body .category ul p.selected span, .channel-edit .channel-edit-body .category ul .popup-buy-coupon .input-password p.selected span, .popup-buy-coupon .input-password .channel-edit2 .channel-edit-body .category ul p.selected span, .channel-edit2 .channel-edit-body .category ul .popup-buy-coupon .input-password p.selected span {
+  position: unset;
+}
+
+.popup-buy-coupon .input-password p.focus span::before, .popup-buy-coupon .input-password .channel-edit .channel-edit-body .category ul p.selected span::before, .channel-edit .channel-edit-body .category ul .popup-buy-coupon .input-password p.selected span::before, .popup-buy-coupon .input-password .channel-edit2 .channel-edit-body .category ul p.selected span::before, .channel-edit2 .channel-edit-body .category ul .popup-buy-coupon .input-password p.selected span::before {
+  height: 40px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #eee;
+}
+
+.popup-buy-coupon .input-password p.entered {
+  background: #ddd url(../images/common/ic-password.png) no-repeat center;
+  background-size: 38px;
+}
+
+.popup-buy-coupon .input-password input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 104px;
+  height: 104px;
+  opacity: 0;
+  z-index: 10;
+}
+
+.popup-buy-coupon .input-password label {
+  height: 104px;
+  line-height: 104px;
+  font-size: 3.2rem;
+  color: #777;
+}
+
+.popup-buy-coupon .input-password .container {
+  display: flex;
+}
+
+.popup-buy-coupon .body-text {
+  margin-bottom: 30px;
+}
+
+.popup-buy-coupon .body-text em {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.popup-buy-coupon .sub-text {
+  margin-top: 32px;
+  padding-top: 23px;
+  border-top: 2px solid rgba(183, 181, 189, 0.3);
+}
+
+.full-popup-container .type-coupon {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 1080px;
+}
+
+.full-popup-container .type-coupon .page-header {
+  text-align: center;
+  margin-bottom: 100px;
+  padding-top: 0;
+}
+
+.full-popup-container .type-coupon .page-header h3 {
+  position: relative;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 5.2rem;
+  color: #eee;
+}
+
+.full-popup-container .type-coupon .page-header h3::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: unset;
+  bottom: -49px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 82px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.full-popup-container .type-coupon .contents {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.full-popup-container .type-coupon .contents.full-contents .coupon-image {
+  border: 2px solid rgba(238, 238, 238, 0.1);
+  border-radius: 8px;
+}
+
+.full-popup-container .type-coupon .coupon-image {
+  position: relative;
+  width: 800px;
+  min-height: 440px;
+  margin-right: 54px;
+}
+
+.full-popup-container .type-coupon .coupon-image .details {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #eee;
+  font-size: 3.6rem;
+  opacity: 0;
+}
+
+.full-popup-container .type-coupon .coupon-image .details::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background-color: rgba(8, 13, 25, 0.8);
+}
+
+.full-popup-container .type-coupon .coupon-image .details .tag {
+  display: inline-block;
+  font-size: 2.0rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  width: 138px;
+  line-height: 44px;
+  border-radius: 4px;
+  background-color: #a9a6ff;
+  margin-bottom: 36px;
+}
+
+.full-popup-container .type-coupon .poster-horizontal {
+  width: 100%;
+  height: 100%;
+}
+
+.full-popup-container .type-coupon .poster-horizontal::before {
+  background-size: contain;
+}
+
+.full-popup-container .type-coupon .poster-horizontal .poster-thumbnail {
+  background-size: contain;
+}
+
+.full-popup-container .type-coupon .poster-horizontal .poster-thumbnail::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(8, 13, 25, 0.8);
+  content: none;
+}
+
+.full-popup-container .type-coupon .coupon-info {
+  width: 662px;
+  min-height: 440px;
+  max-height: 512px;
+  padding: 20px 24px;
+  border: 2px solid rgba(238, 238, 238, 0.1);
+  border-radius: 8px;
+}
+
+.full-popup-container .type-coupon .coupon-info h4 {
+  margin-bottom: 12px;
+  line-height: 40px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 2.4rem;
+  color: #ecafb9;
+}
+
+.full-popup-container .type-coupon .coupon-info p {
+  margin-bottom: 28px;
+  line-height: 37px;
+  font-size: 2.6rem;
+  color: #aaaaaa;
+}
+
+.full-popup-container .type-coupon .coupon-info p:last-of-type {
+  min-height: 116px;
+  margin-bottom: 0;
+}
+
+.full-popup-container .type-coupon.stamp .contents {
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 90px;
+}
+
+.full-popup-container .type-coupon.stamp .body-text {
+  margin-bottom: 37px;
+}
+
+.full-popup-container .type-coupon.stamp .sub-text {
+  text-align: center;
+  line-height: 1.33;
+  font-size: 2.4rem;
+  color: #777;
+}
+
+.full-popup-container .type-coupon.stamp .sub-text em {
+  color: #ecafb9;
+}
+
+.full-popup-container .type-coupon.stamp .button-area .button-primary:nth-of-type(2) .text {
+  min-width: 364px;
+}
+
+.full-popup-container .type-coupon.stamp .coupon-stamp {
+  overflow: hidden;
+  width: 630px;
+  height: 202px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+.full-popup-container .type-coupon.stamp .coupon-stamp li {
+  margin-left: 40px;
+  margin-bottom: 14px;
+  width: 94px;
+  height: 94px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/common/ic-stamp-inactive.png);
+}
+
+.full-popup-container .type-coupon.stamp .coupon-stamp li:nth-child(5n+1) {
+  margin-left: 0;
+}
+
+.full-popup-container .type-coupon.stamp .coupon-stamp li.active {
+  background-image: url(../images/common/ic-stamp.png);
+}
+
+.full-popup-container .type-coupon.stamp .coupon-stamp li.focus, .full-popup-container .type-coupon.stamp .coupon-stamp .channel-edit .channel-edit-body .category ul li.selected, .channel-edit .channel-edit-body .category ul .full-popup-container .type-coupon.stamp .coupon-stamp li.selected, .full-popup-container .type-coupon.stamp .coupon-stamp .channel-edit2 .channel-edit-body .category ul li.selected, .channel-edit2 .channel-edit-body .category ul .full-popup-container .type-coupon.stamp .coupon-stamp li.selected {
+  background-image: url(../images/common/ic-stamp-focus.png);
+}
+
+.full-popup-container .type-coupon.stamp-vod .page-header span {
+  color: #999;
+}
+
+.full-popup-container .type-coupon.stamp-vod .contents {
+  position: relative;
+  margin: 0 auto 84px;
+}
+
+.full-popup-container .type-coupon.stamp-vod .contents.active .scroll {
+  opacity: 1;
+}
+
+.full-popup-container .type-coupon.stamp-vod .vod-list-area {
+  overflow: hidden;
+  width: 1040px;
+  height: 554px;
+  padding: 20px 16px;
+}
+
+.full-popup-container .type-coupon.stamp-vod .vod-list-area.bottom-cover::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: unset;
+  bottom: 0;
+  width: 100%;
+  height: 119px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #080d19);
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.full-popup-container .type-coupon.stamp-vod .vod-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.full-popup-container .type-coupon.stamp-vod .vod-list li {
+  position: relative;
+  margin-right: 40px;
+  margin-bottom: 166px;
+}
+
+.full-popup-container .type-coupon.stamp-vod .vod-list li:nth-child(4n+1) .meta-data {
+  left: auto;
+  transform: unset;
+}
+
+.full-popup-container .type-coupon.stamp-vod .vod-list li:nth-child(4n+1) .meta-data .title, .full-popup-container .type-coupon.stamp-vod .vod-list li:nth-child(4n+1) .meta-data .info {
+  justify-content: flex-start;
+}
+
+.full-popup-container .type-coupon.stamp-vod .vod-list li:nth-child(4n) {
+  margin-right: 0;
+}
+
+.full-popup-container .type-coupon.stamp-vod .vod-list li:nth-child(4n) .meta-data {
+  left: auto;
+  transform: unset;
+  right: 0;
+}
+
+.full-popup-container .type-coupon.stamp-vod .vod-list li:nth-child(4n) .meta-data .title, .full-popup-container .type-coupon.stamp-vod .vod-list li:nth-child(4n) .meta-data .info {
+  justify-content: flex-end;
+}
+
+.full-popup-container .type-coupon.stamp-vod .vod-list li .poster-vertical {
+  width: 222px;
+  height: 316px;
+}
+
+.full-popup-container .type-coupon.stamp-vod .vod-list li .poster-tag {
+  top: 4px;
+  right: 6px;
+}
+
+.full-popup-container .type-coupon.stamp-vod .vod-list li .meta-data {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 28px;
+  opacity: 0;
+}
+
+.full-popup-container .type-coupon.stamp-vod .vod-list li .meta-data .title {
+  justify-content: center;
+  position: relative;
+  font-size: 3.8rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  height: 40px;
+  line-height: 40px;
+}
+
+.full-popup-container .type-coupon.stamp-vod .vod-list li .meta-data .title p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 560px;
+}
+
+.full-popup-container .type-coupon.stamp-vod .vod-list li .meta-data .info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 14px;
+  line-height: 32px;
+  font-size: 3rem;
+  color: #a9a9a9;
+}
+
+.full-popup-container .type-coupon.stamp-vod .vod-list li .meta-data .info::before {
+  width: 2px;
+  height: 24px;
+  margin: 0 12px;
+  background-color: #a9a9a9;
+  order: 2;
+  display: block;
+  content: '';
+}
+
+.full-popup-container .type-coupon.stamp-vod .vod-list li .meta-data .info span {
+  order: 3;
+  display: flex;
+  align-items: center;
+}
+
+.full-popup-container .type-coupon.stamp-vod .vod-list li .meta-data .info span::before {
+  width: 26px;
+  height: 40px;
+  margin-right: 6px;
+  background-image: url("../images/common/ic-star.png");
+  display: block;
+  content: '';
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.full-popup-container .type-coupon.stamp-vod .vod-list li.focus .meta-data, .full-popup-container .type-coupon.stamp-vod .vod-list .channel-edit .channel-edit-body .category ul li.selected .meta-data, .channel-edit .channel-edit-body .category ul .full-popup-container .type-coupon.stamp-vod .vod-list li.selected .meta-data, .full-popup-container .type-coupon.stamp-vod .vod-list .channel-edit2 .channel-edit-body .category ul li.selected .meta-data, .channel-edit2 .channel-edit-body .category ul .full-popup-container .type-coupon.stamp-vod .vod-list li.selected .meta-data, .full-popup-container .type-coupon.stamp-vod .vod-list li.focus .poster-tag, .full-popup-container .type-coupon.stamp-vod .vod-list .channel-edit .channel-edit-body .category ul li.selected .poster-tag, .channel-edit .channel-edit-body .category ul .full-popup-container .type-coupon.stamp-vod .vod-list li.selected .poster-tag, .full-popup-container .type-coupon.stamp-vod .vod-list .channel-edit2 .channel-edit-body .category ul li.selected .poster-tag, .channel-edit2 .channel-edit-body .category ul .full-popup-container .type-coupon.stamp-vod .vod-list li.selected .poster-tag {
+  opacity: 1;
+  z-index: 1;
+}
+
+.full-popup-container .type-coupon.stamp-vod .vod-list li.selected .poster-banner::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(8, 13, 25, 0.6);
+  background-size: 72px 72px;
+  background-position: top 12px right 12px;
+  background-image: url(../images/common/ic-stamp-focus.png);
+}
+
+.full-popup-container .type-coupon.stamp-vod .vod-list li.selected.focus .poster-tag, .full-popup-container .type-coupon.stamp-vod .vod-list .channel-edit .channel-edit-body .category ul li.selected .poster-tag, .channel-edit .channel-edit-body .category ul .full-popup-container .type-coupon.stamp-vod .vod-list li.selected .poster-tag, .full-popup-container .type-coupon.stamp-vod .vod-list .channel-edit2 .channel-edit-body .category ul li.selected .poster-tag, .channel-edit2 .channel-edit-body .category ul .full-popup-container .type-coupon.stamp-vod .vod-list li.selected .poster-tag {
+  opacity: 0;
+}
+
+.full-popup-container .type-coupon.stamp-vod .scroll {
+  top: 19px;
+  right: -30px;
+  width: 6px;
+  height: 536px;
+}
+
+.full-popup-container .type-coupon .test {
+  position: relative;
+  margin: 0 -20px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.full-popup-container .type-coupon .test .button-area button {
+  display: block;
+  width: 20px;
+  height: 40px;
+  position: absolute;
+  top: 111px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.full-popup-container .type-coupon .test .button-area button.prev {
+  left: 0;
+  background-image: url(../images/my/ic-common-left.png);
+}
+
+.full-popup-container .type-coupon .test .button-area button.prev.focus, .full-popup-container .type-coupon .test .button-area .channel-edit .channel-edit-body .category ul button.prev.selected, .channel-edit .channel-edit-body .category ul .full-popup-container .type-coupon .test .button-area button.prev.selected, .full-popup-container .type-coupon .test .button-area .channel-edit2 .channel-edit-body .category ul button.prev.selected, .channel-edit2 .channel-edit-body .category ul .full-popup-container .type-coupon .test .button-area button.prev.selected {
+  background-image: url(../images/my/ic-common-left-focus.png);
+}
+
+.full-popup-container .type-coupon .test .button-area button.next {
+  right: 0;
+  background-image: url(../images/my/ic-common-right.png);
+}
+
+.full-popup-container .type-coupon .test .button-area button.next.focus, .full-popup-container .type-coupon .test .button-area .channel-edit .channel-edit-body .category ul button.next.selected, .channel-edit .channel-edit-body .category ul .full-popup-container .type-coupon .test .button-area button.next.selected, .full-popup-container .type-coupon .test .button-area .channel-edit2 .channel-edit-body .category ul button.next.selected, .channel-edit2 .channel-edit-body .category ul .full-popup-container .type-coupon .test .button-area button.next.selected {
+  background-image: url(../images/my/ic-common-right-focus.png);
+}
+
+.full-popup-container .type-coupon .test .vod-list {
+  width: calc(188px * 4);
+  text-align: center;
+  overflow: hidden;
+}
+
+.full-popup-container .type-coupon .test .vod-list ul {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+.full-popup-container .type-coupon .test .vod-list li {
+  width: 188px;
+}
+
+.full-popup-container .type-coupon .test .vod-list li .img-wrap {
+  position: relative;
+  width: 188px;
+  height: 262px;
+  margin-bottom: 9px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.full-popup-container .type-coupon .test .vod-list li .img-wrap .img {
+  position: relative;
+  width: 166px;
+  height: 236px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.full-popup-container .type-coupon .test .vod-list li .img-wrap .tags {
+  opacity: 0;
+  position: absolute;
+  top: 10px;
+  right: 6px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+.full-popup-container .type-coupon .test .vod-list li .img-wrap .tags .tag {
+  width: 32px;
+  height: 32px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 1.2rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  color: #eee;
+  text-align: center;
+  margin-left: 4px;
+}
+
+.full-popup-container .type-coupon .test .vod-list li .img-wrap .tags .tag:first-child {
+  margin-left: 0;
+}
+
+.full-popup-container .type-coupon .test .vod-list li .info {
+  opacity: 0;
+  height: 81px;
+}
+
+.full-popup-container .type-coupon .test .vod-list li .info .title {
+  position: relative;
+  font-size: 3.4rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  height: 45px;
+  line-height: 45px;
+}
+
+.full-popup-container .type-coupon .test .vod-list li .info .title span {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 560px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.full-popup-container .type-coupon .test .vod-list li .info .grade {
+  font-size: 2.6rem;
+  color: #777;
+  line-height: 32px;
+  margin-top: 4px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.full-popup-container .type-coupon .test .vod-list li .info .grade::before {
+  width: 2px;
+  height: 20px;
+  margin: 0 8px;
+  background-color: #777;
+  order: 2;
+  display: block;
+  content: '';
+}
+
+.full-popup-container .type-coupon .test .vod-list li .info .grade .star {
+  order: 3;
+  display: flex;
+  align-items: center;
+}
+
+.full-popup-container .type-coupon .test .vod-list li .info .grade .star::before {
+  width: 24px;
+  height: 32px;
+  margin-right: 4px;
+  background-image: url(../images/common/ic-popup-star-focus.png);
+  display: block;
+  content: '';
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.full-popup-container .type-coupon .test .vod-list li .info.align-left {
+  text-align: left;
+  margin-left: 5px;
+}
+
+.full-popup-container .type-coupon .test .vod-list li .info.align-left .grade {
+  justify-content: flex-start;
+}
+
+.full-popup-container .type-coupon .test .vod-list li .info.align-left .title span {
+  left: 0;
+  transform: translateX(0);
+}
+
+.full-popup-container .type-coupon .test .vod-list li .info.align-right {
+  text-align: right;
+  margin-right: 5px;
+}
+
+.full-popup-container .type-coupon .test .vod-list li .info.align-right .grade {
+  justify-content: flex-end;
+}
+
+.full-popup-container .type-coupon .test .vod-list li .info.align-right .title span {
+  text-align: right;
+  left: 100%;
+  transform: translateX(-100%);
+}
+
+.full-popup-container .type-coupon .test .vod-list li.focus .img-wrap .img, .full-popup-container .type-coupon .test .vod-list .channel-edit .channel-edit-body .category ul li.selected .img-wrap .img, .channel-edit .channel-edit-body .category ul .full-popup-container .type-coupon .test .vod-list li.selected .img-wrap .img, .full-popup-container .type-coupon .test .vod-list .channel-edit2 .channel-edit-body .category ul li.selected .img-wrap .img, .channel-edit2 .channel-edit-body .category ul .full-popup-container .type-coupon .test .vod-list li.selected .img-wrap .img {
+  width: 176px;
+  height: 250px;
+  background-color: #ef3484;
+  box-shadow: 0 0 0 6px #ef3484;
+}
+
+.full-popup-container .type-coupon .test .vod-list li.focus .img-wrap .tags, .full-popup-container .type-coupon .test .vod-list .channel-edit .channel-edit-body .category ul li.selected .img-wrap .tags, .channel-edit .channel-edit-body .category ul .full-popup-container .type-coupon .test .vod-list li.selected .img-wrap .tags, .full-popup-container .type-coupon .test .vod-list .channel-edit2 .channel-edit-body .category ul li.selected .img-wrap .tags, .channel-edit2 .channel-edit-body .category ul .full-popup-container .type-coupon .test .vod-list li.selected .img-wrap .tags {
+  opacity: 1;
+}
+
+.full-popup-container .type-coupon .test .vod-list li.focus .info, .full-popup-container .type-coupon .test .vod-list .channel-edit .channel-edit-body .category ul li.selected .info, .channel-edit .channel-edit-body .category ul .full-popup-container .type-coupon .test .vod-list li.selected .info, .full-popup-container .type-coupon .test .vod-list .channel-edit2 .channel-edit-body .category ul li.selected .info, .channel-edit2 .channel-edit-body .category ul .full-popup-container .type-coupon .test .vod-list li.selected .info {
+  opacity: 1;
+}
+
+.full-popup-container .type-coupon .test .vod-list li.selected .img-wrap .img::before {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(8, 13, 25, 0.6);
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+}
+
+.full-popup-container .type-coupon .test .vod-list li.selected .img-wrap .img::after {
+  width: 55px;
+  height: 55px;
+  position: absolute;
+  z-index: 1;
+  top: 8px;
+  right: 8px;
+  display: block;
+  content: '';
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/common/ic-stamp-white.png);
+}
+
+.full-popup-container .type-coupon .test .vod-list li.selected.focus .tags, .full-popup-container .type-coupon .test .vod-list .channel-edit .channel-edit-body .category ul li.selected .tags, .channel-edit .channel-edit-body .category ul .full-popup-container .type-coupon .test .vod-list li.selected .tags, .full-popup-container .type-coupon .test .vod-list .channel-edit2 .channel-edit-body .category ul li.selected .tags, .channel-edit2 .channel-edit-body .category ul .full-popup-container .type-coupon .test .vod-list li.selected .tags {
+  opacity: 0;
+}
+
+.full-popup-container .type-coupon .test .vod-list .dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.full-popup-container .type-coupon .test .vod-list .dots span {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #a9a9a9;
+}
+
+.full-popup-container .type-coupon .test .vod-list .dots span:not(:last-child) {
+  margin-right: 5px;
+}
+
+.full-popup-container .type-coupon .test .vod-list .dots span.active {
+  background-color: #ef3484;
+}
+
+.popup-toast {
+  display: inline-block;
+  position: absolute;
+  bottom: 60px;
+  right: 60px;
+  z-index: 20;
+  max-width: 880px;
+  border-radius: 20px;
+  padding: 28px 60px;
+  background-color: #eee;
+  text-align: center;
+  box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.3);
+}
+
+.popup-toast p {
+  color: #080d19;
+  font-size: 3.2rem;
+  line-height: 46px;
+  word-break: keep-all;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.popup-toast p.title, .popup-toast p em {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.popup-toast.position-topleft {
+  bottom: unset;
+  right: unset;
+  top: 60px;
+  left: 60px;
+}
+
+.popup-toast.position-topcenter {
+  bottom: unset;
+  right: unset;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.popup-toast.position-bottomcenter {
+  right: unset;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.popup-toast.limit-2 p {
+  overflow: hidden;
+  display: -webkit-box;
+  white-space: normal;
+  /*! autoprefixer: off */
+  -webkit-line-clamp: 2;
+  /*! autoprefixer: on */
+  -webkit-box-orient: vertical;
+}
+
+.popup-toast.limit-3 {
+  padding: 24px 60px;
+}
+
+.popup-toast.limit-3 p {
+  overflow: hidden;
+  display: -webkit-box;
+  white-space: normal;
+  /*! autoprefixer: off */
+  -webkit-line-clamp: 3;
+  /*! autoprefixer: on */
+  -webkit-box-orient: vertical;
+}
+
+.popup-toast.alt {
+  max-width: 1435px;
+  width: 1435px;
+  height: 214px;
+  padding: 0 40px;
+  box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.4);
+  background-color: rgba(42, 44, 62, 0.9);
+}
+
+.popup-toast.alt p {
+  color: #d6d6d6;
+  line-height: 41px;
+  margin-top: 8px;
+}
+
+.popup-toast.alt p:first-child {
+  margin-top: 27px;
+}
+
+.popup-toast.alt .sub-text {
+  margin-top: 29px;
+  font-size: 2.4rem;
+  color: #a9a9a9;
+  line-height: 30px;
+}
+
+.popup-toast.alt .sub-text span {
+  display: inline-flex;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 1.8rem;
+  height: 34px;
+  line-height: calc(34px - 2px * 2);
+  border-radius: calc(34px / 2);
+  border: 2px solid #626373;
+  padding: 0 12px;
+  color: #626373;
+  background-color: #20212d;
+  width: 62px;
+  padding: 0;
+  justify-content: center;
+}
+
+.popup-toast.keyinfo {
+  width: 195px;
+}
+
+.error-popup .highlight {
+  color: #ef3484;
+}
+
+.error-popup .error-sub {
+  margin: 20px 0 32px;
+}
+
+.error-popup .code {
+  margin-left: 10px;
+}
+
+.error-popup .error-list {
+  margin: 20px 0 42px;
+  text-align: center;
+  color: #ef3484;
+}
+
+.error-popup .button-area {
+  height: 86px;
+  margin-bottom: 32px;
+}
+
+.error-popup .button-area .button-primary.error {
+  position: relative;
+  height: 86px;
+  font-size: 3.2rem;
+  padding: 0 40px;
+  border-radius: 8px;
+  background-color: #2A2C3E;
+  color: #a9a9a9;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  background-color: #ddd;
+  color: #080d19;
+}
+
+.error-popup .button-area .button-primary.error .text {
+  min-width: 326px;
+  line-height: 86px;
+}
+
+.error-popup .button-area .button-primary.error.dimmed {
+  background-color: rgba(8, 13, 25, 0.4);
+}
+
+.error-popup .button-area .button-primary.error.focus, .error-popup .button-area .channel-edit .channel-edit-body .category ul .button-primary.error.selected, .channel-edit .channel-edit-body .category ul .error-popup .button-area .button-primary.error.selected, .error-popup .button-area .channel-edit2 .channel-edit-body .category ul .button-primary.error.selected, .channel-edit2 .channel-edit-body .category ul .error-popup .button-area .button-primary.error.selected {
+  color: #080d19;
+  background-color: #eee;
+  height: calc(86px + 12px);
+  font-size: calc(3.2rem + 0.2rem);
+}
+
+.error-popup .button-area .button-primary.error.focus, .error-popup .button-area .channel-edit .channel-edit-body .category ul .button-primary.error.selected, .channel-edit .channel-edit-body .category ul .error-popup .button-area .button-primary.error.selected, .error-popup .button-area .channel-edit2 .channel-edit-body .category ul .button-primary.error.selected, .channel-edit2 .channel-edit-body .category ul .error-popup .button-area .button-primary.error.selected {
+  background-color: #ef3484;
+  color: #eee;
+  height: 86px;
+}
+
+.error-popup .more-22 {
+  margin-bottom: 22px;
+}
+
+.error-popup .boby-image {
+  display: flex;
+  justify-content: center;
+}
+
+.error-popup .image {
+  width: 670px;
+  height: 304px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.error-popup .time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-popup .ic-time {
+  display: inline-block;
+  width: 38px;
+  height: 36px;
+  background-image: url("../images/common/ic-popup-time.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.error-popup .error-code {
+  margin-top: 32px;
+}
+
+.error-popup .number-list {
+  counter-reset: number 0;
+  padding-left: 30px;
+}
+
+.error-popup .number-list li {
+  position: relative;
+}
+
+.error-popup .number-list li::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  counter-increment: number 1;
+  content: counter(number) ".";
+  left: -30px;
+  text-align: right;
+}
+
+.error-popup .content-wrap {
+  display: flex;
+}
+
+.error-popup .content-wrap li {
+  position: relative;
+  width: 332px;
+  margin-left: 82px;
+}
+
+.error-popup .content-wrap li:first-child {
+  margin-left: 0;
+}
+
+.error-popup .content-wrap li::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  left: -40px;
+  width: 2px;
+  height: 100%;
+  background-color: #b7b5bd;
+  opacity: 0.3;
+}
+
+.error-popup .content-wrap .body-text {
+  margin-top: 20px;
+  line-height: normal;
+}
+
+.error-popup .content-wrap .image {
+  width: 332px;
+  height: 372px;
+  margin-top: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.subscribe-cancel h4 {
+  margin-bottom: 12px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 2.8rem;
+  line-height: 40px;
+}
+
+.subscribe-cancel .detail {
+  margin-bottom: 26px;
+  border-bottom: 2px solid rgba(183, 181, 189, 0.3);
+}
+
+.subscribe-cancel .body-text {
+  margin-bottom: 26px;
+  font-size: 2.6rem;
+  color: #5d5c62;
+}
+
+.subscribe-cancel .price {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 2.6rem;
+  color: #5d5c62;
+}
+
+.terms-container.layer-page .layer-header {
+  margin-bottom: unset;
+}
+
+.terms-container.layer-page .layer-header .title::before {
+  content: unset;
+}
+
+.terms-container .terms-header {
+  padding: 100px 0 58px;
+}
+
+.terms-container .terms-header .title {
+  margin-bottom: 24px;
+}
+
+.terms-container .terms-header .desc {
+  font-size: 3.0rem;
+  line-height: 1.6;
+  color: #a9a9a9;
+}
+
+.terms-container .terms-body {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 76px;
+}
+
+.terms-container .terms-body.full .terms {
+  width: 518px;
+}
+
+.terms-container .terms-body.full .terms:first-child .terms-title h4 {
+  width: 342px;
+}
+
+.terms-container .terms-body.full .terms-title h4 {
+  font-size: 2.8rem;
+}
+
+.terms-container .terms-body.full .terms-contents .terms-box .desc {
+  width: 430px;
+}
+
+.terms-container .terms-body .terms {
+  width: 800px;
+  height: 472px;
+  padding: 0 30px;
+  background-color: #191b2b;
+  border-radius: 8px;
+}
+
+.terms-container .terms-body .terms:not(:last-child) {
+  margin-right: 44px;
+}
+
+.terms-container .terms-body .terms.focus, .terms-container .terms-body .channel-edit .channel-edit-body .category ul .terms.selected, .channel-edit .channel-edit-body .category ul .terms-container .terms-body .terms.selected, .terms-container .terms-body .channel-edit2 .channel-edit-body .category ul .terms.selected, .channel-edit2 .channel-edit-body .category ul .terms-container .terms-body .terms.selected {
+  background-color: #2a2c3e;
+  box-shadow: 0 0 0 4px #eee;
+}
+
+.terms-container .terms-body .terms.focus .terms-title, .terms-container .terms-body .channel-edit .channel-edit-body .category ul .terms.selected .terms-title, .channel-edit .channel-edit-body .category ul .terms-container .terms-body .terms.selected .terms-title, .terms-container .terms-body .channel-edit2 .channel-edit-body .category ul .terms.selected .terms-title, .channel-edit2 .channel-edit-body .category ul .terms-container .terms-body .terms.selected .terms-title {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.terms-container .terms-body .terms.focus .terms-title h4, .terms-container .terms-body .channel-edit .channel-edit-body .category ul .terms.selected .terms-title h4, .channel-edit .channel-edit-body .category ul .terms-container .terms-body .terms.selected .terms-title h4, .terms-container .terms-body .channel-edit2 .channel-edit-body .category ul .terms.selected .terms-title h4, .channel-edit2 .channel-edit-body .category ul .terms-container .terms-body .terms.selected .terms-title h4 {
+  color: #eee;
+}
+
+.terms-container .terms-body .terms.focus .terms-title .input-checkbox, .terms-container .terms-body .channel-edit .channel-edit-body .category ul .terms.selected .terms-title .input-checkbox, .channel-edit .channel-edit-body .category ul .terms-container .terms-body .terms.selected .terms-title .input-checkbox, .terms-container .terms-body .channel-edit2 .channel-edit-body .category ul .terms.selected .terms-title .input-checkbox, .channel-edit2 .channel-edit-body .category ul .terms-container .terms-body .terms.selected .terms-title .input-checkbox {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: 3px solid #eee;
+  border-radius: 50%;
+}
+
+.terms-container .terms-body .terms.focus .terms-title .input-checkbox::before, .terms-container .terms-body .channel-edit .channel-edit-body .category ul .terms.selected .terms-title .input-checkbox::before, .channel-edit .channel-edit-body .category ul .terms-container .terms-body .terms.selected .terms-title .input-checkbox::before, .terms-container .terms-body .channel-edit2 .channel-edit-body .category ul .terms.selected .terms-title .input-checkbox::before, .channel-edit2 .channel-edit-body .category ul .terms-container .terms-body .terms.selected .terms-title .input-checkbox::before {
+  width: calc(40px - 14px);
+  height: calc(40px - 14px);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  content: '';
+}
+
+.terms-container .terms-body .terms.focus .terms-title .input-checkbox[type=checkbox]::before, .terms-container .terms-body .channel-edit .channel-edit-body .category ul .terms.selected .terms-title .input-checkbox[type=checkbox]::before, .channel-edit .channel-edit-body .category ul .terms-container .terms-body .terms.selected .terms-title .input-checkbox[type=checkbox]::before, .terms-container .terms-body .channel-edit2 .channel-edit-body .category ul .terms.selected .terms-title .input-checkbox[type=checkbox]::before, .channel-edit2 .channel-edit-body .category ul .terms-container .terms-body .terms.selected .terms-title .input-checkbox[type=checkbox]::before {
+  width: 40px;
+  height: 40px;
+}
+
+.terms-container .terms-body .terms.focus .terms-title .input-checkbox:checked, .terms-container .terms-body .channel-edit .channel-edit-body .category ul .terms.selected .terms-title .input-checkbox:checked, .channel-edit .channel-edit-body .category ul .terms-container .terms-body .terms.selected .terms-title .input-checkbox:checked, .terms-container .terms-body .channel-edit2 .channel-edit-body .category ul .terms.selected .terms-title .input-checkbox:checked, .channel-edit2 .channel-edit-body .category ul .terms-container .terms-body .terms.selected .terms-title .input-checkbox:checked {
+  border: 3px solid #ef3484;
+}
+
+.terms-container .terms-body .terms.focus .terms-title .input-checkbox[type=radio]:checked::before, .terms-container .terms-body .channel-edit .channel-edit-body .category ul .terms.selected .terms-title .input-checkbox[type=radio]:checked::before, .channel-edit .channel-edit-body .category ul .terms-container .terms-body .terms.selected .terms-title .input-checkbox[type=radio]:checked::before, .terms-container .terms-body .channel-edit2 .channel-edit-body .category ul .terms.selected .terms-title .input-checkbox[type=radio]:checked::before, .channel-edit2 .channel-edit-body .category ul .terms-container .terms-body .terms.selected .terms-title .input-checkbox[type=radio]:checked::before {
+  background-color: #ef3484;
+}
+
+.terms-container .terms-body .terms.focus .terms-title .input-checkbox[type=checkbox]:checked::before, .terms-container .terms-body .channel-edit .channel-edit-body .category ul .terms.selected .terms-title .input-checkbox[type=checkbox]:checked::before, .channel-edit .channel-edit-body .category ul .terms-container .terms-body .terms.selected .terms-title .input-checkbox[type=checkbox]:checked::before, .terms-container .terms-body .channel-edit2 .channel-edit-body .category ul .terms.selected .terms-title .input-checkbox[type=checkbox]:checked::before, .channel-edit2 .channel-edit-body .category ul .terms-container .terms-body .terms.selected .terms-title .input-checkbox[type=checkbox]:checked::before {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/purchase/ic-check-focus2.png);
+}
+
+.terms-container .terms-body .terms-title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 135px;
+  text-align: left;
+  border-bottom: 1px solid #2A2C3E;
+}
+
+.terms-container .terms-body .terms-title .input-checkbox {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: 3px solid #535458;
+  border-radius: 50%;
+  margin-right: 24px;
+  display: block;
+}
+
+.terms-container .terms-body .terms-title .input-checkbox::before {
+  width: calc(40px - 14px);
+  height: calc(40px - 14px);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  content: '';
+}
+
+.terms-container .terms-body .terms-title .input-checkbox[type=checkbox]::before {
+  width: 40px;
+  height: 40px;
+}
+
+.terms-container .terms-body .terms-title .input-checkbox:checked {
+  border: 3px solid #ef3484;
+}
+
+.terms-container .terms-body .terms-title .input-checkbox[type=radio]:checked::before {
+  background-color: #ef3484;
+}
+
+.terms-container .terms-body .terms-title .input-checkbox[type=checkbox]:checked::before {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/purchase/ic-check-focus2.png);
+}
+
+.terms-container .terms-body .terms-title .input-checkbox::before {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.terms-container .terms-body .terms-title .input-checkbox[type=checkbox]:checked {
+  border-color: #535458;
+}
+
+.terms-container .terms-body .terms-title .input-checkbox[type=checkbox]:checked::before {
+  background-image: url(../images/purchase/ic-check2.png);
+}
+
+.terms-container .terms-body .terms-title h4 {
+  font-size: 3.8rem;
+  font-family: "Yoon Gothic 750", "YoonGothic 700 50", "Yoon윤고딕 750", "YoonGothic 750", "YOONGOTHICPRO750";
+  color: rgba(169, 169, 169, 0.9);
+}
+
+.terms-container .terms-body .terms-contents .terms-box {
+  position: relative;
+  padding: 38px 0;
+}
+
+.terms-container .terms-body .terms-contents .terms-box .desc {
+  overflow: hidden;
+  width: 712px;
+  height: 260px;
+  text-align: left;
+}
+
+.terms-container .terms-body .terms-contents .terms-box .desc p {
+  line-height: 38px;
+  font-size: 2.6rem;
+  color: #a9a9a9;
+}
+
+.terms-container .terms-body .scroll {
+  position: absolute;
+  top: 38px;
+  right: 0px;
+  width: 6px;
+  height: 260px;
+  border-radius: calc(6px / 2);
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1;
+  opacity: 1;
+}
+
+.terms-container .terms-body .scroll span {
+  display: inline-block;
+  width: 100%;
+  border-radius: calc(6px / 2);
+  background-color: rgba(169, 169, 169, 0.3);
+}
+
+.continue-popup {
+  right: 60px;
+  bottom: 60px;
+  top: unset;
+  left: unset;
+  transform: unset;
+}
+
+.continue-popup .title {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 3.0rem;
+  margin-bottom: 24px;
+}
+
+.continue-popup .progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.continue-popup .progress .time {
+  font-size: 2.0rem;
+}
+
+.continue-popup .progress .bar {
+  position: relative;
+  overflow: hidden;
+  background-color: #535353;
+  margin-left: 0;
+  height: 8px;
+  width: 496px;
+  border-radius: calc(8px / 2);
+}
+
+.continue-popup .progress .bar > span {
+  position: absolute;
+  height: 100%;
+  border-radius: calc(8px / 2);
+  background-color: #ef3484;
+}
+
+.continue-popup .progress .bar span {
+  display: block;
+  height: 100%;
+}
+
+.continue-popup .popup-footer .popup-button:nth-child(2) {
+  flex: 1.2;
+}
+
+.modeset-kid .popup-footer .popup-button:nth-child(2) {
+  flex: 1.26;
+}
+
+.remote-setting-popup {
+  text-align: center;
+}
+
+.remote-setting-popup .body-text {
+  margin-bottom: 20px;
+}
+
+.remote-setting-popup .contents {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.remote-setting-popup .contents .box {
+  position: relative;
+  width: 520px;
+}
+
+.remote-setting-popup .contents .box:last-child::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  left: -50px;
+  width: 2px;
+  height: 100%;
+  background-color: rgba(183, 181, 189, 0.3);
+}
+
+.remote-setting-popup .contents .box img {
+  width: 100%;
+  height: 268px;
+  margin-bottom: 20px;
+}
+
+.remote-setting-popup .contents .box p {
+  line-height: 40px;
+}
+
+.purchase-popup .scroll-contents {
+  height: 318px;
+}
+
+.purchase-payment-popup .popup-body {
+  padding: 52px 95px;
+}
+
+.purchase-payment-popup .body-text {
+  margin-bottom: 20px;
+  color: #080d19;
+}
+
+.purchase-payment-popup dt {
+  color: #080d19;
+}
+
+.home-agreement-popup .button-alt {
+  margin: 32px 0;
+}
+
+.home-agreement-popup .button-alt .button {
+  width: auto;
+  padding: 0 33px;
+}
+
+.home-agreement-popup .button-alt .button.focus, .home-agreement-popup .button-alt .channel-edit .channel-edit-body .category ul .button.selected, .channel-edit .channel-edit-body .category ul .home-agreement-popup .button-alt .button.selected, .home-agreement-popup .button-alt .channel-edit2 .channel-edit-body .category ul .button.selected, .channel-edit2 .channel-edit-body .category ul .home-agreement-popup .button-alt .button.selected {
+  padding: 0 29px;
+}
+
+.popup-coupon {
+  position: absolute;
+  top: unset;
+  left: unset;
+  bottom: 60px;
+  right: 60px;
+  transform: unset;
+}
+
+.popup-coupon .popup-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-coupon .popup-body span {
+  display: block;
+  width: 110px;
+  height: 110px;
+  margin-right: 18px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.popup-coupon .popup-body .coupon {
+  background-image: url(../images/common/ic-coupon-focus.png);
+}
+
+.popup-coupon .popup-body .stamp {
+  background-image: url(../images/common/ic-stamp-focus.png);
+}

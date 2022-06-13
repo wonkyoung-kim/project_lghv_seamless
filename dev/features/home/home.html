@@ -1,0 +1,2497 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+</head>
+
+<body style="overflow : auto">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+        <div id="page">
+
+            <div class="home-bg"></div>
+            <!-- active-gnb클래스를 넣으면 gnb영역으로 넓어짐 -->
+            <div class="home-container">
+
+                <!-- 2dep이상시 home-aside클래스에 focus-gnb-dep2클래스를 넣으면 화살표생김 -->
+                <div class="home-aside">
+                    <div class="gnb">
+                        <div class="gnb-main">
+                            <ul id="gnb-my">
+                                <li class="gnb-my selected">
+                                    <div class="gnb-profile">
+                                        <span class="ic-profile ic-profile-pair1"></span>
+                                        <p class="gnb-profile-name">마이메뉴</p>
+                                        <div class="badge">33</div>
+                                        <!-- <p class="keyguide"><span class="primary">프로필 변경</span></p> -->
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul id="gnb-search">
+                                <li class="gnb-search">검색</li>
+                            </ul>
+                            <ul id="gnb-month">
+                                <li class="gnb-month">월정액</li>
+                            </ul>
+                            <ul id="gnb-main">
+                                <li class="gnb-home">홈</li>
+                                <li class="gnb-movie">영화/해외드라마</li>
+                                <li class="gnb-tv">TV방송</li>
+                                <li class="gnb-ani">애니</li>
+                                <li class="gnb-doc">다큐</li>
+                            </ul>
+                            <ul id="gnb-total">
+                                <li class="gnb-total">전체메뉴</li>
+                            </ul>
+                            <ul id="gnb-utils">
+                                <li class="gnb-set">설정</li>
+                                <li class="gnb-noti">알림
+                                    <div class="badge">3</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- gnb-dep2 -->
+                        <div class="gnb-sub">
+                            <ul id="gnb-search">
+                                <li class="gnb-search">검색</li>
+                            </ul>
+                            <div class="gnb-wrap">
+                                <ul class="gnb-list">
+                                    <li class="focus">
+                                        <div class="marquee-text marquee-play">
+                                            <p class="marquee-child">영화/해외드라마영화/해외드라마</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="marquee-text marquee-play">
+                                            <p class="marquee-child">TV방송</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="marquee-text marquee-play">
+                                            <p class="marquee-child">영화/해외드라마영화/해외드라마</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="marquee-text marquee-play">
+                                            <p class="marquee-child">다큐/교양</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- gnb-dep3 -->
+                        <div class="gnb-sub gnb-dep3">
+                            <div class="gnb-wrap">
+                                <ul class="gnb-list">
+                                    <li class="focus">
+                                        <div class="marquee-text marquee-play">
+                                            <p class="marquee-child">영화/해외드라마영화/해외드라마</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="marquee-text marquee-play">
+                                            <p class="marquee-child">TV방송</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="marquee-text marquee-play">
+                                            <p class="marquee-child">애니</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="marquee-text marquee-play">
+                                            <p class="marquee-child">다큐</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="marquee-text marquee-play">
+                                            <p class="marquee-child">TV방송</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="marquee-text marquee-play">
+                                            <p class="marquee-child">애니</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="marquee-text marquee-play">
+                                            <p class="marquee-child">다큐</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="marquee-text marquee-play">
+                                            <p class="marquee-child">다큐</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="marquee-text marquee-play">
+                                            <p class="marquee-child">TV방송</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="marquee-text marquee-play">
+                                            <p class="marquee-child">애니</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="marquee-text marquee-play">
+                                            <p class="marquee-child">다큐</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tooltip-area">
+                        <!-- 마이메뉴 연결안내 툴팁 -->
+                        <span class="tooltip tooltip-my">
+                            <em>U+tv와 휴대폰을 연결</em>하면 TV로 보던 영상을<br> U+모바일tv로 이어 볼 수 있어요!
+                        </span>
+                        <!-- 검색 툴팁 -->
+                        <span class="tooltip tooltip-search">
+                            <i class="keyguide-ok">확인/OK</i>클로바 검색으로 이동
+                        </span>
+                        <!-- 설정 툴팁 -->
+                        <span class="tooltip tooltip-setting">
+                            <i class="keyguide-ok">확인/OK</i>설정으로 이동
+                        </span>
+                        <!-- 알림 툴팁 -->
+                        <span class="tooltip tooltip-noti">
+                            <i class="keyguide-ok">확인/OK</i>알림으로 이동
+                        </span>
+                    </div>
+                </div>
+
+                <div class="home-body">
+
+                    <!-- 쿠폰알림및 맞춤정보 공지등이 있는 경우 공지 노출 -->
+                    <div class="home-notice">
+                        <div class="notice">
+                            <div class="text marquee-text marquee-play">
+                                <p class="marquee-child">애니월정액 ‘카봇5’가 입고 되었음을 안내 드립니다.</p>
+                            </div>
+                            <span>마이메뉴 바로가기</span>
+                        </div>
+                    </div>
+
+                    <!-- home-header -->
+                    <div class="home-header">
+                        <ul>
+                            <li class="kids">아이들나라</li>
+                            <li class="now">홈트now</li>
+                            <li class="netflix">넷플릭스</li>
+                            <li class="youtube">유튜브</li>
+                            <li class="tv-apps">TV앱스</li>
+                            <li class="shopping">한눈에쇼핑</li>
+                        </ul>
+                    </div>
+
+                    <!-- 장르홈 진입시 타이틀 보여짐 -->
+                    <h1 class="home-title">PU006 - 영화/해외드라마 홈</h1>
+
+                    <!-- 모듈1 < 홈배너 > -->
+                    <!-- focus시 n초후 영상이 재생될 때 home-contents클래스에 vedio-type클래스를 넣으면 이미지 안보이게 처리 -->
+                    <section class="home-contents module01">
+                        <div class="contents-list-index"><em>01</em> / <span>10</span></div>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-horizontal">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1618473630236.jpg&quot;);"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1618470012636.jpg&quot;);"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1618462773157.jpg&quot;);"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1618386431241.jpg&quot;);"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1618532137863.jpg&quot;);"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 모듈2 <최근 본 영상 이어보기> -->
+                    <section class="home-contents module02">
+                        <h2>PU005 - 모듈2 - 최근 본 영상 이어보기</h2>
+                        <div class="contents-list-index"><em>01</em> / <span>21</span></div>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://203.248.154.13/resize.php?filename=ST_M0118BR381PPV00_154600.jpg&amp;width=380&amp;height=214&amp;type=still&quot;);"></div>
+                                        <div class="poster-component">
+                                            <div class="poster-tag">
+                                                <span class="view-mobile">모바일</span>
+                                                <span class="poster-tag-age">무료</span>
+                                                <span class="poster-tag-age"><strong>19</strong></span>
+                                            </div>
+                                            <dl class="poster-time">
+                                                <dt>11시간 20분 남음</dt>
+                                                <dd class="poster-remaining"><span style="width: 50%;"></span></dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">기린(영어) 2회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://203.248.154.13/resize.php?filename=ST_M01167D504PPV00_145118.jpg&amp;width=380&amp;height=214&amp;type=still&quot;);"></div>
+                                        <div class="poster-component">
+                                            <div class="poster-tag"><span class="poster-tag-age">전체</span></div>
+                                            <dl class="poster-time">
+                                                <dt>11시간 20분 남음</dt>
+                                                <dd class="poster-remaining"><span style="width: 0%;"></span></dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">기린(영어) 2회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://203.248.154.13/resize.php?filename=ST_M01167D504PPV00_145118.jpg&amp;width=380&amp;height=214&amp;type=still&quot;);"></div>
+                                        <div class="poster-component">
+                                            <div class="poster-tag"><span class="poster-tag-age">전체</span></div>
+                                            <dl class="poster-time">
+                                                <dt>11시간 20분 남음</dt>
+                                                <dd class="poster-remaining"><span style="width: 0%;"></span></dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">기린(영어) 2회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 이어보기 4개 이하 일 때 추천컨텐츠 붙이는 경우 - flexble-module section으로 감싼다 -->
+                    <section class="flexble-module">
+                        <!-- flexble-module01에서 썸네일이 1개일 경우 
+                        flexble-module-list클래스에 count1, 2개일 경우 count2, 3개일 경우 count3 -->
+                        <!-- 모듈3 콘텐츠가 첫번째로 올 때 count를 없애면 home-contents-list는 원래 기존위치로 됩니다. -->
+                        <div class="flexble-module-list count3">
+                            <section class="home-contents flexble-module01">
+                                <div class="home-contents-header">
+                                    <h2>모듈2 - 최근 본 영상 이어보기</h2>
+                                    <div class="contents-list-index"><em>01</em> / <span>21</span></div>
+                                </div>
+                                <div class="home-contents-list">
+                                    <ul>
+                                        <li class="focus">
+                                            <div class="poster-horizontal">
+                                                <div class="poster-thumbnail" style="background-image: url(&quot;http://203.248.154.13/resize.php?filename=ST_M0118BR381PPV00_154600.jpg&amp;width=380&amp;height=214&amp;type=still&quot;);"></div>
+                                                <div class="poster-component">
+                                                    <div class="poster-tag">
+                                                        <span class="view-mobile">모바일</span>
+                                                        <span class="poster-tag-age">무료</span>
+                                                        <span class="poster-tag-age"><strong>19</strong></span>
+                                                    </div>
+                                                    <dl class="poster-time">
+                                                        <dt>11시간 20분 남음</dt>
+                                                        <dd class="poster-remaining"><span style="width: 50%;"></span></dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                            <div class="meta-data">
+                                                <h4 class="title marquee-text marquee-play">
+                                                    <p class="marquee-child">기린(영어) 2회</p>
+                                                </h4>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="poster-horizontal">
+                                                <div class="poster-thumbnail" style="background-image: url(&quot;http://203.248.154.13/resize.php?filename=ST_M01167D504PPV00_145118.jpg&amp;width=380&amp;height=214&amp;type=still&quot;);"></div>
+                                                <div class="poster-component">
+                                                    <div class="poster-tag"><span class="poster-tag-age">전체</span></div>
+                                                    <dl class="poster-time">
+                                                        <dd class="poster-remaining"><span style="width: 0%;"></span></dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                            <div class="meta-data">
+                                                <h4 class="title marquee-text marquee-play">
+                                                    <p class="marquee-child">기린(영어) 2회</p>
+                                                </h4>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="poster-horizontal">
+                                                <div class="poster-thumbnail" style="background-image: url(&quot;http://203.248.154.13/resize.php?filename=ST_M0114CU115PPV00_170142.jpg&amp;width=380&amp;height=214&amp;type=still&quot;);"></div>
+                                                <div class="poster-component">
+                                                    <div class="poster-tag"><span class="poster-tag-age">전체</span></div>
+                                                    <dl class="poster-time">
+                                                        <dd class="poster-remaining"><span style="width: 1%;"></span></dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                            <div class="meta-data">
+                                                <h4 class="title marquee-text marquee-play">
+                                                    <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                                </h4>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+                            <section class="home-contents flexble-module02">
+                                <div class="home-contents-header">
+                                    <h2>모듈3 - 최신 영화</h2>
+                                    <div class="contents-list-index"><em>01</em> / <span>21</span></div>
+                                </div>
+                                <div class="home-contents-list">
+                                    <ul>
+                                        <li class="focus">
+                                            <div class="poster-horizontal">
+                                                <div class="poster-thumbnail" style="background-image: url(&quot;http://203.248.154.13/resize.php?filename=ST_M01167D504PPV00_145118.jpg&amp;width=380&amp;height=214&amp;type=still&quot;);"></div>
+                                            </div>
+                                            <div class="meta-data">
+                                                <h4 class="title marquee-text marquee-play">
+                                                    <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                                </h4>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="poster-horizontal">
+                                                <div class="poster-thumbnail" style="background-image: url(&quot;http://203.248.154.13/resize.php?filename=ST_M01167D504PPV00_145118.jpg&amp;width=380&amp;height=214&amp;type=still&quot;);"></div>
+                                            </div>
+                                            <div class="meta-data">
+                                                <h4 class="title marquee-text marquee-play">
+                                                    <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                                </h4>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="poster-horizontal">
+                                                <div class="poster-thumbnail" style="background-image: url(&quot;http://203.248.154.13/resize.php?filename=ST_M01167D504PPV00_145118.jpg&amp;width=380&amp;height=214&amp;type=still&quot;);"></div>
+                                            </div>
+                                            <div class="meta-data">
+                                                <h4 class="title marquee-text marquee-play">
+                                                    <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                                </h4>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="poster-horizontal">
+                                                <div class="poster-thumbnail" style="background-image: url(&quot;http://203.248.154.13/resize.php?filename=ST_M01167D504PPV00_145118.jpg&amp;width=380&amp;height=214&amp;type=still&quot;);"></div>
+                                            </div>
+                                            <div class="meta-data">
+                                                <h4 class="title marquee-text marquee-play">
+                                                    <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                                </h4>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="poster-horizontal">
+                                                <div class="poster-thumbnail" style="background-image: url(&quot;http://203.248.154.13/resize.php?filename=ST_M01167D504PPV00_145118.jpg&amp;width=380&amp;height=214&amp;type=still&quot;);"></div>
+                                            </div>
+                                            <div class="meta-data">
+                                                <h4 class="title marquee-text marquee-play">
+                                                    <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                                </h4>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+
+                    <!-- 모듈3 <최신 영화> -->
+                    <section class="home-contents module03">
+                        <h2>PU011 - 모듈3 - 최신 영화</h2>
+                        <div class="contents-list-index"><em>01</em> / <span>21</span></div>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-horizontal">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1617614109098.jpg&quot;);"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1618536676726.jpg&quot;);"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1618462864478.jpg&quot;);"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1618386194084.jpg&quot;);"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1618298410844.jpg&quot;);"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 모듈4 <방금 올라온 드라마> -->
+                    <section class="home-contents module04">
+                        <h2>PU008 - 모듈4 - 방금 올라온 드라마</h2>
+                        <div class="contents-list-index"><em>01</em> / <span>21</span></div>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01213O403PPV00_R_161437.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                        <div class="poster-component">
+                                            <div class="poster-tag">
+                                                <span class="view-all"><strong>U+모바일tv</strong>로 시청가능</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01213V101PPV00_R_165407.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                        <div class="poster-component">
+                                            <div class="poster-tag">
+                                                <span class="view-all"><strong>U+모바일tv</strong>로 시청가능</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01213O411PPV00_R_162737.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                        <div class="poster-component">
+                                            <div class="poster-tag">
+                                                <span class="view-all"><strong>U+모바일tv</strong>로 시청가능</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01213I015PPV00_R_172304.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                        <div class="poster-component">
+                                            <div class="poster-tag">
+                                                <span class="view-all"><strong>U+모바일tv</strong>로 시청가능</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01213I120PPV00_R_151853.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                        <div class="poster-component">
+                                            <div class="poster-tag">
+                                                <span class="view-all"><strong>U+모바일tv</strong>로 시청가능</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 모듈5 <u+ 서비스> -->
+                    <section class="home-contents module05">
+                        <h2>PU012 - 모듈5 - U+서비스</h2>
+                        <div class="contents-list-index"><em>01</em> / <span>21</span></div>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-semicircle">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1605078299977.png&quot;);"></div>
+                                        <div class="poster-banner focus-poster" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-semicircle">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1600243684672.png&quot;);"></div>
+                                        <div class="poster-banner focus-poster" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1605078299977.png&quot;);"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-semicircle">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1600243645425.png&quot;);"></div>
+                                        <div class="poster-banner focus-poster" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1605078299977.png&quot;);"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-semicircle">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1600243668782.png&quot;);"></div>
+                                        <div class="poster-banner focus-poster" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1605078299977.png&quot;);"></div>
+                                </li>
+                                <li>
+                                    <div class="poster-semicircle">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1600243655804.png&quot;);"></div>
+                                        <div class="poster-banner focus-poster" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1605078299977.png&quot;);"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-semicircle">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1600243655804.png&quot;);"></div>
+                                        <div class="poster-banner focus-poster" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1605078299977.png&quot;);"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-semicircle">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1600243655804.png&quot;);"></div>
+                                        <div class="poster-banner focus-poster" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1605078299977.png&quot;);"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-semicircle">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1600243655804.png&quot;);"></div>
+                                        <div class="poster-banner focus-poster" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1605078299977.png&quot;);"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-semicircle">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1600243655804.png&quot;);"></div>
+                                        <div class="poster-banner focus-poster" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1605078299977.png&quot;);"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 모듈6 <최신 인기 TOP10> -->
+                    <section class="home-contents module06">
+                        <h2>PU013 - 모듈6 - 최신 인기 Top10</h2>
+                        <div class="contents-list-index"><em>01</em> / <span>21</span></div>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01213V109PPV00_R_174133.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                        <div class="poster-number">1</div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M012139275PPV00_R_150541.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                        <div class="poster-number">2</div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01213M149PPV00_R_171246.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                        <div class="poster-number">3</div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M012141356PPV00_R_110955.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                        <div class="poster-number">4</div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01213V255PPV00_R_172438.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                        <div class="poster-number">5</div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 모듈7 <무료 영화> -->
+                    <section class="home-contents module07">
+                        <h2>PU008 - 모듈7 - 무료 영화</h2>
+                        <div class="contents-list-index"><em>01</em> / <span>21</span></div>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01146I148PPV00_R_000000.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M011745330PPV00_R_000000.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01143O076PPV00_R_155920.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M0116C9230PPV00_R_000000.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M0112CCB01PPV00_R_000000.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 모듈8 <시즈널 테마 추천> -->
+                    <section class="home-contents module08">
+                        <h2>PU015 - 모듈8 - 시즈널 테마 추천</h2>
+                        <div class="contents-list-index"><em>01</em> / <span>21</span></div>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-horizontal">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1618215118550.jpg&quot;);"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1618215094632.jpg&quot;);"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1617674138778.jpg&quot;);"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1617674170629.jpg&quot;);"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1617069098515.jpg&quot;);"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 모듈9 <추천 카테고리> -->
+                    <section class="home-contents module09-1">
+                        <h2>PU016 - 모듈9 - 추천 카테고리</h2>
+                        <div class="contents-list-index"><em>01</em> / <span>21</span></div>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-semicircle">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1617610342052.png&quot;);"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-semicircle">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1617610301375.png&quot;);"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-semicircle">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1617610259774.png&quot;);"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-semicircle">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1618470268842.png&quot;);"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-semicircle">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1617610153375.png&quot;);"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-semicircle">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1617610112924.png&quot;);"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-semicircle">
+                                        <div class="poster-banner" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1617610067697.png&quot;);"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 모듈10 <즐겨찾는 카테고리> -->
+                    <section class="home-contents module10">
+                        <h2>PU047 - 모듈10 - 즐겨찾는 카테고리</h2>
+                        <div class="contents-list-index"><em>01</em> / <span>21</span></div>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01146I148PPV00_R_000000.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <h4 class="title marquee-text">
+                                                    <div class="marquee-child">타이틀텍스트</div>
+                                                </h4>
+                                                <div class="category-name">영화/해외드라마</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal poster-bg-color1">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01146I148PPV00_R_000000.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <h4 class="title marquee-text">
+                                                    <div class="marquee-child">타이틀텍스트</div>
+                                                </h4>
+                                                <div class="category-name">영화/해외드라마</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal poster-bg-color2">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01146I148PPV00_R_000000.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <h4 class="title marquee-text">
+                                                    <div class="marquee-child">타이틀텍스트</div>
+                                                </h4>
+                                                <div class="category-name">영화/해외드라마</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal poster-bg-color3">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01146I148PPV00_R_000000.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <h4 class="title marquee-text">
+                                                    <div class="marquee-child">타이틀텍스트</div>
+                                                </h4>
+                                                <div class="category-name">영화/해외드라마</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal poster-bg-color4">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01146I148PPV00_R_000000.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <h4 class="title marquee-text">
+                                                    <div class="marquee-child">타이틀텍스트</div>
+                                                </h4>
+                                                <div class="category-name">영화/해외드라마</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 모듈11 <IPTV 시청이력 기반 추천> -->
+                    <section class="home-contents module11">
+                        <h2>PU008 - 이미지태그</h2>
+                        <div class="contents-list-index"><em>01</em> / <span>21</span></div>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01213T280PPV00_R_173353.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01213O205PPV00_R_132435.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01213O159PPV00_R_143511.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01213O207PPV00_R_112951.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01212J438PPV00_R_092956.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+
+
+
+
+                <!-- img test -->
+                    <section class="home-contents module11">
+                        <h2>PU008 - 이미지태그</h2>
+                        <div class="contents-list-index"><em>01</em> / <span>21</span></div>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail">
+                                            <img src="../../assets/images/temp/poster-01.jpg" onerror="this.onerror=null;this.src='../../assets/images/common/img-thumbnail-list-default.png'" alt="포스터" />
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li class="">
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail">
+                                            <img src="../../assets/images/temp/poster-01.jpg" onerror="this.onerror=null;this.src='../../assets/images/common/img-thumbnail-list-default.png'" alt="포스터" />
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+
+
+
+                    <!-- 모듈12 <나에게만 무료 추천> -->
+                    <section class="home-contents module12">
+                        <h2>PU008 - 모듈12 - 나에게만 무료 추천</h2>
+                        <div class="contents-list-index"><em>01</em> / <span>21</span></div>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M0120AU164PPV00_R_140749.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M0119CO416PPV00_R_130540.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01205P142PPV00_R_133603.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01204L279PPV00_R_141029.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01204E295PPV00_R_142324.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 모듈13 <모바일 시청이력 기반 추천> -->
+                    <section class="home-contents module13">
+                        <h2>PU008 - 모듈13 - 모바일 시청이력 기반 추천</h2>
+                        <div class="contents-list-index"><em>01</em> / <span>21</span></div>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01203G243PPV00_R_095141.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01203Q380PPV00_R_092449.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M012049407PPV00_R_154721.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01203O090PPV00_R_114505.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01203C163PPV00_R_103446.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 모듈14 <찜 목록> -->
+                    <section class="home-contents module14">
+                        <h2>PU008 - 모듈14 - 찜 목록</h2>
+                        <div class="contents-list-index"><em>01</em> / <span>21</span></div>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01183N023PPV00_R_000000.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01213V109PPV00_R_174133.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01213V109PPV00_R_174133.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01213V109PPV00_R_174133.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    
+                    <!-- 모듈1-2 <장르홈 - tv방송 배너>-->
+                    <section class="home-contents module1-2">
+                        <h2>장르 홈 - tv방송 배너</h2>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <!-- 로고타입 이미지인지 텍스트인지 구분, 이미지일 경우 image-logo 클래스 추가 / 
+                                                텍스트 경우 2줄일 경우 doulbe-line 클래스 추가 -->
+                                                <h4 class="title image-logo" style="background-image:url(../../assets/images/temp/image-logo.png)">ddd</h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span class="ic-age">15</span>
+                                                    <span>2020</span>
+                                                    <span>1시간 36분</span>
+                                                    <span class="ic-tag">HD</span>
+                                                    <span class="ic-tag">자막</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 모듈1-3 <장르홈 - 다큐 배너> -->
+                    <section class="home-contents module1-3">
+                        <h2>장르 홈 - 다큐멘터리 영화</h2>
+                        <div class="contents-list-index"><em>01</em> / <span>21</span></div>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-horizontal">
+                                        <div class="poster-banner" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-banner" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-banner" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-banner" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-banner" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 모듈1-4 <장르홈 - 애니메이션 배너> -->
+                    <section class="home-contents module1-4">
+                        <h2>장르 홈 - 애니메이션 배너</h2>
+                        <div class="contents-list-index"><em>01</em> / <span>21</span></div>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail">
+                                            <div class="image" style="background-image: url(http://203.248.154.13/smartux/ads/1617180111916.png)"></div>
+                                        </div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <!-- 로고타입 이미지인지 텍스트인지 구분, 이미지일 경우 image-logo 클래스 추가 / 
+                                                텍스트 경우 2줄일 경우 doulbe-line 클래스 추가 -->
+                                                <h4 class="title image-logo" style="background-image:url(../../assets/images/temp/image-logo.png)">ddd</h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span class="ic-age">15</span>
+                                                    <span>2020</span>
+                                                    <span>1시간 36분</span>
+                                                    <span class="ic-tag">HD</span>
+                                                    <span class="ic-tag">자막</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail">
+                                            <div class="image" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        </div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <!-- 로고타입 이미지인지 텍스트인지 구분, 이미지일 경우 image-logo 클래스 추가 / 
+                                                텍스트 경우 2줄일 경우 doulbe-line 클래스 추가 -->
+                                                <h4 class="title image-logo" style="background-image:url(../../assets/images/temp/image-logo.png)">ddd</h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span class="ic-age">15</span>
+                                                    <span>2020</span>
+                                                    <span>1시간 36분</span>
+                                                    <span class="ic-tag">HD</span>
+                                                    <span class="ic-tag">자막</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail">
+                                            <div class="image" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        </div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <!-- 로고타입 이미지인지 텍스트인지 구분, 이미지일 경우 image-logo 클래스 추가 / 
+                                                텍스트 경우 2줄일 경우 doulbe-line 클래스 추가 -->
+                                                <h4 class="title image-logo" style="background-image:url(../../assets/images/temp/image-logo.png)">ddd</h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span class="ic-age">15</span>
+                                                    <span>2020</span>
+                                                    <span>1시간 36분</span>
+                                                    <span class="ic-tag">HD</span>
+                                                    <span class="ic-tag">자막</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail">
+                                            <div class="image" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        </div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <!-- 로고타입 이미지인지 텍스트인지 구분, 이미지일 경우 image-logo 클래스 추가 / 
+                                                텍스트 경우 2줄일 경우 doulbe-line 클래스 추가 -->
+                                                <h4 class="title image-logo" style="background-image:url(../../assets/images/temp/image-logo.png)">ddd</h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span class="ic-age">15</span>
+                                                    <span>2020</span>
+                                                    <span>1시간 36분</span>
+                                                    <span class="ic-tag">HD</span>
+                                                    <span class="ic-tag">자막</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail">
+                                            <div class="image" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        </div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <!-- 로고타입 이미지인지 텍스트인지 구분, 이미지일 경우 image-logo 클래스 추가 / 
+                                                텍스트 경우 2줄일 경우 doulbe-line 클래스 추가 -->
+                                                <h4 class="title image-logo" style="background-image:url(../../assets/images/temp/image-logo.png)">ddd</h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span class="ic-age">15</span>
+                                                    <span>2020</span>
+                                                    <span>1시간 36분</span>
+                                                    <span class="ic-tag">HD</span>
+                                                    <span class="ic-tag">자막</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="meta-data">
+                                            <h4 class="title marquee-text marquee-play">
+                                                <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail">
+                                            <div class="image" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        </div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <!-- 로고타입 이미지인지 텍스트인지 구분, 이미지일 경우 image-logo 클래스 추가 / 
+                                                텍스트 경우 2줄일 경우 doulbe-line 클래스 추가 -->
+                                                <h4 class="title image-logo" style="background-image:url(../../assets/images/temp/image-logo.png)">ddd</h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span class="ic-age">15</span>
+                                                    <span>2020</span>
+                                                    <span>1시간 36분</span>
+                                                    <span class="ic-tag">HD</span>
+                                                    <span class="ic-tag">자막</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 모듈15-1 <다시보기 추천 콘텐츠 (영상 타입)> -->
+                    <section class="home-contents module15-1">
+                        <h2>모듈15-1 - 썸네일 세로형 </h2>
+                        <div class="contents-list-index"><em>01</em> / <span>50</span></div>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-vertical">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01213V101PPV00_R_165407.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-vertical">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-vertical">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-vertical">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-vertical">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-vertical">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 모듈15-2 <다시보기 추천 콘텐츠 (영상 미재생 타입)> -->
+                    <section class="home-contents module15-2">
+                        <h2>모듈15-2 - 썸네일 세로형 </h2>
+                        <div class="contents-list-index"><em>01</em> / <span>21</span></div>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-vertical">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-vertical">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-vertical">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-vertical">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-vertical">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-vertical">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 모듈17-1/17-2 <대형 모듈> -->
+                    <section class="home-contents module17">
+                        <h2>PU017 - 모듈17 - 대형 모듈</h2>
+                        <div class="contents-list-index"><em>01</em> / <span>21</span></div>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="poster-desc">
+                                <div class="poster-image">
+                                    <div class="img" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                </div>
+                                <div class="poster-component">
+                                    <div class="content-info">
+                                        <!-- 로고타입 이미지인지 텍스트인지 구분, 이미지일 경우 image-logo 클래스 추가 / 
+                                        텍스트 경우 2줄일 경우 doulbe-line 클래스 추가 -->
+                                        <h4 class="title image-logo" style="background-image:url(../../assets/images/temp/image-logo.png)">ddd</h4>
+                                        <!--기본정보-->
+                                        <div class="default-info">
+                                            <span>2020</span>
+                                            <span>일본</span>
+                                            <span>애니메이션</span>
+                                            <span>12세</span>
+                                            <span>1시간 36분</span>
+                                        </div>
+                                        <!-- 콘텐츠 줄거리 -->
+                                        <div class="summary">
+                                            까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 모듈19-1 <콘텐츠 메타 대형 모듈 - 가로> -->
+                    <section class="home-contents module19-1">
+                        <h2>모듈19-1 콘텐츠 메타 대형 모듈 - 가로</h2>
+                        <div class="contents-list-index"><em>01</em> / <span>21</span></div>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01213V101PPV00_R_165407.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <!-- 로고타입 이미지인지 텍스트인지 구분, 이미지일 경우 image-logo 클래스 추가 / 
+                                                텍스트 경우 2줄일 경우 doulbe-line 클래스 추가 -->
+                                                <h4 class="title image-logo" style="background-image:url(../../assets/images/temp/image-logo.png)">ddd</h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span>2020</span>
+                                                    <span>일본</span>
+                                                    <span>애니메이션</span>
+                                                    <span>12세</span>
+                                                    <span>1시간 36분</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <!-- 로고타입 이미지인지 텍스트인지 구분, 이미지일 경우 image-logo 클래스 추가 / 
+                                                텍스트 경우 2줄일 경우 doulbe-line 클래스 추가 -->
+                                                <h4 class="title image-logo" style="background-image:url(../../assets/images/temp/image-logo.png)">ddd</h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span>2020</span>
+                                                    <span>일본</span>
+                                                    <span>애니메이션</span>
+                                                    <span>12세</span>
+                                                    <span>1시간 36분</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <!-- 로고타입 이미지인지 텍스트인지 구분, 이미지일 경우 image-logo 클래스 추가 / 
+                                                텍스트 경우 2줄일 경우 doulbe-line 클래스 추가 -->
+                                                <h4 class="title image-logo" style="background-image:url(../../assets/images/temp/image-logo.png)">ddd</h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span>2020</span>
+                                                    <span>일본</span>
+                                                    <span>애니메이션</span>
+                                                    <span>12세</span>
+                                                    <span>1시간 36분</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <!-- 로고타입 이미지인지 텍스트인지 구분, 이미지일 경우 image-logo 클래스 추가 / 
+                                                텍스트 경우 2줄일 경우 doulbe-line 클래스 추가 -->
+                                                <h4 class="title image-logo" style="background-image:url(../../assets/images/temp/image-logo.png)">ddd</h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span>2020</span>
+                                                    <span>일본</span>
+                                                    <span>애니메이션</span>
+                                                    <span>12세</span>
+                                                    <span>1시간 36분</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <!-- 로고타입 이미지인지 텍스트인지 구분, 이미지일 경우 image-logo 클래스 추가 / 
+                                                텍스트 경우 2줄일 경우 doulbe-line 클래스 추가 -->
+                                                <h4 class="title image-logo" style="background-image:url(../../assets/images/temp/image-logo.png)">ddd</h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span>2020</span>
+                                                    <span>일본</span>
+                                                    <span>애니메이션</span>
+                                                    <span>12세</span>
+                                                    <span>1시간 36분</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <!-- 로고타입 이미지인지 텍스트인지 구분, 이미지일 경우 image-logo 클래스 추가 / 
+                                                텍스트 경우 2줄일 경우 doulbe-line 클래스 추가 -->
+                                                <h4 class="title image-logo" style="background-image:url(../../assets/images/temp/image-logo.png)">ddd</h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span>2020</span>
+                                                    <span>일본</span>
+                                                    <span>애니메이션</span>
+                                                    <span>12세</span>
+                                                    <span>1시간 36분</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 모듈19-3 <콘텐츠 메타 중형 모듈 - 가로> -->
+                    <section class="home-contents module19-3">
+                        <h2>모듈19-3 콘텐츠 메타 중형 모듈 - 가로</h2>
+                        <div class="contents-list-index"><em>01</em> / <span>21</span></div>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01213V101PPV00_R_165407.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <!-- 타이틀에 이미지로고x 텍스트만-->
+                                                <h4 class="title double-line">우리들의 행복한 시간우리들의 행복한 시간우리들의 행복한 시간</h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span>2020</span>
+                                                    <span>일본</span>
+                                                    <span>애니메이션</span>
+                                                    <span>12세</span>
+                                                    <span>1시간 36분</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <!-- 타이틀에 이미지로고x 텍스트만-->
+                                                <h4 class="title">ddd</h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span class="ic-age">15</span>
+                                                    <span>2020</span>
+                                                    <span>1시간 36분</span>
+                                                    <span class="ic-tag">HD</span>
+                                                    <span class="ic-tag">자막</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <!-- 타이틀에 이미지로고x 텍스트만-->
+                                                <h4 class="title">ddd</h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span>2020</span>
+                                                    <span>일본</span>
+                                                    <span>애니메이션</span>
+                                                    <span>12세</span>
+                                                    <span>1시간 36분</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <!-- 타이틀에 이미지로고x 텍스트만-->
+                                                <h4 class="title">ddd</h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span>2020</span>
+                                                    <span>일본</span>
+                                                    <span>애니메이션</span>
+                                                    <span>12세</span>
+                                                    <span>1시간 36분</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <!-- 타이틀에 이미지로고x 텍스트만-->
+                                                <h4 class="title">ddd</h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span>2020</span>
+                                                    <span>일본</span>
+                                                    <span>애니메이션</span>
+                                                    <span>12세</span>
+                                                    <span>1시간 36분</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+
+                    <!-- 모듈19-4 <콘텐츠 메타 소형 모듈 - 가로> -->
+                    <section class="home-contents module19-4">
+                        <h2>모듈19-4 <콘텐츠 메타 소형 모듈 - 가로></h2>
+                        <div class="contents-list-index"><em>01</em> / <span>21</span></div>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01213V101PPV00_R_165407.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                        <div class="poster-component">
+                                            <!-- 포커스시 보여지는 메타정보 (영상전환시에도 메타정보 계속 제공) -->
+                                            <div class="content-info">
+                                                <h4 class="title marquee-text marquee-play">
+                                                    <p class="marquee-child">엑시트</p>
+                                                </h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span>2020</span>
+                                                    <span>애니메이션</span>
+                                                    <span>12세</span>
+                                                    <span>1시간 36분</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-component">
+                                            <!-- 포커스시 보여지는 메타정보 (영상전환시에도 메타정보 계속 제공) -->
+                                            <div class="content-info">
+                                                <h4 class="title marquee-text marquee-play">
+                                                    <p class="marquee-child">엑시트</p>
+                                                </h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span>2020</span>
+                                                    <span>일본</span>
+                                                    <span>애니메이션</span>
+                                                    <span>12세</span>
+                                                    <span>1시간 36분</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-component">
+                                            <!-- 포커스시 보여지는 메타정보 (영상전환시에도 메타정보 계속 제공) -->
+                                            <div class="content-info">
+                                                <h4 class="title marquee-text marquee-play">
+                                                    <p class="marquee-child">엑시트</p>
+                                                </h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span>2020</span>
+                                                    <span>일본</span>
+                                                    <span>애니메이션</span>
+                                                    <span>12세</span>
+                                                    <span>1시간 36분</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-component">
+                                            <!-- 포커스시 보여지는 메타정보 (영상전환시에도 메타정보 계속 제공) -->
+                                            <div class="content-info">
+                                                <h4 class="title marquee-text marquee-play">
+                                                    <p class="marquee-child">엑시트</p>
+                                                </h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span>2020</span>
+                                                    <span>일본</span>
+                                                    <span>애니메이션</span>
+                                                    <span>12세</span>
+                                                    <span>1시간 36분</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-component">
+                                            <!-- 포커스시 보여지는 메타정보 (영상전환시에도 메타정보 계속 제공) -->
+                                            <div class="content-info">
+                                                <h4 class="title marquee-text marquee-play">
+                                                    <p class="marquee-child">엑시트</p>
+                                                </h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span>2020</span>
+                                                    <span>일본</span>
+                                                    <span>애니메이션</span>
+                                                    <span>12세</span>
+                                                    <span>1시간 36분</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 모듈 <장르홈 - 추천 카테고리> -->
+                    <section class="home-contents module09-2">
+                        <h2>모듈09-2 - 즐겨찾는 카테고리</h2>
+                        <div class="contents-list-index"><em>01</em> / <span>21</span></div>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <span>바로가기</span>
+                                                <p>예능</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-component poster-bg-color1">
+                                            <div class="content-info">
+                                                <span>바로가기</span>
+                                                <p>이번주 인기</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                        <div class="poster-component poster-bg-color2">
+                                            <div class="content-info">
+                                                <span>바로가기</span>
+                                                <p>HOT</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li class="focus">
+                                    <div class="button-menu">
+                                        <div class="content-info">
+                                            <span>바로가기</span>
+                                            <p><i class="ic-gnb-total"></i>전체메뉴</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 모듈18-1 <홈 - 광고 배너 모듈> -->
+                    <section class="home-contents module18-1">
+                        <h2>홈 - 광고 배너 모듈(큰 경우)</h2>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-horizontal">
+                                        <div class="poster-banner" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 모듈18-2 <홈 - 광고 배너 모듈> -->
+                    <section class="home-contents module18-2">
+                        <h2>홈 - 광고 배너 모듈(작은 경우)</h2>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-horizontal">
+                                        <div class="poster-banner" style="background-image: url(http://imgdev.gettimeblocks.com/ct/425/16028130667_o.jpg)"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- 모듈20 -->
+                    <section class="home-contents module20">
+                        <h2>홈 - module20</h2>
+                        <div class="contents-list-index"><em>01</em> / <span>10</span></div>
+                        <div class="home-contents-list">
+                            <ul>
+                                <li class="focus">
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1618473630236.jpg&quot;);"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(&quot;http://d3c5s6bottxrkq.cloudfront.net/resize.php?filename=M01213V101PPV00_R_165407.jpg&amp;width=380&amp;height=214&amp;type=poster&quot;);"></div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <!-- 로고타입 이미지인지 텍스트인지 구분, 이미지일 경우 image-logo 클래스 추가 / 
+                                                텍스트 경우 2줄일 경우 doulbe-line 클래스 추가 -->
+                                                <h4 class="title image-logo" style="background-image:url(../../assets/images/temp/image-logo.png)">ddd</h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span>2020</span>
+                                                    <span>일본</span>
+                                                    <span>애니메이션</span>
+                                                    <span>12세</span>
+                                                    <span>1시간 36분</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1618470012636.jpg&quot;);"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1618470012636.jpg&quot;);"></div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <!-- 로고타입 이미지인지 텍스트인지 구분, 이미지일 경우 image-logo 클래스 추가 / 
+                                                텍스트 경우 2줄일 경우 doulbe-line 클래스 추가 -->
+                                                <h4 class="title image-logo" style="background-image:url(../../assets/images/temp/image-logo.png)">ddd</h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span>2020</span>
+                                                    <span>일본</span>
+                                                    <span>애니메이션</span>
+                                                    <span>12세</span>
+                                                    <span>1시간 36분</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1618462773157.jpg&quot;);"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1618462773157.jpg&quot;);"></div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <!-- 로고타입 이미지인지 텍스트인지 구분, 이미지일 경우 image-logo 클래스 추가 / 
+                                                텍스트 경우 2줄일 경우 doulbe-line 클래스 추가 -->
+                                                <h4 class="title image-logo" style="background-image:url(../../assets/images/temp/image-logo.png)">ddd</h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span>2020</span>
+                                                    <span>일본</span>
+                                                    <span>애니메이션</span>
+                                                    <span>12세</span>
+                                                    <span>1시간 36분</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1618386431241.jpg&quot;);"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1618386431241.jpg&quot;);"></div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <!-- 로고타입 이미지인지 텍스트인지 구분, 이미지일 경우 image-logo 클래스 추가 / 
+                                                텍스트 경우 2줄일 경우 doulbe-line 클래스 추가 -->
+                                                <h4 class="title image-logo" style="background-image:url(../../assets/images/temp/image-logo.png)">ddd</h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span>2020</span>
+                                                    <span>일본</span>
+                                                    <span>애니메이션</span>
+                                                    <span>12세</span>
+                                                    <span>1시간 36분</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="poster-horizontal">
+                                        <div class="poster-thumbnail" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1618532137863.jpg&quot;);"></div>
+                                        <div class="poster-thumbnail focus-poster" style="background-image: url(&quot;http://203.248.154.13/smartux/ads/1618532137863.jpg&quot;);"></div>
+                                        <div class="poster-component">
+                                            <div class="content-info">
+                                                <!-- 로고타입 이미지인지 텍스트인지 구분, 이미지일 경우 image-logo 클래스 추가 / 
+                                                텍스트 경우 2줄일 경우 doulbe-line 클래스 추가 -->
+                                                <h4 class="title image-logo" style="background-image:url(../../assets/images/temp/image-logo.png)">ddd</h4>
+                                                <!--기본정보-->
+                                                <div class="default-info">
+                                                    <span>2020</span>
+                                                    <span>일본</span>
+                                                    <span>애니메이션</span>
+                                                    <span>12세</span>
+                                                    <span>1시간 36분</span>
+                                                </div>
+                                                <!-- 콘텐츠 줄거리 -->
+                                                <div class="summary">
+                                                    까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="meta-data">
+                                        <h4 class="title marquee-text marquee-play">
+                                            <p class="marquee-child">아이스크림이 좋아! 1회</p>
+                                        </h4>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    
+                    <!-- 버튼 영역 -->
+                    <div class="button-area">
+                        <button class="button focus">
+                            <p class="text"><i class="ic-button-top"></i>맨위로</p>
+                        </button>
+                        <!-- 영화/해외 드라마 홈 진입시 버튼 2개 생성 -->
+                        <!-- <button class="button">
+                            <p class="text">전체보기</p>
+                        </button> -->
+                    </div>
+                </div>
+
+                <!-- 성인 카테고리 최초 진입시 -->
+                <div class="home-adult setting-contents">
+
+                    <!--페이지 path-->
+                    <p class="path">
+                        <span>홈</span>
+                        <span>영화/해외드라마</span>
+                        <span>이번주 인기</span>
+                    </p>
+
+                    <div class="layer-page">
+                        <div class="layer-header">
+                            <div class="ic-age">19</div>
+                            <h3 class="title">성인 전용관</h3>
+                        </div>
+                        <div class="layer-body">
+                            <p class="subscribe-text">
+                                이 정보내용은 청소년 유해 매체물로서 정보통신망이용<br>
+                                촉진 및 정보 보호 등에 관한 법률 및 청소년 보호법의 규정에 의하여<br>
+                                19세 미만의 청소년은 이용할 수 없습니다.
+                            </p>
+                        </div>
+                        <div class="button-area">
+                            <button class="button-primary large focus">
+                                <p class="text">사용자 인증</p>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 채널 키 고지 -->
+                <div class="home-footer">
+                    <p class="keyguide">
+                        <!--<span class="ic-round keyguide-option">옵션</span>부가기능 보기-->   <!-- UHD1,2,3인 경우-->
+                        <span class="ic-round keyguide-option">간편메뉴</span>부가기능 보기       <!-- tvg/보급형인 경우-->
+                    </p>
+                    <!-- <span><em class="ic-round">옵션</em> 부가기능 보기</span> 
+                    <span><em class="ic-round">간편메뉴</em> 부가기능 보기</span> -->
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <script src="/static/js/bundle.js"></script>
+    <script src="/static/js/0.chunk.js"></script>
+    <script src="/static/js/main.chunk.js"></script>
+    <script>
+        if (document.querySelector("li.focus")) {
+            [...document.querySelector("li.focus").querySelectorAll(".marquee-text")].forEach((o) => {
+                const marqueeChild = o.querySelector(".marquee-child");
+                const {
+                    clientWidth,
+                    scrollWidth
+                } = o;
+
+                if (clientWidth < scrollWidth) {
+                    if (!o.dataset.ani) {
+                        marqueeChild.style.animationDuration = `${
+                            (clientWidth / scrollWidth) * 5000
+                        }ms`;
+
+                        o.dataset.ani = "Y";
+                        const span = document.createElement("span");
+                        span.innerHTML = marqueeChild.innerHTML;
+                        marqueeChild.innerHTML = "";
+                        const t = span.cloneNode(true);
+                        t.classList.add("space");
+                        span.append(t);
+
+                        marqueeChild.append(span);
+
+                        o.classList.add("marquee-play");
+                        marqueeChild.addEventListener("animationend", (e) => {
+                            if (e.animationName === "marquee-text") {
+                                o.classList.remove("marquee-play");
+                                setTimeout(() => {
+                                    o.classList.add("marquee-play");
+                                });
+                            }
+                        });
+                    }
+                } else {
+                    o.classList.remove("marquee-play");
+                }
+                // const { clientWidth, scrollWidth } = marqueeChild;
+                // console.log(clientWidth, scrollWidth);
+            });
+        }
+    </script>
+
+</body>
+
+</html>

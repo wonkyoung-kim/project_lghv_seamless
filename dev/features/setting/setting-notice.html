@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+</head>
+
+<body>
+
+    <div id="root">
+        <!-- react 구조 -->
+
+
+
+    <div class="setting-container">
+
+
+
+    <!-- 2Depth일때 노출 
+        <div class="category-back">
+            <i class="ic-arrow">이전으로</i>
+        </div>-->
+
+
+        <div class="setting-aside">
+
+            <h1 class="title">설정</h1>
+
+            <!--menu 1depth / 2depth-->
+            <nav class="setting-menu">
+            
+
+                <ul class="setting-gnb">
+                    <li>공지사항</li>
+                    <li>자녀 보호 설정</li>
+                    <li>채널 설정</li>
+                    <li>시스템 설정</li>
+                    <li>오디오 설정</li>
+                </ul> 
+
+
+            <!-- 2depth -->
+
+
+                <!-- 채널 설정
+                <ul class="parent-control-lnb">
+                    <li>비밀번호 변경</li>
+                    <li>시력보호 설정</li>
+                    <li>시청연령 제한</li>
+                    <li>시청시간 제한</li>
+                    <li>시청횟수 제한</li>
+                    <li>시청채널 제한</li>
+                    <li>성인 콘텐츠 제한</li>
+                </ul> 
+                -->
+
+                <!-- 채널 설정 
+                <ul class="channel-lnb">
+                    <li>선호채널 편집</li>
+                    <li>채널 숨김 편집</li>
+                    <li>채널 정보 표시</li>
+                    <li>시청각 보조 방송</li>
+                    <li>4채널 동시보기 화면</li>
+                </ul>-->
+
+                <!-- 시스템 설정 
+                <ul class="system-lnb">
+                    <li class="focus">알림 설정</li>
+                    <li>자동 전원 설정</li>
+                    <li>U+tv 음성 제어</li>
+                    <li>디스플레이 모드</li>
+                    <li>화면 영역 최대화</li>
+                    <li>시작 화면 설정</li>
+                    <li>전체 초기화</li>
+                    <li>소프트웨어 업데이트</li>
+                    <li>TV 전원동기화</li>
+                </ul>
+                -->
+            </nav>
+
+            
+
+
+        </div>
+
+
+    <!-- 우측 콘텐츠 영역 -->
+        <div class="setting-contents">
+            
+
+            <!--페이지 path-->
+            <p class="path">
+                <span>홈</span>
+                <span>설정</span>
+                <span>공지사항</span>
+            </p>
+
+
+
+            <!-- 공지사항 -->
+            <div class="notice">
+
+                <h2 class="skip">공지사항</h2>
+
+                    <section class="list-wrap">
+
+                        <div class="list-header">
+                            <p>제목</p>
+                            <p>작성 날짜</p>
+                        </div>
+
+                        <div class="noti-wrap top-cover">
+                            <!--마우스를 내릴 때 top-cover의 클래스가 있으면 해당 위에 그라데이션 효과, 
+                                마우스를 올리면 bottom-cover의 클래스가 있으면 밑에 그라데이션 효과-->
+                            <ul>
+                                <li class="">
+                                    <div class="text-wrap">
+                                        <div class="subject marquee-text">
+                                            <p class="marquee-child">애니 월정액 카봇6 입고 안내</p>
+                                        </div>
+                                    </div>
+                                    <span>2020.01.02</span>
+                                </li>
+                                <li class="">
+                                    <div class="text-wrap">
+                                        <div class="subject marquee-text">
+                                            <p class="marquee-child">지상파 월정액 신작 무료 VOD 안내</p>
+                                        </div>
+                                    </div>
+                                    <span>2020.01.02</span>
+                                </li>
+                                <li class="focus">
+                                    <div class="text-wrap">
+                                        <div class="subject marquee-text marquee-play">
+                                            <p class="marquee-child">겨울방학 맞이 보들북 도서 증정 이벤트</p>
+                                        </div>
+                                        <i class="ic-new">N</i>
+                                    </div>
+                                    <span>2020.01.02</span>
+                                </li>
+
+
+                                <li class="">
+                                    <div class="text-wrap">
+                                        <div class="subject marquee-text">
+                                            <p class="marquee-child">연아의 아이스쇼에 놀러오세요. 목동아이</p>
+                                        </div>
+                                    </div>
+                                    <span>2020.01.02</span>
+                                </li>
+
+
+                                <li>
+                                    <div class="text-wrap">
+                                        <div class="subject marquee-text">
+                                            <p class="marquee-child">지상파 월정액 신작 무료 VOD 안내</p>
+                                        </div>
+                                    </div>
+                                    <span>2020.01.02</span>
+                                </li>
+
+
+                                <li>
+                                    <div class="text-wrap">
+                                        <div class="subject marquee-text">
+                                            <p class="marquee-child">지상파 월정액 신작 무료 VOD 안내</p>
+                                        </div>
+                                    </div>
+                                    <span>2020.01.02</span>
+                                </li>
+
+
+                                <li>
+                                    <div class="text-wrap">
+                                        <div class="subject marquee-text">
+                                            <p class="marquee-child">지상파 월정액 신작 무료 VOD 안내</p>
+                                        </div>
+                                    </div>
+                                    <span>2020.01.02</span>
+                                </li>
+
+                                <li>
+                                    <div class="text-wrap">
+                                        <div class="subject marquee-text">
+                                            <p class="marquee-child">지상파 월정액 신작 무료 VOD 안내</p>
+                                        </div>
+                                    </div>
+                                    <span>2020.01.02</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                    </section>
+
+            </div>
+            <!-- //공지사항 -->
+
+
+
+
+        </div>
+        <!-- //우측 콘텐츠 영역  -->
+
+
+    </div>
+    <!-- //설정 -->
+            
+
+
+
+
+
+    </div>
+    <!-- //root -->
+</body>
+
+</html>

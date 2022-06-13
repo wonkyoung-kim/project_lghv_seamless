@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+</head>
+
+<body>
+
+    <div id="root">
+        <!-- react 구조 -->
+        <div class="vod-layer-bg"> <!--bg애니메이션 시작 start-layer-bg / bg없애기 hide-layer-bg -->
+
+            <!--vod 전체회차 -->
+            <div class="vod-layer episode bottom-cover"> <!--애니메이션 시작 start-layer-contents / 없애기 hide-layer-contents -->
+                <h2 class="skip">전체회차</h2>
+                <!-- 시즌 -->
+                <div class="season-tab-wrap long-tab active">
+                    <!-- 제목으로 시즌 표시 하는 경우 클래스 long-tab 추가-->
+                    <div class="season-tab tab1">
+                        <div class="tab-focus">
+                            <div class="text-wrap marquee-text marquee-play">
+                                <p class="marquee-child">가나다라마바사아자차카타파하</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="season-tab tab2">
+                        <p>시즌 2</p>
+                    </div>
+                    <div class="season-tab tab3">
+                        <p>시즌 3</p>
+                    </div>
+                </div>
+            
+                <!--회차리스트-->
+                <section class="contents-list-wrap">
+                    <div class="mask"></div>
+                    <ul class="contents-list" id="test">
+                        <li class="focus">
+                            <div class="poster-horizontal">
+                                <div class="poster-thumbnail" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                                <div class="poster-component">
+                                    <p class="poster-button">대여(2일) 1,500원</p>
+                                </div>
+                            </div>
+                            <div class="meta-data">
+                                <h4 class="title marquee-text marquee-play">
+                                    <p class="marquee-child">
+                                        1화<span class="subtitle">악몽을 먹고 자란 소년asdfasdfasdfasdfasdfasdfdsafasdfasdfasdfasdfasdf</span>
+                                    </p>
+                                </h4>
+                                <!--기본정보-->
+                                <div class="content-info">
+                                    <p class="default-info">
+                                        <span>2020.03.11(목)</span>
+                                        <span>65분</span>
+                                        <span>15세</span>
+                                        <span>IMDb 9/10점</span>
+                                        <span class="ic-tag small">이거찾으세요?</span>
+                                    </p>
+                                    <p class="staff">
+                                        <span class="label">출연 : </span>
+                                        <span>김수현,서예지,오정세,박규영</span>
+                                        <span class="label">감독 : </span>
+                                        <span>박신우, 조용</span>
+                                    </p>
+                                </div>
+                                <div class="summary-wrap">
+                                    <p class="summary">정신병동 보호사 문강태, 아름답지만 살벌한 동화작가 고문영, 전혀 다른 세계에서 살아가던 두 사람의 달콤 쌉쌀</p>
+                                    <p class="more-button">
+                                    <span class="more-info">+더보기</span>
+                                    </p>
+                                </div>
+                                <div  class="purchase-guide">
+                                    <!--포인트 사용 가이드-->
+                                    <p class="coupon-info">멤버십 포인트 할인 적용하여 1,500원에 구매 가능</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="poster-horizontal history-bg">
+                                <div class="poster-thumbnail" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                                <div class="poster-component">
+                                    <dl class="poster-time">
+                                        <!-- 시청 완료 되면 노출 -->
+                                        <dt class="watch-complete">시청완료</dt>
+                                        <!-- 시청중일 때는 남은 시간 표시 -->
+                                        <dd class="poster-remaining"><span style="width: 50%;"></span></dd>
+                                    </dl> 
+                                    <p class="poster-button">대여(2일) 1,500원</p>
+                                </div>
+                            </div>
+                            <div class="meta-data">
+                                <h4 class="title marquee-text marquee-play">
+                                    <p class="marquee-child">
+                                        1화<span class="subtitle">악몽을 먹고 자란 소년</span>
+                                    </p>
+                                </h4>
+                                <!--기본정보-->
+                                <div class="content-info">
+                                    <p class="default-info">
+                                        <span>2020.03.11(목)</span>
+                                        <span>65분</span>
+                                        <span>15세</span>
+                                        <span>IMDb 9/10점</span>
+                                        <span class="ic-tag small">이거찾으세요?</span>
+                                    </p>
+                                    <p class="staff">
+                                        <span class="label">출연 : </span>
+                                        <span>김수현,서예지,오정세,박규영</span>
+                                        <span class="label">감독 : </span>
+                                        <span>박신우, 조용</span>
+                                    </p>
+                                </div>
+                                <div class="summary-wrap">
+                                    <p class="summary">정신병동 보호사 문강태, 아름답지만 살벌한 동화작가 고문영, 전혀 다른 세계에서 살아가던 두 사람의 달콤 쌉쌀</p>
+                                    <p class="more-button">
+                                    <span class="more-info">+더보기</span>
+                                    </p>
+                                </div>
+                                <div  class="purchase-guide">
+                                    <!--포인트 사용 가이드-->
+                                    <p class="coupon-info">멤버십 포인트 할인 적용하여 1,500원에 구매 가능</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="poster-horizontal history-bg">
+                                <div class="poster-thumbnail" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                                <div class="poster-component">
+                                    <dl class="poster-time">
+                                        <!-- 시청 완료 되면 노출 -->
+                                        <dt class="watch-complete">시청완료</dt>
+                                        <!-- 시청중일 때는 남은 시간 표시 -->
+                                        <dd class="poster-remaining none"><span style="width: 50%;"></span></dd>
+                                    </dl> 
+                                    <p class="poster-button">대여(2일) 1,500원</p>
+                                </div>
+                            </div>
+                            <div class="meta-data">
+                                <h4 class="title marquee-text marquee-play">
+                                    <p class="marquee-child">
+                                        1화<span class="subtitle">악몽을 먹고 자란 소년</span>
+                                    </p>
+                                </h4>
+                                <!--기본정보-->
+                                <div class="content-info">
+                                    <p class="default-info">
+                                        <span>2020.03.11(목)</span>
+                                        <span>65분</span>
+                                        <span>15세</span>
+                                        <span>IMDb 9/10점</span>
+                                        <span class="ic-tag small">이거찾으세요?</span>
+                                    </p>
+                                    <p class="staff">
+                                        <span class="label">출연 : </span>
+                                        <span>김수현,서예지,오정세,박규영</span>
+                                        <span class="label">감독 : </span>
+                                        <span>박신우, 조용</span>
+                                    </p>
+                                </div>
+                                <div class="summary-wrap">
+                                    <p class="summary">정신병동 보호사 문강태, 아름답지만 살벌한 동화작가 고문영, 전혀 다른 세계에서 살아가던 두 사람의 달콤 쌉쌀</p>
+                                    <p class="more-button">
+                                    <span class="more-info">+더보기</span>
+                                    </p>
+                                </div>
+                                <div  class="purchase-guide">
+                                    <!--포인트 사용 가이드-->
+                                    <p class="coupon-info">멤버십 포인트 할인 적용하여 1,500원에 구매 가능</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="poster-horizontal">
+                                <div class="poster-thumbnail" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                                <div class="poster-component">
+                                    <p class="poster-button">대여(2일) 1,500원</p>
+                                </div>
+                            </div>
+                            <div class="meta-data">
+                                <h4 class="title ">
+                                    1화<span class="subtite"></span>악몽을 먹고 자란 소년</span>
+                                </h4>
+                                <!--기본정보-->
+                                <div class="content-info">
+                                    <p class="default-info">
+                                        <span>2020.03.11(목)</span>
+                                        <span>65분</span>
+                                        <span>15세</span>
+                                        <span>IMDb 9/10점</span>
+                                        <span class="ic-tag small">이거찾으세요?</span>
+                                    </p>
+                                    <p class="staff">
+                                        <span class="label">출연 : </span>
+                                        <span>김수현,서예지,오정세,박규영</span>
+                                        <span class="label">감독 : </span>
+                                        <span>박신우, 조용</span>
+                                    </p>
+                                </div>
+                                <div class="summary-wrap">
+                                <p class="summary">정신병동 보호사 문강태, 아름답지만 살벌한 동화작가 고문영, 전혀 다른 세계에서 살아가던 두 사람의 달콤 쌉쌀</p>
+                                <p class="more-button">
+                                    <span class="more-info">+더보기</span>
+                                    </p>
+                                </div>
+                                <div  class="purchase-guide">
+                                    <!--결방 및 지연문구-->
+                                    <p class="update-info">OO회는 결방되었습니다.</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <div class="vod-layer-footer">
+                    <p class="keyguide">
+                        <span class="ic-round keyguide-channel">채널</span>3회씩 이동  
+                    </p>
+                </div>
+                <div class="scroll">
+                    <span style="height:50%"></span>
+                </div>
+            </div>
+            <!--//vod 시리즈 전체회차-->
+        </div>
+
+    </div>
+    <!-- //root -->
+
+</body>
+
+<!-- <script>
+    marquee();
+
+    function marquee() {
+        console.log("start")
+        // 최초
+        const liDom = document.getElementById("test").getElementsByClassName("focus")[0];
+
+        [...liDom.querySelectorAll(".marquee-text")].forEach((o) => {
+            const marqueeChild = o.querySelector(".marquee-child");
+            const { clientWidth, scrollWidth } = o;
+            if (clientWidth < scrollWidth) {
+                if (!o.dataset.ani) {
+                    marqueeChild.style.animationDuration = `${
+                        (clientWidth / scrollWidth) * 5000
+                    }ms`;
+                    o.classList.add("marquee-play");
+                    o.dataset.ani = "Y";
+                    const span = document.createElement("span");
+                    span.innerHTML = marqueeChild.innerHTML;
+                    span.classList.add("space");
+                    marqueeChild.append(span);
+
+                    marqueeChild.addEventListener("animationend", (e) => {
+                        if (e.animationName === "marquee-text") {
+                            o.classList.remove("marquee-play");
+                            setTimeout(() => {
+                                o.classList.add("marquee-play");
+                            }, 100);
+                        }
+                    });
+                }
+            } else {
+                o.classList.remove("marquee-play");
+            }
+        })
+    }
+</script> -->
+</html>

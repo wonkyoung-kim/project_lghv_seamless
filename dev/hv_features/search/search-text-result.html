@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/hv_index.css" />
+</head>
+
+<body style="overflow: auto;">
+    <div id="root">
+        <div class="search-container">
+
+            <h2 class="skip">문자 검색</h2>
+            <!-- search-result에 bottom-cover클래스 붙이면 하단그라데이션 생성 -->
+            <!-- 실시간방송 모두보기 결과 진입시 result-live-broadcast클래스 추가 -->
+            <div class="search-result bottom-cover">
+                <!-- 검색창 -->
+                <section class="search-input">
+                    <span class="icon">
+                        <i class="ic-keyboard">키보드버튼</i>
+                    </span>
+                    <!-- 검색필드 -->
+                    <!-- input-text클래스에 입력전이나 수정시 focus/ 키패드에 포커스시 selected -->
+                    <div class="input-text">
+                        <span class="placeholder">&lt; 좌측 키보드 아이콘을 누르시면 재검색이 가능합니다.</span>
+                        <p class="input-text-wrap">
+                            <span class="cursor"></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </p>
+                        <span class="lang">한글</span><!--숫자/기호일경우 num클래스 추가-->
+                    </div>
+                    <span class="icon">
+                        <i class="ic-voice">음성버튼</i>
+                    </span>
+                </section>
+                <!-- 
+                    검색결과 - 장르별인 경우(한줄표시)
+                    또는 장르별 모두보기 진입시 첫번째li(result-number)제거후 li추가시 아래로 자동떨어짐
+                -->
+                <p class="result-info"><span>‘검색어’</span> 에 대한 검색결과 입니다 <em>(총 520건)</em></p>
+                <section class="contents active"><!--active시 스크롤 생성-->
+                    <div class="contents-list-wrap">
+                        <ul>
+                            <li>
+                                <div class="result-number">
+                                    <p>영화<em>90개</em></p>
+                                    <span>모두보기</span>
+                                </div>
+                            </li>
+                            <li class="focus">
+                                <div class="poster-vertical">
+                                    <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-vertical.png')"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-vertical.png')"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-vertical.png')"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-vertical.png')"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-vertical.png')"></div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <div class="result-number">
+                                    <p>TV방송<em>15개</em></p>
+                                    <span>모두보기</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-vertical.png')"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-vertical.png')"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-vertical.png')"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-vertical.png')"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-vertical.png')"></div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <div class="result-number">
+                                    <p>키즈/애니<em>25개</em></p>
+                                    <span>모두보기</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-vertical.png')"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-vertical.png')"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-vertical.png')"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-vertical.png')"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-vertical.png')"></div>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- 성인 카테고리 포스터는 성인대표이미지로 보여지며 adult-list클래스 지우면 기존포스터로 보여짐 -->
+                        <ul class="adult-list">
+                            <li>
+                                <div class="result-number">
+                                    <p>성인<em>0000개</em></p>
+                                    <span>모두보기</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-vertical.png')"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-vertical.png')"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-vertical.png')"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-vertical.png')"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-vertical.png')"></div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="live-broadcast">
+                            <li>
+                                <div class="result-number">
+                                    <p>실시간방송<em>90개</em></p>
+                                    <span>모두보기</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-horizontal">
+                                    <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-02.jpg')"></div>
+                                    <div class="poster-component">
+                                        <div class="poster-tag"><span class="poster-tag-age">전체</span></div>
+                                        <dl class="poster-time">
+                                            <dd class="poster-remaining"><span style="width: 0%;"></span></dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="meta-data">
+                                    <h4 class="title marquee-text">
+                                        <p class="marquee-child">이태원 클라쓰 10화</p>
+                                    </h4>
+                                    <p class="sub-text">오후 9:00-10:00</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-horizontal">
+                                    <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-02.jpg')"></div>
+                                    <div class="poster-component">
+                                        <div class="poster-tag"><span class="poster-tag-age">전체</span></div>
+                                        <dl class="poster-time">
+                                            <dd class="poster-remaining"><span style="width: 0%;"></span></dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="meta-data">
+                                    <h4 class="title marquee-text">
+                                        <p class="marquee-child">이태원 클라쓰 10화</p>
+                                    </h4>
+                                    <p class="sub-text">오후 9:00-10:00</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-horizontal">
+                                    <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-02.jpg')"></div>
+                                    <div class="poster-component">
+                                        <div class="poster-tag"><span class="poster-tag-age">전체</span></div>
+                                        <dl class="poster-time">
+                                            <dd class="poster-remaining"><span style="width: 0%;"></span></dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="meta-data">
+                                    <h4 class="title marquee-text">
+                                        <p class="marquee-child">이태원 클라쓰 10화</p>
+                                    </h4>
+                                    <p class="sub-text"><span class="ic-tag">시청예약</span>오후 9:00-10:00</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-horizontal">
+                                    <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-02.jpg')"></div>
+                                    <div class="poster-component">
+                                        <div class="poster-tag"><span class="poster-tag-age">전체</span></div>
+                                        <dl class="poster-time">
+                                            <dd class="poster-remaining"><span style="width: 0%;"></span></dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="meta-data">
+                                    <h4 class="title marquee-text">
+                                        <p class="marquee-child">이태원 클라쓰 10화</p>
+                                    </h4>
+                                    <p class="sub-text"><span class="ic-tag">방송예정</span>오후 9:00-10:00</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="scroll">
+                        <span style="height:50%"></span>
+                    </div>
+                </section>
+                <!-- 검색결과 없을 경우 none클래스 제거 -->
+                <p class="list-none none"><em>‘검색어’ 영화</em>에 대한 검색된 결과가 없습니다</p>
+            </div>
+
+        </div>
+        <!--//search-container-->
+    </div>
+    <!-- //root -->
+</body>
+
+</html>

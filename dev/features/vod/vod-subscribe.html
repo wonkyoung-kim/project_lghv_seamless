@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+</head>
+
+<body>
+
+    <div id="root">
+        <!-- react 구조 -->
+
+
+        <!--vod 상세화면 / 시리즈 / 시즌제 -->
+
+        <div class="vod-detail-container video-type">
+            <!-- <div class="vod-detail-container video-type"> 영상 배경일 때 사용-->
+            
+            <!-- vod 이미지 배경
+            <div class="vod-detail-bgimage" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div> -->
+
+            <!-- 배경 그라데이션 -->
+            <div class="gradient-bg">
+  
+                <!-- 콘텐츠 -->
+                <div class="contents vod-subscribe">
+                     
+                    <section class="content-info">                    
+                        <!-- 로고타입 이미지인지 텍스트인지 구분, 이미지일 경우 image-logo 클래스 추가 / 
+                        텍스트 경우 2줄일 경우 doulbe-line 클래스 추가 -->
+                        <h1 class="vod-title">지상파 월정액</h1>
+                    <!--메타데이터 영역-->              
+                        <div class="product-desc">
+                            월 14,300원에 KBS, MBC, SBS에서 제공하는 다양한 콘텐츠를 자유롭게 시청 가능!
+                            <span>(방송사 사정에 따라, 일부 콘텐츠 제외)</span>
+                        </div>
+                    </section>   
+                    
+                    <!--구매버튼 영역-->
+                    <section class="func-area">
+   
+                        <div class="button-area">
+                            <!--구매버튼 -->
+                            <button class="vod-button text-type small focus">
+                                <div class="text">
+                                    <p class="label">월정액</p>
+                                    <p class="price">8,000원</p>
+                                </div>
+                            </button>
+                            <!--월정액 구매 안내 팁-->
+                            <span class="tooltip">
+                                <em>월정액</em>으로 추가 결제 없이<br/>
+                                무제한 시청할 수 있어요!
+                            </span>
+
+                             <!--구재생 버튼/ 월정액 구매 후
+                            <button class="vod-button play focus">
+                                <p class="text">재생하기</p>
+                            </button>-->
+                        </div>
+
+                        <!--구매하단 할인문구-->
+                        <div class="purchase-guide">
+                            <!--쿠폰사용문구-->
+                            <p class="coupon-info">사용 가능한 쿠폰 1개</p>
+                            <!-- tv포인트 구매안내
+                            <p class="sale-info">TV포인트를 사용하면 6,600원에 구매 가능</p>
+                            <p class="remain-time">무제한 시청</p> -->
+                        </div>
+
+                    </section>
+
+
+                    <!--detail 정보-->
+                    <section class="detail-info">
+
+                        <!--추가정보/기능 리스트버튼 영역-->
+                        <div class="detail-list-wrap">
+                            <ul class="vod-additional-list">
+                                <li class="cast-info">주요 장면</li>
+                                <li class="wish-list add">찜목록에 추가</li>
+                                <!--<li class="wish-list delete">찜목록에서 삭제</li>-->
+                                <li class="rate-contents">
+                                    이 콘텐츠 평가하기
+                                    <!-- <ul class="rate-contents-focus">
+                                        <li class="like focus">좋아요
+                                            <span class="count">999+</span>
+                                        </li>
+                                        <li class="dislike">싫어요
+                                            <span class="count">999+</span>
+                                        </li>
+                                    </ul> -->
+                                </li>
+                                <!-- <li class="rated like focus">좋아요
+                                    <span class="count">999+</span>
+                                </li>
+                                <li class="rated dislike focus">싫어요
+                                    <span class="count">999+</span>
+                                </li> -->                               
+                            </ul>
+                        </div>
+
+                        <div class="summary-info">             
+                            <!--월정액 소개-->
+                            <div class="summary-wrap">
+                                <p class="product-info">* 인기 콘텐츠: <한 번 다녀왔습니다>, <편의점 샛별이>, <꼰대 인턴>, <놀면 뭐하니?>, <런닝맨>, <슈퍼맨이 돌아왔다> 등</p>
+                             </div>
+                        </div>
+                        
+                    </section>
+
+                </div>  
+                <!--//콘텐츠 -->
+
+            </div>
+            <!--//그라데이션 배경-->
+            
+            <!--U+모바일로tv로 시청가능-->
+            <div class="mobile-message">
+                <p class="mobile-view-tip">'홈 > 마이메뉴'에서 연결 가능</p>
+                <!--모바일로 시청가능 tooltip-->
+                <p class="tooltip">
+                    이 영상을 무료로 이어보려면 TV와 휴대폰을 연결해보세요.<br/>
+                    ‘U+모바일tv로 시청 가능’ 표시가 있는 콘텐츠만 해당됩니다.
+                </p>
+            </div>
+
+            <!-- vod-layer 노출 시에 어두워지는 bg -->
+            <div class="vod-layer-dimmed"></div>
+            
+        </div>
+        <!--//vod상세화면-->
+
+
+    </div>
+    <!-- //root -->
+
+</body>
+
+</html>

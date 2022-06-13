@@ -1,0 +1,448 @@
+@charset "UTF-8";
+/* variables */
+/* functions */
+/* mixins */
+/* toast 임시 */
+.poster-horizontal::before {
+  background-image: url("../../assets/hv_images/common/img-default-thumbnail.png");
+}
+
+.poster-horizontal .poster-banner {
+  position: relative;
+  height: 100%;
+  border-radius: 8px;
+  z-index: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.focus .poster-horizontal, .selected .poster-horizontal {
+  z-index: 2;
+}
+
+.focus .poster-horizontal::before, .selected .poster-horizontal::before {
+  transform: scale(1.06);
+  transform-origin: center;
+}
+
+.focus .poster-horizontal::after, .selected .poster-horizontal::after {
+  content: none;
+}
+
+.focus .poster-horizontal .poster-banner, .selected .poster-horizontal .poster-banner {
+  transform: scale(1.06);
+  transform-origin: center;
+}
+
+.focus .poster-horizontal .poster-banner::before, .selected .poster-horizontal .poster-banner::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 60px 0 rgba(8, 13, 25, 0.5);
+}
+
+.focus .poster-horizontal .poster-banner::after, .selected .poster-horizontal .poster-banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 0 10px #eee;
+  border-radius: 8px;
+}
+
+.poster-vertical::before {
+  background-image: url("../../assets/hv_images/common/img-default-vertical.png");
+}
+
+.poster-vertical .poster-banner {
+  position: relative;
+  height: 100%;
+  border-radius: 8px;
+  z-index: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.poster-vertical .poster-component {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.poster-vertical .poster-component::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background-size: 100% 188px;
+  background-position: bottom;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
+}
+
+.poster-vertical .poster-tag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.poster-vertical .poster-tag span {
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  margin-right: 5px;
+  border-radius: 50%;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 2rem;
+  text-align: center;
+  color: #eee;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.poster-vertical .poster-tag span:last-child {
+  margin-right: 0;
+}
+
+.poster-vertical .poster-tag .poster-tag-age {
+  font-size: 1.8rem;
+}
+
+.poster-vertical .poster-tag .poster-tag-age strong {
+  font-size: 2rem;
+  color: #f42c3c;
+}
+
+.poster-vertical .poster-tag .view-all {
+  width: inherit;
+  padding: 0 10px;
+  border-radius: 8px;
+  font-family: "Yoon Gothic 750", "YoonGothic 700 50", "Yoon윤고딕 750", "YoonGothic 750", "YOONGOTHICPRO750";
+  font-size: 1.8rem;
+}
+
+.poster-vertical .poster-tag .view-all strong {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.poster-vertical .poster-tag .tag-top {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  left: 12px;
+  top: 0;
+  width: 56px;
+  height: 66px;
+  border-radius: 0;
+  background-color: unset;
+}
+
+.poster-vertical .poster-tag .tag-top.top1 {
+  background-image: url("../../assets/hv_images/common/ic-tag-top1.png");
+}
+
+.poster-vertical .poster-tag .tag-top.top2 {
+  background-image: url("../../assets/hv_images/common/ic-tag-top2.png");
+}
+
+.poster-vertical .poster-tag .tag-top.top3 {
+  background-image: url("../../assets/hv_images/common/ic-tag-top3.png");
+}
+
+.poster-vertical .poster-tag .tag-top.top4 {
+  background-image: url("../../assets/hv_images/common/ic-tag-top4.png");
+}
+
+.poster-vertical .poster-tag .tag-top.top5 {
+  background-image: url("../../assets/hv_images/common/ic-tag-top5.png");
+}
+
+.poster-vertical .poster-tag .tag-top.top6 {
+  background-image: url("../../assets/hv_images/common/ic-tag-top6.png");
+}
+
+.poster-vertical .poster-tag .tag-top.top7 {
+  background-image: url("../../assets/hv_images/common/ic-tag-top7.png");
+}
+
+.poster-vertical .poster-tag .tag-top.top8 {
+  background-image: url("../../assets/hv_images/common/ic-tag-top8.png");
+}
+
+.poster-vertical .poster-tag .tag-top.top9 {
+  background-image: url("../../assets/hv_images/common/ic-tag-top9.png");
+}
+
+.poster-vertical .poster-tag .tag-top.top10 {
+  background-image: url("../../assets/hv_images/common/ic-tag-top10.png");
+}
+
+.poster-vertical .poster-tag .tag-event {
+  display: inline-block;
+  align-self: flex-end;
+  width: auto;
+  height: 36px;
+  margin-right: 0;
+  line-height: 34px;
+  padding: 0 16px;
+  border-radius: 8px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 1.8rem;
+  letter-spacing: -0.6px;
+  background-color: #ef3484;
+}
+
+.poster-vertical .poster-tag .tag-event + .tag-event {
+  margin-left: 12px;
+}
+
+.poster-vertical .poster-time {
+  position: absolute;
+  bottom: 12px;
+  padding: 0 12px;
+  width: 100%;
+  font-size: 2.6rem;
+  color: #c3c3c3;
+}
+
+.poster-vertical .poster-time dt {
+  position: relative;
+  font-size: 2.6rem;
+  color: #c3c3c3;
+  line-height: 34px;
+}
+
+.poster-vertical .poster-time dt::before {
+  display: inline-block;
+  content: '';
+  width: 24px;
+  height: 32px;
+  margin-right: 8px;
+  vertical-align: bottom;
+  background-image: url("../images/common/ic-clock.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.poster-vertical .poster-time dt.watch-complete {
+  height: 28px;
+}
+
+.poster-vertical .poster-time dt.watch-complete::before {
+  display: inline-block;
+  content: '';
+  width: 20px;
+  height: 28px;
+  margin-right: 8px;
+  vertical-align: bottom;
+  background-image: url("../images/vod/ic-series-playover.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.poster-vertical .poster-time dd {
+  margin-top: 8px;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(238, 238, 238, 0.2);
+  margin-left: 0;
+  height: 6px;
+  width: 100%;
+  border-radius: calc(6px / 2);
+}
+
+.poster-vertical .poster-time dd > span {
+  position: absolute;
+  height: 100%;
+  border-radius: calc(6px / 2);
+  background-color: #ef3484;
+}
+
+.poster-vertical .poster-time + .poster-button {
+  margin-bottom: 14px;
+}
+
+.poster-vertical .poster-button {
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 2.2rem;
+  line-height: 48px;
+  padding: 0 18px;
+  border-radius: 8px;
+  background-color: rgba(8, 13, 25, 0.8);
+  z-index: 1;
+  display: none;
+}
+
+.poster-vertical .poster-button.play::before {
+  display: inline-block;
+  content: '';
+  width: 14px;
+  height: 16px;
+  margin-right: 8px;
+  background-image: url("../images/vod/ic-play-w.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.adult-r .poster-vertical .poster-component::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.dimmed .poster-vertical::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background-color: rgba(8, 13, 25, 0.8);
+  z-index: 1;
+}
+
+.focus .poster-vertical, .selected .poster-vertical {
+  z-index: 2;
+}
+
+.focus .poster-vertical::before, .selected .poster-vertical::before {
+  transform: scale(1.06);
+  transform-origin: center;
+}
+
+.focus .poster-vertical::after, .selected .poster-vertical::after {
+  content: none;
+}
+
+.focus .poster-vertical .poster-thumbnail, .focus .poster-vertical .poster-banner, .selected .poster-vertical .poster-thumbnail, .selected .poster-vertical .poster-banner {
+  transform: scale(1.06);
+  transform-origin: center;
+}
+
+.focus .poster-vertical .poster-thumbnail::before, .focus .poster-vertical .poster-banner::before, .selected .poster-vertical .poster-thumbnail::before, .selected .poster-vertical .poster-banner::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 60px 0 rgba(8, 13, 25, 0.5);
+}
+
+.focus .poster-vertical .poster-thumbnail::after, .focus .poster-vertical .poster-banner::after, .selected .poster-vertical .poster-thumbnail::after, .selected .poster-vertical .poster-banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 0 10px #eee;
+  border-radius: 8px;
+}
+
+.focus .poster-vertical .poster-component::before, .selected .poster-vertical .poster-component::before {
+  transform: scale(1.06);
+  transform-origin: center;
+  opacity: 1;
+}
+
+.focus .poster-vertical .poster-tag, .selected .poster-vertical .poster-tag {
+  opacity: 1;
+  top: 0;
+  right: 4px;
+}
+
+.focus .poster-vertical .poster-time, .selected .poster-vertical .poster-time {
+  left: -8px;
+  bottom: 6px;
+  width: 106%;
+}
+
+.focus .poster-vertical .tag-top, .selected .poster-vertical .tag-top {
+  right: -4px;
+  top: -11px;
+  width: 60px;
+  height: 70px;
+}
+
+.focus .poster-vertical .tag-event, .selected .poster-vertical .tag-event {
+  margin-bottom: -11px;
+}
+
+.focus .poster-vertical.dimmed .focus .poster-vertical::after, .selected .poster-vertical.dimmed .focus .poster-vertical::after, .focus .poster-vertical.dimmed .selected .poster-vertical::after, .selected .poster-vertical.dimmed .selected .poster-vertical::after {
+  transform: scale(1.06);
+  transform-origin: center;
+}
+
+.focus .poster-vertical.adult-r .focus .poster-vertical .poster-component::after, .selected .poster-vertical.adult-r .focus .poster-vertical .poster-component::after, .focus .poster-vertical.adult-r .selected .poster-vertical .poster-component::after, .selected .poster-vertical.adult-r .selected .poster-vertical .poster-component::after {
+  transform: scale(1.06);
+  transform-origin: center;
+}
+
+.selected .poster-vertical .poster-thumbnail::after {
+  opacity: 0;
+}
+
+.keyguide .color-key {
+  align-items: center;
+  padding: 0 20px;
+}
+
+.keyguide .color-key::after {
+  display: inline-block;
+  content: '';
+  width: 19px;
+  height: 19px;
+  border-radius: calc(19px / 2);
+}
+
+.keyguide .color-key.blue::after {
+  background-color: #3174ff;
+}
+
+.keyguide .color-key.green::after {
+  background-color: #98c21f;
+}
+
+.keyguide span + span {
+  margin-left: 30px;
+}

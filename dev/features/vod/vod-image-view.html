@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+</head>
+
+<body>
+
+    <div id="root"> 
+    <!-- react 구조 -->
+
+
+        <!--이미지 상세보기 -->
+        <div class="full-popup-container image-view">
+
+            <h2 class="skip">이미지 보기</h2>
+
+            <div class="page-header">
+                <h3 class="title">스틸컷</h3>
+            </div>
+
+            <div class="contents">
+                <div class="image-area">
+                    <img class="poster-thumbnail" src="../../assets/images/temp/image-voddetail.jpg" onerror="this.src='../../assets/images/common/img-thumbnail-list-default.png'"/>
+                </div>
+                <i class="ic-arrow pre focus">이전이미지</i>
+                <i class="ic-arrow next">다음이미지</i>
+                <div class="pagination">
+                    <span class="focus">1</span>
+                    <span class="">2</span>
+                    <span class="">3</span>
+                    <span class="">4</span>
+                    <span class="">5</span>
+                    <span class="">6</span>
+                </div>
+            </div>
+            <div class="button-area">
+                <button class="button-primary large focus">
+                    <p class="text">닫기</p>
+                </button>
+            </div>
+        </div>
+        <!--//이미지 상세보기-->
+
+    </div>
+    <!-- //root -->
+
+</body>
+</html>

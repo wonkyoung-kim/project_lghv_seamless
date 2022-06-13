@@ -1,0 +1,85 @@
+@import '../scss/config';
+
+.channel-container {
+    background-color: unset;
+    .channel-header {
+        background-color: unset;
+        .info-program {
+            .title {
+                display: inline-block;
+                max-width: px(1000);
+                width: auto;
+            }
+            .watching .progress {
+                .reservation {
+                    span {
+                        & + span {
+                            margin-left: px(16);
+                        }
+                        &.ic-recording {
+                            color: #ff0000;
+                            &::before {
+                                @include vs-ib;
+                                @include background-default;
+                                width: px(26);
+                                height: px(26);
+                                background-image: url('../../assets/hv_images/channel/ic-channel-recording.png');
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .channel-schedule {
+        &.favorite-default {
+            .channel-program {
+                align-items: center;
+                justify-content: center;
+                .info-favorite {
+                    margin: 0;
+                }
+            }
+        }
+    }
+    .channel-info-wrap {
+        background-color: $color-bg-black;
+    }
+    .meta-tag {
+        display: inline-block !important;
+        vertical-align: bottom;
+        margin: 0 0 px(20) px(35);
+        .ic-tag {
+            height: px(30);
+            line-height: px(26);
+            border-width: px(2);
+            border-radius: px(3);
+            font-size: 1.5rem;
+            &.recording {
+                padding: 0 px(3);
+                border-color: #ff0000;
+                color: #ff0000;
+                &::before {
+                    @include vs-ib;
+                    width: px(6);
+                    height: px(6);
+                    border-radius: 50%;
+                    vertical-align: middle;
+                    background-color: #ff0000;
+                    margin-right: px(2);
+                }
+            }
+        }
+    }
+}
+//아이콘
+.ic-tv-pvr {
+    width: px(38);
+    height: px(38);
+    margin-left: px(18);
+    background-image: url(../hv_images/channel/ic-pvr.png);
+    @include background-default;
+    .focus &, .selected & {
+        background-image: url(../hv_images/channel/ic-pvr-focus.png);
+    }
+}

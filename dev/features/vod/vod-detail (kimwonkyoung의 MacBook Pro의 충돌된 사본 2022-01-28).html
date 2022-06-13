@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+</head>
+
+<body>
+
+    <div id="root">
+        <!-- react 구조 -->
+
+
+        <!--vod 상세화면 / 단편 / 시즌제 -->
+
+        <div class="vod-detail-container video-type">
+            <!-- <div class="vod-detail-container video-type"> 영상 배경일 때 사용-->
+
+            <!-- 배경 그라데이션 -->
+            <div class="gradient-bg">
+                <!--vod 이미지 배경 -->
+                <div class="vod-detail-bgimage" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+            </div>
+            
+                <!-- 콘텐츠 -->
+                <div class="contents">
+                    
+                    <section class="content-info">                       
+                        <!-- 로고타입 이미지인지 텍스트인지 구분, 이미지일 경우 image-logo 클래스 추가 / 
+                        텍스트 경우 2줄일 경우 doulbe-line 클래스 추가 -->
+                        <h1 class="vod-title image-logo" style="background-image:url(../../assets/images/temp/image-logo.png)">
+                            너와 파도를 탈 수 있다면
+                        </h1>
+                        <!-- 예약구매 -->
+                        <!-- <h1 class="vod-title double-line">
+                            [예약]<br/>너와 파도를 탈 수 있다면
+                        </h1> -->
+
+                        <!--메타데이터 영역-->
+                        <!-- 예약 구매 안내 : 입고전 -->
+                        <!-- <div class="reserve-info">
+                            <p>12월 11일부터 시청가능 (시청 유효시간은 최초 시청으로부터 00시간)<p>
+                            <p>예약 구매 시 혜택 : 예약 구매 시 받을 수 있는 혜택 텍스트</p>
+                            <span>* 시청 가능일은 사정상 변경될 수 있습니다.</span>
+                        </div> -->
+                        <!--평점-->
+                        <div class="rating-info">
+                            <div class="watcha">
+                                <i class="rating-star full"></i>
+                                <p class="point">4.5<span class="base-point">5</span></p>
+                            </div>
+                            <div class="cine21">
+                                <i class="rating-star half"></i>
+                                <p class="point">4.5<span class="base-point">5</span></p>
+                            </div>
+                            <div class="imdb">
+                                <i class="rating-star empty"></i>
+                                <p class="point">1.0<span class="base-point">10</span></p>
+                            </div>
+                        </div>
+
+                        <!--기본정보-->
+                        <div class="default-info">
+                            <span>2020</span>
+                            <span>일본</span>
+                            <span>애니메이션</span>
+                            <span>12세</span>
+                            <span>1시간 36분</span>
+                        </div>
+
+                        <!--메타태그-->
+                        <div class="meta-tag">
+                            <span class="ic-tag dolby-vision"></span>
+                            <span class="ic-tag">5.1</span>
+                            <span class="ic-tag">우리말</span>
+                            <span class="ic-tag">자막</span>
+                            <span class="ic-tag">이거찾으세요?</span>
+                        </div>
+
+                        <!--이벤트 메시지-->
+                        <p class="event-message">이벤트 대여상품 구매 시 피규어 증정!</p>
+                    </section>
+                       
+
+                    <!--구매버튼 영역-->
+                    <section class="func-area">
+   
+                        <div class="button-area">
+                            <!--대여버튼 default-->
+                            <!-- <button class="vod-button default-type focus">
+                                <div class="text">
+                                    <p class="label">
+                                        <span class="label-text">대여</span>
+                                        <span class="period">(2일)</span>
+                                    </p>
+                                    <p class="price">8,800원</p>
+                                </div>
+                            </button> -->
+
+<!-- text-type 버튼은 small: 월정액/medium : 구매하기/large : 소장패키지 대여패키지 로 구분  -->
+                            <!--구매버튼/구매옵션 복수일 경우 /최저가 등 -->
+                            <!-- <button class="vod-button text-type">
+                                <div class="text">
+                                    <p class="label">구매하기</p>
+                                    <p class="price">8,000원~</p>
+                                </div>
+                            </button> -->
+
+                            <button class="vod-button texttype large">
+                                <div class="text">
+                                    <p class="label">소장패키지</p>
+                                    <p class="price">11,500원</p>
+                                </div>
+                            </button>
+                            <!--재생 버튼/ 콘텐츠 구매 후-->
+                            <!-- <button class="vod-button play focus">
+                                <p class="text">재생하기</p>
+                            </button>
+
+                            <button class="vod-button">
+                                <p class="text">추가상품 구매</p>
+                            </button> -->
+
+                            <!--구매불가 버튼
+                            <button class="vod-button dimed">
+                                <p class="text">구매불가</p>
+                            </button>
+
+                            <span class="tooltip">
+                                UHD/HD 화질로 제공될 경우에는<br />
+                                감상할 수 있으니 ‘검색’을 이용해보세요.
+                            </span>-->
+
+                        </div>
+
+                        <!--구매하단 할인문구-->
+                        <div class="purchase-guide">
+                            <!--쿠폰사용문구
+                            <p class="coupon-info">사용 가능한 쿠폰 1개</p>-->
+
+                            <!-- tv포인트 구매안내
+                            <p class="sale-info">TV포인트를 사용하면 6,600원에 구매 가능</p> -->
+
+                            <!--지원안돼 구매불가-
+                            <p class="nosupport-tip">사용 중인 TV는 돌비 비전을 지원하지 않아 해당 콘텐츠를 구매할 수 없습니다.</p>-->
+                            <!--구매후 시청기간 안내-->
+                            <p class="remain-time">시청 기간 22시간 30분 남음(2020.11.30 오후 10:20까지)</p>
+                        </div>
+
+                        <div class="purchased-info">
+                            <!-- 구매한 vod 프로그래스 바 -->
+                            <!-- <dl class="poster-time">
+                                <dt>30분 남음</dt>
+                                <dd class="poster-remaining"><span style="width: 50%;"></span></dd>
+                            </dl>  -->
+
+                            <!-- 시청완료  -->
+                            <p class="watch-complete">
+                                시청완료
+                            </p>                          
+                        </div>                              
+                    </section>
+
+                   <!--detail 정보-->
+                    <section class="detail-info">
+                        <!--추가정보/기능 리스트버튼 영역-->
+                        <div class="detail-list-wrap">
+                            <ul class="vod-additional-list">                                
+                                <li class="view-rating focus">평점 및 감상평</li>
+                                <li class="cast-info">인물 정보</li>
+                                <li class="scene">주요 장면</li>
+                                <li class="most-viewed">함께 많이 본 콘텐츠</li>
+                                <li class="wish-list add">찜목록에 추가</li>
+                                <!--<li class="wish-list delete">찜목록에서 삭제</li>-->
+                              <li class="rate-contents">이 콘텐츠 평가하기</li>
+                                <li class="rate-contents-focused">
+                                    <ul class="rate-button">
+                                        <li class="like focus">좋아요
+                                            <span class="count">999+</span>
+                                        </li>
+                                        <li class="dislike">싫어요
+                                            <span class="count">999+</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!--<li class="rated like focus">좋아요
+                                    <span class="count">999+</span>
+                                </li>-->
+                                <li class="rated dislike focus">싫어요
+                                    <span class="count">999+</span>
+                                </li>
+                                                             
+                            </ul>
+                        </div>
+                        <div class="summary-info">
+                            <!--스탭 정보-->
+                            <div class="staff">
+                                <div class="director">
+                                    <span class="label">감독</span>
+                                    <span>유아사 마사아키</span>
+                                </div>
+                                <div class="cast">
+                                    <span class="label">목소리</span>
+                                    <!--<span class="label">출연</span>-->
+                                    <span class="cast-wrap">
+                                        <span class="subtitle">(자막) 카타요세 료타, 카와에이 리나</span>
+                                        <span class="dubbing">(우리말) 심규혁, 김영선</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <!--줄거리-->
+                            <div class="summary-wrap">
+                                <p class="summary">정신병동 보호사 문강태, 아름답지만 살벌한 동화작가 고문영, 전혀 다른 세계에서 살아가던 두 사람의 달콤 쌉쌀</p>
+                                <p class="more-button">
+                                 <span class="more-info">+더보기</span>
+                                 </p>
+                             </div>
+                        </div>
+                    </section>
+
+                </div>  
+                <!--//콘텐츠 -->
+                <!-- 좋아요/싫어요 평가시 노출되는 툴팁 -->
+                <p class="rate-tooltip">
+                    <span class="tooltip">
+                        재미있게 봤다면 <em>‘좋아요’</em>를 눌러주세요.<br/>
+                        고객님에게 딱 맞는 U+tv 콘텐츠를 추천해 드립니다.
+                    </span>
+                </p>
+            </div>
+            <!--//그라데이션 배경-->
+
+            <!--U+모바일로tv로 시청가능-->
+            <div class="mobile-message">
+                <p class="mobile-view-tip">'홈 > 마이메뉴'에서 연결 가능</p>
+                <!--모바일로 시청가능 tooltip-->
+                <p class="tooltip">
+                    이 영상을 무료로 이어보려면 TV와 휴대폰을 연결해보세요.<br/>
+                    ‘U+모바일tv로 시청 가능’ 표시가 있는 콘텐츠만 해당됩니다.
+                </p>
+            </div>
+
+            <!--이벤트 배너
+            <aside class="event-banner">
+                <div class="banner">
+                    <div class="image" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                    <p class="event-text">
+                        3,000원 추천 적립
+                        <span class="subtext">이벤트 진행중(2.7~2.28)</span>
+                    </p>
+                </div>
+                <p class="color-keyguide green">바로보기</p>
+            </aside>-->
+
+            <!-- vod-layer 노출 시에 어두워지는 bg -->
+            <div class="vod-layer-dimmed"></div>
+        <!--//vod상세화면-->
+
+
+    </div>
+    <!-- //root -->
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+@charset "UTF-8";
+/* variables */
+/* functions */
+/* mixins */
+/* toast 임시 */
+.category-container {
+  background-color: #080d19;
+  display: flex;
+}
+
+.category-container .category-title {
+  padding-left: 19px;
+  font-size: 3.2rem;
+  color: #eee;
+}
+
+.category-container .contents {
+  padding: 100px 0 0 109px;
+}
+
+.category-container .contents-list-wrap {
+  height: 939px;
+  padding-left: 19px;
+}
+
+.category-container .contents-list-wrap .mask {
+  height: 23px;
+}
+
+.category-container .contents-list-wrap .scroll {
+  height: 872px;
+}
+
+.category-container .contents-list li {
+  margin-left: 16px;
+}
+
+.category-container .contents-list li:nth-child(5n+1) {
+  margin-left: 16px !important;
+}
+
+.category-container .contents-list li:nth-child(6n+1) {
+  margin-left: 0 !important;
+}
+
+.category-container .poster-component::before {
+  background-image: unset;
+}
+
+.category-container .poster-component .poster-tag {
+  justify-content: flex-start;
+  opacity: 1;
+}
+
+.category-container .focus .poster-tag {
+  right: 8px;
+}
+
+.category-option .single {
+  margin: 0 auto;
+}

@@ -1,0 +1,117 @@
+@import '../scss/config';
+
+.tvapp-container {
+    height: 100%;
+    background-color: $color-bg-black;
+    .path {
+        justify-content: flex-end;
+        height: px(106);
+        margin-right: px(60);
+    }
+    //공통
+    h3 {
+        position: relative;
+        margin-bottom: px(79);
+        font-family: $font-bold;
+        font-size: 4rem;
+        color: #eee;
+    }
+    ul {
+        position: relative;
+        display: flex;
+    }
+    li {
+        margin-right: px(16);
+        .poster-horizontal {
+            width: px(312);
+            height: px(174);
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: px($border-radius);
+            }
+        }
+        &.focus {
+            .poster-horizontal {
+                &::before {
+                    @include focus-border;
+                } 
+                &::after {
+                    @include vs;
+                    @include focus-scale;
+                    z-index: 2;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: px($border-radius);
+                    box-shadow: inset 0 0 px(60) 0 $color-bg-black-50;
+                }
+                img {
+                    @include focus-scale;
+                }
+            }
+            &:first-child {
+                .poster-horizontal {
+                    &::before, &::after, img {
+                        transform-origin: left;
+                    }
+                }
+            }
+        }
+    }
+    //tvapp
+    .tvapp {
+        padding: px(51) 0 0 px(80);
+        section {
+            margin-bottom: px(107);
+            p {
+                position: absolute;
+                left:0;
+                top: px(327);
+                display: flex;
+                font-size: 2.5rem;
+                color: $color-gray-dark;
+                &::before {
+                    @include vs-ib;
+                    @include background-default;
+                    width: px(32);
+                    height: px(32);
+                    margin-right: px(10);
+                    background-image: url('../hv_images/tvapp/ic-tvapp-tip.png');
+                }
+            }
+            &.active::before {
+                @include vs;
+                top: px(-51);
+                left: px(-80);
+                width: px(1920);
+                height: px(421);
+                background-color: $color-bg-sub;
+            }
+        }
+    }
+    //tvapp-hotkey
+    .tvapp-hotkey {
+        padding: px(87) 0 0 px(132);
+        .contents {
+            overflow: hidden;
+            height: px(698);
+            padding: px(16) 0 0 px(16);
+        }
+        ul {
+            flex-wrap: wrap;
+        }
+        li {
+            margin-bottom: px(80);
+            &:nth-child(5n) {
+                margin-right: 0;
+            }
+        }
+    }
+    //키고지
+    .tvapp-footer {
+        position: fixed;
+        right: px(50);
+        bottom: px(30);
+    }
+}

@@ -1,0 +1,1468 @@
+@import 'config';
+//url
+$url-images: "../images/setting/";
+$url-images-common: "../images/common/";
+// 기본 레이아웃
+.setting-container {
+    display: flex;
+    position: relative;
+    height: 100%;
+    background-color: $color-bg-setting;
+    h1.title {
+        @include flex-items-center;
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        height: px(136);
+        padding-left: px(64);
+        font: {
+            family: $font-bold;
+            size: 4.8rem;
+        }
+    }
+}
+.setting-aside {
+    position: relative;
+    min-height: 100%;
+    background-color: $color-black;
+    // &::before {
+    //     @include vs;
+    //     left: unset;
+    //     right: 0;
+    //     width: px(87);
+    //     height: 100%;
+    //     background-image: linear-gradient(to right, $color-bg-transparent 0%, $color-black 91%);
+    //     z-index: 10;
+    // }
+}
+
+// 셋팅 메뉴
+.setting-menu {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    height: px(864);
+    overflow: hidden;
+    ul {
+        width: px(406);
+        padding-left: px(38);
+        background-color: $color-black;
+        li {
+            position: relative;
+            width: px(368);
+            height: px(88);
+            margin-bottom: px(4);
+            padding: 0 px(42) 0 px(26);
+            font-size: 3.6rem;
+            white-space: nowrap;
+            line-height: px(88);
+            color: $color-gray;
+            opacity: 0.9;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            &.selected, &.focus {
+                font: {
+                    family: $font-bold;
+                    size: 3.8rem;
+                }
+                color: $color-white;
+                opacity: 1;
+            }
+            &.focus {
+                &::before {
+                    $height: px(46);
+                    @include vs;
+                    top: 50%;
+                    width: px(6);
+                    height: $height;
+                    margin-top: calc(#{-$height} / 2);
+                    border-radius: px(3);
+                    background-color: $color-white;
+                }
+            }
+        }
+    }
+}
+
+.category-back {
+    background-color: $color-black;
+}
+
+// 설정 콘텐츠 영역
+.setting-contents {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    padding: 0 px(60);
+    background-color: $color-bg-setting;
+    &::before {
+        @include vs;
+        left: unset;
+        right: 0;
+        width: inherit;
+        height: px(234);
+        background-image: linear-gradient(to bottom, $color-bg-setting 46%, $color-bg-setting-53 76%, $color-bg-transparent 88%);
+        background-size: 100% px(234);
+        z-index: 3;
+        display: none;
+    }
+    &::after {
+        @include vs;
+        top: unset;
+        bottom: 0;
+        width: inherit;
+        height: px(164);
+        background-image: linear-gradient(to bottom, $color-bg-transparent 12%, $color-bg-setting-53 34%, $color-bg-black 88%);
+        z-index: 3;
+        display: none;
+    }
+    &.top-cover {
+        &::before {
+            display: block;
+        }
+    }
+    &.bottom-cover {
+        &::after {
+            display: block;
+        }
+    }
+    &.active {
+        .scroll {
+            opacity: 1;
+        }
+    }
+    .path {
+        position: relative;
+        justify-content: flex-end;
+        align-items: flex-start;
+        padding-top: px(52);
+        height: px(116);
+        z-index: 99;
+    }
+    & > div {
+        position: relative;
+        height: px(964);
+        overflow: hidden;
+    }
+    section {
+        width: 100%;
+        padding: px(46) px(60);
+        border-bottom: px(2) solid $color-bg-component;
+        &:first-of-type {
+            z-index: 2;
+        }
+    }
+    .title {
+        margin-bottom: px(36);
+        h3 {
+            font-size: 3.6rem;
+            color: $color-gray-light;
+            margin-bottom: px(12);
+        }
+        span {
+            font-size: 2.4rem;
+            color: $color-gray;
+        }
+    }
+    .sub-text {
+        font-size: 2.4rem;
+        color: $color-gray-dark;
+        margin-top: px(30);
+        line-height: px(36);
+    }
+    .scroll {
+        @include scroll;
+        opacity: 0;
+    }
+    // 전체 초기화
+    .full-page {
+        @include flex-items-center;
+        flex-direction: column;
+        height: px(964);
+        padding-top: px(332);
+        text-align: center;
+        .title {
+            margin-bottom: px(44);
+        }
+        .button-area {
+            @include flex-items-center;
+            height: px(98);
+        }
+        .error-message {
+            font-size: 2.4rem;
+            color: $color-gray;
+            margin-bottom: px(74);
+        }
+    }
+    .button {
+        @include flex-items-center;
+        position: relative;
+        height: px(86);
+        margin-right: px(16);
+        padding: 0 px(40);
+        font: {
+            family: $font-regular;
+            size: 3.2rem;
+        }
+        color: $color-gray;
+        border-radius: px($border-radius);
+        background-color: $color-bg-component;
+        &:last-child {
+            margin-right: 0;
+        }
+        p {
+            &.text {
+                width: px(220);
+            }
+        }
+        &.focus {
+            position: relative;
+            font-family: $font-bold;
+            color: $color-black;
+            background-color: $color-white;
+            &::after {
+                @include vs;
+                top: px(-6, -3);
+                width: 100%;
+                height: px(98);
+                border-radius: px($border-radius);
+                background-color: $color-white;
+            }
+            .text {
+                font: {
+                    family: $font-bold;
+                    size: 3.4rem;
+                }
+                z-index: 1;
+            }
+        }
+    }
+    .auth {
+        .full-page {
+            padding-top: px(252);
+        }
+        .guide-message {
+            position: absolute;
+            right: px(30);
+            bottom: px(52);
+            font-size: 2.4rem;
+            color: $color-bg-key-notice;
+        }
+    }
+    .input-password {
+        @include input-password();
+        width: auto;
+        margin-bottom: px(58);
+    }
+}
+
+// 설정 옵션
+.setting-items {
+    @include flex-items-center;
+    flex-wrap: wrap;
+    height: px(98);
+    .radio-button {
+        @include flex-items-center;
+        position: relative;
+        min-width: px(171);
+        height: px(98);
+        padding: 0 px(24);
+        margin-right: px(14);
+        font: {
+            family: $font-bold;
+            size: 3.4rem;
+        }
+        color: $color-gray;
+        .input-radio {
+            @include input-check();
+            &:checked {
+                border-color: $color-radio-normal
+            }
+            &[type=radio]:checked {
+                &::before {
+                    background-color: $color-radio-normal
+                }
+            }
+            z-index: 1;
+            margin-right: px(12);
+        }
+        label {
+            z-index: 1;
+        }
+        .audio-channel {
+            font-size: 3.2rem;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+        // 폰트길이 : 다른방법 없을까
+        &.size7 {
+            label {
+                width: px(76);
+            }
+        }
+        &.size9 {
+            label {
+                width: px(90);
+            }
+        }
+        &.size10 {
+            label {
+                width: px(100);
+            }
+        }
+        &.size10_4 {
+            label {
+                width: px(104);
+            }
+        }
+        &.size11 {
+            label {
+                width: px(110);
+            }
+        }
+        &.size12 {
+            label {
+                width: px(120);
+            }
+        }
+        &.size14 {
+            label {
+                width: px(140);
+            }
+        }
+        &.size16 {
+            label {
+                width: px(160);
+            }
+        }
+        &.size15 {
+            label {
+                width: px(155);
+            }
+        }
+        &.size17 {
+            label {
+                width: px(170);
+            }
+        }
+        &.size22 {
+            label {
+                width: px(220);
+            }
+        }
+        &.size23 {
+            label {
+                width: px(230);
+            }
+        }
+        &.size22_5 {
+            label {
+                width: px(225);
+            }
+        }
+        &.size25 {
+            label {
+                width: px(250);
+            }
+        }
+        &.size28 {
+            label {
+                width: px(280);
+            }
+        }
+        &.size30 {
+            label {
+                width: px(300);
+            }
+        }
+        &.size31 {
+            label {
+                min-width: px(310);
+            }
+        }
+        &.size34 {
+            label {
+                width: px(340);
+            }
+        }
+        &.size40 {
+            label {
+                min-width: px(400);
+            }
+        }
+        &.size41 {
+            label {
+                min-width: px(410);
+            }
+        }
+        &.size55 {
+            label {
+                min-width: px(550);
+            }
+        }
+        &.size60 {
+            label {
+                min-width: px(600);
+            }
+        }
+        &.focus {
+            font-size: 3.6rem;
+            color: $color-white;
+            &::after {
+                @include vs;
+                width: 100%;
+                height: 100%;
+                border: px(4, 3) solid $color-white;
+                border-radius: px($border-radius);
+                background-color: $color-bg-component;
+            }
+            .input-radio {
+                @include input-check-focus;
+            }
+        }
+    }
+}
+
+// 예약알림 간격다름 처리
+.reserv-notice {
+    .setting-items {
+        align-content: space-between;
+        height: px(192);
+        li {
+            &.radio-button {
+                margin-right: px(20);
+            }
+            &:nth-child(1) {
+                margin-right: px(51);
+            }
+            &:nth-child(5) {
+                margin-right: px(12);
+            }
+        }
+    }
+}
+
+// 시청 중인 영상 및 추천 영상 보기 이미지
+.start-setting {
+    section {
+        &:last-child {
+            border: 0;
+        }
+    }
+    .launcher-setting {
+        li {
+            + li {
+                margin-left: px(264);
+            }
+        }
+        .image {
+            display: flex;
+            margin-top: px(32);
+            p {
+                width: px(388);
+                height: px(222);
+                @include background-contain;
+                opacity: 0.5;
+                &.on-image {
+                    background-image: url($url-images + "img-launcher-on.png");
+                }
+                &.off-image {
+                    background-image: url($url-images + "img-launcher-off.png");
+                }
+                &.on {
+                    opacity: 1;
+                }
+                + p {
+                    margin-left: px(60);
+                }
+            }
+        }
+    }
+}
+
+// 소프트웨어 업데이트
+.software-update {
+    .title {
+        margin-bottom: px(30);
+    }
+    .info {
+        display: flex;
+        color: $color-gray-dark;
+        .version {
+            font-size: 3.4rem;
+            color: $color-gray-dark;
+            margin-right: px(30);
+        }
+        .date {
+            font-size: 3.2rem;
+        }
+    }
+    .button-area {
+        .button {
+            .text {
+                width: px(300);
+            }
+            // .alt {
+            //     font-size: 3.2rem;
+            // }
+        }
+    }
+}
+
+// ****** 채널 설정
+// 선호채널만 보기
+.channel-favorite {
+    .channel-select {
+        padding-bottom: px(52);
+        .title {
+            margin-bottom: px(40);
+        }
+        .text {
+            font-family: $font-bold;
+        }
+    }
+}
+
+// 채널숨김 편집
+.channel-hide {
+    .channel-select {
+        padding-bottom: px(52);
+        .title {
+            margin-bottom: px(40);
+        }
+        .text {
+            font-family: $font-bold;
+        }
+    }
+}
+
+//시청각 보조 방송
+.channel-assist {
+    .subtitle-setting {
+        opacity: .5;
+        &.on {
+            opacity: 1;
+        }
+    }
+    .subtitle-select {
+        li {
+            &:nth-of-type(2) {
+                margin-left: px(40);
+            }
+            &:nth-of-type(3) {
+                margin-left: px(220);
+            }
+        }
+    }
+    .subtitle-size {
+        display: flex;
+        p {
+            width: px(288);
+            height: px(156);
+            margin: px(26) px(118) 0 0;
+            padding-top: px(24);
+            border-radius: px(8);
+            text-align: center;
+            font: {
+                family: $font-bold;
+                size: 2.4rem;
+            }
+            color: $color-font-gray;
+            background-color: $color-bg-component;
+            &.big {
+                span:last-child {
+                    font-size: 5.5rem;
+                }
+            }
+            &.medium {
+                span:last-child {
+                    font-size: 4.2rem;
+                }
+            }
+            &.small {
+                span:last-child {
+                    font-size: 2.8rem;
+                }
+            }
+        }
+        span {
+            display: block;
+            &:first-child {
+                margin-bottom: px(10);
+            }
+            &:last-child {
+                height: px(64);
+                line-height: px(64);
+            }
+        }
+    }
+}
+
+//화면 분할
+.channel-partition {
+    .partition-select {
+        height: px(144);
+        margin-bottom: px(50);
+        border-bottom: px(2) solid $color-bg-component;
+    }
+    .partition-rayout {
+        display: flex;
+        height: px(280);
+        .partition-cover {
+            margin-right: px(164);
+            font-family: $font-bold;
+            text-align: center;
+            color: $color-font-gray;
+            opacity: .5;
+            &.on {
+                opacity: 1;
+            }
+        }
+        .partition {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: flex-end;
+            width: px(420);
+            height: px(230);
+            margin-bottom: px(20);
+            p {
+                margin: 0 px(10) px(10) 0;
+                background-color: $color-bg-component;
+                border-radius: px(4);
+                &.primary {
+                    width: px(230);
+                    height: px(230);
+                    line-height: px(230);
+                    margin-bottom: 0;
+                    font-size: 9rem;
+                }
+                &:not(.primary) {
+                    width: px(180);
+                    height: px(70);
+                    line-height: px(70);
+                    margin-right: 0;
+                    font-size: 3.2rem;
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+            &.equality {
+                flex-direction: row;
+                width: px(476);
+                p {
+                    width: px(228);
+                    height: px(110);
+                    line-height: px(110);
+                    margin-right: px(10);
+                    font-size: 3.4rem;
+                }
+            }
+        }
+        .guide {
+            font-size: 2.4rem;
+            color: $color-gray-dark;
+        }
+    }
+}
+
+// ******* 자녀 보호 설정
+// 진입시 사용자 인증
+.user-auth {
+    .full-page {
+        padding-top: px(152);
+        .title {
+            margin-bottom: px(44);
+        }
+        & > button {
+            margin-bottom: px(130);
+        }
+    }
+    .input-password {
+        margin-bottom: px(60);
+        p:last-child {
+            margin-right: 0;
+        }
+    }
+    .button-area {
+        margin-bottom: px(130);
+    }
+    .auth-reset {
+        .button {
+            p {
+                z-index: 1;
+            }
+            &::after {
+                box-shadow: inset 0 0 0 px(6) $color-white;
+                background-color: $color-bg-sub;
+                z-index: 0;
+            }
+        }
+    }
+    .error-message {
+        margin-bottom: px(66);
+        opacity: 0;
+        &.on {
+            opacity: 1;
+        }
+    }
+    .auth-reset {
+        @include flex-items-center;
+        justify-content: space-between;
+        width: px(1326);
+        padding: px(40) px(59) px(40) px(40);
+        border-radius: px(8);
+        text-align: left;
+        font-size: 2.4rem;
+        color: $color-gray;
+        background-color: $color-bg-component;
+        .reset-guide {
+            p {
+                margin-bottom: px(24);
+                color: $color-blue-sub;
+            }
+        }
+        span {
+            display: block;
+            &:nth-of-type(1) {
+                margin-bottom: px(4);
+            }
+        }
+        .button-area {
+            margin-bottom: 0;
+            .button {
+                font-size: 3.2rem;
+                background-color: $color-bg-sub;
+                box-shadow: inset 0 0 0 px(4) $color-gray-dark;
+                &.focus {
+                    p {
+                        font-size: 3.4rem;
+                        color: $color-white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 비밀번호 변경
+.password-setting {
+    .password {
+        button:first-child {
+            margin-right: 0;
+        }
+        button:last-child {
+            .text {
+                width: px(244);
+            }
+        }
+    }
+    .guide-message {
+        position: absolute;
+        right: px(0);
+        bottom: px(52);
+        font-size: 2.4rem;
+        color: $color-bg-key-notice;
+    }
+}
+
+//시청 연령 제한
+.age-limit {
+    .setting-items {
+        li {
+            margin-right: px(13);
+        }
+    }
+}
+
+//시력 보호 모드
+.eyes-protect {
+    .protect-mode {
+        border-bottom: none;
+    }
+    .setting-items {
+        margin-bottom: px(48);
+        li:first-child {
+            margin-right: px(121)
+        }
+    }
+    .noti-message {
+        padding: px(30) px(30) px(40);
+        border-radius: px(8);
+        color: $color-gray;
+        font-size: 2.4rem;
+        background-color: $color-bg-component;
+        p {
+            color: $color-blue-sub;
+            margin-bottom: px(37);
+        }
+        span {
+            display: block;
+            margin-bottom: px(4);
+        }
+        span:nth-of-type(1) {
+            font-size: 2.0rem;
+            margin-bottom: px(13);
+        }
+        span:nth-of-type(2) {
+            margin-bottom: px(39);
+        }
+        ol {
+            li {
+                margin-bottom: px(4);
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+//시청시간 제한
+.time-limit {
+    .setting-group { // 시청시간 제한에서 켜짐으로 하면 제한시간, 반복설정 보이고 on클래스가 없으면 안보임
+        opacity: 0;
+        &.on {
+            opacity: 1;
+        }
+        section {
+            &:first-child {
+                .title {
+                    margin-bottom: px(30);
+                }
+            }
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+    }
+    .setting-time {
+        @include flex-items-center;
+        .button-area {
+            margin-right: px(40);
+        }
+        .text {
+            font-size: 3.4rem;
+        }
+        .button {
+            height: px(130);
+            font-family: $font-bold;
+            &.focus {
+                color: $color-white;
+                background-color: $color-bg-sub;
+                .text {
+                    font-size: 3.4rem;
+                }
+                &::after {
+                    @include focus-border();
+                    box-shadow: inset 0 0 0 px(4) $color-white;
+                    height: 100%;
+                    background-color: unset;
+                }
+            }
+        }
+        .timeline {
+            @include flex-items-center;
+            position: relative;
+            height: px(118);
+            padding: 0 px(48);
+            border-radius: px(8);
+            background-color: $color-bg-component;
+            div {
+                position: relative;
+                flex-direction: column;
+                margin-right: px(41);
+                color: $color-gray;
+            }
+            .start-time {
+                margin-right: px(67);
+                &::after {
+                    content: "~";
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    right: px(-45);
+                    font-size: 3.6rem;
+                }
+            }
+            .total {
+                align-self: flex-end;
+                margin-bottom: px(30);
+                font-size: 2.6rem;
+                color: $color-gray;
+            }
+            p {
+                font-size: 2rem;
+                margin-bottom: px(5);
+            }
+            span {
+                display: block;
+                font-size: 3.6rem;
+            }
+        }
+    }
+}
+
+//시청횟수 제한
+.count-limit {
+    section:nth-of-type(2) {
+        opacity: 0;
+        &.on {
+            opacity: 1;
+        }
+    }
+    .filed-group {
+        @include flex-items-center;
+        .text {
+            font-family: $font-bold;
+            margin-left: px(12);
+            font-size: 3.4rem;
+            line-height: px(78);
+            color: $color-gray;
+        }
+    }
+    .input-text {
+        width: px(240);
+        .input-text-wrap {
+            @include flex-items-center;
+            justify-content: center;;
+            position: relative;
+            width: 100%;
+            height: px(80);
+            line-height: px(80);
+            margin-right: px(12);
+            padding: 0 px(20);
+            border-radius: px(8);
+            font-size: 2.8rem;
+            color: $color-gray;
+            background-color: $color-bg-component;
+            &.focus {
+                box-shadow: 0 0 0 px(4) $color-white inset;
+                border: unset;
+                font-size: 3.4rem;
+                color: $color-white;
+                background-color: $color-bg-black;
+            }
+        }
+    }
+}
+
+//시청채널 제한
+.channel-limit {
+    .title {
+        margin-bottom: px(40);
+    }
+}
+
+//성인 콘텐츠 제한
+.adult-limit {
+    .title {
+        span:nth-of-type(1) {
+            display: block;
+            margin-bottom: px(4);
+        }
+    }
+}
+
+// 공지사항
+.notice {
+    .list-wrap {
+        height: 100%;
+        border-bottom: none;
+        .list-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0;
+            padding: 0 px(40) px(25) px(40);
+            border-bottom: px(1, 1) solid $color-bg-component;
+            p {
+                font-size: 2.6rem;
+                color: $color-gray-dark;
+            }
+        }
+        .noti-wrap {
+            position: relative;
+            width: 100%;
+            height: px(860);
+            overflow: hidden;
+            &::before {
+                @include vs;
+                width: inherit;
+                height: px(94);
+                background-image: linear-gradient(to bottom, $color-bg-setting 12%, $color-bg-setting-53 66%, $color-bg-transparent 88%);
+                z-index: 1;
+                display: none;
+            }
+            &::after {
+                @include vs;
+                top: unset;
+                bottom: 0;
+                width: inherit;
+                height: px(102);
+                background-image: linear-gradient(to bottom, $color-bg-transparent 12%, $color-bg-setting-53 34%, $color-bg-setting 88%);
+                z-index: 1;
+                display: none;
+            }
+            &.top-cover {
+                &::before {
+                    display: block
+                }
+            }
+            &.bottom-cover {
+                &::after {
+                    display: block
+                }
+            }
+        }
+        .mask {
+            width: 100%;
+            height: px(17);
+        }
+        ul {
+            padding-top: px(1, 1);
+            li {
+                @include flex-items-center;
+                justify-content: space-between;
+                height: px(113);
+                padding: 0 px(40);
+                color: $color-gray-dark;
+                @include line-bottom();
+                .text-wrap {
+                    @include flex-items-center;
+                    z-index: 1;
+                }
+                .subject {
+                    max-width: px(938);
+                    font-size: 3.2rem;
+                    @include ellipsis();
+                }
+                span {
+                    font-size: 2.6rem;
+                    z-index: 1;
+                }
+                &.focus {
+                    $focus-height: px(114);
+                    position: relative;
+                    font-family: $font-bold;
+                    &::before {
+                        @include vs-ib;
+                        position: absolute;
+                        top: px(-1, -1);
+                        left: 0;
+                        width: 100%;
+                        height: $focus-height;
+                        border-radius: px($border-radius);
+                        background-color: $color-bg-component;
+                    }
+                    &::after {
+                        @include focus-border;
+                        top: px(-1, -1);
+                        height: $focus-height;
+                        box-shadow: none;
+                        border: px(4, 3) solid $color-white;
+                    }
+                    p {
+                        font-size: 3.4rem;
+                        color: $color-white;
+                    }
+                    span {
+                        font-size: 2.8rem;
+                        color: $color-white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// *********** 오디오 세팅
+//UHD_1,2,3
+.audio {
+    .bottom-cover {
+        &::after {
+            height: px(102);
+        }
+    }
+    .u_hd {
+        .drc-setting {
+            opacity: 0;
+        }
+    }
+    .u_hd_3 {
+        .drc-setting {
+            opacity: 1;
+        }
+    }
+    .key-guide {
+        li {
+            font-size: 2.2rem;
+            color: $color-gray-dark;
+            margin-bottom: px(6);
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.power-setting {
+    position: relative;
+    .setting-items {
+        display: block;
+        width: px(500);
+        height: 100%;
+        margin-bottom: px(30);
+        li {
+            display: inline-flex;
+            &:first-child {
+                margin-bottom: px(10);
+            }
+        }
+    }
+    .image-guide {
+        position: absolute;
+        top: px(110);
+        right: px(70);
+        width: px(296);
+        height: px(270);
+        span {
+            @include background-contain;
+            display: block;
+            width: inherit;
+            height: inherit;
+        }
+        &.tv {
+            .tv-audio {
+                display: block
+            }
+            .out-audio {
+                display: none;
+            }
+        }
+        &.out-device {
+            .tv-audio {
+                display: none
+            }
+            .out-audio {
+                display: block;
+            }
+        }
+    }
+}
+
+// soundbar
+.soundbar {
+    .setting-items {
+        margin-bottom: px(30);
+    }
+    .power-setting {
+        .setting-items {
+            width: px(650);
+        }
+    }
+    .dolby-setting {
+        display: none;
+    }
+    .custom-setting {
+        width: px(1394);
+        .setting-items {
+            height: auto;
+        }
+    }
+    .sound-setting, .drc-setting, .custom-setting {
+        .setting-items {
+            margin-bottom: 0;
+        }
+    }
+    &.new-soundbar {
+        .dolby-setting {
+            display: block;
+        }
+        .custom-setting {
+            .smart {
+                display: none;
+            }
+            .auto {
+                display: flex;
+            }
+        }
+    }
+}
+
+//시스템 설정 - 보급형//
+//화면 모드
+.screen-mode {
+    li {
+        &:first-child {
+            margin-right: px(161);
+        }
+        &:nth-child(2) {
+            margin-right: px(142);
+        }
+    }
+    .image {
+        margin-top: px(27);
+        p {
+            @include background-default;
+            display: inline-block;
+            width: px(288);
+            height: px(216);
+            opacity: .5;
+            &.on {
+                opacity: 1;
+            }
+            &:not(:last-child) {
+                margin-right: px(119);
+            }
+            &.screen-mode1 {
+                background-image: url(../images/setting/img-setting-screenmode1.png);
+            }
+            &.screen-mode2 {
+                background-image: url(../images/setting/img-setting-screenmode2.png);
+            }
+            &.screen-mode3 {
+                background-image: url(../images/setting/img-setting-screenmode3.png);
+            }
+        }
+    }
+}
+//화면 최적화 설정
+.screen-optimization-img {
+    .image {
+        p {
+            @include background-default;
+            display: inline-block;
+            width: px(408);
+            height: px(280);
+            opacity: .5;
+            &.on {
+                opacity: 1;
+            }
+            &:not(:last-child) {
+                margin-right: px(120);
+            }
+            &.default {
+                background-image: url(../images/setting/screenoptimiz1.png);
+            }
+            &.present {
+                background-image: url(../images/setting/screenoptimiz2.png);
+            }
+        }
+    }
+}
+// 연결 모드
+//화살표 레이아웃
+@mixin arrow-rayout {
+    position: absolute;
+    top: px(485);
+    height: px(158);
+    button {
+        @include background-contain;
+        width: 100%;
+        height: px(88);
+        margin-bottom: px(34);
+        &.focus {
+            width: 100%;
+            + p {
+                font-family: $font-bold;
+                color: $color-white;
+            }
+        }
+    }
+    p {
+        line-height: px(36);
+        font-size: 2.6rem;
+        color: $color-gray-dark;
+    }
+}
+
+.contact-wrap {
+    //공통레이아웃
+    padding: 0 px(90);
+    background-color: $color-bg-black;
+    text-align: center;
+    .contact-container {
+        > div {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            height: px(1080);
+        }
+        section {
+            @include flex-items-center;
+            flex-flow: column;
+        }
+        .prev {
+            left: px(0);
+            @include arrow-rayout;
+            .prev-arrow {
+                background-image: url($url-images + "ic-setting-arrow-left.png");
+                &.focus {
+                    background-image: url($url-images + "ic-setting-arrow-left-focusus.png");
+                }
+            }
+            p {
+                text-align: left;
+            }
+        }
+        .next {
+            right: px(0);
+            @include arrow-rayout;
+            .next-arrow {
+                background-image: url($url-images + "ic-setting-arrow-right.png");
+                &.focus {
+                    background-image: url($url-images + "ic-setting-arrow-right-focus.png");
+                }
+            }
+            p {
+                text-align: right;
+            }
+        }
+    }
+    .title {
+        padding-top: px(138);
+        margin-bottom: px(38);
+        color: $color-white;
+        font-family: $font-bold;
+        h3 {
+            margin-bottom: px(12);
+            font-size: 5rem;
+        }
+        .waiting {
+            margin-bottom: px(24);
+            font-size: 3.6rem;
+        }
+        span {
+            display: block;
+            line-height: px(48);
+            font: {
+                family: $font-regular;
+                size: 3rem;
+            }
+            color: $color-gray;
+        }
+        .sub-guide {
+            line-height: px(36);
+            font-size: 2.4rem;
+            color: $color-blue;
+        }
+    }
+    .guide {
+        width: px(1200);
+        .guide-image {
+            width: px(1200);
+            height: px(340);
+            margin-bottom: px(16);
+            @include background-contain;
+        }
+        .guide-text {
+            display: flex;
+            justify-content: space-between;
+        }
+        span {
+            display: inline-block;
+            line-height: px(42);
+            font-size: 2.6rem;
+            color: $color-gray;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    .option-guide {
+        position: absolute;
+        bottom: px(30);
+        right: px(-40);
+        span + span {
+            margin-left: px(30);
+        }
+        .keyguide-change {
+            position: relative;
+            width: px(69);
+            &:before {
+                @include vs;
+                width: px(66);
+                height: px(29);
+                background-image: url($url-images-common + "ic-key-otherscene.png");
+                @include background-default;
+            }
+        }
+    }
+    //블루투스연결 모드
+    .bluetooth-wait {
+        .follow {
+            span:first-child {
+                margin-bottom: px(6);
+            }
+        }
+        .guide-image {
+            background-image: url($url-images + "img-setting-mode-bluetooth.png");
+        }
+        .guide-text {
+            padding: 0 px(23) 0 px(32);
+        }
+    }
+    //직접연결 모드
+    .direct-contact {
+        .guide-image {
+            background-image: url($url-images + "img-setting-mode-direct.png");
+        }
+        .title {
+            margin-bottom: px(80);
+        }
+        .guide-text {
+            padding: 0 px(110) 0 px(60);
+        }
+        .next-button {
+            text-align: right;
+        }
+    }
+    // TV연결 모드
+    .tv-contact {
+        .title {
+            padding-top: px(134);
+            margin-bottom: px(29);
+            h3 {
+                margin-bottom: px(22);
+            }
+        }
+        .follow {
+            span {
+                margin-bottom: px(6);
+            }
+        }
+        .guide-image {
+            background-image: url($url-images + "img-setting-mode-tv.png");
+            margin-bottom: px(11);
+        }
+        .guide-text {
+            padding: 0 px(51) 0 px(23);
+        }
+        .prev-button {
+            text-align: left;
+        }
+    }
+    //블루투스 페어링 완료
+    .bluetooth-pairing {
+        .title {
+            padding-top: px(218);
+            margin-bottom: px(87);
+        }
+        .guide-image {
+            background-image: url($url-images + "img-setting-mode-pairing.png");
+            margin-bottom: px(50);
+        }
+        .guide-text {
+            display: block;
+            span {
+                line-height: px(48);
+                margin-bottom: px(10);
+            }
+        }
+    }
+}
+

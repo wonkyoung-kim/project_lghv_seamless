@@ -1,0 +1,627 @@
+@import '../scss/config';
+//url
+$url-images: "../hv_images/vod/";
+
+/* vod상세화면 */
+.vod-detail-container {
+    background-color: $color-bg-black;
+    .gradient-bg {
+        .vod-detail-bgimage {
+            background: {
+                position: center;
+            }
+            opacity: 0.15;
+        }
+    }
+    //vod포스터
+    .poster-vertical {
+        position: absolute;
+        top: px(109);
+        right: px(134);
+        width: px(320);
+        height: px(456);
+    }
+    //vod월정액 하단배너
+    .vod-banner {
+        @include background-default;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: px(720);
+        height: px(407);
+    }
+    //vod월정액 bg이미지
+    .vod-detail-bgimage {
+        background-size: cover;
+    }
+    //콘텐츠영역
+    .contents {
+        padding: px(160) 0 0 px(110);
+    }
+    //메타데이터영역
+    .content-info {
+        margin-top: 0;
+        height: px(383);
+    }
+    .default-info, .meta-tag {
+        display: inline-block;
+    }
+    .default-info {
+        margin-right: px(14);
+    }
+    //디테일 정보
+    .detail-info {
+        .tooltip {
+            position: absolute;
+            margin-left: px(458);
+            bottom: px(-4);
+        }
+    }
+    .button-area {
+        .tooltip {
+            padding: px(21) px(18);
+        }
+    }
+    //메세지영역
+    .event-message {
+        @include ellipsis;
+        width: px(583);
+        margin-top: px(14);
+        line-height: 1.4;
+        &::before {
+            content: none;
+        }
+    }
+    //타이틀
+    .vod-title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    //구매버튼영역
+    .vod-button {
+        margin-right: 0;
+        padding: 0 px(24);
+        .price {
+            display: flex;
+            flex-direction: column;
+            .original {
+                position: relative;
+                align-self: flex-end;
+                font-size: 1.8rem;
+                color: $color-gray;
+                &::after {
+                    @include vs;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 100%;
+                    height: px(2);
+                    background-color: $color-gray;
+                }
+            }
+        }
+    }
+    //툴팁
+    .tooltip {
+        margin-left: px(24);
+    }
+    //탭영역
+    .vod-additional-list {
+        .view-episode {
+            &::before {
+                @include background-contain;
+                background-image: url('../../assets/hv_images/vod/ic-vod-episode.png');
+            }
+        }
+        .view-more {
+            &::before {
+                @include background-contain;
+                background-image: url('../../assets/hv_images/vod/ic-vod-viewmore.png');
+            }
+        }
+        .focus {
+            &.wish-list, &.rated {
+                &::after {
+                    content: '';
+                }
+            }
+            &.view-more {
+                &::before {
+                    background-image: url('../../assets/hv_images/vod/ic-vod-viewmore-focus.png');
+                }
+            }
+            &.view-episode {
+                &::before {
+                    @include background-contain;
+                    background-image: url('../../assets/hv_images/vod/ic-vod-episode-focus.png');
+                }
+            }
+        }
+    }
+    //U+모바일로tv로 시청가능
+    .mobile-message {
+        .mobile-view-tip {
+            padding-left: px(102);
+            color: $color-bg-gray;
+            &::before {
+                width: px(98);
+                height: px(23);
+                background-image: url('../../assets/hv_images/vod/img-vod-logo.png');
+            }
+            span {
+                margin-right: px(18);
+                font-family: $font-bold;
+                color: $color-pure-white;
+            }
+        }
+    }
+    //패키지
+    .package {
+        padding-top: px(140);
+        .product-desc {
+            width: px(496);
+            -webkit-line-clamp: 2;
+        }
+    }
+    //월정액
+    .vod-subscribe {
+        padding-top: px(100);
+        .tooltip {
+            padding: px(12) px(18);
+        }
+    }
+}
+
+/* 콘텐츠 리스트(우측 영역) */
+.vod-layer-bg {
+    background-color: rgba($color-pure-black, 0.85);
+    //우측 포커스전
+    .vod-layer {
+        opacity: 0.7;
+        &.active {
+            opacity: 1;
+        }
+        .contents-list {
+            li {
+                margin-bottom: px(32);
+                margin-left: px(42);
+                &:nth-child(odd) {
+                    margin-left: px(42);
+                }
+                &:nth-child(3n+1) {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    //우측 포커스후
+    .contents-list {
+        li {
+            opacity: 0.6;
+            &.focus {
+                opacity: 1; 
+            }
+        }
+    }
+    //포스터 재생하기버튼
+    .poster-vertical {
+        .poster-button {
+            bottom: 0;
+        }
+    }    
+    //패키지, 월정액 공통
+    .package, .vod-subscribe {
+        .vod-title {
+            &.double-line {
+                width: px(496);
+                height: px(160);
+                font-size: 6rem;   
+            }
+        }
+    }
+    //패키지
+    .package {
+        .product-title {
+            margin-bottom: px(38);
+        }
+        .mask {
+            height: px(22);
+        }
+        .contents-list {
+            li {
+                margin-left: 0;
+                margin-bottom: px(40);
+                &:nth-child(odd) {
+                    margin-left: 0;
+                }
+                .meta-data {
+                    width: px(678);
+                    margin-left: px(40);
+                }
+                .content-info {
+                    margin-top: px(16);
+                }
+                .title, .staff, .summary {
+                    width: 100%;
+                }
+                .title {
+                    font-size: 3rem;
+                }
+                .summary {
+                    -webkit-line-clamp: 7;
+                }
+            }
+        }
+    }
+    //월정액
+    .vod-subscribe {
+        .product-title {
+            margin-bottom: px(-4);
+        }
+        .contents-list-wrap {
+            height: calc(100% - #{px(124)});
+            .mask {
+                height: px(24);
+            }
+        }
+        .content-info {
+            height: px(438);
+            .product-desc {
+                width: px(605);
+                -webkit-line-clamp: 3;
+            }
+        }
+        .poster-vertical {
+            width: px(308);
+            height: px(438);
+        }
+        .keyguide {
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                right: px(-50);
+                bottom: px(-30);
+                z-index: -1;
+                width: px(296);
+                height: px(130);
+                opacity: 0.62;
+                filter: blur(40px);
+                background-color: $color-pure-black;
+            }
+        }
+    }
+    //부가정보
+    .vod-moreinfo {
+        &::before {
+            @include vs;
+            height: px(50);
+            transform: rotate(-180deg);
+            background-image: linear-gradient(to bottom, $color-bg-transparent, $color-pure-black 74%);
+            background-size: 100%;
+            opacity: 0;
+        }
+        &::after {
+            height: px(50);
+            background-image: linear-gradient(to bottom, $color-bg-transparent, $color-pure-black 74%);
+        }
+        .top-cover {
+            &::before {
+                opacity: 1;
+            }
+        }
+        .contents-list-wrap {
+            height: px(1080);
+            padding-top: 0;
+        }
+        .product-title {
+            padding-left: 0;
+            margin-bottom: px(22);
+            &:not(:nth-of-type(1)) {
+                padding-top: px(70);
+            }
+        }
+        .contents-list {
+            display: block;
+            ul {
+                display: flex;
+                li {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .summary {
+            p {
+                position: relative;
+                width: px(1008);
+                line-height: 1.58;
+                font-size: 2.4rem;
+                color: $color-gray;
+                &.focus {
+                    color: $color-pure-white;
+                    &::after {
+                        @include focus-border;
+                        width: calc(100% + #{px(28)});
+                        height: calc(100% + #{px(12)});
+                        transform: translate(px(-14), px(-6));
+                    }
+                }
+            }
+        }
+        .poster-vertical {
+            width: px(308);
+            height: px(438);
+        }
+    }
+    //주요장면
+    .scene {
+        .contents-list-wrap {
+            padding: px(98) 0 0 px(82);
+        }
+        .contents-list {
+            .poster-component {
+                &::before {
+                    opacity: 0;
+                }   
+            }
+            li {
+                margin-left: px(32);
+                &:nth-child(odd) {
+                    margin-left: px(32);
+                }
+                &:nth-child(2n+1) {
+                    margin-left: px(32);
+                }
+                &:nth-child(3n+1) {
+                    margin-left: 0;
+                }
+            }
+        }
+        .poster-horizontal {
+            width: px(324);
+            height: px(194);
+        }
+        .vod {
+            &.focus {
+                .poster-component {
+                    opacity: 1;
+                    &::after {
+                        content: '';
+                        z-index: 2;
+                        right: 0;
+                        bottom: px(4);
+                    }
+                }
+            }
+            
+        }
+    }
+    //많이 본 콘텐츠
+    .most-viewed {
+        .contents-list-wrap {
+            padding: px(86) 0 0 px(82);
+        }
+        .contents-list {
+            li {
+                margin-bottom: px(32);
+            }
+        }
+        .poster-vertical {
+            width: px(308);
+            height: px(438);
+        }
+        &.active {
+            .contents-list {
+                li {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    //시리즈
+    .episode {
+        .season-tab {
+            p {
+                min-width: px(124);
+                max-width: px(314);
+                width: auto;
+            }
+            &.tab1 {
+                .tab-focus {
+                    padding: 0 px(49);
+                    &::before {
+                        left: px(16);
+                    }
+                    &::after {
+                        right: px(16);
+                    }
+                }
+            }
+            &.tab2, &.tab3 {
+                p {
+                    width: px(283);
+                }
+            }
+            .focus {
+                .text-wrap {
+                    width: auto;
+                }
+            }
+        }
+        .contents-list {
+            li {
+                margin-left: 0;
+                &:nth-child(odd) {
+                    margin-left: 0;
+                }
+                .title {
+                    margin-bottom: px(10);
+                }
+                .summary {
+                    -webkit-line-clamp: 3;
+                }
+                .poster-component {
+                    .poster-time {
+                        dt {
+                            opacity: 0;
+                        }
+                        .watch-complete {
+                            opacity: 1;
+                        }
+                    }
+                    .poster-button {
+                        em {
+                            margin-right: px(8);
+                            color: $color-blue;
+                        }
+                        span {
+                            position: relative;
+                            &::before {
+                                @include vs;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                width: 100%;
+                                height: px(2);
+                                background-color: $color-gray; 
+                            }
+                            margin-left: px(8);
+                            font: {
+                                family: $font-regular;
+                                size: 1.8rem;
+                            }
+                            color: $color-gray;
+                        }
+                    }
+                }
+                &.focus {
+                    .poster-time {
+                        dt {
+                            opacity: 1;
+                        }
+                    }
+                    .purchase-guide {
+                        p {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+        .purchase-guide {
+            p {
+                opacity: 0;
+                &::before {
+                    margin-right: 0;
+                }
+                
+            }
+        }
+        
+        &.active {
+            .contents-list {
+                li {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+//구매버튼하단 할인문구
+.purchase-guide {
+    .my-coin {
+        &::before {
+            @include vs-ib;
+            @include background-contain;
+            width: px(24);
+            height: px(24);
+            margin-right: px(8);
+            background-image: url('../../assets/hv_images/vod/ic-vod-coin.png');
+        }
+        span {
+            &::before {
+                @include vs-ib;
+                width: px(1,1);
+                height: px(16);
+                margin: 0 px(14);
+                background-color: $color-primary;
+            }
+            &:first-child {
+                &::before {
+                    content: none;
+                }
+            }
+        }
+    }
+}
+//언어선택
+.select-language {
+    .body-text {
+        margin-bottom: px(78);
+    }
+    .language-normal {
+        &::before {
+            background-image: url($url-images + "ic-language-normal.png");
+        }
+    }
+    .focus {
+        &.language-normal {
+            &::before {
+                background-image: url($url-images + "ic-language-normal-focus.png");
+            }
+        }
+    }
+}
+//상품옵션 선택
+.vod-purchase {
+    .series-title {
+        height: px(69);
+        &.double-line {
+            @include ellipsis($line: 2);
+            height: px(134);
+        }
+    }
+    .series-info {
+        .summary {
+            height: px(120);
+            margin-bottom: px(27);
+            -webkit-line-clamp: 3;
+        }
+    }
+    .purchase-option {
+        &.active {
+            .scroll {
+                opacity: 1;
+            }
+        }
+    }
+    .scroll {
+        top: 0;
+        right: px(-102);
+    }
+    .poster-vertical {
+        width: px(320);
+        height: px(456);
+    }
+    .sub-text {
+        &.line {
+            position: relative;
+            display: inline-block;
+            &::before {
+                @include vs;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 100%;
+                height: px(2);
+                background-color: $color-gray-dark;
+            }
+        }
+    }
+    .focus {
+        .sub-text {
+            &::before {
+                background-color: $color-white;
+            }
+        }
+    }
+}

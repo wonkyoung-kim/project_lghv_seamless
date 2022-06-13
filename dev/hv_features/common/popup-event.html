@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/hv_index.css" />
+</head>
+
+<body>
+    <div id="root">
+        <div class="popup-container">
+            
+            <!-- 이벤트 참여 팝업 -->
+            <div class="popup event-popup middle">
+                <!-- 스탬프 이벤트 참여일시 -->
+                <p class="stamp-count-box">
+                    <span class="count">4</span>
+                    <span>10</span> 
+                </p>
+                <!-- 페이백 이벤트 참여일시 -->
+                <!-- <p class="payback-box">
+                    <span>현재<em>8,000</em></span>
+                    <span>목표금액<em>20,000</em></span> 
+                </p> -->
+                <div class="popup-header marquee-text">
+                    <h3 class="marquee-child">타이틀</h3>
+                </div>
+                <div class="popup-body text-center">
+                    <h4>[당첨] 이벤트명</h4>
+                    <p class="body-text">이벤트에 참여했습니다</p>
+                    <p class="sub-text">이벤트 > 참여한 이벤트에서 당첨결과를 확인할 수 있습니다.<br>(결과발표 : yyyy.mm.dd day)</p>
+                </div>
+                <div class="popup-footer">
+                    <button class="popup-button focus">닫기</button>
+                </div>
+            </div>
+
+            <!-- 이벤트_이미지만 있는 팝업 -->
+            <div class="popup large event-image-popup">
+                <div class="popup-header">
+                    <h3>이벤트 안내</h3>
+                </div>
+                <div class="popup-body">
+                    <div class="image-wrap">
+                        <div class="image" style="background-image:url(../../assets/hv_images/temp/poster-horizontal.jpg)"></div>
+                    </div>
+                </div>
+                <div class="popup-footer">
+                    <button class="popup-button">취소</button>
+                    <button class="popup-button focus">참여</button>
+                </div>
+            </div>
+            <!-- //이벤트_이미지만 있는 팝업 -->
+
+            <!-- 이미지에 페이징 있는 팝업 -->
+            <div class="popup large event-paging-popup">
+                <div class="popup-header">
+                    <h3>이벤트 안내</h3>
+                </div>
+                <div class="popup-body">
+                    <div class="image-area">
+                        <i class="ic-arrow">이전이미지</i>
+                        <div class="image-list">
+                            <ul>
+                                <li>
+                                    <div class="image" style="background-image:url(../../assets/hv_images/temp/poster-horizontal.jpg)"></div>
+                                </li>
+                                <li>
+                                    <div class="image" style="background-image:url(../../assets/hv_images/temp/poster-horizontal.jpg)"></div>
+                                </li>
+                                <li>
+                                    <div class="image" style="background-image:url(../../assets/hv_images/temp/poster-horizontal.jpg)"></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <i class="ic-arrow">다음이미지</i>
+                    </div>
+                    <p class="pagination">
+                        <span class="focus"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </p>
+                </div>
+                <div class="popup-footer">
+                    <button class="popup-button">취소</button>
+                    <button class="popup-button focus">참여</button>
+                </div>
+            </div>
+            <!-- //이미지에 페이징 있는 팝업 -->
+
+            <!-- 어셋이벤트 팝업/어셋이벤트가 아닌 팝업 -->
+            <div class="popup large asset-event-popup">
+                <div class="popup-header">
+                    <h3>이벤트 안내</h3>
+                </div>
+                <div class="popup-body">
+                    <div class="image-wrap">
+                        <div class="image" style="background-image: url('../../assets/hv_images/temp/poster-vertical.png');"></div>
+                    </div>
+                    <div class="info">
+                        <h4>지금부터 2시간만 20% 할인!</h4>
+                        <!-- 어셋이벤트가 아닌경우 주석 price주석 처리 -->
+                        <div class="price">
+                            <span class="discount">30%할인</span><span>3일</span><span class="origin-price">00,000원</span><em>4,750원</em>
+                        </div>
+                        <p class="body-text">
+                            가나다라마바사아자차카타파하가나다라마바사아
+                            가나다라마바사아자차카타파하가나다라마바사아
+                            가나다라마바사아자차카타파하가나다라마바사아
+                            가나다라마바사아자차카타파하가나다라마바사아
+                        </p>
+                        <p class="sub-text">※ 기간 : 2021.01.30 오후 6시~10시</p>
+                    </div>
+                </div>
+                <div class="popup-footer">
+                    <button class="popup-button">취소</button>
+                    <button class="popup-button focus">참여</button>
+                </div>
+            </div>
+            <!-- //어셋이벤트 팝업 -->
+
+            <!--이벤트 참여완료 팝업-->
+            <div class="popup middle event-coupon-popup">
+                <div class="popup-header">
+                    <h3>이벤트 참여 완료</h3>
+                </div>
+                <div class="popup-body text-center">
+                    <div class="coupon-detail">
+                        <span>축하합니다</span>
+                        <em>영화 20% 할인쿠폰</em>
+                        <p>쿠폰 유효 기간 : 구매일로부터 12개월</p>
+                    </div>
+                    <p class="sub-text">
+                        이벤트 > 참여한 이벤트에서 당첨결과를 확인할 수 있습니다.
+                    </p>
+                </div>
+                <div class="popup-footer">
+                    <button class="popup-button focus">확인</button>
+                </div>
+            </div>
+            <!--//이벤트 참여완료 팝업-->
+
+            <!-- 이벤트 참여시 번호 입력하는 경우 -->
+            <div class="popup event-mobile-popup middle">
+                <div class="popup-header">
+                    <h3>이벤트 참여</h3>
+                </div>
+                <div class="popup-body text-center">
+                    <h4>소울 구매 고객 추첨<br />소울 피규어 무드등 증정</h4>
+                    <p class="sub-text">이벤트 > 참여한 이벤트에서 당첨결과를 확인할 수 있습니다.</p>
+                    <fieldset class="input-field">
+                        <legend>휴대폰 연결</legend>
+                        <div class="input-box">
+                            <div class="alt">
+                                <dl>
+                                    <dd>
+                                        <div class="input-text focus">
+                                            <span class="placeholder">휴대폰 번호를 입력해 주세요.</span>
+                                            <p class="input-text-wrap">
+                                                <span class="cursor"></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </p>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <p class="sub-text">※ 휴대폰 번호는 이벤트 참여 및 당첨 알림에만 활용됩니다</p>
+                </div>
+                <div class="popup-footer">
+                    <button class="popup-button">취소</button>
+                    <button class="popup-button">응모</button>
+                </div>
+            </div>
+            <!-- //이벤트 참여시 번호 입력하는 경우 -->
+            
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/hv_index.css" />
+</head>
+<body>
+    <div id="root">
+        <!--react 구조-->
+        <div class="event-wrap">
+            <h2 class="skip">이벤트</h2>
+
+            <header class="event-header">
+                <h3 class="event-title">이벤트</h3>
+                <p class="path">
+                    <span>홈</span>
+                    <span>마이</span>
+                    <span>이벤트</span>
+                </p>
+            </header>
+            <!--본문-->
+            <div class="event-body active"><!--active시 스크롤 생성-->
+                <div class="list-wrap">
+                    <!-- 버튼과 부가설명 -->
+                    <section class="event-func-area">
+                        <!-- dim처리가 안나와서 일시적으로 클래스를 뺐습니다. -->
+                        <p class="selected">진행중 이벤트</p>
+                        <p>참여한 이벤트 (N건)</p>
+                    </section>
+                    
+                    <!-- 진행중 리스트 -->
+                    <section class="event-ing"> 
+                        <ul class="contents-list">
+                            <li class="focus">
+                                <div class="poster-horizontal">
+                                    <div class="poster-banner"style="background-image: url('../../assets/hv_images/temp/img-event.png')"></div>
+                                </div>
+                                <div class="meta-data">
+                                    <h4 class="title marquee-text">
+                                        <p class="marquee-child">구매 고객 추첨 소울 피규어 무드등 증정</p>
+                                    </h4>
+                                    <p class="sub-text">이벤트 기간 2021.03.23~2021.04.05</p>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class="poster-horizontal">
+                                    <div class="poster-banner"style="background-image: url('../../assets/hv_images/temp/img-event.png')"></div>
+                                </div>
+                                <div class="meta-data">
+                                    <h4 class="title marquee-text">
+                                        <p class="marquee-child">구매 고객 추첨 소울 피규어 무드등 증정</p>
+                                    </h4>
+                                    <p class="sub-text">이벤트 기간 2021.03.23~2021.04.05</p>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class="poster-horizontal">
+                                    <div class="poster-banner"style="background-image: url('../../assets/hv_images/temp/img-event.png')"></div>
+                                </div>
+                                <div class="meta-data">
+                                    <h4 class="title marquee-text">
+                                        <p class="marquee-child">구매 고객 추첨 소울 피규어 무드등 증정</p>
+                                    </h4>
+                                    <p class="sub-text">이벤트 기간 2021.03.23~2021.04.05</p>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class="poster-horizontal">
+                                    <div class="poster-banner"style="background-image: url('../../assets/hv_images/temp/img-event.png')"></div>
+                                </div>
+                                <div class="meta-data">
+                                    <h4 class="title marquee-text">
+                                        <p class="marquee-child">구매 고객 추첨 소울 피규어 무드등 증정</p>
+                                    </h4>
+                                    <p class="sub-text">이벤트 기간 2021.03.23~2021.04.05</p>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class="poster-horizontal">
+                                    <div class="poster-banner"style="background-image: url('../../assets/hv_images/temp/img-event.png')"></div>
+                                </div>
+                                <div class="meta-data">
+                                    <h4 class="title marquee-text">
+                                        <p class="marquee-child">구매 고객 추첨 소울 피규어 무드등 증정</p>
+                                    </h4>
+                                    <p class="sub-text">이벤트 기간 2021.03.23~2021.04.05</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                    <!-- //진행중 리스트 -->
+                    
+                    <!-- 참여한 이벤트 -->
+                    <section class="event-end">
+                        <p class="product-title">
+                            <span class="name">참여한 이벤트 명</span>
+                            <span class="date">진행기간</span>
+                            <span class="price">경품</span>
+                            <span class="payday">발표/지급일</span>
+                        </p>
+                        <!-- 가입상품 없을 경우 product-list에 none클래스추가하고 형제요소 list-none에 none클래스 제거 -->
+                        <ul class="product-list">
+                            <li class="focus">
+                                <p class="name">
+                                    <span class="ellipsis marquee-text">
+                                        <span class="marquee-child">영화 <북스마트> 구매 이벤트</span>
+                                    </span>
+                                    <span class="ic-tag">결과완료</span>
+                                </p>
+                                <p class="period">21.02.17 - 21.03.02</p>
+                                <p class="price">
+                                    <span class="ellipsis marquee-text">
+                                        <span class="marquee-child">TV코인 5,000원TV코인 5,000원</span>
+                                    </span>
+                                </p>
+                                <p class="date">
+                                    <span class="ellipsis marquee-text">
+                                        <span class="marquee-child">발표 20.12.31발표 20.12.31</span>
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="name">
+                                    <span class="ellipsis marquee-text">
+                                        <span class="marquee-child">영화 <원더우먼 1984> 구매 이벤트</span>
+                                    </span>
+                                    <span class="ic-tag">당첨</span>
+                                </p>
+                                <p class="period">21.02.17 - 21.03.02</p>
+                                <p class="price">
+                                    <span class="ellipsis marquee-text">
+                                        <span class="marquee-child">TV코인 5,000원</span>
+                                    </span>
+                                </p>
+                                <p class="date">
+                                    <span class="ellipsis marquee-text">
+                                        <span class="marquee-child">발표 20.12.31</span>
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="name">
+                                    <span class=" ellipsis marquee-text">
+                                        <span class="marquee-child">카톡 플친 <봇봇>과 친구해요!</span>
+                                    </span>
+                                    <span class="ic-tag">참여완료</span>
+                                </p>
+                                <p class="period">21.02.17 - 21.03.02</p>
+                                <p class="price">
+                                    <span class="ellipsis marquee-text">
+                                        <span class="marquee-child">TV코인 5,000원</span>
+                                    </span>
+                                </p>
+                                <p class="date">
+                                    <span class="ellipsis marquee-text">
+                                        <span class="marquee-child">발표 20.12.31</span>
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="name">
+                                    <span class=" ellipsis marquee-text">
+                                        <span class="marquee-child">영화 <저격수> 구매 이벤트</span>
+                                    </span>
+                                    <span class="ic-tag">지급완료</span>
+                                </p>
+                                <p class="period">21.02.17 - 21.03.02</p>
+                                <p class="price">
+                                    <span class="ellipsis marquee-text">
+                                        <span class="marquee-child">TV코인 5,000원</span>
+                                    </span>
+                                </p>
+                                <p class="date">
+                                    <span class="ellipsis marquee-text">
+                                        <span class="marquee-child">발표 20.12.31</span>
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="name">
+                                    <span class=" ellipsis marquee-text">
+                                        <span class="marquee-child">영화 <저격수> 구매 이벤트</span>
+                                    </span>
+                                    <span class="ic-tag">지급완료</span>
+                                </p>
+                                <p class="period">21.02.17 - 21.03.02</p>
+                                <p class="price">
+                                    <span class="ellipsis marquee-text">
+                                        <span class="marquee-child">TV코인 5,000원</span>
+                                    </span>
+                                </p>
+                                <p class="date">
+                                    <span class="ellipsis marquee-text">
+                                        <span class="marquee-child">발표 20.12.31</span>
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="name">
+                                    <span class=" ellipsis marquee-text">
+                                        <span class="marquee-child">영화 <저격수> 구매 이벤트</span>
+                                    </span>
+                                    <span class="ic-tag">지급완료</span>
+                                </p>
+                                <p class="period">21.02.17 - 21.03.02</p>
+                                <p class="price">
+                                    <span class="ellipsis marquee-text">
+                                        <span class="marquee-child">TV코인 5,000원</span>
+                                    </span>
+                                </p>
+                                <p class="date">
+                                    <span class="ellipsis marquee-text">
+                                        <span class="marquee-child">발표 20.12.31</span>
+                                    </span>
+                                </p>
+                            </li>
+                        </ul>
+                    </section>
+                    <!-- //참여한 이벤트 -->
+
+                    <!-- 가입상품 없음 -->
+                    <p class="list-none none">가입하신 상품이 없습니다.</p>
+                    <!-- //가입상품 없음 -->
+                </div>
+
+                <div class="scroll">
+                    <span style="height:50%"></span>
+                </div>
+            </div>
+            <!--본문 끝-->
+        </div>
+    </div>
+</body>
+</html>

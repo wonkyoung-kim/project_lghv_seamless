@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+</head>
+
+<body>
+
+    <div id="root"> <!-- react 구조 -->
+
+
+    
+        <div class="channel-container">
+
+            <div class="channel-header">
+                <div class="thumbnail" style="background-image: url(../../assets/images/channel/tv-timetable-12.png)">
+                    <span class="min-ch">005 tvN</span>
+                </div>
+                <div class="number">
+                    <h2>005</h2>
+                </div>
+                <div class="info-program">
+                    <div class="state">
+                        <span class="name">tvN</span>
+                        <span class="date">11월 31일(금) 오후 9:23</span>
+                    </div>
+                    <div class="title">
+                        <h2>삼시세끼 어촌편3 5화</h2>
+                    </div>
+                    <div class="watching">
+                        <p class="ing">현재 시청 중인 채널</p>
+                        <dl class="progress">
+                            <dt class="time">오후 9:00-10:00</dt>
+                            <dd class="bar"><span style="width:50%;"></span></dd>
+                            <!-- <dd class="reservation"><span>예약</span></dd> -->
+                        </dl> 
+                        <p class="meta-tag">
+                            <span class="ic-tag">자막</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- //channel-header -->
+
+            <div class="channel-body">
+
+                <div class="timeline">
+                    <h3>전체채널</h3>
+                    <div class="inner">
+                        <ul>
+                            <li class="active">오전 00:00</li>
+                            <li>오전 00:30</li>
+                            <li>오전 01:00</li>
+                            <li>오전 01:30</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- //timeline -->
+
+                <div class="channel-box-wrap">
+                    <div class="channel-box">
+                        
+                        <div class="mask"></div>
+
+                        <!-- 편성표 보기-->
+                        <div class="schedule-view-button">
+                            <button><p>장르별<br>편성표<br>보기</p></button>
+                        </div>
+                        <!-- //view-schedule-button -->
+
+                        <div class="channel-box-inner">
+                           
+                            <!-- 선호채널 등록된 채널 없을때 favorite-default 추가 -->
+                            <div class="channel-schedule favorite-default">
+                                <div class="channel-name"></div>
+                                <div class="channel-program">
+                                    <!-- 선호채널 등록된 채널 없을때 안내문구 -->
+                                    <div class="info-favorite">
+                                        <div class="img"></div>
+                                        <div class="exp">
+                                            <P>등록한 선호 채널이 없습니다.</P>
+                                            <P><u>설정 > 채널설정 > 선호채널 편집</u>에서 선호채널을 설정할수 있습니다.</P>
+                                        </div>
+                                        <div class="button-area">
+                                            <button class="button-primary large focus">
+                                                <p class="text">선호채널 설정</p>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 선호채널 등록된 채널 없을때 안내문구 --> 
+                                </div>
+                            </div>
+                            <!-- //channel-schedule favorite-default-->
+                            
+                        </div>
+                        <!-- //channel-box-inner -->
+                        <div class="mask alt"></div>
+                    </div>
+                    <!-- //channel-box -->
+                </div>
+                <!-- //channel-box-wrqp -->
+
+                <div class="channel-footer">
+                    <div class="channel-pagination">
+                        <ul>
+                            <li class="page-prev focus"><button>previous</button></li>
+                            <li class="page-number">
+                                <span class="active">222</span>
+                                <span class="total">222</span>
+                            </li>
+                            <li class="page-next"><button>next</button></li>
+                        </ul>
+                    </div>
+                    <!-- //channel-pagination -->
+                    <div class="channel-option">
+                        <p class="keyguide"><!-- UHD1,2,3인 경우-->
+                            <!--<span class="ic-round keyguide-option">옵션</span>부가기능 보기-->  
+                        </p>
+                        <p class="keyguide">
+                            <span class="ic-round keyguide-option">간편메뉴</span>부가기능 보기   <!-- tvg/보급형인 경우-->
+                        </p>
+                        <p class="keyguide">
+                            <span class="ic-round keyguide-exit">종료</span>현재 시청 채널
+                        </p>
+                        <!-- <span><em class="ic-round">옵션</em> 부가기능 보기</span>
+                        <span><em class="ic-round">종료</em> 현재 시청 채널</span> -->
+                    </div>
+                    <!-- //channel-option -->
+                </div>
+                <!-- //channel-footer -->
+
+            </div>
+            <!-- //channel-body -->
+        </div>
+        <!-- //channel-container -->
+
+
+
+    </div>
+    <!-- //root -->
+
+</body>
+</html>

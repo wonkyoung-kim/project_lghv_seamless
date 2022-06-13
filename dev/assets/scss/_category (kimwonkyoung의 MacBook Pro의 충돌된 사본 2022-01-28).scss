@@ -1,0 +1,591 @@
+@import 'config';
+//url
+$url-images: "../images/category/";
+//var
+$button-height: px(42);
+$height-option-item: px(80);
+$height-option-margin: px(4);
+$height-option: calc(calc(#{$height-option-item} * 6) + calc(#{$height-option-margin} * 5));
+//mixin
+@mixin  button-option($height: $button-height, $width: px(90), $font: 2.2rem, $padding: px(15)){
+    position: relative;
+    height: $button-height;
+    font-family: $font-regular;
+    font-size: $font;
+    line-height: calc(#{$button-height} - #{px(2)});
+    color: $color-gray;
+    padding : 0 $padding;
+    border-radius: px($border-radius);
+    background-color: $color-bg-component;
+    .text {
+        min-width: $width;
+    }
+    &.dimed {
+        background-color: $color-bg-black-40
+    }
+    &.focus {
+        height: $button-height;
+        font-family: $font-bold;
+        font-size: $font;
+        color: $color-black;
+        background-color: $color-white;
+    }
+    &.option-selected {
+        font-family: $font-bold;
+        color: $color-white;
+    }
+}
+
+//category-list : start
+.category-container {
+    position: relative;
+    width: 100%;
+    height: px(1080,720);
+    //ic-tag
+    .meta-tag {
+        margin-top: px(12);
+    } 
+    .ic-tag { 
+        @include ic-tag-small(
+            $margin-left: px(10),
+            $color1: $color-white,
+            $height: px(28),
+            $font: 1.6rem,
+            $border: px(1, 1),
+            $padding: px(8));
+            &:first-child {
+                margin-left: 0;
+            }
+    }
+    //별점 별
+    .rating-star {
+        @include rating-star();               
+    } 
+    //페이지 경로
+    .path {
+        position: absolute;
+        height: px(30);
+        top: px(45);
+        right: px(60);
+        span {
+            color: $color-white-70;
+        }
+    }
+    .vod-detail-bgimage {
+        @include vs;
+        width: 100%;
+        height: 100%;
+        background-image: url(../images/vod/img-thumbnail-detail-default.png);
+        background: {
+            size: px(1446);
+            repeat: no-repeat;
+            position: right top;
+            color: $color-bg-black;
+        }
+    }
+    .gradient-bg {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        &::after {
+            @include vs;
+            width: 100%;
+            height: 100%;
+            background: {
+                image: linear-gradient(to bottom, $color-bg-transparent, $color-bg-black 50%, $color-bg-black 50%), linear-gradient(to right, $color-bg-black 53%, $color-bg-transparent 91%);
+                position: bottom center, left top;
+                size: 100% px(616), px(900) 100%;
+                repeat: no-repeat;
+            }
+        }
+    }
+    .contents {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding-left: px(110);
+        z-index: 1;
+        &.active {
+            .content-info {
+                opacity: 1;
+            }
+        }
+    }
+    .content-info {
+        opacity: 0;
+        position: relative;
+        height: px(455);
+        margin-top: px(140);
+        .content-title {
+            position: relative;
+            font-size: 2.4rem;
+            color: $color-white;
+            line-height: px(32);
+            margin-top: px(24);
+        }
+        .summary {
+            margin-top: px(20);
+            width: px(660);
+            font-size: 2.5rem;
+            color: $color-white;
+            line-height: px(36);
+            @include ellipsis($line: 3);
+            opacity: 0.5;
+        }
+    }
+    h1 {
+        &.vod-title {
+            width: px(660);
+            height: px(80);
+            font-size: 6rem;
+            font-family: $font-bold;
+            line-height: px(80);
+            margin-bottom: px(16);
+            &.image-logo{
+                height: px(104);
+                @include background-contain;
+                background-position: left;
+                @include ir;
+            }
+            &.double-line{
+                font-size: 5rem;
+                line-height: normal;
+                height: px(132);
+            }
+        }
+    }
+    .rating-info {
+        div {
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: px(40);
+            margin-right: px(22);
+            &::before{
+                @include vs;
+                height: inherit;
+            }
+            .point {
+                display: inline-block;
+                font-family: $font-bold;
+                font-size: 2.4rem;
+                min-width: px(64);
+                .base-point{
+                    position: relative;
+                    display: inline-block;
+                    font-family: $font-regular;
+                    font-size: 2rem;
+                    color: $color-gray-text;
+                    padding-left: px(10);
+                    vertical-align: baseline;
+                    &::before{
+                        @include vs;
+                        content: '/';
+                    }
+                }
+            }
+        }
+        .watcha {
+            padding-left: px(116);
+            &::before{
+                @include vs;
+                width: px(108);
+                background-image: url(../images/vod/logo-watcha.png);
+                @include background-contain;
+            }
+        }
+        .cine21 {
+            padding-left: px(84);
+            &::before{
+                @include vs;
+                width: px(76);
+                background-image: url(../images/vod/logo-cine21.png);
+                @include background-contain;
+            }
+        }
+        .imdb {
+            padding-left: px(56);
+            &::before{
+                @include vs;
+                width: px(48);
+                background-image: url(../images/vod/logo-imdb.png);
+                @include background-contain;
+            }
+        }
+    }
+    .default-info {
+        span:not(.ic-tag) {
+            &::before {
+                opacity: 0.6;
+            }
+        }
+    }
+    .event-message {
+        position: relative;
+        font-size: 2.2rem;
+        color: $color-accent;
+        line-height: px(25);
+        &::before {
+            @include vs-ib;
+            width: px(24);
+            height: px(24);
+            margin-right: px(8);
+            vertical-align: bottom;
+            background-image: url(../images/vod/ic-event.png);
+            @include background-default;
+        }
+    }
+    //category-list-area
+    .category-list-area {
+        width: px(1810);
+    }
+    .category-list-header {
+        @include flex-items-center;
+        height: $button-height;
+        line-height: $button-height;
+        padding-left: px(15);
+        h3 {
+        font-size: 2.9rem; 
+        }
+    }
+    .button-area {
+        margin-left: px(30);
+        .button-option {
+            @include button-option();
+            &:first-child {
+                margin-left: 0;
+            }
+            margin-left: px(13); 
+            .filter {
+                min-width: px(72);
+                &::before {
+                    $size: px(20);
+                    @include vs-ib;
+                    width: $size;
+                    height: $size;
+                    margin-right: px(8);
+                    margin-bottom: px(1);
+                    vertical-align: middle;
+                    background-image: url($url-images + "ic-filter.png");
+                    @include background-contain;
+                }
+            }
+            &.option-selected {
+                .filter {
+                    &::before {
+                            background-image: url($url-images + "ic-filter-selected.png");
+                        }
+                }
+            }
+            &.focus {
+                .filter {
+                    color: $color-black;
+                    &::before {
+                            background-image: url($url-images + "ic-filter-focus.png");
+                        }
+                }
+            }
+        }
+    }
+    .contents-tag {
+        margin-left: px(16);
+        display: flex;
+        span {
+            font-family: $font-bold;
+            font-size: 2.2rem;
+            color: $color-white;
+            &:before {
+                @include vs-ib;
+                content: '#';
+            }
+            & + span {
+                margin-left: px(10);
+            }   
+        }
+    }
+    //contents-list
+    .active {
+        .scroll {
+            opacity: 1;
+        }
+    }
+    .contents-list-wrap {
+        $mask-height: px(17);
+        position: relative;
+        height: px(443, 296);
+        padding-left: px(21);
+        overflow: hidden;
+        &::after {
+            @include vs;
+            top: unset;
+            bottom: 0;
+            width: 100%;
+            height: px(224);
+            background-image: linear-gradient(to bottom, $color-bg-transparent, $color-bg-black);
+            z-index: 1;
+            content: none;
+        }
+        &.bottom-cover {
+            &::after {
+                content: '';
+            }
+        }
+        .scroll {
+            @include scroll(
+            $top : $mask-height, 
+            $right: px(60), 
+            $width: px(6), 
+            $height: px(384), 
+            $color1: $color-white-20, 
+            $color2: $color-gray
+            );
+        }
+        .mask {
+            width: 100%;
+            height: $mask-height;
+        }
+    }
+    .contents-list {
+        display: flex;
+        flex-flow: row wrap;
+        li {
+            margin-bottom: px(12);
+            margin-left: px(10); 
+            &:nth-child(5n + 1){
+                margin-left: 0 !important;
+            }
+        }
+        .poster-horizontal {
+            width: px(330);
+            height: px(186);
+        }
+        .focus {
+            .poster-horizontal {
+                &:first-child::before {
+                    transform-origin: center;
+                }
+            }
+            .poster-thumbnail {
+                transform-origin: center;
+            }
+        }
+    }   
+}
+//key-guide 
+.category-footer {
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0 px(50) px(30) 0;
+    width: 100%;
+    height: px(232);
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    &:before {
+        @include vs;
+        left: unset;
+        right: 0;
+        width: px(572);
+        height: px(232);
+        background-image: url($url-images + "bg-keynotice.png");
+        @include background-contain;
+        background-position: right bottom;
+        z-index: -1;
+    }
+}
+.category-back {
+    position: absolute;
+    top: 0;
+    width: px(48);
+    // flex: 0 0 px(48);
+    height: px(1080, 720);
+    z-index: 10;
+    .ic-arrow {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-image:url(../images/common/ic-gnb-back.png);
+        @include background-contain;
+        @include ir;
+        &.focus {
+            background-image:url(../images/common/ic-gnb-back-focus.png);
+        }
+    }
+}
+.list-up {
+    position: absolute;
+    top: px(54);
+    left: calc(50% - #{px(22)});
+    width: px(44);
+    height: px(28);
+    .ic-arrow {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-image:url($url-images + "ic-arrow-top.png");
+        @include background-contain;
+        @include ir;
+        &.focus {
+            background-image:url($url-images + "ic-arrow-top-focus.png");
+        }
+    }
+}
+//category-option : start
+.category-option {
+    background-color: $color-bg-black;
+    .category-option-header {
+        h2 {
+            text-align: center;
+            padding-top: px(97);
+            font: {
+                size: 5.2rem;
+                family: $font-bold;
+            }
+            &::after{
+                @include vs-b;
+                width: px(82);
+                height: px(4);
+                background-color: $color-white-30;
+                margin: px(48) auto px(72) auto;
+            }  
+        }
+    }
+    .category-option-body {
+        justify-content: center;
+        @include flex-items-center;
+    }
+    .button-area {
+        margin-top: px(84);
+        height: px(98);
+        button {
+            margin-left: px(10);
+            &:first-child {
+                margin-left: 0;
+            }
+        } 
+    }
+    .option {
+        height: $height-option;
+        position: relative;
+        overflow: hidden;
+        width: px(265);
+        color: $color-white-40;
+        font: {
+            size: 3.0rem;
+            family: $font-bold;
+        }
+        .scroll { 
+            opacity: 0;
+            @include scroll(0, 0, px(8), 100%, $color-white-10, $color-gray);
+        }
+        &.active::after, &.active .scroll {
+            opacity: 1;
+        }
+        li {
+            position: relative;
+            height: $height-option-item;
+            line-height: $height-option-item;
+            margin-top: $height-option-margin;
+            @include flex-items-center;
+            p {
+                line-height: $height-option-item;
+                position: relative;
+                top: px(-2 , 0);
+                max-width: 90%;
+                @include ellipsis();
+            }
+            &:first-child {
+                margin-top: 0;
+            }
+            &.focus, &.list-selected {
+                color: $color-white;    
+            }
+        }
+    }
+    .type-arrow {
+        width: px(460);
+        border-right: px(2) solid $color-white-divider;
+        li {
+            width: px(430);
+            padding: 0 px(24);
+            justify-content: space-between;
+            &::after {
+                width: px(19);
+                height: px(32);
+                background-image: url(../images/category/ic-category-arrow.png);
+                @include background-default;
+                @include vs-b;
+            }
+            &.focus, &.list-selected {
+                &::after {
+                    background-image: url(../images/category/ic-category-arrow-focus.png);
+                }
+            }
+            &.focus {
+                background-color: $color-bg-component;
+                &::before {
+                    border-radius: px($border-radius);
+                    border: px(4, 3) solid $color-white;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    @include vs-b;
+                }  
+            }
+        }
+    }
+    .type-radio {
+        width: px(438);
+        &.single {
+            width: px(364);
+            li {
+                width: px(336);
+                margin-left: 0;
+            }
+        }
+        .input-radio, .input-checkbox {
+            @include input-check($checked-color: $color-radio-cheked);
+            margin-right: px(18);
+        }
+        li {
+            width: px(370);
+            margin-left: px(40);
+            padding: 0 px(24);
+            p {
+                label {
+                    display: block;
+                    max-width: px(260);
+                    @include ellipsis($line: 1);
+                }
+            }
+            &.selected {
+                color: rgba($color-white,.4); 
+                .input-radio, .input-checkbox {
+                    @include input-check($checked-color: $color-radio-cheked);
+                }
+            }
+            &.focus {
+                background-color: $color-bg-component;
+                &::before {
+                    border-radius: px($border-radius);
+                    border: px(4, 3) solid $color-white;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    @include vs-b;
+                }
+                .input-radio, .input-checkbox {
+                    @include input-check($normal-color: $color-white, $checked-color: $color-primary);
+                }
+            }
+        }       
+    }
+}
+//category-option : end

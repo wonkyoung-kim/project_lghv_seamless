@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/hv_index.css" />
+</head>
+
+<body>
+    <!-- react 구조 -->
+    <div id="root">
+        
+        <!-- 월정액 -->
+        <div class="vod-detail-container">
+            <!-- vod 이미지 배경 -->
+            <div class="vod-detail-bgimage" style="background-image: url(../../assets/hv_images/vod/bg-vod-image.png)"></div>
+            <!-- 하단 포스터 배너 -->
+            <!-- <div class="vod-banner" style="background-image: url(../../assets/hv_images/vod/img-vod-banner.png)"></div> -->
+
+            <!-- 콘텐츠 -->
+            <div class="contents vod-subscribe">
+                <!-- 메타 영역-->   
+                <section class="content-info">                    
+                    <!-- 텍스트 경우 2줄일 경우 doulbe-line 클래스 추가 -->
+                    <h1 class="vod-title double-line">무비N시리즈<br> JTBC 통합 월정액</h1>
+                    <!--메타데이터 영역-->              
+                    <div class="product-desc">
+                        무비N시리즈의 영화, 해외 시리즈와 JTBC의 방송 콘텐츠를 함께 즐길 수 있는 통합 월정액 상품입니다.
+                    </div>
+                </section>   
+                <!--구매버튼 영역-->
+                <section class="func-area">
+                    <div class="button-area">
+                        <!--구매버튼 -->
+                        <button class="vod-button text-type small focus">
+                            <div class="text">
+                                <p class="label">월정액</p>
+                                <p class="price">8,000원</p>
+                            </div>
+                        </button>
+                        <!--월정액 구매 안내 팁-->
+                        <span class="tooltip">
+                            <em>월정액</em>으로 추가 결제 없이<br/>
+                            무제한 시청할 수 있어요!
+                        </span>
+                        <!-- 구재생 버튼/ 월정액 구매 후 -->
+                        <!-- <button class="vod-button focus">
+                            <p class="text">무제한 시청하기</p>
+                        </button> -->
+                    </div>
+                    <!--구매하단 할인문구-->
+                    <div class="purchase-guide">
+                        <!-- 보유 코인, 포인트 안내 -->
+                        <p class="my-coin"><span>보유 TV코인 35,000원</span><span>보유 TV포인트 1,500원</span></p>
+                        <!--구매후 시청기간 안내-->
+                        <!-- <p>월정액 가입 중 무제한 시청 가능</p> -->
+                    </div>
+                </section>
+            </div>  
+            <!--//콘텐츠 -->
+
+            <!-- 키고지 -->
+            <p class="keyguide">
+                <span class="ic-round color-key green"></span>이벤트 보기
+            </p>
+        </div>
+        <!-- //월정액 -->
+
+        <!--vod 월정액 콘텐츠 목록 -->
+        <div class="vod-layer-bg">
+            <!-- active시 스크롤 생성/ opacity:1 -->
+            <div class="vod-layer vod-subscribe active">
+                <h2 class="product-title">월정액 구매로 함께 볼 수 있는 인기 콘텐츠</h2>
+                
+                <!--많이 본 콘텐츠 리스트 -->
+                <section class="contents-list-wrap">
+                    <div class="mask"></div>  
+                    <ul class="contents-list">
+                        <li class="focus">
+                            <div class="poster-vertical">
+                                <div class="poster-banner" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="poster-vertical">
+                                <div class="poster-banner" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="poster-vertical">
+                                <div class="poster-banner" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="poster-vertical">
+                                <div class="poster-banner" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="poster-vertical">
+                                <div class="poster-banner" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="poster-vertical">
+                                <div class="poster-banner" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="poster-vertical">
+                                <div class="poster-banner" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <!--키고지-->
+                <div class="vod-layer-footer">
+                    <p class="keyguide">
+                        <span class="ic-round color-key green"></span>이벤트 보기
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <!--//vod 월정액 콘텐츠 목록-->
+
+    </div>
+    <!-- //root -->
+</body>
+
+</html>

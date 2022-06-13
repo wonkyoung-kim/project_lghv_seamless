@@ -1,0 +1,2652 @@
+@charset "UTF-8";
+/* variables */
+/* functions */
+/* mixins */
+/* toast 임시 */
+.my-wrap {
+  width: 1920px;
+  height: 100%;
+  background-color: #080d19;
+}
+
+.my-wrap .my-header {
+  display: flex;
+  justify-content: space-between;
+  height: 192px;
+  padding: 64px 60px;
+  background-color: #080d19;
+}
+
+.my-wrap .my-header .my-title {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 4.8rem;
+  color: #eee;
+}
+
+.my-wrap .my-header .path {
+  z-index: 99;
+}
+
+.my-wrap .my-body {
+  position: relative;
+  overflow: hidden;
+  height: 888px;
+  background-color: #111424;
+}
+
+.my-wrap .my-body .scroll {
+  position: absolute;
+  top: 44px;
+  right: 24px;
+  width: 8px;
+  height: 800px;
+  border-radius: calc(8px / 2);
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1;
+  opacity: 1;
+}
+
+.my-wrap .my-body .scroll span {
+  display: inline-block;
+  width: 100%;
+  border-radius: calc(8px / 2);
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.my-wrap .my-body::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 160px;
+  background-image: linear-gradient(to bottom, #111424 0%, rgba(0, 0, 0, 0) 85%);
+  z-index: 10;
+}
+
+.my-wrap .my-body::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: unset;
+  bottom: 0;
+  display: none;
+  width: 100%;
+  height: 160px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #111424 85%);
+  z-index: 1;
+}
+
+.my-wrap .my-body.top-cover::before {
+  display: block;
+}
+
+.my-wrap .my-body.bottom-cover::after {
+  display: block;
+}
+
+.my-wrap .list-wrap {
+  position: relative;
+  height: 100%;
+  padding-top: 44px;
+}
+
+.my-wrap .func-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 98px;
+  margin-bottom: 45px;
+  padding: 0 60px;
+}
+
+.my-wrap .button-area {
+  height: 98px;
+}
+
+.my-wrap .button-area .button {
+  position: relative;
+  height: 86px;
+  font-size: 3rem;
+  padding: 0 40px;
+  border-radius: 8px;
+  background-color: #2A2C3E;
+  color: #a9a9a9;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.my-wrap .button-area .button .text {
+  min-width: 180px;
+  line-height: 86px;
+}
+
+.my-wrap .button-area .button.dimmed {
+  background-color: rgba(8, 13, 25, 0.4);
+}
+
+.my-wrap .button-area .button.focus {
+  color: #080d19;
+  background-color: #eee;
+  height: calc(86px + 12px);
+  font-size: calc(3rem + 0.2rem);
+}
+
+.my-wrap .button-area .button.sel-delete .text {
+  min-width: 285px;
+}
+
+.my-wrap .button-area .button.del-wish .text {
+  min-width: 149px;
+}
+
+.my-wrap .button-area .button.view-setting .text {
+  min-width: 198px;
+}
+
+.my-wrap .button-area .button.re-sel .text {
+  min-width: 270px;
+}
+
+.my-wrap .button-area .button.cancel .text, .my-wrap .button-area .button.coupon-func .text, .my-wrap .button-area .button.save .text, .my-wrap .button-area .button.user-number .text {
+  min-width: 165px;
+}
+
+.my-wrap .button-area .button.price-check .text {
+  min-width: 315px;
+}
+
+.my-wrap .button-area .button.price-check.focus .ic-bill::before {
+  background-image: url("../images/my/ic-my-bill-focus.png");
+}
+
+.my-wrap .button-area .button .text.ic-delete::before, .my-wrap .button-area .button .text.ic-adulte::before, .my-wrap .button-area .button .text.ic-check::before, .my-wrap .button-area .button .text.ic-favorite::before, .my-wrap .button-area .button .text.ic-bill::before {
+  display: inline-block;
+  content: '';
+  width: 36px;
+  height: 36px;
+  margin-right: 8px;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 4px;
+}
+
+.my-wrap .noti-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 102px;
+  line-height: 1.42;
+  text-align: right;
+  font-size: 2.4rem;
+  color: #999;
+  opacity: 0.5;
+}
+
+.my-wrap .vod-func-area {
+  display: flex;
+  margin-bottom: 33px;
+  height: 96px;
+  line-height: 96px;
+  background-color: #080d19;
+}
+
+.my-wrap .vod-func-area p {
+  position: relative;
+  width: 960px;
+  height: 96px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 3.6rem;
+  color: rgba(238, 238, 238, 0.3);
+  text-align: center;
+  background-color: #080d19;
+}
+
+.my-wrap .vod-func-area p.dimmed {
+  color: #eee;
+  opacity: 0.3;
+  background-color: #080d19;
+}
+
+.my-wrap .vod-func-area p.selected {
+  color: #ef3484;
+  background-color: #111424;
+}
+
+.my-wrap .vod-func-area p.focus {
+  font-size: 4rem;
+  color: #eee;
+}
+
+.my-wrap .vod-func-area p.focus::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 0 10px #eee;
+  border-radius: 8px;
+  box-shadow: none;
+  border: 6px solid #eee;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.my-wrap .contents-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 60px 0 60px;
+}
+
+.my-wrap .contents-list li {
+  height: 337px;
+  margin-left: 42px;
+  margin-bottom: 32px;
+}
+
+.my-wrap .contents-list li:nth-child(4n + 1) {
+  margin-left: 0;
+}
+
+.my-wrap .contents-list .poster-horizontal {
+  width: 418px;
+  height: 236px;
+}
+
+.my-wrap .contents-list .meta-data {
+  position: relative;
+  opacity: 0;
+}
+
+.my-wrap .contents-list .meta-data .sub-text {
+  opacity: 0;
+}
+
+.my-wrap .contents-list .focus {
+  z-index: 2;
+}
+
+.my-wrap .contents-list .focus .poster-tag {
+  top: 8px;
+  right: 0px;
+  opacity: 1;
+}
+
+.my-wrap .contents-list .focus:nth-child(4n + 1) .poster-horizontal::before, .my-wrap .contents-list .focus:nth-child(4n + 1) .poster-horizontal::after, .my-wrap .contents-list .focus:nth-child(4n + 1) .poster-remaining, .my-wrap .contents-list .focus:nth-child(4n + 1) .poster-thumbnail, .my-wrap .contents-list .focus:nth-child(4n + 1) .poster-component::before, .my-wrap .contents-list .focus:nth-child(4n + 1) .poster-component::after {
+  transform-origin: left;
+}
+
+.my-wrap .contents-list .focus:nth-child(4n + 1) .poster-tag {
+  right: -12px;
+}
+
+.my-wrap .contents-list .focus:nth-child(4n + 1) .poster-time {
+  left: 0;
+}
+
+.my-wrap .contents-list .focus:nth-child(4n + 1) .poster-component::after {
+  background-position-x: 178px;
+}
+
+.my-wrap .contents-list .focus .meta-data {
+  opacity: 1;
+}
+
+.my-wrap .contents-list .focus .meta-data .sub-text {
+  opacity: 1;
+}
+
+.my-wrap .meta-data {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.my-wrap .meta-data .title {
+  width: 418px;
+  font-size: 3rem;
+  color: #999;
+  line-height: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.my-wrap .meta-data .sub-text {
+  width: 418px;
+  margin-top: 8px;
+  font-size: 2.6rem;
+  color: #999;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.my-wrap .meta-data .rating-star-wrap {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.my-wrap .meta-data .rating-star-wrap .rating-star {
+  display: block;
+  width: 26px;
+  height: 26px;
+  margin-right: 4px;
+  background-image: url("../images/vod/ic-ratingstar-full-w.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 0px;
+}
+
+.my-wrap .meta-data .rating-star-wrap .rating-star.full {
+  background-image: url("../images/vod/ic-ratingstar-full.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.my-wrap .meta-data .rating-star-wrap .rating-star.half {
+  background-image: url("../images/vod/ic-ratingstar-half.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.my-wrap .meta-data .rating-star-wrap .rating-star.empty {
+  background-image: url("../images/vod/ic-ratingstar-none.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.focus .my-wrap .meta-data .rating-star-wrap .rating-star {
+  background-image: url("../images/vod/ic-ratingstar-full.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.my-wrap .meta-data span + .rating-star-wrap {
+  margin-left: 12px;
+}
+
+.my-wrap .meta-data span + .rating-star-wrap::before {
+  display: inline-block;
+  content: '';
+  content: '|';
+  margin-right: 12px;
+  font-family: "Yoon Gothic 750", "YoonGothic 700 50", "Yoon윤고딕 750", "YoonGothic 750", "YOONGOTHICPRO750";
+  font-size: 2.6rem;
+  color: #999;
+}
+
+.my-wrap .delete-list {
+  padding: 10px 60px 0;
+}
+
+.my-wrap .delete-list .poster-component::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  background-image: unset;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+}
+
+.my-wrap .delete-list .poster-component::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/my/ic-check-thumbnail.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60px 40px;
+  z-index: 1;
+}
+
+.my-wrap .delete-list .dimmed .poster-component::after {
+  content: none;
+}
+
+.my-wrap .delete-list .dimmed .check-number {
+  display: none;
+}
+
+.my-wrap .delete-list .checked .poster-component::after {
+  background-image: url("../images/my/ic-check-thumbnail-selected.png");
+}
+
+.my-wrap .list-none, .my-wrap .list-none-favorite, .my-wrap .list-none-recently {
+  position: absolute;
+  top: 588px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 42px;
+  text-align: center;
+  font-size: 3.3rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.my-wrap .list-none::before, .my-wrap .list-none-favorite::before, .my-wrap .list-none-recently::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: -170px;
+  left: 150px;
+  width: 120px;
+  height: 120px;
+  background-image: url("../images/my/ic-my-default-list.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.my-wrap .list-none-favorite::before {
+  background-image: url("../images/my/ic-my-default-favorite.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.my-wrap .list-none-recently::before {
+  background-image: url("../images/my/ic-my-default-recently.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.my-wrap .ic-bill::before {
+  background-image: url("../images/my/ic-my-bill.png");
+}
+
+.my-wrap .ic-list::before {
+  background-image: url("../images/my/ic-my-list.png");
+}
+
+.my-wrap .ic-coupon::before {
+  background-image: url("../images/my/ic-my-coupon.png");
+}
+
+.my-wrap .ic-point::before {
+  background-image: url("../images/my/ic-my-point.png");
+}
+
+.my-wrap .ic-adulte::before {
+  background-image: url("../images/my/ic-my-adult.png");
+}
+
+.my-wrap .ic-delete::before {
+  background-image: url("../images/my/ic-my-delete.png");
+}
+
+.my-wrap .ic-check::before {
+  background-image: url("../images/my/ic-my-selectedect.png");
+}
+
+.my-wrap .ic-favorite::before {
+  background-image: url("../images/my/ic-my-favorite.png");
+}
+
+.my-wrap .focus .ic-bill::before {
+  background-image: url("../images/my/ic-my-bill-selected.png");
+}
+
+.my-wrap .focus .ic-list::before {
+  background-image: url("../images/my/ic-my-list-selected.png");
+}
+
+.my-wrap .focus .ic-coupon::before {
+  background-image: url("../images/my/ic-my-coupon-selected.png");
+}
+
+.my-wrap .focus .ic-point::before {
+  background-image: url("../images/my/ic-my-point-selected.png");
+}
+
+.my-wrap .focus .ic-delete::before {
+  background-image: url("../images/my/ic-my-delete-focus.png");
+}
+
+.my-wrap .focus .ic-adulte::before {
+  background-image: url("../images/my/ic-my-adult-focus.png");
+}
+
+.my-wrap .focus .ic-check::before {
+  background-image: url("../images/my/ic-my-selectedect-focus.png");
+}
+
+.my-wrap .focus .ic-favorite::before {
+  background-image: url("../images/my/ic-my-favorite-focus.png");
+}
+
+.my-wrap .layer-page .contents-list li {
+  height: 148px;
+}
+
+.layer-page {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.layer-page .layer-header {
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.layer-page .layer-header .title {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 5.2rem;
+  color: #eee;
+}
+
+.layer-page .layer-header .title::before {
+  display: inline-block;
+  content: '';
+  position: absolute;
+  bottom: -48px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 82px;
+  height: 4px;
+  background-color: rgba(238, 238, 238, 0.3);
+}
+
+.layer-page .layer-body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.layer-page .layer-body span:last-child {
+  margin-right: 0;
+}
+
+.layer-page .layer-body .poster-thumbnail {
+  display: inline-block;
+  margin-bottom: 0;
+  width: 268px;
+  height: 100%;
+  margin-right: 10px;
+  border-radius: 8px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.layer-page .layer-body p {
+  font-size: 3.6rem;
+  line-height: 44px;
+  margin-bottom: 8px;
+}
+
+.layer-page .layer-body .accent {
+  font-size: 3.2rem;
+  line-height: 44px;
+  color: #ecafb9;
+}
+
+.layer-page .layer-body .coupon-date {
+  font-size: 2.8rem;
+  line-height: 44px;
+  text-align: center;
+  color: #a9a6ff;
+}
+
+.layer-page .layer-body .best-contents {
+  font-size: 3.4rem;
+}
+
+.layer-page .layer-body .cancel-text {
+  display: flex;
+  align-items: center;
+  line-height: 44px;
+  margin-bottom: 4px;
+  text-align: left;
+  font-size: 3rem;
+  color: #777;
+}
+
+.layer-page .layer-body .cancel-text::before {
+  display: inline-block;
+  content: '';
+  width: 6px;
+  height: 6px;
+  margin-right: 18px;
+  border-radius: 50%;
+  background-color: #777;
+}
+
+.myhome .my-container {
+  width: 100%;
+  padding: 64px 0 138px 125px;
+  background-color: #080d19;
+}
+
+.myhome .my-header {
+  padding: 0 60px 0 60px;
+  margin-bottom: 44px;
+  background-color: transparent;
+  height: inherit;
+}
+
+.myhome .my-header .path {
+  align-self: flex-end;
+}
+
+.myhome section {
+  width: 100%;
+  height: unset;
+  padding-left: 60px;
+  margin-bottom: 42px;
+}
+
+.myhome section:last-child {
+  margin-bottom: 0;
+}
+
+.myhome section h3.title {
+  margin-bottom: 23px;
+  font-size: 3.2rem;
+  color: #eee;
+}
+
+.myhome section li {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.myhome .my-profile {
+  height: 558px;
+  margin-bottom: 31px;
+}
+
+.myhome .my-profile .noti-message {
+  height: 30px;
+  margin-bottom: 80px;
+  font-size: 2.4rem;
+  color: #999;
+  text-align: left;
+  opacity: .6;
+}
+
+.myhome .my-profile .profile-list {
+  display: flex;
+}
+
+.myhome .my-profile .profile-list li {
+  margin-left: 34px;
+  width: 245px;
+}
+
+.myhome .my-profile .profile-list li:first-child {
+  margin-left: 0;
+  margin-right: 60px;
+}
+
+.myhome .my-profile .profile-list li:first-child .information {
+  min-height: 289px;
+}
+
+.myhome .my-profile .profile-list li:first-child .phone {
+  margin-bottom: 0;
+}
+
+.myhome .my-profile .profile-list li:first-child::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: 33px;
+  left: unset;
+  right: -52px;
+  width: 2px;
+  height: 128px;
+  background-color: #fff;
+  opacity: .15;
+}
+
+.myhome .my-profile .profile-list li.focus .information::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 0 10px #eee;
+  border-radius: 8px;
+  border-radius: 50%;
+  left: unset;
+  right: unset;
+  bottom: unset;
+  width: 202px;
+  height: 202px;
+  z-index: 2;
+}
+
+.myhome .my-profile .profile-list li.focus .nickname, .myhome .my-profile .profile-list li.focus .phone {
+  color: #eee;
+  opacity: 1;
+}
+
+.myhome .my-profile .profile-list li.focus .image, .myhome .my-profile .profile-list li.focus .keyguide {
+  opacity: 1;
+}
+
+.myhome .my-profile .profile-list li.focus .button-area {
+  opacity: 1;
+}
+
+.myhome .my-profile .profile-list li.focus.lock .image {
+  opacity: .3;
+}
+
+.myhome .my-profile .profile-list li.focus.lock .information::before {
+  background-image: url("../images/my/ic-profile-lock-focus.png");
+}
+
+.myhome .my-profile .profile-list li.focus.contact-phone .information::before {
+  box-shadow: inset 0 0 60px 0 rgba(8, 13, 25, 0.5);
+}
+
+.myhome .my-profile .profile-list li.focus.contact-phone .information::after {
+  top: unset;
+  width: 160px;
+  height: 160px;
+}
+
+.myhome .my-profile .profile-list li.focus.contact-phone .image {
+  border: 0;
+}
+
+.myhome .my-profile .profile-list li.focus.contact-phone .image::before {
+  background-image: url("../images/my/ic-plus-focus.png");
+}
+
+.myhome .my-profile .profile-list li.focus.contact-phone .text {
+  opacity: 1;
+}
+
+.myhome .my-profile .profile-list .information {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 245px;
+  min-height: 328px;
+  margin-bottom: 12px;
+}
+
+.myhome .my-profile .profile-list .information::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+}
+
+.myhome .my-profile .profile-list .information p {
+  font-family: "Yoon Gothic 750", "YoonGothic 700 50", "Yoon윤고딕 750", "YoonGothic 750", "YOONGOTHICPRO750";
+  font-size: 2.4rem;
+  color: #ddd;
+}
+
+.myhome .my-profile .profile-list .information .image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 202px;
+  height: 202px;
+  margin-bottom: 14px;
+  opacity: .3;
+}
+
+.myhome .my-profile .profile-list .information .nickname {
+  margin-bottom: 6px;
+  max-width: 228px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 2.6rem;
+  opacity: .3;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.myhome .my-profile .profile-list .information .phone {
+  margin-bottom: 12px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 2.6rem;
+  opacity: 0;
+}
+
+.myhome .my-profile .profile-list .information .keyguide {
+  display: flex;
+  align-items: center;
+  color: #ef3484;
+  font-size: 2.4rem;
+  opacity: 0;
+}
+
+.myhome .my-profile .profile-list .information .keyguide .primary {
+  display: inline-block;
+  height: 34px;
+  line-height: 30px;
+  background-color: rgba(238, 238, 238, 0.02);
+  border: 1px solid rgba(238, 238, 238, 0.3);
+  border-radius: 2px;
+  padding: 0 8px;
+  color: #ddd;
+  margin-left: 0;
+  font-size: 1.8rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  display: inline-block;
+  padding: 0 12px;
+  margin-right: 10px;
+  border-width: 2px;
+  border-radius: 17px;
+  border-color: #eee;
+  font-size: 1.8rem;
+}
+
+.myhome .my-profile .profile-list .information .keyguide .primary.dolby-vision {
+  font-size: 0;
+  color: rgba(0, 0, 0, 0);
+  width: 70px;
+  background: url(../images/vod/ic-dolby.png) center/54px no-repeat;
+}
+
+.focus .myhome .my-profile .profile-list .information .keyguide .primary, .selected .myhome .my-profile .profile-list .information .keyguide .primary {
+  color: #eee;
+  background-color: #ef3484;
+  border: 1px solid #ef3484;
+}
+
+.myhome .my-profile .profile-list .button-area {
+  opacity: 0;
+}
+
+.myhome .my-profile .profile-list .lock .information::before {
+  height: 202px;
+  background-image: url("../images/my/ic-profile-lock.png");
+  z-index: 2;
+}
+
+.myhome .my-profile .profile-list .login .information {
+  min-height: 292px;
+}
+
+.myhome .my-profile .profile-list .login .information::before {
+  height: 202px;
+  background-image: url("../images/my//profile-check.png");
+  background-size: 184px 58px;
+  background-position: center bottom;
+  z-index: 2;
+}
+
+.myhome .my-profile .profile-list .login .image {
+  opacity: 1;
+}
+
+.myhome .my-profile .profile-list .login .nickname {
+  color: #eee;
+  opacity: 1;
+}
+
+.myhome .my-profile .profile-list .login .phone {
+  margin-bottom: 0;
+}
+
+.myhome .my-profile .profile-list .login .keyguide {
+  display: none;
+}
+
+.myhome .my-profile .profile-list .contact-phone {
+  margin-left: 28px;
+  min-height: 235px;
+}
+
+.myhome .my-profile .profile-list .contact-phone .information {
+  padding-top: 20px;
+  min-height: unset;
+  margin-bottom: 34px;
+}
+
+.myhome .my-profile .profile-list .contact-phone .information::before {
+  content: none;
+}
+
+.myhome .my-profile .profile-list .contact-phone .image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 160px;
+  height: 160px;
+  background-color: #111424;
+  border-radius: 50%;
+  border: 4px solid #a9a9a9;
+  margin-bottom: unset;
+}
+
+.myhome .my-profile .profile-list .contact-phone .image::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/my/ic-plus.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 52px;
+}
+
+.myhome .my-profile .profile-list .contact-phone .text {
+  font-size: 2.6rem;
+  color: #eee;
+  opacity: .4;
+}
+
+.myhome .mymenu {
+  margin-bottom: 60px;
+}
+
+.myhome .mymenu .mymenu-list {
+  display: flex;
+  align-items: center;
+  display: inline-flex;
+  min-height: 196px;
+}
+
+.myhome .mymenu li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 390px;
+  height: 184px;
+  margin-right: 38px;
+  border-radius: 8px;
+  border: 4px solid #777;
+  background-color: #111424;
+  font-size: 2.6rem;
+  color: #a9a9a9;
+}
+
+.myhome .mymenu li:last-child {
+  margin-right: 0;
+}
+
+.myhome .mymenu li p {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.myhome .mymenu li p::before {
+  margin-top: 0;
+  display: inline-block;
+  content: '';
+  width: 36px;
+  height: 36px;
+  margin-right: 8px;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.myhome .mymenu li .count {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 3.4rem;
+}
+
+.myhome .mymenu li.focus {
+  height: 196px;
+  color: #eee;
+  border: none;
+}
+
+.myhome .mymenu li.focus p {
+  font-size: 2.8rem;
+}
+
+.myhome .mymenu li.focus .count {
+  font-size: 3.6rem;
+  color: #ef3484;
+}
+
+.myhome .mymenu li.focus::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 10px solid #eee;
+  box-shadow: inset 0 0 60px 0 rgba(8, 13, 25, 0.5);
+  border-radius: 8px;
+}
+
+.myhome .more-desc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 31px;
+  font-size: 2.6rem;
+}
+
+.myhome .more-desc:before {
+  display: inline-block;
+  content: '';
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 21px;
+  height: 32px;
+  margin-right: 9px;
+  background-image: url("../images/my/ic-arrow-bottom.png");
+}
+
+.myhome .contents-list {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 115%;
+  padding: 0;
+}
+
+.myhome .contents-list .poster-horizontal {
+  width: 380px;
+  height: 214px;
+}
+
+.myhome .contents-list li {
+  position: relative;
+  align-items: flex-start;
+  height: 308px;
+  margin-bottom: 0;
+}
+
+.myhome .contents-list li:not(:first-child) {
+  margin-left: 16px;
+}
+
+.myhome .contents-list li.focus:not(:first-child) .poster-horizontal::before, .myhome .contents-list li.focus:not(:first-child) .poster-horizontal::after, .myhome .contents-list li.focus:not(:first-child) .poster-remaining, .myhome .contents-list li.focus:not(:first-child) .poster-thumbnail, .myhome .contents-list li.focus:not(:first-child) .poster-component::before, .myhome .contents-list li.focus:not(:first-child) .poster-component::after {
+  transform-origin: center;
+}
+
+.myhome .contents-list li.focus:not(:first-child) .poster-tag {
+  right: 0;
+}
+
+.myhome .contents-list li.focus:not(:first-child) .poster-time {
+  left: -12px;
+}
+
+.myhome .contents-list li.focus:not(:first-child) .poster-component::after {
+  background-position-x: unset;
+}
+
+.myhome .contents-list li.focus:not(:first-child) .button-menu::before {
+  transform-origin: center;
+}
+
+.myhome .contents-list .title {
+  width: 380px;
+}
+
+.myhome .contents-list .sub-text {
+  margin-top: 2px;
+  width: 380px;
+}
+
+.myhome .watch {
+  padding-top: 20px;
+}
+
+.myhome .watch .contents-list dt {
+  opacity: 0;
+}
+
+.myhome .watch .contents-list .meta-data {
+  opacity: 1;
+}
+
+.myhome .watch .contents-list .meta-data .title {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  color: #eee;
+}
+
+.myhome .watch .focus dt {
+  opacity: 1;
+}
+
+.myhome .wish .poster-component::before, .myhome .recently .poster-component::before {
+  opacity: 0;
+}
+
+.wishlist .contents-list .poster-component::before, .delete-wishlist .contents-list .poster-component::before {
+  opacity: 0;
+}
+
+.watchlist .contents-list .poster-component::before, .delete-watchlist .contents-list .poster-component::before {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
+}
+
+.watchlist .contents-list .meta-data, .delete-watchlist .contents-list .meta-data {
+  opacity: 1;
+}
+
+.set-continue .check-number {
+  position: relative;
+  left: 16px;
+  top: 16px;
+  display: inline-block;
+  min-width: 98px;
+  height: 46px;
+  padding: 5px 9px 0 55px;
+  border-radius: 8px;
+  background-color: #ef3484;
+}
+
+.set-continue .check-number::before {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  left: 9px;
+  display: block;
+  width: 46px;
+  height: 46px;
+}
+
+.set-continue .check-number.book::before {
+  background-image: url("../images/my/ic-small-readingbook.png");
+}
+
+.set-continue .check-number.vod::before {
+  background-image: url("../images/my/ic-small-vod.png");
+}
+
+.set-continue .check-number p {
+  display: inline-block;
+  text-align: center;
+  min-width: 32px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 2.6rem;
+  color: #eee;
+}
+
+.set-continue li.focus .contents-title {
+  opacity: 1;
+}
+
+.set-continue li.focus .check-number {
+  top: 8px;
+  left: 3px;
+}
+
+.set-continue li.focus:nth-child(4n + 1) .check-number {
+  left: 16px;
+}
+
+.purchased-auth {
+  text-align: center;
+}
+
+.purchased-auth .my-body {
+  padding-top: 228px;
+}
+
+.purchased-auth .guide {
+  margin-bottom: 56px;
+  font-size: 3.6rem;
+  color: #d6d6d6;
+}
+
+.purchased-auth .input-password {
+  display: flex;
+  align-items: center;
+  height: 74px;
+  justify-content: center;
+  margin-bottom: 164px;
+}
+
+.purchased-auth .input-password.focus label {
+  color: #ef3484;
+}
+
+.purchased-auth .input-password p {
+  position: relative;
+  width: 74px;
+  height: 74px;
+  margin-right: 12px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #2A2C3E;
+}
+
+.purchased-auth .input-password p:last-child {
+  margin-right: 0;
+}
+
+.purchased-auth .input-password p.focus {
+  background-color: #080d19;
+}
+
+.purchased-auth .input-password p.focus.entered {
+  background: #080d19 url(../images/common/ic-password-w.png) no-repeat center;
+  background-size: 26px;
+}
+
+.purchased-auth .input-password p.focus.entered .cursor::before {
+  content: none;
+}
+
+.purchased-auth .input-password p.focus::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 0 10px #eee;
+  border-radius: 8px;
+  box-shadow: 0px 0px 0px 4px #eee;
+}
+
+.purchased-auth .input-password p.focus span {
+  position: unset;
+}
+
+.purchased-auth .input-password p.focus span::before {
+  height: 40px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #eee;
+}
+
+.purchased-auth .input-password p.entered {
+  background: #2A2C3E url(../images/common/ic-password-w.png) no-repeat center;
+  background-size: 26px;
+}
+
+.purchased-auth .input-password input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 74px;
+  height: 74px;
+  opacity: 0;
+  z-index: 10;
+}
+
+.purchased-auth .input-password label {
+  height: 74px;
+  line-height: 74px;
+  font-size: 3.2rem;
+  color: #777;
+}
+
+.purchased-auth .input-password .container {
+  display: flex;
+}
+
+.purchased-auth .func-area {
+  justify-content: center;
+}
+
+.purchased .list-wrap, .delete-purchased .list-wrap {
+  padding: 0;
+}
+
+.purchased .poster-remaining, .delete-purchased .poster-remaining {
+  display: none;
+}
+
+.tvpoint .contents {
+  text-align: center;
+  height: 888px;
+}
+
+.tvpoint .check-join, .tvpoint .have-point {
+  padding-top: 274px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 6.8rem;
+  margin-bottom: 22px;
+}
+
+.tvpoint .point {
+  margin-left: 50px;
+}
+
+.tvpoint .join-text, .tvpoint .unjoin-text, .tvpoint .guide-text {
+  display: block;
+  font-size: 2.6rem;
+  color: #777;
+  margin-bottom: 112px;
+}
+
+.tvpoint .unjoin-text {
+  margin-bottom: 5px;
+}
+
+.tvpoint .guide-text {
+  margin-bottom: 77px;
+}
+
+.my-wrap .product-title {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #2A2C3E;
+  font-size: 2.6rem;
+  margin: 0 60px;
+  padding-bottom: 19px;
+}
+
+.my-wrap .product-title span {
+  font-size: 2.6rem;
+}
+
+.my-wrap .product-title .name {
+  width: 782px;
+  padding-left: 50px;
+}
+
+.my-wrap .product-title .price {
+  width: 400px;
+  text-align: right;
+  padding-right: 50px;
+}
+
+.my-wrap .product-title .date {
+  width: 616px;
+  padding-left: 50px;
+}
+
+.my-wrap .product-list {
+  padding: 0 60px;
+}
+
+.my-wrap .product-list li {
+  position: relative;
+  display: flex;
+  height: 114px;
+  line-height: 114px;
+}
+
+.my-wrap .product-list li:last-child {
+  margin-bottom: 44px;
+}
+
+.my-wrap .product-list li p {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #2A2C3E;
+  border-right: 1px solid #2A2C3E;
+  font-size: 3.2rem;
+  color: #a9a9a9;
+}
+
+.my-wrap .product-list li p:last-child {
+  border-right: none;
+}
+
+.my-wrap .product-list li .name {
+  position: relative;
+  width: 782px;
+  padding-left: 50px;
+}
+
+.my-wrap .product-list li .name .ellipsis {
+  max-width: 589px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.my-wrap .product-list li .name .ic-tag.alt {
+  width: 68px;
+  text-align: center;
+  margin-right: 0;
+  margin-left: 16px;
+}
+
+.my-wrap .product-list li .name .ic-new {
+  margin-left: 16px;
+}
+
+.my-wrap .product-list li .price {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 50px;
+  width: 400px;
+}
+
+.my-wrap .product-list li .period {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 50px;
+  width: 616px;
+}
+
+.my-wrap .product-list li.focus {
+  position: relative;
+  background-color: #2A2C3E;
+}
+
+.my-wrap .product-list li.focus p {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 3.4rem;
+  color: #eee;
+  border: none;
+}
+
+.my-wrap .product-list li.focus .ic-tag {
+  border: none;
+  height: 30px;
+  line-height: 30px;
+  color: #eee;
+  background-color: #ef3484;
+}
+
+.my-wrap .product-list li.focus::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 0 10px #eee;
+  border-radius: 8px;
+  box-shadow: none;
+  border: 6px solid #eee;
+}
+
+.my-wrap .ic-tag {
+  display: inline-block;
+  height: 30px;
+  line-height: calc(30px - 2px * 2);
+  background-color: rgba(238, 238, 238, 0.02);
+  border: 2px solid rgba(119, 119, 119, 0.5);
+  border-radius: 4px;
+  padding: 0 7px;
+  color: #777;
+  margin-left: 0;
+  font-size: 1.4rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  margin-right: 43px;
+}
+
+.my-wrap .ic-tag.dolby-vision {
+  font-size: 0;
+  color: rgba(0, 0, 0, 0);
+  width: 70px;
+  background: url(../images/vod/ic-dolby.png) center/54px no-repeat;
+}
+
+.focus .my-wrap .ic-tag, .selected .my-wrap .ic-tag {
+  color: #a9a9a9;
+  border: 2px solid rgba(169, 169, 169, 0.5);
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.my-wrap .list-none {
+  top: 510px;
+}
+
+.my-wrap .list-none::before {
+  content: none;
+}
+
+.my-wrap::after {
+  content: none;
+}
+
+.charge .layer-header {
+  padding-top: 79px;
+  margin-bottom: 94px;
+}
+
+.charge .layer-header::before {
+  top: 196px;
+}
+
+.charge .layer-body {
+  margin-bottom: 32px;
+}
+
+.charge .layer-body .guide-message {
+  line-height: 44px;
+  margin-bottom: 40px;
+  color: #eee;
+}
+
+.charge .layer-body .guide-image {
+  width: 1404px;
+  height: 546px;
+  margin-bottom: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.subscribe .contents-list {
+  padding: 0;
+}
+
+.subscribe .contents-list li {
+  margin: 0;
+  margin-left: 18px;
+}
+
+.subscribe .contents-list li:first-child {
+  margin-left: 0;
+}
+
+.subscribe .contents-list .poster-horizontal {
+  width: 268px;
+  height: 145px;
+}
+
+.subscribe .contents-list .poster-horizontal .poster-thumbnail {
+  display: inherit;
+  transform-origin: center !important;
+}
+
+.subscribe .layer-body .best-contents {
+  margin-bottom: 22px;
+}
+
+.subscribe .layer-body .subscribe-text {
+  margin-bottom: 38px;
+  line-height: 52px;
+}
+
+.subscribe .layer-body .subscribe-text em {
+  color: #ecafb9;
+}
+
+.subscribe .layer-body .subscribe-text.mb-more {
+  margin-bottom: 48px;
+}
+
+.subscribe .layer-body .subscribe-text.mb-less {
+  margin-bottom: 35px;
+}
+
+.subscribe .layer-body .subscribe-text.mb-min {
+  margin-bottom: 30px;
+}
+
+.subscribe .layer-body .cancel-date.type-line {
+  margin: 0;
+  margin-bottom: 42px;
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+
+.subscribe .layer-body .cancel-date.type-line span {
+  margin-bottom: 0;
+  margin-left: 46px;
+}
+
+.subscribe .layer-body .cancel-date.type-line span:first-child {
+  margin-left: 0;
+}
+
+.subscribe .subscribe-lead .layer-header {
+  padding-top: 172px;
+}
+
+.subscribe .subscribe-lead .coupon-subscribe {
+  line-height: 54px;
+  margin-bottom: 48px;
+}
+
+.subscribe .subscribe-lead .accent {
+  line-height: 46px;
+  margin-bottom: 38px;
+}
+
+.subscribe .subscribe-lead .coupon-date {
+  margin-bottom: 100px;
+}
+
+.subscribe .subscribe-keep .layer-header {
+  padding-top: 197px;
+}
+
+.subscribe .subscribe-keep .vip-guide {
+  line-height: 44px;
+  margin-bottom: 48px;
+  font-size: 4.6rem;
+}
+
+.subscribe .subscribe-keep .subscribe-point {
+  line-height: 50px;
+  margin-bottom: 33px;
+}
+
+.subscribe .subscribe-keep .coupon-date {
+  margin-bottom: 100px;
+}
+
+.subscribe .subscribe-complete .layer-header {
+  padding-top: 131px;
+}
+
+.subscribe .subscribe-complete .subscribe-coupon {
+  line-height: 54px;
+  margin-bottom: 52px;
+}
+
+.subscribe .subscribe-complete .subscribe-contents {
+  margin-bottom: 70px;
+}
+
+.subscribe .subscribe-complete .button-area {
+  margin-top: 97px;
+}
+
+.subscribe .subscribe-cancel.line-3 .layer-header {
+  padding-top: 93px;
+}
+
+.subscribe .subscribe-cancel .layer-header {
+  padding-top: 145px;
+}
+
+.subscribe .subscribe-cancel .cancel-ask {
+  margin-bottom: 38px;
+}
+
+.subscribe .subscribe-cancel .cancel-date {
+  width: 430px;
+  margin: 0 0 38px 15px;
+}
+
+.subscribe .subscribe-cancel .cancel-date span:last-child {
+  margin-bottom: 0;
+}
+
+.subscribe .subscribe-cancel .accent {
+  margin-bottom: 4px;
+}
+
+.subscribe .subscribe-cancel .subscribe-contents {
+  margin-bottom: 104px;
+}
+
+.subscribe .subscribe-cancel .button-area {
+  margin-top: 97px;
+}
+
+.subscribe .subscribe-registered.line-3 .layer-header {
+  padding-top: 75px;
+}
+
+.subscribe .subscribe-registered .layer-header {
+  padding-top: 127px;
+}
+
+.subscribe .subscribe-registered .cancel-ask {
+  margin-bottom: 38px;
+}
+
+.subscribe .subscribe-registered .cancel-contents {
+  display: flex;
+  margin: 0 0 30px 7px;
+}
+
+.subscribe .subscribe-registered .cancel-contents p:nth-of-type(3) {
+  padding-left: 27px;
+}
+
+.subscribe .subscribe-registered .cancel-date {
+  display: block;
+  margin: 0 102px 0 0;
+}
+
+.subscribe .subscribe-registered .service-keep {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 540px;
+  height: 68px;
+  margin-bottom: 8px;
+  padding-left: 22px;
+  border: 2px solid #ecafb9;
+  border-radius: 8px;
+  font-size: 3rem;
+  text-align: left;
+}
+
+.subscribe .subscribe-registered .service-keep::before {
+  display: inline-block;
+  content: '';
+  position: absolute;
+  left: 165px;
+  width: 1px;
+  height: 100%;
+  border: 1px dashed #ecafb9;
+}
+
+.subscribe .subscribe-registered .service-keep .accent {
+  display: inline-block;
+  width: 121px;
+  margin-right: 46px;
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+.subscribe .subscribe-registered .service-text {
+  line-height: 32px;
+  text-align: left;
+  font-size: 2.2rem;
+  color: rgba(119, 119, 119, 0.6);
+  margin-bottom: 0;
+}
+
+.subscribe .subscribe-registered .subscribe-contents {
+  margin-bottom: 83px;
+}
+
+.subscribe .subscribe-registered .button-area {
+  margin-top: 47px;
+}
+
+.change-profilename .layer-header {
+  padding-top: 196px;
+  margin-bottom: 91px;
+}
+
+.change-profilename .layer-header .title::before {
+  bottom: -45px;
+}
+
+.change-profilename .layer-body {
+  margin-bottom: 50px;
+}
+
+.change-profilename .layer-body .guide-message {
+  margin-bottom: 80px;
+}
+
+.change-profilename .layer-body .profile-list {
+  display: flex;
+  width: 1440px;
+}
+
+.change-profilename .layer-body .profile-list li {
+  position: relative;
+  margin-right: 46px;
+}
+
+.change-profilename .layer-body .profile-list li:last-child {
+  margin-right: 0;
+}
+
+.change-profilename .layer-body .profile-list li.selected {
+  opacity: 1;
+}
+
+.change-profilename .layer-body .profile-list li.selected .image::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 202px;
+  height: 202px;
+  background-image: url("../images/my//profile-check.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 184px 58px;
+  background-position: bottom center;
+  z-index: 2;
+}
+
+.change-profilename .layer-body .profile-list .focus .image {
+  opacity: 1;
+}
+
+.change-profilename .layer-body .profile-list .focus .image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 0 10px #eee;
+  border-radius: 8px;
+  border-radius: 50%;
+}
+
+.change-profilename .layer-body .profile-list .focus .name {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  color: #eee;
+  opacity: 1;
+}
+
+.change-profilename .layer-body .image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  width: 202px;
+  height: 202px;
+  margin-bottom: 16px;
+  opacity: .3;
+}
+
+.change-profilename .layer-body .name {
+  height: 38px;
+  line-height: 36px;
+  margin-bottom: 0;
+  font-size: 2.8rem;
+  color: #a9a9a9;
+  opacity: .6;
+}
+
+.change-profilename .guide-popup-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.change-profileimage .layer-header {
+  padding-top: 80px;
+  margin-bottom: 91px;
+}
+
+.change-profileimage .layer-header .title::before {
+  bottom: -45px;
+}
+
+.change-profileimage .layer-body {
+  position: relative;
+  height: 840px;
+  overflow: hidden;
+}
+
+.change-profileimage .layer-body .guide-message {
+  margin-bottom: 80px;
+}
+
+.change-profileimage .layer-body.top-cover::before {
+  display: block;
+}
+
+.change-profileimage .layer-body.bottom-cover::after {
+  display: block;
+}
+
+.change-profileimage .layer-body::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 245px;
+  background-image: linear-gradient(to bottom, #080d19, rgba(0, 0, 0, 0));
+  display: none;
+}
+
+.change-profileimage .layer-body::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: unset;
+  bottom: 0;
+  width: 100%;
+  height: 245px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #080d19);
+  display: none;
+}
+
+.change-profileimage .layer-body.active .scroll {
+  opacity: 1;
+}
+
+.change-profileimage .list-container {
+  height: 840px;
+  padding: 0 179px;
+}
+
+.change-profileimage .image-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.change-profileimage .image-list li {
+  margin: 0 70px 60px 0;
+}
+
+.change-profileimage .image-list li:nth-child(6n) {
+  margin-right: 0;
+}
+
+.change-profileimage .image-list li p {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  width: 202px;
+  height: 202px;
+  opacity: .3;
+}
+
+.change-profileimage .image-list li.focus p {
+  opacity: 1;
+}
+
+.change-profileimage .image-list li.focus p::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 0 10px #eee;
+  border-radius: 8px;
+  border-radius: 50%;
+}
+
+.change-profileimage .image-list li.selected p::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 202px;
+  height: 202px;
+  background-image: url("../images/my//profile-check.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 184px 58px;
+  background-position: bottom center;
+  z-index: 2;
+}
+
+.change-profileimage .scroll {
+  position: absolute;
+  top: 124px;
+  right: 50px;
+  width: 8px;
+  height: 558px;
+  border-radius: calc(8px / 2);
+  background-color: rgba(238, 238, 238, 0.1);
+  z-index: 1;
+}
+
+.change-profileimage .scroll span {
+  display: inline-block;
+  width: 100%;
+  border-radius: calc(8px / 2);
+  background-color: #a9a9a9;
+}
+
+.change-profileimage .layer-footer {
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px 50px;
+  width: 100%;
+  bottom: 0;
+  z-index: 2;
+}
+
+.coupon .title {
+  color: #eee;
+  text-align: center;
+  margin-bottom: 60px;
+  line-height: 62px;
+  font-size: 5.2rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.coupon .func-area {
+  margin: 44px 60px 40px 60px;
+  padding: 0;
+}
+
+.buy-coupon {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 491px;
+  margin-left: 60px;
+  text-align: center;
+}
+
+.buy-coupon ul {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+
+.buy-coupon ul li {
+  position: relative;
+  width: 580px;
+  height: 479px;
+  background-color: #111424;
+  border-radius: 8px;
+  margin-left: 30px;
+  padding: 0 40px;
+  color: rgba(169, 169, 169, 0.9);
+}
+
+.buy-coupon ul li:first-child {
+  margin-left: 0;
+}
+
+.buy-coupon ul li .price {
+  margin-top: 54px;
+}
+
+.buy-coupon ul li .price em {
+  display: block;
+  line-height: 61px;
+  font-size: 4.6rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.buy-coupon ul li .price span {
+  display: block;
+  color: #777;
+  font-size: 3.0rem;
+  margin-top: 12px;
+  line-height: 38px;
+}
+
+.buy-coupon ul li .details {
+  position: relative;
+  margin: 40px 0 34px;
+  height: 106px;
+  font-size: 2.4rem;
+}
+
+.buy-coupon ul li .details p {
+  line-height: 30px;
+  margin-top: 6px;
+}
+
+.buy-coupon ul li .details p:first-child {
+  margin-top: 0;
+}
+
+.buy-coupon ul li .details::after {
+  width: 100%;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.12);
+  display: block;
+  content: '';
+  position: absolute;
+  bottom: 0;
+}
+
+.buy-coupon ul li .button-area button {
+  width: 100%;
+}
+
+.buy-coupon ul li::before {
+  width: 164px;
+  height: 164px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.buy-coupon ul li::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 8px;
+  border: 4px solid rgba(119, 119, 119, 0.7);
+}
+
+.buy-coupon ul li.more-5::before {
+  background-image: url("../images/my/tag-my-sale-5.png");
+}
+
+.buy-coupon ul li.more-10::before {
+  background-image: url("../images/my/tag-my-sale-10.png");
+}
+
+.buy-coupon ul li.focus.more-5::before {
+  background-image: url("../images/my/tag-my-sale-5-focus.png");
+}
+
+.buy-coupon ul li.focus.more-10::before {
+  background-image: url("../images/my/tag-my-sale-10-focus.png");
+}
+
+.buy-coupon ul li.focus {
+  background-color: #2A2C3E;
+}
+
+.buy-coupon ul li.focus .price em {
+  color: #ef3484;
+}
+
+.buy-coupon ul li.focus .price span {
+  color: #eee;
+}
+
+.buy-coupon ul li.focus .details {
+  color: #a9a9a9;
+}
+
+.buy-coupon ul li.focus::before {
+  top: -6px;
+}
+
+.buy-coupon ul li.focus::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: -6px;
+  bottom: -6px;
+  border-radius: 8px;
+  border: 6px solid #eee;
+}
+
+.buy-coupon ul li.focus .button-primary {
+  color: #080d19;
+  background-color: #eee;
+  height: 98px;
+  font-size: 3.4rem;
+}
+
+.connection {
+  background-color: #080d19;
+  padding-top: 72px;
+}
+
+.connection.alt {
+  padding-top: 102px;
+}
+
+.connection.alt2 {
+  padding-top: 120px;
+}
+
+.connection.alt2 .auth-label {
+  width: 100%;
+}
+
+.connection.alt2 .guide-message {
+  margin-bottom: 94px;
+}
+
+.connection .guide-message {
+  margin-bottom: 44px;
+  font-size: 3.0rem;
+}
+
+.connection .guide-message p {
+  line-height: 44px;
+  margin-top: 8px;
+}
+
+.connection .guide-message p:first-child {
+  margin-top: 0;
+}
+
+.connection .guide-message.alt {
+  font-size: 3.6rem;
+}
+
+.connection .guide-message.alt p {
+  margin-top: 12px;
+}
+
+.profile-lock .password-wrap {
+  width: 846px;
+  margin: 0 auto;
+}
+
+.profile-lock .password-set {
+  margin-top: 68px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.profile-lock .password-set:first-child {
+  margin-top: 0;
+}
+
+.profile-lock .password-set label {
+  width: 342px;
+  color: rgba(238, 238, 238, 0.8);
+  font-size: 3.6rem;
+}
+
+.profile-lock .input-password {
+  display: flex;
+  align-items: center;
+  height: 74px;
+}
+
+.profile-lock .input-password.focus label {
+  color: #ef3484;
+}
+
+.profile-lock .input-password p {
+  position: relative;
+  width: 74px;
+  height: 74px;
+  margin-right: 12px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #2A2C3E;
+}
+
+.profile-lock .input-password p:last-child {
+  margin-right: 0;
+}
+
+.profile-lock .input-password p.focus {
+  background-color: #080d19;
+}
+
+.profile-lock .input-password p.focus.entered {
+  background: #080d19 url(../images/common/ic-password-w.png) no-repeat center;
+  background-size: 26px;
+}
+
+.profile-lock .input-password p.focus.entered .cursor::before {
+  content: none;
+}
+
+.profile-lock .input-password p.focus::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 0 10px #eee;
+  border-radius: 8px;
+  box-shadow: 0px 0px 0px 4px #eee;
+}
+
+.profile-lock .input-password p.focus span {
+  position: unset;
+}
+
+.profile-lock .input-password p.focus span::before {
+  height: 30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #eee;
+}
+
+.profile-lock .input-password p.entered {
+  background: #2A2C3E url(../images/common/ic-password-w.png) no-repeat center;
+  background-size: 26px;
+}
+
+.profile-lock .input-password input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 74px;
+  height: 74px;
+  opacity: 0;
+  z-index: 10;
+}
+
+.profile-lock .input-password label {
+  height: 74px;
+  line-height: 74px;
+  font-size: 3.2rem;
+  color: #777;
+}
+
+.profile-lock .input-password .container {
+  display: flex;
+}
+
+.profile-lock .button-area {
+  margin-top: 130px;
+}
+
+.connection-tutoral {
+  width: 1302px;
+  margin: 0 auto;
+}
+
+.connection-tutoral .img {
+  height: 512px;
+  background-image: url("../images/my/img-my-tutoral-01.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.connection-tutoral ul {
+  margin: 20px 0 62px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+.connection-tutoral ul::before {
+  flex: 1;
+  display: block;
+  content: '';
+}
+
+.connection-tutoral ul li {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #a9a6ff;
+}
+
+.connection-tutoral ul li.tv-name {
+  width: 368px;
+}
+
+.connection-tutoral ul li.tv-num {
+  width: 493px;
+  margin-left: 85px;
+}
+
+.connection-info {
+  margin: 0 325px;
+}
+
+.connection-info .sub-title {
+  margin-bottom: 16px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+.connection-info .sub-title em {
+  color: #eee;
+  font-size: 3.6rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.connection-info .sub-title span {
+  font-size: 2.4rem;
+  color: #777;
+}
+
+.connection-info .sub-text p {
+  text-align: left;
+  font-size: 2.6rem;
+  color: rgba(238, 238, 238, 0.8);
+  line-height: 32px;
+  margin-top: 10px;
+}
+
+.connection-info .sub-text p:first-child {
+  margin-top: 0;
+}
+
+.connection-info .sub-text p em {
+  color: #ef3484;
+}
+
+.connection-info ul {
+  margin-top: 34px;
+}
+
+.connection-info ul li {
+  height: 96px;
+  font-size: 2.6rem;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+.connection-info ul li .plate {
+  flex: 1;
+}
+
+.connection-info ul li button {
+  margin-left: 28px;
+  position: relative;
+  height: 86px;
+  font-size: 3rem;
+  padding: 0 40px;
+  border-radius: 8px;
+  background-color: #2A2C3E;
+  color: #a9a9a9;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.connection-info ul li button .text {
+  min-width: 165px;
+  line-height: 86px;
+}
+
+.connection-info ul li button.dimmed {
+  background-color: rgba(8, 13, 25, 0.4);
+}
+
+.connection-info ul li button.focus {
+  color: #080d19;
+  background-color: #eee;
+  height: calc(86px + 12px);
+  font-size: calc(3rem + 0.2rem);
+}
+
+.connection-info ul .input-text-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 86px;
+  width: 100%;
+  font-size: 2.8rem;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #2A2C3E;
+  color: #a9a9a9;
+}
+
+.connection-info ul .input-text-wrap.focus {
+  font-size: 3.0rem;
+  color: #eee;
+  background-color: #111424;
+  border: 4px solid #eee;
+}
+
+.connection-info ul .history {
+  height: 122px;
+  margin: 26px 0 55px;
+  display: flex;
+  align-items: center;
+}
+
+.connection-info ul .history .phone-list {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+.connection-info ul .history .phone-list > div {
+  position: relative;
+}
+
+.connection-info ul .history .phone-list .number {
+  height: 110px;
+  width: 240px;
+  background-color: #111424;
+  border: 4px solid #777;
+  border-radius: 8px;
+  color: #777;
+  justify-content: center;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+
+.connection-info ul .history .phone-list .number span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.connection-info ul .history .phone-list .text {
+  width: max-content;
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.4rem;
+  color: #eee;
+  text-align: center;
+  opacity: 0;
+}
+
+.connection-info ul .history .phone-list .lock .number {
+  border: 4px solid rgba(119, 119, 119, 0.6);
+  color: rgba(119, 119, 119, 0.6);
+}
+
+.connection-info ul .history .phone-list .lock::before {
+  width: 30px;
+  height: 30px;
+  background-image: url("../images/my/ic-my-lock.png");
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  display: block;
+  content: '';
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 1;
+}
+
+.connection-info ul .history .phone-list .use .number {
+  display: flex;
+  flex-direction: column;
+}
+
+.connection-info ul .history .phone-list .use .number::before {
+  display: block;
+  content: '';
+  content: '연결중';
+  width: 74px;
+  line-height: 28px;
+  text-align: center;
+  border-radius: 16px;
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+  border: 2px solid #777;
+  box-sizing: border-box;
+}
+
+.connection-info ul .history .phone-list .focus .number {
+  height: 122px;
+  border: 6px solid #eee;
+  color: #eee;
+}
+
+.connection-info ul .history .phone-list .focus .number::before {
+  line-height: 32px;
+  background-color: #ef3484;
+  border: none;
+}
+
+.connection-info ul .history .phone-list .focus .text {
+  opacity: 1;
+}
+
+.connection-info ul .history .list-del {
+  height: 110px;
+}
+
+.connection-info ul .history .list-del.focus {
+  height: 110px;
+}
+
+.connection-info ul .details {
+  margin: 0 -30px;
+  padding: 40px 30px 0 30px;
+  box-sizing: content-box;
+  border-top: 2px solid #2A2C3E;
+  text-align: left;
+}
+
+.connection-info ul .details .plate {
+  color: #999;
+}
+
+.connection-info ul .details .plate .utv-number {
+  color: #eee;
+  margin-bottom: 11px;
+  font-size: 2.9rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.connection-info ul .details .plate .utv-number em {
+  color: #ef3484;
+}

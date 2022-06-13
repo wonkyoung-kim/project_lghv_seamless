@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+</head>
+
+<body>
+
+    <div id="root">
+        <!-- react 구조 -->
+
+        <!--vod 시리즈 전체회차 -->
+        <div class="vod-layer-bg">
+            <!-- 콘텐츠 wrap -->
+            <div class="vod-layer series-rating bottom-cover active">
+                <h2 class="skip">평점 및 감상평</h2>
+                <!-- 시즌 -->
+                <div class="season-tab-wrap active">
+                    <div class="season-tab tab1">
+                        <!-- 제목으로 시즌 표시 하는 경우 클래스 long-tab 추가-->
+                        <div class="tab-focus focus"><p>시즌 1</p></div>
+                    </div>
+                    <div class="season-tab tab2">
+                        <p>시즌 2</p>
+                    </div>
+                    <div class="season-tab tab3">
+                        <p>시즌 3</p>
+                    </div>
+                </div>
+                
+                <div class="series-list-wrap">
+
+                    <!--회차리스트-->
+                    <section class="contents-list-wrap">
+                        <div class="mask"></div>
+                        <ul class="contents-list">
+                            <li class="focus">
+                                <div class="poster-horizontal">
+                                    <div class="poster-thumbnail" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                                </div>
+                                <div class="meta-data no-subtitle"><!-- 부제 없는 경우 no-subtitle -->
+                                    <h4 class="title">
+                                        1화<span class="subtite"></span>
+                                    </h4>
+                                    <!--기본정보-->
+                                    <p class="default-info">
+                                        <span>2020.03.11(목)</span>
+                                        <span>65분</span>
+                                        <span>15세</span>
+                                        <span>9/10점</span><!-- 부제 없는 경우 출처명 삭제 -->
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class="poster-horizontal">
+                                    <div class="poster-thumbnail" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                                </div>
+                                <div class="meta-data">
+                                    <h4 class="title">
+                                        1화<span class="subtite">악몽을 먹고 자란 소년</span>
+                                    </h4>
+                                    <p class="default-info">
+                                        <span>2020.03.11(목)</span>
+                                        <span>65분</span>
+                                        <span>15세</span>
+                                        <span>IMDb 9/10점</span>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class="poster-horizontal">
+                                    <div class="poster-thumbnail" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                                </div>
+                                <div class="meta-data">
+                                    <h4 class="title">
+                                        1화<span class="subtite">악몽을 먹고 자란 소년</span>
+                                    </h4>
+                                    <p class="default-info">
+                                        <span>2020.03.11(목)</span>
+                                        <span>65분</span>
+                                        <span>15세</span>
+                                        <span>IMDb 9/10점</span>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </section>
+
+                    <!--감상평 포커스 갈 때 active 클래스 -->
+                    <section class="rating-row">
+
+                        <div class="rating-row-header">
+                            <h3>IMDb 감상평</h3>
+                            <!--평점-->
+                            <div class="rating-info">  
+
+                                <p class="point">2.5<span class="base-point">5.0</span></p>
+                                <div class="rating-star-wrap">
+                                    <i class="rating-star full"></i>
+                                    <i class="rating-star full"></i>
+                                    <i class="rating-star half"></i>
+                                    <i class="rating-star empty"></i>
+                                    <i class="rating-star full"></i>   
+                                    <p class="rating-num">(14명)</p>    
+                                </div>   
+                            </div>
+
+                        </div>
+                            
+                        <!-- 스크롤되는 영역 -->
+                        <div class="comment-wrap top-mask">
+                            <div class="mask"></div>
+                            <ul class="comment-list">
+                                <li class="">
+                                    <div class="comment-header">
+                                        <i class="rating-star"></i>
+                                        <span class="point">4.5</span>
+                                        <p class="name">Dkdellel</p>
+                                    </div>
+                                    <p class="comments">
+                                        This film will be Daniel Craig's fifth and final appearance as James Bond. Schedul
+                                    </p>
+                                    <p class="trans-language">
+                                        <span class="keyguide">확인/OK</span>
+                                        <span class="text">번역하기</span>
+                                    </p>
+                                </li>
+
+                                <li class="focus">
+                                    <div class="comment-header">
+                                        <i class="rating-star"></i>
+                                        <span class="point">4.5</span>
+                                        <p class="name">Dkdellel</p>
+                                    </div>
+                                    <p class="comments">
+                                        Rami Malek's stunt double in this film.
+                                    </p>
+                                    <p class="trans-language">
+                                        <span class="keyguide">확인/OK</span>
+                                        <span class="text">번역하기</span>
+                                    </p>
+                                </li>
+
+                                <li class="">
+                                    <div class="comment-header">
+                                        <i class="rating-star"></i>
+                                        <span class="point">4.5</span>
+                                        <p class="name">Dkdellel</p>
+                                    </div>
+                                    <p class="comments">
+                                        Craig has also said that it has become harder to be
+                                    </p>
+                                    <p class="trans-language">
+                                        <span class="keyguide">확인/OK</span>
+                                        <span class="text">번역하기</span>
+                                    </p>
+                                </li>
+
+                                <li class="">
+                                    <div class="comment-header">
+                                        <i class="rating-star"></i>
+                                        <span class="point">4.5</span>
+                                        <p class="name">happy997</p>
+                                    </div>
+                                    <p class="comments">
+                                        First major movie production scheduled to open in
+                                    </p>
+                                    <p class="trans-language">
+                                        <span class="keyguide">확인/OK</span>
+                                        <span class="text">번역하기</span>
+                                    </p>
+                                </li>
+
+                                <li class="">
+                                    <div class="comment-header">
+                                        <i class="rating-star"></i>
+                                        <span class="point">4.5</span>
+                                        <p class="name">유지나</p>
+                                    </div>
+                                    <p class="comments">
+                                        딱 깔끔하게 웃긴 그 중에 들어있는 후벼 파는 대사들이 좋았다. ‘나한테 반말하는 인간들 밖에 없었으니까.’ 깔끔하게 웃긴 그 중에 들어있는 후벼 파는 대사들이 좋았다. ‘나한테 반말하는 인간들 밖에 없었으니까.’ 
+                                    </p>
+                                    <p class="trans-language">
+                                        <span class="keyguide">확인/OK</span>
+                                        <span class="text">번역하기</span>
+                                    </p>
+                                </li>
+                            </ul>
+                            <!--감상평 없는 경우 -->
+                            <!-- <p class="list-empty">
+                                등록된 IMDb 감상평이 없습니다
+                            </p> -->
+                        </div>
+                        <!--// 스크롤되는 영역 -->
+
+                    </section>
+                    <!-- //감상평 row -->
+                </div>
+
+                <div class="scroll">
+                    <span style="height:50%"></span>
+                </div>
+            </div>
+            <!--// 콘텐츠 wrap -->
+        </div>
+        <!--//vod layer bg-->
+
+
+    </div>
+    <!-- //root -->
+
+</body>
+
+</html>

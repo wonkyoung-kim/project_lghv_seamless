@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+</head>
+
+<body>
+
+    <div id="root">
+        <!-- react 구조 -->
+
+        <div class="vod-layer-bg">
+            <!--vod 패키지 콘텐츠 목록 -->
+            <div class="vod-layer package bottom-cover">          
+                <h2 class="product-title">‘패키지 소장’ 구매로 함께 볼 수 있는 콘텐츠 (<span>9</span>)</h2>
+                
+                <!--회차리스트-->
+                <section class="contents-list-wrap">
+                    <div class="mask"></div>
+                    <ul class="contents-list">
+                        <li class="focus">
+                            <div class="poster-horizontal history-bg">
+                                <div class="poster-thumbnail" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                                <div class="poster-component">
+                                    <dl class="poster-time">
+                                        <!-- 시청 완료 되면 노출
+                                        <dt class="watch-complete">시청완료</dt> -->
+                                        <!-- 시청중일 때는 남은 시간 표시 -->
+                                        <dt>30분 남음</dt> 
+                                        <dd class="poster-remaining"><span style="width: 50%;"></span></dd>
+                                    </dl> 
+                                    <p class="poster-button play">재생하기</p>
+                                </div>
+                            </div>
+                            <div class="meta-data">
+                                <h4 class="title marquee-text marquee-play">
+                                    <p class="marquee-child">겨울왕국1</p>
+                                </h4>
+                                <!--기본정보-->
+                                <div class="content-info">
+                                    <p class="meta-tag">
+                                        <span class="ic-tag small">우리말</span>
+                                        <span class="ic-tag small">자막</span>
+                                        <span class="ic-tag small">UHD</span>
+                                        <span class="ic-tag small">5.1</span>
+                                        <span class="ic-tag small">이거찾으세요?</span>
+                                    </p>
+                                    <p class="default-info">
+                                        <span>2019.11.22</span>
+                                        <span>미국</span>
+                                        <span>애니메이션</span>
+                                        <span>15세</span>
+                                        <span>1시간 43분</span>
+                                    </p>
+                                    <p class="staff">
+                                        <span class="label">감독 : </span>
+                                        <span>제니퍼 리</span>
+                                        <span class="label">목소리 : </span>
+                                        <span>이디아 엔젤, 크리스틴벨, 제니퍼 리</span>
+                                    </p>
+                                </div>
+                                <div class="summary-wrap">
+                                    <p class="summary">정신병동 보호사 문강태, 아름답지만 살벌한 동화작가 고문영, 전혀 다른 세계에서 살아가던 두 사람의 달콤 쌉쌀</p>
+                                    <p class="more-button">
+                                    <span class="more-info">+더보기</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="poster-horizontal history-bg">
+                                <div class="poster-thumbnail" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                                <div class="poster-component">
+                                    <dl class="poster-time">
+                                        <!-- 시청 완료 되면 노출 -->
+                                        <dt class="watch-complete">시청완료</dt>
+                                        <!-- 시청중일 때는 남은 시간 표시
+                                        <dt>30분 남음</dt> 
+                                        <dd class="poster-remaining"><span style="width: 50%;"></span></dd> -->
+                                    </dl> 
+                                    <p class="poster-button play">재생하기</p>
+                                </div>
+                            </div>
+                            <div class="meta-data">
+                                <h4 class="title marquee-text">
+                                    <p class="marquee-child">겨울왕국1</p>
+                                </h4>
+                                <!--기본정보-->
+                                <div class="content-info">
+                                    <p class="meta-tag">
+                                        <span class="ic-tag small">우리말</span>
+                                        <span class="ic-tag small">자막</span>
+                                        <span class="ic-tag small">UHD</span>
+                                        <span class="ic-tag small">5.1</span>
+                                        <span class="ic-tag small">이거찾으세요?</span>
+                                    </p>
+                                    <p class="default-info">
+                                        <span>2019.11.22</span>
+                                        <span>미국</span>
+                                        <span>애니메이션</span>
+                                        <span>15세</span>
+                                        <span>1시간 43분</span>
+                                    </p>
+                                    <p class="staff">
+                                        <span class="label">감독 : </span>
+                                        <span>제니퍼 리</span>
+                                        <span class="label">목소리 : </span>
+                                        <span>이디아 엔젤, 크리스틴벨, 제니퍼 리</span>
+                                    </p>
+                                </div>
+                                <div class="summary-wrap">
+                                    <p class="summary">정신병동 보호사 문강태, 아름답지만 살벌한 동화작가 고문영, 전혀 다른 세계에서 살아가던 두 사람의 달콤 쌉쌀</p>
+                                    <p class="more-button">
+                                    <span class="more-info">+더보기</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="poster-horizontal">
+                                <div class="poster-thumbnail" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                                <!-- <div class="poster-component">
+                                    <dl class="vod-remaintime">
+                                        <dt class="watch-complete">시청완료</dt>
+                                        <dt>30분 남음</dt> 
+                                        <dd class="vod-remaining"><span style="width: 50%;"></span></dd>
+                                    </dl> 
+                                    <p class="thumbnail-tag play">재생하기</p>
+                                </div> -->
+                            </div>
+                            <div class="meta-data">
+                                <h4 class="title marquee-text">
+                                    <p class="marquee-child">겨울왕국1</p>
+                                </h4>
+                                <!--기본정보-->
+                                <div class="content-info">
+                                    <p class="meta-tag">
+                                        <span class="ic-tag small">우리말</span>
+                                        <span class="ic-tag small">자막</span>
+                                        <span class="ic-tag small">UHD</span>
+                                        <span class="ic-tag small">5.1</span>
+                                        <span class="ic-tag small">이거찾으세요?</span>
+                                    </p>
+                                    <p class="default-info">
+                                        <span>2019.11.22</span>
+                                        <span>미국</span>
+                                        <span>애니메이션</span>
+                                        <span>15세</span>
+                                        <span>1시간 43분</span>
+                                    </p>
+                                    <p class="staff">
+                                        <span class="label">감독 : </span>
+                                        <span>제니퍼 리</span>
+                                        <span class="label">목소리 : </span>
+                                        <span>이디아 엔젤, 크리스틴벨, 제니퍼 리</span>
+                                    </p>
+                                </div>
+                                <div class="summary-wrap">
+                                    <p class="summary">정신병동 보호사 문강태, 아름답지만 살벌한 동화작가 고문영, 전혀 다른 세계에서 살아가던 두 사람의 달콤 쌉쌀</p>
+                                    <p class="more-button">
+                                    <span class="more-info">+더보기</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="poster-horizontal">
+                                <div class="poster-thumbnail" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                                <!-- <div class="poster-component">
+                                    <dl class="vod-remaintime">
+                                        <dt class="watch-complete">시청완료</dt>
+                                        <dt>30분 남음</dt> 
+                                        <dd class="vod-remaining"><span style="width: 50%;"></span></dd>
+                                    </dl> 
+                                    <p class="thumbnail-tag play">재생하기</p>
+                                </div> -->
+                            </div>
+                            <div class="meta-data">
+                                <h4 class="title marquee-text">
+                                    <p class="marquee-child">겨울왕국1</p>
+                                </h4>
+                                <!--기본정보-->
+                                <div class="content-info">
+                                    <p class="meta-tag">
+                                        <span class="ic-tag small">우리말</span>
+                                        <span class="ic-tag small">자막</span>
+                                        <span class="ic-tag small">UHD</span>
+                                        <span class="ic-tag small">5.1</span>
+                                        <span class="ic-tag small">이거찾으세요?</span>
+                                    </p>
+                                    <p class="default-info">
+                                        <span>2019.11.22</span>
+                                        <span>미국</span>
+                                        <span>애니메이션</span>
+                                        <span>15세</span>
+                                        <span>1시간 43분</span>
+                                    </p>
+                                    <p class="staff">
+                                        <span class="label">감독 : </span>
+                                        <span>제니퍼 리</span>
+                                        <span class="label">목소리 : </span>
+                                        <span>이디아 엔젤, 크리스틴벨, 제니퍼 리</span>
+                                    </p>
+                                </div>
+                                <div class="summary-wrap">
+                                    <p class="summary">정신병동 보호사 문강태, 아름답지만 살벌한 동화작가 고문영, 전혀 다른 세계에서 살아가던 두 사람의 달콤 쌉쌀</p>
+                                    <p class="more-button">
+                                    <span class="more-info">+더보기</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </section>
+                
+                <div class="scroll">
+                    <span style="height:50%"></span>
+                </div>
+            </div>
+            <!--//vod 시리즈 전체회차-->
+        </div>
+
+    </div>
+    <!-- //root -->
+
+</body>
+
+</html>

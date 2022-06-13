@@ -1,0 +1,240 @@
+@import 'config';
+#title {
+    position: relative;
+    height: 100%;
+    background-color: #000;
+}
+
+.contents-detail {
+    position: relative;
+    min-height: 100%;
+    background-size: 100% auto;
+}
+
+.contents-detail::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+}
+
+.contents-meta {
+    position: relative;
+    padding: px(112) px(112) 0;
+}
+
+.contents-meta h1 {
+    position: relative;
+    margin-bottom: px(15);
+    color: #fff;
+    font-size: 7.5rem;
+}
+
+.contents-meta ul {
+    display: flex;
+    position: relative;
+    margin-bottom: px(8);
+}
+
+.contents-meta ul:last-of-type {
+    margin-bottom: px(24);
+}
+
+.contents-meta li {
+    position: relative;
+    padding-right: px(15);
+    margin-right: px(15);
+    font-size: 2.5rem;
+    color: #777;
+}
+
+.contents-meta li::after {
+    content: '';
+    position: absolute;
+    top: px(6);
+    bottom: 0;
+    right: 0;
+    width: px(1);
+    height: px(18);
+    background-color: #777;
+}
+
+.contents-meta li:last-child::after {
+    display: none;
+}
+
+.contents-meta dl {
+    display: flex;
+    margin-bottom: px(8);
+    font-size: 2.5rem;
+}
+
+.contents-meta dl:last-of-type {
+    margin-bottom: 0;
+}
+
+.contents-meta dt {
+    margin-right: px(15);
+    color: #777;
+}
+
+.contents-meta dd {
+    color: #fff;
+}
+
+.contents-meta article {
+    width: 40%;
+    margin-top: px(30);
+    color: #fff;
+    line-height: 1.4;
+    font-size: 2.5rem;
+    overflow: hidden;
+    display: -webkit-box;
+    white-space: normal;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.contents-meta-options {
+    display: flex;
+    margin-top: px(45);
+}
+
+.contents-meta-options button {
+    position: relative;
+    min-width: px(230);
+    height: px(90);
+    padding: 0 px(30);
+    font-size: 3.2rem;
+    color: #fff;
+    background-color: #303030;
+}
+
+.contents-meta-options button.focus {
+    font-weight: 700;
+    color: #000;
+    background-color: #ffca25;
+}
+
+.contents-poster-list {
+    position: absolute;
+    top: px(800);
+    left: 0;
+    width: 100%;
+}
+
+.contents-poster-list ul {
+    display: flex;
+    position: relative;
+    padding: 0 px(112);
+}
+
+.contents-poster-list li {
+    flex: 0 0 px(283);
+    margin-right: px(10);
+}
+
+.test-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.test-modal article {
+    width: px(800);
+    padding: px(20) px(20) px(30);
+    border: 1px solid #fff;
+    background-color: #000;
+}
+
+.test-modal article h2, .test-modal article h3 {
+    margin-bottom: px(20);
+    color: #fff;
+    font-weight: 700;
+}
+
+.test-modal article h2 {
+    font-size: 3.2rem;
+}
+
+.test-modal article h3 {
+    font-size: 2.8rem;
+}
+
+.test-modal article>div {
+    display: flex;
+}
+
+.test-modal article button {
+    flex: 1;
+    height: px(50);
+    margin-right: px(10);
+    color: #fff;
+    background-color: #666;
+}
+
+.test-modal article button:last-child {
+    margin-right: 0;
+}
+
+.test-modal article button.focus {
+    color: #000;
+    background-color: #ffca25;
+}
+
+#test-scroll div {
+    overflow-y: hidden;
+    position: relative;
+    width: 100%;
+    height: px(200);
+    padding: px(10);
+    margin-bottom: px(20);
+    background-color: #fff;
+}
+
+#test-scroll div.focus {
+    box-shadow: inset px(4) px(4) 0 #ffca25, inset px(-4) px(-4) 0 #ffca25;
+}
+
+#test-field {
+    position: relative;
+    margin-bottom: px(15);
+}
+
+#test-field input {
+    width: 100%;
+    height: px(50);
+    padding: 0 px(10);
+}
+
+.test-tost {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.test-toast div {
+    width: px(500);
+    height: px(100);
+    text-align: center;
+    font-size: 3.2rem;
+    color: #fff;
+    padding: px(30) px(50) 0;
+    border-radius: px(8);
+    background-color: #666;
+}

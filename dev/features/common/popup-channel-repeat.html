@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+</head>
+
+<body>
+    <div id="root">
+        <div class="popup-container">
+            <div class="popup small">
+                <div class="popup-header">
+                    <h3>반복예약</h3>
+                </div>
+                <!-- //popup-header -->
+
+                <div class="popup-body">
+
+                    <div class="reservation-popup">
+                        <div class="select-time">
+                            <div class="input-apm">
+                                <span class="prev"><button>previous</button></span>
+                                <p class="input apm focus">오전</p>
+                                <span class="next"><button>next</button></span>
+                            </div>
+                            <div class="input-time">
+                                <div class="hour">
+                                    <div class="input-text">
+                                        <p class="input-text-wrap focus">
+                                            <span class="cursor"></span>
+                                            <span>1</span>
+                                            <span>1</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="minute">
+                                    <div class="input-text">
+                                        <p class="input-text-wrap">
+                                            <span class="cursor"></span>
+                                            <span>0</span>
+                                            <span>0</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="select-day active">
+                            <ul>
+                                <li class="focus">
+                                    <input type="checkbox" id="" name="" value="" class="input-checkbox" checked>
+                                    <label for="">월요일</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="" name="" value="" class="input-checkbox">
+                                    <label for="">화요일</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="" name="" value="" class="input-checkbox">
+                                    <label for="">수요일</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="" name="" value="" class="input-checkbox">
+                                    <label for="">목요일</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="" name="" value="" class="input-checkbox">
+                                    <label for="">금요일</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="" name="" value="" class="input-checkbox">
+                                    <label for="">토요일</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="" name="" value="" class="input-checkbox">
+                                    <label for="">일요일</label>
+                                </li>
+                            </ul>
+                            <div class="scroll">
+                                <span style="height:50%"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //reservation-popup -->
+
+                </div>
+                <!-- //popup-body -->
+
+                <div class="popup-footer">
+                    <button class="popup-button focus">취소</button>
+                    <button class="popup-button">확인</button>
+                </div>
+                <!-- //popup-footer -->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

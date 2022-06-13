@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/hv_index.css" />
+</head>
+<body>
+    <div id="root">
+        <div class="bridge">
+
+            <h2 class="skip">브릿지홈</h2>
+
+            <div class="container">    
+                
+                <!-- 구글 알림 -->
+                <div class="notice-area">
+                    <p class="notice focus">새로운 알림이 있습니다<span>99개</span></p>
+                </div>
+
+                <!-- active시 func-area딤처리 제거 -->
+                <div class="contents">
+                    <!-- 추천배너 영역-->
+                    <section class="recommend-area"> 
+                        <div class="recommend">
+                            <div>
+                                <h3>시청 중인 영상</h3>
+                                <ul>
+                                    <li>
+                                        <div class="poster-horizontal">
+                                            <div class="poster-thumbnail"style="background-image: url('../../assets/images/temp/poster.jpg')"></div>
+                                            <div class="poster-component">
+                                                <div class="poster-tag"><span class="poster-tag-age">전체</span></div>
+                                                <dl class="poster-time">
+                                                    <dt class="poster-title">기린(영어) 2회</dt>
+                                                    <dd class="poster-remaining"><span style="width: 0%;"></span></dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3>오늘은 뭐 볼까?</h3>
+                                <ul>
+                                    <!-- 2단배너일경우 col2클래스 넣어주세요 -->
+                                    <li class="col2">
+                                        <div class="poster-horizontal">
+                                            <div class="poster-thumbnail"style="background-image: url('../../assets/images/temp/poster.jpg')"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="poster-horizontal">
+                                            <div class="poster-thumbnail"style="background-image: url('../../assets/images/temp/poster.jpg')"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="poster-horizontal">
+                                            <div class="poster-thumbnail"style="background-image: url('../../assets/images/temp/poster.jpg')"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="poster-horizontal">
+                                            <div class="poster-thumbnail"style="background-image: url('../../assets/images/temp/poster.jpg')"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="poster-horizontal">
+                                            <div class="poster-thumbnail"style="background-image: url('../../assets/images/temp/poster.jpg')"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- 메인메뉴 영역 -->
+                    <section class="main-area">
+                        <h3>서비스 바로가기</h3>
+                        <ul>
+                            <li class="focus">
+                                <div class="poster-vertical">
+                                    <div class="poster-banner" style="background-image:url('../../assets/hv_images/bridge/img-bridge-tv.png')"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-banner" style="background-image:url('../../assets/hv_images/bridge/img-bridge-kids.png')"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-banner" style="background-image:url('../../assets/hv_images/bridge/img-bridge-channel.png')"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-banner" style="background-image:url('../../assets/hv_images/bridge/img-bridge-netflix.png')"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-banner" style="background-image:url('../../assets/hv_images/bridge/img-bridge-youtube.png')"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-banner" style="background-image:url('../../assets/hv_images/bridge/img-bridge-event.png')"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-banner" style="background-image:url('../../assets/hv_images/bridge/img-bridge-music.png')"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                    <!-- 기능메뉴 영역 -->
+                    <section class="func-area">
+                        <ul>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-banner" style="background-image:url('../../assets/hv_images/bridge/img-bridge-search.png')"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-banner" style="background-image:url('../../assets/hv_images/bridge/img-bridge-my.png')"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-banner" style="background-image:url('../../assets/hv_images/bridge/img-bridge-schedule.png')"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-banner" style="background-image:url('../../assets/hv_images/bridge/img-bridge-setting.png')"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="poster-vertical">
+                                    <div class="poster-banner" style="background-image:url('../../assets/hv_images/bridge/img-bridge-coin.png')"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="bridge-footer">
+                    <p class="keyguide">
+                        <span class="ic-round">확인/OK</span>바로 이동
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <!-- //bridge-container -->
+    </div>
+    <!-- //root -->
+</body>
+</html>

@@ -1,0 +1,632 @@
+@import '../scss/config';
+//url
+$url-images: "../../assets/hv_images/search/";
+.search-container {
+    position: relative;
+    height: 100%;
+    //검색
+    .search {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding-top: px(200);           
+        background-image: linear-gradient(to bottom, transparent, $color-black 20%);
+    }
+    //검색결과
+    .search-result {
+        height: 100%;
+        padding-top: px(94);
+        background-color: $color-bg-black;
+        &::after {
+            @include vs;
+            top: unset;
+            bottom: 0;
+            z-index: 3;
+            width: 100%;
+            height: px(245);
+            background-image: linear-gradient(to bottom, $color-bg-transparent, $color-bg-black);
+            opacity: 0;
+        }
+        &.bottom-cover {
+            &::after {
+                opacity: 1;
+            }
+        }
+        //실시간방송 모두보기 결과화면 진입시
+        &.result-live-broadcast {
+            .result-info {
+                padding: px(44) px(265) 0;
+            }
+            .contents {
+                height: px(734);
+                padding: px(20) px(265) 0;
+            }
+            .live-broadcast {
+                li {
+                    margin-bottom: px(65);
+                    &:nth-child(4n) {
+                        margin-right: 0;
+                    }
+                    &:nth-child(5n) {
+                        margin-right: px(16);
+                    }
+                }
+            }
+            li {
+                &:nth-child(6n) {
+                    margin-right: px(16);
+                }
+            }
+            .scroll {
+                right: px(193);
+            }
+        }
+    }
+    //검색결과 컨텐츠
+    .contents {
+        overflow: hidden; 
+        height: px(778, 521);
+        padding: px(24) px(128) 0;
+        //결과 리스트
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                margin: 0 px(16) px(40) 0;
+                .result-number {
+                    @include flex-items-center;
+                    flex-direction: column;
+                    justify-content: center;
+                    width: px(264);
+                    height: px(376);
+                    border: px(4) solid $color-gray-dark;
+                    border-radius: px($border-radius);
+                    background-color: $color-bg-sub;
+                    p {
+                        margin-bottom: px(20);
+                        text-align: center;
+                        font: {
+                            family: $font-bold;
+                            size: 3.6rem;
+                        }
+                        color: rgba($color-white, .9);
+                        em {
+                            display: block;
+                        }
+                    }
+                    span {
+                        font-size: 2.4rem;
+                        color: $color-white-70;
+                    }
+                }
+                &:nth-child(6n) {
+                    margin-right: 0;
+                }
+                &.focus {
+                    .result-number {
+                        position: relative;
+                        z-index: 2;
+                        border: none;
+                        p em {
+                            color: $color-primary;
+                        }
+                        &::after {
+                            @include focus-border;
+                            @include focus-scale;
+                            z-index: -1;
+                            width: 100%;
+                            height: 100%;
+                            background-color: $color-bg-sub;
+                        }
+                    }
+                }
+            }
+        }
+        //성인
+        .adult-list {
+            .poster-thumbnail::after {
+                @include vs;
+                @include background-default;
+                width: 100%;
+                height: 100%;
+                border-radius: px($border-radius);
+                background-image: url($url-images + 'poster-19.png');
+            }
+        }
+        //실시간방송
+        .live-broadcast {
+            li {
+                &:nth-child(5n) {
+                    margin-right: 0;
+                }
+                .result-number {
+                    height: px(275);
+                }
+                .poster-horizontal {
+                    width: px(334);
+                    height: px(188);
+                }
+                .meta-data {
+                    width: px(334);
+                    margin-top: px(16);
+                    .title {
+                        margin-bottom: px(10);
+                        line-height: px(40);
+                        font: {
+                            family: $font-bold;
+                            size: 3rem;
+                        }
+                        color: $color-white;
+                    }
+                    .ic-tag {
+                        height: px(28);
+                        line-height: px(24);
+                        margin-right: px(16);
+                        border-width: px(2);
+                        vertical-align: text-top;
+                        font-size: 1.6rem;
+                        color: $color-blue;
+                    }
+                    .sub-text {
+                        @include flex-items-center;
+                        font-size: 2.5rem;
+                        color: $color-gray;
+                    }
+                }
+                &.focus {
+                    .ic-tag {
+                        background-color: unset;
+                        border-color: $color-white-30;
+                    }
+                    .poster-tag {
+                        right: 0;
+                        top: px(2);
+                    }
+                }
+            }
+        }
+        &.active {
+            .scroll {
+                opacity: 1;
+            }
+        }
+    }
+    //검색결과 없는경우
+    .list-none {
+        position: absolute;
+        left: 50%;
+        top: px(545);
+        transform: translateX(-50%);
+        font: {
+            family: $font-bold;
+            size: 4rem;
+        }
+        color: $color-subtitle;
+
+        em {color: $color-pure-white;}
+    }
+    //스크롤 
+    .scroll {
+        top: px(24);
+        z-index: 4;
+        height: px(700);
+    }
+}
+
+//검색창
+.search-input {
+    height: px(124);
+    margin-bottom: px(24,19);
+    //키보드, 음성아이콘
+    .icon {
+        width: px(114);
+        height: px(114);
+        i {
+            position: absolute;
+            top: px(5);
+            display: inline-block;
+            width: px(114);
+            height: px(114);
+            text-indent: -9999px;
+            &::after {
+                @include vs;
+                width: px(114);
+                height: px(114);
+                @include background-default;
+            }
+            &.ic-keyboard {
+                left: px(230);
+                &::after {
+                    background-image: url($url-images + 'ic-keyboard-down.png');
+                }
+                &.selected {
+                    &::after {
+                        background-image: url($url-images + 'ic-keyboard-down-selected.png');
+                    }
+                }
+                &.focus {
+                    &::after {
+                        background-image: url($url-images + 'ic-keyboard-down-focus.png');
+                    }
+                }
+                //키패드가 열려있을 경우 키보드아이콘
+                &.on {
+                    &::after {
+                        background-image: url($url-images + 'ic-keyboard.png');
+                    }
+                    &.selected {
+                        &::after {
+                            background-image: url($url-images + 'ic-keyboard-selected.png');
+                        }
+                    }
+                    &.focus {
+                        &::after {
+                            background-image: url($url-images + 'ic-keyboard-focus.png');
+                        }
+                    }
+                }
+            }
+            &.ic-voice {
+                right: px(230);
+                &::after {
+                    background-image: url($url-images + 'ic-voice.png');
+                }
+                &.focus {
+                    &::after {
+                        background-image: url($url-images + 'ic-voice-focus.png');
+                    }
+                }
+            }
+        }
+    } 
+    //검색필드
+    .input-text {
+        @include flex-items-center;
+        justify-content: space-between;
+        width: px(1129);
+        height: 100%;
+        margin: 0 auto;
+        padding: 0 px(27) 0 px(61);
+        border: px(8) solid rgba(255,255,255,0.5);
+        border-radius: px($border-radius);
+        font-family: $font-bold;
+        .placeholder {
+            overflow: hidden;
+            width: px(876);
+            text-align: left;
+            font: {
+                size: 3.2rem;
+                family: $font-bold;
+            }
+            color: $color-subtitle;
+        }
+        .input-text-wrap {
+            position: relative;
+            width: px(714);
+            height: 100%;
+            line-height: px(108);
+            margin-bottom: 0;
+            padding-left: px(1);
+            text-align: left;
+            font-size: 3.8rem;
+            @include ellipsis;
+            span {
+                display: inline-flex;
+            }
+            .cursor {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+        .lang {
+            position: relative;
+            width: px(134);
+            font-size: 2.8rem;
+            text-align: center;
+            color: rgba($color-white, 0.4);
+            &::before {
+                @include vs;
+                top: 50%;
+                left: px(-4);
+                transform: translateY(-50%);
+                width: px(4);
+                height: px(20);
+                background-color: rgba($color-white, 0.3);
+            }
+            &.num {
+                &::before {
+                    margin-left: px(-28);
+                }
+            }
+        }
+        &.focus {
+            border-color: $color-primary;
+            .placeholder {
+                display: none;
+            }
+        }
+        &.selected {
+            border-color: $color-white;
+        }
+    }
+}
+
+//인기검색어
+.search-popular {
+    display: flex;
+    flex-wrap: wrap;
+    height: px(232);
+    margin-bottom: px(88);
+    padding: 0 px(100);
+    .title {
+        @include flex-items-center;
+        justify-content: flex-end;
+        position: relative;
+        width: px(226);
+        height: px(116);
+        padding: 0px;
+        margin-right: px(74);
+        font-size: 3.2rem;
+        font-family: $font-bold;
+        &::after {
+            @include vs;
+            left: auto;
+            top: 50%;
+            right: px(-50);
+            width: px(2);
+            height: px(20);
+            margin-top: px(-10);
+            background-color: $color-white;
+        }
+    }
+    ul {
+        display: flex;
+        width: px(1420);
+        li {
+            @include flex-items-center;
+            position: relative;
+            width: px(284);
+            height: px(116);
+            padding: px(18);
+            border-radius: px($border-radius);
+            font-size: 3.2rem;
+            font-family: $font-bold;
+            color: $color-white;
+            &.focus {
+                background-color: $color-white;
+                color: $color-black;
+            }
+            span {
+                @include ellipsis;
+                width: px(248);
+            }
+        }
+    }
+}
+
+//가상키보드
+.search-keypad {
+    .search-list-area {
+        position: relative;
+        height: px(112);
+        margin-bottom: px(18);
+        padding: 0 px(144);
+        //자동완성 이전,다음 아이콘
+        .ic-arrow {
+            @include vs;
+            @include background-default;
+            top: 50%;
+            transform: translateY(-50%);
+            width: px(32);
+            height: px(32);
+            background-image: url($url-images + 'ic-arrow.png');
+        }
+        .pre {
+            left: px(78);
+        }
+        .next{
+            left: auto;
+            right: px(78);
+            transform: translateY(-50%) rotate(-180deg);
+        }
+        //자동완성검색
+        .search-list { 
+            overflow: hidden;
+            height: px(1632);
+            ul {
+                display: inline-flex;
+                justify-content: center;
+                li {
+                    width: px(408);
+                    height: 100%;
+                    line-height: px(112);
+                    border-radius: px($border-radius);
+                    font-size: 3.2rem;
+                    &:nth-child(4n) {
+                        margin-right: 0px;
+                    }
+                    span {
+                        @include ellipsis;
+                        display: block;
+                        width: px(348);
+                        margin: 0 auto;
+                        text-align: center;
+    
+                        em {color: $color-primary;}
+                    }
+    
+                    &.focus {
+                        font-family: $font-bold;
+                        background-color: $color-white;
+                        color: $color-black;
+                        
+                        em {color: $color-black;}
+                    }
+                }
+            }
+        }
+    }
+    //키패드영역
+    .keypad-area {
+        position: relative;
+        height: px(460);
+        background-color: #2a2c3e;
+        .keypad {
+            display: block;
+            position: absolute;
+            width: px(1104);
+            height: 100%;
+            margin-left: px(220);
+            padding: px(15) px(132);
+            background-color: $color-bg-setting;
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                li {
+                    position: relative;
+                    width: px(120);
+                    height: px(86);
+                    span {
+                        position: absolute;
+                        z-index: 10;
+                        left: 0px; top: 0px;
+                        width: px(120);
+                        height: px(86);
+                        line-height: px(86);
+                        text-align: center;
+                        font-size: 4.6rem;
+                        color: $color-white;
+                        &.double {
+                            left: unset;
+                            top: unset;
+                            right: px(6);
+                            bottom: px(4);
+                            display: inline-block;
+                            width: auto;
+                            height: auto;
+                            line-height: px(31);
+                            font-size: 2.5rem;
+                        }  
+                    }
+                    &.focus {
+                        span {
+                            font-family: $font-bold;
+                            color: $color-black;
+                        }
+                        &::after {
+                            @include vs;
+                            width: px(156);
+                            height: 100%;
+                            margin-left: px(-18);
+                            border-radius: px($border-radius);
+                            background-color: $color-white;
+                            box-shadow: 8px 8px 4px 0 $color-black-20;
+                        }
+                    }
+                }
+            }
+            &.keypad-eng {
+                display: none;
+            }
+            &.keypad-num {
+                display: none;
+            }
+        }
+        .keypad-etc {
+            position: absolute;
+            top: px(15);
+            left: px(1324);
+            ul {
+                li {
+                    width: px(242);
+                    height: px(86);
+                    line-height: px(86);
+                    padding-left: px(40);
+                    border-radius: px($border-radius);
+                    text-align: left;
+                    color: $color-gray;
+                    font: {
+                        family: $font-bold;
+                        size: 3rem;
+                    }
+                    &.delete::before {
+                        @include vs-ib;
+                        @include background-default;
+                        width: px(40);
+                        height: px(40);
+                        vertical-align: sub;
+                        margin-right: px(16);
+                        background-image: url($url-images + 'ic-delete.png');
+                        
+                    }
+                    &.focus {
+                        font-family: $font-bold;
+                        background-color: $color-white;
+                        color: $color-black;
+
+                        &.delete::before {
+                            background-image: url($url-images + 'ic-delete-focus.png');
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //툴팁
+    .keypad-tooltip {
+        position: absolute;
+        right: px(100);
+        bottom: px(357);
+        .tooltip {
+            @include flex-items-center;
+            justify-content: center;
+            width: px(250);
+            height: px(79);
+            margin-bottom: 0;
+            padding: 0 px(17);
+            line-height: 1.3;
+            text-align: center;
+            word-break: keep-all;
+            border-radius: px(5);
+            background-color: $color-white;
+            &::before {
+                top: px(30);
+                border-color: $color-white;
+            }
+            span {
+                font: {
+                    family: $font-bold;
+                    size: 2rem;
+                }
+                color: $color-black;
+            }
+        }
+    }
+    & + .search-footer {
+        opacity: 0;
+    }
+}
+//검색결과 정보
+.result-info {
+    padding: px(44) px(128) 0;
+    line-height: px(58);
+    font: {
+        family: $font-bold;
+        size: 3.2rem;
+    }
+    color: $color-subtitle;
+    span {
+        color: $color-pure-white;
+    }
+    em {
+        font-size: 2.5rem;
+        color: $color-primary;
+    }
+}
+//키고지
+.search-footer {
+    position: fixed;
+    right: px(50);
+    bottom: px(30);
+}

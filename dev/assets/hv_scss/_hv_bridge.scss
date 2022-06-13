@@ -1,0 +1,224 @@
+@import '../scss/config';
+$url-images: "../../assets/hv_images/";
+
+.bridge {
+    height: 100%;
+    padding-top: px(411);
+    //bg 그라데이션
+    &::before {
+        @include vs;
+        top: auto;
+        bottom: 0;
+        width: 100%;
+        height: px(921);
+        // background-image: linear-gradient(to bottom, rgba(8, 13, 25, 0), $color-black);
+        background-image: url($url-images + 'bridge/bg-bridge.png');
+        @include background-contain;
+    }
+    //구글알림
+    .notice-area {
+        position: absolute;
+        left: px(124);
+        top: px(90);
+        .notice {
+            @include flex-items-center;
+            height: px(80);
+            line-height: px(80);
+            padding: 0 px(30) 0 px(34);
+            font: {
+                family: $font-bold;
+                size: 2.7rem;
+            }
+            color: $color-pure-white;
+            border: solid 1.5px rgba(255, 255, 255, 0.5);
+            background-color: rgba(#333, .8);
+            &::before {
+                @include vs-ib;
+                @include background-default;
+                width: px(27);
+                height: px(28, 19);
+                margin-right: px(12);
+                background-image: url($url-images + 'bridge/ic-notice.png');
+            }
+            span {
+                position: relative;
+                margin-left: px(34);
+                font-family: $font-regular;
+                opacity: 0.7;
+                &::before {
+                    @include vs;
+                    top: 50%;
+                    left: px(-16);
+                    transform: translateY(-50%);
+                    width: px(2);
+                    height: px(30);
+                    opacity: 1;
+                    background-color: $color-pure-white;
+                }
+            }
+            &.focus {
+                @include focus-scale;
+                background-color: #333;
+                &::before {
+                    margin-right: px(20);
+                }
+                &::after {
+                    @include focus-border;
+                    border-radius: 0;
+                }
+                span {
+                    margin-left: px(43);
+                    &::before {
+                        left: px(-19);
+                    }
+                }
+            }
+        }
+    }
+    //컨테이너 영역
+    .container {
+        overflow: hidden;
+        padding-left: px(77);
+        //공통
+        .contents {
+            position: relative;
+            z-index: 1;
+            &.active {
+                .recommend-area {
+                    margin-bottom: px(72);
+                }
+                //active시 하단 딤영역 제거
+                .func-area {
+                    z-index: 1;
+                    &::after {
+                        content: unset;
+                    }
+                }
+            }
+        }
+        section {
+            //타이틀
+            h3 {
+                margin-bottom: px(12);
+                font-size: 3.2rem;
+            }
+            ul {
+                display: flex;
+                li {
+                    margin-right: px(12);
+                    &.focus {
+                        &:first-child{
+                            .poster-vertical::before, .poster-horizontal::before, .poster-horizontal::after, .poster-remaining, .poster-thumbnail, .poster-banner, .poster-component::before, .poster-component::after {
+                                transform-origin: left;
+                            }
+                            .poster-tag {
+                                right: px(-12);
+                            }
+                            .poster-time {
+                                left: 0;
+                            }
+                            .poster-component::after {
+                                background-position-x: px(178);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .func-area {
+            z-index: -1;
+            //하단 영역 딤처리
+            &::after {
+                @include vs;
+                top: px(-208);
+                left: px(-77);
+                z-index: 1;
+                width: px(1920);
+                height: px(272);
+                opacity: 0.5;
+                background-image: linear-gradient(to bottom, $color-bg-transparent, $color-pure-black);
+            }
+        }
+        //추천배너 영역
+        .recommend-area {
+            margin-bottom: px(37);
+            .recommend {
+                display: flex;
+                > div:nth-of-type(2) {
+                    li {
+                        &.focus {
+                            &:first-child{
+                                .poster-horizontal::before, .poster-thumbnail {
+                                    transform-origin: center;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .poster-horizontal {
+                width: px(369);
+                height: px(208);
+            }
+            .poster-time {
+                .poster-title {
+                    @include ellipsis;
+                    line-height: px(40);
+                    font: {
+                        family: $font-bold;
+                        size: 3rem;
+                    }
+                    color: $color-white;
+                    &::before {
+                        content: none;
+                    }
+                }
+                .poster-remaining {
+                    margin-top: px(15);
+                }
+            }
+            li {
+                //배너 크기
+                &.col2 {
+                    .poster-horizontal {
+                        width: calc((#{px(369)} * 2) + (#{px(6)} * 2));
+                    }
+                }
+            }
+        }
+        //메인메뉴, 기능메뉴 영역
+        .main-area, .func-area {
+            .poster-vertical {
+                width: px(242);
+                height: px(248);
+            }
+            li {
+                margin-bottom: px(12);
+            }
+        }
+        //키고지
+        .bridge-footer {
+            position: fixed;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            padding: 0 px(50) px(30) 0;
+            width: 100%;
+            height: px(187);
+            left: 0;
+            bottom: 0;
+            z-index: 1;
+            &:before {
+                @include vs;
+                left: unset;
+                right: 0;
+                width: px(380);
+                height: px(187);
+                background-image: url('../images/category/bg-keynotice.png');
+                @include background-contain;
+                background-position: right bottom;
+                z-index: -1;
+            }
+        }
+    }
+}

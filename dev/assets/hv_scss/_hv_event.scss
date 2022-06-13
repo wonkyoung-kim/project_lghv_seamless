@@ -1,0 +1,447 @@
+@import '../scss/config';
+@import '../scss/my';
+//이벤트 공통레이아웃
+.event-wrap {
+    @extend .my-wrap;
+    .event-header {
+        @extend .my-header;
+        .event-title {
+            @extend .my-title;
+        }
+    }
+    .event-body {
+        @extend .my-body;
+        &.active {
+            .scroll {
+                opacity: 1;
+            }
+        }
+        .list-wrap {
+            padding-top: 0;
+        }
+        .scroll {
+            top: px(140);
+            height: px(704);
+            opacity: 0;
+        }
+    }
+    .event-func-area {
+        @extend .vod-func-area;
+        margin-bottom: px(80);
+    }
+    //진행중이벤트
+    .event-ing {
+        .contents-list {
+            padding: 0 px(116) 0;
+            li {
+                height: px(311);
+                margin: 0 0 px(60) px(40);
+                &:nth-child(2n + 1) {
+                    margin-left: px(0);
+                }
+                .poster-horizontal {
+                    width: px(824);
+                    height: px(214);
+                    &::before {
+                        background-image: url('../../assets/hv_images/common/img-default-ad.png');
+                    }
+                }
+                .meta-data { 
+                    margin-top: px(15);
+                    opacity: 1;
+                    .title {
+                        width: px(824);
+                        font-family: $font-bold;
+                        color: $color-white;
+                    }
+                    .sub-text {
+                        width: px(824);
+                        margin-top: px(10);
+                        opacity: 1;
+                    }
+                }
+                &.focus {
+                    &:nth-child(4n+1) {
+                        .poster-horizontal::before {
+                            transform-origin: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //참여한이벤트
+    .event-end {
+        .product-title {
+            .name {
+                width: px(774);
+            }
+            .date {
+                width: px(400);
+            }
+            .price {
+                width: px(341);
+                padding-right: 0;
+                padding-left: px(50);
+                text-align: left;
+            }
+            .payday {
+                padding-left: px(50);
+            }
+        }
+        .product-list {
+            li {
+                .ic-tag {
+                    margin-right: px(25);
+                }
+                .name {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                .period {
+                    width: px(400);
+                }
+                .price {
+                    justify-content: flex-start;
+                    width: px(340);
+                    padding-right: 0;
+                    padding-left: px(50);
+                    > span {
+                        width: px(247);
+                    }
+                }
+                .date {
+                    width: px(277);
+                    padding-left: px(50);
+                    > span {
+                        width: px(239);
+                    }
+                }
+            }
+        }
+    }
+    //이벤트_레이어팝업
+    .layer-page {
+        .layer-header {
+            .title {
+                position: inherit;
+                line-height: px(82);
+                &::before {
+                    content: none;
+                }
+            }
+            p {
+                position: inherit;
+                padding: 0 px(280);
+                line-height: px(44);
+                font: {
+                    size: 3.3rem;
+                    family: $font-bold;
+                }
+                color: $color-blue;
+            }
+        }
+        //퀴즈이벤트에 들어가는 Q아이콘 bg적용
+        &.event-quiz-choice, &.event-quiz-write {
+            @include flex-items-center;
+            flex-direction: column;
+            justify-content: center;
+            .layer-header {
+                &::before {
+                    @include vs;
+                    @include background-contain;
+                    top: px(-8);
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: px(148);
+                    height: px(167);
+                    background-image: url('../../assets/hv_images/event/img-quiz.png');
+                }
+            }
+        }
+        //객관식이벤트
+        &.event-quiz-choice {
+            .layer-body {
+                margin-bottom: px(91);
+                .quiz-choice-items {
+                    display: flex;
+                    li {
+                        @include flex-items-center;
+                        flex-direction: column;
+                        justify-content: center;
+                        width: px(205);
+                        height: px(111);
+                        margin-right: px(20);
+                        padding: 0 px(12);
+                        border: px(4) solid $color-gray-dark;
+                        border-radius: px($border-radius);
+                        .input-checkbox {
+                            @include input-check;
+                            align-self: flex-start;
+                            &[type=checkbox]:checked {
+                                border-color: $color-radio-normal;
+                                &::before {
+                                    background-image: url('../images/purchase/ic-check2.png');
+                                }
+                            }
+                        }
+                        label {
+                            align-self: flex-start;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            max-width: px(172);
+                            font: {
+                                family: $font-bold;
+                                size: 3rem;
+                            }
+                            letter-spacing: px(-0.77);
+                            color: $color-gray;
+                        }
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                        &.focus {
+                            position: relative;
+                            z-index: 1;
+                            padding: 0;
+                            &::after {
+                                @include vs;
+                                transform: translate(px(-30), px(-17));
+                                width: px(256);
+                                height: px(140);
+                                border: px(6) solid #eee;
+                                border-radius: px($border-radius);
+                                background-color: $color-bg-component;
+                                z-index: -1;
+                            }
+                            .input-checkbox {
+                                margin-left: 0;
+                                margin-bottom: px(5);
+                                border-color: $color-primary;
+                                &[type=checkbox]:checked {
+                                    border-color: $color-primary;
+                                    &::before {
+                                        background-image: url('../images/purchase/ic-check-focus2.png');
+                                    }
+                                }
+                            }
+                            label {
+                                max-width: px(207);
+                                font-size: 3.6rem;
+                                letter-spacing: px(-0.92);
+                                color: $color-primary;
+                            }
+                            &:first-child {
+                                &::after {
+                                    transform: translate(px(-25), px(-17));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        //주관식이벤트
+        &.event-quiz-write {
+            justify-content: flex-end;
+            .layer-header {
+                margin-bottom: px(76);
+            }
+            .search-input {
+                .icon {
+                    visibility: hidden;
+                }
+            }
+            .search-list-area {
+                visibility: hidden;
+                margin-bottom: px(12, 16);
+            }
+        }
+        //스탬프이벤트
+        &.event-stamp {
+            .layer-header {
+                padding-top: px(100);
+                .stamp-count-box {
+                    position: relative;
+                    display: flex;
+                    width: px(108);
+                    height: px(108);
+                    margin: 0 auto px(22);
+                    padding: px(16) px(18);
+                    &::before {
+                        @include vs;
+                        @include background-default;
+                        width: 100%;
+                        height: 100%;
+                        background-image: url('../../assets/hv_images/event/img-stamp-box.png');
+                    }
+                    span {
+                        align-self: flex-end;
+                        width: px(36);
+                        text-align: center;
+                        font-size: 3rem;
+                        color: $color-gray-dark;
+                        &.count {
+                            align-self: flex-start;
+                            color: $color-blue;
+                            font-size: 3.3rem;
+                        }
+                    }
+                }
+                h3 em {
+                    color: $color-primary;
+                }
+            }
+            .coupon-stamp {
+                margin-bottom: px(96);
+                ul {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: px(835);
+                    height: px(270);
+                    li {
+                        @include background-default;
+                        width: px(111);
+                        height: px(110);
+                        margin: 0 px(70) px(50) 0;
+                        &:nth-child(5n) {
+                            margin-right: 0;
+                        }
+                        //스탬프1~10 차례로 스탬프순서와 이미지이름에 맞게 적용
+                        @for $i from 1 through 10 {
+                            &:nth-child(#{$i}) {
+                                background-image: url('../../assets/hv_images/event/ic-stamp#{$i}.png');
+                            }
+                        }
+                        //focus시 스탬프에맞는 focus스탬프 적용
+                        $number: 5, 8, 10;
+                        @each $num in $number {
+                            &:nth-child(#{$num}) {
+                                &.focus {
+                                    background-image: url('../../assets/hv_images/event/ic-stamp#{$num}-focus.png');
+                                }
+                            }
+                        }
+                        &.focus {
+                            background-image: url('../../assets/hv_images/event/ic-stamp-focus.png');
+                        }
+                    }
+                }
+            }
+            .page-nation {
+                display: flex;
+                margin: px(46) 0 px(38);
+                span {
+                    display: block;
+                    width: px(12);
+                    height: px(12);
+                    margin: 0 px(7);
+                    border-radius: 50%;
+                    background-color: $color-subtitle;
+                    &.active {
+                        background-color: $color-primary;
+                    }
+                }
+            }
+        }
+        //합산페이백이벤트
+        &.event-payback {
+            .layer-header {
+                margin-bottom: px(39);
+                padding-top: px(168);
+            }
+            .my-payback {
+                @include flex-items-center;
+                margin-bottom: px(108);
+                line-height: px(70);
+                border-bottom: px(1,1) solid $color-gray-dark;
+                font-size: 2.2rem;
+                color: $color-white;
+                span {
+                    margin-left: px(25);
+                    font: {
+                        family: $font-bold;
+                        size: 3rem;
+                    }
+                    color: $color-primary;
+                    em {
+                        font-size: 5.5rem;
+                    }
+                }
+            }
+            .progress-area {
+                position: relative;
+                margin-bottom: px(208);
+                .marker {
+                    @include background-default;
+                    position: absolute;
+                    top: px(-63);
+                    display: inline-block;
+                    width: px(31);
+                    height: px(55);
+                    margin-left: px(-15);
+                    background-image: url('../../assets/hv_images/event/ic-marker.png');
+                }
+                .payback-progress {
+                    @include progress-bar($width: px(1525), $height: px(98), $color1: $color-bg-component);
+                    .bar {
+                        left: 0; top: 0;
+                        border-radius: unset;
+                        background-color: unset;
+                        background-image: linear-gradient(to right, $color-accent 2%, $color-blue);
+                    }
+                }
+                .progress-bg {
+                    display: flex;
+                    justify-content: space-between;
+                    li {
+                        position: relative;
+                        width: px(1, 1);
+                        height: px(10);
+                        margin-top: px(22);
+                        background-color: $color-gray-dark;
+                        &.start, &.goal {
+                            height: px(18);
+                            span, i {
+                                @include vs;
+                                left: 50%;
+                                transform: translateX(-50%);
+                            }
+                            span {
+                                margin-top: px(24);
+                                font-size: 2.4rem;
+                                color: $color-accent;
+                            }
+                            .ic-stamp {
+                                @include background-default;
+                                display: block;
+                                width: px(111);
+                                height: px(110);
+                                margin-top: px(76);
+                            }
+                            &.goal1 .ic-stamp {
+                                background-image: url('../../assets/hv_images/event/ic-payback-stamp1.png');
+                            }
+                            &.goal2 .ic-stamp {
+                                background-image: url('../../assets/hv_images/event/ic-payback-stamp2.png');
+                            }
+                            &.goal3 .ic-stamp {
+                                background-image: url('../../assets/hv_images/event/ic-stamp10-focus.png');
+                            }
+                        }
+                        &:last-child span {
+                            color: $color-primary;
+                        }
+                    }
+                }
+            }
+        }
+        //버튼밑 쿠폰유효기간
+        .coupon-date {
+            margin-top: px(15);
+            font-size: 2.4rem;
+            color: $color-gray-dark;
+            text-align: center;
+        }
+    }
+}

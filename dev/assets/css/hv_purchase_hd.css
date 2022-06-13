@@ -1,0 +1,107 @@
+@charset "UTF-8";
+/* variables */
+/* functions */
+/* mixins */
+/* toast 임시 */
+.purchase-container .purchase-header h2 {
+  height: 40px;
+}
+
+.purchase-container .purchase-header .sub-text {
+  color: #a9a6ff;
+}
+
+.purchase-container .purchase-step .step2 .list-products .bubble-title {
+  justify-content: space-between;
+  width: 573px;
+  height: 41px;
+  padding: 0 12px 0 56px;
+  border-radius: 5px;
+  font-size: 2.6rem;
+  color: rgba(169, 169, 169, 0.9);
+  background-color: #121424;
+}
+
+.purchase-container .purchase-step .step2 .list-products .bubble-title span:nth-child(2) {
+  padding-right: 22px;
+}
+
+.purchase-container .purchase-step .step2 .list-products .bubble-title + ul {
+  margin-top: 0;
+}
+
+.purchase-container .purchase-step .step2 .list-products ul {
+  margin-top: 41px;
+}
+
+.purchase-container .purchase-step .step2 .list-products ul li:first-child .product {
+  margin-right: 120px;
+}
+
+.purchase-container .purchase-step .summary-product {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 245px;
+}
+
+.purchase-container .purchase-step .summary-product .poster-vertical {
+  margin: 0 auto 8px;
+}
+
+.purchase-container .purchase-step .summary-product .name {
+  height: auto;
+  line-height: unset;
+  margin: 0;
+}
+
+.purchase-container .purchase-step .summary-product .name em {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 2.8rem;
+}
+
+.purchase-container .purchase-step .add-exp {
+  padding-left: 33px;
+  margin: 13px 0 22px;
+  color: #777;
+}
+
+.purchase-container .purchase-step .add-exp p {
+  font-size: 2rem;
+  line-height: 16px;
+}
+
+.purchase-container .purchase-body .purchase-flatrate .list-products {
+  height: 100%;
+}
+
+.purchase-container .purchase-body .purchase-flatrate .list-products li.type-multiline {
+  height: 90px;
+}
+
+.purchase-container .purchase-body .purchase-flatrate .list-products li.type-multiline .price .min {
+  display: inline-block;
+}
+
+.purchase-container .purchase-body .purchase-flatrate .list-products li.type-multiline .price .min::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 1px;
+  background-color: #777;
+}
+
+.purchase-container .purchase-body .purchase-flatrate .list-products li.type-multiline .focus .min::after {
+  background-color: #eee;
+}

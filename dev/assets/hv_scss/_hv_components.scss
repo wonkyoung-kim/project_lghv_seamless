@@ -1,0 +1,344 @@
+@import '../scss/config';
+
+//가로 썸네일 및 포스터
+.poster-horizontal {
+    &::before {
+        background-image: url('../../assets/hv_images/common/img-default-thumbnail.png');
+    }
+    .poster-banner {
+        position: relative;
+        height: 100%;
+        border-radius: px($border-radius);
+        z-index: 1;
+        @include background-default;
+    }
+    .focus &, .selected & {
+        z-index: 2;
+        &::before {
+            @include focus-scale();
+            transform-origin: center;
+        }
+        &::after {
+            content: none;
+        }
+        .poster-banner {
+            @include focus-scale();
+            transform-origin: center;
+            &::before {
+                @include vs;
+                width: 100%;
+                height: 100%;
+                box-shadow: inset 0 0 px(60) 0 $color-bg-black-50;
+            }
+            &::after {
+                @include focus-border();
+            }
+        }
+    }
+}
+
+//세로 썸네일 및 포스터
+.poster-vertical {
+    &::before {
+        background-image: url('../../assets/hv_images/common/img-default-vertical.png');
+    }
+    .poster-banner {
+        position: relative;
+        height: 100%;
+        border-radius: px($border-radius);
+        z-index: 1;
+        @include background-default;
+    }
+    .poster-component {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        &::before {
+            @include vs;
+            @include background-default;
+            width: 100%;
+            height: 100%;
+            border-radius: px($border-radius);
+            background-size: 100% px(188);
+            background-position: bottom;
+            background-image: linear-gradient(to bottom, $color-bg-transparent, $color-pure-black);
+        }
+    }
+    .poster-tag {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        span {
+            width: px(44);
+            height: px(44);
+            line-height: px(44);
+            margin-right: px(5);
+            border-radius: 50%;
+            font: {
+                family: $font-bold;
+                size: 2rem;
+            }
+            text-align: center;
+            color: $color-white;
+            background-color: $color-black-70;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        .poster-tag-age {
+            //전체, 무료 텍스트 일 때
+            font-size: 1.8rem;
+            strong {
+                //19세, R등급 일 때
+                font-size: 2rem;
+                color: $color-danger;
+            }
+        }
+        .view-all {
+            width: inherit;
+            padding: 0 px(10);
+            border-radius: px($border-radius);
+            font: {
+                family: $font-regular;
+                size: 1.8rem;
+            }
+            strong {
+                font-family: $font-bold;
+            }
+        }
+        //top태그
+        .tag-top {
+            @include background-default;
+            position: absolute;
+            left: px(12);
+            top: 0;
+            width: px(56);
+            height: px(66);
+            border-radius: 0;
+            background-color: unset;
+            //top1~10 클래스에 맞는 이미지 넣은 함수
+            @for $i from 1 through 10 {
+                &.top#{$i} {
+                    background-image: url('../../assets/hv_images/common/ic-tag-top#{$i}.png');
+                }
+            }
+        }
+        //무료,이벤트 태그
+        .tag-event {
+            display: inline-block;
+            align-self: flex-end;
+            width: auto;
+            height: px(36);
+            margin-right: 0;
+            line-height: px(34);
+            padding: 0 px(16);
+            border-radius: px($border-radius);
+            font: {
+                family: $font-bold;
+                size: 1.8rem;
+            }
+            letter-spacing: px(-0.6);
+            background-color: $color-primary;
+            & + .tag-event {
+                margin-left: px(12);
+            }
+        }
+    }
+    .poster-time {
+        position: absolute;
+        bottom: px(12);
+        padding: 0 px(12);
+        width: 100%;
+        font-size: 2.6rem;
+        color: $color-tag-gray;
+        dt {
+            position: relative;
+            font-size: 2.6rem;
+            color: $color-tag-gray;
+            line-height: px(34);
+            &::before {
+                @include vs-ib;
+                width: px(24);
+                height: px(32);
+                margin-right: px(8);
+                vertical-align: bottom;
+                background-image: url('../images/common/ic-clock.png');
+                @include background-contain;
+            }
+            // 시청완료
+            &.watch-complete {
+                height: px(28);
+                &::before {
+                    @include vs-ib;
+                    width: px(20);
+                    height: px(28);
+                    margin-right: px(8);
+                    vertical-align: bottom;
+                    background-image: url('../images/vod/ic-series-playover.png');
+                    @include background-contain;
+                }
+            }
+        }
+        dd {
+            margin-top: px(8);
+            @include progress-bar($width: 100%);
+        }
+        +.poster-button {
+            margin-bottom: px(14);
+        }
+    }
+    .poster-button {
+        position: absolute;
+        bottom: px(5);
+        right: 0;
+        font: {
+            family: $font-bold;
+            size: 2.2rem;
+        }
+        line-height: px(48);
+        padding: 0 px(18);
+        border-radius: px($border-radius);
+        background-color: $color-bg-black-80;
+        z-index: 1;
+        display: none;
+        &.play {
+            &::before {
+                @include vs-ib;
+                width: px(14);
+                height: px(16);
+                margin-right: px(8);
+                background-image: url('../images/vod/ic-play-w.png');
+                @include background-contain;
+            }
+        }
+    }
+    .adult-r & {
+        .poster-component {
+            &::after {
+                @include vs;
+                width: 100%;
+                height: 100%;
+                border-radius: px($border-radius);
+                background-color: $color-button-dim;
+                z-index: 1;
+            }
+        }
+    }
+    .dimmed & {
+        &::after {
+            @include vs;
+            width: 100%;
+            height: 100%;
+            border-radius: px($border-radius);
+            background-color: $color-bg-black-80;
+            z-index: 1;
+        }
+    }
+    .focus &, .selected & {
+        z-index: 2;
+        &::before {
+            @include focus-scale();
+            transform-origin: center;
+        }
+        &::after {
+            content: none;
+        }
+        .poster-thumbnail, .poster-banner {
+            @include focus-scale();
+            transform-origin: center;
+            &::before {
+                @include vs;
+                width: 100%;
+                height: 100%;
+                box-shadow: inset 0 0 px(60) 0 $color-bg-black-50;
+            }
+            &::after {
+                @include focus-border();
+            }
+        }
+        .poster-component {
+            &::before {
+                @include focus-scale();
+                transform-origin: center;
+                opacity: 1;
+            }
+        }
+        .poster-tag {
+            opacity: 1;
+            top: 0;
+            right: px(4);
+        }
+        .poster-time {
+            left: px(-8);
+            bottom: px(6);
+            width: 106%;
+        }
+        .tag-top {
+            right: px(-4);
+            top: px(-11);
+            width: px(60);
+            height: px(70);
+        }
+        .tag-event {
+            margin-bottom: px(-11);
+        }
+        &.dimmed & {
+            &::after {
+                @include focus-scale;
+                transform-origin: center;
+            }
+        }
+        &.adult-r & {
+            .poster-component {
+                &::after {
+                    @include focus-scale;
+                    transform-origin: center;
+                }
+            }
+        }     
+    }
+    .selected & {
+        .poster-thumbnail {
+            &::after {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+//키고지-컬러키
+.keyguide {
+    .color-key {
+        align-items: center;
+        padding: 0 px(20);
+        &::after {
+            $colorkey-size: px(19);
+            @include vs-ib;
+            width: $colorkey-size;
+            height: $colorkey-size;
+            border-radius: calc(#{$colorkey-size} / 2);
+        }
+        &.blue {
+            &::after {
+                background-color: #3174ff;
+            }   
+        }
+        &.green {
+            &::after {
+                background-color:#98c21f;
+            }
+        }
+    }
+    span + span {
+        margin-left: px(30);
+    }
+}

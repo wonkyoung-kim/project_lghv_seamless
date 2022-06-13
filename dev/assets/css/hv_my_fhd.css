@@ -1,0 +1,319 @@
+@charset "UTF-8";
+/* variables */
+/* functions */
+/* mixins */
+/* toast 임시 */
+.my-wrap {
+  height: 1080px !important;
+}
+
+.my-wrap .noti-message {
+  font-size: 2rem !important;
+  letter-spacing: -1px;
+}
+
+.my-wrap.myhome .my-profile .profile-list li:first-child .information {
+  min-height: 0;
+}
+
+.my-wrap.myhome .mymenu li {
+  margin-right: 10px;
+}
+
+.my-wrap.myhome .mymenu li .ic-event::before {
+  background-image: url("../../assets/hv_images/my/ic-my-event.png");
+}
+
+.my-wrap.myhome .mymenu li .ic-coin::before {
+  background-image: url("../../assets/hv_images/my/ic-my-coin.png");
+}
+
+.my-wrap.myhome .mymenu li .ic-usb::before {
+  background-image: url("../../assets/hv_images/my/ic-my-usb.png");
+}
+
+.my-wrap.myhome .mymenu li p.ic-usb {
+  margin-bottom: 0;
+  font-size: 3.4rem;
+}
+
+.my-wrap.myhome .mymenu li p.ic-usb::before {
+  width: 48px;
+  height: 20px;
+}
+
+.my-wrap.myhome .mymenu li.focus .ic-event::before {
+  background-image: url("../../assets/hv_images/my/ic-my-event-focus.png");
+}
+
+.my-wrap.myhome .mymenu li.focus .ic-coin::before {
+  background-image: url("../../assets/hv_images/my/ic-my-coin-focus.png");
+}
+
+.my-wrap.myhome .mymenu li.focus .ic-usb::before {
+  background-image: url("../../assets/hv_images/my/ic-my-usb-focus.png");
+}
+
+.my-wrap.myhome .mymenu li.focus p.ic-usb {
+  font-size: 3.6rem;
+}
+
+.my-wrap.myhome .mymenu li.focus p.ic-usb::before {
+  width: 62px;
+  height: 26px;
+}
+
+.my-wrap.myhome .contents-list {
+  display: inline-flex;
+  width: auto;
+}
+
+.my-wrap.change-profileimage .guide-message {
+  margin-bottom: 70px;
+}
+
+.my-wrap.change-profileimage .layer-body.active .scroll {
+  opacity: 1;
+}
+
+.my-wrap.change-profileimage .list-container {
+  overflow: hidden;
+  height: 726px;
+  padding: 10px 179px 0;
+}
+
+.my-wrap.change-profilename .layer-header {
+  padding-top: 80px;
+  margin-bottom: 89px;
+}
+
+.my-wrap.change-profilename .layer-header .title {
+  line-height: 69px;
+}
+
+.my-wrap.change-profilename .layer-body .guide-message {
+  margin-bottom: 60px;
+}
+
+.my-wrap.change-profilename .search-input .icon, .my-wrap.change-profilename .search-list-area {
+  visibility: hidden;
+}
+
+.my-wrap.purchased .vod-func-area {
+  margin-bottom: 27px;
+}
+
+.my-wrap.purchased .contents-list li {
+  width: 264px;
+  height: 482px;
+}
+
+.my-wrap.purchased .contents-list li:nth-child(4n+1) {
+  margin-left: 42px;
+}
+
+.my-wrap.purchased .contents-list li:nth-child(6n+1) {
+  margin-left: 0;
+}
+
+.my-wrap.purchased .contents-list li.focus:nth-child(4n+1) .poster-vertical::before, .my-wrap.purchased .contents-list li.focus:nth-child(4n+1) .poster-thumbnail, .my-wrap.purchased .contents-list li.focus:nth-child(4n+1) .poster-component::before {
+  transform-origin: center;
+}
+
+.my-wrap.purchased .contents-list li.focus:nth-child(4n+1) .poster-time {
+  left: -8px;
+}
+
+.my-wrap.purchased .contents-list li.focus:nth-child(4n+1) .poster-component::after {
+  background-position-x: 110px;
+}
+
+.my-wrap.purchased .contents-list li.focus:nth-child(4n+1).adult-r .poster-vertical .poster-component::after {
+  transform-origin: left;
+}
+
+.my-wrap.purchased .contents-list li.focus:nth-child(6n) .meta-data {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.my-wrap.purchased .contents-list li.focus:nth-child(6n+1) .poster-vertical::before, .my-wrap.purchased .contents-list li.focus:nth-child(6n+1) .poster-thumbnail, .my-wrap.purchased .contents-list li.focus:nth-child(6n+1) .poster-component::before {
+  transform-origin: left;
+}
+
+.my-wrap.purchased .contents-list li.focus:nth-child(6n+1) .meta-data {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.my-wrap.purchased .contents-list li.focus:nth-child(6n+1) .poster-tag {
+  right: -4px;
+}
+
+.my-wrap.purchased .contents-list li.focus:nth-child(6n+1) .poster-time {
+  left: 0;
+}
+
+.my-wrap.purchased .contents-list li.focus .poster-tag {
+  top: 0;
+  right: 4px;
+}
+
+.my-wrap.purchased .contents-list li.focus .poster-time {
+  bottom: 0;
+}
+
+.my-wrap.purchased .contents-list li.focus .meta-data {
+  align-items: center;
+  text-align: center;
+}
+
+.my-wrap.purchased .contents-list li.focus.adult-r .poster-vertical .poster-component::after {
+  transform: scale(1.06);
+  transform-origin: center;
+}
+
+.my-wrap.purchased .contents-list.delete-list .poster-component::after {
+  background-position-x: 110px;
+}
+
+.my-wrap.purchased .poster-component::before {
+  opacity: 1;
+}
+
+.my-wrap.purchased .meta-data {
+  margin-top: 26px;
+}
+
+.my-wrap.purchased .my-body .scroll {
+  top: 140px;
+  height: 704px;
+}
+
+.my-wrap.coupon .list-wrap, .my-wrap.coin .list-wrap {
+  padding-top: 0;
+}
+
+.my-wrap.coupon .my-coin, .my-wrap.coin .my-coin, .my-wrap.coin .func-area .my-coin {
+  position: absolute;
+  right: 60px;
+  top: -44px;
+  margin-top: 28px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 3rem;
+  color: #eee;
+}
+
+.my-wrap.coupon .my-coin em, .my-wrap.coin .my-coin em, .my-wrap.coin .func-area .my-coin em {
+  color: #ef3484;
+}
+
+.my-wrap.coupon .noti-message, .my-wrap.coin .noti-message {
+  color: #777;
+  opacity: 1;
+}
+
+.my-wrap.coupon .buy-coupon, .my-wrap.coin .buy-coupon {
+  margin: 0 0 60px 60px;
+}
+
+.my-wrap.coupon .buy-coupon ul li .price, .my-wrap.coin .buy-coupon ul li .price {
+  margin-top: 71px;
+}
+
+.my-wrap.coupon .buy-coupon ul li .price em, .my-wrap.coin .buy-coupon ul li .price em {
+  line-height: 54px;
+  font-size: 4rem;
+}
+
+.my-wrap.coupon .buy-coupon ul li .price span, .my-wrap.coin .buy-coupon ul li .price span {
+  margin-top: 10px;
+}
+
+.my-wrap.coupon .buy-coupon ul li .total, .my-wrap.coin .buy-coupon ul li .total {
+  display: block;
+  padding: 27px 0 37px;
+  margin-bottom: 34px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.12);
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 5.5rem;
+  color: rgba(169, 169, 169, 0.9);
+  white-space: nowrap;
+  letter-spacing: -2.2px;
+}
+
+.my-wrap.coupon .buy-coupon ul li.focus .price em, .my-wrap.coin .buy-coupon ul li.focus .price em {
+  color: #fff;
+}
+
+.my-wrap.coupon .buy-coupon ul li.focus .price span, .my-wrap.coin .buy-coupon ul li.focus .price span {
+  color: #eee;
+}
+
+.my-wrap.coupon .buy-coupon ul li.focus .total, .my-wrap.coin .buy-coupon ul li.focus .total {
+  color: #ef3484;
+}
+
+.my-wrap.coupon .buy-coupon ul li.focus.more-25::before, .my-wrap.coin .buy-coupon ul li.focus.more-25::before {
+  background-image: url("../../assets/hv_images/my/tag-my-sale-25-focus.png");
+}
+
+.my-wrap.coupon .buy-coupon ul li.focus.more-33::before, .my-wrap.coin .buy-coupon ul li.focus.more-33::before {
+  background-image: url("../../assets/hv_images/my/tag-my-sale-33-focus.png");
+}
+
+.my-wrap.coupon .buy-coupon ul li.more-25::before, .my-wrap.coin .buy-coupon ul li.more-25::before {
+  background-image: url("../../assets/hv_images/my/tag-my-sale-25.png");
+}
+
+.my-wrap.coupon .buy-coupon ul li.more-33::before, .my-wrap.coin .buy-coupon ul li.more-33::before {
+  background-image: url("../../assets/hv_images/my/tag-my-sale-33.png");
+}
+
+.my-wrap.coupon .buy-coupon.one-charge ul li, .my-wrap.coin .buy-coupon.one-charge ul li {
+  width: 440px;
+  margin-left: 10px;
+}
+
+.my-wrap.subscription .list-wrap {
+  padding-top: 93px;
+}
+
+.my-wrap.coin .func-area {
+  margin: 44px 0 45px;
+}
+
+.my-wrap.coin .product-title .name, .my-wrap.coin .product-list li .name {
+  width: 791px;
+}
+
+.my-wrap.coin .product-title .purchase-date, .my-wrap.coin .product-list li .purchase-date {
+  width: 230px;
+}
+
+.my-wrap.coin .product-title .price, .my-wrap.coin .product-list li .price {
+  justify-content: flex-start;
+  padding-right: 0;
+  padding-left: 50px;
+  text-align: left;
+}
+
+.my-wrap.coin .product-title .payment-type, .my-wrap.coin .product-title .price, .my-wrap.coin .product-list li .payment-type, .my-wrap.coin .product-list li .price {
+  width: 240px;
+}
+
+.my-wrap.coin .product-title .purchase-date, .my-wrap.coin .product-title .payment-type, .my-wrap.coin .product-list li .purchase-date, .my-wrap.coin .product-list li .payment-type {
+  padding-left: 50px;
+}
+
+.my-wrap.coin .product-title .date, .my-wrap.coin .product-list li .period {
+  width: 240px;
+}
+
+.my-wrap.wishlist .poster-horizontal .poster-component::before, .my-wrap.recently-viewed .poster-horizontal .poster-component::before {
+  background-image: unset;
+}
+
+.my-wrap.watchlist .list-none, .my-wrap.coin .list-none {
+  width: auto;
+}

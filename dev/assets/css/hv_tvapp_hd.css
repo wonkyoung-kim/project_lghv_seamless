@@ -1,0 +1,147 @@
+@charset "UTF-8";
+/* variables */
+/* functions */
+/* mixins */
+/* toast 임시 */
+.tvapp-container {
+  height: 100%;
+  background-color: #080d19;
+}
+
+.tvapp-container .path {
+  justify-content: flex-end;
+  height: 70px;
+  margin-right: 40px;
+}
+
+.tvapp-container h3 {
+  position: relative;
+  margin-bottom: 52px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 4rem;
+  color: #eee;
+}
+
+.tvapp-container ul {
+  position: relative;
+  display: flex;
+}
+
+.tvapp-container li {
+  margin-right: 10px;
+}
+
+.tvapp-container li .poster-horizontal {
+  width: 208px;
+  height: 116px;
+}
+
+.tvapp-container li .poster-horizontal img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.tvapp-container li.focus .poster-horizontal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 0 6px #eee;
+  border-radius: 5px;
+}
+
+.tvapp-container li.focus .poster-horizontal::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  transform: scale(1.06);
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  box-shadow: inset 0 0 40px 0 rgba(8, 13, 25, 0.5);
+}
+
+.tvapp-container li.focus .poster-horizontal img {
+  transform: scale(1.06);
+}
+
+.tvapp-container li.focus:first-child .poster-horizontal::before, .tvapp-container li.focus:first-child .poster-horizontal::after, .tvapp-container li.focus:first-child .poster-horizontal img {
+  transform-origin: left;
+}
+
+.tvapp-container .tvapp {
+  padding: 34px 0 0 53px;
+}
+
+.tvapp-container .tvapp section {
+  margin-bottom: 71px;
+}
+
+.tvapp-container .tvapp section p {
+  position: absolute;
+  left: 0;
+  top: 218px;
+  display: flex;
+  font-size: 2.5rem;
+  color: #777;
+}
+
+.tvapp-container .tvapp section p::before {
+  display: inline-block;
+  content: '';
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 21px;
+  height: 21px;
+  margin-right: 6px;
+  background-image: url("../hv_images/tvapp/ic-tvapp-tip.png");
+}
+
+.tvapp-container .tvapp section.active::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: -35px;
+  left: -54px;
+  width: 1280px;
+  height: 280px;
+  background-color: #111424;
+}
+
+.tvapp-container .tvapp-hotkey {
+  padding: 58px 0 0 88px;
+}
+
+.tvapp-container .tvapp-hotkey .contents {
+  overflow: hidden;
+  height: 465px;
+  padding: 10px 0 0 10px;
+}
+
+.tvapp-container .tvapp-hotkey ul {
+  flex-wrap: wrap;
+}
+
+.tvapp-container .tvapp-hotkey li {
+  margin-bottom: 53px;
+}
+
+.tvapp-container .tvapp-hotkey li:nth-child(5n) {
+  margin-right: 0;
+}
+
+.tvapp-container .tvapp-footer {
+  position: fixed;
+  right: 33px;
+  bottom: 20px;
+}

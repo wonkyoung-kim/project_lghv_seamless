@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+</head>
+
+<body>
+
+    <div id="root">
+        <!-- react 구조 -->
+
+
+
+    <div class="setting-container">
+
+    <!-- 2Depth일때 노출 
+        <div class="category-back">
+            <i class="ic-arrow">이전으로</i>
+        </div>-->
+
+
+        <div class="setting-aside">
+
+            <h1 class="title">설정</h1>
+
+            <!--menu 1depth / 2depth-->
+            <nav class="setting-menu">
+            
+
+                <ul class="setting-gnb">
+                    <li>공지사항</li>
+                    <li>자녀 보호 설정</li>
+                    <li>채널 설정</li>
+                    <li>시스템 설정</li>
+                    <li>오디오 설정</li>
+                </ul> 
+
+
+            <!-- 2depth -->
+
+
+                <!-- 채널 설정
+                <ul class="parent-control-lnb">
+                    <li>비밀번호 변경</li>
+                    <li>시력보호 설정</li>
+                    <li>시청연령 제한</li>
+                    <li>시청시간 제한</li>
+                    <li>시청횟수 제한</li>
+                    <li>시청채널 제한</li>
+                    <li>성인 콘텐츠 제한</li>
+                </ul> 
+                -->
+
+                <!-- 채널 설정 
+                <ul class="channel-lnb">
+                    <li>선호채널 편집</li>
+                    <li>채널 숨김 편집</li>
+                    <li>채널 정보 표시</li>
+                    <li>시청각 보조 방송</li>
+                    <li>4채널 동시보기 화면</li>
+                </ul>-->
+
+                <!-- 시스템 설정 
+                <ul class="system-lnb">
+                    <li class="focus">알림 설정</li>
+                    <li>자동 전원 설정</li>
+                    <li>U+tv 음성 제어</li>
+                    <li>디스플레이 모드</li>
+                    <li>화면 영역 최대화</li>
+                    <li>시작 화면 설정</li>
+                    <li>전체 초기화</li>
+                    <li>소프트웨어 업데이트</li>
+                    <li>TV 전원동기화</li>
+                </ul>
+                -->
+            </nav>
+
+            
+
+
+        </div>
+
+
+    <!-- 우측 콘텐츠 영역 -->
+        <div class="setting-contents bottom-cover active">
+            <!--top-cover 밑으로 스크롤할 때 나타나는 그라데이션-->
+            <!--bottom-cover 위로 스크롤할 때 나타나는 그라데이션-->
+            <!--active 클래스가 들어가면 스크롤이 보임-->
+            
+
+            <!--페이지 path-->
+            <p class="path">
+                <span>홈</span>
+                <span>설정</span>
+                <span>오디오 설정</span>
+            </p>
+
+
+
+            <!-- 오디오 설정 -->
+            <div class="audio-setting  audio">
+
+                <h2 class="skip">오디오 설정</h2>
+
+
+
+                <!-- UHD1,2,3 -->
+                <div class="u_hd_3" >
+                    <!--class가 u_hd :  UHD_1,UHD_2에 해당하면 섹션만 보이고
+                        class가 u_hd_3 : UHD_3에 해당하는 섹션이 보임 (3는 DRC가 보임)
+                    -->
+
+                    <h2 class="skip">UHD 설정</h2>
+
+
+                    <div class="setting-list">
+
+                        <!-- 오디오 출력 설정 -->
+                        <section class="power-setting">
+
+                            <div class="title">
+                                <h3>오디오 출력 설정</h3>
+                                <span >
+                                    오디오를 출력할 기기를 선택할 수 있습니다. 기본 설정은 ‘셋탑 볼륨으로 조절(2ch)’ 입니다.
+                                </span>
+                            </div>
+
+
+                            <div>
+                                <ul class="setting-items">
+                                    <li class="radio-button size40 focus">
+                                        <input type="radio" name="" value="" class="input-radio" checked>
+                                        <label>셋탑 볼륨으로 조절<sapn class="audio-channel">(2ch)</sapn></label>
+                                    </li>
+                                    <li class="radio-button size60">
+                                        <input type="radio" name="" value="" class="input-radio" >
+                                        <label>TV 및 외부기기 볼륨으로 조절<span class="audio-channel">(5.1ch)</span></label>
+                                    </li>       
+                                </ul>
+
+                                <p class="image-guide tv">
+                                    <!-- 클래스에 tv가 있으면 전면 이미지 출력 -->
+                                    <!-- 클래스에 out-device가 있으면 측면 이미지 출력 -->
+                                    <span class="tv-audio" style="background-image: url(../../assets/images/setting/img-setting-audio-tv.png)"></span>
+                                    <span class="out-audio" style="background-image: url(../../assets/images/setting/img-setting-audio-etc.png)"></span>
+                                </p>
+                            </div>
+
+                            <ul class="key-guide">
+                                <li>※ U+tv 리모컨 하나로 셋톱박스와 TV의 음량을 자유롭게 조절할 수 있습니다.</li>
+                                <li>※ 셋톱박스 음량 조절 : U+tv 리모컨 전면 음량 버튼 사용</li>
+                                <li>※ TV 음량 조절 : U+tv 리모컨 왼쪽 측면 음량 버튼 사용</li>
+                                <!-- ※ 더 풍부한 음향(5.1ch)을 즐기기 위해 별도 오디오 기기를 연결한 경우 선택 할 수 있습니다.
+                                ※ U+tv 리모컨 전면의 음량 버튼은 사 용할 수 없습니다 -->
+                                <!-- 주석된 텍스트는 외부기기 선택시 나오는 텍스트입니다 -->
+                            </ul>
+
+
+                        </section>
+                        <!-- //오디오 출력 설정 -->
+
+                        <!--효과음 / 배경음악 설정-->
+                        <section class="sound-setting">
+                            
+                            <div class="title">
+                                <h3>효과음/배경음악 설정</h3>
+                                <span>
+                                    콘텐츠에 맞는 효과를 제공합니다.
+                                </span>
+                            </div>
+
+                            <ul class="setting-items">
+                                <li class="radio-button ">
+                                    <input type="radio" name="" value="" class="input-radio" >
+                                    <label>꺼짐</label>
+                                </li>
+                                <li class="radio-button">
+                                    <input type="radio" name="" value="" class="input-radio selected" checked >
+                                    <label>켜짐</label>
+                                </li>       
+                            </ul>
+
+                        </section>
+                        <!-- //효과음 / 배경음악 설정-->
+
+                        <!-- DRC 설정-->
+                        <section class="drc-setting">
+                            
+                            <div class="title">
+                                <h3>DRC 설정</h3>
+                                <span>
+                                    소리가 갑작스럽게 커지는 것을 방지합니다.
+                                </span>
+                            </div>
+
+                            <ul class="setting-items">
+                                <li class="radio-button focus">
+                                    <input type="radio" name="" value="" class="input-radio" checked >
+                                    <label>꺼짐</label>
+                                </li>
+                                <li class="radio-button">
+                                    <input type="radio" name="" value="" class="input-radio" >
+                                    <label>켜짐</label>
+                                </li>       
+                            </ul>
+
+                        </section>
+                        
+                        <!-- //DRC 설정-->
+
+
+                    </div>
+
+
+                </div>
+                <!-- //UHD1,2,3 -->
+
+
+
+
+                <!-- 사운드 바 -->
+                <div class="soundbar new-soundbar" >
+                    <!--soundbar만 단독으로 있으면 돌비서비스가 안나오며, 맞춤사운드 설정에서 자동설정이 없고 스마트로 변경되어 나옵니다. -->
+                    <!--new-soundbar가 있으면 돌비서비스가 나오며, 맞춤사운드 설정에서 스마트가 없고 자동설정으로 변경되어 나옵니다. -->
+                    <h2 class="skip">사운드바 설정</h2>
+
+                    <div class="setting-list">
+
+                        <!-- 오디오 출력 설정 -->
+                        <section class="power-setting">
+
+                            <div class="title">
+                                <h3>오디오 출력 설정</h3>
+                                <span>
+                                    오디오를 출력할 기기를 선택할 수 있습니다. 기본 설정은 ‘U+tv Soundbar’ 입니다.
+                                </span>
+                            </div>
+
+
+                            <div>
+                                <ul class="setting-items">
+                                    <li class="radio-button size55 focus">
+                                        <input type="radio" name="" value="" class="input-radio" checked >
+                                        <label>U+tv Soundbar에서 오디오 출력</label>
+                                    </li>
+                                    <li class="radio-button size41">
+                                        <input type="radio" name="" value="" class="input-radio" >
+                                        <label>외부기기에서 오디오 출력</label>
+                                    </li>       
+                                </ul>
+
+                                <p class="image-guide tv">
+                                    <!-- 클래스에 tv가 있으면 전면 이미지 출력 -->
+                                    <!-- 클래스에 out가 있으면 측면 이미지 출력 -->
+                                    <span class="tv-audio" style="background-image: url(../../assets/images/setting/img-setting-audio-tv.png)"></span>
+                                    <span class="out-audio" style="background-image: url(../../assets/images/setting/img-setting-audio-etc.png)"></span>
+                                </p>
+                            </div>
+
+                            <ul class="key-guide">
+                                <li>※ 사운드바를 통해 음향을 즐길 수 있습니다.</li>
+                                <li>※ U+tv 리모컨 측면의 음향 버튼은 사용할 수 없습니다.</li>
+                                <!-- ※ 더 풍부한 음향(5.1ch)을 즐 기기 위해 별도 오디오 기기 를 연결한 경우 선택할 수 있 습니다.
+                                ※ U+tv 리모컨 전면의 음량 버튼은 사용할 수 없습니다. -->
+                            </ul>
+
+
+                        </section>
+                        <!-- //오디오 출력 설정 -->
+
+                        <!--돌비 설정-->
+                        <section class="dolby-setting on">
+                            <!--신규사운드바 설정시 돌비기능이 가능하면 on, 안되면 off-->
+                            <div class="title">
+                                <h3>돌비 애트모스 기능 설정</h3>
+                                <span>
+                                    화면 속 사물의 움직임에 따라 소리도 사용자의 앞이나 뒤에서 들려오는 것처럼 느끼게 해주는 음향 기술입니다.
+                                </span>
+                            </div>
+
+                            <ul class="setting-items">
+                                <li class="radio-button focus">
+                                    <input type="radio" name="" value="" class="input-radio" checked >
+                                    <label>꺼짐</label>
+                                </li>
+                                <li class="radio-button">
+                                    <input type="radio" name="" value="" class="input-radio" >
+                                    <label>켜짐</label>
+                                </li>       
+                            </ul>
+
+
+                            <ul class="key-guide">
+                                <li>※ 기능을 켜면 돌비 애트모스 전용 콘텐츠가 아니더라도 보다 입체감있는 사운드를 감상할 수 있습니다.</li>
+                                <li>※ U+tv 사운드바를 통해 소리를 들을 때만 기능이 적용됩니다.</li>
+                            </ul>
+                        </section>
+                        <!--돌비 설정-->
+
+
+                        <!--효과음 / 배경음악 설정-->
+                        <section class="sound-setting">
+                            
+                            <div class="title">
+                                <h3>효과음/배경음악 설정</h3>
+                                <span>
+                                    콘텐츠에 맞는 효과를 제공합니다.
+                                </span>
+                            </div>
+
+                            <ul class="setting-items">
+                                <li class="radio-button focus">
+                                    <input type="radio" name="" value="" class="input-radio" checked >
+                                    <label>꺼짐</label>
+                                </li>
+                                <li class="radio-button">
+                                    <input type="radio" name="" value="" class="input-radio" >
+                                    <label>켜짐</label>
+                                </li>       
+                            </ul>
+
+                        </section>
+                        <!-- //효과음 / 배경음악 설정-->
+
+
+                        <!-- DRC 설정-->
+                        <section class="drc-setting">
+                            
+                            <div class="title">
+                                <h3>DRC 설정</h3>
+                                <span>
+                                    소리가 갑작스럽게 커지는 것을 방지합니다.
+                                </span>
+                            </div>
+
+                            <ul class="setting-items">
+                                <li class="radio-button focus">
+                                    <input type="radio" name="" value="" class="input-radio" checked >
+                                    <label>꺼짐</label>
+                                </li>
+                                <li class="radio-button">
+                                    <input type="radio" name="" value="" class="input-radio" >
+                                    <label>켜짐</label>
+                                </li>       
+                            </ul>
+
+                        </section>
+                        <!-- //DRC 설정-->
+
+                        <section class="custom-setting">
+                            
+                            <div class="title">
+                                <h3>맞춤 사운드 설정</h3>
+                                <span>
+                                    콘텐츠에 맞는 효과를 제공합니다.
+                                </span>
+                            </div>
+
+                            <div class="custom-option">
+                                <ul class="setting-items">
+                                    <li class="radio-button focus">
+                                        <input type="radio" name="" value="" class="input-radio" checked >
+                                        <label>표준</label>
+                                    </li>
+                                    <li class="radio-button size15">
+                                        <input type="radio" name="" value="" class="input-radio"  >
+                                        <label>자동설정</label>
+                                    </li>
+                                    <li class="radio-button size11">
+                                        <input type="radio" name="" value="" class="input-radio"  >
+                                        <label>스마트</label>
+                                    </li>              
+                                    <li class="radio-button size11">
+                                        <input type="radio" name="" value="" class="input-radio"  >
+                                        <label>보이스</label>
+                                    </li>  
+                                    <li class="radio-button">
+                                        <input type="radio" name="" value="" class="input-radio "  >
+                                        <label>영화</label>
+                                    </li>  
+                                    <li class="radio-button">
+                                        <input type="radio" name="" value="" class="input-radio" >
+                                        <label>음악</label>
+                                    </li>  
+                                    <li class="radio-button size11">
+                                        <input type="radio" name="" value="" class="input-radio" >
+                                        <label>스포츠</label>
+                                    </li>
+                                    <li class="radio-button">
+                                        <input type="radio" name="" value="" class="input-radio" >
+                                        <label>야간</label>
+                                    </li>    
+                                </ul>
+                            </div>
+
+                        </section>
+
+
+                    </div>
+                    
+                </div>
+                <!--// 사운드 바 -->
+
+            </div>
+            <!-- //오디오 설정 -->
+
+
+
+            <div class="scroll">
+                <span style="height:50%"></span>
+            </div>
+
+
+        </div>
+        <!-- //우측 콘텐츠 영역  -->
+
+
+    </div>
+            
+
+
+
+
+
+    </div>
+    <!-- //root -->
+
+</body>
+
+</html>

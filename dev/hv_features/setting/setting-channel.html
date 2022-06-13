@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/hv_index.css" />
+</head>
+
+<body>
+
+    <div id="root">
+        <!-- react 구조 -->
+        <div class="setting-container active-gnb">
+            <!-- active-gnb클래스를 넣으면 gnb영역으로 넓어짐 -->
+            <!-- 1Depth일때 노출 -->
+            <div class="setting-aside">
+                <h2>설정</h2>
+                <div class="gnb">
+                    <div class="gnb-main">
+                        <ul>
+                            <li>공지사항</li>
+                            <li>자녀 보호 설정</li>
+                            <li class="selected">채널 설정</li>
+                            <li>시스템 설정</li>
+                        </ul>
+                    </div>
+                    <!-- gnb-dep2 -->
+                    <div class="gnb-sub">
+                        <ul class="gnb-list">
+                            <li class="selected">
+                                <div class="marquee-text marquee-play">
+                                    <p class="marquee-child">선호채널 편집</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="marquee-text marquee-play">
+                                    <p class="marquee-child">채널 숨김 편집</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="marquee-text marquee-play">
+                                    <p class="marquee-child">채널 정보 표시</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="marquee-text marquee-play">
+                                    <p class="marquee-child">시청각 보조 방송</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="marquee-text marquee-play">
+                                    <p class="marquee-child">화면 비율 설정</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="marquee-text marquee-play">
+                                    <p class="marquee-child">기본채널 자동이동 설정</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="marquee-text marquee-play">
+                                    <p class="marquee-child">퀵메뉴 설정</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="marquee-text marquee-play">
+                                    <p class="marquee-child">맞춤형 광고 설정</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 우측 콘텐츠 영역 -->
+            <div class="setting-contents bottom-cover active">
+                <!-- 상단 그라데이션 top-cover/ 하단 그라데이션 bottom-cover -->
+                <!--active 클래스가 들어가면 스크롤이 보임-->
+                
+                <!--페이지 path-->
+                <p class="path">
+                    <span>홈</span>
+                    <span>설정</span>
+                    <span>채널 설정</span>
+                </p>
+                <!-- 선호채널,채널숨김 편집  -->
+                <div class="channel-hide">
+                    <h2 class="skip">선호 채널 편집</h2>
+                    <!-- 설정 항목 -->
+                    <div class="setting-list">
+                        <section class="channel-select">
+                            <div class="title">
+                                <h3>선호채널 선택</h3>
+                                <span>
+                                    선택한 채널은 선호채널로 등록됩니다.
+                                </span>
+                            </div>             
+                            <div class="button-area">
+                                <button class="button size22">
+                                    <p class="text">채널 편집</p>
+                                </button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <!-- //선호채널,채널숨김 편집 -->
+
+                <!-- 채널정보 표시 -->
+                <div class="channel-info">
+                    <h2 class="skip">채널 정보 표시 설정</h2>
+                    <!-- 설정 항목 -->
+                    <div class="setting-list">
+                        <section>
+                            <div class="title">
+                                <h3>채널 정보 표시 설정</h3>
+                                <span>
+                                    채널 탐색 시 채널 정보가 표시됩니다
+                                </span>
+                            </div>
+                            <ul class="setting-items">
+                                <li class="radio-button ">
+                                    <input type="radio" name="" value="" class="input-radio" >
+                                    <label>없음</label>
+                                </li>
+                                <li class="radio-button">
+                                    <input type="radio" name="" value="" class="input-radio" >
+                                    <label>3초</label>
+                                </li>
+                                <li class="radio-button focus">
+                                    <input type="radio" name="" value="" class="input-radio" checked>
+                                    <label>5초</label>
+                                </li>
+                                <li class="radio-button size7">
+                                    <input type="radio" name="" value="" class="input-radio" >
+                                    <label>10초</label>
+                                </li>
+                                <li class="radio-button">
+                                    <input type="radio" name="" value="" class="input-radio" >
+                                    <label>15초</label>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>           
+                </div>
+                <!--// 채널정보 표시 -->
+
+                <!-- 시청각 보조 방송 -->
+                <div class="channel-assist">
+                    <h2 class="skip">시청각 보조 방송</h2>
+                    <div class="setting-list">
+                        <section>
+                            <div class="title">
+                                <h3>실시간 자막 방송</h3>
+                                <span>
+                                    청각 장애 보조를 위하여, 음성에 대한 자막을 제공합니다.
+                                </span>
+                            </div>
+                            <ul class="setting-items">
+                                <li class="radio-button focus">
+                                    <input type="radio" name="" value="" class="input-radio" >
+                                    <label>꺼짐</label>
+                                </li>
+                                <li class="radio-button">
+                                    <input type="radio" name="" value="" class="input-radio" >
+                                    <label>켜짐</label>
+                                </li>
+                            </ul>
+                        </section>
+                        <section>
+                            <div class="title">
+                                <h3>실시간 해설 방송</h3>
+                                <span>
+                                    시각 장애 보조를 위하여, 화면에 대한 음성을 제공합니다.
+                                </span>
+                            </div>
+                            <ul class="setting-items">
+                                <li class="radio-button">
+                                    <input type="radio" name="" value="" class="input-radio selected" checked  >
+                                    <label>꺼짐</label>
+                                </li>
+                                <li class="radio-button">
+                                    <input type="radio" name="" value="" class="input-radio" >
+                                    <label>켜짐</label>
+                                </li>
+                            </ul>
+                        </section>         
+                    </div>                   
+                </div>
+                <!--// 시청각 보조 방송 -->
+
+                <!-- 화면 비율 설정 -->
+                <div class="channel-screen">
+                    <h2 class="skip">화면 비율 설정</h2>
+                    <div class="setting-list">
+                        <section>
+                            <div class="title">
+                                <h3>화면 비율 설정</h3>
+                                <span>
+                                    채널 시청 시 화면 비율을 설정할 수 있습니다.
+                                </span>
+                            </div>
+                            <div class="screen-select">
+                                <ul class="setting-items">
+                                    <li class="radio-button size15 focus">
+                                        <input type="radio" name="" value="" class="input-radio" >
+                                        <label>16:9 표준</label>
+                                    </li>
+                                    <li class="radio-button size19">
+                                        <input type="radio" name="" value="" class="input-radio" >
+                                        <label>16:9 와이드</label>
+                                    </li>
+                                    <li class="radio-button">
+                                        <input type="radio" name="" value="" class="input-radio" >
+                                        <label>16:9 줌</label>
+                                    </li>
+                                    <li class="radio-button size21">
+                                        <input type="radio" name="" value="" class="input-radio" >
+                                        <label>4:3 중앙보기</label>
+                                    </li>
+                                    <li class="radio-button size21">
+                                        <input type="radio" name="" value="" class="input-radio" >
+                                        <label>4:3 축소보기</label>
+                                    </li>
+                                    <li class="radio-button">
+                                        <input type="radio" name="" value="" class="input-radio" >
+                                        <label>4:3 전체보기</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section>
+                            <!-- 위 setting-items 순서순으로 첫번째 16:9표준에 focus시 mode1클래스 추가(mode6까지 있음)-->
+                            <div class="screen-mode mode1">
+                                <div class="screen">
+                                    <div class="broadcasting">
+                                        <div class="img"></div>
+                                    </div>
+                                    <div class="hd">
+                                        <div class="img"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>                    
+                </div>
+                <!--// 화면 비율 설정 -->
+
+                <!-- 자동 이동 시간 설정 -->
+                <div class="channel-movement">
+                    <h2 class="skip">자동 이동 시간 설정</h2>
+                    <!-- 설정 항목 -->
+                    <div class="setting-list">
+                        <section>
+                            <div class="title">
+                                <h3>자동 이동 시간 설정</h3>
+                                <span>
+                                    리모컨 조작이 없으면 자동으로 기본채널로 이동합니다.
+                                </span>
+                            </div>
+                            <ul class="setting-items">
+                                <li class="radio-button">
+                                    <input type="radio" name="" value="" class="input-radio" >
+                                    <label>꺼짐</label>
+                                </li>
+                                <li class="radio-button size8">
+                                    <input type="radio" name="" value="" class="input-radio" >
+                                    <label>1시간</label>
+                                </li>
+                                <li class="radio-button size9_5">
+                                    <input type="radio" name="" value="" class="input-radio" checked>
+                                    <label>3시간</label>
+                                </li>
+                                <li class="radio-button size9_5 focus">
+                                    <input type="radio" name="" value="" class="input-radio" >
+                                    <label>5시간</label>
+                                </li>
+                                <li class="radio-button size9_5">
+                                    <input type="radio" name="" value="" class="input-radio" >
+                                    <label>7시간</label>
+                                </li>
+                                <li class="radio-button">
+                                    <input type="radio" name="" value="" class="input-radio" >
+                                    <label>10시간</label>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>              
+                </div>
+                <!--// 자동 이동 시간 설정 -->
+
+                <!-- 퀵메뉴 설정 -->
+                <div class="channel-movement">
+                    <h2 class="skip">퀵메뉴 설정</h2>
+                    <!-- 설정 항목 -->
+                    <div class="setting-list">
+                        <section>
+                            <div class="title">
+                                <h3>왼쪽 퀵 메뉴 설정</h3>
+                                <span>
+                                    왼쪽 퀵 메뉴에서 표시할 채널 목록을 설정 합니다.
+                                </span>
+                            </div>
+                            <ul class="setting-items">
+                                <li class="radio-button size14_5 focus">
+                                    <input type="radio" name="" value="" class="input-radio" >
+                                    <label>전체채널</label>
+                                </li>
+                                <li class="radio-button size14_5">
+                                    <input type="radio" name="" value="" class="input-radio" >
+                                    <label>인기채널</label>
+                                </li>
+                                <li class="radio-button">
+                                    <input type="radio" name="" value="" class="input-radio" >
+                                    <label>선호채널</label>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>                 
+                </div>
+                <!--// 퀵메뉴 설정 -->
+
+                <!-- 맞춤형 광고 설정 -->
+                <div class="channel-movement">
+                    <h2 class="skip">맞춤형 광고 설정</h2>
+                    <!-- 설정 항목 -->
+                    <div class="setting-list">
+                        <section>
+                            <div class="title">
+                                <h3>맞춤형 광고 이용</h3>
+                                <span>
+                                    TV 시청 이용 내역에 따라 관심사에 맞는 맞춤형 광고를 제공합니다.
+                                </span>
+                            </div>
+                            <div class="button-area">
+                                <button class="button">
+                                <p class="text">이용약관</p>
+                                </button>
+                                <button class="button">
+                                    <p class="text">맞춤형 광고 새로받기</p>
+                                </button>
+                            </div>
+                        </section>
+                        <section>
+                            <div class="title">
+                                <h3>맞춤형 광고 설정</h3>
+                                <span>
+                                    미 설정 시에는 일반 광고가 제공됩니다.
+                                </span>
+                            </div>
+                            <ul class="setting-items">
+                                <li class="radio-button">
+                                    <input type="radio" name="" value="" class="input-radio" >
+                                    <label>꺼짐</label>
+                                </li>
+                                <li class="radio-button focus">
+                                    <input type="radio" name="" value="" class="input-radio" >
+                                    <label>켜짐</label>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>                    
+                </div>
+                <!--// 맞춤형 광고 설정 -->
+
+                <!-- 스크롤 -->
+                <div class="scroll">
+                    <span style="height:50%"></span>
+                </div>
+
+            </div>
+            <!-- //우측 콘텐츠 영역  -->
+        </div>
+        <!-- //설정 -->
+            
+    </div>
+    <!-- //root -->
+
+</body>
+
+</html>

@@ -1,0 +1,2129 @@
+@import 'config';
+
+//url
+$url-images: "../images/my/";
+$url-images-common: "../images/common/";
+$poster-width: px(418);
+
+//아이콘 기본
+@mixin ic-common {
+    @include vs-ib;
+    width: px(36);
+    height: px(36);
+    margin-right: px(8);
+    vertical-align: middle;
+    @include background-contain;
+}
+
+//리스트 목록이 없을 때
+@mixin list-none {
+    position: absolute;
+    top: px(588);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: px(450);
+    height: px(42);
+    text-align: center;
+    font-size: 3.3rem;
+    color: rgba(255, 255, 255, 0.3);
+    &::before {
+        @include vs;
+        top: px(-170);
+        left: px(150);
+        width: px(120);
+        height: px(120);
+        background-image: url($url-images + 'ic-my-default-list.png');
+        @include background-contain;
+    }
+}
+
+// 화살표 아이콘
+@mixin charge_arrow {
+    &::after {
+        @include vs;
+        top: px(72);
+        left: unset;
+        right: px(-40);
+        width: px(24);
+        height: px(24);
+        border-top: px(6) solid $color-my-arrow;
+        border-right: px(6) solid $color-my-arrow;
+        transform: rotate(45deg);
+    }
+}
+
+// 썸네일 위에 올라가는 아이콘
+@mixin thumnail-position($width, $height) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: px($width);
+    height: px($height);
+}
+
+// 포커스 됐을 때
+@mixin focus-border-50 {
+    @include focus-border;
+    border-radius: 50%;
+}
+// 공통 레이아웃
+.my-wrap {
+    width: px(1920);
+    height: 100%;
+    background-color: $color-black;
+    .my-header {
+        display: flex;
+        justify-content: space-between;
+        height: px(192);
+        padding: px(64) px(60);
+        background-color: $color-bg-black;
+        .my-title {
+            font: {
+                family: $font-bold;
+                size: 4.8rem;
+            }
+            color: $color-white;
+        }
+        .path {
+            z-index: 99;
+        }
+    }
+    .my-body {
+        position: relative;
+        overflow: hidden;
+        height: px(888);
+        background-color: $color-bg-sub;
+        .scroll {
+            @include scroll($top: px(44), $right: px(24), $width: px(8), $height: px(800), $color1: $color-bg-transparent, $color2: $color-white-divider);
+            opacity: 1;
+        }
+        &::before {
+            @include vs;
+            display: none;
+            width: 100%;
+            height: px(160);
+            background-image: linear-gradient(to bottom, $color-bg-sub 0%, $color-bg-transparent 85%);
+            z-index: 10;
+        }
+        &::after {
+            //전체 화면 맨 밑에 있는 dim 구역
+            @include vs;
+            top: unset;
+            bottom: 0;
+            display: none;
+            width: 100%;
+            height: px(160);
+            background-image: linear-gradient(to bottom, $color-bg-transparent 0%, $color-bg-sub 85%);
+            z-index: 1;
+        }
+        &.top-cover {
+            &::before {
+                display: block;
+            }
+        }
+        &.bottom-cover {
+            &::after {
+                display: block;
+            }
+        }
+    }
+    .list-wrap {
+        position: relative;
+        height: 100%;
+        padding-top: px(44);
+    }
+    .func-area {
+        @include flex-items-center;
+        justify-content: space-between;
+        height: px(98);
+        margin-bottom: px(45);
+        padding: 0 px(60);
+    }
+    .button-area {
+        height: px(98);
+        .button {
+            @include button-primary(px(86), px(180), 3.0rem);
+            &.sel-delete {
+                .text {
+                    min-width: px(285);
+                }
+            }
+            &.del-wish {
+                .text {
+                    min-width: px(149);
+                }
+            }
+            &.view-setting {
+                .text {
+                    min-width: px(198);
+                }
+            }
+            &.re-sel {
+                .text {
+                    min-width: px(270);
+                }
+            }
+            &.cancel, &.coupon-func, &.save, &.user-number {
+                .text {
+                    min-width: px(165);
+                }
+            }
+            &.price-check {
+                .text {
+                    min-width: px(315);
+                }
+                &.focus {
+                    .ic-bill {
+                        &::before {
+                            background-image: url('../images/my/ic-my-bill-focus.png');
+                        }
+                    }
+                }
+            }
+            .text {
+                &.ic-delete, &.ic-adulte, &.ic-check, &.ic-favorite, &.ic-bill {
+                    &::before {
+                        @include ic-common;
+                        margin-bottom: px(4);
+                    }
+                }
+            }
+        }
+    }
+    .noti-message {
+        //메세지 구역 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: px(102);
+        line-height: 1.42;
+        text-align: right;
+        font-size: 2.4rem;
+        color: $color-subtitle;
+        opacity: 0.5;
+    }
+    //VOD 탭
+    .vod-func-area {
+        display: flex;
+        margin-bottom: px(33);
+        height: px(96);
+        line-height: px(96);
+        background-color: $color-bg-black;
+        p {
+            position: relative;
+            width: px(960);
+            height: px(96);
+            border: {
+                top-left-radius: px(20);
+                top-right-radius: px(20);
+            }
+            font: {
+                family: $font-bold;
+                size: 3.6rem;
+            }
+            color: $color-white-30;
+            text-align: center;
+            background-color: $color-bg-black;
+            &.dimmed {
+                color: $color-white;
+                opacity: 0.3;
+                background-color: $color-bg-black;
+            }
+            &.selected {
+                color: $color-primary;
+                background-color: $color-bg-sub;
+            }
+            &.focus {
+                font-size: 4rem;
+                color: $color-white;
+                &::after {
+                    @include focus-border;
+                    box-shadow: none;
+                    border: px(6) solid $color-white;
+                    border: {
+                        top-left-radius: px(20);
+                        top-right-radius: px(20);
+                        bottom-right-radius: px(0);
+                        bottom-left-radius: px(0);
+                    }
+                }
+            }
+        }
+    }
+    .contents-list {
+        //ul 공통 레이아웃
+        display: flex;
+        flex-wrap: wrap;
+        padding: px(10) px(60) 0 px(60);
+        li {
+            height: px(337);
+            margin: {
+                left: px(42);
+                bottom: px(32);
+            }
+            &:nth-child(4n + 1) {
+                margin-left: 0;
+            }
+        }
+        .poster-horizontal {
+            width: $poster-width;
+            height: px(236);
+        }
+        .meta-data {
+            position: relative;
+            opacity: 0;
+            .sub-text {
+                opacity: 0;
+            }
+        }
+        .focus {
+            z-index: 2;
+            .poster-tag {
+                top: px(8);
+                right: px(0);
+                opacity: 1;
+            }
+            &:nth-child(4n + 1) {
+                .poster-horizontal::before, .poster-horizontal::after, .poster-remaining, .poster-thumbnail, .poster-component::before, .poster-component::after {
+                    transform-origin: left;
+                }
+                .poster-tag {
+                    right: px(-12);
+                }
+                .poster-time {
+                    left: 0;
+                }
+                .poster-component::after {
+                    background-position-x: px(178);
+                }
+            }
+            .meta-data {
+                opacity: 1;
+                .sub-text {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .meta-data {
+        @include flex-items-center;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: px(20);
+        .title {
+            width: $poster-width;
+            font-size: 3rem;
+            color: $color-subtitle;
+            line-height: px(40);
+            @include ellipsis();
+        }
+        .sub-text {
+            width: $poster-width;
+            margin-top: px(8);
+            font-size: 2.6rem;
+            color: $color-subtitle;
+            @include ellipsis();
+        }
+        //movie콘텐츠의 경우 나오는 별점
+        .rating-star-wrap {
+            @include flex-items-center;
+            height: px(40);
+            .rating-star {
+                @include rating-star;
+                margin-top: px(0, -2);
+            }
+        }
+        span + .rating-star-wrap {
+            margin-left: px(12);
+            &::before {
+                @include vs-ib;
+                content: '|';
+                margin-right: px(12);
+                font: {
+                    family: $font-regular;
+                    size: 2.6rem;
+                }
+                color: $color-subtitle;
+            }
+        }
+    }
+    //리스트 목록 삭제
+    .delete-list {
+        padding: px(10) px(60) 0;
+        .poster-component {
+            &::before {
+                @include vs;
+                background-image: unset;
+                background-color: $color-black-50;
+                opacity: 1;
+            }
+            &::after {
+                //체크 이미지
+                @include vs;
+                width: 100%;
+                height: 100%;
+                background-image: url($url-images + 'ic-check-thumbnail.png');
+                @include background-contain;
+                background-size: px(60) px(40);
+                z-index: 1;
+            }
+        }
+        .dimmed {
+            // U+모바일에서 구매할 시 딤처리
+            .poster-component {
+                &::after {
+                    //딤처리 될 경우 체크 이미지 없음
+                    content: none;
+                }
+            }
+            .check-number {
+                // 딤처리 될 경우 연속보기 숫자 없음
+                display: none;
+            }
+        }
+        .checked {
+            .poster-component {
+                //체크가 된 이미지
+                &::after {
+                    background-image: url($url-images + 'ic-check-thumbnail-selected.png');
+                }
+            }
+        }
+    }
+    // 리스트 목록이 없을 때
+    .list-none, .list-none-favorite, .list-none-recently {
+        @include list-none;
+    }
+    .list-none-favorite {
+        &::before {
+            background-image: url($url-images + 'ic-my-default-favorite.png');
+            @include background-contain
+        }
+    }
+    .list-none-recently {
+        &::before {
+            background-image: url($url-images + 'ic-my-default-recently.png');
+            @include background-contain
+        }
+    }
+    // 아이콘 영역 
+    .ic-bill {
+        &::before {
+            background-image: url($url-images + 'ic-my-bill.png');
+        }
+    }
+    .ic-list {
+        &::before {
+            background-image: url($url-images + 'ic-my-list.png');
+        }
+    }
+    .ic-coupon {
+        &::before {
+            background-image: url($url-images + 'ic-my-coupon.png');
+        }
+    }
+    .ic-point {
+        &::before {
+            background-image: url($url-images + 'ic-my-point.png');
+        }
+    }
+    .ic-adulte {
+        &::before {
+            background-image: url($url-images + 'ic-my-adult.png');
+        }
+    }
+    .ic-delete {
+        &::before {
+            background-image: url($url-images + 'ic-my-delete.png');
+        }
+    }
+    .ic-check {
+        &::before {
+            background-image: url($url-images + 'ic-my-selectedect.png');
+        }
+    }
+    .ic-favorite {
+        &::before {
+            background-image: url($url-images + 'ic-my-favorite.png');
+        }
+    }
+    // 아이콘 포커스 됐을 때
+    .focus {
+        .ic-bill {
+            &::before {
+                background-image: url($url-images + 'ic-my-bill-selected.png');
+            }
+        }
+        .ic-list {
+            &::before {
+                background-image: url($url-images + 'ic-my-list-selected.png');
+            }
+        }
+        .ic-coupon {
+            &::before {
+                background-image: url($url-images + 'ic-my-coupon-selected.png');
+            }
+        }
+        .ic-point {
+            &::before {
+                background-image: url($url-images + 'ic-my-point-selected.png');
+            }
+        }
+        .ic-delete {
+            &::before {
+                background-image: url($url-images + 'ic-my-delete-focus.png');
+            }
+        }
+        .ic-adulte {
+            &::before {
+                background-image: url($url-images + 'ic-my-adult-focus.png');
+            }
+        }
+        .ic-check {
+            &::before {
+                background-image: url($url-images + 'ic-my-selectedect-focus.png');
+            }
+        }
+        .ic-favorite {
+            &::before {
+                background-image: url($url-images + 'ic-my-favorite-focus.png');
+            }
+        }
+    }
+    .layer-page {
+        .contents-list {
+            li {
+                height: px(148);
+            }
+        }
+    }
+}
+
+// 레이어 페이지 공통 레이아웃
+.layer-page {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    .layer-header {
+        position: relative;
+        margin-bottom: px(100);
+        .title {
+            font: {
+                family: $font-bold;
+                size: 5.2rem;
+            }
+            color: $color-white;
+            &::before {
+                @include vs-ib;
+                position: absolute;
+                bottom: px(-48);
+                left: 50%;
+                transform: translate(-50%, 0%);
+                width: px(82);
+                height: px(4);
+                background-color: $color-white-30;
+            }
+        }
+    }
+    .layer-body {
+        @include flex-items-center;
+        flex-direction: column;
+        span:last-child {
+            margin-right: 0;
+        }
+        .poster-thumbnail {
+            display: inline-block;
+            margin-bottom: 0;
+            width: px(268);
+            height: 100%;
+            margin-right: px(10);
+            border-radius: px($border-radius);
+            @include background-default;
+        }
+        p {
+            font-size: 3.6rem;
+            line-height: px(44);
+            margin-bottom: px(8);
+        }
+        .accent {
+            font-size: 3.2rem;
+            line-height: px(44);
+            color: $color-accent;
+        }
+        .coupon-date {
+            font-size: 2.8rem;
+            line-height: px(44);
+            text-align: center;
+            color: $color-blue;
+        }
+        .best-contents {
+            font-size: 3.4rem;
+        }
+        .cancel-text {
+            @include flex-items-center;
+            line-height: px(44);
+            margin-bottom: px(4);
+            text-align: left;
+            font-size: 3rem;
+            color: $color-gray-dark;
+            &::before {
+                @include vs-ib;
+                width: px(6);
+                height: px(6);
+                margin-right: px(18);
+                border-radius: 50%;
+                background-color: $color-gray-dark;
+            }
+        }
+    }
+}
+
+// 마이 홈 메인 
+.myhome {
+    .my-container {
+        width: 100%;
+        padding: px(64) 0 px(138) px(125);
+        background-color: $color-black;
+    }
+    .my-header {
+        padding: 0 px(60) 0 px(60);
+        margin-bottom: px(44);
+        background-color: transparent;
+        height: inherit;
+        .path {
+            align-self: flex-end;
+        }
+    }
+    //공통 레이아웃 시청 목록, 찜한 목록, 최근 둘러본 vod
+    section {
+        width: 100%;
+        height: unset;
+        padding-left: px(60);
+        margin-bottom: px(42);
+        &:last-child {
+            margin-bottom: 0;
+        }
+        h3.title {
+            margin-bottom: px(23);
+            font-size: 3.2rem;
+            color: $color-white;
+        }
+        li {
+            @include flex-items-center;
+            flex-direction: column;
+            position: relative;
+        }
+    }
+    // 프로필 영역
+    .my-profile {
+        height: px(558);
+        margin-bottom: px(31);
+        .noti-message {
+            height: px(30);
+            margin-bottom: px(80);
+            font-size: 2.4rem;
+            color: $color-subtitle;
+            text-align: left;
+            opacity: .6;
+        }
+        .profile-list {
+            display: flex;
+            li {
+                margin-left: px(34);
+                width: px(245);
+                //첫번 째 자식 [구분선, 폰번호]
+                &:first-child {
+                    margin-left: 0;
+                    margin-right: px(60);
+                    .information {
+                        min-height: px(289);
+                    }
+                    .phone {
+                        margin-bottom: 0;
+                    }
+                    &::after {
+                        // 구분선
+                        @include vs;
+                        top: px(33);
+                        left: unset;
+                        right: px(-52);
+                        width: px(2);
+                        height: px(128);
+                        background-color: $color-pure-white;
+                        opacity: .15;
+                    }
+                }
+                &.focus {
+                    .information {
+                        &::after {
+                            @include focus-border-50;
+                            left: unset;
+                            right: unset;
+                            bottom: unset;
+                            width: px(202);
+                            height: px(202);
+                            z-index: 2;
+                        }
+                    }
+                    .nickname, .phone {
+                        color: $color-white;
+                        opacity: 1;
+                    }
+                    .image, .keyguide {
+                        opacity: 1;
+                    }
+                    .button-area {
+                        opacity: 1;
+                    }
+                    &.lock {
+                        .image {
+                            opacity: .3;
+                        }
+                        .information {
+                            &::before {
+                                background-image: url($url-images + 'ic-profile-lock-focus.png');
+                            }
+                        }
+                    }
+                    &.contact-phone {
+                        .information {
+                            &::before {
+                                box-shadow: inset 0 0 px(60) 0 $color-bg-black-50;
+                            }
+                            &::after {
+                                top: unset;
+                                width: px(160);
+                                height: px(160);
+                            }
+                        }
+                        .image {
+                            border: 0;
+                            &::before {
+                                background-image: url($url-images + 'ic-plus-focus.png');
+                            }
+                        }
+                        .text {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+            .information {
+                @include flex-items-center;
+                flex-direction: column;
+                min-width: px(245);
+                min-height: px(328);
+                margin-bottom: px(12);
+                &::before {
+                    @include vs;
+                    @include background-contain;
+                    width: 100%;
+                }
+                p {
+                    font: {
+                        family: $font-regular;
+                        size: 2.4rem;
+                    }
+                    color: $color-bg-gray;
+                }
+                .image {
+                    @include background-default;
+                    width: px(202);
+                    height: px(202);
+                    margin-bottom: px(14);
+                    opacity: .3;
+                }
+                .nickname {
+                    margin-bottom: px(6);
+                    max-width: px(228);
+                    font: {
+                        family: $font-bold;
+                        size: 2.6rem;
+                    }
+                    opacity: .3;
+                    @include ellipsis($line: 1);
+                }
+                .phone {
+                    margin-bottom: px(12);
+                    font: {
+                        family: $font-bold;
+                        size: 2.6rem;
+                    }
+                    opacity: 0;
+                }
+                .keyguide {
+                    @include flex-items-center;
+                    color: $color-primary;
+                    font-size: 2.4rem;
+                    opacity: 0;
+                    .primary {
+                        @include ic-tag();
+                        display: inline-block;
+                        padding: 0 px(12);
+                        margin-right: px(10);
+                        border: {
+                            width: px(2);
+                            radius: px(17);
+                            color: $color-white
+                        }
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+            .button-area {
+                opacity: 0;
+            }
+            .lock {
+                .information {
+                    &::before {
+                        height: px(202);
+                        background-image: url($url-images + 'ic-profile-lock.png');
+                        z-index: 2;
+                    }
+                }
+            }
+            .login {
+                .information {
+                    min-height: px(292);
+                    &::before {
+                        height: px(202);
+                        background-image: url($url-images + '/profile-check.png');
+                        background-size: px(184) px(58);
+                        background-position: center bottom;
+                        z-index: 2;
+                    }
+                }
+                .image {
+                    opacity: 1;
+                }
+                .nickname {
+                    color: $color-white;
+                    opacity: 1;
+                }
+                .phone {
+                    margin-bottom: 0;
+                }
+                .keyguide {
+                    display: none;
+                }
+            }
+            .contact-phone {
+                margin-left: px(28);
+                min-height: px(235);
+                .information {
+                    padding-top: px(20);
+                    min-height: unset;
+                    margin-bottom: px(34);
+                    &::before {
+                        content: none;
+                    }
+                }
+                .image {
+                    @include flex-items-center;
+                    justify-content: center;
+                    position: relative;
+                    width: px(160);
+                    height: px(160);
+                    background-color: $color-bg-sub;
+                    border-radius: 50%;
+                    border: px(4, 3) solid $color-gray;
+                    margin-bottom: unset;
+                    &::before {
+                        @include vs;
+                        width: 100%;
+                        height: 100%;
+                        background-image: url($url-images + 'ic-plus.png');
+                        @include background-default;
+                        background-size: px(52);
+                    }
+                }
+                .text {
+                    font-size: 2.6rem;
+                    color: $color-white;
+                    opacity: .4;
+                }
+            }
+        }
+    }
+    //개인메뉴영역
+    .mymenu {
+        margin-bottom: px(60);
+        .mymenu-list {
+            @include flex-items-center;
+            display: inline-flex;
+            min-height: px(196);
+        }
+        li {
+            @include flex-items-center;
+            justify-content: center;
+            position: relative;
+            width: px(390);
+            height: px(184);
+            margin-right: px(38);
+            border-radius: px($border-radius);
+            border: px(4, 3) solid $color-gray-dark;
+            background-color: $color-bg-sub;
+            font-size: 2.6rem;
+            color: $color-gray;
+            &:last-child {
+                margin-right: 0;
+            }
+            p {
+                @include flex-items-center;
+                position: relative;
+                margin-bottom: px(12);
+                &::before {
+                    margin-top: 0;
+                    @include ic-common;
+                }
+            }
+            .count {
+                font: {
+                    family: $font-bold;
+                    size: 3.4rem;
+                }
+            }
+            &.focus {
+                height: px(196);
+                color: $color-white;
+                border: none;
+                p {
+                    font-size: 2.8rem;
+                }
+                .count {
+                    font-size: 3.6rem;
+                    color: $color-primary;
+                }
+                &::after {
+                    @include vs;
+                    width: 100%;
+                    height: 100%;
+                    border: px(10) solid $color-white;
+                    box-shadow: inset 0 0 px(60) 0 $color-bg-black-50;
+                    border-radius: px($border-radius);
+                }
+            }
+        }
+    }
+    //더보기
+    .more-desc {
+        @include flex-items-center;
+        justify-content: center;
+        margin-bottom: px(31);
+        font-size: 2.6rem;
+        &:before {
+            @include vs-ib;
+            @include background-contain;
+            width: px(21);
+            height: px(32);
+            margin-right: px(9);
+            background-image: url('../images/my/ic-arrow-bottom.png');
+        }
+    }
+    //시청 목록, 찜한 목록, 최근 둘러본 vod
+    .contents-list {
+        //공통 레이아웃 예외 처리
+        $width: px(380);
+        display: flex;
+        flex-wrap: nowrap;
+        width: 115%;
+        padding: 0;
+        .poster-horizontal {
+            width: $width;
+            height: px(214);
+        }
+        li {
+            position: relative;
+            align-items: flex-start;
+            height: px(308);
+            margin: {
+                bottom: 0;
+            }
+            &:not(:first-child) {
+                margin: {
+                    left: px(16);
+                }
+            }
+            &.focus {
+                &:not(:first-child) {
+                    .poster-horizontal::before, .poster-horizontal::after, .poster-remaining, .poster-thumbnail, .poster-component::before, .poster-component::after {
+                        transform-origin: center;
+                    }
+                    .poster-tag {
+                        right: 0;
+                    }
+                    .poster-time {
+                        left: 0;
+                    }
+                    .poster-component {
+                        &::after {
+                            background-position-x: unset;
+                        }
+                    }
+                    .button-menu {
+                        &::before {
+                            transform-origin: center;
+                        }
+                    }
+                }
+            }
+        }
+        .title {
+            width: $width;
+        }
+        .sub-text {
+            margin-top: px(2);
+            width: $width;
+        }
+    }
+    //시청 목록
+    .watch {
+        padding-top: px(20);
+        .contents-list {
+            dt {
+                opacity: 0;
+            }
+            .meta-data {
+                opacity: 1;
+                .title {
+                    font-family: $font-bold;
+                    color: $color-white;
+                }
+            }
+        }
+        .focus {
+            dt {
+                opacity: 1;
+            }
+        }
+    }
+    //찜한 영상 , 둘러본 영상
+    .wish, .recently {
+        .poster-component {
+            &::before {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+//찜목록
+.wishlist {
+    .contents-list {
+        .poster-component {
+            &::before {
+                opacity: 0;
+            }
+        }
+    }
+}
+.delete-wishlist {
+    @extend .wishlist;
+}
+// 시청목록
+.watchlist {
+    .contents-list {
+        .poster-component {
+            &::before {
+                background-image: linear-gradient(to bottom, $color-bg-transparent, $color-pure-black);
+            }
+        }
+        .meta-data {
+            opacity: 1;
+        }
+    }
+}
+.delete-watchlist {
+    @extend .watchlist;
+}
+
+// 찜한 VOD 연속시청 설정
+.set-continue {
+    .check-number {
+        position: relative;
+        left: px(16);
+        top: px(16);
+        display: inline-block;
+        min-width: px(98);
+        height: px(46);
+        padding: px(5) px(9) 0 px(55);
+        border-radius: px($border-radius);
+        background-color: $color-primary;
+        &::before {
+            @include background-default;
+            @include vs;
+            left: 9px;
+            display: block;
+            width: px(46);
+            height: px(46);
+        }
+        &.book {
+            &::before {
+                background-image: url('../images/my/ic-small-readingbook.png');
+            }
+        }
+        &.vod {
+            &::before {
+                background-image: url('../images/my/ic-small-vod.png');
+            }
+        }
+        p {
+            display: inline-block;
+            text-align: center;
+            min-width: px(32);
+            font: {
+                family: $font-bold;
+                size: 2.6rem;
+            }
+            color: $color-white;
+        }
+    }
+    li {
+        &.focus {
+            .contents-title {
+                opacity: 1;
+            }
+            .check-number {
+                top: px(8);
+                left: px(3);
+            }
+            &:nth-child(4n + 1) {
+                .check-number {
+                    left: px(16);
+                }
+            }
+        }
+    }
+}
+
+// 구매한 VOD 구매인증 
+.purchased-auth {
+    text-align: center;
+    .my-body {
+        padding-top: px(228);
+    }
+    .guide {
+        margin-bottom: px(56);
+        font-size: 3.6rem;
+        color: $color-gray-light;
+    }
+    .input-password {
+        @include input-password( $size: 74, $margin-right: 12, $input-bg: $color-bg-component, $shadow-size: 4, $shadow-color: $color-white, $focus-input-bg: $color-bg-black, $background-size: 26, $password-color: $password-color-w);
+        justify-content: center;
+        margin-bottom: px(164)
+    }
+    .func-area {
+        justify-content: center;
+    }
+}
+
+// 구매한VOD, 구매한 VOD 삭제
+.purchased, .delete-purchased {
+    .list-wrap {
+        padding: 0;
+    }
+    .poster-remaining {
+        display: none;
+    }
+}
+// TV포인트 가입내역
+.tvpoint {
+    .contents {
+        text-align: center;
+        height: px(888);
+    }
+    .check-join, .have-point {
+        padding-top: px(274);
+        font: {
+            family: $font-bold;
+            size: 6.8rem;
+        }
+        margin-bottom: px(22);
+    }
+    .point {
+        margin-left: px(50);
+    }
+    .join-text, .unjoin-text, .guide-text {
+        display: block;
+        font-size: 2.6rem;
+        color: $color-gray-dark;
+        margin-bottom: px(112);
+    }
+    .unjoin-text {
+        margin-bottom: px(5);
+    }
+    .guide-text {
+        margin-bottom: px(77);
+    }
+}
+
+// 가입내역  
+.my-wrap {
+    .product-title {
+        @include flex-items-center;
+        border-bottom: px(2) solid $color-bg-component;
+        font-size: 2.6rem;
+        margin: 0 px(60);
+        padding-bottom: px(19);
+        span {
+            font-size: 2.6rem;
+        }
+        .name {
+            width: px(782);
+            padding-left: px(50);
+        }
+        .price {
+            width: px(400);
+            text-align: right;
+            padding-right: px(50);
+        }
+        .date {
+            width: px(616);
+            padding-left: px(50);
+        }
+    }
+    .product-list {
+        padding: 0 px(60);
+        li {
+            position: relative;
+            display: flex;
+            height: px(114);
+            line-height: px(114);
+            &:last-child {
+                margin-bottom: px(44);
+            }
+            p {
+                @include flex-items-center;
+                @include line-bottom;
+                @include line-right;
+                font-size: 3.2rem;
+                color: $color-gray;
+                &:last-child {
+                    border-right: none;
+                }
+            }
+            .name {
+                position: relative;
+                width: px(782);
+                padding-left: px(50);
+                .ellipsis {
+                    max-width: px(589);
+                    @include ellipsis($line: 1);
+                }
+                .ic-tag.alt {
+                    width: px(68);
+                    text-align: center;
+                    margin-right: 0;
+                    margin-left: px(16);
+                }
+                .ic-new {
+                    margin-left: px(16);
+                }
+            }
+            .price {
+                display: flex;
+                justify-content: flex-end;
+                padding-right: px(50);
+                width: px(400);
+            }
+            .period {
+                display: flex;
+                justify-content: flex-start;
+                padding-left: px(50);
+                width: px(616);
+            }
+            &.focus {
+                position: relative;
+                background-color: $color-bg-component;
+                p {
+                    font-family: $font-bold;
+                    font-size: 3.4rem;
+                    color: $color-white;
+                    border: none;
+                }
+                .ic-tag {
+                    border: none;
+                    height: px(30);
+                    line-height: px(30);
+                    color: $color-white;
+                    background-color: $color-primary;
+                }
+                &::after {
+                    @include focus-border;
+                    box-shadow: none;
+                    border: px(6) solid $color-white;
+                }
+            }
+        }
+    }
+    .ic-tag {
+        @include ic-tag-small($height: px(30));
+        margin-right: px(43);
+    }
+    .list-none {
+        top: px(510);
+        &::before {
+            content: none;
+        }
+    }
+    &::after {
+        content: none;
+    }
+}
+
+// 청구요금 확인 
+.charge {
+    .layer-header {
+        padding-top: px(79);
+        margin-bottom: px(94);
+        &::before {
+            top: px(196);
+        }
+    }
+    .layer-body {
+        margin-bottom: px(32);
+        .guide-message {
+            line-height: px(44);
+            margin-bottom: px(40);
+            color: $color-white;
+        }
+        .guide-image {
+            width: px(1404);
+            height: px(546);
+            margin-bottom: 0;
+            @include background-contain;
+        }
+    }
+}
+
+// 가입내역 확인 
+.subscribe {
+    .contents-list {
+        // margin-bottom: px(110);
+        padding: 0;
+        li {
+            margin: 0;
+            margin-left: px(18);
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+        .poster-horizontal {
+            width: px(268);
+            height: px(145);
+            .poster-thumbnail {
+                display: inherit;
+                transform-origin: center!important;
+            }
+        }
+    }
+    .layer-body {
+        .best-contents {
+            margin-bottom: px(22);
+        }
+        .subscribe-text {
+            margin-bottom: px(38);
+            line-height: px(52);
+            em {
+                color: $color-accent;
+            }
+            &.mb-more {
+                margin-bottom: px(48);
+            }
+            &.mb-less {
+                margin-bottom: px(35);
+            }
+            &.mb-min {
+                margin-bottom: px(30);
+            }
+        }
+        .cancel-date {
+            &.type-line {
+                margin: 0;
+                margin-bottom: px(42);
+                width: auto;
+                @include flex-items-center;
+                span {
+                    margin-bottom: 0;
+                    margin-left: px(46);
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+    .subscribe-lead {
+        .layer-header {
+            padding-top: px(172);
+        }
+        .coupon-subscribe {
+            line-height: px(54);
+            margin-bottom: px(48);
+        }
+        .accent {
+            line-height: px(46);
+            margin-bottom: px(38);
+        }
+        .coupon-date {
+            margin-bottom: px(100);
+        }
+    }
+    .subscribe-keep {
+        .layer-header {
+            padding-top: px(197);
+        }
+        .vip-guide {
+            line-height: px(44);
+            margin-bottom: px(48);
+            font-size: 4.6rem;
+        }
+        .subscribe-point {
+            line-height: px(50);
+            margin-bottom: px(33);
+        }
+        .coupon-date {
+            margin-bottom: px(100);
+        }
+    }
+    .subscribe-complete {
+        .layer-header {
+            padding-top: px(131);
+        }
+        .subscribe-coupon {
+            line-height: px(54);
+            margin-bottom: px(52);
+        }
+        .subscribe-contents {
+            margin-bottom: px(70);
+        }
+        // .best-contents {
+        //     margin-bottom: px(30);
+        // }
+        .button-area {
+            margin-top: px(97);
+        }
+    }
+    .subscribe-cancel {
+        &.line-3 {
+            .layer-header {
+                padding-top: px(93);
+            }
+        }
+        .layer-header {
+            padding-top: px(145);
+        }
+        .cancel-ask {
+            margin-bottom: px(38);
+        }
+        .cancel-date {
+            width: px(430);
+            margin: 0 0 px(38) px(15);
+            span {
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .accent {
+            margin-bottom: px(4);
+        }
+        // .best-contents {
+        //     margin-bottom: px(22);
+        // }
+        .subscribe-contents {
+            margin-bottom: px(104);
+        }
+        .button-area {
+            margin-top: px(97);
+        }
+    }
+    .subscribe-registered {
+        &.line-3 {
+            .layer-header {
+                padding-top: px(75);
+            }
+        }
+        .layer-header {
+            padding-top: px(127);
+        }
+        .cancel-ask {
+            margin-bottom: px(38);
+        }
+        .cancel-contents {
+            display: flex;
+            margin: 0 0 px(30) px(7);
+            p:nth-of-type(3) {
+                padding-left: px(27);
+            }
+        }
+        .cancel-date {
+            display: block;
+            margin: 0 px(102) 0 0;
+        }
+        .service-keep {
+            @include flex-items-center;
+            position: relative;
+            width: px(540);
+            height: px(68);
+            margin-bottom: px(8);
+            padding-left: px(22);
+            border: px(2) solid $color-accent;
+            border-radius: px($border-radius);
+            font-size: 3rem;
+            text-align: left;
+            &::before {
+                @include vs-ib;
+                position: absolute;
+                left: px(165);
+                width: px(1);
+                height: 100%;
+                border: px(1, 1) dashed $color-accent;
+            }
+            .accent {
+                display: inline-block;
+                width: px(121);
+                margin-right: px(46);
+                font-size: 2.4rem;
+                text-align: center;
+            }
+        }
+        .service-text {
+            line-height: px(32);
+            text-align: left;
+            font-size: 2.2rem;
+            color: rgba($color-gray-dark, .6);
+            margin-bottom: 0;
+        }
+        .subscribe-contents {
+            margin-bottom: px(83);
+        }
+        // .best-contents {
+        //     margin-bottom: px(32);
+        // }
+        .button-area {
+            margin-top: px(47);
+        }
+    }
+}
+
+// 프로필 이름 변경 
+.change-profilename {
+    .layer-header {
+        padding-top: px(196);
+        margin-bottom: px(91);
+        .title {
+            &::before {
+                bottom: px(-45);
+            }
+        }
+    }
+    .layer-body {
+        margin-bottom: px(50);
+        .guide-message {
+            margin-bottom: px(80);
+        }
+        .profile-list {
+            display: flex;
+            width: px(1440);
+            li {
+                position: relative;
+                margin-right: px(46);
+                &:last-child {
+                    margin-right: 0;
+                }
+                &.selected {
+                    opacity: 1;
+                    .image {
+                        &::before {
+                            @include vs;
+                            width: px(202);
+                            height: px(202);
+                            background-image: url($url-images + '/profile-check.png');
+                            @include background-contain;
+                            background-size: px(184) px(58);
+                            background-position: bottom center;
+                            z-index: 2;
+                        }
+                    }
+                }
+            }
+            .focus {
+                .image {
+                    opacity: 1;
+                    &::after {
+                        @include focus-border-50;
+                    }
+                }
+                .name {
+                    font-family: $font-bold;
+                    color: $color-white;
+                    opacity: 1;
+                }
+            }
+        }
+        .image {
+            @include background-contain;
+            position: relative;
+            width: px(202);
+            height: px(202);
+            margin-bottom: px(16);
+            opacity: .3;
+        }
+        .name {
+            height: px(38);
+            line-height: px(36);
+            margin-bottom: 0;
+            font-size: 2.8rem;
+            color: $color-gray;
+            opacity: .6;
+        }
+    }
+    .guide-popup-footer {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+// 프로필 이미지 변경 
+.change-profileimage {
+    .layer-header {
+        padding-top: px(80);
+        margin-bottom: px(91);
+        .title {
+            &::before {
+                bottom: px(-45);
+            }
+        }
+    }
+    .layer-body {
+        position: relative;
+        height: px(840);
+        overflow: hidden;
+        .guide-message {
+            margin-bottom: px(80);
+        }
+        &.top-cover {
+            &::before {
+                display: block;
+            }
+        }
+        &.bottom-cover {
+            &::after {
+                display: block;
+            }
+        }
+        &::before {
+            @include vs;
+            width: 100%;
+            height: px(245);
+            background-image: linear-gradient(to bottom, $color-bg-black, $color-bg-transparent);
+            display: none
+        }
+        &::after {
+            @include vs;
+            top: unset;
+            bottom: 0;
+            width: 100%;
+            height: px(245);
+            background-image: linear-gradient(to bottom, $color-bg-transparent, $color-bg-black);
+            display: none
+        }
+    }
+    .list-container {
+        padding: 0 px(179);
+    }
+    .image-list {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+            margin: 0 px(70) px(60) 0;
+            &:nth-child(6n) {
+                margin-right: 0;
+            }
+            p {
+                @include background-contain;
+                position: relative;
+                width: px(202);
+                height: px(202);
+                opacity: .3;
+            }
+            &.focus {
+                p {
+                    opacity: 1;
+                    &::after {
+                        @include focus-border-50
+                    }
+                }
+            }
+            &.selected {
+                p {
+                    &::before {
+                        @include vs;
+                        width: px(202);
+                        height: px(202);
+                        background-image: url($url-images + '/profile-check.png');
+                        @include background-contain;
+                        background-size: px(184) px(58);
+                        background-position: bottom center;
+                        z-index: 2;
+                    }
+                }
+            }
+        }
+    }
+    .scroll {
+        @include scroll($top: px(124), $right: px(50), $width: px(8), $height: px(558), $color1: $color-white-10, $color2: $color-gray);
+    }
+    .layer-footer {
+        position: fixed;
+        display: flex;
+        justify-content: flex-end;
+        padding: px(30) px(50);
+        width: 100%;
+        bottom: 0;
+        z-index: 2;
+    }
+}
+
+// buy-coupon : start
+.coupon {
+    .title {
+        color: $color-white;
+        text-align: center;
+        margin-bottom: px(60);
+        line-height: px(62);
+        font: {
+            size: 5.2rem;
+            family: $font-bold;
+        }
+    }
+    .func-area {
+        margin: px(44) px(60) px(40) px(60);
+        padding: 0;
+    }
+}
+
+.buy-coupon {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: px(491);
+    margin-left: px(60);
+    text-align: center;
+    ul {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include flex-items-center;
+        li {
+            position: relative;
+            width: px(580);
+            height: px(479);
+            background-color: $color-bg-sub;
+            border-radius: px($border-radius);
+            margin-left: px(30);
+            padding: 0 px(40);
+            color: rgba($color-gray, .9);
+            &:first-child {
+                margin-left: 0;
+            }
+            .price {
+                margin-top: px(54);
+                em {
+                    display: block;
+                    line-height: px(61);
+                    font: {
+                        size: 4.6rem;
+                        family: $font-bold;
+                    }
+                }
+                span {
+                    display: block;
+                    color: $color-gray-dark;
+                    font-size: 3.0rem;
+                    margin-top: px(12);
+                    line-height: px(38);
+                }
+            }
+            .details {
+                position: relative;
+                margin: px(40) 0 px(34);
+                height: px(106);
+                font-size: 2.4rem;
+                p {
+                    line-height: px(30);
+                    margin-top: px(6);
+                    &:first-child {
+                        margin-top: 0;
+                    }
+                }
+                &::after {
+                    width: 100%;
+                    height: px(2);
+                    background-color: rgba($color-pure-white, .12);
+                    @include vs-b;
+                    position: absolute;
+                    bottom: 0;
+                }
+            }
+            .button-area {
+                button {
+                    width: 100%;
+                }
+            }
+            &::before {
+                width: px(164);
+                height: px(164);
+                @include background-default;
+                @include vs;
+                z-index: 1;
+            }
+            &::after {
+                @include vs;
+                right:0;
+                bottom: 0;
+                border-radius: px($border-radius);
+                border: px(4, 3) solid rgba($color-gray-dark, .7);
+            }
+            &.more-5 {
+                &::before {
+                    background-image: url("../images/my/tag-my-sale-5.png"); //쿠폰 할인율 태그
+                }
+            }
+            &.more-10 {
+                &::before {
+                    background-image: url("../images/my/tag-my-sale-10.png"); 
+                }
+            }
+            &.focus.more-5 {
+                &::before {
+                    background-image: url("../images/my/tag-my-sale-5-focus.png");
+                }
+            }
+            &.focus.more-10 {
+                &::before {
+                    background-image: url("../images/my/tag-my-sale-10-focus.png");
+                }
+            }
+            &.focus {
+                background-color: $color-bg-component;
+                .price {
+                    em {
+                        color: $color-primary;
+                    }
+                    span {
+                        color: $color-white;
+                    }
+                }
+                .details {
+                    color: $color-gray;
+                }
+                &::before {
+                    top: px(-6);
+                }
+                &::after {
+                    @include vs;
+                    top: px(-6);
+                    bottom: px(-6);
+                    border-radius: px($border-radius);
+                    border: px(6) solid $color-white;
+                }
+                .button-primary {
+                    color: $color-black;
+                    background-color: $color-white;
+                    height: px(98);
+                    font-size: 3.4rem;
+                }
+            }
+        }
+    }
+}
+
+// buy-coupon : end
+//tv와 휴대폰 연결 
+// connection: start
+.connection {
+    background-color: $color-black;
+    padding-top: px(72);
+    &.alt {
+        padding-top: px(102);
+    }
+    &.alt2 {
+        padding-top: px(120);
+        .auth-label {
+            width: 100%;
+        }
+        .guide-message {
+            margin-bottom: px(94);
+        }
+    }
+    .guide-message {
+        margin-bottom: px(44);
+        font-size: 3.0rem;
+        p {
+            line-height: px(44);
+            margin-top: px(8);
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+        &.alt {
+            font-size: 3.6rem;
+            p {
+                margin-top: px(12);
+            }
+        }
+    }
+}
+
+.profile-lock {
+    .password-wrap {
+        width: px(846);
+        margin: 0 auto;
+    }
+    .password-set {
+        margin-top: px(68);
+        text-align: left;
+        @include flex-items-center;
+        &:first-child {
+            margin-top: 0;
+        }
+        label {
+            width: px(342);
+            color: rgba($color-white, .8);
+            font-size: 3.6rem;
+        }
+    }
+    .input-password {
+        @include input-password($cursor-height: 30);
+    }
+    .button-area {
+        margin-top: px(130);
+    }
+}
+
+.connection-tutoral {
+    width: px(1302);
+    margin: 0 auto;
+    .img {
+        height: px(512);
+        background-image: url('../images/my/img-my-tutoral-01.png');
+        @include background-default;
+    }
+    ul {
+        margin: px(20) 0 px(62);
+        justify-content: space-between;
+        @include flex-items-center;
+        &::before {
+            flex: 1;
+            @include vs-b;
+        }
+        li {
+            text-align: center;
+            font-size: 2.2rem;
+            color: $color-blue;
+            &.tv-name {
+                width: px(368);
+            }
+            &.tv-num {
+                width: px(493);
+                margin-left: px(85);
+            }
+        }
+    }
+}
+
+.connection-info {
+    margin: 0 px(325);
+    .sub-title {
+        margin-bottom: px(16);
+        justify-content: space-between;
+        @include flex-items-center;
+        em {
+            color: $color-white;
+            font: {
+                size: 3.6rem;
+                family: $font-bold;
+            }
+        }
+        span {
+            font-size: 2.4rem;
+            color: $color-gray-dark;
+        }
+    }
+    .sub-text {
+        p {
+            text-align: left;
+            font-size: 2.6rem;
+            color: rgba($color-white, .8);
+            line-height: px(32);
+            margin-top: px(10);
+            &:first-child {
+                margin-top: 0;
+            }
+            em {
+                color: $color-primary;
+            }
+        }
+    }
+    ul {
+        margin-top: px(34);
+        li {
+            height: px(96);
+            font-size: 2.6rem;
+            justify-content: space-between;
+            @include flex-items-center;
+            .plate {
+                flex: 1;
+            }
+            button {
+                margin-left: px(28);
+                @include button-primary(px(86), px(165), 3.0rem);
+            }
+        }
+        .input-text-wrap {
+            @include flex-items-center;
+            justify-content: center;
+            height: px(86);
+            width: 100%;
+            font-size: 2.8rem;
+            border: none;
+            border-radius: px($border-radius);
+            text-align: center;
+            background-color: $color-bg-component;
+            color: $color-gray;
+            // &::placeholder {
+            //     color: $color-gray;
+            // }
+            &.focus {
+                font-size: 3.0rem;
+                color: $color-white;
+                background-color: $color-bg-sub;
+                border: px(4, 3) solid $color-white;
+                // &::placeholder {
+                //     color: $color-white;
+                // }
+            }
+        }
+        .history {
+            height: px(122);
+            margin: px(26) 0 px(55);
+            @include flex-items-center;
+            .phone-list {
+                justify-content: space-between;
+                @include flex-items-center;
+                >div {
+                    position: relative;
+                }
+                .number {
+                    height: px(110);
+                    width: px(240);
+                    background-color: $color-bg-sub;
+                    border: px(4, 3) solid $color-gray-dark;
+                    border-radius: px($border-radius);
+                    color: $color-gray-dark;
+                    justify-content: center;
+                    padding: 0 px(20);
+                    @include flex-items-center;
+                    span {
+                        @include ellipsis($line: 1);
+                    }
+                }
+                .text {
+                    width: max-content;
+                    position: absolute;
+                    top: px(130);
+                    left: 50%;
+                    transform: translateX(-50%);
+                    font-size: 2.4rem;
+                    color: $color-white;
+                    text-align: center;
+                    opacity: 0;
+                }
+                .lock {
+                    .number {
+                        border: px(4, 3) solid rgba($color-gray-dark, .6);
+                        color: rgba($color-gray-dark, .6);
+                    }
+                    &::before {
+                        width: px(30);
+                        height: px(30);
+                        background-image: url('../images/my/ic-my-lock.png');
+                        position: absolute;
+                        right: px(6);
+                        bottom: px(6);
+                        @include vs-b;
+                        @include background-default;
+                        opacity: 1;
+                    }
+                }
+                .use {
+                    .number {
+                        display: flex;
+                        flex-direction: column;
+                        &::before {
+                            @include vs-b;
+                            content: '연결중';
+                            width: px(74);
+                            line-height: px(28);
+                            text-align: center;
+                            border-radius: px(16);
+                            font-size: 1.6rem;
+                            margin-bottom: px(6);
+                            border: px(2) solid $color-gray-dark;
+                            box-sizing: border-box;
+                        }
+                    }
+                }
+                .focus {
+                    .number {
+                        height: px(122);
+                        border: px(6) solid $color-white;
+                        color: $color-white;
+                        &::before {
+                            line-height: px(32);
+                            background-color: $color-primary;
+                            border: none;
+                        }
+                    }
+                    .text {
+                        opacity: 1;
+                    }
+                }
+            }
+            .list-del {
+                height: px(110);
+                &.focus {
+                    height: px(110);
+                }
+            }
+        }
+        .details {
+            margin: 0 px(-30);
+            padding: px(40) px(30) 0 px(30);
+            box-sizing: content-box;
+            border-top: px(2) solid $color-bg-component;
+            text-align: left;
+            .plate {
+                color: $color-subtitle;
+                .utv-number {
+                    color: $color-white;
+                    margin-bottom: px(11);
+                    font: {
+                        size: 2.9rem;
+                        family: $font-bold;
+                    }
+                    em {
+                        color: $color-primary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// connection : end

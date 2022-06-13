@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/hv_index.css" />
+</head>
+<body>
+    <div id="root">
+        <div class="my-wrap change-profilename">
+
+            <h2 class="skip">마이메뉴</h2>
+
+            <div class="layer-page">
+                <div class="layer-header">
+                    <h3 class="title">프로필 이름 변경</h3>
+                </div>
+                
+                <div class="layer-body">
+
+                    <p class="guide-message">원하시는 닉네임을 직접 입력하세요. (한글 최대 6글자, 영문 최대 12글자)</p>
+
+                    <!-- 검색창 -->
+                    <section class="search-input">
+                        <span class="icon">
+                            <i class="ic-keyboard focus">키보드버튼</i>
+                        </span>
+                        <!-- 검색필드 -->
+                        <!-- input-text클래스에 입력전이나 수정시 focus/ 키패드에 포커스시 selected -->
+                        <div class="input-text selected">
+                            <span class="placeholder"></span>
+                            <p class="input-text-wrap">
+                                <span class="cursor"></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </p>
+                            <span class="lang">한글</span><!--숫자/기호일경우 num클래스 추가-->
+                        </div>
+                        <span class="icon">
+                            <i class="ic-voice">음성버튼</i>
+                        </span>
+                    </section>
+
+                    <!-- 가상 키보드 -->
+                    <section class="search-keypad">
+                        <!-- 유사 검색어 리스트 -->
+                        <div class="search-list-area">
+                            <div class="search-list">
+                                <ul>
+                                    <li class="focus">
+                                        <span><em>무한도</em>전 위대한 유산</span>
+                                    </li>
+                                    <li>
+                                        <span><em>무한도</em>전 재방송</span>
+                                    </li>
+                                    <li>
+                                        <span><em>무한도</em>전 스페셜 위대한 예능</span>
+                                    </li>
+                                    <li>
+                                        <span>잭 블랙<em>무한도</em>전 특집</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 키패드 -->
+                        <div class="keypad-area">
+                            <div class="keypad keypad-ko">
+                                <ul>
+                                    <li class="focus">
+                                        <span>ㄱ</span>
+                                        <span class="double">ㄲ</span>
+                                    </li>
+                                    <li><span>ㄴ</span></li>
+                                    <li>
+                                        <span>ㄷ</span>
+                                        <span class="double">ㄸ</span>
+                                    </li>
+                                    <li><span>ㄹ</span></li>
+                                    <li><span>ㅁ</span></li>
+                                    <li>
+                                        <span>ㅂ</span>
+                                        <span class="double">ㅃ</span>
+                                    </li>
+                                    <li>
+                                        <span>ㅅ</span>
+                                        <span class="double">ㅆ</span>
+                                    </li>
+                                    <li><span>ㅇ</span></li>
+                                    <li>
+                                        <span>ㅈ</span>
+                                        <span class="double">ㅉ</span>
+                                    </li>
+                                    <li><span>ㅊ</span></li>
+                                    <li><span>ㅋ</span></li>
+                                    <li><span>ㅌ</span></li>
+                                    <li><span>ㅍ</span></li>
+                                    <li><span>ㅎ</span></li>
+                                    <li>
+                                        <span>ㅏ</span>
+                                        <span class="double">ㅑ</span>
+                                    </li>
+                                    <li>
+                                        <span>ㅓ</span>
+                                        <span class="double">ㅕ</span>
+                                    </li>
+                                    <li>
+                                        <span>ㅗ</span>
+                                        <span class="double">ㅛ</span>
+                                    </li>
+                                    <li>
+                                        <span>ㅜ</span>
+                                        <span class="double">ㅠ</span>
+                                    </li>
+                                    <li><span>ㅡ</span></li>
+                                    <li><span>ㅣ</span></li>
+                                </ul>
+                            </div>
+                            <div class="keypad keypad-eng">
+                                <ul>
+                                    <li class="focus"><span>a</span></li>
+                                    <li><span>b</span></li>
+                                    <li><span>c</span></li>
+                                    <li><span>d</span></li>
+                                    <li><span>e</span></li>
+                                    <li><span>f</span></li>
+                                    <li><span>g</span></li>
+                                    <li><span>h</span></li>
+                                    <li><span>i</span></li>
+                                    <li><span>j</span></li>
+                                    <li><span>k</span></li>
+                                    <li><span>l</span></li>
+                                    <li><span>m</span></li>
+                                    <li><span>n</span></li>
+                                    <li><span>o</span></li>
+                                    <li><span>p</span></li>
+                                    <li><span>q</span></li>
+                                    <li><span>r</span></li>
+                                    <li><span>s</span></li>
+                                    <li><span>t</span></li>
+                                    <li><span>u</span></li>
+                                    <li><span>v</span></li>
+                                    <li><span>w</span></li>
+                                    <li><span>x</span></li>
+                                    <li><span>y</span></li>
+                                    <li><span>z</span></li>
+                                </ul>
+                            </div>
+                            <div class="keypad keypad-num">
+                                <ul>
+                                    <li class="focus"><span>1</span></li>
+                                    <li><span>2</span></li>
+                                    <li><span>3</span></li>
+                                    <li><span>4</span></li>
+                                    <li><span>5</span></li>
+                                    <li><span>6</span></li>
+                                    <li><span>7</span></li>
+                                    <li><span>8</span></li>
+                                    <li><span>9</span></li>
+                                    <li><span>0</span></li>
+                                    <li><span>!</span></li>
+                                    <li><span>?</span></li>
+                                    <li><span>:</span></li>
+                                    <li><span>;</span></li>
+                                    <li><span>-</span></li>
+                                    <li><span>&</span></li>
+                                    <li><span>,</span></li>
+                                    <li><span>.</span></li>
+                                    <li><span>'</span></li>
+                                    <li><span>"</span></li>
+                                </ul>
+                            </div>
+                            <div class="keypad-etc">
+                                <ul>
+                                    <li class="focus">띄어쓰기</li>
+                                    <li>한/영/숫자</li>
+                                    <li class="delete">지움</li>
+                                    <li>확인</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 키패드 툴팁 -->
+                        <div class="keypad-tooltip">
+                            <p class="tooltip">
+                                <span>
+                                    <em>쌍자음</em>을 입력하시려면<br>
+                                    <em>자음을 두번</em> 눌러주세요!
+                                </span>
+                            </p>
+                        </div>
+                    </section>
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

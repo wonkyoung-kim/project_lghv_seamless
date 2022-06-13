@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+</head>
+
+<body>
+
+    <div id="root">
+        <!-- react 구조 -->
+
+        <div class="full-popup-container channel-edit2">
+
+            <div class="channel-edit-header">
+                <h2>선호 채널 편집</h2>
+            </div>
+            <!-- //channel-edit-header -->
+
+            <div class="channel-edit-body">
+                <div class="category active">
+                    <ul>
+                        <!-- 리스트가 2줄일 케이스경우 클래스 two-line을 붙여주시면 됩니다. -->
+                        <!-- <li class="two-line focus">예능/드라마 모아보기</li> -->
+                        <li class="focus">전체 채널</li>
+                        <li>지상파/종편</li>
+                        <li>홈쇼핑</li>
+                        <li>영화</li>
+                        <li>드라마</li>
+                        <li>예능</li>
+                        <li>스포츠/취미</li>
+                        <li>교양/다큐</li>
+                        <li>음악</li>
+                        <li>뉴스/경제</li>
+                        <li>어린이/교육</li>
+                        <li>공공/종교</li>
+                        <li>성인</li>
+                        <li class="two-line">예능/드라마 모아보기</li>
+                        <li class="two-line">VIP 영화 모아보기</li>
+                        <li class="two-line">해외 모아보기</li>
+                        <li class="two-line">키즈 모아보기</li>
+                        <li class="two-line">다큐/교양 모아보기</li>
+                        <li class="two-line">YouTube 모아보기</li>
+                    </ul>
+                    <div class="scroll">
+                        <span style="height:50%"></span>
+                    </div>
+                </div>
+                <!-- //category -->
+                
+                <div class="edit-schedule-wrap"> <!-- 채널 없을때 empty-list 추가-->
+                    <div class="edit-schedule">
+                        <ul>
+                            <li class="focus">
+                                <input type="checkbox" id="" name="" value="" class="input-checkbox" checked>
+                                <p class="number">001</p>
+                                <p class="name marquee-text marquee-play">
+                                    <span class="marquee-child">JTBC GOLF&SPORTS</span>
+                                </p>
+                                <span class="ic-tag">전체</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="" name="" value="" class="input-checkbox" checked>
+                                <p class="number">001</p>
+                                <p class="name marquee-text">
+                                    <span class="marquee-child">JTBC GOLF&SPORTS</span>
+                                </p>
+                                <span class="ic-tag">예능/드라마</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="" name="" value="" class="input-checkbox">
+                                <p class="number">001</p>
+                                <p class="name marquee-text">
+                                    <span class="marquee-child">OCN Movies</span>
+                                </p>
+                                <span class="ic-tag">영화</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="" name="" value="" class="input-checkbox">
+                                <p class="number">001</p>
+                                <p class="name marquee-text">
+                                    <span class="marquee-child">Smile TV Plus</span>
+                                </p>
+                                <span class="ic-tag">홈쇼핑</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="" name="" value="" class="input-checkbox">
+                                <p class="number">001</p>
+                                <p class="name marquee-text">
+                                    <span class="marquee-child">U+투데이</span>
+                                </p>
+                                <span class="ic-tag">전체</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="" name="" value="" class="input-checkbox">
+                                <p class="number">001</p>
+                                <p class="name marquee-text">
+                                    <span class="marquee-child">U+투데이</span>
+                                </p>
+                                <span class="ic-tag">전체</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="" name="" value="" class="input-checkbox">
+                                <p class="number">001</p>
+                                <p class="name marquee-text">
+                                    <span class="marquee-child">U+투데이</span>
+                                </p>
+                                <span class="ic-tag">전체</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="" name="" value="" class="input-checkbox">
+                                <p class="number">001</p>
+                                <p class="name marquee-text">
+                                    <span class="marquee-child">U+투데이</span>
+                                </p>
+                                <span class="ic-tag">전체</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="" name="" value="" class="input-checkbox">
+                                <p class="number">001</p>
+                                <p class="name marquee-text">
+                                    <span class="marquee-child">U+투데이</span>
+                                </p>
+                                <span class="ic-tag">전체</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="" name="" value="" class="input-checkbox">
+                                <p class="number">001</p>
+                                <p class="name marquee-text">
+                                    <span class="marquee-child">U+투데이</span>
+                                </p>
+                                <span class="ic-tag">전체</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="edit-schedule active">
+                        <ul>
+                            <li>
+                                <input type="checkbox" id="" name="" value="" class="input-checkbox" checked>
+                                <p class="number">001</p>
+                                <p class="name marquee-text marquee-play">
+                                    <span class="marquee-child">JTBC GOLF&SPORTS</span>
+                                </p>
+                                <span class="ic-tag">전체</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="" name="" value="" class="input-checkbox" checked>
+                                <p class="number">001</p>
+                                <p class="name marquee-text">
+                                    <span class="marquee-child">JTBC GOLF&SPORTS</span>
+                                </p>
+                                <span class="ic-tag">예능/드라마</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="" name="" value="" class="input-checkbox">
+                                <p class="number">001</p>
+                                <p class="name marquee-text">
+                                    <span class="marquee-child">OCN Movies</span>
+                                </p>
+                                <span class="ic-tag">영화</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="" name="" value="" class="input-checkbox">
+                                <p class="number">001</p>
+                                <p class="name marquee-text">
+                                    <span class="marquee-child">Smile TV Plus</span>
+                                </p>
+                                <span class="ic-tag">홈쇼핑</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="" name="" value="" class="input-checkbox">
+                                <p class="number">001</p>
+                                <p class="name marquee-text">
+                                    <span class="marquee-child">U+투데이</span>
+                                </p>
+                                <span class="ic-tag">전체</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="" name="" value="" class="input-checkbox">
+                                <p class="number">001</p>
+                                <p class="name marquee-text">
+                                    <span class="marquee-child">U+투데이</span>
+                                </p>
+                                <span class="ic-tag">전체</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="" name="" value="" class="input-checkbox">
+                                <p class="number">001</p>
+                                <p class="name marquee-text">
+                                    <span class="marquee-child">U+투데이</span>
+                                </p>
+                                <span class="ic-tag">전체</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="" name="" value="" class="input-checkbox">
+                                <p class="number">001</p>
+                                <p class="name marquee-text">
+                                    <span class="marquee-child">U+투데이</span>
+                                </p>
+                                <span class="ic-tag">전체</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="" name="" value="" class="input-checkbox">
+                                <p class="number">001</p>
+                                <p class="name marquee-text">
+                                    <span class="marquee-child">U+투데이</span>
+                                </p>
+                                <span class="ic-tag">전체</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="" name="" value="" class="input-checkbox">
+                                <p class="number">001</p>
+                                <p class="name marquee-text">
+                                    <span class="marquee-child">U+투데이</span>
+                                </p>
+                                <span class="ic-tag">전체</span>
+                            </li>
+                        </ul>
+                        <div class="scroll">
+                            <span style="height:50%"></span>
+                        </div>
+                    </div>
+
+                    <!-- 채널 없을때 안내문구 -->
+                    <div class="info-empty">
+                        <div class="exp">
+                            <p>해당 채널이 모두 숨김 상태 입니다.</p>
+                            <p><u>설정 > 채널설정 > 채널 숨김 편집</u>에서</p>
+                            <p>숨김 채널을 변경 하실 수 있습니다.</p>
+                        </div>
+                    </div>
+                    <!-- //채널 없을때 안내문구 -->
+
+                    <div class="button-area">
+                        <button class="button-primary middle sort1 focus">
+                            <p class="text">전체선택</p>
+                        </button>
+                        <button class="button-primary middle sort2">
+                            <p class="text">초기화</p>
+                        </button>
+                        <button class="button-primary middle sort4">
+                            <p class="text">확인</p>
+                        </button>
+                        <button class="button-primary middle sort5">
+                            <p class="text">취소</p>
+                        </button>
+                    </div>
+                    <!-- //button-area -->
+                </div>
+                <!-- //edit-schedule-wrap -->
+
+
+            </div>
+            <!-- //channel-edit-header -->
+            
+        </div>
+        <!-- //channel-edit-popup -->
+
+
+
+    </div>
+    <!-- //root -->
+
+</body>
+
+</html>

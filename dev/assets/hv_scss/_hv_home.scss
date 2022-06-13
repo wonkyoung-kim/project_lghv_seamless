@@ -1,0 +1,276 @@
+@import '../scss/config';
+@import '../scss/home';
+@import 'hv_components';
+
+.home-container {
+    height: px(1080);
+    //상단메뉴
+    .home-header {
+        .disney-plus {
+            width: px(158);
+            background-image: url('../hv_images/home/logo-disneyplus.png');
+            &.focus {
+                background-image: url('../hv_images/home/logo-disneyplus-focus.png');
+            }
+        }
+    }
+    //녹화아이콘
+    .gnb-main {
+        li {
+            &.gnb-recording {
+                background-image: url('../hv_images/home/gnb-recording.png');
+                &.focus {
+                    background-image: url('../hv_images/home/gnb-recording-focus.png');
+                }
+            }
+        }
+    }
+    //gnb
+    &.active-gnb {
+        .gnb-search, .gnb-set, .gnb-noti {
+            &.focus {
+                overflow: inherit;
+                .tooltip {
+                    opacity: 1;
+                }
+            }
+        } 
+        .home-aside {
+            > .gnb {
+                &::after {
+                    z-index: -1;
+                    background-image: url('../images/home/bg-gnb-depth.png');
+                    background-position: right;
+                }
+            }
+        } 
+        //녹화아이콘
+        .gnb-main {
+            li {
+                &.gnb-recording {
+                    background-image: url('../hv_images/home/ic-gnb-recording.png');
+                    &.focus {
+                        background-image: url('../hv_images/home/ic-gnb-recording-focus.png');
+                    }
+                }
+            }
+        }
+    }
+    //툴팁
+    .tooltip {
+        position: absolute;
+        z-index: 2;
+        margin-left: px(300);
+        padding: px(19) px(26);
+        font-size: 2.2rem;
+        opacity: 0;
+        &.tooltip-my {
+            opacity: 1;
+        }
+    }
+    //모듈
+    .module {
+        @extend .home-contents;
+        padding-bottom: px(22);
+        //모듈 페이징
+        h2 {
+            span {
+                @extend .contents-list-index;
+                opacity: 1;
+            }
+        }
+        //모듈콘텐츠
+        .contents {
+            @extend .home-contents-list;
+        }
+        //모듈 하단 패딩값
+        &.module-01, &.module-03 {
+            padding-bottom: px(10);
+        }
+        &.module-05, &.module-06, &.module-25 {
+            padding-bottom: px(16);
+        }
+        //메타데이터 숨김
+        &.module-12, &.module-13, &.module-20 {
+            padding-bottom: 0;
+            .meta-data {
+                display: block;
+                opacity: 0;
+            }
+            .focus {
+                .meta-data {
+                    opacity: 1;
+                }
+            }
+        }
+        //메타데이터 안보이게 처리
+        &.module-14, &.module-25 {
+            .meta-data {
+                display: none;
+            }
+        }
+        //모듈1-3단 확장형 배너
+        &.module-01 {
+            @extend .module01;
+            h2 {
+                display: none;
+            }
+            .contents {
+                .poster-horizontal {
+                    &::before {
+                        background-image: url('../../assets/hv_images/common/img-default-vertical.png');
+                    }
+                }
+                .focus .poster-horizontal {
+                    &::before {
+                        background-image: url('../../assets/hv_images/common/img-default-thumbnail.png');
+                    }
+                }
+            }
+        }
+        //모듈2-3단 기본형 배너
+        &.module-02 {
+            @extend .module08;
+        }
+        //모듈3-3단 입체형 배너
+        &.module-03 {
+            @extend .module1-4;
+        }
+        //모듈4-3단 혼합형 배너
+        &.module-04 {
+            .poster-vertical {
+                &.col3 {
+                    width: px(826);
+                    &::before {
+                        background-image: url('../../assets/hv_images/common/img-default-thumbnail.png');
+                    }
+                }
+            }
+        }
+        //모듈5-3단 슬림형 배너
+        &.module-05 {
+            @extend .module03;
+            .contents {
+                .poster-horizontal {
+                    &::before {
+                        background-image: url('../../assets/hv_images/common/img-default-ad.png');
+                    }
+                }
+            }
+        }
+        //모듈7-대형 광고형 배너
+        &.module-07 {
+            @extend .module18-1;
+            h2 span {
+                display: none;
+            }
+            .poster-horizontal {
+                &::before {
+                    background-image: url('../../assets/hv_images/common/img-default-ad.png');
+                }
+            }
+        }
+        //모듈8-대형 방패형 배너
+        &.module-08 {
+            @extend .module05;
+            .poster-semicircle {
+                &::before {
+                    background-image: url('../../assets/hv_images/common/img-default-semicircle.png');
+                }
+            }
+        }
+        //모듈9-소형 방패형 배너
+        &.module-09 {
+            @extend .module09-1;
+            .poster-semicircle {
+                &::before {
+                    background-image: url('../../assets/hv_images/common/img-default-semicircle.png');
+                }
+            }
+        }
+        //모듈10-중형콘텐츠, 대형콘텐츠 통일
+        &.module-10 {
+            .poster-component {
+                .poster-tag {
+                    justify-content: flex-start;
+                    right: 0;
+                    opacity: 1;
+                }
+            }
+            .focus {
+                .poster-component {
+                    opacity: 0;
+                } 
+            }
+        }
+        //모듈14-랭킹 콘텐츠
+        &.module-14 {
+            @extend .module06;
+            padding-bottom: px(54);
+            margin-bottom: px(24);
+            .poster-vertical {
+                width: px(323);
+                height: px(455);
+            }
+            .contents {
+                li {
+                    margin-right: px(4);
+                    .poster-number {
+                        top: px(318);
+                    }
+                    &.focus {
+                        margin-right: px(22);
+                        .poster-vertical::before, .poster-thumbnail {
+                            transform: scale(1.02);
+                            transform-origin: right top;
+                        }
+                        .poster-number {
+                            top: px(320);
+                        }
+                    }
+                }
+            }
+        }
+        //모듈20-자주보는 채널 추천 콘텐츠
+        &.module-20 {
+            .poster-component {
+                &::before {
+                    opacity: 0.8;
+                }
+            }
+            .content-info {
+                left: px(12);
+                bottom: px(12);
+                span {
+                    font: {
+                        family: $font-bold;
+                        size: 2.6rem;
+                    }
+                }
+            }
+        }
+        //모듈25-즐겨찾는 카테고리
+        &.module-25 {
+            @extend .module10;
+            .poster-horizontal {
+                width: px(404);
+            }
+            .poster-component {
+                .content-info {
+                    @include flex-items-center;
+                    justify-content: center;
+                    position: unset;
+                    height: 100%;
+                    .title {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+            .focus {
+                .content-info {
+                    margin-left: px(24);
+                }
+            }
+        }
+    }
+}

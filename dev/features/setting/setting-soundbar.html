@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+</head>
+
+<body>
+
+    <div id="root">
+        <!-- react 구조 -->
+
+
+        <div class="contact-wrap ">
+
+            <!-- 연결 모드 -->
+            <div class="contact-container">
+
+                <h1 class="skip">연결 모드</h1>
+
+                <!-- 블루투스 연결 대기 모드 -->
+                <div class="bluetooth-wait">
+
+                    <h2 class="skip">블루투스 연결 대기 모드</h2>
+
+                        <section>
+                            <div class="title">
+                                <h3>블루투스 연결 모드</h3>
+                                <p class="waiting">연결 대기 중</p>
+                                <p class="follow">
+                                    <span>
+                                        스마트폰, 태블릿 등의 기기를 U+tv사운드바와 무선으로 연결하여 고음질로 즐길 수 있습니다.<br/>순서대로 따라해주세요
+                                    </span>
+                                    <span class="sub-guide">
+                                        ※ 블루투스 기능 켜는 방법은 기기별 사용설명서에서 자세히 확인해주세요.
+                                    </span>
+                                </p>
+                                
+                            </div>
+                            <div class="guide">
+                                <p class="guide-image"></p>
+                                <div class="guide-text">
+                                    <span>1. 연결할 기기의 </br>'블루투스' 기능을 켜주세요.</span>
+                                    <span>2. '찾기' 버튼을 눌러 </br>연결할 기기를 검색하세요.</span>
+                                    <span>3. 연결 가능한 기기 목록에서 </br>'U+tv Soundbar'를<br/>선택해 주세요.</span>
+                                </div>
+                            </div>
+
+                            <div class="prev">
+                                <button class="prev-arrow"></button>
+                                <p>직접 연결 모드</p>
+                            </div>
+            
+                            <div class="next">
+                                <button class="next-arrow focus"> </button>
+                                <p>TV 연결 모드</p>
+                            </div>
+
+                            <div class="option-guide">
+                                <p class="keyguide">
+                                    <span class="ic-round keyguide-change"></span>모드변경
+                                    <span class="ic-round keyguide-exit">종료</span>닫기
+                                </p>
+                            </div>
+                        </section>
+
+                </div>
+                <!-- 블루투스 연결 대기 모드-->
+
+
+
+
+                <!-- 직접 연결 모드 -->
+                <div class="direct-contact" >
+                    <h2 class="skip">직접 연결 모드</h2>
+
+
+                        <section>
+                            <div class="title">
+                                <h3>직접 연결 모드</h3>
+                                <p class="waiting">연결 대기 중</p>
+                                <span class="follow">
+                                    게임기, DVD플레이어 등의 외부기기를 U+tv사운드바와 HDMI 케이블 선으로 연결하여<br/>더 생생한 사운드와 영상을 즐길 수 있습니다. 순서대로 따라해주세요.
+                                </span>
+                            </div>
+                            <div class="guide">
+                                <p class="guide-image"></p>
+                                <div class="guide-text">
+                                    <span>1. 외부기기와 연결된 HDMI 선을 </br>U+tv 사운드바의 HDMI IN에 연결하세요.</span>
+                                    <span>2. 외부기기의 전원을 켜 주세요.</span>
+                                </div>
+                            </div>
+                            
+                            <div class="prev">
+                                <button class="prev-arrow"></button>
+                                <p>직접 연결 모드</p>
+                            </div>
+            
+                            <div class="next">
+                                <button class="next-arrow focus"></button>
+                                <p>블루투스<br/> 연결 모드</p>
+                            </div>
+
+                            <div class="option-guide">
+                                <p class="keyguide">
+                                    <span class="ic-round keyguide-change"></span>모드변경
+                                    <span class="ic-round keyguide-exit">종료</span>닫기
+                                </p>
+                            </div>
+                        </section>
+
+                    
+                </div>
+                <!--// 직접 연결 모드  -->
+
+
+
+                <!-- tv 연결 모드 -->
+                <div class="tv-contact" >
+                    <h2 class="skip">TV 연결 모드</h2>
+
+
+                        <section>
+                            <div class="title">
+                                <h3>TV 연결 모드</h3>
+                                <p class="follow">
+                                    <span>
+                                        게임기, DVD플레이어 등의 외부기기를 U+tv사운드바와 HDMI 케이블 선으로 연결하여<br/>더 생생한 사운드와 영상을 즐길 수 있습니다. 순서대로 따라해주세요.
+                                    </span>
+                                    <span class="sub-guide">
+                                        ※ 현재 모드에서 이어폰 듣기 기능은 이용할 수 없습니다.
+                                    </span>
+                                    <span class="sub-guide">
+                                        사운드바를 TV의 HDMI IN(ARC)에 연결
+                                    </span>
+                                    <span class="sub-guide">
+                                        TV의 음향 설정에서 TV스피커를 HDMI ARC로 선택
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="guide">
+                                <p class="guide-image"></p>
+                                <div class="guide-text">
+                                    <span>1. 외부기기의 전원을 켜고<br/>HDMI 선을 TV의<br/>HDMI IN에 연결하세요.</span>
+                                    <span>2. TV 또는 사운드바 리모컨의<br/>[외부입력]을 눌러주세요.</span>
+                                    <span>3. HDMI 선이 연결된 단자<br/>번호를 확인하고, TV화면에서<br/>해당 번호를 선택하세요.</span>
+                                </div>
+                            </div>
+
+                            <div class="prev">
+                                <button class="prev-arrow"></button>
+                                <p>블루투스<br/> 연결 모드</p>
+                            </div>
+            
+                            <div class="next">
+                                <button class="next-arrow focus"></button>
+                                <p>직접연결 모드</p>
+                            </div>
+
+                            <div class="option-guide">
+                                <p class="keyguide">
+                                    <span class="ic-round keyguide-change"></span>모드변경
+                                    <span class="ic-round keyguide-exit">종료</span>닫기
+                                </p>
+                            </div>
+                        </section>
+
+                    
+                </div>
+                <!--// tv 연결 모드  -->
+
+
+
+                <!-- 블루투스 연결 모드 -->
+                <div class="bluetooth-pairing">
+                    <h2 class="skip">블루투스 연결 모드</h2>
+                    <section>
+                        <div class="title">
+                            <h3>블루투스 연결 모드</h3>
+                        </div>
+
+                        <div class="guide">
+                            <p class="guide-image"></p>
+                            <div class="guide-text">
+                                <span>한번 연결한 기기는 이후 기기 선택 만으로도 U+tv 사운드바와 자동 연결됩니다.</span>
+                                <span>연결된 후에도 TV 화면을 켜지 않아도 U+tv 사운드바만의 풍부한 음질을 즐길 수 있습니다.</span>
+                            </div>
+                        </div>
+
+                        <div class="prev">
+                            <button class="prev-arrow"></button>
+                            <p>직접 연결 모드</p>
+                        </div>
+        
+                        <div class="next">
+                            <button class="next-arrow focus"> </button>
+                            <p>TV 연결 모드</p>
+                        </div>
+
+                        <div class="option-guide">
+                            <p class="keyguide">
+                                <span class="ic-round keyguide-change"></span>모드변경
+                                <span class="ic-round keyguide-exit">종료</span>닫기
+                            </p>
+                        </div>
+                    </section>
+                </div>
+                <!--// 블루투스 연결 모드 -->
+
+            </div>
+            <!-- //연결 모드 -->
+
+        </div>
+
+
+
+    </div>
+    <!-- //root -->
+
+</body>
+
+</html>

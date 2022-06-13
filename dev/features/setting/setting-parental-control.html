@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+</head>
+
+<body>
+
+    <div id="root">
+        <!-- react 구조 -->
+
+
+
+        <div class="setting-container">
+
+            <!-- 2Depth일때 노출 -->
+            <div class="category-back">
+                <i class="ic-arrow">이전으로</i>
+            </div>
+
+
+            <div class="setting-aside ">
+                <h1 class="title">설정</h1>
+
+                <!--menu 1depth / 2depth-->
+                <nav class="setting-menu">
+                    <!-- ul 부분만 지우시면 적용 됩니다. -->
+
+                    <!-- //1depth -->
+                    <!-- <ul class="setting-gnb">
+                        <li class="focus">공지사항</li>
+                        <li>자녀 보호 설정</li>
+                        <li>채널 설정</li>
+                        <li>시스템 설정</li>
+                        <li>오디오 설정</li>
+                    </ul> -->
+
+
+                    <!-- 2depth -->
+
+
+
+                    <ul class="parent-control-lnb">
+                        <!-- 2차 뎁스가 1차 뎁스로 이동하면 depth_2의 before 삭제 해야합니다.-->
+                        <li class="focus">비밀번호 변경</li>
+                        <li>시력보호 설정</li>
+                        <li>시청연령 제한</li>
+                        <li>시청시간 제한</li>
+                        <li>시청횟수 제한</li>
+                        <li>시청채널 제한</li>
+                        <li>성인 콘텐츠 제한</li>
+                    </ul>
+
+                    <!-- 채널 설정 
+                <ul class="channel-lnb">
+                    <li>선호채널 편집</li>
+                    <li>채널 숨김 편집</li>
+                    <li>채널 정보 표시</li>
+                    <li>시청각 보조 방송</li>
+                    <li>4채널 동시보기 화면</li>
+                </ul>-->
+
+                    <!-- 시스템 설정 
+                <ul class="system-lnb">
+                    <li class="focus">알림 설정</li>
+                    <li>자동 전원 설정</li>
+                    <li>U+tv 음성 제어</li>
+                    <li>디스플레이 모드</li>
+                    <li>화면 영역 최대화</li>
+                    <li>시작 화면 설정</li>
+                    <li>전체 초기화</li>
+                    <li>소프트웨어 업데이트</li>
+                    <li>TV 전원동기화</li>
+                </ul>
+                -->
+                </nav>
+
+
+
+
+            </div>
+
+
+            <!-- 우측 콘텐츠 영역 -->
+            <div class="setting-contents">
+                <!-- 상단 그라데이션 top-cover/ 하단 그라데이션 bottom-cover -->
+
+                <!--페이지 path-->
+                <p class="path">
+                    <span>홈</span>
+                    <span>설정</span>
+                    <span>자녀보호 설정</span>
+                </p>
+
+
+
+                <!--진입시 사용자 인증-->
+                <div class="user-auth">
+
+                    <h2 class="skip">자녀 보호 설정</h2>
+
+                    <div>
+
+                        <h2 class="skip">자녀 보호 설정 인증번호</h2>
+
+                        <div class="full-page">
+
+                            <div class="title">
+                                <h3>사용자 인증번호를 입력해주세요</h3>
+                            </div>
+
+                            <div class="input-text input-password">
+                                <p class="input-text-wrap focus">
+                                    <span class="cursor"></span>
+                                </p>
+                                <p class="input-text-wrap">
+                                    <span class="cursor"></span>
+                                </p>
+                                <p class="input-text-wrap">
+                                    <span class="cursor"></span>
+                                </p>
+                                <p class="input-text-wrap">
+                                    <span class="cursor"></span>
+                                </p>
+                            </div>
+                            <!-- <div class="input-password">
+                            <p><input type="password" name="passowrd" maxlength="1" minlength="1" class="input-test"/></p>
+                            <p class="entered"><input type="password" name="passowrd" maxlength="1" minlength="1" class="input-test"/></p>
+                            <p class="focus"><input type="password" name="passowrd" maxlength="1" minlength="1" class="input-test"/></p>
+                            <p><input type="password" name="passowrd" maxlength="1" minlength="1" class="input-test"/></p>
+                        </div> -->
+
+                            <p class="error-message on">
+                                <!--사용자 인증번호가 맞지 않을경우 on클래스를 넣으면 보임-->
+                                인증번호가 일치하지 않습니다. 확인 후 다시 입력해 주세요.
+                            </p>
+
+
+                            <div class="button-area">
+                                <button class="button focus">
+                                <p class="text">확인</p>
+                            </button>
+                            </div>
+
+                            <div class="auth-reset">
+                                <div class="reset-guide">
+                                    <p>인증번호가 기억나지 않는 고객은 인증초기화를 눌러주세요.</p>
+                                    <span>본인 인증 후 사용자 인증번호와 구매 비밀번호를 초기화 할 수 있습니다.</span>
+                                    <span>가입자가 법인인 경우 고객센터 국번없이 101번으로 문의해 주세요.</span>
+                                </div>
+
+                                <div class="button-area">
+                                    <button class="button focus">
+                                    <p class="text">인증 초기화</p>
+                                </button>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- //진입시 사용자 인증-->
+
+
+                <!--비밀번호 설정-->
+                <div class="password-setting">
+
+                    <h2 class="skip">비밀번호 설정</h2>
+
+
+                    <!-- 설정 항목 -->
+                    <div class="setting-list">
+
+                        <section>
+
+                            <div class="title">
+                                <h3>사용자 인증번호</h3>
+                                <span>
+                                사용자 인증 또는 성인 콘텐츠 시청 시 인증번호 입력이 필요합니다.
+                            </span>
+                            </div>
+
+
+                            <div class="button-area">
+                                <button class="button focus">
+                                <p class="text">인증번호 변경</p>
+                            </button>
+                            </div>
+
+                        </section>
+
+                        <section class="password">
+
+                            <div class="title">
+                                <h3>구매인증 비밀번호</h3>
+                                <span>
+                                유료 콘텐츠 구매 시 비밀번호 입력이 필요합니다.
+                            </span>
+                            </div>
+
+                            <div class="button-area">
+                                <button class="button focus">
+                                <p class="text">비밀번호 변경</p>
+                            </button>
+
+                                <button class="button">
+                                <p class="text">비밀번호 초기화</p>
+                            </button>
+                            </div>
+
+                        </section>
+
+                        <p class="guide-message">
+                            최초 인증번호는 0000 입니다.
+                        </p>
+
+                    </div>
+                    <!-- //선호채널 항목 -->
+
+                </div>
+                <!-- //비밀번호 설정-->
+
+
+
+
+                <!-- 시력보호 설정  -->
+                <div class="eyes-protect">
+                    <!--bluescrean?-->
+                    <h2 class="skip">시력보호 설정</h2>
+
+                    <!-- 설정 항목 -->
+                    <div class="setting-list">
+
+                        <section class="protect-mode">
+
+                            <div class="title">
+                                <h3>시력보호 모드</h3>
+                                <span>
+                                눈의 피로감을 덜어주는 시력보호 모드가 적용됩니다.
+                            </span>
+                            </div>
+
+                            <ul class="setting-items">
+                                <li class="radio-button">
+                                    <input type="radio" name="" value="" class="input-radio">
+                                    <label>꺼짐</label>
+                                </li>
+                                <li class="radio-button focus">
+                                    <input type="radio" name="" value="" class="input-radio" checked>
+                                    <label>아이들나라만 켜짐</label>
+                                </li>
+                            </ul>
+
+                            <div class="noti-message">
+                                <p>U+ TV 시력보호모드의 효과</p>
+
+                                <span>(2017년 3월)</span>
+
+                                <span>대한안과학회 주관으로 진행한 “IPTV 시력보호 모드의 유호성” 연구 결과 다음과 같은 효과가 <br/>있음이 검증되었습니다.</span>
+
+                                <ol>
+                                    <li>1) 눈이 피로감과 불편감을 덜 느끼도록 해줍니다.</li>
+                                    <li>2) 눈이 가지고 있는 초점 조절 기능의 피로도를 줄여주고, 물체를 선명하게 볼 수 있도록 도와줍니다.</li>
+                                </ol>
+                            </div>
+
+                        </section>
+
+                    </div>
+
+                </div>
+                <!-- //시력보호 설정 -->
+
+
+
+
+                <!-- 시청연령 제한 -->
+                <div class="age-limit">
+
+                    <h2 class="skip">시청연령 제한</h2>
+
+                    <!-- 설정 항목 -->
+                    <div class="setting-list">
+
+                        <section>
+                            <div class="title">
+                                <h3>시청연령 제한</h3>
+                                <span>
+                                콘텐츠 연령 제한 등급에 따라 시청이 제한됩니다.
+                            </span>
+                            </div>
+                            <ul class="setting-items">
+                                <li class="radio-button ">
+                                    <input type="radio" name="" value="" class="input-radio">
+                                    <label>없음</label>
+                                </li>
+                                <li class="radio-button size15 focus">
+                                    <input type="radio" name="" value="" class="input-radio" checked>
+                                    <label>19세 이상</label>
+                                </li>
+                                <li class="radio-button size15">
+                                    <input type="radio" name="" value="" class="input-radio">
+                                    <label>15세 이상</label>
+                                </li>
+                                <li class="radio-button size15">
+                                    <input type="radio" name="" value="" class="input-radio">
+                                    <label>12세 이상</label>
+                                </li>
+                                <li class="radio-button">
+                                    <input type="radio" name="" value="" class="input-radio">
+                                    <label>7세 이상</label>
+                                </li>
+                            </ul>
+                        </section>
+
+                    </div>
+
+                </div>
+                <!-- //연령 제한 -->
+
+
+
+                <!-- 시청시간 제한 -->
+                <div class="time-limit">
+                    <h2 class="skip">시청시간 제한</h2>
+                    <div class="setting-list">
+                        <section>
+                            <div class="title">
+                                <h3>시청시간 제한</h3>
+                                <span>
+                                TV시청 시간이 제한됩니다.
+                            </span>
+                            </div>
+
+                            <ul class="setting-items">
+                                <li class="radio-button">
+                                    <input type="radio" name="" value="" class="input-radio">
+                                    <label>꺼짐</label>
+                                </li>
+                                <li class="radio-button">
+                                    <input type="radio" name="" value="" class="input-radio" checked>
+                                    <label>켜짐</label>
+                                </li>
+                            </ul>
+                        </section>
+
+                        <div class="setting-group on"> 
+                            <!--시청시간 제한에서 켜짐으로 되면 on 클라스가 들어가면 opacity : 1-->
+                            <section>
+                                <div class="title">
+                                    <h3>제한 시작 - 종료 시간</h3>
+                                    <span>설정된 시간 동안 시청이 제한됩니다.</span>
+                                </div>
+
+                                <div class="setting-time">
+                                    <div class="button-area">
+                                        <button class="button focus">
+                                        <p class="text">시간 설정</p>
+                                        </button>
+                                    </div>
+                                    <div class="timeline">
+                                        <div class="start-time">
+                                            <p class="start">시작 시간</p>
+                                            <span>오전 00:00</span>
+                                        </div>
+                                        <div class="end-time">
+                                            <p class="end">종료 시간</p>
+                                            <span>오후 00:00</span>
+                                        </div>
+    
+                                        <p class="total">
+                                            총 00시간 00분
+                                        </p>
+                                    </div>
+                                </div>
+                            </section>
+                            <section>
+                                <div class="title">
+                                    <h3>반복 설정</h3>
+                                    <span>
+                                    설정된 시청 제한을 1회 또는 매일 반복해서 적용 할 수 있습니다.
+                                </span>
+                                </div>
+    
+                                <ul class="setting-items">
+                                    <li class="radio-button">
+                                        <input type="radio" name="" value="" class="input-radio" checked>
+                                        <label>1회</label>
+                                    </li>
+                                    <li class="radio-button">
+                                        <input type="radio" name="" value="" class="input-radio">
+                                        <label>매일</label>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- //시청시간 제한 -->
+
+
+                <!-- 시청횟수 제한 -->
+                <div class="count-limit">
+                    <!--켜짐으로 체크가 되면 아이들나라 VOD 시청 횟수 opacity 1이 됌-->
+
+                    <h2 class="skip">화면횟수 제한</h2>
+
+                    <div class="setting-list">
+
+                        <section>
+                            <div class="title">
+                                <h3>횟수 제한</h3>
+                                <span>아이들나라 VOD 시청 횟수가 제한됩니다.</span>
+                            </div>
+
+                            <ul class="setting-items">
+                                <li class="radio-button ">
+                                    <input type="radio" name="" value="" class="input-radio">
+                                    <label>꺼짐</label>
+                                </li>
+                                <li class="radio-button focus">
+                                    <input type="radio" name="" value="" class="input-radio" checked>
+                                    <label>켜짐</label>
+                                </li>
+                            </ul>
+
+                        </section>
+
+
+                        <section class="on">
+                            <!--클래스가 on 없으면 opacity 값 0; on클래스가 있으면 opacity 는 1-->
+                            <div class="title">
+                                <h3>아이들나라 VOD 시청횟수</h3>
+                                <span>시청 횟수를 설정합니다. (최대 99회까지 설정가능)</span>
+                            </div>
+                            <div class="filed-group">
+                                <div class="input-text">
+                                    <p class="input-text-wrap focus">
+                                        <span>6</span>
+                                        <span class="cursor"></span>
+                                        <span>6</span>
+                                    </p>
+                                </div>
+                                <p class="text">회</p>
+                            </div>
+                        </section>
+
+
+
+
+                    </div>
+
+                </div>
+                <!-- //시청 횟수 제한 -->
+
+
+                <!-- 시청 채널 제한 -->
+                <div class="channel-limit">
+
+                    <h2 class="skip">시청채널 제한</h2>
+
+                    <div class="setting-list">
+
+                        <section>
+
+                            <div class="title">
+                                <h3>어린이/교육 채널만 보기</h3>
+                                <span>
+                                어린이 / 교육 채널을 제외한 나머지 채널이 제한됩니다.
+                            </span>
+                            </div>
+
+                            <ul class="setting-items">
+                                <li class="radio-button focus">
+                                    <input type="radio" name="" value="" class="input-radio" checked>
+                                    <label>꺼짐</label>
+                                </li>
+                                <li class="radio-button">
+                                    <input type="radio" name="" value="" class="input-radio">
+                                    <label>켜짐</label>
+                                </li>
+                            </ul>
+
+                        </section>
+
+                        <section>
+
+                            <div class="title">
+                                <h3>채널 잠금 선택</h3>
+                                <span>
+                                선택한 채널 시청 시, 비밀번호 입력이 필요합니다.
+                            </span>
+                            </div>
+
+                            <div class="button-area">
+                                <button class="button focus">
+                                <p class="text">채널 편집</p>
+                            </button>
+                            </div>
+
+
+                        </section>
+
+                    </div>
+
+                </div>
+                <!-- //시청 채널 제한 -->
+
+
+                <!-- 성인 콘텐츠 제한 -->
+                <div class="adult-limit">
+
+                    <h2 class="skip">성인 콘텐츠 제한</h2>
+
+                    <div class="setting-list">
+
+                        <section>
+
+                            <div class="title">
+                                <h3>성인 콘텐츠 제한</h3>
+                                <span>
+                                실시간 채널, VOD 성인전용관 메뉴, 마이메뉴에서 성인 콘텐츠를 숨기는 기능이며, ‘숨김’ 처리를 할 경우 
+                            </span>
+                                <span>
+                                19세 이상 시청 가능 등급의 모든 콘텐츠 (일반 극장개봉 영화 포함) 에 대해 ‘숨김’ 처리가 됩니다.
+                            </span>
+
+                            </div>
+
+                            <ul class="setting-items">
+                                <li class="radio-button focus">
+                                    <input type="radio" name="" value="" class="input-radio" checked>
+                                    <label>숨김</label>
+                                </li>
+                                <li class="radio-button">
+                                    <input type="radio" name="" value="" class="input-radio">
+                                    <label>보임</label>
+                                </li>
+                            </ul>
+
+                        </section>
+                    </div>
+
+                </div>
+                <!-- //성인 콘텐츠 제한 -->
+
+            </div>
+            <!-- //우측 콘텐츠 영역  -->
+
+
+        </div>
+        <!-- //설정 -->
+
+
+
+
+
+
+    </div>
+    <!-- //root -->
+
+</body>
+
+</html>

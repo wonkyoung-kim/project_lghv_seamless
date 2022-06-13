@@ -1,0 +1,1741 @@
+@charset "UTF-8";
+/* variables */
+/* functions */
+/* mixins */
+/* toast 임시 */
+.setting-container {
+  display: flex;
+  position: relative;
+  height: 100%;
+  background-color: #191b2b;
+}
+
+.setting-container h1.title {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 90px;
+  padding-left: 42px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 4.8rem;
+}
+
+.setting-aside {
+  position: relative;
+  min-height: 100%;
+  background-color: #080d19;
+}
+
+.setting-menu {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  height: 576px;
+  overflow: hidden;
+}
+
+.setting-menu ul {
+  width: 270px;
+  padding-left: 25px;
+  background-color: #080d19;
+}
+
+.setting-menu ul li {
+  position: relative;
+  width: 245px;
+  height: 58px;
+  margin-bottom: 2px;
+  padding: 0 28px 0 17px;
+  font-size: 3.6rem;
+  white-space: nowrap;
+  line-height: 58px;
+  color: #a9a9a9;
+  opacity: 0.9;
+}
+
+.setting-menu ul li:last-child {
+  margin-bottom: 0;
+}
+
+.setting-menu ul li.selected, .setting-menu ul li.focus {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 3.8rem;
+  color: #eee;
+  opacity: 1;
+}
+
+.setting-menu ul li.focus::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: 50%;
+  width: 4px;
+  height: 30px;
+  margin-top: calc(-30px / 2);
+  border-radius: 2px;
+  background-color: #eee;
+}
+
+.category-back {
+  background-color: #080d19;
+}
+
+.setting-contents {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  padding: 0 40px;
+  background-color: #191b2b;
+}
+
+.setting-contents::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  left: unset;
+  right: 0;
+  width: inherit;
+  height: 156px;
+  background-image: linear-gradient(to bottom, #191b2b 46%, rgba(25, 27, 43, 0.53) 76%, rgba(0, 0, 0, 0) 88%);
+  background-size: 100% 156px;
+  z-index: 3;
+  display: none;
+}
+
+.setting-contents::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: unset;
+  bottom: 0;
+  width: inherit;
+  height: 109px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 12%, rgba(25, 27, 43, 0.53) 34%, #080d19 88%);
+  z-index: 3;
+  display: none;
+}
+
+.setting-contents.top-cover::before {
+  display: block;
+}
+
+.setting-contents.bottom-cover::after {
+  display: block;
+}
+
+.setting-contents.active .scroll {
+  opacity: 1;
+}
+
+.setting-contents .path {
+  position: relative;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-top: 34px;
+  height: 77px;
+  z-index: 99;
+}
+
+.setting-contents > div {
+  position: relative;
+  height: 642px;
+  overflow: hidden;
+}
+
+.setting-contents section {
+  width: 100%;
+  padding: 30px 40px;
+  border-bottom: 1px solid #2A2C3E;
+}
+
+.setting-contents section:first-of-type {
+  z-index: 2;
+}
+
+.setting-contents .title {
+  margin-bottom: 24px;
+}
+
+.setting-contents .title h3 {
+  font-size: 3.6rem;
+  color: #d6d6d6;
+  margin-bottom: 8px;
+}
+
+.setting-contents .title span {
+  font-size: 2.4rem;
+  color: #a9a9a9;
+}
+
+.setting-contents .sub-text {
+  font-size: 2.4rem;
+  color: #777;
+  margin-top: 20px;
+  line-height: 24px;
+}
+
+.setting-contents .scroll {
+  position: absolute;
+  top: 110px;
+  right: 18px;
+  width: 4px;
+  height: 561px;
+  border-radius: calc(4px / 2);
+  background-color: rgba(255, 255, 255, 0.12);
+  z-index: 1;
+  opacity: 0;
+}
+
+.setting-contents .scroll span {
+  display: inline-block;
+  width: 100%;
+  border-radius: calc(4px / 2);
+  background-color: #a9a9a9;
+}
+
+.setting-contents .full-page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 642px;
+  padding-top: 221px;
+  text-align: center;
+}
+
+.setting-contents .full-page .title {
+  margin-bottom: 29px;
+}
+
+.setting-contents .full-page .button-area {
+  display: flex;
+  align-items: center;
+  height: 65px;
+}
+
+.setting-contents .full-page .error-message {
+  font-size: 2.4rem;
+  color: #a9a9a9;
+  margin-bottom: 49px;
+}
+
+.setting-contents .button {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 57px;
+  margin-right: 10px;
+  padding: 0 26px;
+  font-family: "Yoon Gothic 750", "YoonGothic 700 50", "Yoon윤고딕 750", "YoonGothic 750", "YOONGOTHICPRO750";
+  font-size: 3.2rem;
+  color: #a9a9a9;
+  border-radius: 5px;
+  background-color: #2A2C3E;
+}
+
+.setting-contents .button:last-child {
+  margin-right: 0;
+}
+
+.setting-contents .button p.text {
+  width: 146px;
+}
+
+.setting-contents .button.focus {
+  position: relative;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  color: #080d19;
+  background-color: #eee;
+}
+
+.setting-contents .button.focus::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: -3px;
+  width: 100%;
+  height: 65px;
+  border-radius: 5px;
+  background-color: #eee;
+}
+
+.setting-contents .button.focus .text {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 3.4rem;
+  z-index: 1;
+}
+
+.setting-contents .auth .full-page {
+  padding-top: 168px;
+}
+
+.setting-contents .auth .guide-message {
+  position: absolute;
+  right: 20px;
+  bottom: 34px;
+  font-size: 2.4rem;
+  color: #626373;
+}
+
+.setting-contents .input-password {
+  display: flex;
+  align-items: center;
+  height: 49px;
+  width: auto;
+  margin-bottom: 38px;
+}
+
+.setting-contents .input-password.focus label {
+  color: #ef3484;
+}
+
+.setting-contents .input-password p {
+  position: relative;
+  width: 49px;
+  height: 49px;
+  margin-right: 8px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #2A2C3E;
+}
+
+.setting-contents .input-password p:last-child {
+  margin-right: 0;
+}
+
+.setting-contents .input-password p.focus {
+  background-color: #080d19;
+}
+
+.setting-contents .input-password p.focus.entered {
+  background: #080d19 url(../images/common/ic-password-w.png) no-repeat center;
+  background-size: 17px;
+}
+
+.setting-contents .input-password p.focus.entered .cursor::before {
+  content: none;
+}
+
+.setting-contents .input-password p.focus::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 0 6px #eee;
+  border-radius: 5px;
+  box-shadow: 0px 0px 0px 2px #eee;
+}
+
+.setting-contents .input-password p.focus span {
+  position: unset;
+}
+
+.setting-contents .input-password p.focus span::before {
+  height: 26px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #eee;
+}
+
+.setting-contents .input-password p.entered {
+  background: #2A2C3E url(../images/common/ic-password-w.png) no-repeat center;
+  background-size: 17px;
+}
+
+.setting-contents .input-password input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 49px;
+  height: 49px;
+  opacity: 0;
+  z-index: 10;
+}
+
+.setting-contents .input-password label {
+  height: 49px;
+  line-height: 49px;
+  font-size: 3.2rem;
+  color: #777;
+}
+
+.setting-contents .input-password .container {
+  display: flex;
+}
+
+.setting-items {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 65px;
+}
+
+.setting-items .radio-button {
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-width: 114px;
+  height: 65px;
+  padding: 0 16px;
+  margin-right: 9px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 3.4rem;
+  color: #a9a9a9;
+}
+
+.setting-items .radio-button .input-radio {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  border: 2px solid #535458;
+  border-radius: 50%;
+  z-index: 1;
+  margin-right: 8px;
+}
+
+.setting-items .radio-button .input-radio::before {
+  width: calc(26px - 9px);
+  height: calc(26px - 9px);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  content: '';
+}
+
+.setting-items .radio-button .input-radio[type=checkbox]::before {
+  width: 26px;
+  height: 26px;
+}
+
+.setting-items .radio-button .input-radio:checked {
+  border: 2px solid #ef3484;
+}
+
+.setting-items .radio-button .input-radio[type=radio]:checked::before {
+  background-color: #ef3484;
+}
+
+.setting-items .radio-button .input-radio[type=checkbox]:checked::before {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/purchase/ic-check-focus2.png);
+}
+
+.setting-items .radio-button .input-radio:checked {
+  border-color: #535458;
+}
+
+.setting-items .radio-button .input-radio[type=radio]:checked::before {
+  background-color: #535458;
+}
+
+.setting-items .radio-button label {
+  z-index: 1;
+}
+
+.setting-items .radio-button .audio-channel {
+  font-size: 3.2rem;
+}
+
+.setting-items .radio-button:last-child {
+  margin-right: 0;
+}
+
+.setting-items .radio-button.size7 label {
+  width: 50px;
+}
+
+.setting-items .radio-button.size9 label {
+  width: 60px;
+}
+
+.setting-items .radio-button.size10 label {
+  width: 66px;
+}
+
+.setting-items .radio-button.size10_4 label {
+  width: 69px;
+}
+
+.setting-items .radio-button.size11 label {
+  width: 73px;
+}
+
+.setting-items .radio-button.size12 label {
+  width: 80px;
+}
+
+.setting-items .radio-button.size14 label {
+  width: 93px;
+}
+
+.setting-items .radio-button.size16 label {
+  width: 106px;
+}
+
+.setting-items .radio-button.size15 label {
+  width: 103px;
+}
+
+.setting-items .radio-button.size17 label {
+  width: 113px;
+}
+
+.setting-items .radio-button.size22 label {
+  width: 146px;
+}
+
+.setting-items .radio-button.size23 label {
+  width: 153px;
+}
+
+.setting-items .radio-button.size22_5 label {
+  width: 150px;
+}
+
+.setting-items .radio-button.size25 label {
+  width: 166px;
+}
+
+.setting-items .radio-button.size28 label {
+  width: 186px;
+}
+
+.setting-items .radio-button.size30 label {
+  width: 200px;
+}
+
+.setting-items .radio-button.size31 label {
+  min-width: 206px;
+}
+
+.setting-items .radio-button.size34 label {
+  width: 226px;
+}
+
+.setting-items .radio-button.size40 label {
+  min-width: 266px;
+}
+
+.setting-items .radio-button.size41 label {
+  min-width: 273px;
+}
+
+.setting-items .radio-button.size55 label {
+  min-width: 366px;
+}
+
+.setting-items .radio-button.size60 label {
+  min-width: 400px;
+}
+
+.setting-items .radio-button.focus {
+  font-size: 3.6rem;
+  color: #eee;
+}
+
+.setting-items .radio-button.focus::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 3px solid #eee;
+  border-radius: 5px;
+  background-color: #2A2C3E;
+}
+
+.setting-items .radio-button.focus .input-radio {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  border: 2px solid #ef3484;
+  border-radius: 50%;
+}
+
+.setting-items .radio-button.focus .input-radio::before {
+  width: calc(26px - 9px);
+  height: calc(26px - 9px);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  content: '';
+}
+
+.setting-items .radio-button.focus .input-radio[type=radio]::before {
+  width: calc(26px - 9px);
+  height: calc(26px - 9px);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  content: '';
+  background-color: #ef3484;
+}
+
+.setting-items .radio-button.focus .input-radio:checked {
+  border: 2px solid #ef3484;
+}
+
+.setting-items .radio-button.focus .input-radio[type=radio]:checked::before {
+  background-color: #ef3484;
+}
+
+.reserv-notice .setting-items {
+  align-content: space-between;
+  height: 128px;
+}
+
+.reserv-notice .setting-items li.radio-button {
+  margin-right: 13px;
+}
+
+.reserv-notice .setting-items li:nth-child(1) {
+  margin-right: 34px;
+}
+
+.reserv-notice .setting-items li:nth-child(5) {
+  margin-right: 8px;
+}
+
+.start-setting section:last-child {
+  border: 0;
+}
+
+.start-setting .launcher-setting li + li {
+  margin-left: 176px;
+}
+
+.start-setting .launcher-setting .image {
+  display: flex;
+  margin-top: 21px;
+}
+
+.start-setting .launcher-setting .image p {
+  width: 258px;
+  height: 148px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5;
+}
+
+.start-setting .launcher-setting .image p.on-image {
+  background-image: url("../images/setting/img-launcher-on.png");
+}
+
+.start-setting .launcher-setting .image p.off-image {
+  background-image: url("../images/setting/img-launcher-off.png");
+}
+
+.start-setting .launcher-setting .image p.on {
+  opacity: 1;
+}
+
+.start-setting .launcher-setting .image p + p {
+  margin-left: 40px;
+}
+
+.software-update .title {
+  margin-bottom: 20px;
+}
+
+.software-update .info {
+  display: flex;
+  color: #777;
+}
+
+.software-update .info .version {
+  font-size: 3.4rem;
+  color: #777;
+  margin-right: 20px;
+}
+
+.software-update .info .date {
+  font-size: 3.2rem;
+}
+
+.software-update .button-area .button .text {
+  width: 200px;
+}
+
+.channel-favorite .channel-select {
+  padding-bottom: 34px;
+}
+
+.channel-favorite .channel-select .title {
+  margin-bottom: 26px;
+}
+
+.channel-favorite .channel-select .text {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.channel-hide .channel-select {
+  padding-bottom: 34px;
+}
+
+.channel-hide .channel-select .title {
+  margin-bottom: 26px;
+}
+
+.channel-hide .channel-select .text {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.channel-assist .subtitle-setting {
+  opacity: .5;
+}
+
+.channel-assist .subtitle-setting.on {
+  opacity: 1;
+}
+
+.channel-assist .subtitle-select li:nth-of-type(2) {
+  margin-left: 26px;
+}
+
+.channel-assist .subtitle-select li:nth-of-type(3) {
+  margin-left: 146px;
+}
+
+.channel-assist .subtitle-size {
+  display: flex;
+}
+
+.channel-assist .subtitle-size p {
+  width: 192px;
+  height: 104px;
+  margin: 17px 78px 0 0;
+  padding-top: 16px;
+  border-radius: 5px;
+  text-align: center;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 2.4rem;
+  color: #878788;
+  background-color: #2A2C3E;
+}
+
+.channel-assist .subtitle-size p.big span:last-child {
+  font-size: 5.5rem;
+}
+
+.channel-assist .subtitle-size p.medium span:last-child {
+  font-size: 4.2rem;
+}
+
+.channel-assist .subtitle-size p.small span:last-child {
+  font-size: 2.8rem;
+}
+
+.channel-assist .subtitle-size span {
+  display: block;
+}
+
+.channel-assist .subtitle-size span:first-child {
+  margin-bottom: 6px;
+}
+
+.channel-assist .subtitle-size span:last-child {
+  height: 42px;
+  line-height: 42px;
+}
+
+.channel-partition .partition-select {
+  height: 96px;
+  margin-bottom: 33px;
+  border-bottom: 1px solid #2A2C3E;
+}
+
+.channel-partition .partition-rayout {
+  display: flex;
+  height: 186px;
+}
+
+.channel-partition .partition-rayout .partition-cover {
+  margin-right: 109px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  text-align: center;
+  color: #878788;
+  opacity: .5;
+}
+
+.channel-partition .partition-rayout .partition-cover.on {
+  opacity: 1;
+}
+
+.channel-partition .partition-rayout .partition {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 280px;
+  height: 153px;
+  margin-bottom: 13px;
+}
+
+.channel-partition .partition-rayout .partition p {
+  margin: 0 6px 6px 0;
+  background-color: #2A2C3E;
+  border-radius: 2px;
+}
+
+.channel-partition .partition-rayout .partition p.primary {
+  width: 153px;
+  height: 153px;
+  line-height: 153px;
+  margin-bottom: 0;
+  font-size: 9rem;
+}
+
+.channel-partition .partition-rayout .partition p:not(.primary) {
+  width: 120px;
+  height: 46px;
+  line-height: 46px;
+  margin-right: 0;
+  font-size: 3.2rem;
+}
+
+.channel-partition .partition-rayout .partition p:last-child {
+  margin-bottom: 0;
+}
+
+.channel-partition .partition-rayout .partition.equality {
+  flex-direction: row;
+  width: 317px;
+}
+
+.channel-partition .partition-rayout .partition.equality p {
+  width: 152px;
+  height: 73px;
+  line-height: 73px;
+  margin-right: 6px;
+  font-size: 3.4rem;
+}
+
+.channel-partition .partition-rayout .guide {
+  font-size: 2.4rem;
+  color: #777;
+}
+
+.user-auth .full-page {
+  padding-top: 101px;
+}
+
+.user-auth .full-page .title {
+  margin-bottom: 29px;
+}
+
+.user-auth .full-page > button {
+  margin-bottom: 86px;
+}
+
+.user-auth .input-password {
+  margin-bottom: 40px;
+}
+
+.user-auth .input-password p:last-child {
+  margin-right: 0;
+}
+
+.user-auth .button-area {
+  margin-bottom: 86px;
+}
+
+.user-auth .auth-reset .button p {
+  z-index: 1;
+}
+
+.user-auth .auth-reset .button::after {
+  box-shadow: inset 0 0 0 4px #eee;
+  background-color: #111424;
+  z-index: 0;
+}
+
+.user-auth .error-message {
+  margin-bottom: 44px;
+  opacity: 0;
+}
+
+.user-auth .error-message.on {
+  opacity: 1;
+}
+
+.user-auth .auth-reset {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 884px;
+  padding: 26px 39px 26px 26px;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 2.4rem;
+  color: #a9a9a9;
+  background-color: #2A2C3E;
+}
+
+.user-auth .auth-reset .reset-guide p {
+  margin-bottom: 16px;
+  color: #aaa4ff;
+}
+
+.user-auth .auth-reset span {
+  display: block;
+}
+
+.user-auth .auth-reset span:nth-of-type(1) {
+  margin-bottom: 2px;
+}
+
+.user-auth .auth-reset .button-area {
+  margin-bottom: 0;
+}
+
+.user-auth .auth-reset .button-area .button {
+  font-size: 3.2rem;
+  background-color: #111424;
+  box-shadow: inset 0 0 0 2px #777;
+}
+
+.user-auth .auth-reset .button-area .button.focus p {
+  font-size: 3.4rem;
+  color: #eee;
+}
+
+.password-setting .password button:first-child {
+  margin-right: 0;
+}
+
+.password-setting .password button:last-child .text {
+  width: 162px;
+}
+
+.password-setting .guide-message {
+  position: absolute;
+  right: 0px;
+  bottom: 34px;
+  font-size: 2.4rem;
+  color: #626373;
+}
+
+.age-limit .setting-items li {
+  margin-right: 8px;
+}
+
+.eyes-protect .protect-mode {
+  border-bottom: none;
+}
+
+.eyes-protect .setting-items {
+  margin-bottom: 32px;
+}
+
+.eyes-protect .setting-items li:first-child {
+  margin-right: 80px;
+}
+
+.eyes-protect .noti-message {
+  padding: 20px 20px 26px;
+  border-radius: 5px;
+  color: #a9a9a9;
+  font-size: 2.4rem;
+  background-color: #2A2C3E;
+}
+
+.eyes-protect .noti-message p {
+  color: #aaa4ff;
+  margin-bottom: 24px;
+}
+
+.eyes-protect .noti-message span {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.eyes-protect .noti-message span:nth-of-type(1) {
+  font-size: 2.0rem;
+  margin-bottom: 8px;
+}
+
+.eyes-protect .noti-message span:nth-of-type(2) {
+  margin-bottom: 26px;
+}
+
+.eyes-protect .noti-message ol li {
+  margin-bottom: 2px;
+}
+
+.eyes-protect .noti-message ol li:last-child {
+  margin-bottom: 0;
+}
+
+.time-limit .setting-group {
+  opacity: 0;
+}
+
+.time-limit .setting-group.on {
+  opacity: 1;
+}
+
+.time-limit .setting-group section:first-child .title {
+  margin-bottom: 20px;
+}
+
+.time-limit .setting-group section:last-child {
+  border-bottom: 0;
+}
+
+.time-limit .setting-time {
+  display: flex;
+  align-items: center;
+}
+
+.time-limit .setting-time .button-area {
+  margin-right: 26px;
+}
+
+.time-limit .setting-time .text {
+  font-size: 3.4rem;
+}
+
+.time-limit .setting-time .button {
+  height: 86px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.time-limit .setting-time .button.focus {
+  color: #eee;
+  background-color: #111424;
+}
+
+.time-limit .setting-time .button.focus .text {
+  font-size: 3.4rem;
+}
+
+.time-limit .setting-time .button.focus::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 0 6px #eee;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 2px #eee;
+  height: 100%;
+  background-color: unset;
+}
+
+.time-limit .setting-time .timeline {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 78px;
+  padding: 0 32px;
+  border-radius: 5px;
+  background-color: #2A2C3E;
+}
+
+.time-limit .setting-time .timeline div {
+  position: relative;
+  flex-direction: column;
+  margin-right: 27px;
+  color: #a9a9a9;
+}
+
+.time-limit .setting-time .timeline .start-time {
+  margin-right: 44px;
+}
+
+.time-limit .setting-time .timeline .start-time::after {
+  content: "~";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: -31px;
+  font-size: 3.6rem;
+}
+
+.time-limit .setting-time .timeline .total {
+  align-self: flex-end;
+  margin-bottom: 20px;
+  font-size: 2.6rem;
+  color: #a9a9a9;
+}
+
+.time-limit .setting-time .timeline p {
+  font-size: 2rem;
+  margin-bottom: 3px;
+}
+
+.time-limit .setting-time .timeline span {
+  display: block;
+  font-size: 3.6rem;
+}
+
+.count-limit section:nth-of-type(2) {
+  opacity: 0;
+}
+
+.count-limit section:nth-of-type(2).on {
+  opacity: 1;
+}
+
+.count-limit .filed-group {
+  display: flex;
+  align-items: center;
+}
+
+.count-limit .filed-group .text {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  margin-left: 8px;
+  font-size: 3.4rem;
+  line-height: 52px;
+  color: #a9a9a9;
+}
+
+.count-limit .input-text {
+  width: 160px;
+}
+
+.count-limit .input-text .input-text-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 53px;
+  line-height: 53px;
+  margin-right: 8px;
+  padding: 0 13px;
+  border-radius: 5px;
+  font-size: 2.8rem;
+  color: #a9a9a9;
+  background-color: #2A2C3E;
+}
+
+.count-limit .input-text .input-text-wrap.focus {
+  box-shadow: 0 0 0 2px #eee inset;
+  border: unset;
+  font-size: 3.4rem;
+  color: #eee;
+  background-color: #080d19;
+}
+
+.channel-limit .title {
+  margin-bottom: 26px;
+}
+
+.adult-limit .title span:nth-of-type(1) {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.notice .list-wrap {
+  height: 100%;
+  border-bottom: none;
+}
+
+.notice .list-wrap .list-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0;
+  padding: 0 26px 16px 26px;
+  border-bottom: 1px solid #2A2C3E;
+}
+
+.notice .list-wrap .list-header p {
+  font-size: 2.6rem;
+  color: #777;
+}
+
+.notice .list-wrap .noti-wrap {
+  position: relative;
+  width: 100%;
+  height: 573px;
+  overflow: hidden;
+}
+
+.notice .list-wrap .noti-wrap::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: 62px;
+  background-image: linear-gradient(to bottom, #191b2b 12%, rgba(25, 27, 43, 0.53) 66%, rgba(0, 0, 0, 0) 88%);
+  z-index: 1;
+  display: none;
+}
+
+.notice .list-wrap .noti-wrap::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: unset;
+  bottom: 0;
+  width: inherit;
+  height: 68px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 12%, rgba(25, 27, 43, 0.53) 34%, #191b2b 88%);
+  z-index: 1;
+  display: none;
+}
+
+.notice .list-wrap .noti-wrap.top-cover::before {
+  display: block;
+}
+
+.notice .list-wrap .noti-wrap.bottom-cover::after {
+  display: block;
+}
+
+.notice .list-wrap .mask {
+  width: 100%;
+  height: 11px;
+}
+
+.notice .list-wrap ul {
+  padding-top: 1px;
+}
+
+.notice .list-wrap ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 75px;
+  padding: 0 26px;
+  color: #777;
+  border-bottom: 1px solid #2A2C3E;
+}
+
+.notice .list-wrap ul li .text-wrap {
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.notice .list-wrap ul li .subject {
+  max-width: 625px;
+  font-size: 3.2rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.notice .list-wrap ul li span {
+  font-size: 2.6rem;
+  z-index: 1;
+}
+
+.notice .list-wrap ul li.focus {
+  position: relative;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.notice .list-wrap ul li.focus::before {
+  display: inline-block;
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 76px;
+  border-radius: 5px;
+  background-color: #2A2C3E;
+}
+
+.notice .list-wrap ul li.focus::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 0 6px #eee;
+  border-radius: 5px;
+  top: -1px;
+  height: 76px;
+  box-shadow: none;
+  border: 3px solid #eee;
+}
+
+.notice .list-wrap ul li.focus p {
+  font-size: 3.4rem;
+  color: #eee;
+}
+
+.notice .list-wrap ul li.focus span {
+  font-size: 2.8rem;
+  color: #eee;
+}
+
+.audio .bottom-cover::after {
+  height: 68px;
+}
+
+.audio .u_hd .drc-setting {
+  opacity: 0;
+}
+
+.audio .u_hd_3 .drc-setting {
+  opacity: 1;
+}
+
+.audio .key-guide li {
+  font-size: 2.2rem;
+  color: #777;
+  margin-bottom: 4px;
+}
+
+.audio .key-guide li:last-child {
+  margin-bottom: 0;
+}
+
+.power-setting {
+  position: relative;
+}
+
+.power-setting .setting-items {
+  display: block;
+  width: 333px;
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+.power-setting .setting-items li {
+  display: inline-flex;
+}
+
+.power-setting .setting-items li:first-child {
+  margin-bottom: 6px;
+}
+
+.power-setting .image-guide {
+  position: absolute;
+  top: 73px;
+  right: 46px;
+  width: 197px;
+  height: 180px;
+}
+
+.power-setting .image-guide span {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  width: inherit;
+  height: inherit;
+}
+
+.power-setting .image-guide.tv .tv-audio {
+  display: block;
+}
+
+.power-setting .image-guide.tv .out-audio {
+  display: none;
+}
+
+.power-setting .image-guide.out-device .tv-audio {
+  display: none;
+}
+
+.power-setting .image-guide.out-device .out-audio {
+  display: block;
+}
+
+.soundbar .setting-items {
+  margin-bottom: 20px;
+}
+
+.soundbar .power-setting .setting-items {
+  width: 433px;
+}
+
+.soundbar .dolby-setting {
+  display: none;
+}
+
+.soundbar .custom-setting {
+  width: 929px;
+}
+
+.soundbar .custom-setting .setting-items {
+  height: auto;
+}
+
+.soundbar .sound-setting .setting-items, .soundbar .drc-setting .setting-items, .soundbar .custom-setting .setting-items {
+  margin-bottom: 0;
+}
+
+.soundbar.new-soundbar .dolby-setting {
+  display: block;
+}
+
+.soundbar.new-soundbar .custom-setting .smart {
+  display: none;
+}
+
+.soundbar.new-soundbar .custom-setting .auto {
+  display: flex;
+}
+
+.screen-mode li:first-child {
+  margin-right: 107px;
+}
+
+.screen-mode li:nth-child(2) {
+  margin-right: 94px;
+}
+
+.screen-mode .image {
+  margin-top: 18px;
+}
+
+.screen-mode .image p {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  width: 192px;
+  height: 144px;
+  opacity: .5;
+}
+
+.screen-mode .image p.on {
+  opacity: 1;
+}
+
+.screen-mode .image p:not(:last-child) {
+  margin-right: 79px;
+}
+
+.screen-mode .image p.screen-mode1 {
+  background-image: url(../images/setting/img-setting-screenmode1.png);
+}
+
+.screen-mode .image p.screen-mode2 {
+  background-image: url(../images/setting/img-setting-screenmode2.png);
+}
+
+.screen-mode .image p.screen-mode3 {
+  background-image: url(../images/setting/img-setting-screenmode3.png);
+}
+
+.screen-optimization-img .image p {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  width: 272px;
+  height: 186px;
+  opacity: .5;
+}
+
+.screen-optimization-img .image p.on {
+  opacity: 1;
+}
+
+.screen-optimization-img .image p:not(:last-child) {
+  margin-right: 80px;
+}
+
+.screen-optimization-img .image p.default {
+  background-image: url(../images/setting/screenoptimiz1.png);
+}
+
+.screen-optimization-img .image p.present {
+  background-image: url(../images/setting/screenoptimiz2.png);
+}
+
+.contact-wrap {
+  padding: 0 60px;
+  background-color: #080d19;
+  text-align: center;
+}
+
+.contact-wrap .contact-container > div {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 720px;
+}
+
+.contact-wrap .contact-container section {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+}
+
+.contact-wrap .contact-container .prev {
+  left: 0px;
+  position: absolute;
+  top: 323px;
+  height: 105px;
+}
+
+.contact-wrap .contact-container .prev button {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 58px;
+  margin-bottom: 22px;
+}
+
+.contact-wrap .contact-container .prev button.focus {
+  width: 100%;
+}
+
+.contact-wrap .contact-container .prev button.focus + p {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  color: #eee;
+}
+
+.contact-wrap .contact-container .prev p {
+  line-height: 24px;
+  font-size: 2.6rem;
+  color: #777;
+}
+
+.contact-wrap .contact-container .prev .prev-arrow {
+  background-image: url("../images/setting/ic-setting-arrow-left.png");
+}
+
+.contact-wrap .contact-container .prev .prev-arrow.focus {
+  background-image: url("../images/setting/ic-setting-arrow-left-focusus.png");
+}
+
+.contact-wrap .contact-container .prev p {
+  text-align: left;
+}
+
+.contact-wrap .contact-container .next {
+  right: 0px;
+  position: absolute;
+  top: 323px;
+  height: 105px;
+}
+
+.contact-wrap .contact-container .next button {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 58px;
+  margin-bottom: 22px;
+}
+
+.contact-wrap .contact-container .next button.focus {
+  width: 100%;
+}
+
+.contact-wrap .contact-container .next button.focus + p {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  color: #eee;
+}
+
+.contact-wrap .contact-container .next p {
+  line-height: 24px;
+  font-size: 2.6rem;
+  color: #777;
+}
+
+.contact-wrap .contact-container .next .next-arrow {
+  background-image: url("../images/setting/ic-setting-arrow-right.png");
+}
+
+.contact-wrap .contact-container .next .next-arrow.focus {
+  background-image: url("../images/setting/ic-setting-arrow-right-focus.png");
+}
+
+.contact-wrap .contact-container .next p {
+  text-align: right;
+}
+
+.contact-wrap .title {
+  padding-top: 92px;
+  margin-bottom: 25px;
+  color: #eee;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.contact-wrap .title h3 {
+  margin-bottom: 8px;
+  font-size: 5rem;
+}
+
+.contact-wrap .title .waiting {
+  margin-bottom: 16px;
+  font-size: 3.6rem;
+}
+
+.contact-wrap .title span {
+  display: block;
+  line-height: 32px;
+  font-family: "Yoon Gothic 750", "YoonGothic 700 50", "Yoon윤고딕 750", "YoonGothic 750", "YOONGOTHICPRO750";
+  font-size: 3rem;
+  color: #a9a9a9;
+}
+
+.contact-wrap .title .sub-guide {
+  line-height: 24px;
+  font-size: 2.4rem;
+  color: #a9a6ff;
+}
+
+.contact-wrap .guide {
+  width: 800px;
+}
+
+.contact-wrap .guide .guide-image {
+  width: 800px;
+  height: 226px;
+  margin-bottom: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.contact-wrap .guide .guide-text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-wrap .guide span {
+  display: inline-block;
+  line-height: 28px;
+  font-size: 2.6rem;
+  color: #a9a9a9;
+}
+
+.contact-wrap .guide span:last-child {
+  margin-right: 0;
+}
+
+.contact-wrap .option-guide {
+  position: absolute;
+  bottom: 20px;
+  right: -27px;
+}
+
+.contact-wrap .option-guide span + span {
+  margin-left: 20px;
+}
+
+.contact-wrap .option-guide .keyguide-change {
+  position: relative;
+  width: 46px;
+}
+
+.contact-wrap .option-guide .keyguide-change:before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 44px;
+  height: 19px;
+  background-image: url("../images/common/ic-key-otherscene.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.contact-wrap .bluetooth-wait .follow span:first-child {
+  margin-bottom: 4px;
+}
+
+.contact-wrap .bluetooth-wait .guide-image {
+  background-image: url("../images/setting/img-setting-mode-bluetooth.png");
+}
+
+.contact-wrap .bluetooth-wait .guide-text {
+  padding: 0 15px 0 21px;
+}
+
+.contact-wrap .direct-contact .guide-image {
+  background-image: url("../images/setting/img-setting-mode-direct.png");
+}
+
+.contact-wrap .direct-contact .title {
+  margin-bottom: 53px;
+}
+
+.contact-wrap .direct-contact .guide-text {
+  padding: 0 73px 0 40px;
+}
+
+.contact-wrap .direct-contact .next-button {
+  text-align: right;
+}
+
+.contact-wrap .tv-contact .title {
+  padding-top: 89px;
+  margin-bottom: 19px;
+}
+
+.contact-wrap .tv-contact .title h3 {
+  margin-bottom: 14px;
+}
+
+.contact-wrap .tv-contact .follow span {
+  margin-bottom: 4px;
+}
+
+.contact-wrap .tv-contact .guide-image {
+  background-image: url("../images/setting/img-setting-mode-tv.png");
+  margin-bottom: 7px;
+}
+
+.contact-wrap .tv-contact .guide-text {
+  padding: 0 34px 0 15px;
+}
+
+.contact-wrap .tv-contact .prev-button {
+  text-align: left;
+}
+
+.contact-wrap .bluetooth-pairing .title {
+  padding-top: 145px;
+  margin-bottom: 58px;
+}
+
+.contact-wrap .bluetooth-pairing .guide-image {
+  background-image: url("../images/setting/img-setting-mode-pairing.png");
+  margin-bottom: 33px;
+}
+
+.contact-wrap .bluetooth-pairing .guide-text {
+  display: block;
+}
+
+.contact-wrap .bluetooth-pairing .guide-text span {
+  line-height: 32px;
+  margin-bottom: 6px;
+}

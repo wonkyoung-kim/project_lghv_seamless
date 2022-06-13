@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/hv_index.css" />
+</head>
+
+<body>
+
+    <div id="root">
+        <!-- react 구조 -->
+        <div class="my-wrap myhome">
+            <h1 class="skip">마이메뉴 홈</h1>
+            <div class="my-container">
+                <!--마이메뉴 -->
+                <header class="my-header">
+                    <h2 class="my-title">마이메뉴</h2>
+
+                    <!--페이지 path-->
+                    <p class="path">
+                        <span>홈</span>
+                        <span>마이메뉴</span>
+                    </p>
+                </header>
+
+                <!-- 보급형일 경우 프로필 숨김 -->
+                <!--프로필영역 -->
+                <section class="my-profile">
+                    <h3 class="skip">프로필</h3>
+
+                    <p class="noti-message">* 헬로tv 앱을 다운받고, 휴대폰을 연결하면 쉽고 편리하게 콘텐츠를 TV와 모바일에서 시청할 수 있습니다</p>
+                    <ul class="profile-list">
+                        <li class="contact-phone">
+                            <div class="information">
+                                <p class="image"></p>
+                            </div>
+                            <p class="text">휴대폰 연결</p>
+                        </li>
+                        <!-- 로그인한 프로필 -->
+                        <li class="login">
+                            <div class="information">
+                                <p class="image ic-profile-pair1"></p>
+                                <p class="nickname">아빠</p>
+                                <p class="phone">010-0123-4567</p>
+                                <p class="keyguide"><span class="keyguide-ok2">확인/OK</span>프로필 선택</p>
+                            </div>
+                            <div class="button-area">
+                                <button class="button-primary middle">
+                                    <p class="text">설정</p>
+                                </button>
+                            </div>
+                        </li>
+                        <!-- //로그한 프로필 -->
+                        <!-- 잠긴 프로필 -->
+                        <li class="lock">
+                            <div class="information ">
+                                <p class="image ic-profile-pair2"></p>
+                                <p class="nickname">엄마</p>
+                                <p class="phone">010-0123-4567</p>
+                                <p class="keyguide"><span class="keyguide-ok">확인/OK</span>프로필 선택</p>
+                            </div>
+                            <div class="button-area">
+                                <button class="button-primary middle">
+                                    <p class="text">설정</p>
+                                </button>
+                            </div>
+                        </li>
+                        <!-- // 잠긴 프로필 -->
+                        <li class="focus">
+                            <div class="information">
+                                <p class="image ic-profile-pair3"></p>
+                                <p class="nickname">딸</p>
+                                <p class="phone">010-0123-4567</p>
+                                <p class="keyguide"><span class="keyguide-ok">확인/OK</span>프로필 선택</p>
+                            </div>
+                            <div class="button-area">
+                                <button class="button-primary middle">
+                                    <p class="text">설정</p>
+                                </button>
+                            </div>
+                        </li>
+                        <!-- 페어링 안 된 프로필 -->
+                        <li class="no-pairing focus">
+                            <div class="information">
+                                <p class="image ic-profile-pair4"></p>
+                                <p class="nickname">아들</p>
+                                <p class="phone">010-0123-4567</p>
+                                <p class="keyguide"><span class="keyguide-ok">확인/OK</span>프로필 선택</p>
+                            </div>
+                            <div class="button-area">
+                                <button class="button-primary middle">
+                                    <p class="text">설정</p>
+                                    <!-- 설정에서 삭제로 변경되어야 합니다 -->
+                                </button>
+                            </div>
+                        </li>
+                        <!-- //페어링 안 된 프로필 -->
+                    </ul>
+                </section>
+                <!--//프로필영역 -->
+
+                <!--개인메뉴영역 -->
+                <section class="mymenu">
+                    <h3 class="skip">개인화메뉴</h3>
+                    <ul class="mymenu-list">
+                        <li>
+                            <p class="ic-event">진행중 이벤트</p>
+                            <span class="count">26개</span>
+                        </li>
+
+                        <li class="focus">
+                            <p class="ic-bill">구매한 영상</p>
+                            <span class="count">26개</span>
+                        </li>
+                        <li>
+                            <p class=ic-list>가입한 월정액/채널</p>
+                            <span class="count">3개</span>
+                        </li>
+
+                        <li>
+                            <p class="ic-coupon">사용 가능 쿠폰 <i class="ic-new">N</i></p>
+                            <span class="count">4개</span>
+                        </li>
+
+                        <li>
+                            <p class="ic-coin">사용 가능 TV 코인</p>
+                            <span class="count">5,000원</span>
+                        </li>
+
+                        <li>
+                            <p class="ic-point">사용 가능 TV 포인트</p>
+                            <span class="count">10,000점</span>
+                        </li>
+                        <li>
+                            <p class="ic-usb">개인미디어</p>
+                        </li>
+                    </ul>
+                </section>
+                <!--//개인메뉴영역 -->
+
+                <!-- 더보기 -->
+                <p class="more-desc">더보기 (최근 본 영상/찜한 영상/최근 둘러본 영상)</p>
+                <!-- //더보기 -->
+
+                <!--시청목록 -->
+                <section class="watch">
+                    <h3 class="title">최근 본 영상</h3>
+                    <ul class="contents-list watch-list">
+                        <li class="focus">
+                            <div class="poster-horizontal">
+                                <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster.jpg')"></div>
+                                <div class="poster-component">
+                                    <div class="poster-tag">
+                                        <span class="poster-tag-age">무료</span>
+                                        <span class="poster-tag-age"><strong>19</strong></span>
+                                    </div>
+                                    <dl class="poster-time">
+                                        <dt>11시간 20분 남음</dt>
+                                        <dd class="poster-remaining"><span style="width: 50%;"></span></dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="meta-data">
+                                <h4 class="title marquee-text marquee-play">
+                                    <p class="marquee-child">이태원 클라쓰 10화</p>
+                                </h4>
+                                <p class="sub-text">2020.09.03 (금) 12:34</p>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="poster-horizontal">
+                                <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster.jpg')"></div>
+                                <div class="poster-component">
+                                    <div class="poster-tag">
+                                        <span class="poster-tag-age">무료</span>
+                                        <span class="poster-tag-age"><strong>19</strong></span>
+                                    </div>
+                                    <dl class="poster-time">
+                                        <dt>11시간 20분 남음</dt>
+                                        <dd class="poster-remaining"><span style="width: 50%;"></span></dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="meta-data">
+                                <h4 class="title marquee-text marquee-play">
+                                    <p class="marquee-child">이태원 클라쓰 10화</p>
+                                </h4>
+                                <p class="sub-text">2020.09.03 (금) 12:34</p>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="poster-horizontal">
+                                <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster.jpg')"></div>
+                                <div class="poster-component">
+                                    <div class="poster-tag">
+                                        <span class="poster-tag-age">무료</span>
+                                        <span class="poster-tag-age"><strong>19</strong></span>
+                                    </div>
+                                    <dl class="poster-time">
+                                        <dt>11시간 20분 남음</dt>
+                                        <dd class="poster-remaining"><span style="width: 50%;"></span></dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="meta-data">
+                                <h4 class="title marquee-text marquee-play">
+                                    <p class="marquee-child">이태원 클라쓰 10화</p>
+                                </h4>
+                                <p class="sub-text">2020.09.03 (금) 12:34</p>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="poster-horizontal">
+                                <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster.jpg')"></div>
+                                <div class="poster-component">
+                                    <div class="poster-tag">
+                                        <span class="poster-tag-age">무료</span>
+                                        <span class="poster-tag-age"><strong>19</strong></span>
+                                    </div>
+                                    <dl class="poster-time">
+                                        <dt>11시간 20분 남음</dt>
+                                        <dd class="poster-remaining"><span style="width: 50%;"></span></dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="meta-data">
+                                <h4 class="title marquee-text marquee-play">
+                                    <p class="marquee-child">이태원 클라쓰 10화</p>
+                                </h4>
+                                <p class="sub-text">2020.09.03 (금) 12:34</p>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="poster-horizontal">
+                                <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster.jpg')"></div>
+                                <div class="poster-component">
+                                    <div class="poster-tag">
+                                        <span class="poster-tag-age">무료</span>
+                                        <span class="poster-tag-age"><strong>19</strong></span>
+                                    </div>
+                                    <dl class="poster-time">
+                                        <dt>11시간 20분 남음</dt>
+                                        <dd class="poster-remaining"><span style="width: 50%;"></span></dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="meta-data">
+                                <h4 class="title marquee-text marquee-play">
+                                    <p class="marquee-child">이태원 클라쓰 10화</p>
+                                </h4>
+                                <p class="sub-text">2020.09.03 (금) 12:34</p>
+                            </div>
+                        </li>
+                        <li class="focus">
+                            <div class="button-menu">
+                                <div class="content-info">
+                                    <span>최근 본 영상</span>
+                                    <p><em class="count">90개</em> 전체보기</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+                <!--//시청목록영역 -->
+
+                <!--찜한 VOD-->
+                <section class="wish">
+                    <h3 class="title">찜한 영상</h3>
+                    <ul class="contents-list wish-list ">
+                        <li class="focus">
+                            <div class="poster-horizontal">
+                                <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-01.jpg')"></div>
+                                <div class="poster-component">
+                                    <div class="poster-tag">
+                                        <span class="poster-tag-age">무료</span>
+                                        <span class="poster-tag-age"><strong>19</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="meta-data">
+                                <h4 class="title marquee-text marquee-play">
+                                    <p class="marquee-child">이태원 클라쓰 10화</p>
+                                </h4>
+                                <p class="sub-text">2020.09.03 (금) 12:34</p>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="poster-horizontal">
+                                <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-01.jpg')"></div>
+                                <div class="poster-component">
+                                    <div class="poster-tag">
+                                        <span class="poster-tag-age">무료</span>
+                                        <span class="poster-tag-age"><strong>19</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="meta-data">
+                                <h4 class="title marquee-text marquee-play">
+                                    <p class="marquee-child">이태원 클라쓰 10화</p>
+                                </h4>
+                                <p class="sub-text">2020.09.03 (금) 12:34</p>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="poster-horizontal">
+                                <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-01.jpg')"></div>
+                                <div class="poster-component">
+                                    <div class="poster-tag">
+                                        <span class="poster-tag-age">무료</span>
+                                        <span class="poster-tag-age"><strong>19</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="meta-data">
+                                <h4 class="title marquee-text marquee-play">
+                                    <p class="marquee-child">이태원 클라쓰 10화</p>
+                                </h4>
+                                <p class="sub-text">2020.09.03 (금) 12:34</p>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="poster-horizontal">
+                                <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-01.jpg')"></div>
+                                <div class="poster-component">
+                                    <div class="poster-tag">
+                                        <span class="poster-tag-age">무료</span>
+                                        <span class="poster-tag-age"><strong>19</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="meta-data">
+                                <!-- 단편 영화,애니 등 (포스터 이미지 노출형) -->
+                                <p class="sub-text movies">
+                                    <span>2020.09.03</span>
+                                    <span class="rating-star-wrap">
+                                        <i class="rating-star full"></i>
+                                        <i class="rating-star full"></i>
+                                        <i class="rating-star half"></i>
+                                        <i class="rating-star empty"></i>
+                                        <i class="rating-star empty"></i> 
+                                    </span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="poster-horizontal">
+                                <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-01.jpg')"></div>
+                                <div class="poster-component">
+                                    <div class="poster-tag">
+                                        <span class="poster-tag-age">무료</span>
+                                        <span class="poster-tag-age"><strong>19</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="meta-data">
+                                <!-- 단편 영화,애니 등 (포스터 이미지 노출형) -->
+                                <p class="sub-text movies">
+                                    <span>2020.09.03</span>
+                                    <span class="rating-star-wrap">
+                                        <i class="rating-star full"></i>
+                                        <i class="rating-star full"></i>
+                                        <i class="rating-star half"></i>
+                                        <i class="rating-star empty"></i>
+                                        <i class="rating-star empty"></i> 
+                                    </span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="focus">
+                            <div class="button-menu">
+                                <div class="content-info">
+                                    <span>찜한 영상</span>
+                                    <p><em class="count">140개</em> 전체보기</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+                <!--//찜한 VOD-->
+
+                <!--최근 둘러본 영상 -->
+                <section class="recently">
+                    <h3 class="title">최근 둘러본 영상</h3>
+                    <ul class="contents-list recently-list">
+                        <li class="focus">
+                            <div class="poster-horizontal">
+                                <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-01.jpg')"></div>
+                                <div class="poster-component">
+                                    <div class="poster-tag">
+                                        <span class="poster-tag-age">무료</span>
+                                        <span class="poster-tag-age"><strong>19</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="meta-data">
+                                <h4 class="title marquee-text marquee-play">
+                                    <p class="marquee-child">이태원 클라쓰 10화</p>
+                                </h4>
+                                <p class="sub-text">2020.09.03 (금) 12:34</p>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="poster-horizontal">
+                                <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-01.jpg')"></div>
+                                <div class="poster-component">
+                                    <div class="poster-tag">
+                                        <span class="poster-tag-age">무료</span>
+                                        <span class="poster-tag-age"><strong>19</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="meta-data">
+                                <h4 class="title marquee-text marquee-play">
+                                    <p class="marquee-child">이태원 클라쓰 10화</p>
+                                </h4>
+                                <p class="sub-text">2020.09.03 (금) 12:34</p>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="poster-horizontal">
+                                <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-01.jpg')"></div>
+                                <div class="poster-component">
+                                    <div class="poster-tag">
+                                        <span class="poster-tag-age">무료</span>
+                                        <span class="poster-tag-age"><strong>19</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="meta-data">
+                                <h4 class="title marquee-text marquee-play">
+                                    <p class="marquee-child">이태원 클라쓰 10화</p>
+                                </h4>
+                                <p class="sub-text">2020.09.03 (금) 12:34</p>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="poster-horizontal">
+                                <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-01.jpg')"></div>
+                                <div class="poster-component">
+                                    <div class="poster-tag">
+                                        <span class="poster-tag-age">무료</span>
+                                        <span class="poster-tag-age"><strong>19</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="meta-data">
+                                <!-- 단편 영화,애니 등 (포스터 이미지 노출형) -->
+                                <p class="sub-text movies">
+                                    <span>2020.09.03</span>
+                                    <span class="rating-star-wrap">
+                                        <i class="rating-star full"></i>
+                                        <i class="rating-star full"></i>
+                                        <i class="rating-star half"></i>
+                                        <i class="rating-star empty"></i>
+                                        <i class="rating-star empty"></i> 
+                                    </span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="poster-horizontal">
+                                <div class="poster-thumbnail" style="background-image: url('../../assets/images/temp/poster-01.jpg')"></div>
+                                <div class="poster-component">
+                                    <div class="poster-tag">
+                                        <span class="poster-tag-age">무료</span>
+                                        <span class="poster-tag-age"><strong>19</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="meta-data">
+                                <!-- 단편 영화,애니 등 (포스터 이미지 노출형) -->
+                                <p class="sub-text movies">
+                                    <span>2020.09.03</span>
+                                    <span class="rating-star-wrap">
+                                        <i class="rating-star full"></i>
+                                        <i class="rating-star full"></i>
+                                        <i class="rating-star half"></i>
+                                        <i class="rating-star empty"></i>
+                                        <i class="rating-star empty"></i> 
+                                    </span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="focus">
+                            <div class="button-menu">
+                                <div class="content-info">
+                                    <span>최근 둘러본 영상</span>
+                                    <p><em class="count">140개</em> 전체보기</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+                <!--//최근 둘러본 영상 -->
+
+            </div>
+
+        </div>
+    </div>
+    <!-- //root -->
+
+</body>
+
+</html>

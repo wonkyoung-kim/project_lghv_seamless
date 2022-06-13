@@ -1,0 +1,894 @@
+@charset "UTF-8";
+/* variables */
+/* functions */
+/* mixins */
+/* toast 임시 */
+.category-container {
+  position: relative;
+  width: 100%;
+  height: 720px;
+}
+
+.category-container .meta-tag {
+  margin-top: 8px;
+}
+
+.category-container .ic-tag {
+  display: inline-block;
+  height: 18px;
+  line-height: calc(18px - 1px * 2);
+  background-color: rgba(238, 238, 238, 0.02);
+  border: 1px solid rgba(119, 119, 119, 0.5);
+  border-radius: 2px;
+  padding: 0 5px;
+  color: #eee;
+  margin-left: 6px;
+  font-size: 1.6rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.category-container .ic-tag.dolby-vision {
+  font-size: 0;
+  color: rgba(0, 0, 0, 0);
+  width: 46px;
+  background: url(../images/vod/ic-dolby.png) center/36px no-repeat;
+}
+
+.focus .category-container .ic-tag, .selected .category-container .ic-tag {
+  color: #a9a9a9;
+  border: 1px solid rgba(169, 169, 169, 0.5);
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.category-container .ic-tag:first-child {
+  margin-left: 0;
+}
+
+.category-container .rating-star {
+  display: block;
+  width: 17px;
+  height: 17px;
+  margin-right: 2px;
+  background-image: url("../images/vod/ic-ratingstar-full-w.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.category-container .rating-star.full {
+  background-image: url("../images/vod/ic-ratingstar-full.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.category-container .rating-star.half {
+  background-image: url("../images/vod/ic-ratingstar-half.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.category-container .rating-star.empty {
+  background-image: url("../images/vod/ic-ratingstar-none.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.focus .category-container .rating-star {
+  background-image: url("../images/vod/ic-ratingstar-full.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.category-container .path {
+  position: absolute;
+  height: 20px;
+  top: 30px;
+  right: 40px;
+}
+
+.category-container .path span {
+  color: rgba(238, 238, 238, 0.7);
+}
+
+.category-container .vod-detail-bgimage {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/vod/img-thumbnail-detail-default.png);
+  background-size: 964px;
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-color: #080d19;
+}
+
+.category-container .gradient-bg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.category-container .gradient-bg::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #080d19 50%, #080d19 50%), linear-gradient(to right, #080d19 53%, rgba(0, 0, 0, 0) 91%);
+  background-position: bottom center, left top;
+  background-size: 100% 410px, 600px 100%;
+  background-repeat: no-repeat;
+}
+
+.category-container .contents {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 73px;
+  z-index: 1;
+}
+
+.category-container .contents.active .content-info {
+  opacity: 1;
+}
+
+.category-container .content-info {
+  opacity: 0;
+  position: relative;
+  height: 303px;
+  margin-top: 93px;
+}
+
+.category-container .content-info .content-title {
+  position: relative;
+  font-size: 2.4rem;
+  color: #eee;
+  line-height: 21px;
+  margin-top: 16px;
+}
+
+.category-container .content-info .summary {
+  margin-top: 13px;
+  width: 440px;
+  font-size: 2.5rem;
+  color: #eee;
+  line-height: 24px;
+  overflow: hidden;
+  display: -webkit-box;
+  white-space: normal;
+  /*! autoprefixer: off */
+  -webkit-line-clamp: 3;
+  /*! autoprefixer: on */
+  -webkit-box-orient: vertical;
+  opacity: 0.5;
+}
+
+.category-container h1.vod-title {
+  width: 440px;
+  height: 53px;
+  font-size: 6rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  line-height: 53px;
+  margin-bottom: 10px;
+}
+
+.category-container h1.vod-title.image-logo {
+  height: 69px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: left;
+  font-size: 0;
+  color: rgba(0, 0, 0, 0);
+}
+
+.category-container h1.vod-title.double-line {
+  font-size: 5rem;
+  line-height: normal;
+  height: 88px;
+}
+
+.category-container .rating-info div {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 26px;
+  margin-right: 14px;
+}
+
+.category-container .rating-info div::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  height: inherit;
+}
+
+.category-container .rating-info div .point {
+  display: inline-block;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 2.4rem;
+  min-width: 42px;
+}
+
+.category-container .rating-info div .point .base-point {
+  position: relative;
+  display: inline-block;
+  font-family: "Yoon Gothic 750", "YoonGothic 700 50", "Yoon윤고딕 750", "YoonGothic 750", "YOONGOTHICPRO750";
+  font-size: 2rem;
+  color: #bbb;
+  padding-left: 6px;
+  vertical-align: baseline;
+}
+
+.category-container .rating-info div .point .base-point::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  content: '/';
+}
+
+.category-container .rating-info .watcha {
+  padding-left: 77px;
+}
+
+.category-container .rating-info .watcha::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 72px;
+  background-image: url(../images/vod/logo-watcha.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.category-container .rating-info .cine21 {
+  padding-left: 56px;
+}
+
+.category-container .rating-info .cine21::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 50px;
+  background-image: url(../images/vod/logo-cine21.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.category-container .rating-info .imdb {
+  padding-left: 37px;
+}
+
+.category-container .rating-info .imdb::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 32px;
+  background-image: url(../images/vod/logo-imdb.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.category-container .default-info span:not(.ic-tag)::before {
+  opacity: 0.6;
+}
+
+.category-container .event-message {
+  position: relative;
+  font-size: 2.2rem;
+  color: #ecafb9;
+  line-height: 16px;
+}
+
+.category-container .event-message::before {
+  display: inline-block;
+  content: '';
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  vertical-align: bottom;
+  background-image: url(../images/vod/ic-event.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.category-container .category-list-area {
+  width: 1207px;
+}
+
+.category-container .category-list-header {
+  display: flex;
+  align-items: center;
+  height: 28px;
+  line-height: 28px;
+  padding-left: 10px;
+}
+
+.category-container .category-list-header h3 {
+  font-size: 2.9rem;
+}
+
+.category-container .button-area {
+  margin-left: 20px;
+}
+
+.category-container .button-area .button-option {
+  position: relative;
+  height: 28px;
+  font-family: "Yoon Gothic 750", "YoonGothic 700 50", "Yoon윤고딕 750", "YoonGothic 750", "YOONGOTHICPRO750";
+  font-size: 2.2rem;
+  line-height: calc(28px - 1px);
+  color: #a9a9a9;
+  padding: 0 10px;
+  border-radius: 5px;
+  background-color: #2A2C3E;
+  margin-left: 8px;
+}
+
+.category-container .button-area .button-option .text {
+  min-width: 60px;
+}
+
+.category-container .button-area .button-option.dimed {
+  background-color: rgba(8, 13, 25, 0.4);
+}
+
+.category-container .button-area .button-option.focus {
+  height: 28px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 2.2rem;
+  color: #080d19;
+  background-color: #eee;
+}
+
+.category-container .button-area .button-option.option-selected {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  color: #eee;
+}
+
+.category-container .button-area .button-option:first-child {
+  margin-left: 0;
+}
+
+.category-container .button-area .button-option .filter {
+  min-width: 48px;
+}
+
+.category-container .button-area .button-option .filter::before {
+  display: inline-block;
+  content: '';
+  width: 13px;
+  height: 13px;
+  margin-right: 5px;
+  margin-bottom: 0px;
+  vertical-align: middle;
+  background-image: url("../images/category/ic-filter.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.category-container .button-area .button-option.option-selected .filter::before {
+  background-image: url("../images/category/ic-filter-selected.png");
+}
+
+.category-container .button-area .button-option.focus .filter {
+  color: #080d19;
+}
+
+.category-container .button-area .button-option.focus .filter::before {
+  background-image: url("../images/category/ic-filter-focus.png");
+}
+
+.category-container .contents-tag {
+  margin-left: 10px;
+  display: flex;
+}
+
+.category-container .contents-tag span {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 2.2rem;
+  color: #eee;
+}
+
+.category-container .contents-tag span:before {
+  display: inline-block;
+  content: '';
+  content: '#';
+}
+
+.category-container .contents-tag span + span {
+  margin-left: 6px;
+}
+
+.category-container .active .scroll {
+  opacity: 1;
+}
+
+.category-container .contents-list-wrap {
+  position: relative;
+  height: 296px;
+  padding-left: 14px;
+  overflow: hidden;
+}
+
+.category-container .contents-list-wrap::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: unset;
+  bottom: 0;
+  width: 100%;
+  height: 149px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #080d19);
+  z-index: 1;
+  content: none;
+}
+
+.category-container .contents-list-wrap.bottom-cover::after {
+  content: '';
+}
+
+.category-container .contents-list-wrap .scroll {
+  position: absolute;
+  top: 11px;
+  right: 40px;
+  width: 4px;
+  height: 256px;
+  border-radius: calc(4px / 2);
+  background-color: rgba(238, 238, 238, 0.2);
+  z-index: 1;
+}
+
+.category-container .contents-list-wrap .scroll span {
+  display: inline-block;
+  width: 100%;
+  border-radius: calc(4px / 2);
+  background-color: #a9a9a9;
+}
+
+.category-container .contents-list-wrap .mask {
+  width: 100%;
+  height: 11px;
+}
+
+.category-container .contents-list {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.category-container .contents-list li {
+  margin-bottom: 8px;
+  margin-left: 6px;
+}
+
+.category-container .contents-list li:nth-child(5n + 1) {
+  margin-left: 0 !important;
+}
+
+.category-container .contents-list .poster-horizontal {
+  width: 220px;
+  height: 124px;
+}
+
+.category-container .contents-list .focus .poster-horizontal:first-child::before {
+  transform-origin: center;
+}
+
+.category-container .contents-list .focus .poster-thumbnail {
+  transform-origin: center;
+}
+
+.category-footer {
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 0 33px 20px 0;
+  width: 100%;
+  height: 154px;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.category-footer:before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  left: unset;
+  right: 0;
+  width: 381px;
+  height: 154px;
+  background-image: url("../images/category/bg-keynotice.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: right bottom;
+  z-index: -1;
+}
+
+.category-back {
+  position: absolute;
+  top: 0;
+  width: 32px;
+  height: 720px;
+  z-index: 10;
+}
+
+.category-back .ic-arrow {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/common/ic-gnb-back.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 0;
+  color: rgba(0, 0, 0, 0);
+}
+
+.category-back .ic-arrow.focus {
+  background-image: url(../images/common/ic-gnb-back-focus.png);
+}
+
+.list-up {
+  position: absolute;
+  top: 36px;
+  left: calc(50% - 14px);
+  width: 29px;
+  height: 18px;
+}
+
+.list-up .ic-arrow {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/category/ic-arrow-top.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 0;
+  color: rgba(0, 0, 0, 0);
+}
+
+.list-up .ic-arrow.focus {
+  background-image: url("../images/category/ic-arrow-top-focus.png");
+}
+
+.category-option {
+  background-color: #080d19;
+}
+
+.category-option .category-option-header h2 {
+  text-align: center;
+  padding-top: 64px;
+  font-size: 5.2rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.category-option .category-option-header h2::after {
+  display: block;
+  content: '';
+  width: 54px;
+  height: 2px;
+  background-color: rgba(238, 238, 238, 0.3);
+  margin: 32px auto 48px auto;
+}
+
+.category-option .category-option-body {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.category-option .button-area {
+  margin-top: 56px;
+  height: 65px;
+}
+
+.category-option .button-area button {
+  margin-left: 6px;
+}
+
+.category-option .button-area button:first-child {
+  margin-left: 0;
+}
+
+.category-option .option {
+  height: calc(calc(53px * 6) + calc(2px * 5));
+  position: relative;
+  overflow: hidden;
+  width: 176px;
+  color: rgba(238, 238, 238, 0.4);
+  font-size: 3.0rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.category-option .option .scroll {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 100%;
+  border-radius: calc(5px / 2);
+  background-color: rgba(238, 238, 238, 0.1);
+  z-index: 1;
+}
+
+.category-option .option .scroll span {
+  display: inline-block;
+  width: 100%;
+  border-radius: calc(5px / 2);
+  background-color: #a9a9a9;
+}
+
+.category-option .option.active::after, .category-option .option.active .scroll {
+  opacity: 1;
+}
+
+.category-option .option li {
+  position: relative;
+  height: 53px;
+  line-height: 53px;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.category-option .option li p {
+  line-height: 53px;
+  position: relative;
+  top: 0px;
+  max-width: 90%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.category-option .option li:first-child {
+  margin-top: 0;
+}
+
+.category-option .option li.focus, .category-option .option li.list-selected {
+  color: #eee;
+}
+
+.category-option .type-arrow {
+  width: 306px;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.category-option .type-arrow li {
+  width: 286px;
+  padding: 0 16px;
+  justify-content: space-between;
+}
+
+.category-option .type-arrow li::after {
+  width: 12px;
+  height: 21px;
+  background-image: url(../images/category/ic-category-arrow.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  content: '';
+}
+
+.category-option .type-arrow li.focus::after, .category-option .type-arrow li.list-selected::after {
+  background-image: url(../images/category/ic-category-arrow-focus.png);
+}
+
+.category-option .type-arrow li.focus {
+  background-color: #2A2C3E;
+}
+
+.category-option .type-arrow li.focus::before {
+  border-radius: 5px;
+  border: 3px solid #eee;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  content: '';
+}
+
+.category-option .type-radio {
+  width: 292px;
+}
+
+.category-option .type-radio.single {
+  width: 242px;
+}
+
+.category-option .type-radio.single li {
+  width: 224px;
+  margin-left: 0;
+}
+
+.category-option .type-radio .input-radio, .category-option .type-radio .input-checkbox {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  border: 2px solid #535458;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.category-option .type-radio .input-radio::before, .category-option .type-radio .input-checkbox::before {
+  width: calc(26px - 9px);
+  height: calc(26px - 9px);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  content: '';
+}
+
+.category-option .type-radio .input-radio[type=checkbox]::before, .category-option .type-radio .input-checkbox[type=checkbox]::before {
+  width: 26px;
+  height: 26px;
+}
+
+.category-option .type-radio .input-radio:checked, .category-option .type-radio .input-checkbox:checked {
+  border: 2px solid #5d6577;
+}
+
+.category-option .type-radio .input-radio[type=radio]:checked::before, .category-option .type-radio .input-checkbox[type=radio]:checked::before {
+  background-color: #5d6577;
+}
+
+.category-option .type-radio .input-radio[type=checkbox]:checked::before, .category-option .type-radio .input-checkbox[type=checkbox]:checked::before {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/purchase/ic-check-focus2.png);
+}
+
+.category-option .type-radio li {
+  width: 246px;
+  margin-left: 26px;
+  padding: 0 16px;
+}
+
+.category-option .type-radio li p label {
+  display: block;
+  max-width: 173px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.category-option .type-radio li.selected {
+  color: rgba(238, 238, 238, 0.4);
+}
+
+.category-option .type-radio li.selected .input-radio, .category-option .type-radio li.selected .input-checkbox {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  border: 2px solid #535458;
+  border-radius: 50%;
+}
+
+.category-option .type-radio li.selected .input-radio::before, .category-option .type-radio li.selected .input-checkbox::before {
+  width: calc(26px - 9px);
+  height: calc(26px - 9px);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  content: '';
+}
+
+.category-option .type-radio li.selected .input-radio[type=checkbox]::before, .category-option .type-radio li.selected .input-checkbox[type=checkbox]::before {
+  width: 26px;
+  height: 26px;
+}
+
+.category-option .type-radio li.selected .input-radio:checked, .category-option .type-radio li.selected .input-checkbox:checked {
+  border: 2px solid #5d6577;
+}
+
+.category-option .type-radio li.selected .input-radio[type=radio]:checked::before, .category-option .type-radio li.selected .input-checkbox[type=radio]:checked::before {
+  background-color: #5d6577;
+}
+
+.category-option .type-radio li.selected .input-radio[type=checkbox]:checked::before, .category-option .type-radio li.selected .input-checkbox[type=checkbox]:checked::before {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/purchase/ic-check-focus2.png);
+}
+
+.category-option .type-radio li.focus {
+  background-color: #2A2C3E;
+}
+
+.category-option .type-radio li.focus::before {
+  border-radius: 5px;
+  border: 3px solid #eee;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  content: '';
+}
+
+.category-option .type-radio li.focus .input-radio, .category-option .type-radio li.focus .input-checkbox {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  border: 2px solid #eee;
+  border-radius: 50%;
+}
+
+.category-option .type-radio li.focus .input-radio::before, .category-option .type-radio li.focus .input-checkbox::before {
+  width: calc(26px - 9px);
+  height: calc(26px - 9px);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  content: '';
+}
+
+.category-option .type-radio li.focus .input-radio[type=checkbox]::before, .category-option .type-radio li.focus .input-checkbox[type=checkbox]::before {
+  width: 26px;
+  height: 26px;
+}
+
+.category-option .type-radio li.focus .input-radio:checked, .category-option .type-radio li.focus .input-checkbox:checked {
+  border: 2px solid #ef3484;
+}
+
+.category-option .type-radio li.focus .input-radio[type=radio]:checked::before, .category-option .type-radio li.focus .input-checkbox[type=radio]:checked::before {
+  background-color: #ef3484;
+}
+
+.category-option .type-radio li.focus .input-radio[type=checkbox]:checked::before, .category-option .type-radio li.focus .input-checkbox[type=checkbox]:checked::before {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/purchase/ic-check-focus2.png);
+}

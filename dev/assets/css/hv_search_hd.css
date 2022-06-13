@@ -1,0 +1,717 @@
+@charset "UTF-8";
+/* variables */
+/* functions */
+/* mixins */
+/* toast 임시 */
+.search-container {
+  position: relative;
+  height: 100%;
+}
+
+.search-container .search {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-top: 133px;
+  background-image: linear-gradient(to bottom, transparent, #080d19 20%);
+}
+
+.search-container .search-result {
+  height: 100%;
+  padding-top: 62px;
+  background-color: #080d19;
+}
+
+.search-container .search-result::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: unset;
+  bottom: 0;
+  z-index: 3;
+  width: 100%;
+  height: 163px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #080d19);
+  opacity: 0;
+}
+
+.search-container .search-result.bottom-cover::after {
+  opacity: 1;
+}
+
+.search-container .search-result.result-live-broadcast .result-info {
+  padding: 29px 176px 0;
+}
+
+.search-container .search-result.result-live-broadcast .contents {
+  height: 489px;
+  padding: 13px 176px 0;
+}
+
+.search-container .search-result.result-live-broadcast .live-broadcast li {
+  margin-bottom: 43px;
+}
+
+.search-container .search-result.result-live-broadcast .live-broadcast li:nth-child(4n) {
+  margin-right: 0;
+}
+
+.search-container .search-result.result-live-broadcast .live-broadcast li:nth-child(5n) {
+  margin-right: 10px;
+}
+
+.search-container .search-result.result-live-broadcast li:nth-child(6n) {
+  margin-right: 10px;
+}
+
+.search-container .search-result.result-live-broadcast .scroll {
+  right: 128px;
+}
+
+.search-container .contents {
+  overflow: hidden;
+  height: 521px;
+  padding: 16px 85px 0;
+}
+
+.search-container .contents ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search-container .contents ul li {
+  margin: 0 10px 26px 0;
+}
+
+.search-container .contents ul li .result-number {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 176px;
+  height: 250px;
+  border: 2px solid #777;
+  border-radius: 5px;
+  background-color: #111424;
+}
+
+.search-container .contents ul li .result-number p {
+  margin-bottom: 13px;
+  text-align: center;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 3.6rem;
+  color: rgba(238, 238, 238, 0.9);
+}
+
+.search-container .contents ul li .result-number p em {
+  display: block;
+}
+
+.search-container .contents ul li .result-number span {
+  font-size: 2.4rem;
+  color: rgba(238, 238, 238, 0.7);
+}
+
+.search-container .contents ul li:nth-child(6n) {
+  margin-right: 0;
+}
+
+.search-container .contents ul li.focus .result-number {
+  position: relative;
+  z-index: 2;
+  border: none;
+}
+
+.search-container .contents ul li.focus .result-number p em {
+  color: #ef3484;
+}
+
+.search-container .contents ul li.focus .result-number::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 0 6px #eee;
+  border-radius: 5px;
+  transform: scale(1.06);
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: #111424;
+}
+
+.search-container .contents .adult-list .poster-thumbnail::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-image: url("../../assets/hv_images/search/poster-19.png");
+}
+
+.search-container .contents .live-broadcast li:nth-child(5n) {
+  margin-right: 0;
+}
+
+.search-container .contents .live-broadcast li .result-number {
+  height: 183px;
+}
+
+.search-container .contents .live-broadcast li .poster-horizontal {
+  width: 222px;
+  height: 125px;
+}
+
+.search-container .contents .live-broadcast li .meta-data {
+  width: 222px;
+  margin-top: 10px;
+}
+
+.search-container .contents .live-broadcast li .meta-data .title {
+  margin-bottom: 6px;
+  line-height: 26px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 3rem;
+  color: #eee;
+}
+
+.search-container .contents .live-broadcast li .meta-data .ic-tag {
+  height: 18px;
+  line-height: 16px;
+  margin-right: 10px;
+  border-width: 1px;
+  vertical-align: text-top;
+  font-size: 1.6rem;
+  color: #a9a6ff;
+}
+
+.search-container .contents .live-broadcast li .meta-data .sub-text {
+  display: flex;
+  align-items: center;
+  font-size: 2.5rem;
+  color: #a9a9a9;
+}
+
+.search-container .contents .live-broadcast li.focus .ic-tag {
+  background-color: unset;
+  border-color: rgba(238, 238, 238, 0.3);
+}
+
+.search-container .contents .live-broadcast li.focus .poster-tag {
+  right: 0;
+  top: 1px;
+}
+
+.search-container .contents.active .scroll {
+  opacity: 1;
+}
+
+.search-container .list-none {
+  position: absolute;
+  left: 50%;
+  top: 363px;
+  transform: translateX(-50%);
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 4rem;
+  color: #999;
+}
+
+.search-container .list-none em {
+  color: #fff;
+}
+
+.search-container .scroll {
+  top: 16px;
+  z-index: 4;
+  height: 466px;
+}
+
+.search-input {
+  height: 82px;
+  margin-bottom: 19px;
+}
+
+.search-input .icon {
+  width: 76px;
+  height: 76px;
+}
+
+.search-input .icon i {
+  position: absolute;
+  top: 3px;
+  display: inline-block;
+  width: 76px;
+  height: 76px;
+  text-indent: -9999px;
+}
+
+.search-input .icon i::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 76px;
+  height: 76px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.search-input .icon i.ic-keyboard {
+  left: 153px;
+}
+
+.search-input .icon i.ic-keyboard::after {
+  background-image: url("../../assets/hv_images/search/ic-keyboard-down.png");
+}
+
+.search-input .icon i.ic-keyboard.selected::after {
+  background-image: url("../../assets/hv_images/search/ic-keyboard-down-selected.png");
+}
+
+.search-input .icon i.ic-keyboard.focus::after {
+  background-image: url("../../assets/hv_images/search/ic-keyboard-down-focus.png");
+}
+
+.search-input .icon i.ic-keyboard.on::after {
+  background-image: url("../../assets/hv_images/search/ic-keyboard.png");
+}
+
+.search-input .icon i.ic-keyboard.on.selected::after {
+  background-image: url("../../assets/hv_images/search/ic-keyboard-selected.png");
+}
+
+.search-input .icon i.ic-keyboard.on.focus::after {
+  background-image: url("../../assets/hv_images/search/ic-keyboard-focus.png");
+}
+
+.search-input .icon i.ic-voice {
+  right: 153px;
+}
+
+.search-input .icon i.ic-voice::after {
+  background-image: url("../../assets/hv_images/search/ic-voice.png");
+}
+
+.search-input .icon i.ic-voice.focus::after {
+  background-image: url("../../assets/hv_images/search/ic-voice-focus.png");
+}
+
+.search-input .input-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 753px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 18px 0 40px;
+  border: 5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.search-input .input-text .placeholder {
+  overflow: hidden;
+  width: 584px;
+  text-align: left;
+  font-size: 3.2rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  color: #999;
+}
+
+.search-input .input-text .input-text-wrap {
+  position: relative;
+  width: 476px;
+  height: 100%;
+  line-height: 72px;
+  margin-bottom: 0;
+  padding-left: 0px;
+  text-align: left;
+  font-size: 3.8rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.search-input .input-text .input-text-wrap span {
+  display: inline-flex;
+}
+
+.search-input .input-text .input-text-wrap .cursor {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.search-input .input-text .lang {
+  position: relative;
+  width: 89px;
+  font-size: 2.8rem;
+  text-align: center;
+  color: rgba(238, 238, 238, 0.4);
+}
+
+.search-input .input-text .lang::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: 50%;
+  left: -3px;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 13px;
+  background-color: rgba(238, 238, 238, 0.3);
+}
+
+.search-input .input-text .lang.num::before {
+  margin-left: -19px;
+}
+
+.search-input .input-text.focus {
+  border-color: #ef3484;
+}
+
+.search-input .input-text.focus .placeholder {
+  display: none;
+}
+
+.search-input .input-text.selected {
+  border-color: #eee;
+}
+
+.search-popular {
+  display: flex;
+  flex-wrap: wrap;
+  height: 154px;
+  margin-bottom: 58px;
+  padding: 0 66px;
+}
+
+.search-popular .title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  width: 150px;
+  height: 77px;
+  padding: 0px;
+  margin-right: 49px;
+  font-size: 3.2rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.search-popular .title::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  left: auto;
+  top: 50%;
+  right: -34px;
+  width: 1px;
+  height: 13px;
+  margin-top: -7px;
+  background-color: #eee;
+}
+
+.search-popular ul {
+  display: flex;
+  width: 947px;
+}
+
+.search-popular ul li {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 189px;
+  height: 77px;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 3.2rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  color: #eee;
+}
+
+.search-popular ul li.focus {
+  background-color: #eee;
+  color: #080d19;
+}
+
+.search-popular ul li span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 165px;
+}
+
+.search-keypad .search-list-area {
+  position: relative;
+  height: 74px;
+  margin-bottom: 12px;
+  padding: 0 96px;
+}
+
+.search-keypad .search-list-area .ic-arrow {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 21px;
+  height: 21px;
+  background-image: url("../../assets/hv_images/search/ic-arrow.png");
+}
+
+.search-keypad .search-list-area .pre {
+  left: 52px;
+}
+
+.search-keypad .search-list-area .next {
+  left: auto;
+  right: 52px;
+  transform: translateY(-50%) rotate(-180deg);
+}
+
+.search-keypad .search-list-area .search-list {
+  overflow: hidden;
+  height: 1088px;
+}
+
+.search-keypad .search-list-area .search-list ul {
+  display: inline-flex;
+  justify-content: center;
+}
+
+.search-keypad .search-list-area .search-list ul li {
+  width: 272px;
+  height: 100%;
+  line-height: 74px;
+  border-radius: 5px;
+  font-size: 3.2rem;
+}
+
+.search-keypad .search-list-area .search-list ul li:nth-child(4n) {
+  margin-right: 0px;
+}
+
+.search-keypad .search-list-area .search-list ul li span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+  width: 232px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.search-keypad .search-list-area .search-list ul li span em {
+  color: #ef3484;
+}
+
+.search-keypad .search-list-area .search-list ul li.focus {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  background-color: #eee;
+  color: #080d19;
+}
+
+.search-keypad .search-list-area .search-list ul li.focus em {
+  color: #080d19;
+}
+
+.search-keypad .keypad-area {
+  position: relative;
+  height: 306px;
+  background-color: #2a2c3e;
+}
+
+.search-keypad .keypad-area .keypad {
+  display: block;
+  position: absolute;
+  width: 736px;
+  height: 100%;
+  margin-left: 146px;
+  padding: 10px 88px;
+  background-color: #191b2b;
+}
+
+.search-keypad .keypad-area .keypad ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search-keypad .keypad-area .keypad ul li {
+  position: relative;
+  width: 80px;
+  height: 57px;
+}
+
+.search-keypad .keypad-area .keypad ul li span {
+  position: absolute;
+  z-index: 10;
+  left: 0px;
+  top: 0px;
+  width: 80px;
+  height: 57px;
+  line-height: 57px;
+  text-align: center;
+  font-size: 4.6rem;
+  color: #eee;
+}
+
+.search-keypad .keypad-area .keypad ul li span.double {
+  left: unset;
+  top: unset;
+  right: 4px;
+  bottom: 2px;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  line-height: 20px;
+  font-size: 2.5rem;
+}
+
+.search-keypad .keypad-area .keypad ul li.focus span {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  color: #080d19;
+}
+
+.search-keypad .keypad-area .keypad ul li.focus::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 104px;
+  height: 100%;
+  margin-left: -13px;
+  border-radius: 5px;
+  background-color: #eee;
+  box-shadow: 8px 8px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.search-keypad .keypad-area .keypad.keypad-eng {
+  display: none;
+}
+
+.search-keypad .keypad-area .keypad.keypad-num {
+  display: none;
+}
+
+.search-keypad .keypad-area .keypad-etc {
+  position: absolute;
+  top: 10px;
+  left: 883px;
+}
+
+.search-keypad .keypad-area .keypad-etc ul li {
+  width: 161px;
+  height: 57px;
+  line-height: 57px;
+  padding-left: 26px;
+  border-radius: 5px;
+  text-align: left;
+  color: #a9a9a9;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 3rem;
+}
+
+.search-keypad .keypad-area .keypad-etc ul li.delete::before {
+  display: inline-block;
+  content: '';
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 26px;
+  height: 26px;
+  vertical-align: sub;
+  margin-right: 10px;
+  background-image: url("../../assets/hv_images/search/ic-delete.png");
+}
+
+.search-keypad .keypad-area .keypad-etc ul li.focus {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  background-color: #eee;
+  color: #080d19;
+}
+
+.search-keypad .keypad-area .keypad-etc ul li.focus.delete::before {
+  background-image: url("../../assets/hv_images/search/ic-delete-focus.png");
+}
+
+.search-keypad .keypad-tooltip {
+  position: absolute;
+  right: 66px;
+  bottom: 238px;
+}
+
+.search-keypad .keypad-tooltip .tooltip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 166px;
+  height: 52px;
+  margin-bottom: 0;
+  padding: 0 11px;
+  line-height: 1.3;
+  text-align: center;
+  word-break: keep-all;
+  border-radius: 3px;
+  background-color: #eee;
+}
+
+.search-keypad .keypad-tooltip .tooltip::before {
+  top: 20px;
+  border-color: #eee;
+}
+
+.search-keypad .keypad-tooltip .tooltip span {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 2rem;
+  color: #080d19;
+}
+
+.search-keypad + .search-footer {
+  opacity: 0;
+}
+
+.result-info {
+  padding: 29px 85px 0;
+  line-height: 38px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 3.2rem;
+  color: #999;
+}
+
+.result-info span {
+  color: #fff;
+}
+
+.result-info em {
+  font-size: 2.5rem;
+  color: #ef3484;
+}
+
+.search-footer {
+  position: fixed;
+  right: 33px;
+  bottom: 20px;
+}

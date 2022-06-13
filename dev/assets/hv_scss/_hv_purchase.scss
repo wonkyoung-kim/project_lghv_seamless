@@ -1,0 +1,109 @@
+@import '../scss/config';
+
+.purchase-container {
+    //타이틀 영역
+    .purchase-header {
+        h2 {
+            height: px(60);
+        }
+        .sub-text {
+            color: $color-blue;
+        }
+    }
+    //구매 할인수단 선택
+    .purchase-step {
+        .step2 {
+            .list-products {
+                .bubble-title {
+                    justify-content: space-between;
+                    width: px(860);
+                    height: px(62);
+                    padding: 0 px(18) 0 px(85);
+                    border-radius: px($border-radius);
+                    font-size: 2.6rem;
+                    color: $color-gray-90;
+                    background-color: $color-step-dim;
+                    span:nth-child(2) {
+                        padding-right: px(34);
+                    }
+                    & + ul {
+                        margin-top: 0;
+                    }
+                }
+                //쿠폰할인 쿠폰변경 숨김처리
+                ul {
+                    margin-top: px(62);
+                    li:first-child {
+                        .product {
+                            margin-right: px(180);
+                        }
+                    }
+                }
+            }
+        }
+        .summary-product {
+            @include flex-items-center;
+            flex-direction: column;
+            justify-content: center;
+            height: px(368);
+            .poster-vertical {
+                margin: 0 auto px(12);
+            }
+            .name {
+                height: auto;
+                line-height: unset;
+                margin: 0;
+                em {
+                    display: block;
+                    width: 100%;
+                    @include ellipsis;
+                    font: {
+                        family: $font-bold;
+                        size: 2.8rem;
+                    }
+                }
+            }
+        }
+        .add-exp {
+            padding-left: px(50);
+            margin: px(20) 0 px(33);
+            color: $color-gray-dark;
+            p {
+                font-size: 2rem;
+                line-height: px(25);
+            }
+        }
+    } 
+    //월정액 가입
+    .purchase-body {
+        .purchase-flatrate {
+            .list-products {
+                height: 100%;
+                li {
+                    &.type-multiline {
+                        height: px(136);
+                        .price .min {
+                            display: inline-block;
+                            &::after {
+                                @include vs;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                width: 100%;
+                                height: px(2);
+                                background-color: $color-gray-dark;
+                            }
+                        }
+                        .focus {
+                            .min {
+                                &::after {
+                                    background-color: $color-white;
+                                }
+                            }
+                        } 
+                    }
+                }
+            }
+        }
+    }
+}
+

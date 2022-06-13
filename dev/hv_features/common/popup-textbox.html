@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상세보기 및 약관동의,안내 팝업</title>
+    <link rel="stylesheet" href="../../assets/css/hv_index.css" />
+</head>
+
+<body>
+    <div id="root">
+        <!-- react 구조 -->
+
+        <!-- home-수집정보 상세보기/setting-맞춤형광고 정보수집약관, 가입안내 팝업 (scroll-contents에 low-height 클래스추가) -->
+        <div class="popup-container">
+            <!-- 팝업 콘텐트 -->
+            <div class="popup large">
+                <div class="popup-header">
+                    <h3>제목</h3>
+                </div>
+                <!-- popup-body에 active상태시 스크롤 보임 -->
+                <div class="popup-body">
+                    <div class="scroll-contents low-height bottom-cover">
+                        <!--top-cover는 상단그라데이션-->
+                        <!-- //스크롤 콘텐츠 -->
+                        <div>
+                            <p class="body-text">내용</p>
+                        </div>
+                        <!--//스크롤 콘텐츠 -->
+                    </div>
+                    <!-- 스크롤 -->
+                    <div class="scroll">
+                        <span style="height: 50%;"></span>
+                    </div>
+                    <!--// 스크롤 -->
+                </div>
+                <div class="popup-footer">
+                    <button class="popup-button focus">닫기</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- //react 구조 -->
+    </div>
+</body>
+
+</html>

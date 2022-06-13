@@ -1,0 +1,56 @@
+@import '../scss/config';
+
+.category-container {
+    background-color: $color-bg-black;
+    display: flex;
+    .category-title {
+        padding-left: px(19);
+        font-size: 3.2rem;
+        color: $color-white;
+    }
+    .contents {
+        // padding: px(100) 0 0 px(61);
+        padding: px(100) 0 0 px(109);
+    }
+    .contents-list-wrap {
+        height: px(939);
+        padding-left: px(19);
+        .mask {
+            height: px(23);
+        }
+        .scroll {
+            height: px(872);
+        }
+    }
+    .contents-list {
+        li {
+            margin-left: px(16);
+            &:nth-child(5n+1) {
+                margin-left: px(16) !important;
+            }
+            &:nth-child(6n+1) {
+                margin-left: 0 !important;
+            }
+        }
+    }
+    .poster-component {
+        &::before {
+            background-image: unset;
+        }
+        .poster-tag {
+            justify-content: flex-start;
+            opacity: 1;
+        }
+    }
+    .focus {
+        .poster-tag {
+            right: px(8);
+        }
+    }
+}
+//카테고리옵션 팝업
+.category-option {
+    .single {
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>쿠폰함</title>
+    <link rel="stylesheet" href="../../assets/css/hv_index.css" />
+</head>
+<body>
+    <div id="root">
+        <!--react 구조-->
+            <div class="my-wrap">
+
+                <h2 class="skip">마이메뉴</h2>
+
+                <header class="my-header">
+                    <h3 class="my-title">쿠폰함</h3>
+                    <p class="path">
+                        <span>홈</span>
+                        <span>마이메뉴</span>
+                        <span>쿠폰함</span>
+                    </p>
+                </header>
+
+                <!--본문-->
+                <div class="my-body">
+                    <div class="list-wrap">
+                        <!-- 버튼과 부가설명 -->
+                        <section class="func-area">
+                            <div class="button-area">
+                                <button class="button coupon-func focus">
+                                    <p class="text">쿠폰 등록</p>
+                                </button>
+                            </div>
+                            <ul class="noti-message">
+                                <li>※ 쿠폰을 등록하여 VOD구매 시 사용 가능합니다.</li>
+                            </ul>
+                        </section>
+                        <!-- //버튼과 부가설명 -->
+
+                        <!-- 가입 상품 -->
+                        <p class="product-title">
+                            <span class="name">쿠폰명</span>
+                            <span class="price">금액</span>
+                            <span class="date">유효 기간</span>
+                        </p>
+                        <!-- 가입 상품 리스트 -->
+                        <ul class="product-list">
+                            <li class="focus">
+                                <p class="name">
+                                    <span class="ellipsis marquee-text marquee-play">
+                                        <span class="marquee-child">꽃보다 청춘 시즌2 1회꽃보다 청춘 시즌2 1회꽃보다 청춘 시즌2 1회</span>
+                                    </span>
+                                    <span class="ic-tag alt">EVENT</span>
+                                    <span class="ic-new">N</span>
+                                </p>
+                                <p class="price">1,000원</p>
+                                <p class="period">응모쿠폰</p>
+                            </li>
+                            <li>
+                                <p class="name">
+                                    <span class=" ellipsis marquee-text">
+                                        <span class="marquee-child">하이킥 짧은 다리의 습격 124회 (한글자막)</span>
+                                    </span>
+                                    <span class="ic-tag alt">EVENT</span>
+                                </p>
+                                <p class="price">1,000원</p>
+                                <p class="period">20.05.01</p>
+                            </li>
+                            <li>
+                                <p class="name">
+                                    <span class=" ellipsis marquee-text">
+                                        <span class="marquee-child">아수라</span>
+                                    </span>
+                                    <span class="ic-tag alt">EVENT</span>
+                                    <span class="ic-new">N</span>
+                                </p>
+                                <p class="price">1,000원</p>
+                                <p class="period">20.05.01</p>
+                            </li>
+                            <li>
+                                <p class="name">
+                                    <span class=" ellipsis marquee-text">
+                                        <span class="marquee-child">아수라</span>
+                                    </span>
+                                    <span class="ic-tag alt">EVENT</span>
+                                </p>
+                                <p class="price">1,000원</p>
+                                <p class="period">20.05.01</p>
+                            </li>
+                        </ul>
+                        <!-- //가입 상품 리스트 -->
+                    </div>
+
+                    <div class="scroll">
+                        <span style="height:50%"></span>
+                    </div>
+
+                    <!-- 가입상품 없음 -->
+                    <p class="list-none none">보유 쿠폰이 없습니다.</p>
+                    <!-- //가입상품 없음 -->
+                </div>
+            <!--본문 끝-->
+        
+        </div>
+        <!-- react 구조 끝 -->
+    </div>
+</body>
+
+</html>

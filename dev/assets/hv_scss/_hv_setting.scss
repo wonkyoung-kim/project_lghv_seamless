@@ -1,0 +1,516 @@
+@import '../scss/config';
+
+.setting-container {
+    &.active-gnb  {
+        .setting-aside {
+            position: relative;
+            &.focus-gnb-dep2 {
+                &::before, &::after {
+                    z-index: 10;
+                    @include vs;
+                }
+                &::before {
+                    width: px(48);
+                    height: 100%;
+                    background-color: $color-black;
+                }
+                &::after {
+                    top: 50%;
+                    left: px(12);
+                    width: px(23);
+                    height: px(43);
+                    transform: translateY(-50%);
+                    background-image: url('../images/home/ic-gnb-prev.png');
+                    @include background-default;
+                }
+                .gnb, h2 {
+                    margin-left: px(48);
+                }
+            }
+            h2 {
+                @include flex-items-center;
+                position: absolute;
+                z-index: 10;
+                width: px(406);
+                height: px(136);
+                padding-left: px(64);
+                margin-bottom: 0;
+                background-color: $color-black;
+                font: {
+                    family: $font-bold;
+                    size: 4.8rem;
+                }
+                color: $color-white;
+            }
+            .gnb {
+                min-width: px(406);
+                padding-top: 0;
+                background-image: none;
+                background-color: $color-black;
+                &::before,&::after {
+                    content: none;
+                }
+                .gnb-main {
+                    margin-right: 0;
+                    padding-top: px(136);
+                    li {
+                        padding-left: px(26);
+                    }
+                    &+.gnb-sub {
+                        margin-right: 0;
+                    }
+                }
+                .gnb-sub {
+                    display: block;
+                    padding-top: px(136);
+                    margin-right: 0;
+                    &::after {
+                        @include vs;
+                        bottom: 0;
+                        top: unset;
+                        width: 100%;
+                        height: px(234);
+                        z-index: 1;
+                        background: linear-gradient(to bottom, $color-bg-transparent, $color-black);
+                    }
+                }
+            }
+        }
+    }
+}
+.setting-aside {
+    background-color: unset;
+}
+.setting-contents {
+    .button {
+        margin-right: 0;
+        &.disabled {
+            background-color: $color-pure-black;
+            opacity: 0.4;
+        }
+    }
+}
+/* 설정 옵션 */
+.setting-items {
+    .radio-button {
+        &.size8 {
+            label {
+                width: px(86);
+            }
+        }
+        &.size9_5 {
+            label {
+                width: px(95);
+            }
+        }
+        &.size14_5 {
+            label {
+                width: px(145);
+            }
+        }
+        &.size15 {
+            label {
+                width: px(155, 102);
+            }
+        }
+        &.size19 {
+            label {
+                width: px(190);
+            }
+        }
+        &.size21 {
+            label {
+                width: px(210);
+            }
+        }
+    }
+}
+
+/* 자녀보호 설정 */
+//최초 진입시(인증번호 입력)
+.user-auth {
+    .full-page {
+        padding-top: px(252);
+    }
+    .guide-message {
+        position: absolute;
+        right: px(0);
+        bottom: px(52);
+        font-size: 2.4rem;
+        color: $color-bg-key-notice;
+    }
+}
+//시청시간 제한
+.time-limit {
+    .setting-group {
+        opacity: 0.3;
+    }
+}
+
+/* 채널 설정 */
+//화면 비율 설정
+.channel-screen {
+    .screen-select {
+        height: px(206);
+        padding-right: px(200);
+        .radio-button {
+            &.none {
+                display: none;
+            }
+        }
+    }
+    .screen-mode {
+        height: px(338);
+         //공통
+        .screen {
+            position: absolute;
+            left: px(60); 
+            top: px(46);
+            display: flex;
+            .broadcasting, .hd {
+                position: relative;
+                width: px(440);
+                height: px(257);
+                &::after {
+                    position: absolute;
+                    left:0;
+                    bottom: px(-80);
+                    display: block;
+                    width: 100%;
+                    height: px(60);
+                    text-align: center;
+                    font-size: 2.4rem;
+                    color: $color-gray-dark;
+                }
+            }
+            .broadcasting {
+                margin-right: px(100);
+            }
+            .img {
+                @include background-contain;
+            }
+        }
+        //스크린 공통이미지
+        &.mode1, &.mode2, &.mode3 {
+            .img {
+                width: 100%;
+                height: 100%;
+            }
+            .hd {
+                .img {
+                    background-image: url('../../assets/hv_images/setting/img-setting-screen-hd.png');
+                }
+                &::after {
+                    content: '정상 비율로 보임';
+                }
+            }
+        }
+        &.mode4, &.mode5, &.mode6 {
+            .screen > div {
+                padding-top: px(21);
+            }
+            .img {
+                height: px(215);
+                margin: 0 auto;
+            }
+            .broadcasting {
+                .img {
+                    background-image: url('../../assets/hv_images/setting/img-setting-screen-broadcasting.png');
+                }
+                &::after {
+                    content: '정상 비율로 보임';
+                }
+            }
+        }
+        //각 모드 순번에 맞게 이미지와 콘텐츠 내용을 넣은 함수
+        $mode: (
+            1: "정상 비율로 보임\A(16:9 화면에 맞게 축소됨)",
+            2: "가로로 늘어나 보임\A(16:9 화면에 맞게 좌우로 확장됨)",
+            3: "영상 상하가 잘림\A(정상 비율로 확대됨)",
+            4: "영상 좌우가 잘림\A(정상 비율로 확대됨)",
+            5: "영상 좌우가 잘림\A(정상 비율로 확대됨)",
+            6: "세로로 늘어나 보임\A(4:3 화면에 맞게 좌우로 축소됨)"
+        );
+        @each $index, $contents in $mode {
+            &.mode#{$index} {
+                @if($index<4) {
+                    .broadcasting {
+                        .img {
+                            background-image: url('../../assets/hv_images/setting/img-setting-screen#{$index}.png');
+                        }
+                        &::after {
+                            content: $contents;
+                            white-space:pre;
+                        }
+        
+                    }
+                } @else {
+                    .hd {
+                        .img {
+                            background-image: url('../../assets/hv_images/setting/img-setting-screen#{$index}.png');
+                        }
+                        &::after {
+                            content: $contents;
+                            white-space:pre;
+                        }
+        
+                    }
+                }
+            }
+        }
+    }
+}
+//맞춤형 광고 설정
+.channel-movement {
+    button:nth-of-type(2) .text {
+        width: px(321);
+    }
+}
+
+/* 시스템 설정 */
+//리모컨 연결
+.remote-connection {
+    counter-reset: number;
+    .connection-guide {
+        margin-bottom: px(32);
+        padding: px(31) px(40);
+        border-radius: px($border-radius);
+        font-size: 2.4rem;
+        color: $color-gray;
+        background-color: $color-bg-component;
+        span {
+            display: block;
+            margin-bottom: px(18);
+            color: $color-blue-sub;
+        }
+        p {
+            position: relative;
+            line-height: px(33);
+            em {
+                font-family: $font-bold;
+                color: $color-gray-light;
+            }
+            &::before {
+                @include vs-ib;
+                counter-increment: number;
+                content: counter(number) ')';
+                margin-right: px(17);
+                font-size: 2.4rem;
+                color: $color-gray;
+            }
+        }
+        i {
+            //해당 클래스이름에 맞는 아이콘을 넣는 함수
+            $names: "home", "power", "voice";
+            @each $name in $names {
+                &.ic-#{$name} {
+                    &::before {
+                        background-image: url('../../assets/hv_images/setting/ic-setting-#{$name}.png');
+                    }
+                }
+            }
+            &::before {
+                @include vs-ib;
+                @include background-default;
+                width: px(30);
+                height: px(30);
+                vertical-align: bottom;
+            }
+        }
+    }
+}
+//블루투스 연결
+.bluetooth-connection {
+    .connection-button {
+        @include flex-items-center;
+        margin-bottom: px(46);
+        > p {
+            display: inline-block;
+            margin-right: px(59);
+            line-height: px(98);
+            font: {
+                family: $font-bold;
+                size: 3.4rem;
+            }
+            color: $color-gray-dark;      
+            em {
+                margin-left: px(16);
+                font-size: 4rem;
+                color: $color-blue;
+            }
+            &::before {
+                @include vs-ib;
+                @include background-default;
+                width: px(56);
+                height: px(56);
+                margin-right: px(16);
+                vertical-align: middle;
+                background-image: url('../../assets/hv_images/setting/ic-setting-bluetooth.png');
+            }
+        }
+        .button-area {
+            display: inline-flex;
+        }
+    }
+    .connection-guide {
+        p {
+            margin-bottom: px(20);
+            font-size: 2.4rem;
+            color: $color-gray;
+        }
+        ul {
+            display: flex;
+
+            li {
+                @include flex-items-center;
+                flex-direction: column;
+                justify-content: center;
+                width: px(384);
+                height: px(237);
+                margin-right: 28px;
+                text-align: center;
+                border-radius: px($border-radius);
+                background-color: $color-bg-component;
+
+                span {
+                    @include flex-items-center;
+                    margin-bottom: px(20);
+                    font: {
+                        family: $font-bold;
+                        size: 3rem;
+                    }
+                    color: $color-gray-light;
+                    &::before {
+                        @include vs-ib;
+                        @include background-default;
+                        margin-right: px(20);
+                    }
+                    
+                }
+                p {
+                    line-height: 1.55;
+                    font-size: 2rem;
+                    color: $color-gray;
+                }
+                &:nth-child(1) span {
+                    &::before {
+                        width: px(48);
+                        height: px(32);
+                        background-image: url('../../assets/hv_images/setting/ic-setting-connection1.png');
+                    }
+                }
+                &:nth-child(2) span {
+                    &::before {
+                        width: px(45);
+                        height: px(34);
+                        background-image: url('../../assets/hv_images/setting/ic-setting-connection2.png');
+                    }
+                }
+                &:nth-child(3) span {
+                    &::before {
+                        width: px(43);
+                        height: px(43);
+                        background-image: url('../../assets/hv_images/setting/ic-setting-connection3.png');
+                    }
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+//시스템 정보
+.system-info {
+    .full-page {
+        padding: px(46) 0;
+        p {
+            line-height: px(34);
+            text-align: center;
+            font-size: 2.4rem;
+            color: $color-gray;
+        }
+    }
+    &.active {
+        & + .scroll {
+            opacity: 1;
+        }
+    }
+}
+//카카오i 연결
+.kakaoi-connection {
+    .contents {
+        margin-bottom: px(40);
+        em {
+            display: block;
+            margin-bottom: px(12);
+            font-size: 2.4rem;
+            color: $color-blue;
+        }
+        //인증번호입력
+        .input-password {
+            height: px(165);
+            margin-bottom: 0;
+            p {
+                width: px(165);
+                height: px(165);
+                margin-right: px(15);
+                span {
+                    line-height: px(165);
+                    font: {
+                        family: $font-bold;
+                        size: 7rem;
+                    }
+                    color: $color-gray;
+                }
+            }
+            &.entered {
+                background-image: none;
+            }
+            .focus {
+                span {
+                    color: $color-white;
+                    &::before {
+                        height: px(80);
+                    }
+                }
+                &::after {
+                    box-shadow: inset 0 0 0 px(4) $color-white;
+                }
+                &.entered {
+                    background-image: none;
+                }
+            }
+        }
+        .sub-text {
+            opacity: 1;
+            margin-top: px(12);
+            line-height: px(30);
+        }
+        //등록정보
+        ul {
+            display: flex;
+            li {
+                width: px(524);
+                height: px(180);
+                margin-right: px(10);
+                margin-bottom: px(27);
+                padding: 0 px(10);
+                border-radius: px(4);
+                font-size: 2.6rem;
+                text-align: center;
+                background-color: $color-bg-component;
+                span {
+                    display: block;
+                    line-height: px(82);
+                    color: $color-gray-light;
+                    border-bottom: 2px solid $color-bg-setting;
+                }
+                p {
+                    line-height: px(96);
+                    color: $color-font-gray;
+                }
+            }
+        }
+    }
+}

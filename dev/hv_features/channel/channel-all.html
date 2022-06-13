@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/hv_index.css" />
+</head>
+
+<body>
+
+    <div id="root">
+        <!-- react 구조 -->
+
+        <!-- 장르별 편성표 보기 -->
+        <div class="schedule-view-layer">
+            <!-- <div class="schedule-view-layer active"> active 클래스로 활성화 -->
+            <button class="close"></button>
+            <nav>
+                <ul>
+                    <li class="focus">선호채널</li>
+                    <li>지상파/종편</li>
+                    <li>홈쇼핑</li>
+                    <li>영화</li>
+                    <li>드라마</li>
+                    <li>예능</li>
+                    <li>스포츠/취미</li>
+                    <li>교양/다큐</li>
+                    <li>음악</li>
+                    <li>뉴스/경제</li>
+                    <li>어린이/교육</li>
+                    <li>공공/종교</li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="channel-container">
+            <h1 class="skip">편성표</h1>
+            <div class="channel-header">
+                <div class="thumbnail" style="background-image: url(../../assets/hv_images/channel/img-channel-15.png)">
+                    <span>005 tvN</span>
+                </div> 
+                <div class="channel-info-wrap">
+                    <h2 class="channel-number">005</h2>
+                    <div class="info-program">
+                        <div class="state">
+                            <span class="channel-name">tvN</span>
+                            <span class="date">11월 31일(금) 오후 9:23</span>
+                        </div>
+                        <h2 class="title">해리 포터와 죽음의 성물</h2>
+                        <p class="meta-tag">
+                            <span class="ic-tag">15세</span>
+                            <span class="ic-tag">HD</span>
+                            <span class="ic-tag recording">녹화중</span>
+                        </p>
+                        <div class="watching">
+                            <p class="ing">현재 시청 중인 채널</p>
+                            <dl class="progress">
+                                <dt class="time">오후 9:00-10:00</dt>
+                                <dd class="bar"><span style="width:50%;"></span></dd>
+                                <dd class="reservation">
+                                    <span class="ic-recording">녹화예약</span>
+                                    <span>시청예약</span>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //channel-header -->
+
+            <div class="channel-body">
+
+                <div class="timekeeper">
+                    <span>현재 시간</span>
+                </div>
+
+                <div class="timeline">
+                    <h3>전체채널</h3>
+                    <div class="inner">
+                        <ul>
+                            <li class="active">오전 00:00</li>
+                            <li>오전 00:30</li>
+                            <li>오전 01:00</li>
+                            <li>오전 01:30</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="channel-box-wrap">
+
+                    <div class="channel-box">
+                        <div class="mask"></div>
+                        <!-- 편성표 보기-->
+                        <div class="schedule-view-button">
+                            <button><p>장르별<br>편성표<br>보기</p></button>
+                        </div>
+
+                        <div class="channel-box-inner">
+                            <!-- 채널 로딩 -->
+                            <div class="loading">
+                                <div class="loading-img"></div>
+                                <p class="text">방송 정보 수신 중입니다.</p>
+                            </div>
+
+                            <div class="channel-schedule selected">
+                                <div class="channel-name">
+                                    <p class="name">내셔널 지오그래픽</p>
+                                    <em>005</em>
+                                    <p class="icon-group">
+                                        <i class="ic-lock">잠금</i>
+                                        <i class="ic-favorite">선호채널</i>
+                                    </p>
+                                </div>
+                                <div class="channel-program">
+                                    <ul>
+                                        <li style="width:40%;" class="prev-padding add-icon">
+                                            <span class="arrow"></span>
+                                            <div class="program">
+                                                <p class="">해리 포터와 죽음의 성물 - 1부</p>
+                                            </div>
+                                            <i class="ic-tv-pvr"></i>
+                                        </li>
+                                        <!-- p클래스에 subject를 넣으면 한줄효과 -->
+                                        <li style="width:60%;" class="next-padding focus">
+                                            <span class="arrow"></span>
+                                            <div class="program">
+                                                <p class="subject">해리 포터와 죽음의 성물 - 1부 해리 포터와 죽음의 성물 - 1부 해리 포터와 죽음의 성물</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="channel-schedule">
+                                <div class="channel-name">
+                                    <p class="name">SBS MTV</p>
+                                    <em>031</em>
+                                    <p class="icon-group">
+                                        <i class="ic-favorite">선호채널</i>
+                                    </p>
+                                </div>
+                                <div class="channel-program">
+                                    <ul>
+                                        <li style="width:100%;" class="prev-padding next-padding add-icon">
+                                            <span class="arrow"></span>
+                                            <div class="program">
+                                                <p class="">해리 포터와 죽음의 성물 - 1부</p>
+                                            </div>
+                                            <i class="ic-tv-pvr"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="channel-schedule">
+                                <div class="channel-name">
+                                    <p class="name">스크린</p>
+                                    <em>031</em>
+                                    <p class="icon-group">
+                                        <i class="ic-lock">잠금</i>
+                                    </p>
+                                </div>
+                                <div class="channel-program">
+                                    <ul>
+                                        <li style="width:50%;" class="add-icon">
+                                            <span class="arrow"></span>
+                                            <div class="program">
+                                                <p class="">해리 포터와 죽음의 성물 - 1부</p>
+                                            </div>
+                                            <i class="ic-tv-reservation"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="channel-schedule">
+                                <div class="channel-name">
+                                    <p class="name">SBS MTV</p>
+                                    <em>031</em>
+                                    <p class="icon-group">
+                                    </p>
+                                </div>
+                                <div class="channel-program">
+                                    <ul>
+                                        <li style="width:61.5px;" class="size-min only-icon">
+                                            <span class="arrow"></span>
+                                            <div class="program">
+                                                <p class="">해리 포터와 죽음의 성물 - 1부</p>
+                                            </div>
+                                            <i class="ic-tv-ellipsis"></i>
+                                        </li>
+                                        <li style="width:61.5px;" class="add-icon size-min only-icon">
+                                            <span class="arrow"></span>
+                                            <div class="program">
+                                                <p class="">해리 포터와 죽음의 성물 - 1부</p>
+                                            </div>
+                                            <i class="ic-tv-reservation"></i>
+                                        </li>
+                                        <li style="width:61.5px;" class="add-icon size-min only-icon">
+                                            <span class="arrow"></span>
+                                            <div class="program">
+                                                <p class="">해리 포터와 죽음의 성물 - 1부</p>
+                                            </div>
+                                            <i class="ic-tv-pvr"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="channel-schedule">
+                                <div class="channel-name">
+                                    <p class="name">스크린</p>
+                                    <em>031</em>
+                                    <p class="icon-group">
+                                    </p>
+                                </div>
+                                <div class="channel-program">
+                                    <ul>
+                                        <li style="width:100%;" class="add-icon">
+                                            <span class="arrow"></span>
+                                            <div class="program">
+                                                <p class="">해리 포터와 죽음의 성물 - 1부</p>
+                                            </div>
+                                            <i class="ic-tv-reservation"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="channel-schedule">
+                                <div class="channel-name">
+                                    <p class="name">SBS MTV</p>
+                                    <em>031</em>
+                                    <p class="icon-group">
+                                    </p>
+                                </div>
+                                <div class="channel-program">
+                                    <ul>
+                                        <li style="width:10%;" class="size-min">
+                                            <span class="arrow"></span>
+                                            <div class="program">
+                                                <p class="">해리 포터와 죽음의 성물 - 1부</p>
+                                            </div>
+                                        </li>
+                                        <li style="width:25%;" class="add-icon">
+                                            <span class="arrow"></span>
+                                            <div class="program">
+                                                <p class="">해리 포터와 죽음의 성물 - 1부</p>
+                                            </div>
+                                            <i class="ic-tv-pvr"></i>
+                                        </li>
+                                        <li style="width:10%;" class="add-icon size-min only-icon">
+                                            <span class="arrow"></span>
+                                            <div class="program">
+                                                <p class="">해리 포터와 죽음의 성물 - 1부</p>
+                                            </div>
+                                            <i class="ic-tv-pvr"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- 선호채널 등록된 채널 없을때 -->
+                            <div class="channel-schedule favorite-default">
+                                <div class="channel-name"></div>
+                                <div class="channel-program">
+                                    <div class="info-favorite">
+                                        <div class="img"></div>
+                                        <div class="exp">
+                                            <P>등록한 선호 채널이 없습니다.</P>
+                                            <!-- <P><u>설정 > 채널설정 > 선호채널 편집</u>에서 선호채널을 설정할수 있습니다.</P> -->
+                                        </div>
+                                        <!-- <div class="button-area">
+                                            <button class="button-primary large focus">
+                                                <p class="text">선호채널 설정</p>
+                                            </button>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 선호채널 등록된 채널 없을때 --> 
+                        </div>
+
+                        <div class="mask alt"></div>
+                    </div>
+                    <!-- //channel-box -->
+                </div>
+                <!-- //channel-box-wrqp -->
+            </div>
+            <!-- //channel-body -->
+
+            <div class="channel-footer">
+                <div class="channel-pagination">
+                    <ul>
+                        <li class="page-prev focus"><button>previous</button></li>
+                        <li class="page-number">
+                            <span class="active">222</span>
+                            <span class="total">222</span>
+                        </li>
+                        <li class="page-next"><button>next</button></li>
+                    </ul>
+                </div>
+                <div class="channel-option">
+                    <p class="keyguide">
+                        <span class="ic-round">확인/OK</span>시청하기
+                        <span class="ic-round color-key blue"></span>부가기능 보기
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <!-- //channel-container -->
+
+
+
+    </div>
+    <!-- //root -->
+
+
+</body>
+
+</html>

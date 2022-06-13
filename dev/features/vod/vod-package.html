@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+</head>
+
+<body>
+
+    <div id="root">
+        <!-- react 구조 -->
+
+
+        <!--vod 상세화면 / 시리즈 / 시즌제 -->
+
+        <div class="vod-detail-container video-type">
+            <!-- <div class="vod-detail-container video-type"> 영상 배경일 때 사용-->
+            
+            <!-- vod 이미지 배경
+            <div class="vod-detail-bgimage" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div> -->
+
+            <!-- 배경 그라데이션 -->
+            <div class="gradient-bg">
+  
+                <!-- 콘텐츠 -->
+                <div class="contents package">
+                     
+                    <section class="content-info">                    
+                        <!-- 로고타입 이미지인지 텍스트인지 구분, 이미지일 경우 image-logo 클래스 추가 / 
+                        텍스트 경우 2줄일 경우 doulbe-line 클래스 추가 -->
+                        <h1 class="vod-title">공주 패키지</h1>
+                    <!--메타데이터 영역-->              
+                        <div class="product-desc">
+                            공주들이 다양한 모험과 사랑을 찾아 떠나는 여러 애니메이션 상품을 한번에 구매해 보세요.
+                        </div>
+
+                        <!--이벤트 메시지-->
+                        <p class="event-message">이벤트 대여상품 구매 시 피규어 증정!</p>
+
+                        <!-- 마지막 선택콘텐츠 / 최초 진입 시엔 리스트 첫 콘텐츠 -->
+                         <p class="content-title">겨울왕국1</p>
+                    </section>   
+                    
+                    <!--구매버튼 영역-->
+                    <section class="func-area">
+   
+                        <div class="button-area">
+                            <!--구매버튼/구매옵션 복수일 경우
+                            <button class="vod-button textprice-type large focus">
+                                <p class="label">소장패키지</p>
+                                <p class="price">80,000원</p>
+                            </button> -->
+                            <!-- 구매 후 버튼 -->
+                            <button class="vod-button focus">
+                                <p class="text">구매한 패키지 목록</p>
+                            </button>
+
+                            <!--구매불가 버튼
+                            <button class="vod-button dimed">
+                                <p class="text">구매불가</p>
+                            </button>
+
+                            <span class="tooltip">
+                                UHD/HD 화질로 제공될 경우에는<br />
+                                감상할 수 있으니 ‘검색’을 이용해보세요.
+                            </span>-->
+                            
+                        </div>
+
+                        <!--구매하단 할인문구-->
+                        <div class="purchase-guide">
+                            <!--쿠폰사용문구
+                            <p class="coupon-info">사용 가능한 쿠폰 1개</p>-->
+
+                            <!-- tv포인트 구매안내
+                            <p class="sale-info">TV포인트를 사용하면 6,600원에 구매 가능</p> -->
+
+                            <!--지원안돼 구매불가-
+                            <p class="nosupport-tip">사용 중인 TV는 돌비 비전을 지원하지 않아 해당 콘텐츠를 구매할 수 없습니다.</p>-->
+                            <!--구매후 시청기간 안내-->
+                            <p class="remain-time">무제한 시청</p>
+                        </div>
+
+                    </section>
+
+
+                    <!--detail 정보-->
+                    <section class="detail-info">
+
+                        <!--추가정보/기능 리스트버튼 영역-->
+                        <div class="detail-list-wrap">
+                            <ul class="vod-additional-list">
+                                <li class="view-rating">평점 및 감상평</li>
+                                <li class="cast-info">인물 정보</li>
+                                <li class="most-viewed">함께 많이 본 콘텐츠</li>
+                                <li class="wish-list add">찜목록에 추가</li>
+                                <!--<li class="wish-list delete">찜목록에서 삭제</li>-->
+                                <li class="rate-contents">
+                                    <p>이 콘텐츠 평가하기</p>
+                                    <ul class="rate-contents-focus">
+                                        <li class="like focus">좋아요
+                                            <span class="count">999+</span>
+                                        </li>
+                                        <li class="dislike">싫어요
+                                            <span class="count">999+</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- <li class="rated like focus">좋아요
+                                    <span class="count">999+</span>
+                                </li>
+                                <li class="rated dislike focus">싫어요
+                                    <span class="count">999+</span>
+                                </li> -->                               
+                            </ul>
+                        </div>
+                        
+                    </section>
+
+                </div>  
+                <!--//콘텐츠 -->
+
+            </div>
+            <!--//그라데이션 배경-->
+
+            <!--U+모바일로tv로 시청가능-->
+            <div class="mobile-message">
+                <p class="mobile-view-tip">'홈 > 마이메뉴'에서 연결 가능</p>
+                <!--모바일로 시청가능 tooltip-->
+                <p class="tooltip">
+                    이 영상을 무료로 이어보려면 TV와 휴대폰을 연결해보세요.<br/>
+                    ‘U+모바일tv로 시청 가능’ 표시가 있는 콘텐츠만 해당됩니다.
+                </p>
+            </div>
+
+            <!-- vod-layer 노출 시에 어두워지는 bg -->
+            <div class="vod-layer-dimmed"></div>
+            
+        </div>
+        <!--//vod상세화면-->
+
+
+    </div>
+    <!-- //root -->
+
+</body>
+
+</html>

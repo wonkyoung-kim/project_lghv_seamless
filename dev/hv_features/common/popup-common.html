@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공통 팝업</title>
+    <link rel="stylesheet" href="../../assets/css/hv_index.css" />
+</head>
+
+<body>
+    <div id="root">
+        <!-- react 구조 -->
+        <div class="popup-container">
+
+            <!-- 스크롤 팝업 -->
+            <div class="popup middle">
+                <div class="popup-header">
+                    <h3>제목</h3>
+                </div>
+                <!-- active상태일 때 스크롤 보임 -->
+                <div class="popup-body active">
+                    <!--top-cover는 상단그라데이션-->
+                    <div class="scroll-contents bottom-cover">
+                        <p class="body-text">내용</p>
+                    </div>
+                    <div class="scroll">
+                        <span style="height: 50%;"></span>
+                    </div>
+                    <!--// 스크롤 -->
+                </div>
+                <div class="popup-footer">
+                    <button class="popup-button focus">닫기</button>
+                </div>
+            </div>
+
+            <!-- 기본 텍스트 팝업 -->
+            <div class="popup small">
+                <!-- popup 사이즈에 따라 small /middle /large -->
+                <div class="popup-header marquee-text marquee-play">
+                    <h3 class="marquee-child">타이틀</h3>
+                </div>
+                <div class="popup-body text-center">
+                    <h4>타이틀</h4>
+                    <p class="body-text">내용입니다 <span class="highlight">특정내용강조</span>/<em class="highlight">특정내용강조 진하게</em>/<em>내용 진하게</em></p>
+                    <p class="sub-text">설명<span class="highlight">특정내용</span><span class="color-gray">특정그레이컬러</span></p>
+                </div>
+                <div class="popup-footer">
+                    <button class="popup-button">취소</button>
+                    <button class="popup-button focus">확인</button>
+                </div>
+            </div>
+
+            <!-- 코인충전완료 팝업 -->
+            <div class="popup middle">
+                <div class="popup-header marquee-text marquee-play">
+                    <h3 class="marquee-child">TV코인 충전 완료</h3>
+                </div>
+                <div class="popup-body text-center">
+                    <p class="body-text">
+                        보너스 코인을 포함하여 TV코인이 충전되었습니다<br />
+                        충전 TV코인 <span class="highlight">33,000원</span>
+                    </p>
+                    <div class="sub-text">
+                        (결제금액 30,000원 + <span class="highlight">보너스 10% 3,000원</span>)<br />
+                        <span class="color-gray">※ 사용 유효기간 : ~2022.01.30</span>
+                    </div>
+                </div>
+                <div class="popup-footer">
+                    <button class="popup-button">취소</button>
+                    <button class="popup-button focus">확인</button>
+                </div>
+            </div>
+
+        </div>
+        <!-- //react 구조 -->
+    </div>
+</body>
+
+</html>

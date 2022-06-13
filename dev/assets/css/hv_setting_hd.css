@@ -1,0 +1,558 @@
+@charset "UTF-8";
+/* variables */
+/* functions */
+/* mixins */
+/* toast 임시 */
+.setting-container.active-gnb .setting-aside {
+  position: relative;
+}
+
+.setting-container.active-gnb .setting-aside.focus-gnb-dep2::before, .setting-container.active-gnb .setting-aside.focus-gnb-dep2::after {
+  z-index: 10;
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+}
+
+.setting-container.active-gnb .setting-aside.focus-gnb-dep2::before {
+  width: 32px;
+  height: 100%;
+  background-color: #080d19;
+}
+
+.setting-container.active-gnb .setting-aside.focus-gnb-dep2::after {
+  top: 50%;
+  left: 8px;
+  width: 15px;
+  height: 28px;
+  transform: translateY(-50%);
+  background-image: url("../images/home/ic-gnb-prev.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.setting-container.active-gnb .setting-aside.focus-gnb-dep2 .gnb, .setting-container.active-gnb .setting-aside.focus-gnb-dep2 h2 {
+  margin-left: 32px;
+}
+
+.setting-container.active-gnb .setting-aside h2 {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  z-index: 10;
+  width: 270px;
+  height: 90px;
+  padding-left: 42px;
+  margin-bottom: 0;
+  background-color: #080d19;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 4.8rem;
+  color: #eee;
+}
+
+.setting-container.active-gnb .setting-aside .gnb {
+  min-width: 270px;
+  padding-top: 0;
+  background-image: none;
+  background-color: #080d19;
+}
+
+.setting-container.active-gnb .setting-aside .gnb::before, .setting-container.active-gnb .setting-aside .gnb::after {
+  content: none;
+}
+
+.setting-container.active-gnb .setting-aside .gnb .gnb-main {
+  margin-right: 0;
+  padding-top: 90px;
+}
+
+.setting-container.active-gnb .setting-aside .gnb .gnb-main li {
+  padding-left: 17px;
+}
+
+.setting-container.active-gnb .setting-aside .gnb .gnb-main + .gnb-sub {
+  margin-right: 0;
+}
+
+.setting-container.active-gnb .setting-aside .gnb .gnb-sub {
+  display: block;
+  padding-top: 90px;
+  margin-right: 0;
+}
+
+.setting-container.active-gnb .setting-aside .gnb .gnb-sub::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  bottom: 0;
+  top: unset;
+  width: 100%;
+  height: 156px;
+  z-index: 1;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #080d19);
+}
+
+.setting-aside {
+  background-color: unset;
+}
+
+.setting-contents .button {
+  margin-right: 0;
+}
+
+.setting-contents .button.disabled {
+  background-color: #000;
+  opacity: 0.4;
+}
+
+/* 설정 옵션 */
+.setting-items .radio-button.size8 label {
+  width: 57px;
+}
+
+.setting-items .radio-button.size9_5 label {
+  width: 63px;
+}
+
+.setting-items .radio-button.size14_5 label {
+  width: 96px;
+}
+
+.setting-items .radio-button.size15 label {
+  width: 102px;
+}
+
+.setting-items .radio-button.size19 label {
+  width: 126px;
+}
+
+.setting-items .radio-button.size21 label {
+  width: 140px;
+}
+
+/* 자녀보호 설정 */
+.user-auth .full-page {
+  padding-top: 168px;
+}
+
+.user-auth .guide-message {
+  position: absolute;
+  right: 0px;
+  bottom: 34px;
+  font-size: 2.4rem;
+  color: #626373;
+}
+
+.time-limit .setting-group {
+  opacity: 0.3;
+}
+
+/* 채널 설정 */
+.channel-screen .screen-select {
+  height: 137px;
+  padding-right: 133px;
+}
+
+.channel-screen .screen-select .radio-button.none {
+  display: none;
+}
+
+.channel-screen .screen-mode {
+  height: 225px;
+}
+
+.channel-screen .screen-mode .screen {
+  position: absolute;
+  left: 40px;
+  top: 30px;
+  display: flex;
+}
+
+.channel-screen .screen-mode .screen .broadcasting, .channel-screen .screen-mode .screen .hd {
+  position: relative;
+  width: 293px;
+  height: 171px;
+}
+
+.channel-screen .screen-mode .screen .broadcasting::after, .channel-screen .screen-mode .screen .hd::after {
+  position: absolute;
+  left: 0;
+  bottom: -54px;
+  display: block;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  font-size: 2.4rem;
+  color: #777;
+}
+
+.channel-screen .screen-mode .screen .broadcasting {
+  margin-right: 66px;
+}
+
+.channel-screen .screen-mode .screen .img {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.channel-screen .screen-mode.mode1 .img, .channel-screen .screen-mode.mode2 .img, .channel-screen .screen-mode.mode3 .img {
+  width: 100%;
+  height: 100%;
+}
+
+.channel-screen .screen-mode.mode1 .hd .img, .channel-screen .screen-mode.mode2 .hd .img, .channel-screen .screen-mode.mode3 .hd .img {
+  background-image: url("../../assets/hv_images/setting/img-setting-screen-hd.png");
+}
+
+.channel-screen .screen-mode.mode1 .hd::after, .channel-screen .screen-mode.mode2 .hd::after, .channel-screen .screen-mode.mode3 .hd::after {
+  content: '정상 비율로 보임';
+}
+
+.channel-screen .screen-mode.mode4 .screen > div, .channel-screen .screen-mode.mode5 .screen > div, .channel-screen .screen-mode.mode6 .screen > div {
+  padding-top: 14px;
+}
+
+.channel-screen .screen-mode.mode4 .img, .channel-screen .screen-mode.mode5 .img, .channel-screen .screen-mode.mode6 .img {
+  height: 143px;
+  margin: 0 auto;
+}
+
+.channel-screen .screen-mode.mode4 .broadcasting .img, .channel-screen .screen-mode.mode5 .broadcasting .img, .channel-screen .screen-mode.mode6 .broadcasting .img {
+  background-image: url("../../assets/hv_images/setting/img-setting-screen-broadcasting.png");
+}
+
+.channel-screen .screen-mode.mode4 .broadcasting::after, .channel-screen .screen-mode.mode5 .broadcasting::after, .channel-screen .screen-mode.mode6 .broadcasting::after {
+  content: '정상 비율로 보임';
+}
+
+.channel-screen .screen-mode.mode1 .broadcasting .img {
+  background-image: url("../../assets/hv_images/setting/img-setting-screen1.png");
+}
+
+.channel-screen .screen-mode.mode1 .broadcasting::after {
+  content: "정상 비율로 보임\a(16:9 화면에 맞게 축소됨)";
+  white-space: pre;
+}
+
+.channel-screen .screen-mode.mode2 .broadcasting .img {
+  background-image: url("../../assets/hv_images/setting/img-setting-screen2.png");
+}
+
+.channel-screen .screen-mode.mode2 .broadcasting::after {
+  content: "가로로 늘어나 보임\a(16:9 화면에 맞게 좌우로 확장됨)";
+  white-space: pre;
+}
+
+.channel-screen .screen-mode.mode3 .broadcasting .img {
+  background-image: url("../../assets/hv_images/setting/img-setting-screen3.png");
+}
+
+.channel-screen .screen-mode.mode3 .broadcasting::after {
+  content: "영상 상하가 잘림\a(정상 비율로 확대됨)";
+  white-space: pre;
+}
+
+.channel-screen .screen-mode.mode4 .hd .img {
+  background-image: url("../../assets/hv_images/setting/img-setting-screen4.png");
+}
+
+.channel-screen .screen-mode.mode4 .hd::after {
+  content: "영상 좌우가 잘림\a(정상 비율로 확대됨)";
+  white-space: pre;
+}
+
+.channel-screen .screen-mode.mode5 .hd .img {
+  background-image: url("../../assets/hv_images/setting/img-setting-screen5.png");
+}
+
+.channel-screen .screen-mode.mode5 .hd::after {
+  content: "영상 좌우가 잘림\a(정상 비율로 확대됨)";
+  white-space: pre;
+}
+
+.channel-screen .screen-mode.mode6 .hd .img {
+  background-image: url("../../assets/hv_images/setting/img-setting-screen6.png");
+}
+
+.channel-screen .screen-mode.mode6 .hd::after {
+  content: "세로로 늘어나 보임\a(4:3 화면에 맞게 좌우로 축소됨)";
+  white-space: pre;
+}
+
+.channel-movement button:nth-of-type(2) .text {
+  width: 214px;
+}
+
+/* 시스템 설정 */
+.remote-connection {
+  counter-reset: number;
+}
+
+.remote-connection .connection-guide {
+  margin-bottom: 21px;
+  padding: 20px 26px;
+  border-radius: 5px;
+  font-size: 2.4rem;
+  color: #a9a9a9;
+  background-color: #2A2C3E;
+}
+
+.remote-connection .connection-guide span {
+  display: block;
+  margin-bottom: 12px;
+  color: #aaa4ff;
+}
+
+.remote-connection .connection-guide p {
+  position: relative;
+  line-height: 22px;
+}
+
+.remote-connection .connection-guide p em {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  color: #d6d6d6;
+}
+
+.remote-connection .connection-guide p::before {
+  display: inline-block;
+  content: '';
+  counter-increment: number;
+  content: counter(number) ")";
+  margin-right: 11px;
+  font-size: 2.4rem;
+  color: #a9a9a9;
+}
+
+.remote-connection .connection-guide i.ic-home::before {
+  background-image: url("../../assets/hv_images/setting/ic-setting-home.png");
+}
+
+.remote-connection .connection-guide i.ic-power::before {
+  background-image: url("../../assets/hv_images/setting/ic-setting-power.png");
+}
+
+.remote-connection .connection-guide i.ic-voice::before {
+  background-image: url("../../assets/hv_images/setting/ic-setting-voice.png");
+}
+
+.remote-connection .connection-guide i::before {
+  display: inline-block;
+  content: '';
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+  vertical-align: bottom;
+}
+
+.bluetooth-connection .connection-button {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.bluetooth-connection .connection-button > p {
+  display: inline-block;
+  margin-right: 39px;
+  line-height: 65px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 3.4rem;
+  color: #777;
+}
+
+.bluetooth-connection .connection-button > p em {
+  margin-left: 10px;
+  font-size: 4rem;
+  color: #a9a6ff;
+}
+
+.bluetooth-connection .connection-button > p::before {
+  display: inline-block;
+  content: '';
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 37px;
+  height: 37px;
+  margin-right: 10px;
+  vertical-align: middle;
+  background-image: url("../../assets/hv_images/setting/ic-setting-bluetooth.png");
+}
+
+.bluetooth-connection .connection-button .button-area {
+  display: inline-flex;
+}
+
+.bluetooth-connection .connection-guide p {
+  margin-bottom: 13px;
+  font-size: 2.4rem;
+  color: #a9a9a9;
+}
+
+.bluetooth-connection .connection-guide ul {
+  display: flex;
+}
+
+.bluetooth-connection .connection-guide ul li {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 256px;
+  height: 158px;
+  margin-right: 28px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #2A2C3E;
+}
+
+.bluetooth-connection .connection-guide ul li span {
+  display: flex;
+  align-items: center;
+  margin-bottom: 13px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 3rem;
+  color: #d6d6d6;
+}
+
+.bluetooth-connection .connection-guide ul li span::before {
+  display: inline-block;
+  content: '';
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 13px;
+}
+
+.bluetooth-connection .connection-guide ul li p {
+  line-height: 1.55;
+  font-size: 2rem;
+  color: #a9a9a9;
+}
+
+.bluetooth-connection .connection-guide ul li:nth-child(1) span::before {
+  width: 32px;
+  height: 21px;
+  background-image: url("../../assets/hv_images/setting/ic-setting-connection1.png");
+}
+
+.bluetooth-connection .connection-guide ul li:nth-child(2) span::before {
+  width: 30px;
+  height: 22px;
+  background-image: url("../../assets/hv_images/setting/ic-setting-connection2.png");
+}
+
+.bluetooth-connection .connection-guide ul li:nth-child(3) span::before {
+  width: 28px;
+  height: 28px;
+  background-image: url("../../assets/hv_images/setting/ic-setting-connection3.png");
+}
+
+.bluetooth-connection .connection-guide ul li:last-child {
+  margin-right: 0;
+}
+
+.system-info .full-page {
+  padding: 30px 0;
+}
+
+.system-info .full-page p {
+  line-height: 22px;
+  text-align: center;
+  font-size: 2.4rem;
+  color: #a9a9a9;
+}
+
+.system-info.active + .scroll {
+  opacity: 1;
+}
+
+.kakaoi-connection .contents {
+  margin-bottom: 26px;
+}
+
+.kakaoi-connection .contents em {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 2.4rem;
+  color: #a9a6ff;
+}
+
+.kakaoi-connection .contents .input-password {
+  height: 110px;
+  margin-bottom: 0;
+}
+
+.kakaoi-connection .contents .input-password p {
+  width: 110px;
+  height: 110px;
+  margin-right: 10px;
+}
+
+.kakaoi-connection .contents .input-password p span {
+  line-height: 110px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 7rem;
+  color: #a9a9a9;
+}
+
+.kakaoi-connection .contents .input-password.entered {
+  background-image: none;
+}
+
+.kakaoi-connection .contents .input-password .focus span {
+  color: #eee;
+}
+
+.kakaoi-connection .contents .input-password .focus span::before {
+  height: 53px;
+}
+
+.kakaoi-connection .contents .input-password .focus::after {
+  box-shadow: inset 0 0 0 2px #eee;
+}
+
+.kakaoi-connection .contents .input-password .focus.entered {
+  background-image: none;
+}
+
+.kakaoi-connection .contents .sub-text {
+  opacity: 1;
+  margin-top: 8px;
+  line-height: 20px;
+}
+
+.kakaoi-connection .contents ul {
+  display: flex;
+}
+
+.kakaoi-connection .contents ul li {
+  width: 349px;
+  height: 120px;
+  margin-right: 6px;
+  margin-bottom: 18px;
+  padding: 0 6px;
+  border-radius: 2px;
+  font-size: 2.6rem;
+  text-align: center;
+  background-color: #2A2C3E;
+}
+
+.kakaoi-connection .contents ul li span {
+  display: block;
+  line-height: 54px;
+  color: #d6d6d6;
+  border-bottom: 2px solid #191b2b;
+}
+
+.kakaoi-connection .contents ul li p {
+  line-height: 64px;
+  color: #878788;
+}

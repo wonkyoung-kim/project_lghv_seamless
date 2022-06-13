@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home UI</title>
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+</head>
+
+<body>
+
+    <div id="root">
+        <!-- react 구조 -->
+
+            <!--카테고리 목록 / vod list -->
+            <div class="category-container ">
+
+                <!--vod 이미지 배경 -->
+                <div class="vod-detail-bgimage" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+
+                <!-- 배경 그라데이션 -->
+                <div class="gradient-bg">
+                    <!-- 이전키표시 -->
+                    <div class="category-back">
+                        <i class="ic-arrow">이전으로</i>
+                    </div>
+                    <!-- 콘텐츠 active 상태일 때 콘텐츠 정보 노출 -->
+                    <div class="contents active">
+                        <!-- 상단화살표 -->
+                        <div class="list-up">
+                            <i class="ic-arrow">리스트업</i>
+                        </div>
+                        <!--U+모바일로tv로 시청가능-->
+                        <div class="mobile-message">
+                            <p class="mobile-view-tip">'홈 > 마이메뉴'에서 연결 가능</p>
+                            <!--모바일로 시청가능 tooltip-->
+                            <p class="tooltip">
+                                이 영상을 무료로 이어보려면 TV와 휴대폰을 연결해보세요.<br/>
+                                ‘U+모바일tv로 시청 가능’ 표시가 있는 콘텐츠만 해당됩니다.
+                            </p>
+                        </div>
+                        <!--페이지 path-->
+                        <p class="path">
+                            <span>홈</span>
+                            <span>전체메뉴</span>
+                            <span>TV방송</span>
+                            <span>최신 인기</span>
+                        </p>
+                        
+                        <!-- 포커스 된 콘텐츠 정보 : default는 첫번째 콘텐츠 정보-->
+                        <section class="content-info">                       
+                            <!-- 로고타입 이미지인지 텍스트인지 구분, 이미지일 경우 image-logo 클래스 추가 / 
+                            텍스트 경우 2줄일 경우 doulbe-line 클래스 추가 -->
+                            <h1 class="vod-title image-logo" style="background-image:url(../../assets/images/temp/image-logo.png)">
+                                너와 파도를 탈 수 있다면
+                            </h1>
+
+                            <!--메타데이터 영역-->
+                            <!--평점-->
+                            <div class="rating-info">
+                                <div class="watcha">
+                                    <i class="rating-star full"></i>
+                                    <p class="point">4.5<span class="base-point">5</span></p>
+                                </div>
+                                <div class="cine21">
+                                    <i class="rating-star half"></i>
+                                    <p class="point">4.5<span class="base-point">5</span></p>
+                                </div>
+                                <div class="imdb">
+                                    <i class="rating-star empty"></i>
+                                    <p class="point">1.0<span class="base-point">10</span></p>
+                                </div>
+                            </div>
+                           <!--기본정보-->
+                            <div class="default-info">
+                                <span>2020</span>
+                                <span>일본</span>
+                                <span>애니메이션</span>
+                                <span>12세</span>
+                                <span>1시간 36분</span>
+                            </div>
+                            
+                             <!--메타태그-->
+                            <div class="meta-tag">
+                                <span class="ic-tag dolby-vision"></span>
+                                <span class="ic-tag">5.1</span>
+                                <span class="ic-tag">우리말</span>
+                                <span class="ic-tag">자막</span>
+                                <span class="ic-tag">이거찾으세요?</span>
+                            </div>
+
+                            <!-- 콘텐츠 줄거리 -->
+                            <div class="summary">
+                                까칠한 포차 이모님 월주와 귀반장, 그리고 순수한 인간 청년 알바생 강배의 오리엔탈 판타지 휴먼 카운슬링 드라마! 
+                            </div>
+                            <!--이벤트 메시지-->
+                            <!-- <p class="event-message">이벤트 대여상품 구매 시 피규어 증정!</p> -->
+                        </section>
+                        <!--//콘텐츠 정보  -->
+                        <!--목록-->
+                        <section class="category-list-area">
+                            <div class="category-list-header">
+                                <h3 class="category-title">인기드라마</h3>
+                                <div class="button-area">
+                                    <button class="button-option">
+                                        <p class="text">가나다순</p>
+                                    </button>
+                                    <button class="button-option option-selected">
+                                        <p class="text filter">필터</p>
+                                    </button>
+                                </div>
+                                <p class="contents-tag">
+                                    <span>1990년대</span>
+                                    <span>액션</span>
+                                </p>
+                            </div>
+                            
+                            <div class="contents-list-wrap bottom-cover">
+                                <div class="mask"></div>
+                                <ul class="contents-list">
+                                    <li class="focus">
+                                        <div class="poster-horizontal">
+                                            <div class="poster-thumbnail"></div>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <div class="poster-horizontal">
+                                            <div class="poster-thumbnail" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <div class="poster-horizontal">
+                                            <div class="poster-thumbnail" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <div class="poster-horizontal">
+                                            <div class="poster-thumbnail" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <div class="poster-horizontal">
+                                            <div class="poster-thumbnail" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <div class="poster-horizontal">
+                                            <div class="poster-thumbnail" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <div class="poster-horizontal">
+                                            <div class="poster-thumbnail" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <div class="poster-horizontal">
+                                            <div class="poster-thumbnail" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <div class="poster-horizontal">
+                                            <div class="poster-thumbnail" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <div class="poster-horizontal">
+                                            <div class="poster-thumbnail" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <div class="poster-horizontal">
+                                            <div class="poster-thumbnail" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <div class="poster-horizontal">
+                                            <div class="poster-thumbnail" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <div class="poster-horizontal">
+                                            <div class="poster-thumbnail" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <div class="poster-horizontal">
+                                            <div class="poster-thumbnail" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <div class="poster-horizontal">
+                                            <div class="poster-thumbnail" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <div class="scroll">
+                                    <span style="height:50%"></span>
+                                </div>
+                            </div>
+                            
+                        </section>
+                        <!-- //목록 -->
+
+                    </div>  
+                    <!-- //콘텐츠 영역 -->
+
+
+                    <div class="category-footer">
+                        <p class="keyguide">
+                            <!--<span class="ic-round keyguide-option">옵션</span>정렬/필터-->   <!-- UHD1,2,3인 경우-->
+                            <span class="ic-round keyguide-option">간편메뉴</span>정렬/필터       <!-- tvg/보급형인 경우-->
+                        </p>
+                    </div>
+
+                </div>
+                <!--//그라데이션 배경-->
+
+            </div>
+            <!--//카테고리 목록-->
+
+    </div>
+    <!-- //root -->
+
+</body>
+
+</html>

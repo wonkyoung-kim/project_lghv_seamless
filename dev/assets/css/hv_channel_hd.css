@@ -1,0 +1,95 @@
+@charset "UTF-8";
+/* variables */
+/* functions */
+/* mixins */
+/* toast 임시 */
+.channel-container {
+  background-color: unset;
+}
+
+.channel-container .channel-header {
+  background-color: unset;
+}
+
+.channel-container .channel-header .info-program .title {
+  display: inline-block;
+  max-width: 667px;
+  width: auto;
+}
+
+.channel-container .channel-header .info-program .watching .progress .reservation span + span {
+  margin-left: 10px;
+}
+
+.channel-container .channel-header .info-program .watching .progress .reservation span.ic-recording {
+  color: #ff0000;
+}
+
+.channel-container .channel-header .info-program .watching .progress .reservation span.ic-recording::before {
+  display: inline-block;
+  content: '';
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 17px;
+  height: 17px;
+  background-image: url("../../assets/hv_images/channel/ic-channel-recording.png");
+}
+
+.channel-container .channel-schedule.favorite-default .channel-program {
+  align-items: center;
+  justify-content: center;
+}
+
+.channel-container .channel-schedule.favorite-default .channel-program .info-favorite {
+  margin: 0;
+}
+
+.channel-container .channel-info-wrap {
+  background-color: #080d19;
+}
+
+.channel-container .meta-tag {
+  display: inline-block !important;
+  vertical-align: bottom;
+  margin: 0 0 13px 23px;
+}
+
+.channel-container .meta-tag .ic-tag {
+  height: 20px;
+  line-height: 17px;
+  border-width: 1px;
+  border-radius: 2px;
+  font-size: 1.5rem;
+}
+
+.channel-container .meta-tag .ic-tag.recording {
+  padding: 0 2px;
+  border-color: #ff0000;
+  color: #ff0000;
+}
+
+.channel-container .meta-tag .ic-tag.recording::before {
+  display: inline-block;
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  vertical-align: middle;
+  background-color: #ff0000;
+  margin-right: 1px;
+}
+
+.ic-tv-pvr {
+  width: 25px;
+  height: 25px;
+  margin-left: 12px;
+  background-image: url(../hv_images/channel/ic-pvr.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.focus .ic-tv-pvr, .selected .ic-tv-pvr {
+  background-image: url(../hv_images/channel/ic-pvr-focus.png);
+}

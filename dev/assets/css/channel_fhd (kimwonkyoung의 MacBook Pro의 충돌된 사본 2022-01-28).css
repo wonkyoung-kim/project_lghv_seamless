@@ -1,0 +1,1212 @@
+@charset "UTF-8";
+/* variables */
+/* functions */
+/* mixins */
+/* toast 임시 */
+.ic-tv-reservation, .ic-tv-repeat {
+  margin-left: 18px;
+  width: 38px;
+  height: 38px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.ic-tv-ellipsis::after {
+  display: block;
+  content: '';
+  width: 100%;
+  text-align: center;
+  content: "\00B7\00B7\00B7";
+  font-style: normal;
+}
+
+.ic-tv-reservation {
+  background-image: url(../images/channel/ic-reservation.png);
+}
+
+.focus .ic-tv-reservation, .selected .ic-tv-reservation {
+  background-image: url(../images/channel/ic-reservation-focus.png);
+}
+
+.ic-tv-repeat {
+  background-image: url(../images/channel/ic-tv-vod.png);
+}
+
+.focus .ic-tv-repeat, .selected .ic-tv-repeat {
+  background-image: url(../images/channel/ic-tv-vod-focus.png);
+}
+
+.channel-container {
+  background-color: #080d19;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.channel-container .ic-tag {
+  margin-left: 6px;
+}
+
+.channel-container .meta-tag {
+  margin-bottom: 0;
+}
+
+.channel-container .meta-tag .ic-tag {
+  height: 32px;
+  font-size: 1.6rem;
+  color: rgba(238, 238, 238, 0.7);
+}
+
+.channel-container .meta-tag .ic-tag:first-child {
+  margin-left: 0;
+}
+
+.channel-header {
+  background-color: #080d19;
+  height: 250px;
+  display: flex;
+  align-items: center;
+}
+
+.channel-header .thumbnail {
+  overflow: hidden;
+  position: relative;
+  width: 444px;
+  height: 100%;
+  border-radius: 0 8px 8px 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.channel-header .thumbnail::before {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 121px;
+  background-image: linear-gradient(to top, #080d19, rgba(0, 0, 0, 0));
+  display: block;
+  content: '';
+}
+
+.channel-header .thumbnail > span {
+  position: absolute;
+  left: 0;
+  bottom: 18px;
+  padding: 0 18px;
+  line-height: 35px;
+  font-size: 2.6rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.channel-header .thumbnail + .channel-info-wrap {
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+}
+
+.channel-header .thumbnail + .channel-info-wrap .channel-number {
+  width: 130px;
+  margin-left: 55px;
+  margin-right: 39px;
+  padding-top: 0;
+  text-align: left;
+}
+
+.channel-header .thumbnail + .channel-info-wrap .info-program {
+  margin-top: -3px;
+}
+
+.channel-header .channel-info-wrap {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  padding-left: 96px;
+  padding-right: 50px;
+}
+
+.channel-header .channel-number {
+  width: 140px;
+  margin-left: 0;
+  margin-right: 56px;
+  padding-top: 61px;
+  font-size: 6.8rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  text-align: center;
+}
+
+.channel-header .info-program {
+  margin-top: 20px;
+  flex: 1;
+}
+
+.channel-header .info-program .state {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.channel-header .info-program .state .channel-name {
+  font-size: 3.2rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  color: #a9a9a9;
+}
+
+.channel-header .info-program .state .date {
+  color: #a9a6ff;
+  font-size: 2.6rem;
+}
+
+.channel-header .info-program .title {
+  width: 1200px;
+  line-height: 64px;
+  margin-bottom: 13px;
+  font-size: 4.8rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.channel-header .info-program .watching {
+  line-height: 32px;
+  font-size: 2.6rem;
+  display: flex;
+  align-items: center;
+}
+
+.channel-header .info-program .watching .ing {
+  color: #a9a6ff;
+}
+
+.channel-header .info-program .watching .ing::after {
+  width: 2px;
+  height: 22px;
+  background-color: rgba(255, 255, 255, 0.12);
+  position: relative;
+  top: 2px;
+  margin: 0 16px;
+  display: inline-block;
+  content: '';
+}
+
+.channel-header .info-program .watching .progress {
+  display: flex;
+  align-items: center;
+}
+
+.channel-header .info-program .watching .progress .time {
+  color: #a9a9a9;
+}
+
+.channel-header .info-program .watching .progress .bar {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(238, 238, 238, 0.2);
+  margin-left: 32px;
+  height: 6px;
+  width: 300px;
+  border-radius: calc(6px / 2);
+}
+
+.channel-header .info-program .watching .progress .bar > span {
+  position: absolute;
+  height: 100%;
+  border-radius: calc(6px / 2);
+  background-color: #ef3484;
+}
+
+.channel-header .info-program .watching .progress .reservation {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.channel-header .info-program .watching .progress .reservation::before {
+  width: 2px;
+  height: 22px;
+  background-color: rgba(255, 255, 255, 0.12);
+  position: relative;
+  top: 1px;
+  margin: 0 16px;
+  display: block;
+  content: '';
+}
+
+.channel-header .info-program .watching .progress .reservation span {
+  position: relative;
+  top: -1px;
+  color: #a9a6ff;
+  display: flex;
+  align-items: center;
+  font-size: 2.2rem;
+}
+
+.channel-header .info-program .watching .progress .reservation span::before {
+  width: 26px;
+  height: 26px;
+  margin-right: 6px;
+  position: relative;
+  top: 1px;
+  background-image: url(../images/channel/ic-live-tv.png);
+  display: block;
+  content: '';
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.channel-header .info-program .watching .meta-tag {
+  display: flex;
+  margin-left: 36px;
+}
+
+.channel-header.type-min {
+  height: 100px;
+}
+
+.channel-header.type-min .title {
+  margin-left: 40px;
+  display: flex;
+  align-items: center;
+  font-size: 3.8rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.channel-header.type-min .title::before {
+  width: 38px;
+  height: 38px;
+  margin-right: 16px;
+  display: block;
+  content: '';
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/channel/ic-reservation-focus.png);
+}
+
+.channel-body {
+  position: relative;
+  height: calc(100vh - 250px);
+  background-color: #111424;
+}
+
+.channel-body .timekeeper {
+  height: calc(calc(100vh - 250px) - 70px);
+  position: absolute;
+  top: 0;
+  left: 444px;
+  z-index: 10;
+}
+
+.channel-body .timekeeper span {
+  position: absolute;
+  top: -22px;
+  left: -64px;
+  width: 130px;
+  height: 55px;
+  line-height: 45px;
+  text-align: center;
+  background-image: url(../images/channel/ic-timepicker.png);
+  font-size: 2.2rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.channel-body .timekeeper::after {
+  height: 100%;
+  width: 2px;
+  background-color: #ef3484;
+  display: block;
+  content: '';
+}
+
+.channel-body .timeline {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #2A2C3E;
+  font-size: 2.6rem;
+}
+
+.channel-body .timeline h3 {
+  display: block;
+  height: 100%;
+  width: 444px;
+  padding-left: 31px;
+  display: flex;
+  align-items: center;
+}
+
+.channel-body .timeline .inner {
+  position: relative;
+  height: 100%;
+  flex: 1;
+  overflow: hidden;
+}
+
+.channel-body .timeline .inner > ul {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  height: 100%;
+  color: #777;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.channel-body .timeline .inner > ul li.active {
+  color: #eee;
+}
+
+.channel-body .timeline .inner > ul li:first-child {
+  padding-left: 12px;
+}
+
+.channel-body .channel-box-wrap {
+  position: relative;
+  height: calc(calc(100vh - 250px) - 70px - 70px);
+}
+
+.channel-body .channel-box-wrap .loading {
+  position: absolute;
+  top: 0;
+  left: 444px;
+  width: calc(100vw - 444px);
+  height: calc(100% - 6px);
+  padding-top: 250px;
+  background-color: #111424;
+  font-size: 2.6rem;
+  color: #777;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.channel-body .channel-box-wrap .loading .loading-img {
+  transform: scale(0.688);
+  transform-origin: bottom;
+  margin-bottom: 15px;
+}
+
+.channel-body .channel-box {
+  height: calc(calc(calc(100vh - 250px) - 70px - 70px) + calc(6px * 2));
+  overflow: hidden;
+  position: absolute;
+  top: -6px;
+  width: 100%;
+}
+
+.channel-body .channel-box .mask {
+  width: 100%;
+  height: 6px;
+  display: flex;
+}
+
+.channel-body .channel-box .mask::before {
+  width: 444px;
+  background-color: #111424;
+  height: 100%;
+  position: relative;
+  border-bottom: 1px solid #2A2C3E;
+  z-index: 10;
+  display: block;
+  content: '';
+}
+
+.channel-body .channel-box .mask::after {
+  flex: 1;
+  height: 100%;
+  background-color: #111424;
+  position: relative;
+  border-bottom: 1px solid #2A2C3E;
+  z-index: 3;
+  display: block;
+  content: '';
+}
+
+.channel-body .channel-box .mask.alt {
+  position: absolute;
+  bottom: 0;
+}
+
+.channel-body .channel-box .mask.alt::before, .channel-body .channel-box .mask.alt::after {
+  background-color: #080d19;
+  border: none;
+}
+
+.channel-body .channel-box .channel-box-inner {
+  margin-left: 96px;
+}
+
+.channel-body .channel-schedule {
+  height: calc(calc(calc(100vh - 250px) - 70px - 70px) / 6);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #2A2C3E;
+}
+
+.channel-body .channel-schedule .button-area {
+  height: 98px;
+}
+
+.channel-body .channel-schedule .channel-name {
+  height: 100%;
+  background-color: #111424;
+  width: calc(444px - 96px);
+  color: #777;
+  justify-content: flex-end;
+  font-size: 2.6rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  border-right: 1px solid #2A2C3E;
+  display: flex;
+  align-items: center;
+  z-index: 8;
+}
+
+.channel-body .channel-schedule .channel-name .name {
+  padding-left: 26px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.channel-body .channel-schedule .channel-name em {
+  margin: 0 12px 0 26px;
+  color: #a9a9a9;
+  font-size: 4.8rem;
+}
+
+.channel-body .channel-schedule .channel-name .icon-group {
+  width: 34px;
+  margin-right: 20px;
+}
+
+.channel-body .channel-schedule .channel-name .icon-group i {
+  display: block;
+  width: 34px;
+  height: 34px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 0;
+  color: rgba(0, 0, 0, 0);
+}
+
+.channel-body .channel-schedule .channel-name .icon-group i.ic-lock {
+  background-image: url(../images/channel/ic-lock.png);
+}
+
+.channel-body .channel-schedule .channel-name .icon-group i.ic-favorite {
+  background-image: url(../images/channel/ic-favorite.png);
+}
+
+.selected .ic-lock {
+  background-image: url(../images/channel/ic-lock-focus.png) !important;
+}
+
+.selected .ic-favorite {
+  background-image: url(../images/channel/ic-favorite-focus.png) !important;
+}
+
+.channel-body .channel-schedule .channel-program {
+  position: relative;
+  height: 100%;
+  flex: 1;
+  color: #a9a9a9;
+  display: flex;
+  align-items: center;
+}
+
+.channel-body .channel-schedule .channel-program > ul {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 3.2rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  display: flex;
+  align-items: center;
+}
+
+.channel-body .channel-schedule .channel-program > ul li {
+  padding: 0 44px;
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid #2A2C3E;
+}
+
+.channel-body .channel-schedule .channel-program > ul li > .program {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.channel-body .channel-schedule .channel-program > ul li > .program .subject {
+  max-width: 938px;
+  font-size: 3.2rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.channel-body .channel-schedule .channel-program > ul li.add-icon > .program {
+  max-width: calc(100% - calc(38px + 18px));
+}
+
+.channel-body .channel-schedule .channel-program > ul li.size-min {
+  padding: 0;
+  text-align: center;
+}
+
+.channel-body .channel-schedule .channel-program > ul li.size-min.prev-padding, .channel-body .channel-schedule .channel-program > ul li.size-min.next-padding {
+  padding: 0;
+}
+
+.channel-body .channel-schedule .channel-program > ul li.size-min > .program {
+  display: none;
+}
+
+.channel-body .channel-schedule .channel-program > ul li.size-min.focus::after {
+  color: #eee;
+}
+
+.channel-body .channel-schedule .channel-program > ul li.only-icon::after {
+  display: none;
+}
+
+.channel-body .channel-schedule .channel-program > ul li.only-icon i {
+  margin: 0 auto;
+}
+
+.channel-body .channel-schedule .channel-program > ul li.focus::before {
+  position: absolute;
+  top: -6px;
+  border-radius: 8px;
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 0 6px #eee;
+  border-radius: 8px;
+  left: 6px;
+  right: 6px;
+  display: block;
+  content: '';
+  z-index: 4;
+}
+
+.channel-body .channel-schedule .channel-program > ul li.focus > .program {
+  z-index: 4;
+}
+
+.channel-body .channel-schedule.selected .channel-name, .channel-body .channel-schedule.selected .channel-program {
+  background-color: #2A2C3E;
+  color: #eee;
+  border-top: none;
+  border-bottom: none;
+  border-color: #404045;
+}
+
+.channel-body .channel-schedule.selected .channel-name em, .channel-body .channel-schedule.selected .channel-program em {
+  color: #eee;
+}
+
+.channel-body .channel-schedule.selected .channel-program li {
+  border-color: #404045;
+}
+
+.channel-body .channel-schedule.selected .arrow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.channel-body .channel-schedule.selected .prev-padding .arrow::before, .channel-body .channel-schedule.selected .next-padding .arrow::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 30px;
+  display: block;
+  content: '';
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.channel-body .channel-schedule.selected .prev-padding {
+  padding-left: 73px;
+}
+
+.channel-body .channel-schedule.selected .prev-padding .arrow::before {
+  left: 20px;
+  background-image: url(../images/common/ic-arrow-left-focus.png);
+}
+
+.channel-body .channel-schedule.selected .next-padding {
+  padding-right: 73px;
+}
+
+.channel-body .channel-schedule.selected .next-padding .arrow::after {
+  right: 20px;
+  background-image: url(../images/common/ic-arrow-right-focus.png);
+}
+
+.channel-body .channel-schedule.favorite-default {
+  height: calc(calc(100vh - 250px) - 70px - 70px);
+  border-bottom: none;
+}
+
+.channel-body .channel-schedule.favorite-default .channel-program {
+  align-items: unset;
+}
+
+.channel-body .channel-schedule.favorite-default .info-favorite {
+  margin: 85px auto 0 auto;
+  text-align: center;
+}
+
+.channel-body .channel-schedule.favorite-default .info-favorite .img {
+  margin: 0 auto;
+  width: 298px;
+  height: 196px;
+  margin-bottom: 40px;
+  background-image: url(../images/channel/img-channel-none.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.channel-body .channel-schedule.favorite-default .info-favorite .exp {
+  font-size: 2.6rem;
+  color: #a9a9a9;
+  margin-bottom: 60px;
+}
+
+.channel-body .channel-schedule.favorite-default .info-favorite .exp p {
+  line-height: 40px;
+  margin-bottom: 6px;
+}
+
+.channel-body .channel-schedule.favorite-default .info-favorite .exp p:last-child {
+  margin-bottom: 0;
+}
+
+.channel-body .channel-recommend {
+  overflow: hidden;
+  height: 760px;
+  padding: 0 48px 0 47px;
+}
+
+.channel-body .channel-recommend .title {
+  font-size: 3.2rem;
+  line-height: 41px;
+  padding-top: 33px;
+}
+
+.channel-body .channel-recommend .contents-list {
+  margin-top: 31px;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.channel-body .channel-recommend .contents-list li {
+  margin-right: 59px;
+  margin-bottom: 50px;
+}
+
+.channel-body .channel-recommend .contents-list li:nth-child(4n) {
+  margin-right: 0;
+}
+
+.channel-body .channel-recommend .contents-list .focus .poster-horizontal {
+  top: -8px;
+}
+
+.channel-body .channel-recommend .contents-list .focus .poster-component .poster-tag {
+  top: 3px;
+  left: -2px;
+}
+
+.channel-body .channel-recommend .contents-list .focus .poster-component .poster-time {
+  left: -12px;
+}
+
+.channel-body .channel-recommend .contents-list > li.focus:nth-child(4n + 1) .poster-horizontal::before, .channel-body .channel-recommend .contents-list > li.focus:nth-child(4n + 1) .poster-thumbnail, .channel-body .channel-recommend .contents-list > li.focus:nth-child(4n + 1) .poster-component::before {
+  transform-origin: left;
+}
+
+.channel-body .channel-recommend .contents-list > li.focus:nth-child(4n + 1) .poster-tag {
+  left: 10px;
+}
+
+.channel-body .channel-recommend .contents-list > li.focus:nth-child(4n + 1) .poster-time {
+  left: 0;
+}
+
+.channel-body .channel-recommend .contents-list > li.focus:nth-child(4n + 1) .poster-time dt, .channel-body .channel-recommend .contents-list > li.focus:nth-child(4n + 1) .poster-time .poster-remaining {
+  transform-origin: left;
+}
+
+.channel-body .channel-recommend .poster-horizontal {
+  width: 412px;
+  height: 232px;
+}
+
+.channel-body .channel-recommend .poster-horizontal .poster-component .poster-tag {
+  top: 10px;
+  left: 10px;
+  right: unset;
+  opacity: 1;
+}
+
+.channel-body .channel-recommend .poster-horizontal .poster-component .poster-tag-live {
+  font-size: 1.6rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  position: relative;
+  width: 75px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 18px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #c3c3c3;
+  display: flex;
+  align-items: center;
+}
+
+.channel-body .channel-recommend .poster-horizontal .poster-component .poster-tag-live::before {
+  margin-left: 8px;
+  margin-right: 4px;
+  width: 22px;
+  height: 22px;
+  background-image: url(../images/common/ic-clock.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  content: '';
+}
+
+.channel-body .channel-recommend .poster-horizontal .poster-component::before {
+  opacity: 1;
+}
+
+.channel-body .channel-recommend .poster-horizontal .poster-component .poster-time dt {
+  line-height: 32px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.channel-body .channel-recommend .poster-horizontal .poster-component .poster-time dt em {
+  color: #eee;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.channel-body .channel-recommend .poster-horizontal .poster-component .poster-time dt span {
+  color: #a9a6ff;
+}
+
+.channel-body .channel-recommend .poster-horizontal .poster-component .poster-time dt::before {
+  display: none;
+}
+
+.channel-body .channel-recommend .poster-horizontal .poster-component .poster-time dd.poster-remaining {
+  margin-top: 11px;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(238, 238, 238, 0.2);
+  margin-left: 0;
+  height: 6px;
+  width: 100%;
+  border-radius: calc(6px / 2);
+}
+
+.channel-body .channel-recommend .poster-horizontal .poster-component .poster-time dd.poster-remaining > span {
+  position: absolute;
+  height: 100%;
+  border-radius: calc(6px / 2);
+  background-color: #999;
+}
+
+.channel-body .channel-recommend .meta-data .title {
+  width: 412px;
+  color: #777;
+  padding-top: 13px;
+  line-height: 43px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.channel-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #080d19;
+  padding-right: 50px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+.channel-footer .channel-pagination {
+  display: flex;
+  align-items: center;
+}
+
+.channel-footer .channel-pagination .channel-option {
+  margin-left: 46px;
+}
+
+.channel-footer .channel-pagination ul {
+  margin-left: 116px;
+  font-size: 2.6rem;
+  color: #777;
+  display: flex;
+  align-items: center;
+}
+
+.channel-footer .channel-pagination ul .page-number {
+  width: 136px;
+  margin: 0 16px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.channel-footer .channel-pagination ul .page-number .active {
+  color: #eee;
+}
+
+.channel-footer .channel-pagination ul .page-number .active::after {
+  display: inline-block;
+  content: '';
+  content: '/';
+}
+
+.channel-footer .channel-pagination ul .page-prev, .channel-footer .channel-pagination ul .page-next {
+  display: flex;
+  align-items: center;
+}
+
+.channel-footer .channel-pagination ul .page-prev button, .channel-footer .channel-pagination ul .page-next button {
+  width: 38px;
+  height: 26px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 0;
+  color: rgba(0, 0, 0, 0);
+}
+
+.channel-footer .channel-pagination ul .page-prev button {
+  background-image: url(../images/channel/ic-up-arrow.png);
+}
+
+.channel-footer .channel-pagination ul .page-prev.focus button {
+  background-image: url(../images/channel/ic-up-arrow-focus.png);
+}
+
+.channel-footer .channel-pagination ul .page-next button {
+  background-image: url(../images/channel/ic-down-arrow.png);
+}
+
+.channel-footer .channel-pagination ul .page-next.focus button {
+  background-image: url(../images/channel/ic-down-arrow-focus.png);
+}
+
+.channel-footer .channel-option {
+  font-size: 2.4rem;
+  color: #626373;
+  display: flex;
+  align-items: center;
+}
+
+.channel-footer .channel-option span {
+  margin-left: 30px;
+}
+
+.channel-footer .channel-option span .ic-round {
+  margin-right: 12px;
+  display: inline-flex;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 1.8rem;
+  height: 34px;
+  line-height: calc(34px - 2px * 2);
+  border-radius: calc(34px / 2);
+  border: 2px solid #626373;
+  padding: 0 12px;
+  color: #626373;
+  background-color: #20212d;
+}
+
+.channel-footer .channel-option span:first-child {
+  margin-left: 0;
+}
+
+.channel-footer.none-pagination {
+  justify-content: flex-end;
+}
+
+.channel-footer.none-option {
+  justify-content: flex-start;
+}
+
+.schedule-view-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(8, 13, 25, 0.56);
+  display: flex;
+  z-index: 20;
+  display: none;
+}
+
+.schedule-view-layer.active {
+  display: flex;
+}
+
+.schedule-view-layer .close {
+  height: 100%;
+  width: 48px;
+  background-color: #111a2c;
+}
+
+.schedule-view-layer .close::before {
+  height: 46px;
+  margin: 0 auto;
+  background-image: url(../images/common/ic-gnb-back.png);
+  display: block;
+  content: '';
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.schedule-view-layer nav {
+  overflow: hidden;
+  padding-top: 35px;
+  width: 516px;
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0), #080d19 21%);
+}
+
+.schedule-view-layer ul li {
+  position: relative;
+  line-height: 88px;
+  margin-bottom: 4px;
+  margin-left: 38px;
+  padding-left: 26px;
+  font-size: 3.6rem;
+  color: #a9a9a9;
+  display: flex;
+  align-items: center;
+}
+
+.schedule-view-layer ul li.focus {
+  color: #eee;
+  font-size: 3.8rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.schedule-view-layer ul li.focus::before {
+  position: absolute;
+  left: 0;
+  height: 46px;
+  width: 6px;
+  border-radius: 3px;
+  background-color: #eee;
+  display: block;
+  content: '';
+}
+
+.schedule-view-button {
+  background-color: #111424;
+  height: calc(calc(calc(100vh - 250px) - 70px - 70px) + 1px);
+  width: 96px;
+  position: absolute;
+  top: calc(6px - 1px);
+  left: 0;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  border-right: 1px solid #2A2C3E;
+}
+
+.schedule-view-button button {
+  color: #a9a9a9;
+  font-size: 2.2rem;
+}
+
+.schedule-view-button button p {
+  line-height: 30px;
+}
+
+.schedule-view-button button::before {
+  width: 20px;
+  height: 30px;
+  margin: 0 auto;
+  margin-bottom: 24px;
+  background-image: url(../images/common/ic-arrow-left.png);
+  display: block;
+  content: '';
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.schedule-view-button.focus button {
+  color: #eee;
+}
+
+.schedule-view-button.focus button::before {
+  background-image: url(../images/common/ic-arrow-left-focus.png);
+}
+
+.channel-body.reservation {
+  height: calc(100vh - 100px - 70px);
+}
+
+.channel-reservation-box .child-1, .channel-reservation-box .child-2, .channel-reservation-box .child-3 {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid #2A2C3E;
+}
+
+.channel-reservation-box .child-1 {
+  width: 444px;
+}
+
+.channel-reservation-box .child-2 {
+  width: 780px;
+}
+
+.channel-reservation-box .child-3 {
+  flex: 1;
+  border-right: none;
+}
+
+.channel-reservation-box .ic-tag {
+  margin-left: 15px;
+  color: #999;
+}
+
+.channel-reservation-box .field-reservation {
+  height: 70px;
+  background-color: #191b2b;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #2A2C3E;
+}
+
+.channel-reservation-box .field-reservation span {
+  font-size: 2.6rem;
+  padding-left: 30px;
+  color: #d6d6d6;
+  border-right: none;
+}
+
+.channel-reservation-box .field-reservation .child-1 {
+  padding-left: 40px;
+}
+
+.channel-reservation-box .list-reservation {
+  overflow: hidden;
+}
+
+.channel-reservation-box .list-reservation li {
+  position: relative;
+  height: calc(calc(100vh - 100px - 70px - 70px) / 7);
+  color: #999;
+  font-size: 3.2rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #2A2C3E;
+}
+
+.channel-reservation-box .list-reservation li > div {
+  display: flex;
+  align-items: center;
+}
+
+.channel-reservation-box .list-reservation li .child-1 {
+  justify-content: flex-end;
+  color: #777;
+  font-size: 2.6rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.channel-reservation-box .list-reservation li .child-1 .name {
+  padding-left: 26px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.channel-reservation-box .list-reservation li .child-1 em {
+  margin: 0 50px 0 26px;
+  color: #a9a9a9;
+  font-size: 4.8rem;
+}
+
+.channel-reservation-box .list-reservation li .child-2 p {
+  max-width: 600px;
+}
+
+.channel-reservation-box .list-reservation li .child-2 p, .channel-reservation-box .list-reservation li .child-3 p {
+  margin-left: 52px;
+}
+
+.channel-reservation-box .list-reservation li.focus {
+  position: relative;
+}
+
+.channel-reservation-box .list-reservation li.focus > div {
+  position: relative;
+  z-index: 1;
+}
+
+.channel-reservation-box .list-reservation li.focus .child-1, .channel-reservation-box .list-reservation li.focus .child-1 em, .channel-reservation-box .list-reservation li.focus .child-2 p, .channel-reservation-box .list-reservation li.focus .child-3 p {
+  color: #eee;
+}
+
+.channel-reservation-box .list-reservation li.focus .child-1, .channel-reservation-box .list-reservation li.focus .child-2 {
+  border-right: 1px solid rgba(238, 238, 238, 0.3);
+}
+
+.channel-reservation-box .list-reservation li.focus::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 0 10px #eee;
+  border-radius: 8px;
+  border: 4px solid #eee;
+  box-shadow: none;
+  background-color: #2A2C3E;
+}
+
+.channel-reservation-box .list-reservation li.focus .ic-tag {
+  color: #eee;
+}

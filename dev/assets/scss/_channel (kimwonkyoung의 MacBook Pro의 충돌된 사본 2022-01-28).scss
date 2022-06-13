@@ -1,0 +1,1058 @@
+@import 'config';
+//height
+$height-channel-header: px(250);
+$height-channel-timeline: px(70);
+$height-channel-footer: px(70);
+$height-channel-body: calc(100vh - #{$height-channel-header});
+$height-channel-box: calc(#{$height-channel-body} - #{$height-channel-timeline} - #{$height-channel-footer});
+$height-focus: px(6);
+$height-focus-double: calc(#{$height-focus} * 2);
+$height-channel-box-fake: calc(#{$height-channel-box} + #{$height-focus-double});
+$height-channel-line: calc(#{$height-channel-box} / 6);
+$height-timekeeper: calc(#{$height-channel-body} - #{$height-channel-footer});
+//height-reservation
+$height-reservation-header: px(100);
+$height-reservation-body: calc(100vh - #{$height-reservation-header} - #{$height-channel-footer});
+$height-reservation-line: calc(calc(100vh - #{$height-reservation-header} - #{$height-channel-timeline} - #{$height-channel-footer}) / 7);
+//width
+$width-channel-left: px(444);
+$width-schedule-button: px(96);
+$width-channel-name: calc(#{$width-channel-left} - #{$width-schedule-button});
+$width-timeline-view: calc(100vw - #{$width-channel-left});
+$width-timeline-cell: calc(#{$width-timeline-view} / 3);
+$width-timeline-total: calc(#{$width-timeline-cell} * 48);
+//icon
+$icon-size: px(38);
+$icon-margin: px(18);
+$icon-space: calc(#{$icon-size} + #{$icon-margin});
+// mixins
+@mixin zindex-3 {
+    z-index: 3;
+}
+
+@mixin zindex-4 {
+    z-index: 4;
+}
+
+@mixin zindex-5 {
+    z-index: 5;
+}
+
+@mixin zindex-8 {
+    z-index: 8;
+}
+
+@mixin zindex-10 {
+    z-index: 10;
+}
+
+@mixin zindex-20 {
+    z-index: 20;
+}
+
+// icons
+.ic-tv {
+    &-reservation, &-repeat {
+        margin-left: $icon-margin;
+        width: $icon-size;
+        height: $icon-size;
+        @include background-default;
+    }
+    &-ellipsis {
+        &::after {
+            @include vs-b;
+            width: 100%;
+            text-align: center;
+            content: "\00B7\00B7\00B7";
+            font-style: normal;
+        }
+    }
+    &-reservation {
+        background-image: url(../images/channel/ic-reservation.png);
+        .focus &, .selected & {
+            background-image: url(../images/channel/ic-reservation-focus.png);
+        }
+    }
+    &-repeat {
+        background-image: url(../images/channel/ic-tv-vod.png);
+        .focus &, .selected & {
+            background-image: url(../images/channel/ic-tv-vod-focus.png);
+        }
+    }
+}
+
+// channel-container : start
+.channel-container {
+    background-color: $color-black;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    //ic-tag
+    .ic-tag {
+        margin-left: px(6);
+    }
+    .meta-tag {
+        margin-bottom: 0;
+        & .ic-tag {
+            height: px(32);
+            font-size: 1.6rem;
+            color: $color-white-70;
+        }
+        & .ic-tag:first-child {
+            margin-left: 0;
+        }
+    }
+}
+
+// channel-container : end
+// channel-header : start
+.channel-header {
+    background-color: $color-black;
+    height: $height-channel-header;
+    @include flex-items-center;
+    .thumbnail { //uhd용 liveTV영역
+        overflow: hidden;
+        position: relative;
+        width: $width-channel-left;
+        height: 100%;
+        border-radius: 0 px($border-radius) px($border-radius) 0;
+        @include background-default;
+        &::before {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: px(121);
+            background-image: linear-gradient(to top, $color-bg-black, $color-bg-transparent);
+            @include vs-b;
+        }
+        > span {
+            position: absolute;
+            left: 0;
+            bottom: px(18);
+            padding: 0 px(18);
+            line-height: px(35);
+            font: {
+                size: 2.6rem;
+                family: $font-bold;
+            }
+        }
+        + .channel-info-wrap { 
+            @include flex-items-center;
+            padding-left: 0;
+            .channel-number {
+                width: px(130);
+                margin: {
+                    left: px(55);
+                    right: px(39);
+                }
+                padding-top: 0;
+                text-align: left;
+            }
+            .info-program {
+                margin-top: px(-3); 
+            }
+        }
+    }
+    .channel-info-wrap {
+        display: flex;
+        flex: 1;
+        height: 100%;;
+        padding-left: px(96); //보급형,tvg AV없는 경우
+        padding-right: px(50);
+    }
+    .channel-number {
+        width: px(140);
+        margin: {
+            left: 0;
+            right: px(56);
+        }
+        padding-top: px(61);
+        font: {
+            size: 6.8rem;
+            family: $font-bold;
+        }
+        text-align: center;
+    }
+    .info-program {
+        margin-top: px(20);
+        flex: 1;
+        .state {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: px(14);
+            .channel-name {
+                font: {
+                    size: 3.2rem;
+                    family: $font-bold;
+                }
+                color: $color-gray;
+            }
+            .date {
+                color: $color-blue;
+                font-size: 2.6rem;
+            }
+        }
+        .title {
+            width: px(1200);
+            line-height: px(64);
+            margin-bottom: px(13);
+            font: {
+                size: 4.8rem;
+                family: $font-bold;
+            }
+            @include ellipsis();
+        }
+        .watching {
+            line-height: px(32);
+            font-size: 2.6rem;
+            @include flex-items-center;
+            .ing {
+                color: $color-blue;
+                &::after {
+                    width: px(2);
+                    height: px(22);
+                    background-color: $color-white-divider;
+                    position: relative;
+                    top: px(2);
+                    margin: 0 px(16);
+                    @include vs-ib;
+                }
+            }
+            .progress {
+                @include flex-items-center;
+                .time {
+                    color: $color-gray;
+                }
+                .bar {
+                    @include progress-bar($margin: px(32));
+                }
+                .reservation {
+                    position: relative;
+                    @include flex-items-center;
+                    &::before {
+                        width: px(2);
+                        height: px(22);
+                        background-color: $color-white-divider;
+                        position: relative;
+                        top: px(1, 1);
+                        margin: 0 px(16);
+                        @include vs-b;
+                    }
+                    span {
+                        position: relative;
+                        top: px(-1, -1);
+                        color: $color-blue;
+                        @include flex-items-center;
+                        font-size: 2.2rem;
+                        &::before {
+                            width: px(26);
+                            height: px(26);
+                            margin-right: px(6);
+                            position: relative;
+                            top: px(1, 1);
+                            background-image: url(../images/channel/ic-live-tv.png);
+                            @include vs-b;
+                            @include background-default;
+                        }
+                    }
+                }
+            }
+            .meta-tag {
+                display: flex;
+                margin-left: px(36);
+            }
+        }
+    }
+    &.type-min {
+        // reservation-header
+        height: $height-reservation-header;
+        .title {
+            margin-left: px(40);
+            @include flex-items-center;
+            font: {
+                size: 3.8rem;
+                family: $font-bold;
+            }
+            &::before {
+                width: px(38);
+                height: px(38);
+                margin-right: px(16);
+                @include vs-b;
+                @include background-default;
+                background-image: url(../images/channel/ic-reservation-focus.png);
+            }
+        }
+    }
+}
+
+// channel-header : end
+// channel-body : start
+.channel-body {
+    position: relative;
+    height: $height-channel-body;
+    background-color: $color-bg-sub;
+    .timekeeper {
+        height: $height-timekeeper;
+        position: absolute;
+        top: 0;
+        left: $width-channel-left;
+        @include zindex-10;
+        span {
+            position: absolute;
+            top: px(-22);
+            left: px(-64, -42);
+            width: px(130);
+            height: px(55);
+            line-height: px(45);
+            text-align: center;
+            background-image: url(../images/channel/ic-timepicker.png);
+            font: {
+                size: 2.2rem;
+                family: $font-bold;
+            }
+            @include background-default;
+        }
+        &::after {
+            height: 100%;
+            width: px(2, 2);
+            background-color: $color-primary;
+            @include vs-b;
+        }
+    }
+    .timeline {
+        height: $height-channel-timeline;
+        @include flex-items-center;
+        @include line-bottom;
+        font-size: 2.6rem;
+        h3 {
+            display: block;
+            height: 100%;
+            width: $width-channel-left;
+            padding-left: px(31);
+            @include flex-items-center;
+        }
+        .inner {
+            position: relative;
+            height: 100%;
+            flex: 1;
+            overflow: hidden;
+        }
+        .inner > ul {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            height: 100%;
+            color: $color-gray-dark;
+            @include flex-items-center;
+            justify-content: space-between;
+            li {
+                // width: $width-timeline-cell;
+                &.active {
+                    color: $color-white;
+                }
+                &:first-child {
+                    padding-left: px(12);
+                }
+            }
+        }
+    }
+    .channel-box-wrap {
+        position: relative;
+        height: $height-channel-box;
+        .loading {
+            position: absolute;
+            top: 0;
+            left: $width-channel-left;
+            width: $width-timeline-view;
+            height: calc(100% - #{px(6)});
+            padding-top: px(250);
+            background-color: $color-bg-sub;
+            font-size: 2.6rem;
+            color: $color-gray-dark;
+            flex-direction: column;
+            @include flex-items-center;
+            @include zindex-10;
+            .loading-img {
+                transform: scale(0.688);
+                transform-origin: bottom;
+                margin-bottom: px(15);
+            }
+        }
+    }
+    .channel-box {
+        height: $height-channel-box-fake;
+        overflow: hidden;
+        position: absolute;
+        top: -$height-focus;
+        width: 100%;
+        .mask {
+            width: 100%;
+            height: $height-focus;
+            display: flex;
+            &::before {
+                width: $width-channel-left;
+                background-color: $color-bg-sub;
+                height: 100%;
+                position: relative;
+                @include line-bottom;
+                @include zindex-10;
+                @include vs-b;
+            }
+            &::after {
+                flex: 1;
+                height: 100%;
+                background-color: $color-bg-sub;
+                position: relative;
+                @include line-bottom;
+                @include zindex-3;
+                @include vs-b;
+            }
+            &.alt {
+                position: absolute;
+                bottom: 0;
+                &::before, &::after {
+                    background-color: $color-bg-black;
+                    border: none;
+                }
+            }
+        }
+        .channel-box-inner {
+            margin-left: $width-schedule-button;
+        }
+    }
+    .channel-schedule {
+        height: $height-channel-line;
+        width: 100%;
+        @include flex-items-center;
+        @include line-bottom;
+        .button-area {
+            height: px(98);
+        }
+        .channel-name {
+            height: 100%;
+            background-color: $color-bg-sub;
+            width: $width-channel-name;
+            color: $color-gray-dark;
+            justify-content: flex-end;
+            font: {
+                size: 2.6rem;
+                family: $font-bold;
+            }
+            @include line-right;
+            @include flex-items-center;
+            @include zindex-8;
+            .name {
+                padding-left: px(26);
+                @include ellipsis($line: 1);
+            }
+            em {
+                margin: 0 px(12) 0 px(26);
+                color: $color-gray;
+                font-size: 4.8rem;
+            }
+            .icon-group {
+                width: px(34);
+                margin-right: px(20);
+                i {
+                    display: block;
+                    width: px(34);
+                    height: px(34);
+                    @include background-default;
+                    @include ir;
+                    &.ic-lock {
+                        background-image: url(../images/channel/ic-lock.png);
+                    }
+                    &.ic-favorite {
+                        background-image: url(../images/channel/ic-favorite.png);
+                    }
+                    @at-root .selected {
+                        .ic-lock {
+                            background-image: url(../images/channel/ic-lock-focus.png) !important;
+                        }
+                        .ic-favorite {
+                            background-image: url(../images/channel/ic-favorite-focus.png) !important;
+                        }
+                    }
+                }
+            }
+        }
+        .channel-program {
+            position: relative;
+            height: 100%;
+            flex: 1;
+            color: $color-gray;
+            @include flex-items-center;
+            > ul {
+                // width: $width-timeline-total;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                font: {
+                    size: 3.2rem;
+                    family: $font-bold;
+                }
+                @include flex-items-center;
+                li {
+                    padding: 0 px(44);
+                    position: relative;
+                    height: 100%;
+                    @include flex-items-center;
+                    @include line-right;
+                    // &:last-child {
+                    //     border-right: none;
+                    // }
+                    >.program {
+                        @include ellipsis($line: 1);
+                        .subject {
+                            max-width: px(938);
+                            font-size: 3.2rem;
+                            @include ellipsis();
+                        }
+                    }
+                    &.add-icon>.program {
+                        max-width: calc(100% - #{$icon-space});
+                    }
+                    &.size-min {
+                        padding: 0;
+                        text-align: center;
+                        &.prev-padding, &.next-padding {
+                            padding: 0;
+                        }
+                        // &::after {
+                        //     @include vs-b;
+                        //     width: 100%;
+                        //     text-align: center;
+                        //     content: "\00B7\00B7\00B7";
+                        // }
+                        >.program {
+                            display: none;
+                        }
+                        &.focus::after {
+                            color: $color-white;
+                        }
+                    }
+                    &.only-icon {
+                        &::after {
+                            display: none;
+                        }
+                        i {
+                            margin: 0 auto;
+                        }
+                    }
+                    &.focus {
+                        &::before {
+                            position: absolute;
+                            top: -$height-focus;
+                            border-radius: px($border-radius);
+                            @include focus-border($border: 6);
+                            left: $height-focus;
+                            right: $height-focus;
+                            @include vs-b;
+                            @include zindex-4;
+                        }
+                        >.program {
+                            // color: $color-white;
+                            @include zindex-4;
+                        }
+                    }
+                }
+            }
+        }
+        &.selected {
+            .channel-name, .channel-program {
+                background-color: $color-bg-component;
+                color: $color-white;
+                border-top: none;
+                border-bottom: none;
+                border-color: #404045;
+                em {
+                    color: $color-white;
+                }
+            }
+            .channel-program {
+                li {
+                    border-color: #404045;
+                }
+            }
+            .arrow {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+            .prev-padding .arrow::before, & .next-padding .arrow::after {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: px(20);
+                height: px(30);
+                @include vs-b;
+                @include background-default;
+            }
+            .prev-padding {
+                padding-left: px(73);
+                .arrow::before {
+                    left: px(20);
+                    background-image: url(../images/common/ic-arrow-left-focus.png);
+                }
+            }
+            .next-padding {
+                padding-right: px(73);
+                .arrow::after {
+                    right: px(20);
+                    background-image: url(../images/common/ic-arrow-right-focus.png);
+                }
+            }
+        }
+        &.favorite-default {
+            height: $height-channel-box;
+            border-bottom: none;
+            .channel-program {
+                align-items: unset;
+            }
+            .info-favorite {
+                margin: px(85) auto 0 auto;
+                text-align: center;
+                .img {
+                    margin: 0 auto;
+                    width: px(298);
+                    height: px(196);
+                    margin-bottom: px(40);
+                    background-image: url(../images/channel/img-channel-none.png);
+                    @include background-default;
+                }
+                .exp {
+                    font-size: 2.6rem;
+                    color: $color-gray;
+                    margin-bottom: px(60);
+                    p {
+                        line-height: px(40);
+                        margin-bottom: px(6);
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .channel-recommend {
+        overflow: hidden;
+        height: px(760);
+        padding: 0 px(48) 0 px(47);
+        .title {
+            font-size: 3.2rem;
+            line-height: px(41);
+            padding-top: px(33);
+        }
+        .contents-list {
+            margin-top: px(31);
+            flex-wrap: wrap;
+            display: flex;
+            li {
+                margin: {
+                    right: px(59);
+                    bottom: px(50);
+                }
+                &:nth-child(4n) {
+                    margin-right: 0;
+                } 
+            }
+            .focus {
+                .poster-horizontal {
+                    top: px(-8);
+                }
+                .poster-component {
+                    .poster-tag {
+                        top: px(3);
+                        left: px(-2);
+                    }
+                    .poster-time {
+                        left: px(-12);
+                    }
+                }
+            }
+            > li.focus:nth-child(4n + 1) {
+                .poster-horizontal::before, .poster-thumbnail, .poster-component::before {
+                    transform-origin: left;
+                }
+                .poster-tag {
+                    left: px(10);
+                }
+                .poster-time {
+                    left: 0;
+                    dt, .poster-remaining {
+                        transform-origin: left;
+                    }
+                }
+            }
+        }
+        .poster-horizontal {
+            width: px(412);
+            height: px(232);
+            .poster-component {
+                .poster-tag {
+                    top: px(10);
+                    left: px(10);
+                    right: unset;
+                    opacity: 1;
+                }
+                .poster-tag-live {
+                    font: {
+                        size: 1.6rem;
+                        family: $font-bold;
+                    }
+                    position: relative;
+                    width: px(75);
+                    height: px(36);
+                    line-height: px(36);
+                    border-radius: px(18);
+                    background-color: rgba($color-pure-black, .8);
+                    color: $color-tag-gray;
+                    @include flex-items-center;
+                    &::before {
+                        margin-left: px(8);
+                        margin-right: px(4);
+                        width: px(22);
+                        height: px(22);
+                        background-image: url(../images/common/ic-clock.png);
+                        @include background-default;
+                        @include vs-b;
+                    }
+                }
+                &::before {
+                    opacity: 1;
+                }
+                .poster-time {
+                    dt {
+                        line-height: px(32);
+                        display: flex;
+                        justify-content: space-between;
+                        em {
+                            color: $color-white;
+                            font-family: $font-bold;
+                        }
+                        span {
+                            color: $color-blue;
+                        }
+                        &::before {
+                            display: none;
+                        }
+                    }
+                    dd.poster-remaining {
+                        margin-top: px(11);
+                        @include progress-bar($width: 100%, $color2: $color-subtitle);
+                    }
+                }
+            }
+        }
+        .meta-data {
+            .title {
+                width: px(412);
+                color: $color-gray-dark;
+                padding-top: px(13);
+                line-height: px(43);
+                font-family: $font-bold;
+            }
+        }
+    }
+}
+
+// channel-body : end
+// channel-footer : start
+.channel-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: $height-channel-footer;
+    background-color: $color-bg-black;
+    padding-right: px(50);
+    justify-content: space-between;
+    @include flex-items-center;
+    .channel-pagination {
+        @include flex-items-center;
+        .channel-option {
+            margin-left: px(46);
+        }
+    }
+    .channel-pagination ul {
+        margin-left: px(116);
+        font-size: 2.6rem;
+        color: $color-gray-dark;
+        @include flex-items-center;
+        .page {
+            &-number {
+                width: px(136);
+                margin: 0 px(16);
+                justify-content: center;
+                @include flex-items-center;
+                .active {
+                    color: $color-white;
+                    &::after {
+                        @include vs-ib;
+                        content: '/';
+                    }
+                }
+            }
+            &-prev, &-next {
+                @include flex-items-center;
+                button {
+                    width: px(38);
+                    height: px(26);
+                    @include background-default;
+                    @include ir;
+                }
+            }
+            &-prev {
+                button {
+                    background-image: url(../images/channel/ic-up-arrow.png);
+                }
+                &.focus button {
+                    background-image: url(../images/channel/ic-up-arrow-focus.png);
+                }
+            }
+            &-next {
+                button {
+                    background-image: url(../images/channel/ic-down-arrow.png);
+                }
+                &.focus button {
+                    background-image: url(../images/channel/ic-down-arrow-focus.png);
+                }
+            }
+        }
+    }
+    .channel-option {
+        font-size: 2.4rem;
+        color: $color-bg-key-notice;
+        @include flex-items-center;
+        span {
+            margin-left: px(30);
+            .ic-round {
+                margin-right: px(12);
+                @include ic-round;
+            }
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+    &.none-pagination {
+        justify-content: flex-end;
+    }
+    &.none-option {
+        justify-content: flex-start;
+    }
+}
+
+// channel-footer : end
+//schedule-view-layer : start
+.schedule-view-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-bg-black-56;
+    display: flex;
+    @include zindex-20;
+    display: none;
+    &.active {
+        display: flex;
+    }
+    .close {
+        height: 100%;
+        width: px(48);
+        background-color: $color-schedule-close;
+        &::before {
+            height: px(46);
+            margin: 0 auto;
+            background-image: url(../images/common/ic-gnb-back.png);
+            @include vs-b;
+            @include background-default;
+        }
+    }
+    nav {
+        overflow: hidden;
+        padding-top: px(35);
+        width: px(516);
+        background-image: linear-gradient(to left, $color-bg-transparent, $color-bg-black 21%);
+    }
+    ul {
+        li {
+            position: relative;
+            line-height: px(88);
+            margin-bottom: px(4);
+            margin-left: px(38);
+            padding-left: px(26);
+            font-size: 3.6rem;
+            color: $color-gray;
+            @include flex-items-center;
+            &.focus {
+                color: $color-white;
+                font: {
+                    size: 3.8rem;
+                    family: $font-bold;
+                }
+                &::before {
+                    position: absolute;
+                    left: 0;
+                    height: px(46);
+                    width: px(6);
+                    border-radius: px(3);
+                    background-color: $color-white;
+                    @include vs-b;
+                }
+            }
+        }
+    }
+}
+
+.schedule-view-button {
+    background-color: $color-bg-sub;
+    height: calc(#{$height-channel-box} + 1px);
+    width: $width-schedule-button;
+    position: absolute;
+    top: calc(#{$height-focus} - 1px);
+    left: 0;
+    justify-content: center;
+    @include flex-items-center;
+    @include zindex-10;
+    @include line-right;
+    button {
+        color: $color-gray;
+        font-size: 2.2rem;
+        p {
+            line-height: px(30);
+        }
+        &::before {
+            width: px(20);
+            height: px(30);
+            margin: 0 auto;
+            margin-bottom: px(24);
+            background-image: url(../images/common/ic-arrow-left.png);
+            @include vs-b;
+            @include background-default;
+        }
+    }
+    &.focus {
+        button {
+            color: $color-white;
+            &::before {
+                background-image: url(../images/common/ic-arrow-left-focus.png);
+            }
+        }
+    }
+}
+
+//schedule-view-layer : end
+// channel-reservation-box : start
+.channel-body.reservation {
+    height: $height-reservation-body;
+}
+
+.channel-reservation-box {
+    .child-1, .child-2, .child-3 {
+        height: 100%;
+        @include flex-items-center;
+        @include line-right;
+    }
+    .child-1 {
+        width: $width-channel-left;
+    }
+    .child-2 {
+        width: px(780);
+    }
+    .child-3 {
+        flex: 1;
+        border-right: none;
+    }
+    .ic-tag {
+        margin-left: px(15);
+        color: $color-subtitle;
+    }
+    .field-reservation {
+        height: $height-channel-timeline;
+        background-color: $color-bg-setting;
+        @include flex-items-center;
+        @include line-bottom;
+        span {
+            font-size: 2.6rem;
+            padding-left: px(30);
+            color: $color-gray-light;
+            border-right: none;
+        }
+        .child-1 {
+            padding-left: px(40);
+        }
+    }
+    .list-reservation {
+        overflow: hidden;
+        li {
+            position: relative;
+            height: $height-reservation-line;
+            color: $color-subtitle;
+            font: {
+                size: 3.2rem;
+                family: $font-bold;
+            }
+            @include flex-items-center;
+            @include line-bottom;
+            >div {
+                @include flex-items-center;
+            }
+            .child-1 {
+                justify-content: flex-end;
+                color: $color-gray-dark;
+                font: {
+                    size: 2.6rem;
+                    family: $font-bold;
+                }
+                .name {
+                    padding-left: px(26);
+                    @include ellipsis($line: 1);
+                }
+                em {
+                    margin: 0 px(50) 0 px(26);
+                    color: $color-gray;
+                    font-size: 4.8rem;
+                }
+            }
+            .child-2 p {
+                max-width: px(600);
+                // @include ellipsis($line: 1);
+            }
+            .child-2 p, .child-3 p {
+                margin-left: px(52);
+            }
+            &.focus {
+                position: relative;
+                >div {
+                    position: relative;
+                    z-index: 1;
+                }
+                .child-1, .child-1 em, .child-2 p, .child-3 p {
+                    color: $color-white;
+                }
+                .child-1, .child-2 {
+                    @include line-right($color-white-30);
+                }
+                &::after {
+                    @include focus-border;
+                    border: px(4, 3) solid $color-white;
+                    box-shadow: none;
+                    background-color: $color-bg-component;
+                }
+                .ic-tag {
+                    color: $color-white;
+                }
+            }
+        }
+    }
+}
+
+// channel-reservation-box : end

@@ -1,0 +1,4132 @@
+@charset "UTF-8";
+/* variables */
+/* functions */
+/* mixins */
+/* toast 임시 */
+.ic-tag.small {
+  display: inline-block;
+  height: 26px;
+  line-height: calc(26px - 2px * 2);
+  background-color: rgba(238, 238, 238, 0.02);
+  border: 2px solid rgba(119, 119, 119, 0.5);
+  border-radius: 4px;
+  padding: 0 7px;
+  color: #777;
+  margin-left: 6px;
+  font-size: 1.4rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+}
+
+.ic-tag.small.dolby-vision {
+  font-size: 0;
+  color: rgba(0, 0, 0, 0);
+  width: 70px;
+  background: url(../images/vod/ic-dolby.png) center/54px no-repeat;
+}
+
+.focus .ic-tag.small, .vod-button.selected .ic-tag.small, .selected .ic-tag.small {
+  color: #a9a9a9;
+  border: 2px solid rgba(169, 169, 169, 0.5);
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.rating-star {
+  display: block;
+  width: 26px;
+  height: 26px;
+  margin-right: 4px;
+  background-image: url("../images/vod/ic-ratingstar-full-w.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.rating-star.full {
+  background-image: url("../images/vod/ic-ratingstar-full.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.rating-star.half {
+  background-image: url("../images/vod/ic-ratingstar-half.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.rating-star.empty {
+  background-image: url("../images/vod/ic-ratingstar-none.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.focus .rating-star, .vod-button.selected .rating-star {
+  background-image: url("../images/vod/ic-ratingstar-full.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-detail-container, .season-detail-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.vod-detail-container .vod-detail-bgimage, .season-detail-container .vod-detail-bgimage {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/vod/img-thumbnail-detail-default.png");
+  background-size: 1446px;
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-color: #080d19;
+}
+
+.vod-detail-container.video-type, .season-detail-container.video-type {
+  background-color: unset;
+}
+
+.vod-detail-container.video-type .vod-detail-bgimage, .season-detail-container.video-type .vod-detail-bgimage {
+  display: none;
+}
+
+.vod-detail-container.video-type .gradient-bg, .season-detail-container.video-type .gradient-bg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.vod-detail-container.video-type .gradient-bg::before, .season-detail-container.video-type .gradient-bg::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(8, 13, 25, 0.8) 14%, rgba(0, 0, 0, 0)) left top/960px no-repeat;
+  opacity: 0.9;
+}
+
+.vod-detail-container.video-type .gradient-bg::after, .season-detail-container.video-type .gradient-bg::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #080d19 73%, #080d19 73%) bottom center/100% 568px no-repeat;
+  opacity: 0.5;
+}
+
+.vod-detail-container .meta-tag, .season-detail-container .meta-tag {
+  margin-top: 12px;
+}
+
+.gradient-bg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.gradient-bg::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, #080d19 53%, rgba(0, 0, 0, 0) 91%) left top/900px no-repeat;
+}
+
+.gradient-bg::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #080d19 50%, #080d19 50%) bottom center/100% 616px no-repeat;
+}
+
+.gradient-bg .contents {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding-left: 110px;
+  z-index: 1;
+}
+
+.mobile-message {
+  display: flex;
+  position: absolute;
+  top: 80px;
+  left: 110px;
+  z-index: 2;
+}
+
+.mobile-message .mobile-view-tip {
+  position: relative;
+  font-size: 2.2rem;
+  padding-left: 248px;
+  line-height: 30px;
+}
+
+.mobile-message .mobile-view-tip::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 230px;
+  height: 30px;
+  background-image: url("../images/vod/tag-detail-uplus-mobile.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.mobile-message .tooltip {
+  position: relative;
+  display: inline-block;
+  font-family: "Yoon Gothic 750", "YoonGothic 700 50", "Yoon윤고딕 750", "YoonGothic 750", "YOONGOTHICPRO750";
+  font-size: 2rem;
+  line-height: 1.5;
+  padding: 12px 18px;
+  background-color: #e24e70;
+  border-radius: 16px;
+  top: -6px;
+  margin-left: 40px;
+  border-radius: 8px;
+  font-size: 1.8rem;
+  line-height: 1.67;
+  padding: 9px 20px;
+}
+
+.mobile-message .tooltip::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: 18px;
+  left: -3px;
+  width: 18px;
+  height: 18px;
+  border-left: 8px solid #e24e70;
+  border-bottom: 8px solid #e24e70;
+  border-radius: 4px;
+  transform: rotate(54deg) skewY(-20deg);
+}
+
+.mobile-message .tooltip em {
+  color: #ef3484;
+}
+
+.mobile-message .tooltip::before {
+  top: 16px;
+}
+
+section {
+  position: relative;
+  width: 100%;
+}
+
+section.content-info {
+  height: 400px;
+  margin-top: 140px;
+}
+
+.series section.content-info {
+  height: 555px;
+}
+
+section.content-info .series-summary, section.content-info .product-desc {
+  width: 472px;
+  font-size: 2.4rem;
+  color: #eee;
+  line-height: 36px;
+  margin-top: 20px;
+  overflow: hidden;
+  display: -webkit-box;
+  white-space: normal;
+  /*! autoprefixer: off */
+  -webkit-line-clamp: 3;
+  /*! autoprefixer: on */
+  -webkit-box-orient: vertical;
+}
+
+section.content-info .product-desc {
+  overflow: hidden;
+  display: -webkit-box;
+  white-space: normal;
+  /*! autoprefixer: off */
+  -webkit-line-clamp: 3;
+  /*! autoprefixer: on */
+  -webkit-box-orient: vertical;
+  margin-top: 0;
+}
+
+section.content-info .product-desc span {
+  display: block;
+  color: #999;
+}
+
+section.content-info .content-title {
+  position: relative;
+  font-size: 2.4rem;
+  color: #eee;
+  line-height: 32px;
+  margin-top: 24px;
+}
+
+section.content-info .content-title::before {
+  display: inline-block;
+  content: '';
+  width: 14px;
+  height: 32px;
+  margin-right: 12px;
+  vertical-align: middle;
+  background-image: url("../images/vod/ic-package-play.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+section.func-area {
+  height: 156px;
+}
+
+section.detail-info {
+  display: flex;
+  align-items: flex-end;
+}
+
+h1.vod-title {
+  width: 660px;
+  height: 80px;
+  font-size: 6rem;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  line-height: 80px;
+  margin-bottom: 16px;
+}
+
+h1.vod-title.image-logo {
+  height: 104px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: left;
+  font-size: 0;
+  color: rgba(0, 0, 0, 0);
+}
+
+h1.vod-title.double-line {
+  font-size: 5rem;
+  line-height: normal;
+  height: 132px;
+  overflow: hidden;
+  display: -webkit-box;
+  white-space: normal;
+  /*! autoprefixer: off */
+  -webkit-line-clamp: 2;
+  /*! autoprefixer: on */
+  -webkit-box-orient: vertical;
+}
+
+h1.vod-title + .series-summary, section.content-info h1.vod-title + .product-desc {
+  margin-top: 0;
+}
+
+.package h1.vod-title, .vod-subscribe h1.vod-title {
+  margin-bottom: 40px;
+}
+
+.reserve-info {
+  width: 586px;
+  opacity: 0.7;
+  line-height: 2.6rem;
+  height: 84px;
+}
+
+.reserve-info p {
+  font-size: 1.8rem;
+  color: #eee;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.reserve-info span {
+  display: inline-block;
+  font-size: 1.6rem;
+  color: #999;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.rating-info {
+  display: flex;
+  align-items: center;
+}
+
+.rating-info div {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  margin-right: 22px;
+}
+
+.rating-info div::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  height: inherit;
+}
+
+.rating-info div .point {
+  display: inline-block;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 2.4rem;
+  min-width: 64px;
+}
+
+.rating-info div .point .base-point {
+  position: relative;
+  display: inline-block;
+  font-family: "Yoon Gothic 750", "YoonGothic 700 50", "Yoon윤고딕 750", "YoonGothic 750", "YOONGOTHICPRO750";
+  font-size: 2rem;
+  color: #bbb;
+  padding-left: 10px;
+  vertical-align: baseline;
+}
+
+.rating-info div .point .base-point::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  content: '/';
+}
+
+.rating-info .watcha {
+  padding-left: 116px;
+}
+
+.rating-info .watcha::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 108px;
+  background-image: url("../images/vod/logo-watcha.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.rating-info .cine21 {
+  padding-left: 84px;
+}
+
+.rating-info .cine21::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 76px;
+  background-image: url("../images/vod/logo-cine21.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.rating-info .imdb {
+  padding-left: 56px;
+}
+
+.rating-info .imdb::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 48px;
+  background-image: url("../images/vod/logo-imdb.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.event-message {
+  position: relative;
+  font-size: 2.2rem;
+  color: #ecafb9;
+  line-height: 25px;
+  margin-top: 20px;
+}
+
+.event-message::before {
+  display: inline-block;
+  content: '';
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  vertical-align: bottom;
+  background-image: url("../images/vod/ic-event.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.func-area .button-area {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100px;
+}
+
+.vod-button {
+  position: relative;
+  height: 94px;
+  font-family: "Yoon Gothic 750", "YoonGothic 700 50", "Yoon윤고딕 750", "YoonGothic 750", "YOONGOTHICPRO750";
+  font-size: 2.8rem;
+  color: #a9a9a9;
+  border-radius: 8px;
+  background-color: #2A2C3E;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+}
+
+.vod-button > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.vod-button p.text {
+  min-width: 270px;
+}
+
+.vod-button .label {
+  min-width: 88px;
+  font-size: 2.8rem;
+  line-height: 36px;
+  text-align: left;
+  margin-right: calc(6px + 2px);
+}
+
+.vod-button .label .label-text {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.vod-button .label .period {
+  display: block;
+  font-size: 1.6rem;
+  line-height: 20px;
+}
+
+.vod-button .price {
+  font-size: 3.2rem;
+  text-align: left;
+}
+
+.vod-button.dimed {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.vod-button.focus, .vod-button.selected {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  color: #080d19;
+  background-color: #eee;
+  height: calc(94px + 6px);
+  font-size: calc(2.8rem + 0.2rem);
+}
+
+.vod-button.focus .label, .vod-button.selected .label {
+  font-size: 3rem;
+  margin-right: 6px;
+}
+
+.vod-button:last-child {
+  margin-right: 0;
+}
+
+.vod-button.default-type {
+  position: relative;
+  height: 94px;
+  font-family: "Yoon Gothic 750", "YoonGothic 700 50", "Yoon윤고딕 750", "YoonGothic 750", "YOONGOTHICPRO750";
+  font-size: 2.8rem;
+  color: #a9a9a9;
+  border-radius: 8px;
+  background-color: #2A2C3E;
+  padding: 0 0;
+}
+
+.vod-button.default-type > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.vod-button.default-type p.text {
+  min-width: 270px;
+}
+
+.vod-button.default-type .label {
+  min-width: 88px;
+  font-size: 2.8rem;
+  line-height: 36px;
+  text-align: left;
+  margin-right: calc(2px + 2px);
+}
+
+.vod-button.default-type .label .label-text {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.vod-button.default-type .label .period {
+  display: block;
+  font-size: 1.6rem;
+  line-height: 20px;
+}
+
+.vod-button.default-type .price {
+  font-size: 3.2rem;
+  text-align: left;
+}
+
+.vod-button.default-type.dimed {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.vod-button.default-type.focus, .vod-button.default-type.selected {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  color: #080d19;
+  background-color: #eee;
+  height: calc(94px + 6px);
+  font-size: calc(2.8rem + 0.2rem);
+}
+
+.vod-button.default-type.focus .label, .vod-button.default-type.selected .label {
+  font-size: 3rem;
+  margin-right: 2px;
+}
+
+.vod-button.text-type {
+  position: relative;
+  height: 94px;
+  font-family: "Yoon Gothic 750", "YoonGothic 700 50", "Yoon윤고딕 750", "YoonGothic 750", "YOONGOTHICPRO750";
+  font-size: 2.8rem;
+  color: #a9a9a9;
+  border-radius: 8px;
+  background-color: #2A2C3E;
+  padding: 0 0;
+}
+
+.vod-button.text-type > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.vod-button.text-type p.text {
+  min-width: 270px;
+}
+
+.vod-button.text-type .label {
+  min-width: 88px;
+  font-size: 2.8rem;
+  line-height: 36px;
+  text-align: left;
+  margin-right: calc(6px + 2px);
+}
+
+.vod-button.text-type .label .label-text {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.vod-button.text-type .label .period {
+  display: block;
+  font-size: 1.6rem;
+  line-height: 20px;
+}
+
+.vod-button.text-type .price {
+  font-size: 3.2rem;
+  text-align: left;
+}
+
+.vod-button.text-type.dimed {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.vod-button.text-type.focus, .vod-button.text-type.selected {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  color: #080d19;
+  background-color: #eee;
+  height: calc(94px + 6px);
+  font-size: calc(2.8rem + 0.2rem);
+}
+
+.vod-button.text-type.focus .label, .vod-button.text-type.selected .label {
+  font-size: 3rem;
+  margin-right: 6px;
+}
+
+.vod-button.text-type .label {
+  min-width: 118px;
+}
+
+.vod-button.small .label {
+  min-width: 90px;
+}
+
+.vod-button.medium .label {
+  min-width: 118px;
+}
+
+.vod-button.large .label {
+  min-width: 148px;
+}
+
+.vod-button.selected {
+  color: #eee;
+  background-color: #2A2C3E;
+}
+
+.vod-button.play {
+  position: relative;
+  height: 94px;
+  font-family: "Yoon Gothic 750", "YoonGothic 700 50", "Yoon윤고딕 750", "YoonGothic 750", "YOONGOTHICPRO750";
+  font-size: 2.8rem;
+  color: #a9a9a9;
+  border-radius: 8px;
+  background-color: #2A2C3E;
+  padding: 0 48px;
+}
+
+.vod-button.play > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.vod-button.play p.text {
+  min-width: 118px;
+}
+
+.vod-button.play .label {
+  min-width: 88px;
+  font-size: 2.8rem;
+  line-height: 36px;
+  text-align: left;
+  margin-right: calc(6px + 2px);
+}
+
+.vod-button.play .label .label-text {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.vod-button.play .label .period {
+  display: block;
+  font-size: 1.6rem;
+  line-height: 20px;
+}
+
+.vod-button.play .price {
+  font-size: 3.2rem;
+  text-align: left;
+}
+
+.vod-button.play.dimed {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.vod-button.play.focus, .vod-button.play.selected {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  color: #080d19;
+  background-color: #eee;
+  height: calc(94px + 6px);
+  font-size: calc(2.8rem + 0.2rem);
+}
+
+.vod-button.play.focus .label, .vod-button.play.selected .label {
+  font-size: 3rem;
+  margin-right: 6px;
+}
+
+.vod-button.play::before {
+  display: inline-block;
+  content: '';
+  left: 50px;
+  width: 24px;
+  height: 94px;
+  margin-right: 12px;
+  background-image: url("../images/vod/ic-play.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-button.play.focus::before, .vod-button.play.selected::before {
+  height: 100px;
+  background-image: url("../images/vod/ic-play-focus.png");
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  font-family: "Yoon Gothic 750", "YoonGothic 700 50", "Yoon윤고딕 750", "YoonGothic 750", "YOONGOTHICPRO750";
+  font-size: 2rem;
+  line-height: 1.5;
+  padding: 12px 18px;
+  background-color: #2A2C3E;
+  border-radius: 16px;
+  margin-left: 10px;
+}
+
+.tooltip::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: 18px;
+  left: -3px;
+  width: 18px;
+  height: 18px;
+  border-left: 8px solid #2A2C3E;
+  border-bottom: 8px solid #2A2C3E;
+  border-radius: 4px;
+  transform: rotate(54deg) skewY(-20deg);
+}
+
+.tooltip em {
+  color: #ef3484;
+}
+
+.tooltip em {
+  color: #ef3484;
+}
+
+.purchase-guide {
+  margin-top: 10px;
+}
+
+.purchase-guide p {
+  display: block;
+  font-size: 2rem;
+  color: #ef3484;
+  line-height: 24px;
+}
+
+.purchase-guide p::before {
+  display: inline-block;
+  content: '';
+  height: 24px;
+  vertical-align: sub;
+  margin-right: 8px;
+}
+
+.purchase-guide .coupon-info::before {
+  width: 34px;
+  background-image: url("../images/vod/ic-coupon.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.purchase-guide .nosupport-tip::before {
+  width: 20px;
+  background-image: url("../images/vod/ic-tip.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.purchase-guide .remain-time::before {
+  width: 24px;
+  background-image: url("../images/vod/ic-time-yl.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.purchased-info {
+  position: absolute;
+  top: -42px;
+}
+
+.purchased-info .poster-time {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.purchased-info .poster-time dt {
+  position: relative;
+  width: 300px;
+  font-size: 2rem;
+  color: #eee;
+  margin-left: 16px;
+}
+
+.purchased-info .poster-time dt::before {
+  content: none;
+}
+
+.purchased-info .poster-time dd {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(238, 238, 238, 0.2);
+  margin-left: 0;
+  height: 6px;
+  width: 250px;
+  border-radius: calc(6px / 2);
+}
+
+.purchased-info .poster-time dd > span {
+  position: absolute;
+  height: 100%;
+  border-radius: calc(6px / 2);
+  background-color: #eee;
+}
+
+.purchased-info .watch-complete {
+  font-size: 2.2rem;
+  padding-left: 32px;
+  line-height: 22px;
+  height: 25px;
+}
+
+.purchased-info .watch-complete::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 100%;
+  background-image: url("../images/vod/ic-complete.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.detail-list-wrap {
+  max-height: 304px;
+  overflow: hidden;
+}
+
+.vod-additional-list {
+  max-height: 304px;
+  margin-right: 92px;
+  padding: 6px 6px 0;
+}
+
+.vod-additional-list li {
+  position: relative;
+  width: 436px;
+  height: 64px;
+  font-size: 3rem;
+  color: rgba(169, 169, 169, 0.9);
+  line-height: 60px;
+  margin-bottom: 12px;
+  padding: 0 12px;
+}
+
+.vod-additional-list li::before {
+  display: inline-block;
+  content: '';
+  width: 48px;
+  height: 100%;
+  margin-right: 30px;
+  vertical-align: top;
+}
+
+.vod-additional-list li.focus, .vod-additional-list li.vod-button.selected, .vod-additional-list li.selected {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 3.2rem;
+  color: #eee;
+  border-radius: 4px;
+  background-color: #111424;
+  box-shadow: 0 0 0 6px #eee;
+}
+
+.vod-additional-list li.focus::after, .vod-additional-list li.vod-button.selected::after, .vod-additional-list li.selected::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  left: unset;
+  right: 14px;
+  width: 44px;
+  height: 100%;
+  background-image: url("../images/vod/ic-right-arrow-focus.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.selected {
+  box-shadow: 0 0 0 6px transparent;
+  background: none;
+}
+
+.vod-additional-list li.view-episode::before {
+  background-image: url("../images/vod/ic-episode.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.view-episode.focus::before, .vod-additional-list li.view-episode.vod-button.selected::before {
+  background-image: url("../images/vod/ic-episode-focus.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.view-episode.selected::before {
+  background-image: url("../images/vod/ic-episode-selected.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.view-rating::before {
+  background-image: url("../images/vod/ic-rating.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.view-rating.focus::before, .vod-additional-list li.view-rating.vod-button.selected::before {
+  background-image: url("../images/vod/ic-rating-focus.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.view-rating.selected::before {
+  background-image: url("../images/vod/ic-rating-selected.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.cast-info::before {
+  background-image: url("../images/vod/ic-character-info.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.cast-info.focus::before, .vod-additional-list li.cast-info.vod-button.selected::before {
+  background-image: url("../images/vod/ic-character-info-focus.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.cast-info.selected::before {
+  background-image: url("../images/vod/ic-character-info-selected.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.scene::before, .vod-additional-list li.most-viewed::before, .vod-additional-list li.vod-subscribe::before {
+  background-image: url("../images/vod/ic-scene.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.scene.focus::before, .vod-additional-list li.scene.vod-button.selected::before, .vod-additional-list li.vod-button.selected.most-viewed::before, .vod-additional-list li.vod-button.selected.vod-subscribe::before, .vod-additional-list li.focus.most-viewed::before, .vod-additional-list li.focus.vod-subscribe::before {
+  background-image: url("../images/vod/ic-scene-focus.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.scene.selected::before, .vod-additional-list li.selected.most-viewed::before, .vod-additional-list li.selected.vod-subscribe::before {
+  background-image: url("../images/vod/ic-scene-selected.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.most-viewed::before {
+  background-image: url("../images/vod/ic-othercontents.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.most-viewed.focus::before, .vod-additional-list li.most-viewed.vod-button.selected::before {
+  background-image: url("../images/vod/ic-othercontents-focus.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.most-viewed.selected::before {
+  background-image: url("../images/vod/ic-othercontents-selected.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.wish-list.add::before {
+  background-image: url("../images/vod/ic-addfavorite.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.wish-list.delete::before {
+  background-image: url("../images/vod/ic-delfavorite.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.wish-list.focus.add::before, .vod-additional-list li.wish-list.add.vod-button.selected::before {
+  background-image: url("../images/vod/ic-addfavorite-focus.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.wish-list.focus.delete::before, .vod-additional-list li.wish-list.delete.vod-button.selected::before {
+  background-image: url("../images/vod/ic-delfavorite-focus.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.wish-list.focus::after, .vod-additional-list li.wish-list.vod-button.selected::after {
+  content: none;
+}
+
+.vod-additional-list li.rate-contents::before {
+  background-image: url("../images/vod/ic-good.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.rate-contents-focused {
+  padding: 0;
+}
+
+.vod-additional-list li.rate-contents-focused::before {
+  content: none;
+}
+
+.vod-additional-list li.rate-contents-focused::after {
+  content: none;
+}
+
+.vod-additional-list li.rate-contents-focused ul {
+  display: flex;
+}
+
+.vod-additional-list li.rate-contents-focused li {
+  display: flex;
+  width: 224px;
+  font-size: 2.8rem;
+}
+
+.vod-additional-list li.rate-contents-focused li::after {
+  content: none;
+}
+
+.vod-additional-list li.rate-contents-focused li .count {
+  display: block;
+  font-size: 1.6rem;
+  line-height: 64px;
+  opacity: 0.8;
+  margin-left: 10px;
+}
+
+.vod-additional-list li.rate-contents-focused li.focus .count, .vod-additional-list li.rate-contents-focused li.vod-button.selected .count {
+  color: #eee;
+}
+
+.vod-additional-list li.rate-contents-focused .like::before {
+  margin-right: 14px;
+  background-image: url("../images/vod/ic-good.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.rate-contents-focused .like.focus::before, .vod-additional-list li.rate-contents-focused .like.vod-button.selected::before {
+  margin-right: 12px;
+  background-image: url("../images/vod/ic-good-focus.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.rate-contents-focused .dislike::before {
+  margin-right: 14px;
+  background-image: url("../images/vod/ic-bad.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.rate-contents-focused .dislike.focus::before, .vod-additional-list li.rate-contents-focused .dislike.vod-button.selected::before {
+  margin-right: 12px;
+  background-image: url("../images/vod/ic-bad-focus.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.rated {
+  display: flex;
+}
+
+.vod-additional-list li.rated .count {
+  display: block;
+  font-size: 1.8rem;
+  opacity: 0.8;
+  margin-left: 7px;
+}
+
+.vod-additional-list li.rated.focus .count, .vod-additional-list li.rated.vod-button.selected .count {
+  font-size: 2rem;
+}
+
+.vod-additional-list li.rated.like::before {
+  background-image: url("../images/vod/ic-good.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.rated.like.focus::before, .vod-additional-list li.rated.like.vod-button.selected::before {
+  background-image: url("../images/vod/ic-good-focus.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.rated.like.focus::after, .vod-additional-list li.rated.like.vod-button.selected::after {
+  content: none;
+}
+
+.vod-additional-list li.rated.dislike::before {
+  background-image: url("../images/vod/ic-bad.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.rated.dislike.focus::before, .vod-additional-list li.rated.dislike.vod-button.selected::before {
+  background-image: url("../images/vod/ic-bad-focus.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.rated.dislike.focus::after, .vod-additional-list li.rated.dislike.vod-button.selected::after {
+  content: none;
+}
+
+.vod-additional-list li.season-select-box {
+  text-align: center;
+  padding: 0 80px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.vod-additional-list li.season-select-box::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  left: 20px;
+  width: 44px;
+  height: 100%;
+  background-image: url("../images/vod/ic-right-arrow.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(180deg);
+}
+
+.vod-additional-list li.season-select-box::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  left: unset;
+  right: 20px;
+  width: 44px;
+  height: 100%;
+  background-image: url("../images/vod/ic-right-arrow.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.season-select-box.focus, .vod-additional-list li.season-select-box.vod-button.selected, .vod-additional-list li.season-select-box.selected {
+  padding: 0 74px;
+}
+
+.vod-additional-list li.season-select-box.focus::before, .vod-additional-list li.season-select-box.vod-button.selected::before, .vod-additional-list li.season-select-box.selected::before {
+  background-image: url("../images/vod/ic-right-arrow-focus.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(180deg);
+}
+
+.vod-additional-list li.season-select-box.focus::after, .vod-additional-list li.season-select-box.vod-button.selected::after, .vod-additional-list li.season-select-box.selected::after {
+  background-image: url("../images/vod/ic-right-arrow-focus.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vod-additional-list li.season-select-box.selected {
+  border: 6px solid transparent;
+  background: none;
+}
+
+.rate-tooltip {
+  position: absolute;
+  bottom: 76px;
+  left: 558px;
+  z-index: 2;
+}
+
+.rate-tooltip.three {
+  bottom: 146px;
+}
+
+.summary-info {
+  width: 1136px;
+  transform: translateY(-16px);
+}
+
+.summary-info .staff {
+  font-size: 2.4rem;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.summary-info .staff div {
+  display: flex;
+  width: 1136px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.summary-info .staff div:last-child {
+  margin-bottom: 0;
+}
+
+.summary-info .staff .label {
+  margin-right: 10px;
+  opacity: 1;
+}
+
+.summary-info .staff .label + span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  opacity: 0.7;
+}
+
+.summary-info .staff .label + span + .dubbing {
+  position: relative;
+  padding-left: 24px;
+}
+
+.summary-info .staff .label + span + .dubbing::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  content: '/';
+}
+
+.summary-info .summary {
+  font-size: 2.8rem;
+  color: #eee;
+  line-height: 44px;
+  opacity: 0.75;
+  overflow: hidden;
+  display: -webkit-box;
+  white-space: normal;
+  /*! autoprefixer: off */
+  -webkit-line-clamp: 3;
+  /*! autoprefixer: on */
+  -webkit-box-orient: vertical;
+}
+
+.more-button {
+  position: absolute;
+  bottom: 2px;
+  right: 0;
+}
+
+.more-button .more-info {
+  display: inline-block;
+  width: 105px;
+  height: 42px;
+  font-size: 2.4rem;
+  color: rgba(169, 169, 169, 0.7);
+  text-align: center;
+  line-height: 42px;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+.more-button .more-info.focus, .more-button .more-info.vod-button.selected {
+  color: #080d19;
+  border: 2px solid #eee;
+  background-color: #eee;
+  border-radius: 4px;
+  line-height: calc(42px - 2px * 2);
+  text-decoration: none;
+}
+
+aside.event-banner {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+aside.event-banner .banner {
+  display: flex;
+  align-items: center;
+  width: 482px;
+  height: 110px;
+  border-radius: 8px;
+  background-color: #eee;
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.3);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+aside.event-banner .banner .image {
+  width: 180px;
+  height: 100%;
+  margin-right: 30px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+aside.event-banner .banner .event-text {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 2.8rem;
+  color: #353539;
+  line-height: 38px;
+}
+
+aside.event-banner .banner .event-text .subtext {
+  display: block;
+  font-size: 2rem;
+  line-height: 26px;
+  margin-top: 2px;
+}
+
+aside.event-banner .color-keyguide {
+  position: relative;
+  font-size: 1.8rem;
+  line-height: 30px;
+  color: #eee;
+  padding: 0 11px 0 32px;
+  margin-right: 2px;
+  border-radius: 50px;
+  border: 2px solid #eee;
+  background-color: rgba(8, 13, 25, 0.4);
+}
+
+aside.event-banner .color-keyguide::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: 50%;
+  left: 10px;
+  margin-top: -8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+aside.event-banner .color-keyguide.green::before {
+  background-color: #00ad0d;
+}
+
+.vod-layer-dimmed {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(8, 13, 25, 0.3);
+}
+
+.vod-layer-bg {
+  position: absolute;
+  width: 1200px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: rgba(8, 13, 25, 0.85);
+  z-index: 1;
+}
+
+.vod-layer {
+  position: absolute;
+  width: 1200px;
+  height: 100%;
+}
+
+.vod-layer::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  left: unset;
+  right: 0;
+  width: inherit;
+  height: 234px;
+  background-image: linear-gradient(to bottom, #080d19, rgba(0, 0, 0, 0));
+  background-size: 100% 234px;
+  opacity: 0.9;
+  z-index: 1;
+  content: none;
+}
+
+.vod-layer::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: unset;
+  bottom: 0;
+  width: inherit;
+  height: 164px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #080d19);
+  opacity: 0.9;
+  z-index: 1;
+  content: none;
+}
+
+.vod-layer.bottom-cover::after {
+  content: '';
+}
+
+.vod-layer.active::before {
+  opacity: 1;
+}
+
+.vod-layer.active::after {
+  opacity: 1;
+}
+
+.vod-layer.active .scroll {
+  opacity: 1;
+}
+
+.vod-layer .cast-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: calc(80px - 4px) 0 0 80px;
+  overflow: hidden;
+}
+
+.vod-layer .contents-list-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: calc(80px - 2px) 0 0 80px;
+  overflow: hidden;
+}
+
+.vod-layer .contents-list-wrap .mask {
+  width: 100%;
+  height: 0;
+}
+
+.vod-layer .comment-wrap {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 220px);
+  overflow: hidden;
+}
+
+.vod-layer .product-title {
+  padding-top: 62px;
+  padding-left: 80px;
+  margin-bottom: 35px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 3rem;
+  color: #eee;
+}
+
+.vod-rating.bottom-cover::after, .series-rating.bottom-cover::after {
+  height: 50px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #080d19 74%);
+}
+
+.vod-rating .top-mask, .series-rating .top-mask {
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 10px, #080d19 20%);
+}
+
+.series-casting .active .contents-list li, .series-rating .active .contents-list li {
+  opacity: 0.5;
+}
+
+.series-casting .series-list-wrap .contents-list li {
+  margin-bottom: 48px;
+}
+
+.cast-list {
+  display: flex;
+  flex-flow: row wrap;
+  opacity: 0.5;
+}
+
+.cast-list li {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: flex-start;
+  justify-content: center;
+  width: 510px;
+  height: 144px;
+  margin-bottom: 80px;
+  margin-right: 37px;
+}
+
+.cast-list li:nth-child(even) {
+  margin-right: 0;
+}
+
+.active .cast-list {
+  opacity: 1;
+}
+
+.cast-list .meta-data {
+  display: flex;
+  flex-direction: column;
+  margin-left: 34px;
+}
+
+.cast-list .meta-data h4 {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 2.8rem;
+  color: #eee;
+  opacity: 0.8;
+}
+
+.cast-list .meta-data p {
+  display: block;
+  margin-top: 16px;
+  font-size: 2.2rem;
+  color: #999;
+}
+
+.cast-list .focus .meta-data h4, .cast-list .vod-button.selected .meta-data h4 {
+  font-size: 3rem;
+  opacity: 1;
+}
+
+.cast-list .focus .meta-data p, .cast-list .vod-button.selected .meta-data p {
+  font-size: 2.4rem;
+  color: #eee;
+  margin-top: 14px;
+}
+
+.cast-profile {
+  position: relative;
+  width: 144px;
+  height: 144px;
+}
+
+.cast-profile::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-image: url("../images/vod/img-character-default.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 0;
+}
+
+.cast-profile .profile-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+}
+
+.focus .cast-profile .profile-image, .vod-button.selected .cast-profile .profile-image {
+  transform: scale(1.06);
+  transform-origin: center;
+}
+
+.focus .cast-profile .profile-image::after, .vod-button.selected .cast-profile .profile-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 0 10px #eee;
+  border-radius: 8px;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+}
+
+.vod-layer .contents-list {
+  display: flex;
+}
+
+.vod-layer .contents-list li {
+  margin-bottom: 40px;
+  margin-left: 40px;
+}
+
+.vod-layer .contents-list li:first-child {
+  margin-left: 0 !important;
+}
+
+.vod-layer .contents-list li:nth-child(odd) {
+  margin-left: 0;
+}
+
+.vod-layer .contents-list li.vod .poster-component::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: unset;
+  left: unset;
+  right: 16px;
+  bottom: 16px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid #eee;
+  background-image: url("../images/vod/ic-play-w.png");
+  background-color: rgba(0, 0, 0, 0.2);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 23px;
+}
+
+.vod-layer .contents-list .focus .poster-thumbnail, .vod-layer .contents-list .vod-button.selected .poster-thumbnail {
+  transform-origin: center;
+}
+
+.vod-layer .contents-list .focus.vod .poster-component::after, .vod-layer .contents-list .vod.vod-button.selected .poster-component::after {
+  content: none;
+}
+
+.scene .top-mask, .most-viewed .top-mask, .vod-subscribe .top-mask {
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 10px, #080d19 20%);
+}
+
+.scene .contents-list, .most-viewed .contents-list, .vod-subscribe .contents-list {
+  flex-flow: row wrap;
+}
+
+.scene .contents-list .poster-horizontal, .most-viewed .contents-list .poster-horizontal, .vod-subscribe .contents-list .poster-horizontal {
+  width: 484px;
+  height: 274px;
+}
+
+.scene .contents-list .poster-component::before, .most-viewed .contents-list .poster-component::before, .vod-subscribe .contents-list .poster-component::before {
+  background-image: unset;
+  background-color: #080d19;
+  opacity: 0.2;
+}
+
+.scene .contents-list .meta-data, .most-viewed .contents-list .meta-data, .vod-subscribe .contents-list .meta-data {
+  display: none;
+}
+
+.scene .contents-list .focus .poster-component, .most-viewed .contents-list .focus .poster-component, .vod-subscribe .contents-list .focus .poster-component, .scene .contents-list .vod-button.selected .poster-component, .most-viewed .contents-list .vod-button.selected .poster-component, .vod-subscribe .contents-list .vod-button.selected .poster-component {
+  opacity: 0;
+}
+
+.most-viewed .banner {
+  margin-left: 0;
+}
+
+.most-viewed .banner .poster-horizontal {
+  width: 1008px;
+  height: 110px;
+}
+
+.rating-row {
+  position: relative;
+  padding: 0 42px;
+  opacity: 0.7;
+}
+
+.rating-row.active {
+  opacity: 1;
+  background-color: rgba(10, 15, 28, 0.5);
+  z-index: 0;
+}
+
+.rating-row.active .scroll {
+  opacity: 1;
+}
+
+.rating-row .rating-row-header {
+  padding: 80px 34px 0 34px;
+  margin-bottom: 24px;
+}
+
+.rating-row .rating-row-header h3 {
+  font-size: 3rem;
+  line-height: 40px;
+  margin-bottom: 12px;
+}
+
+.rating-row .rating-row-header .rating-info {
+  align-items: baseline;
+  margin-bottom: 0;
+}
+
+.rating-row .rating-row-header .rating-info .point {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 4.8rem;
+  margin-right: 18px;
+}
+
+.rating-row .rating-row-header .rating-info .point .base-point {
+  position: relative;
+  display: inline-block;
+  font-family: "Yoon Gothic 750", "YoonGothic 700 50", "Yoon윤고딕 750", "YoonGothic 750", "YOONGOTHICPRO750";
+  font-size: 2.6rem;
+  color: #eee;
+  padding-left: 15px;
+  margin-left: 12px;
+}
+
+.rating-row .rating-row-header .rating-info .point .base-point::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  content: '/';
+}
+
+.rating-row .rating-row-header .rating-info .rating-star-wrap {
+  align-items: flex-end;
+  height: 26px;
+  transform: translateY(2px);
+}
+
+.rating-row .rating-row-header .rating-info .rating-star-wrap .rating-star {
+  display: block;
+  width: 26px;
+  height: 26px;
+  margin-right: 2px;
+  background-image: url("../images/vod/ic-ratingstar-full-w.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.rating-row .rating-row-header .rating-info .rating-star-wrap .rating-star.full {
+  background-image: url("../images/vod/ic-ratingstar-full.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.rating-row .rating-row-header .rating-info .rating-star-wrap .rating-star.half {
+  background-image: url("../images/vod/ic-ratingstar-half.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.rating-row .rating-row-header .rating-info .rating-star-wrap .rating-star.empty {
+  background-image: url("../images/vod/ic-ratingstar-none.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.focus .rating-row .rating-row-header .rating-info .rating-star-wrap .rating-star, .vod-button.selected .rating-row .rating-row-header .rating-info .rating-star-wrap .rating-star {
+  background-image: url("../images/vod/ic-ratingstar-full.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.rating-row .rating-row-header .rating-info .rating-star-wrap .rating-num {
+  margin-left: 6px;
+  font-size: 2rem;
+  color: #777;
+}
+
+.rating-row .comment-wrap {
+  padding: 6px 34px 80px 34px;
+}
+
+.comment-list li {
+  position: relative;
+  padding: 40px 0;
+  margin-bottom: 4px;
+  border-bottom: 2px solid rgba(238, 238, 238, 0.08);
+}
+
+.comment-list li:last-child {
+  margin-bottom: 80px;
+}
+
+.comment-list li .comment-header {
+  display: flex;
+  align-items: center;
+  color: #d6d6d6;
+  margin-bottom: 10px;
+  line-height: 32px;
+}
+
+.comment-list li .comment-header .point {
+  width: 42px;
+  font-size: 2.4rem;
+  margin-right: 8px;
+}
+
+.comment-list li .comment-header .name {
+  font-size: 2.2rem;
+}
+
+.comment-list li .comments {
+  font-size: 2.2rem;
+  color: #a9a9a9;
+  line-height: 1.73;
+  word-break: break-all;
+  overflow: hidden;
+  display: -webkit-box;
+  white-space: normal;
+  /*! autoprefixer: off */
+  -webkit-line-clamp: 10;
+  /*! autoprefixer: on */
+  -webkit-box-orient: vertical;
+}
+
+.comment-list li .trans-language {
+  position: absolute;
+  right: 0;
+  opacity: 0.7;
+}
+
+.comment-list li .trans-language .keyguide {
+  display: none;
+}
+
+.comment-list li .trans-language .text {
+  width: 62px;
+  line-height: 28px;
+  font-size: 1.6rem;
+  color: #a9a9a9;
+  padding-bottom: 2px;
+  text-decoration: underline;
+}
+
+.comment-list li.focus, .comment-list li.vod-button.selected {
+  z-index: 1;
+}
+
+.comment-list li.focus .comment-header, .comment-list li.vod-button.selected .comment-header {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  color: #eee;
+}
+
+.comment-list li.focus .comment-wrap, .comment-list li.vod-button.selected .comment-wrap {
+  padding-top: 9px;
+}
+
+.comment-list li.focus .comments, .comment-list li.vod-button.selected .comments {
+  color: #eee;
+}
+
+.comment-list li.focus .trans-language, .comment-list li.vod-button.selected .trans-language {
+  opacity: 1;
+  height: 72px;
+  text-decoration: none;
+  right: -28px;
+  bottom: -94px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 237px;
+}
+
+.comment-list li.focus .trans-language span, .comment-list li.vod-button.selected .trans-language span {
+  z-index: 2;
+}
+
+.comment-list li.focus .trans-language::before, .comment-list li.vod-button.selected .trans-language::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: -6px;
+  left: unset;
+  right: 48px;
+  width: 16px;
+  height: 18px;
+  border-left: 8px solid #2A2C3E;
+  border-bottom: 8px solid #2A2C3E;
+  border-radius: 4px;
+  transform: rotate(145deg) skewY(-20deg);
+}
+
+.comment-list li.focus .trans-language::after, .comment-list li.vod-button.selected .trans-language::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: unset;
+  width: inherit;
+  height: 72px;
+  border-radius: 16px;
+  background-color: #2A2C3E;
+  z-index: 1;
+}
+
+.comment-list li.focus .trans-language .text, .comment-list li.vod-button.selected .trans-language .text {
+  width: unset;
+  font-size: 2.4rem;
+  color: #eee;
+  text-decoration: none;
+}
+
+.comment-list li.focus .trans-language .keyguide, .comment-list li.vod-button.selected .trans-language .keyguide {
+  position: relative;
+  display: block;
+  width: 98px;
+  height: 34px;
+  margin-right: 12px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 1.8rem;
+  color: #eee;
+  padding: 0 10px;
+  line-height: 30px;
+  border-radius: 18px;
+  text-decoration: none;
+  border: 2px solid #eee;
+}
+
+.comment-list li.focus::after, .comment-list li.vod-button.selected::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  left: -28px;
+  width: calc(100% + 28px * 2);
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 0 6px #eee;
+  background-color: #0a0f1c;
+  z-index: -1;
+}
+
+.rating-wrap {
+  display: flex;
+  height: 100%;
+}
+
+.rating-wrap.full .rating-row {
+  padding: 0 26px;
+}
+
+.rating-wrap.full .rating-row .rating-row-header {
+  padding: 80px 26px 0 26px;
+}
+
+.rating-wrap.full .rating-row .rating-row-header h3 {
+  font-size: 2.6rem;
+  line-height: 36px;
+}
+
+.rating-wrap.full .rating-row .rating-row-header .rating-info {
+  flex-flow: row wrap;
+}
+
+.rating-wrap.full .rating-row .rating-row-header .rating-info .point {
+  font-size: 4.2rem;
+  margin-bottom: 6px;
+}
+
+.rating-wrap.full .rating-row .comment-wrap {
+  height: calc(100% - 240px);
+  padding: 6px 26px 0 26px;
+}
+
+.rating-wrap.full .rating-row li.focus::after, .rating-wrap.full .rating-row li.vod-button.selected::after {
+  left: -20px;
+  width: calc(100% + 20px * 2);
+}
+
+.rating-wrap.full .rating-row li.focus .trans-language, .rating-wrap.full .rating-row li.vod-button.selected .trans-language {
+  right: -20px;
+}
+
+.season-tab-wrap {
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  width: 100%;
+  height: calc(60px + 46px + 6px * 2);
+  padding-top: 46px;
+  margin-bottom: 32px;
+}
+
+.season-tab-wrap .season-tab {
+  font-size: 3rem;
+  color: #989b9b;
+}
+
+.season-tab-wrap .season-tab p {
+  width: 124px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.season-tab-wrap .season-tab.tab1 {
+  order: 2;
+}
+
+.season-tab-wrap .season-tab.tab2 {
+  order: 3;
+}
+
+.season-tab-wrap .season-tab.tab3 {
+  text-align: right;
+  order: 1;
+}
+
+.season-tab-wrap .season-tab:not(.tab1) {
+  margin: 0 30px;
+  display: none;
+}
+
+.season-tab-wrap .season-tab.tab1 .tab-focus {
+  position: relative;
+  font-size: 3rem;
+  color: #989b9b;
+  line-height: 60px;
+  text-align: center;
+  color: #a9a9a9;
+  height: 60px;
+  padding: 0 52px;
+  opacity: 0.9;
+}
+
+.season-tab-wrap .season-tab.tab1 .tab-focus::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: calc(50% - (40px / 2));
+  left: 22px;
+  width: 20px;
+  height: 40px;
+  background-image: url("../images/vod/ic-season-arrow.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.season-tab-wrap .season-tab.tab1 .tab-focus::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: calc(50% - (40px / 2));
+  left: unset;
+  right: 22px;
+  width: 20px;
+  height: 40px;
+  background-image: url("../images/vod/ic-season-arrow.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(180deg);
+}
+
+.season-tab-wrap .season-tab.tab1 .focus, .season-tab-wrap .season-tab.tab1 .vod-button.selected {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 3.2rem;
+  color: #eee;
+  background-color: #111424;
+  box-shadow: 0 0 0 6px #eee;
+  border-radius: 8px;
+}
+
+.season-tab-wrap .season-tab.tab1 .focus::before, .season-tab-wrap .season-tab.tab1 .vod-button.selected::before {
+  background-image: url("../images/vod/ic-season-arrow-focus.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.season-tab-wrap .season-tab.tab1 .focus::after, .season-tab-wrap .season-tab.tab1 .vod-button.selected::after {
+  background-image: url("../images/vod/ic-season-arrow-focus.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(180deg);
+}
+
+.season-tab-wrap.active .tab2, .season-tab-wrap.active .tab3 {
+  display: block;
+  opacity: 1;
+}
+
+.season-tab-wrap + .series-list-wrap {
+  height: calc(100% - 158px);
+}
+
+.season-tab-wrap + .series-list-wrap .rating-row {
+  padding-top: 10px;
+}
+
+.season-tab-wrap + .contents-list-wrap {
+  padding-top: 0;
+}
+
+.season-tab-wrap + .contents-list-wrap .mask {
+  width: 100%;
+  height: 18px;
+}
+
+.season-tab-wrap.long-tab .season-tab .focus .text-wrap, .season-tab-wrap.long-tab .season-tab .vod-button.selected .text-wrap {
+  width: 320px;
+  overflow: hidden;
+}
+
+.season-tab-wrap.long-tab .season-tab:not(.tab1) {
+  margin: 0 23px;
+}
+
+.season-tab-wrap.long-tab .season-tab p {
+  width: 320px;
+  margin-left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.episode .contents-list-wrap, .package .contents-list-wrap {
+  position: relative;
+  width: 100%;
+  padding-left: 80px;
+  overflow: hidden;
+}
+
+.episode .season-tab-wrap + .contents-list-wrap, .package .season-tab-wrap + .contents-list-wrap {
+  height: calc(100% - 158px);
+}
+
+.episode .contents-list, .package .contents-list {
+  flex-direction: column;
+}
+
+.episode .contents-list li, .package .contents-list li {
+  display: flex;
+  margin-left: 0;
+  margin-bottom: 48px;
+}
+
+.episode .contents-list li:last-child, .package .contents-list li:last-child {
+  margin-bottom: 159px;
+}
+
+.episode .contents-list li .poster-horizontal, .package .contents-list li .poster-horizontal {
+  width: 384px;
+  height: 218px;
+}
+
+.episode .contents-list li .meta-data, .package .contents-list li .meta-data {
+  width: 550px;
+  margin-left: 48px;
+  overflow: hidden;
+}
+
+.episode .contents-list li .default-info, .package .contents-list li .default-info {
+  margin-top: 10px;
+}
+
+.episode .contents-list li .poster-component::before, .package .contents-list li .poster-component::before {
+  background-size: 100% 88px;
+  opacity: 0;
+}
+
+.episode .contents-list li .poster-component .poster-time dt, .package .contents-list li .poster-component .poster-time dt {
+  font-size: 2.2rem;
+  color: #eee;
+  opacity: 1;
+}
+
+.episode .contents-list li .poster-component .poster-time dt::before, .package .contents-list li .poster-component .poster-time dt::before {
+  content: none;
+}
+
+.episode .contents-list li .poster-component .poster-time dt.watch-complete::before, .package .contents-list li .poster-component .poster-time dt.watch-complete::before {
+  content: '';
+}
+
+.episode .contents-list li .poster-component .poster-time dd, .package .contents-list li .poster-component .poster-time dd {
+  background-color: #3a3a3a;
+}
+
+.episode .contents-list li .history-bg .poster-component::before, .package .contents-list li .history-bg .poster-component::before {
+  opacity: 1;
+}
+
+.episode .contents-list li .content-info, .package .contents-list li .content-info {
+  margin-bottom: 10px;
+}
+
+.episode .contents-list li .content-info p, .package .contents-list li .content-info p {
+  font-size: 2rem;
+  color: #666;
+}
+
+.episode .contents-list li h4, .package .contents-list li h4 {
+  display: flex;
+  width: 550px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 2.8rem;
+  color: #eee;
+  line-height: 36px;
+  white-space: nowrap;
+  opacity: 0.8;
+}
+
+.episode .contents-list li h4 p, .package .contents-list li h4 p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.episode .contents-list li h4 .subtitle, .package .contents-list li h4 .subtitle {
+  font-family: "Yoon Gothic 750", "YoonGothic 700 50", "Yoon윤고딕 750", "YoonGothic 750", "YOONGOTHICPRO750";
+  font-style: normal;
+  margin-left: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.episode .contents-list li .default-info, .package .contents-list li .default-info {
+  margin-bottom: 8px;
+  line-height: 26px;
+}
+
+.episode .contents-list li .staff, .package .contents-list li .staff {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 550px;
+}
+
+.episode .contents-list li .staff .label, .package .contents-list li .staff .label {
+  margin-right: 2px;
+  margin-left: 10px;
+}
+
+.episode .contents-list li .staff .label:first-child, .package .contents-list li .staff .label:first-child {
+  margin-left: 0;
+}
+
+.episode .contents-list li .summary-wrap, .package .contents-list li .summary-wrap {
+  position: relative;
+}
+
+.episode .contents-list li .summary, .package .contents-list li .summary {
+  width: 550px;
+  font-size: 2.4rem;
+  color: #777;
+  line-height: 36px;
+  overflow: hidden;
+  display: -webkit-box;
+  white-space: normal;
+  /*! autoprefixer: off */
+  -webkit-line-clamp: 2;
+  /*! autoprefixer: on */
+  -webkit-box-orient: vertical;
+}
+
+.episode .contents-list li .more-button, .package .contents-list li .more-button {
+  position: absolute;
+  right: 0px;
+  bottom: 4px;
+}
+
+.episode .contents-list li .more-button .more-info, .package .contents-list li .more-button .more-info {
+  display: inline-block;
+  width: 76px;
+  height: 30px;
+  font-size: 1.8rem;
+  color: rgba(169, 169, 169, 0.7);
+  text-align: center;
+  line-height: 30px;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+.episode .contents-list li .more-button .more-info.focus, .package .contents-list li .more-button .more-info.focus, .episode .contents-list li .more-button .more-info.vod-button.selected, .package .contents-list li .more-button .more-info.vod-button.selected {
+  color: #080d19;
+  border: 2px solid #eee;
+  background-color: #eee;
+  border-radius: 4px;
+  line-height: calc(30px - 2px * 2);
+  text-decoration: none;
+}
+
+.episode .contents-list li .more-button::before, .package .contents-list li .more-button::before {
+  top: -9px;
+  font-size: 2.4rem;
+}
+
+.episode .contents-list li .purchase-guide, .package .contents-list li .purchase-guide {
+  margin-top: 2px;
+}
+
+.episode .contents-list li .purchase-guide p, .package .contents-list li .purchase-guide p {
+  line-height: 28px;
+}
+
+.episode .contents-list li .purchase-guide .coupon-info, .package .contents-list li .purchase-guide .coupon-info {
+  display: none;
+}
+
+.episode .contents-list li .purchase-guide .update-info, .package .contents-list li .purchase-guide .update-info {
+  color: #eee;
+  opacity: 0.8;
+}
+
+.episode .contents-list .focus .poster-component::before, .package .contents-list .focus .poster-component::before, .episode .contents-list .vod-button.selected .poster-component::before, .package .contents-list .vod-button.selected .poster-component::before, .episode .contents-list .selected .poster-component::before, .package .contents-list .selected .poster-component::before {
+  opacity: 0;
+}
+
+.episode .contents-list .focus .poster-component .poster-button, .package .contents-list .focus .poster-component .poster-button, .episode .contents-list .vod-button.selected .poster-component .poster-button, .package .contents-list .vod-button.selected .poster-component .poster-button, .episode .contents-list .selected .poster-component .poster-button, .package .contents-list .selected .poster-component .poster-button {
+  display: block;
+}
+
+.episode .contents-list .focus *, .package .contents-list .focus *, .episode .contents-list .vod-button.selected *, .package .contents-list .vod-button.selected *, .episode .contents-list .selected *, .package .contents-list .selected * {
+  opacity: 1;
+}
+
+.episode .contents-list .focus .content-info p, .package .contents-list .focus .content-info p, .episode .contents-list .vod-button.selected .content-info p, .package .contents-list .vod-button.selected .content-info p, .episode .contents-list .selected .content-info p, .package .contents-list .selected .content-info p {
+  color: #a9a9a9;
+}
+
+.episode .contents-list .focus .summary, .package .contents-list .focus .summary, .episode .contents-list .vod-button.selected .summary, .package .contents-list .vod-button.selected .summary, .episode .contents-list .selected .summary, .package .contents-list .selected .summary {
+  color: #ddd;
+}
+
+.episode .contents-list .focus .purchase-guide .coupon-info, .package .contents-list .focus .purchase-guide .coupon-info, .episode .contents-list .vod-button.selected .purchase-guide .coupon-info, .package .contents-list .vod-button.selected .purchase-guide .coupon-info, .episode .contents-list .selected .purchase-guide .coupon-info, .package .contents-list .selected .purchase-guide .coupon-info {
+  display: flex;
+  align-items: center;
+}
+
+.episode .contents-list .selected .poster-thumbnail::after, .package .contents-list .selected .poster-thumbnail::after {
+  content: none;
+}
+
+.season-tab-wrap + .series-list-wrap .contents-list-wrap {
+  padding-top: 0;
+}
+
+.season-tab-wrap + .series-list-wrap .contents-list-wrap .mask {
+  width: 100%;
+  height: 18px;
+}
+
+.season-tab-wrap + .series-list-wrap .cast-wrap {
+  padding-top: 0;
+}
+
+.season-tab-wrap + .series-list-wrap .cast-wrap .mask {
+  width: 100%;
+  height: 15px;
+}
+
+.series-list-wrap {
+  display: flex;
+  height: 100%;
+}
+
+.series-list-wrap .contents-list-wrap {
+  flex: 0 0 533px;
+  padding: calc(80px - 2px) 0 0 80px;
+}
+
+.series-list-wrap .contents-list-wrap::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: 10px;
+  left: unset;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.series-list-wrap .contents-list {
+  flex-direction: column;
+}
+
+.series-list-wrap .contents-list .poster-horizontal {
+  width: 384px;
+  height: 218px;
+}
+
+.series-list-wrap .contents-list .poster-component::before {
+  opacity: 1;
+}
+
+.series-list-wrap .contents-list .poster-component h4 {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  font-family: "Yoon Gothic 750", "YoonGothic 700 50", "Yoon윤고딕 750", "YoonGothic 750", "YOONGOTHICPRO750";
+  font-size: 2.2rem;
+  line-height: 2.8rem;
+}
+
+.series-list-wrap .contents-list .meta-data {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  margin-left: 0;
+}
+
+.series-list-wrap .contents-list .meta-data.no-subtitle {
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.series-list-wrap .contents-list .meta-data.no-subtitle .subtitle {
+  opacity: 0;
+}
+
+.series-list-wrap .contents-list .meta-data.no-subtitle .default-info {
+  margin-top: 0;
+}
+
+.series-list-wrap .contents-list h4 {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 2.6rem;
+  line-height: 34px;
+}
+
+.series-list-wrap .contents-list h4 span {
+  font-family: "Yoon Gothic 750", "YoonGothic 700 50", "Yoon윤고딕 750", "YoonGothic 750", "YOONGOTHICPRO750";
+  margin-left: 14px;
+}
+
+.series-list-wrap .contents-list .default-info {
+  height: 24px;
+  font-size: 1.9rem;
+  color: #eee;
+  line-height: 24px;
+  white-space: nowrap;
+  margin-top: 9px;
+  margin-bottom: 0;
+  opacity: 0.4;
+}
+
+.series-list-wrap .contents-list .default-info span:last-child {
+  margin-right: 0;
+}
+
+.series-list-wrap .contents-list li {
+  flex-direction: column;
+  margin-left: 0;
+  margin-bottom: 39px;
+  opacity: 1;
+}
+
+.series-list-wrap .contents-list li.focus, .series-list-wrap .contents-list li.vod-button.selected, .series-list-wrap .contents-list li.selected {
+  opacity: 1;
+}
+
+.series-list-wrap .contents-list li.focus .default-info, .series-list-wrap .contents-list li.vod-button.selected .default-info, .series-list-wrap .contents-list li.selected .default-info {
+  opacity: 0.8;
+}
+
+.series-list-wrap .contents-list li.focus .poster-component::before, .series-list-wrap .contents-list li.vod-button.selected .poster-component::before, .series-list-wrap .contents-list li.selected .poster-component::before {
+  opacity: 1;
+}
+
+.series-list-wrap .contents-list li.focus .poster-component h4, .series-list-wrap .contents-list li.vod-button.selected .poster-component h4, .series-list-wrap .contents-list li.selected .poster-component h4 {
+  position: absolute;
+  left: 8px;
+  bottom: 14px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 2.2rem;
+  line-height: 2.8rem;
+}
+
+.series-list-wrap .contents-list li.focus .poster-component h4::before, .series-list-wrap .contents-list li.vod-button.selected .poster-component h4::before, .series-list-wrap .contents-list li.selected .poster-component h4::before {
+  display: inline-block;
+  content: '';
+  width: 26px;
+  height: 26px;
+  margin-right: 8px;
+  vertical-align: bottom;
+  background-image: url("../images/vod/ic-character-select.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.series-list-wrap .contents-list li.selected .poster-thumbnail::after {
+  box-shadow: 0;
+}
+
+.series-list-wrap .rating-row {
+  padding: 64px 15px 0 15px;
+  margin-right: 67px;
+}
+
+.series-list-wrap .rating-row.active {
+  background-color: unset;
+}
+
+.series-list-wrap .rating-row .rating-row-header {
+  padding: 0 28px;
+}
+
+.series-list-wrap .rating-row .comment-wrap {
+  height: calc(100% - 140px);
+  padding: 0 28px 0 28px;
+}
+
+.series-list-wrap .rating-row .comment-wrap .mask {
+  height: 6px;
+}
+
+.series-list-wrap .rating-row li.focus::after, .series-list-wrap .rating-row li.vod-button.selected::after {
+  left: -21px;
+  width: calc(100% + 21px * 2);
+  background-color: unset;
+}
+
+.series-list-wrap .cast-wrap {
+  margin-left: 60px;
+  padding: calc(80px - 7px) 0 0 15px;
+}
+
+.series-list-wrap .list-empty {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 368px;
+  height: calc(100% - 6px);
+  margin-top: -160px;
+  margin-left: 48px;
+  font-family: "Yoon Gothic 750", "YoonGothic 700 50", "Yoon윤고딕 750", "YoonGothic 750", "YOONGOTHICPRO750";
+  font-size: 22px;
+  color: #999;
+}
+
+.series-list-wrap .list-empty::before {
+  display: block;
+  content: '';
+  width: 140px;
+  height: 140px;
+  margin-bottom: 12px;
+  background-image: url("../images/vod/img-detail-review-empty.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.package .contents-list-wrap {
+  padding-top: 0;
+  height: calc(100% - 137px);
+}
+
+.package .contents-list-wrap .mask {
+  height: 18px;
+}
+
+.package .contents-list-wrap .content-info {
+  margin-top: 8px;
+}
+
+.package .contents-list-wrap .content-info p {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.package .contents-list-wrap .content-info p:first-child {
+  margin-bottom: 0;
+}
+
+.package .contents-list-wrap .content-info p span:first-child {
+  margin-left: 0;
+}
+
+.package .contents-list-wrap h4 {
+  margin-top: -4px;
+}
+
+.vod-subscribe .summary-info {
+  transform: translateY(-37px);
+}
+
+.vod-subscribe .summary-info .product-info {
+  font-size: 2.6rem;
+  line-height: 44px;
+  color: #eee;
+  opacity: 0.75;
+}
+
+.vod-subscribe .contents-list-wrap {
+  padding-top: 0;
+  height: calc(100% - 137px);
+}
+
+.vod-subscribe .contents-list-wrap .mask {
+  height: 18px;
+}
+
+.vod-layer-footer {
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px 50px;
+  width: 1200px;
+  left: calc(100vw - 1200px);
+  bottom: 0;
+  z-index: 2;
+}
+
+.scroll {
+  position: absolute;
+  top: 164px;
+  right: 50px;
+  width: 8px;
+  height: 752px;
+  border-radius: calc(8px / 2);
+  background-color: rgba(238, 238, 238, 0.1);
+  z-index: 1;
+  opacity: 0;
+}
+
+.scroll span {
+  display: inline-block;
+  width: 100%;
+  border-radius: calc(8px / 2);
+  background-color: #a9a9a9;
+}
+
+.vod-rating .scroll {
+  position: absolute;
+  top: 220px;
+  right: 12px;
+  width: 6px;
+  height: 696px;
+  border-radius: calc(6px / 2);
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1;
+}
+
+.vod-rating .scroll span {
+  display: inline-block;
+  width: 100%;
+  border-radius: calc(6px / 2);
+  background-color: #a9a9a9;
+}
+
+.vod-rating .full .scroll {
+  position: absolute;
+  top: 240px;
+  right: 12px;
+  width: 6px;
+  height: 696px;
+  border-radius: calc(6px / 2);
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1;
+}
+
+.vod-rating .full .scroll span {
+  display: inline-block;
+  width: 100%;
+  border-radius: calc(6px / 2);
+  background-color: #a9a9a9;
+}
+
+.casting-info.full-popup-container {
+  background-color: rgba(8, 13, 25, 0.95);
+}
+
+.casting-info .contents-wrap {
+  height: 100%;
+}
+
+.casting-header {
+  display: flex;
+  align-items: center;
+  padding: 44px 120px;
+}
+
+.casting-header .casting-default-info {
+  display: flex;
+  align-items: center;
+}
+
+.casting-header .casting-default-info .meta-data {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin-left: 40px;
+}
+
+.casting-header .casting-default-info .meta-data h3 {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 3.4rem;
+  opacity: 1;
+  order: 2;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.casting-header .casting-default-info .meta-data p {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 2.6rem;
+  color: #eee;
+  order: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.casting-header .casting-default-info .meta-data .optional-info {
+  position: relative;
+  font-size: 2.2rem;
+  color: #999;
+  margin-top: 10px;
+  order: 3;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.casting-header .casting-default-info .meta-data .optional-info span + span::before {
+  display: inline-block;
+  content: '';
+  width: 2px;
+  height: 20px;
+  vertical-align: middle;
+  background-color: rgba(255, 255, 255, 0.12);
+  margin: -2px 12px 0 12px;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 2.6rem;
+  line-height: 44px;
+  color: #a9a9a9;
+  padding-left: 62px;
+  margin-left: 60px;
+  overflow: hidden;
+  display: -webkit-box;
+  white-space: normal;
+  /*! autoprefixer: off */
+  -webkit-line-clamp: 3;
+  /*! autoprefixer: on */
+  -webkit-box-orient: vertical;
+}
+
+.profile-info::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: calc(50% - 100px / 2);
+  width: 2px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.casting-works {
+  width: 100%;
+  height: 848px;
+  background-color: rgba(238, 238, 238, 0.05);
+  padding-top: 40px;
+}
+
+.casting-works .works-kind {
+  padding-left: 120px;
+  margin-top: 21px;
+}
+
+.casting-works .works-kind:first-child {
+  margin-top: 0;
+}
+
+.casting-works h3.title {
+  font-size: 3.2rem;
+  margin-bottom: 21px;
+}
+
+.casting-works .contents-list {
+  display: flex;
+}
+
+.casting-works .contents-list li {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16px;
+  margin-bottom: 0;
+}
+
+.casting-works .contents-list li:first-child {
+  margin-left: 0;
+}
+
+.casting-works .contents-list li:last-child {
+  padding-right: 120px;
+}
+
+.casting-works .contents-list .meta-data {
+  margin-top: 22px;
+}
+
+.casting-works .contents-list .meta-data .title {
+  width: 380px;
+  font-family: "Yoon Gothic 750", "YoonGothic 700 50", "Yoon윤고딕 750", "YoonGothic 750", "YOONGOTHICPRO750";
+  font-size: 3rem;
+  height: 38px;
+  margin-right: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  opacity: 1;
+}
+
+.casting-works .contents-list .meta-data .sub-text {
+  width: 380px;
+  font-size: 2.4rem;
+  color: #999;
+  margin-top: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  opacity: 0;
+}
+
+.casting-works .contents-list .focus:first-child .poster-horizontal::before, .casting-works .contents-list .vod-button.selected:first-child .poster-horizontal::before {
+  transform-origin: left;
+}
+
+.casting-works .contents-list .focus:first-child .poster-thumbnail, .casting-works .contents-list .vod-button.selected:first-child .poster-thumbnail {
+  transform-origin: left;
+}
+
+.casting-works .contents-list .focus .sub-text, .casting-works .contents-list .vod-button.selected .sub-text {
+  opacity: 1;
+}
+
+.full-popup-container .page-header {
+  text-align: center;
+  padding-top: 106px;
+  margin-bottom: 93px;
+}
+
+.full-popup-container .page-header h3 {
+  position: relative;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 5.2rem;
+  color: #eee;
+}
+
+.full-popup-container .page-header h3::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: unset;
+  bottom: -51px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 82px;
+  height: 4px;
+  background-color: rgba(238, 238, 238, 0.3);
+}
+
+.full-popup-container .body-text {
+  font-size: 3.6rem;
+  text-align: center;
+  margin-bottom: 62px;
+}
+
+.full-popup-container .button-area {
+  height: 98px;
+}
+
+.vod-purchase {
+  display: flex;
+  padding: 148px 160px 52px 110px;
+}
+
+.vod-purchase .series-info {
+  padding-right: 80px;
+}
+
+.vod-purchase .series-info h3 {
+  width: 728px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 52px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.vod-purchase .series-info .content-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.vod-purchase .series-info .content-info .default-info {
+  font-size: 2.6rem;
+  line-height: 38px;
+  margin-right: 20px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.vod-purchase .series-info .content-info .default-info span {
+  margin-left: 20px;
+}
+
+.vod-purchase .series-info .content-info .default-info span:first-child {
+  margin-left: 0;
+}
+
+.vod-purchase .series-info .content-info .default-info span::before {
+  height: 24px;
+  margin-right: 20px;
+  margin-bottom: -2px;
+  background-color: #eee;
+  opacity: 1;
+}
+
+.vod-purchase .series-info .content-info .meta-tag {
+  position: relative;
+  margin-bottom: 0;
+}
+
+.vod-purchase .series-info .content-info .meta-tag::before {
+  display: inline-block;
+  content: '';
+  margin-right: 20px;
+  width: 2px;
+  height: 24px;
+  background-color: #eee;
+}
+
+.vod-purchase .series-info .summary {
+  font-size: 2.6rem;
+  color: #848484;
+  line-height: 40px;
+  height: 80px;
+  overflow: hidden;
+  display: -webkit-box;
+  white-space: normal;
+  /*! autoprefixer: off */
+  -webkit-line-clamp: 2;
+  /*! autoprefixer: on */
+  -webkit-box-orient: vertical;
+  margin-bottom: 109px;
+}
+
+.vod-purchase .series-info .poster-horizontal {
+  width: 696px;
+  height: 348px;
+}
+
+.vod-purchase .purchase-option {
+  padding-left: 82px;
+}
+
+.vod-purchase .purchase-option::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: 27px;
+  width: 1px;
+  height: 724px;
+  background-color: rgba(238, 238, 238, 0.2);
+}
+
+.vod-purchase .option-list-wrap {
+  height: 756px;
+  margin-bottom: 32px;
+  overflow: hidden;
+}
+
+.vod-purchase .option-list li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 760px;
+  height: 139px;
+  padding: 0 36px 0 24px;
+  border-bottom: 1px solid #2A2C3E;
+  opacity: 0.9;
+}
+
+.vod-purchase .option-list li .label {
+  font-size: 3.4rem;
+  color: #a9a9a9;
+}
+
+.vod-purchase .option-list li .price {
+  width: 230px;
+  text-align: right;
+}
+
+.vod-purchase .option-list li .price .number {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 3.4rem;
+  color: #a9a9a9;
+}
+
+.vod-purchase .option-list li .price .sub-text {
+  margin-top: 12px;
+  font-size: 2.2rem;
+  color: #777;
+  opacity: 1;
+}
+
+.vod-purchase .option-list li .purchase-guide {
+  position: absolute;
+  left: 0;
+  bottom: -40px;
+  display: none;
+}
+
+.vod-purchase .option-list .focus, .vod-purchase .option-list .vod-button.selected {
+  height: 136px;
+  margin-top: 27px;
+  border-radius: 8px;
+  border: 4px solid #eee;
+  background-color: #2A2C3E;
+  padding: 0 calc(36px - 4px) 0 calc(24px - 4px);
+  opacity: 1;
+  margin-bottom: 37px;
+}
+
+.vod-purchase .option-list .focus .label, .vod-purchase .option-list .vod-button.selected .label {
+  font-size: 3.8rem;
+  color: #eee;
+}
+
+.vod-purchase .option-list .focus .price .number, .vod-purchase .option-list .vod-button.selected .price .number {
+  font-size: 3.8rem;
+  color: #ef3484;
+}
+
+.vod-purchase .option-list .focus .price .sub-text, .vod-purchase .option-list .vod-button.selected .price .sub-text {
+  font-size: 2.4rem;
+  color: #eee;
+}
+
+.vod-purchase .option-list .focus .purchase-guide, .vod-purchase .option-list .vod-button.selected .purchase-guide {
+  display: block;
+}
+
+.package-purchase .contents {
+  margin-bottom: 62px;
+}
+
+.package-purchase .contents-list-wrap {
+  padding-left: 282px;
+}
+
+.package-purchase .contents-list-wrap .contents-list {
+  display: flex;
+  align-items: center;
+}
+
+.package-purchase .contents-list-wrap .contents-list li {
+  margin-left: 18px;
+  margin-bottom: 0;
+}
+
+.package-purchase .contents-list-wrap .contents-list li:first-child {
+  margin-left: 0;
+}
+
+.package-purchase .contents-list-wrap .contents-list .poster-horizontal {
+  width: 268px;
+  height: 148px;
+}
+
+.package-list-wrap {
+  height: 276px;
+  margin-bottom: 28px;
+}
+
+.package-list-wrap .contents-list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.package-list-wrap .contents-list li {
+  flex-direction: column;
+  margin-left: 18px;
+  margin-bottom: 0;
+  opacity: 0.5;
+}
+
+.package-list-wrap .contents-list li:first-child {
+  margin-left: 0;
+}
+
+.package-list-wrap .contents-list li .poster-horizontal {
+  width: 326px;
+  height: 180px;
+}
+
+.package-list-wrap .contents-list li .meta-data {
+  margin-top: 10px;
+}
+
+.package-list-wrap .contents-list li .meta-data h4 {
+  width: 326px;
+  font-family: "Yoon Gothic 750", "YoonGothic 700 50", "Yoon윤고딕 750", "YoonGothic 750", "YOONGOTHICPRO750";
+  font-size: 2.8rem;
+  color: #999;
+  margin-right: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  white-space: normal;
+  /*! autoprefixer: off */
+  -webkit-line-clamp: 2;
+  /*! autoprefixer: on */
+  -webkit-box-orient: vertical;
+}
+
+.package-list-wrap .contents-list li.focus, .package-list-wrap .contents-list li.vod-button.selected {
+  opacity: 1;
+}
+
+.package-list-wrap .contents-list li.focus .meta-data, .package-list-wrap .contents-list li.vod-button.selected .meta-data {
+  margin-top: 16px;
+}
+
+.package-list-wrap .contents-list li.focus .meta-data h4, .package-list-wrap .contents-list li.vod-button.selected .meta-data h4 {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 3rem;
+  color: #eee;
+}
+
+.package-list-wrap .contents-list li.selected {
+  opacity: 1;
+}
+
+.package-list-wrap .contents-list li.selected .poster-horizontal .poster-thumbnail {
+  transform: none;
+}
+
+.package-list-wrap .contents-list li.selected .poster-horizontal::before {
+  transform: none;
+}
+
+.package-list-wrap .contents-list li.selected .meta-data {
+  margin-top: 10px;
+}
+
+.package-list-wrap .contents-list li.selected .meta-data h4 {
+  margin-top: 10px;
+  font-family: "Yoon Gothic 750", "YoonGothic 700 50", "Yoon윤고딕 750", "YoonGothic 750", "YOONGOTHICPRO750";
+  color: #999;
+}
+
+.package-list-wrap.active li {
+  opacity: 1;
+}
+
+.select-language .page-header {
+  text-align: center;
+  padding-top: 180px;
+  margin-bottom: 92px;
+}
+
+.select-language .page-header h3 {
+  position: relative;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 5.2rem;
+  color: #eee;
+}
+
+.select-language .page-header h3::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: unset;
+  bottom: -51px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 82px;
+  height: 4px;
+  background-color: rgba(238, 238, 238, 0.3);
+}
+
+.select-language .language-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.select-language .language-list li {
+  position: relative;
+  width: 222px;
+  height: 230px;
+  text-align: center;
+  border: 2px solid rgba(192, 192, 192, 0.22);
+  padding: 24px;
+  margin-left: 44px;
+  border-radius: 8px;
+}
+
+.select-language .language-list li::before {
+  display: block;
+  content: '';
+  position: relative;
+  width: 124px;
+  height: 124px;
+  margin: 0 auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+}
+
+.select-language .language-list li h4 {
+  position: relative;
+  font-size: 2.6rem;
+  color: #999;
+  margin-top: 16px;
+  z-index: 1;
+}
+
+.select-language .language-list li .purchase-guide {
+  position: relative;
+  margin-top: 46px;
+  margin-left: -30px;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.select-language .language-list li .purchase-guide p {
+  display: none;
+}
+
+.select-language .language-list li .purchase-guide p::before {
+  content: none;
+}
+
+.select-language .language-list li:first-child {
+  margin-left: 0;
+}
+
+.select-language .language-list .kor-subtitle::before {
+  background-image: url("../images/vod/ic-language-korean.png");
+}
+
+.select-language .language-list .kor-dubbing::before {
+  background-image: url("../images/vod/ic-language-voice.png");
+}
+
+.select-language .language-list .focus, .select-language .language-list .vod-button.selected {
+  border: 0;
+}
+
+.select-language .language-list .focus::after, .select-language .language-list .vod-button.selected::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  transform: scale(1.06);
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  background-color: #ef3484;
+  border-radius: 8px;
+}
+
+.select-language .language-list .focus h4, .select-language .language-list .vod-button.selected h4 {
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 2.8rem;
+  color: #eee;
+}
+
+.select-language .language-list .focus .purchase-guide p, .select-language .language-list .vod-button.selected .purchase-guide p {
+  display: block;
+}
+
+.select-language .language-list .focus.kor-subtitle::before, .select-language .language-list .kor-subtitle.vod-button.selected::before {
+  background-image: url("../images/vod/ic-language-korean-focus.png");
+}
+
+.select-language .language-list .focus.kor-dubbing::before, .select-language .language-list .kor-dubbing.vod-button.selected::before {
+  background-image: url("../images/vod/ic-language-voice-focus.png");
+}
+
+.select-language .contents {
+  margin-bottom: 108px;
+}
+
+.image-view .page-header {
+  text-align: center;
+  padding-top: 75px;
+  margin-bottom: 100px;
+}
+
+.image-view .page-header h3 {
+  position: relative;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 5.2rem;
+  color: #eee;
+}
+
+.image-view .page-header h3::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: unset;
+  bottom: -51px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 82px;
+  height: 4px;
+  background-color: rgba(238, 238, 238, 0.3);
+}
+
+.image-view h3::after {
+  content: none !important;
+}
+
+.image-view .contents {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.image-view .image-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1500px;
+  height: 560px;
+  margin: 0 66px;
+  overflow: hidden;
+  order: 2;
+}
+
+.image-view .image-area img {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-view .ic-arrow {
+  display: block;
+  width: 20px;
+  height: 40px;
+  background-image: url("../images/vod/ic-season-arrow.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 0;
+  color: rgba(0, 0, 0, 0);
+}
+
+.image-view .ic-arrow.pre {
+  order: 1;
+}
+
+.image-view .ic-arrow.next {
+  transform: rotate(180deg);
+  order: 3;
+}
+
+.image-view .ic-arrow.focus, .image-view .ic-arrow.vod-button.selected {
+  background-image: url("../images/vod/ic-season-arrow-focus.png");
+}
+
+.image-view .pagination {
+  display: flex;
+  align-items: center;
+  font-size: 0;
+  color: rgba(0, 0, 0, 0);
+  justify-content: center;
+  width: 100%;
+  margin-top: 54px;
+  margin-bottom: 44px;
+  order: 4;
+}
+
+.image-view .pagination span {
+  width: 12px;
+  height: 12px;
+  margin-right: 20px;
+  border-radius: 50%;
+  background-color: #999;
+}
+
+.image-view .pagination span.focus, .image-view .pagination span.vod-button.selected {
+  background-color: #ef3484;
+}
+
+.image-view .pagination span:last-child {
+  margin-right: 0;
+}
+
+.start-layer-bg .hide-layer-contents {
+  opacity: 0;
+}
+
+.start-layer-bg .vod-layer {
+  opacity: 0;
+}
+
+.start-layer-bg .start-layer-contents {
+  opacity: 1;
+}
+
+.hide-layer-bg {
+  opacity: 0;
+}
+
+.animate .vod-additional-list li.focus, .animate .vod-additional-list li.vod-button.selected {
+  will-change: all;
+  transition: 0.3s ease all;
+}
+
+.animate .vod-button.focus, .animate .vod-button.selected {
+  will-change: all;
+  transition: 0.3s ease all;
+}
+
+.animate .vod-layer-bg {
+  position: absolute;
+  right: 0;
+  width: 0;
+}
+
+.animate .vod-layer-bg h2, .animate .vod-layer-bg .season-tab-wrap {
+  opacity: 0;
+  transform: translateY(180px);
+}
+
+.animate .vod-layer-bg .contents-list li, .animate .vod-layer-bg .cast-list li {
+  opacity: 0;
+}
+
+.animate .vod-layer-bg .contents-list li:nth-child(n + 1), .animate .vod-layer-bg .cast-list li:nth-child(n + 1) {
+  transform: translateY(calc(130px + 50px * 1));
+}
+
+.animate .vod-layer-bg .contents-list li:nth-child(n + 2), .animate .vod-layer-bg .cast-list li:nth-child(n + 2) {
+  transform: translateY(calc(130px + 50px * 1));
+}
+
+.animate .vod-layer-bg .contents-list li:nth-child(n + 3), .animate .vod-layer-bg .cast-list li:nth-child(n + 3) {
+  transform: translateY(calc(130px + 50px * 2));
+}
+
+.animate .vod-layer-bg .contents-list li:nth-child(n + 4), .animate .vod-layer-bg .cast-list li:nth-child(n + 4) {
+  transform: translateY(calc(130px + 50px * 2));
+}
+
+.animate .vod-layer-bg .contents-list li:nth-child(n + 5), .animate .vod-layer-bg .cast-list li:nth-child(n + 5) {
+  transform: translateY(calc(130px + 50px * 3));
+}
+
+.animate .vod-layer-bg .contents-list li:nth-child(n + 6), .animate .vod-layer-bg .cast-list li:nth-child(n + 6) {
+  transform: translateY(calc(130px + 50px * 3));
+}
+
+.animate .vod-layer-bg .contents-list li:nth-child(n + 7), .animate .vod-layer-bg .cast-list li:nth-child(n + 7) {
+  transform: translateY(calc(130px + 50px * 4));
+}
+
+.animate .vod-layer-bg .contents-list li:nth-child(n + 8), .animate .vod-layer-bg .cast-list li:nth-child(n + 8) {
+  transform: translateY(calc(130px + 50px * 4));
+}
+
+.animate .vod-layer-bg .rating-row .rating-row-header {
+  opacity: 0;
+  transform: translateY(180px);
+}
+
+.animate .vod-layer-bg .rating-row li {
+  opacity: 0;
+}
+
+.animate .vod-layer-bg .rating-row li:nth-child(n + 1) {
+  transform: translateY(calc(130px + 50px * 1));
+}
+
+.animate .vod-layer-bg .rating-row li {
+  opacity: 0;
+}
+
+.animate .vod-layer-bg .rating-row li:nth-child(n + 2) {
+  transform: translateY(calc(130px + 50px * 2));
+}
+
+.animate .vod-layer-bg .rating-row li {
+  opacity: 0;
+}
+
+.animate .vod-layer-bg .rating-row li:nth-child(n + 3) {
+  transform: translateY(calc(130px + 50px * 3));
+}
+
+.animate .vod-layer-bg .rating-row li {
+  opacity: 0;
+}
+
+.animate .vod-layer-bg .rating-row li:nth-child(n + 4) {
+  transform: translateY(calc(130px + 50px * 4));
+}
+
+.animate .vod-layer-bg .contents-list-wrap::after {
+  opacity: 0;
+}
+
+.animate .vod-layer-bg .list-empty {
+  opacity: 0;
+}
+
+.animate .vod-layer-bg .vod-layer-footer {
+  opacity: 0;
+}
+
+.animate .vod-layer-bg .start-layer-contents {
+  z-index: 2;
+}
+
+.animate .vod-layer-bg .start-layer-contents h2, .animate .vod-layer-bg .start-layer-contents .rating-row-header {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all .4s ease-out;
+}
+
+.animate .vod-layer-bg .start-layer-contents .contents-list-wrap::after {
+  opacity: 1;
+  transition: all .5s ease-out;
+}
+
+.animate .vod-layer-bg .start-layer-contents .contents-list li, .animate .vod-layer-bg .start-layer-contents .cast-list li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out;
+  transition-delay: 0;
+}
+
+.animate .vod-layer-bg .start-layer-contents .contents-list li:nth-child(n + 1), .animate .vod-layer-bg .start-layer-contents .cast-list li:nth-child(n + 1) {
+  transition-duration: calc(0.2s + 0.1s * 1);
+}
+
+.animate .vod-layer-bg .start-layer-contents .contents-list li, .animate .vod-layer-bg .start-layer-contents .cast-list li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out;
+  transition-delay: 0;
+}
+
+.animate .vod-layer-bg .start-layer-contents .contents-list li:nth-child(n + 2), .animate .vod-layer-bg .start-layer-contents .cast-list li:nth-child(n + 2) {
+  transition-duration: calc(0.2s + 0.1s * 1);
+}
+
+.animate .vod-layer-bg .start-layer-contents .contents-list li, .animate .vod-layer-bg .start-layer-contents .cast-list li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out;
+  transition-delay: 0;
+}
+
+.animate .vod-layer-bg .start-layer-contents .contents-list li:nth-child(n + 3), .animate .vod-layer-bg .start-layer-contents .cast-list li:nth-child(n + 3) {
+  transition-duration: calc(0.2s + 0.1s * 2);
+}
+
+.animate .vod-layer-bg .start-layer-contents .contents-list li, .animate .vod-layer-bg .start-layer-contents .cast-list li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out;
+  transition-delay: 0;
+}
+
+.animate .vod-layer-bg .start-layer-contents .contents-list li:nth-child(n + 4), .animate .vod-layer-bg .start-layer-contents .cast-list li:nth-child(n + 4) {
+  transition-duration: calc(0.2s + 0.1s * 2);
+}
+
+.animate .vod-layer-bg .start-layer-contents .contents-list li, .animate .vod-layer-bg .start-layer-contents .cast-list li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out;
+  transition-delay: 0;
+}
+
+.animate .vod-layer-bg .start-layer-contents .contents-list li:nth-child(n + 5), .animate .vod-layer-bg .start-layer-contents .cast-list li:nth-child(n + 5) {
+  transition-duration: calc(0.2s + 0.1s * 3);
+}
+
+.animate .vod-layer-bg .start-layer-contents .contents-list li, .animate .vod-layer-bg .start-layer-contents .cast-list li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out;
+  transition-delay: 0;
+}
+
+.animate .vod-layer-bg .start-layer-contents .contents-list li:nth-child(n + 6), .animate .vod-layer-bg .start-layer-contents .cast-list li:nth-child(n + 6) {
+  transition-duration: calc(0.2s + 0.1s * 3);
+}
+
+.animate .vod-layer-bg .start-layer-contents .contents-list li, .animate .vod-layer-bg .start-layer-contents .cast-list li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out;
+  transition-delay: 0;
+}
+
+.animate .vod-layer-bg .start-layer-contents .contents-list li:nth-child(n + 7), .animate .vod-layer-bg .start-layer-contents .cast-list li:nth-child(n + 7) {
+  transition-duration: calc(0.2s + 0.1s * 4);
+}
+
+.animate .vod-layer-bg .start-layer-contents .contents-list li, .animate .vod-layer-bg .start-layer-contents .cast-list li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out;
+  transition-delay: 0;
+}
+
+.animate .vod-layer-bg .start-layer-contents .contents-list li:nth-child(n + 8), .animate .vod-layer-bg .start-layer-contents .cast-list li:nth-child(n + 8) {
+  transition-duration: calc(0.2s + 0.1s * 4);
+}
+
+.animate .vod-layer-bg .start-layer-contents .contents-list li, .animate .vod-layer-bg .start-layer-contents .cast-list li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out;
+  transition-delay: 0;
+}
+
+.animate .vod-layer-bg .start-layer-contents .contents-list li:nth-child(n + 9), .animate .vod-layer-bg .start-layer-contents .cast-list li:nth-child(n + 9) {
+  transition-duration: calc(0.2s + 0.1s * 5);
+}
+
+.animate .vod-layer-bg .start-layer-contents .contents-list li, .animate .vod-layer-bg .start-layer-contents .cast-list li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out;
+  transition-delay: 0;
+}
+
+.animate .vod-layer-bg .start-layer-contents .contents-list li:nth-child(n + 10), .animate .vod-layer-bg .start-layer-contents .cast-list li:nth-child(n + 10) {
+  transition-duration: calc(0.2s + 0.1s * 5);
+}
+
+.animate .vod-layer-bg .start-layer-contents.episode .contents-list li:nth-child(n + 1), .animate .vod-layer-bg .start-layer-contents.package .contents-list li:nth-child(n + 1) {
+  transition-duration: calc(0.2s + 0.1s * 1);
+}
+
+.animate .vod-layer-bg .start-layer-contents.episode .contents-list li:nth-child(n + 2), .animate .vod-layer-bg .start-layer-contents.package .contents-list li:nth-child(n + 2) {
+  transition-duration: calc(0.2s + 0.1s * 2);
+}
+
+.animate .vod-layer-bg .start-layer-contents.episode .contents-list li:nth-child(n + 3), .animate .vod-layer-bg .start-layer-contents.package .contents-list li:nth-child(n + 3) {
+  transition-duration: calc(0.2s + 0.1s * 3);
+}
+
+.animate .vod-layer-bg .start-layer-contents.episode .contents-list li:nth-child(n + 4), .animate .vod-layer-bg .start-layer-contents.package .contents-list li:nth-child(n + 4) {
+  transition-duration: calc(0.2s + 0.1s * 4);
+}
+
+.animate .vod-layer-bg .start-layer-contents .rating-row li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out;
+  transition-delay: 0;
+}
+
+.animate .vod-layer-bg .start-layer-contents .rating-row li:nth-of-type(n + 1) {
+  transition-duration: calc(0.2s + 0.1s * 1);
+}
+
+.animate .vod-layer-bg .start-layer-contents .rating-row li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out;
+  transition-delay: 0;
+}
+
+.animate .vod-layer-bg .start-layer-contents .rating-row li:nth-of-type(n + 2) {
+  transition-duration: calc(0.2s + 0.1s * 2);
+}
+
+.animate .vod-layer-bg .start-layer-contents .rating-row li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out;
+  transition-delay: 0;
+}
+
+.animate .vod-layer-bg .start-layer-contents .rating-row li:nth-of-type(n + 3) {
+  transition-duration: calc(0.2s + 0.1s * 3);
+}
+
+.animate .vod-layer-bg .start-layer-contents .rating-row li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out;
+  transition-delay: 0;
+}
+
+.animate .vod-layer-bg .start-layer-contents .rating-row li:nth-of-type(n + 4) {
+  transition-duration: calc(0.2s + 0.1s * 4);
+}
+
+.animate .vod-layer-bg .start-layer-contents .series-list-wrap .contents-list li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out;
+  transition-delay: 0;
+}
+
+.animate .vod-layer-bg .start-layer-contents .series-list-wrap .contents-list li:nth-child(n + 1) {
+  transition-duration: calc(0.2s + 0.1s * 1);
+}
+
+.animate .vod-layer-bg .start-layer-contents .series-list-wrap .contents-list li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out;
+  transition-delay: 0;
+}
+
+.animate .vod-layer-bg .start-layer-contents .series-list-wrap .contents-list li:nth-child(n + 2) {
+  transition-duration: calc(0.2s + 0.1s * 2);
+}
+
+.animate .vod-layer-bg .start-layer-contents .series-list-wrap .contents-list li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out;
+  transition-delay: 0;
+}
+
+.animate .vod-layer-bg .start-layer-contents .series-list-wrap .contents-list li:nth-child(n + 3) {
+  transition-duration: calc(0.2s + 0.1s * 3);
+}
+
+.animate .vod-layer-bg .start-layer-contents .series-list-wrap .contents-list li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out;
+  transition-delay: 0;
+}
+
+.animate .vod-layer-bg .start-layer-contents .series-list-wrap .contents-list li:nth-child(n + 4) {
+  transition-duration: calc(0.2s + 0.1s * 4);
+}
+
+.animate .vod-layer-bg .start-layer-contents .series-list-wrap .cast-list li, .animate .vod-layer-bg .start-layer-contents .series-list-wrap .rating-row li {
+  transition: none;
+  opacity: 0;
+}
+
+.animate .vod-layer-bg .start-layer-contents .series-list-wrap .cast-list li:nth-child(n + 1), .animate .vod-layer-bg .start-layer-contents .series-list-wrap .rating-row li:nth-child(n + 1) {
+  transform: translateY(calc(130px + 50px * 1));
+}
+
+.animate .vod-layer-bg .start-layer-contents .series-list-wrap .cast-list li, .animate .vod-layer-bg .start-layer-contents .series-list-wrap .rating-row li {
+  transition: none;
+  opacity: 0;
+}
+
+.animate .vod-layer-bg .start-layer-contents .series-list-wrap .cast-list li:nth-child(n + 2), .animate .vod-layer-bg .start-layer-contents .series-list-wrap .rating-row li:nth-child(n + 2) {
+  transform: translateY(calc(130px + 50px * 2));
+}
+
+.animate .vod-layer-bg .start-layer-contents .series-list-wrap .cast-list li, .animate .vod-layer-bg .start-layer-contents .series-list-wrap .rating-row li {
+  transition: none;
+  opacity: 0;
+}
+
+.animate .vod-layer-bg .start-layer-contents .series-list-wrap .cast-list li:nth-child(n + 3), .animate .vod-layer-bg .start-layer-contents .series-list-wrap .rating-row li:nth-child(n + 3) {
+  transform: translateY(calc(130px + 50px * 3));
+}
+
+.animate .vod-layer-bg .start-layer-contents .series-list-wrap .cast-list li, .animate .vod-layer-bg .start-layer-contents .series-list-wrap .rating-row li {
+  transition: none;
+  opacity: 0;
+}
+
+.animate .vod-layer-bg .start-layer-contents .series-list-wrap .cast-list li:nth-child(n + 4), .animate .vod-layer-bg .start-layer-contents .series-list-wrap .rating-row li:nth-child(n + 4) {
+  transform: translateY(calc(130px + 50px * 4));
+}
+
+.animate .vod-layer-bg .start-layer-contents .vod-layer-footer {
+  opacity: 1;
+  transition: all 0.5s 1s ease-out;
+}
+
+.animate .vod-layer-bg .start-layer-contents .start-layer-contents2.cast-wrap .cast-list li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out;
+}
+
+.animate .vod-layer-bg .start-layer-contents .start-layer-contents2.cast-wrap .cast-list li:nth-child(n + 1) {
+  transition-duration: calc(0.2s + 0.1s * 1);
+}
+
+.animate .vod-layer-bg .start-layer-contents .start-layer-contents2.cast-wrap .cast-list li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out;
+}
+
+.animate .vod-layer-bg .start-layer-contents .start-layer-contents2.cast-wrap .cast-list li:nth-child(n + 2) {
+  transition-duration: calc(0.2s + 0.1s * 2);
+}
+
+.animate .vod-layer-bg .start-layer-contents .start-layer-contents2.cast-wrap .cast-list li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out;
+}
+
+.animate .vod-layer-bg .start-layer-contents .start-layer-contents2.cast-wrap .cast-list li:nth-child(n + 3) {
+  transition-duration: calc(0.2s + 0.1s * 3);
+}
+
+.animate .vod-layer-bg .start-layer-contents .start-layer-contents2.cast-wrap .cast-list li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out;
+}
+
+.animate .vod-layer-bg .start-layer-contents .start-layer-contents2.cast-wrap .cast-list li:nth-child(n + 4) {
+  transition-duration: calc(0.2s + 0.1s * 4);
+}
+
+.animate .vod-layer-bg .start-layer-contents .start-layer-contents2.rating-row .rating-row-header {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all .4s ease-out;
+}
+
+.animate .vod-layer-bg .start-layer-contents .start-layer-contents2.rating-row li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out;
+}
+
+.animate .vod-layer-bg .start-layer-contents .start-layer-contents2.rating-row li:nth-child(n + 1) {
+  transition-duration: calc(0.2s + 0.1s * 1);
+}
+
+.animate .vod-layer-bg .start-layer-contents .start-layer-contents2.rating-row li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out;
+}
+
+.animate .vod-layer-bg .start-layer-contents .start-layer-contents2.rating-row li:nth-child(n + 2) {
+  transition-duration: calc(0.2s + 0.1s * 2);
+}
+
+.animate .vod-layer-bg .start-layer-contents .start-layer-contents2.rating-row li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out;
+}
+
+.animate .vod-layer-bg .start-layer-contents .start-layer-contents2.rating-row li:nth-child(n + 3) {
+  transition-duration: calc(0.2s + 0.1s * 3);
+}
+
+.animate .vod-layer-bg .start-layer-contents .start-layer-contents2.rating-row li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all ease-out;
+}
+
+.animate .vod-layer-bg .start-layer-contents .start-layer-contents2.rating-row li:nth-child(n + 4) {
+  transition-duration: calc(0.2s + 0.1s * 4);
+}
+
+.animate .vod-layer-bg .start-layer-contents .start-layer-contents2 .list-empty {
+  opacity: 1;
+  transition: all 0.3s ease-out;
+}
+
+.animate .vod-layer-bg .hide-layer-contents {
+  z-index: 1;
+}
+
+.animate .vod-layer-bg .hide-layer-contents h2, .animate .vod-layer-bg .hide-layer-contents .rating-row-header {
+  animation: vod-hide .3s ease-in;
+}
+
+.animate .vod-layer-bg .hide-layer-contents .contents-list li, .animate .vod-layer-bg .hide-layer-contents .cast-list li, .animate .vod-layer-bg .hide-layer-contents .rating-row li {
+  animation: vod-hide .3s ease-in;
+}
+
+.animate .vod-layer-bg.start-layer-bg {
+  width: 1200px;
+  will-change: width;
+  transition: 0.3s ease width;
+}
+
+.animate .vod-layer-bg.start-layer-bg .season-tab-wrap {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all .4s .2s ease-out;
+}
+
+.animate .vod-layer-bg.hide-layer-bg {
+  opacity: 1;
+  will-change: width;
+  transition: 0.3s ease width;
+}
+
+.animate .vod-layer-bg.hide-layer-bg .season-tab-wrap {
+  opacity: 0;
+}
+
+.animate .vod-layer-bg.hide-layer-bg .list-empty {
+  opacity: 0;
+}
+
+@keyframes vod-hide {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  99% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(180px);
+  }
+}

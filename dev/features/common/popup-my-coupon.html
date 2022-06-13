@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>쿠폰 팝업</title>
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+</head>
+<body style="background-color: #111;">
+    <div id="root">
+    <!--react 구조-->
+
+    <div class="popup-container">
+
+        <!-- 일반 쿠폰 -->
+        <div class="popup large type-coupon">
+            <div class="popup-header">
+                <h3>쿠폰 상세보기</h3>
+            </div>
+            <!-- //popup-header -->
+            <div class="popup-body">
+                <div class="coupon-wrap">
+                    <div class="coupon-normal" style="background-image: url(../../assets/images/temp/image-voddetail.jpg)">
+                        <div class="details">
+                            <span class="tag">COUPON</span>
+                            <p>탕웨이와 김태용 감독의 만남,<br>“만추” 90% 할인권</p> 
+                        </div>
+                    </div>
+                </div>
+                <div class="body-text">
+                    <p>・ 쿠폰명 : 만추 VOD 90% 할인</p>
+                    <p>・ 쿠폰 유효기간 : 2020년 12월 31일 12시 00분 까지</p>
+                    <p class="finish">2020년 12월 31일 12시 00분 까지</p>
+                    <p class="highlight">・ 쿠폰 특이사항 : 만추 VOD 한정</p>
+                </div>
+            </div>
+            <!-- //popup-body -->
+            <div class="popup-footer">
+                <button class="popup-button">닫기</button>
+                <button class="popup-button focus">바로보기</button>
+            </div>
+            <!-- //popup-footer -->  
+        </div>
+
+        <!-- 스탬프 쿠폰 -->
+        <div class="popup large type-coupon" style="display: none;">
+            <div class="popup-header">
+                <h3>스탬프 쿠폰이 도착했습니다.</h3>
+            </div>
+            <!-- //popup-header -->
+            <div class="popup-body text-center">
+                <div class="body-text">
+                    <p>
+                        12/31까지 스탬프 대상 영화 4편 포함 총 8편을 보시면 <br>
+                        최신 영화(4천원) 1편 <em class="highlight">무료 쿠폰</em>을 드립니다.  
+                    </p>
+                </div>
+                <div class="coupon-stamp">
+                    <ul>
+                        <li class="active"></li>
+                        <li class="active"></li>
+                        <li class="active"></li>
+                        <li class="active"></li>
+                        <li class="active"></li>
+                        <li class="active"></li>
+                        <li class="active"></li>
+                        <li class="active focus"></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                    </ul>
+                </div>
+                <div class="sub-text">
+                    <p>
+                        스탬프 쿠폰 대상 VOD 시청 시에 제공됩니다. <br> 
+                        다른 쿠폰으로 구매 시에는 스탬프가 찍히지 않습니다.<br> 
+                        <em class="highlight">유효기간 (2020.12.31) 내 구매 완료 기준</em>으로 적용됩니다.
+                    </p>
+                </div>
+            </div>
+            <!-- //popup-body -->
+            <div class="popup-footer">
+                <button class="popup-button">닫기</button>
+                <button class="popup-button focus">스탬프 대상 영화 리스트</button>
+            </div>
+            <!-- //popup-footer -->
+        </div>
+
+    </div>
+        
+        
+    <!-- react 구조 끝 -->
+    </div>
+</body>
+</html>

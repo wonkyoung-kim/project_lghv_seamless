@@ -1,0 +1,354 @@
+@import '../scss/config';
+// @import 'hv_home';
+$url-images: "../../assets/hv_images/my/";
+
+.my-wrap {
+    height: px(1080) !important;
+    .noti-message {
+        font-size: 2rem !important;
+        letter-spacing: px(-1, -1);
+    }
+    //마이홈
+    &.myhome {
+        .my-profile .profile-list li:first-child .information {
+            min-height: 0;
+        }
+        .mymenu {
+            li {
+                margin-right: px(10);
+                .ic-event {
+                    &::before {
+                        background-image: url($url-images + 'ic-my-event.png');
+                    }
+                }
+                .ic-coin {
+                    &::before {
+                        background-image: url($url-images + 'ic-my-coin.png');
+                    }
+                }
+                .ic-usb {
+                    &::before {
+                        background-image: url($url-images + 'ic-my-usb.png');
+                    }
+                }
+                // 개인미디어 추가 2021.12.15 aris
+                p {
+                    &.ic-usb {
+                        margin-bottom: 0;
+                        font-size: 3.4rem;
+                        &::before {
+                            width: px(48);
+                            height: px(20);
+                        }
+                    }
+                }
+                &.focus {
+                    .ic-event {
+                        &::before {
+                            background-image: url($url-images + 'ic-my-event-focus.png');
+                        }
+                    }
+                    .ic-coin {
+                        &::before {
+                            background-image: url($url-images + 'ic-my-coin-focus.png');
+                        }
+                    }
+                    .ic-usb {
+                        &::before {
+                            background-image: url($url-images + 'ic-my-usb-focus.png');
+                        }
+                    }
+                    // 개인미디어 추가 2021.12.15 aris
+                    p {
+                        &.ic-usb {
+                            font-size: 3.6rem;
+                            &::before {
+                                width: px(62);
+                                height: px(26);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .contents-list {
+            display: inline-flex;
+            width: auto;
+        }
+    }
+    //프로필 이미지 변경
+    &.change-profileimage {
+        .guide-message {
+            margin-bottom: px(70);
+        }
+        .layer-body {
+            &.active {
+                .scroll {
+                    opacity: 1;
+                }
+            }
+        }
+        .list-container {
+            overflow: hidden;
+            height: px(726);
+            padding: px(10) px(179) 0;
+        }
+    }
+    //프로필 이름 변경
+    &.change-profilename {
+        .layer-header {
+            padding-top: px(80);
+            margin-bottom: px(89);
+            .title {
+                line-height: px(69);
+            }
+        }
+        .layer-body {
+            .guide-message{
+                margin-bottom: px(60);
+            }
+        } 
+        .search-input .icon, .search-list-area {
+            visibility: hidden;
+        }
+    }
+    //구매한 영상
+    &.purchased {
+        .vod-func-area {
+            margin-bottom: px(27);
+        }
+        .contents-list {
+            li {
+                width: px(264);
+                height: px(482);
+                &:nth-child(4n+1) {
+                    margin-left: px(42);
+                }
+                &:nth-child(6n+1) {
+                    margin-left: 0;
+                }
+                &.focus {
+                    &:nth-child(4n+1) {
+                        .poster-vertical::before, .poster-thumbnail, .poster-component::before {
+                            transform-origin: center;
+                        }
+                        .poster-time {
+                            left: px(-8);
+                        }
+                        .poster-component {
+                            &::after {
+                                background-position-x: px(110);
+                            }
+                        }
+                        &.adult-r  {
+                            .poster-vertical {
+                                .poster-component {
+                                    &::after {
+                                        transform-origin: left;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &:nth-child(6n) {
+                        .meta-data {
+                            align-items: flex-end;
+                            text-align: right;
+                        }
+                    }
+                    &:nth-child(6n+1) {
+                        .poster-vertical::before, .poster-thumbnail, .poster-component::before {
+                            transform-origin: left;
+                        }
+                        .meta-data {
+                            align-items: flex-start;
+                            text-align: left;
+                        }
+                        .poster-tag {
+                            right: px(-4);
+                        }
+                        .poster-time {
+                            left: 0;
+                        }
+                    }
+                    .poster-tag {
+                        top: 0;
+                        right: px(4);
+                    }
+                    .poster-time {
+                        bottom: 0;
+                    }
+                    .meta-data {
+                        align-items: center;
+                        text-align: center;
+                    }
+                    &.adult-r  {
+                        .poster-vertical {
+                            .poster-component {
+                                &::after {
+                                    @include focus-scale;
+                                    transform-origin: center;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.delete-list {
+                .poster-component::after {
+                    background-position-x: px(110);
+                }
+            }
+        }
+        .poster-component {
+            &::before {
+                opacity: 1;
+            }
+        }
+        .meta-data {
+            margin-top: px(26);
+        }
+        .my-body {
+            .scroll {
+                top: px(140);
+                height: px(704);
+            }
+        }
+    }
+    //TV코인충전
+    &.coupon {
+        .list-wrap {
+            padding-top: 0;
+        }
+        .my-coin{
+            position: absolute;
+            right: px(60);
+            top: px(-44);
+            margin-top: px(28);
+            font: {
+                family: $font-bold;
+                size: 3rem;
+            }
+            color: $color-white;
+            em {
+                color: $color-primary;
+            }
+        }
+        .noti-message {
+            color: $color-gray-dark;
+            opacity: 1;
+        }
+        .buy-coupon {
+            margin: 0 0 px(60) px(60);
+            ul li {
+                .price {
+                    margin-top: px(71);
+                    em {
+                        line-height: px(54);
+                        font-size: 4rem;
+                    }
+                    span {margin-top: px(10);}
+                }
+                .total {
+                    display: block;
+                    padding: px(27) 0 px(37);
+                    margin-bottom: px(34);
+                    border-bottom: px(2) solid rgba($color-pure-white, 0.12);
+                    font: {
+                        family: $font-bold;
+                        size: 5.5rem;
+                    }
+                    color: rgba($color-gray, .9);
+                    white-space: nowrap;
+                    letter-spacing: px(-2.2);
+                }
+                &.focus {
+                    .price {
+                        em {
+                            color: $color-pure-white;
+                        }
+                        span {
+                            color: $color-white;
+                        }
+                    }
+                    .total {
+                        color: $color-primary;
+                    }
+
+                    &.more-25::before {
+                        background-image: url($url-images + 'tag-my-sale-25-focus.png');
+                    }
+                    &.more-33::before {
+                        background-image: url($url-images + 'tag-my-sale-33-focus.png');
+                    }
+                }
+                //할인퍼센트 이미지추가
+                &.more-25::before {
+                    background-image: url($url-images + 'tag-my-sale-25.png');
+                }
+                &.more-33::before {
+                    background-image: url($url-images + 'tag-my-sale-33.png');
+                }
+            }
+            &.one-charge ul li {
+                width: px(440);
+                margin-left: px(10);
+            }
+        }
+    }
+    //가입내역
+    &.subscription {
+        .list-wrap {
+            padding-top: px(93);
+        }
+    }
+    //보유코인내역
+    &.coin {
+        @extend .coupon;
+        .func-area {
+            margin: px(44) 0 px(45);
+            .my-coin {
+                @extend .my-coin;
+            }
+        }
+        .product-title, .product-list li  {
+            .name {
+                width: px(791);
+            }
+            .purchase-date {
+                width: px(230);
+            }
+            .price {
+                justify-content: flex-start;
+                padding-right: 0;
+                padding-left: px(50);
+                text-align: left;
+            }
+            .payment-type, .price {
+                width: px(240);
+            }
+            .purchase-date, .payment-type {
+                padding-left: px(50);
+            }
+        }
+        .product-title .date, .product-list li .period {
+            width: px(240);
+        }
+    }
+    //찜한영상, 최근본영상 bg그라데이션 제거
+    &.wishlist, &.recently-viewed {
+        .poster-horizontal {
+            .poster-component {
+                &::before {
+                    background-image: unset;
+                }
+            }
+        } 
+    }
+    //목록이없을 경우 문구깨짐 수정
+    &.watchlist, &.coin {
+        .list-none {
+            width: auto;
+        }
+    }
+}

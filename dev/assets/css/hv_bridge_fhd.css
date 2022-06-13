@@ -1,0 +1,256 @@
+@charset "UTF-8";
+/* variables */
+/* functions */
+/* mixins */
+/* toast 임시 */
+.bridge {
+  height: 100%;
+  padding-top: 411px;
+}
+
+.bridge::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: auto;
+  bottom: 0;
+  width: 100%;
+  height: 921px;
+  background-image: url("../../assets/hv_images/bridge/bg-bridge.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bridge .notice-area {
+  position: absolute;
+  left: 124px;
+  top: 90px;
+}
+
+.bridge .notice-area .notice {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  line-height: 80px;
+  padding: 0 30px 0 34px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 2.7rem;
+  color: #fff;
+  border: solid 1.5px rgba(255, 255, 255, 0.5);
+  background-color: rgba(51, 51, 51, 0.8);
+}
+
+.bridge .notice-area .notice::before {
+  display: inline-block;
+  content: '';
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 27px;
+  height: 28px;
+  margin-right: 12px;
+  background-image: url("../../assets/hv_images/bridge/ic-notice.png");
+}
+
+.bridge .notice-area .notice span {
+  position: relative;
+  margin-left: 34px;
+  font-family: "Yoon Gothic 750", "YoonGothic 700 50", "Yoon윤고딕 750", "YoonGothic 750", "YOONGOTHICPRO750";
+  opacity: 0.7;
+}
+
+.bridge .notice-area .notice span::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: 50%;
+  left: -16px;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 30px;
+  opacity: 1;
+  background-color: #fff;
+}
+
+.bridge .notice-area .notice.focus {
+  transform: scale(1.06);
+  background-color: #333;
+}
+
+.bridge .notice-area .notice.focus::before {
+  margin-right: 20px;
+}
+
+.bridge .notice-area .notice.focus::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 0 10px #eee;
+  border-radius: 8px;
+  border-radius: 0;
+}
+
+.bridge .notice-area .notice.focus span {
+  margin-left: 43px;
+}
+
+.bridge .notice-area .notice.focus span::before {
+  left: -19px;
+}
+
+.bridge .container {
+  overflow: hidden;
+  padding-left: 77px;
+}
+
+.bridge .container .contents {
+  position: relative;
+  z-index: 1;
+}
+
+.bridge .container .contents.active .recommend-area {
+  margin-bottom: 72px;
+}
+
+.bridge .container .contents.active .func-area {
+  z-index: 1;
+}
+
+.bridge .container .contents.active .func-area::after {
+  content: unset;
+}
+
+.bridge .container section h3 {
+  margin-bottom: 12px;
+  font-size: 3.2rem;
+}
+
+.bridge .container section ul {
+  display: flex;
+}
+
+.bridge .container section ul li {
+  margin-right: 12px;
+}
+
+.bridge .container section ul li.focus:first-child .poster-vertical::before, .bridge .container section ul li.focus:first-child .poster-horizontal::before, .bridge .container section ul li.focus:first-child .poster-horizontal::after, .bridge .container section ul li.focus:first-child .poster-remaining, .bridge .container section ul li.focus:first-child .poster-thumbnail, .bridge .container section ul li.focus:first-child .poster-banner, .bridge .container section ul li.focus:first-child .poster-component::before, .bridge .container section ul li.focus:first-child .poster-component::after {
+  transform-origin: left;
+}
+
+.bridge .container section ul li.focus:first-child .poster-tag {
+  right: -12px;
+}
+
+.bridge .container section ul li.focus:first-child .poster-time {
+  left: 0;
+}
+
+.bridge .container section ul li.focus:first-child .poster-component::after {
+  background-position-x: 178px;
+}
+
+.bridge .container .func-area {
+  z-index: -1;
+}
+
+.bridge .container .func-area::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  top: -208px;
+  left: -77px;
+  z-index: 1;
+  width: 1920px;
+  height: 272px;
+  opacity: 0.5;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
+}
+
+.bridge .container .recommend-area {
+  margin-bottom: 37px;
+}
+
+.bridge .container .recommend-area .recommend {
+  display: flex;
+}
+
+.bridge .container .recommend-area .recommend > div:nth-of-type(2) li.focus:first-child .poster-horizontal::before, .bridge .container .recommend-area .recommend > div:nth-of-type(2) li.focus:first-child .poster-thumbnail {
+  transform-origin: center;
+}
+
+.bridge .container .recommend-area .poster-horizontal {
+  width: 369px;
+  height: 208px;
+}
+
+.bridge .container .recommend-area .poster-time .poster-title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 40px;
+  font-family: "Yoon Gothic 770", "YoonGothic 700 70", "Yoon윤고딕 770", "YoonGothic 770", "YOONGOTHICPRO770";
+  font-size: 3rem;
+  color: #eee;
+}
+
+.bridge .container .recommend-area .poster-time .poster-title::before {
+  content: none;
+}
+
+.bridge .container .recommend-area .poster-time .poster-remaining {
+  margin-top: 15px;
+}
+
+.bridge .container .recommend-area li.col2 .poster-horizontal {
+  width: calc((369px * 2) + (6px * 2));
+}
+
+.bridge .container .main-area .poster-vertical, .bridge .container .func-area .poster-vertical {
+  width: 242px;
+  height: 248px;
+}
+
+.bridge .container .main-area li, .bridge .container .func-area li {
+  margin-bottom: 12px;
+}
+
+.bridge .container .bridge-footer {
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 0 50px 30px 0;
+  width: 100%;
+  height: 187px;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.bridge .container .bridge-footer:before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  top: 0;
+  left: 0;
+  left: unset;
+  right: 0;
+  width: 380px;
+  height: 187px;
+  background-image: url("../images/category/bg-keynotice.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: right bottom;
+  z-index: -1;
+}

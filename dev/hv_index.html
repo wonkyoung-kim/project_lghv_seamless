@@ -1,0 +1,1762 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일체화 SeamLess</title>
+    <style>
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            white-space: nowrap;
+            box-sizing: border-box;
+        }
+        ul {margin:0; padding: 0;}
+        li {list-style: none;}
+        a {text-decoration: none;}
+
+        h1 {font-size: 50px; margin: 20px 0;}
+        main {width: 1600px; margin: 0 auto;}
+
+        .type {display: flex; background: #eee; font: bold 18px/1 'arial';}
+        .type li {height: 40px; line-height: 40px;}
+        .type li:nth-child(1) {width: 10%;}
+        .type li:nth-child(2) {width: 14%;}
+        .type li:nth-child(3) {width: 20%;}
+        .type li:nth-child(4) {width: 20%;}
+        .type li:nth-child(5) {width: 30%;}
+        .type li:nth-child(6) {width: 10%;}
+
+        .list-box {display: flex;}
+        .list-box .title {display: flex; align-items: center; width: 220px; padding: 0 10px; border-bottom: 1px solid #555; font-size: 20px; background: lightblue;}
+        .list-box .list-contents > li {display: flex; width: 100%;}
+        .list-box .list-contents > li h4 {display: flex; align-items: center; width: 200px; padding: 0 10px; border-bottom: 1px dotted #555; border-right: 1px solid #555;}
+        .list-box .list-contents > li:last-child h4 {border-bottom-style: solid; margin-bottom: -1px;}
+        .list-box .list-contents > li ul.subtitle {width: 380px;}
+        .list-box .list-contents > li ul.page {width: 400px;}
+        .list-box .list-contents > li ul.complete {width: 50px;}
+        .list-box .list-contents > li ul.complete li {text-align: center;}
+        .list-box .list-contents > li ul.note {width: 350px;}
+        .list-box .list-contents > li ul {border-right: 1px solid #555;}
+        .list-box .list-contents > li ul li {height: 44px; line-height: 44px; padding: 0 8px; text-align: left; border-bottom: 1px dotted #555;}
+        .list-box .list-contents > li ul li:last-child {border-bottom-style: solid; margin-bottom: -1px;}
+    </style>
+</head>
+<body>
+
+    <h1>일체화(심리스)</h1>
+
+    <main>
+
+        <ul class="type">
+            <li>구분(폴더명)</li>
+            <li>분류</li>
+            <li>소제목</li>
+            <li>페이지</li>
+            <li>완료 여부/완료될 날짜</li>
+            <li>비고</li>
+        </ul>
+
+        <!-- 공통팝업 -->
+        <section class="list-box">
+            <h3 class="title">공통 팝업(common)</h3>
+            <ul class="list-contents">
+                <li>
+                    <!--분류-->
+                    <h4>공통 팝업</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>공통 팝업(텍스트, 스크롤)</li>
+                        <li>이용약관 및 안내 팝업</li>
+                        <li>이미지만 있는 팝업</li>
+                        <li>옵션 팝업</li>
+                        <li>쿠폰 팝업</li>
+                        <li>토스트 팝업</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                        <li><a href="hv_features/common/popup-textbox.html" target='_brank'>popup-textbox.html</a></li>
+                        <li><a href="hv_features/common/popup-option.html" target='_brank'>popup-option.html</a></li>
+                        <li><a href="hv_features/common/popup-coupon.html" target='_brank'>popup-coupon</a></li>
+                        <li><a href="hv_features/common/popup-toast.html" target='_brank'>popup-toast.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 브릿지 -->
+        <section class="list-box">
+            <h3 class="title">브릿지(bridge)</h3>
+            <ul class="list-contents">
+                <li>
+                    <!--분류-->
+                    <h4>홈</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li></li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/bridge/bridge-home.html" target='_brank'>bridge-home.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <!-- TV앱 -->
+        <section class="list-box">
+            <h3 class="title">TV앱(tvapp)</h3>
+            <ul class="list-contents">
+                <li>
+                    <!--분류-->
+                    <h4>홈</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li></li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/tvapp/tvapp-home.html" target='_brank'>tvapp-home.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 홈 -->
+        <section class="list-box">
+            <h3 class="title">홈(home)</h3>
+            <ul class="list-contents">
+                <li>
+                    <!--분류-->
+                    <h4>수동편성</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>모듈1(3단 확장형 배너)</li>
+                        <li>모듈2(3단 기본형 배너)</li>
+                        <li>모듈3(3단 입체형 배너)</li>
+                        <li>모듈4(3단 혼합형 배너)</li>
+                        <li>모듈5(3단 슬림형 배너)</li>
+                        <li>모듈6(2단 슬림형 배너)</li>
+                        <li>모듈7(대형 광고형 배너)</li>
+                        <li>모듈8(대형 방패형 배너)</li>
+                        <li>모듈9(소형 방패형 배너)</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/home/home.html" target='_brank'>home.html</a></li>
+                        <li><a href="hv_features/home/home.html" target='_brank'>home.html</a></li>
+                        <li><a href="hv_features/home/home.html" target='_brank'>home.html</a></li>
+                        <li><a href="hv_features/home/home.html" target='_brank'>home.html</a></li>
+                        <li><a href="hv_features/home/home.html" target='_brank'>home.html</a></li>
+                        <li><a href="hv_features/home/home.html" target='_brank'>home.html</a></li>
+                        <li><a href="hv_features/home/home.html" target='_brank'>home.html</a></li>
+                        <li><a href="hv_features/home/home.html" target='_brank'>home.html</a></li>
+                        <li><a href="hv_features/home/home.html" target='_brank'>home.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>자동편성</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>모듈10(중형 콘텐츠)</li>
+                        <li>모듈11(대형 콘텐츠)</li>
+                        <li>모듈12(찜 콘텐츠)</li>
+                        <li>모듈13(이어보기 콘텐츠)</li>
+                        <li>모듈14(랭킹 콘텐츠)</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/home/home.html" target='_brank'>home.html</a></li>
+                        <li><a href="hv_features/home/home.html" target='_brank'>home.html</a></li>
+                        <li><a href="hv_features/home/home.html" target='_brank'>home.html</a></li>
+                        <li><a href="hv_features/home/home.html" target='_brank'>home.html</a></li>
+                        <li><a href="hv_features/home/home.html" target='_brank'>home.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>부가기능보기</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>옵션 팝업</li>
+                        <li>시청정보 제공동의 팝업</li>
+                        <li>시청정보 제공철회 팝업</li>
+                        <li>시청정보 제공약관 팝업</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/common/popup-option.html" target='_brank'>popup-option.html</a></li>
+                        <li><a href="hv_features/common/popup-home-agreement.html" target='_brank'>popup-home-agreement.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                        <li><a href="hv_features/common/popup-textbox.html" target='_brank'>popup-textbox.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 편성표 -->
+        <section class="list-box">
+            <h3 class="title">편성표(channel)</h3>
+            <ul class="list-contents">
+                <li>
+                    <!--분류-->
+                    <h4>옵션 메뉴</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>옵션 팝업</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/common/popup-option.html" target='_brank'>popup-option.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>실시간 인기 채널</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>인기채널</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/channel/channel-recommend.html" target='_brank'>channel-recommend.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>전체 채널</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>편성표</li>
+                        <li> - 시청예약/녹화 팝업</li>
+                        <li> - Tuner Conflict 팝업</li>
+                        <li> - 서비스 업그레이드 알림</li>
+                        <li> - 예약 중복 팝업</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/channel/channel-all.html" target='_brank'>channel-all.html</a></li>
+                        <li><a href="#" target='_brank'></a></li>
+                        <li><a href="#" target='_brank'></a></li>
+                        <li><a href="#" target='_brank'></a></li>
+                        <li><a href="hv_features/common/popup-channel-reservation.html" target='_brank'>popup-channel-reservation.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 카테고리 -->
+        <section class="list-box">
+            <h3 class="title">카테고리(category)</h3>
+            <ul class="list-contents">
+                <li>
+                    <!--분류-->
+                    <h4>전체메뉴</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>카테고리 목록</li>
+                        <li>정렬옵션 레이어</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/category/category-list.html" target='_brank'>category-list.html</a></li>
+                        <li><a href="hv_features/category/category-option.html" target='_brank'>category-option.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>성인카테고리</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>성인인증</li>
+                        <li>성인인증 팝업</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/home/home.html" target='_brank'>home.html</a></li>
+                        <li><a href="hv_features/common/popup-auth.html" target='_brank'>popup-auth.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        
+        <!-- 검색 -->
+        <section class="list-box">
+            <h3 class="title">검색(search)</h3>
+            <ul class="list-contents">
+                <li>
+                    <!--분류-->
+                    <h4>검색 진입</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li></li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/search/search-text.html" target='_brank'>search-text.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>검색 화면</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>키패드</li>
+                        <li>자동완성</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/search/search-text.html" target='_brank'>search-text.html</a></li>
+                        <li><a href="#" target='_brank'></a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>검색 결과</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>검색결과</li>
+                        <li>검색결과 모두보기(장르별 모두보기)</li>
+                        <li>검색결과 없는 경우</li>
+                        <li>연령제한 설정된 콘텐츠, 성인(19+) 콘텐츠 검색결과</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/search/search-text-result.html" target='_brank'>search-text-result.html</a></li>
+                        <li><a href="#" target='_brank'></a></li>
+                        <li><a href="#" target='_brank'></a></li>
+                        <li><a href="#" target='_brank'></a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+            </ul>
+        </section> 
+
+        <!-- 이벤트 -->
+        <section class="list-box">
+            <h3 class="title">이벤트(event)</h3>
+            <ul class="list-contents">
+                <li>
+                    <!--분류-->
+                    <h4>진입</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>진행중 이벤트</li>
+                        <li>참여한 이벤트</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/event/event.html" target='_brank'>event.html</a></li>
+                        <li><a href="hv_features/event/event.html" target='_brank'>event.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>이벤트 안내 팝업</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>상세내용 안내</li>
+                        <li>어셋 이벤트</li>
+                        <li>어셋 이벤트 아닌 경우</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/common/popup-event.html" target='_brank'>popup-event.html</a></li>
+                        <li><a href="hv_features/common/popup-event.html" target='_brank'>popup-event.html</a></li>
+                        <li><a href="hv_features/common/popup-event.html" target='_brank'>popup-event.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>push 팝업</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>이벤트 당청안내</li>
+                        <li>이벤트 참여</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/common/popup-event.html" target='_brank'>popup-event.html</a></li>
+                        <li><a href="hv_features/common/popup-event.html" target='_brank'>popup-event.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>이벤트 참여완료 팝업</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>이벤트 참여 완료</li>
+                        <li>전화번호 필요한 경우</li>
+                        <li>알림</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/common/popup-event.html" target='_brank'>popup-event.html</a></li>
+                        <li><a href="hv_features/common/popup-event.html" target='_brank'>popup-event.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>퀴즈 이벤트</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>객관식</li>
+                        <li>주관식</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/event/event-layer.html" target='_brank'>event-layer.html</a></li>
+                        <li><a href="hv_features/event/event-layer.html" target='_brank'>event-layer.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>스탬프 이벤트</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>진입</li>
+                        <li>push팝업</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/event/event-layer.html" target='_brank'>event-layer.html</a></li>
+                        <li><a href="hv_features/common/popup-event.html" target='_brank'>popup-event.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>합산페이백 이벤트</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>진입</li>
+                        <li>push팝업</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/event/event-layer.html" target='_brank'>event-layer.html</a></li>
+                        <li><a href="hv_features/common/popup-event.html" target='_brank'>popup-event.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+            </ul>
+        </section> 
+
+        <!-- 마이메뉴 -->
+        <section class="list-box">
+            <h3 class="title">마이메뉴(my)</h3>
+            <ul class="list-contents">
+                <li>
+                    <!--분류-->
+                    <h4>홈</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>프로필 목록</li>
+                        <li>메뉴버튼 영역</li>
+                        <li>최근 본 영상</li>
+                        <li>찜한 영상</li>
+                        <li>최근 둘러본 영상</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/my/my-home.html" target='_brank'>my-home.html</a></li>
+                        <li><a href="#" target='_brank'></a></li>
+                        <li><a href="#" target='_brank'></a></li>
+                        <li><a href="#" target='_brank'></a></li>
+                        <li><a href="#" target='_brank'></a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>프로필</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>프로필 설정 팝업</li>
+                        <li>프로필 삭제 팝업</li>
+                        <li>프로필 이미지 변경</li>
+                        <li>프로필 닉네임 변경</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/common/popup-option.html" target='_brank'>popup-option.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                        <li><a href="hv_features/my/my-profileimage.html" target='_brank'>my-profileimage.html</a></li>
+                        <li><a href="hv_features/my/my-profilename.html" target='_brank'>my-profilename</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>휴대폰 연결</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>앱 설치 유무 확인 팝업</li>
+                        <li>앱 url 전송 팝업</li>
+                        <li>휴대폰 등록 팝업</li>
+                        <li>개인정보 수집 및 이용안내 팝업</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                        <li><a href="hv_features/common/popup-mobile.html" target='_brank'>popup-mobile.html</a></li>
+                        <li><a href="hv_features/common/popup-mobile.html" target='_brank'>popup-mobile.html</a></li>
+                        <li><a href="hv_features/common/popup-textbox.html" target='_brank'>popup-textbox.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>최근 본 영상</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>목록</li>
+                        <li>목록 삭제</li>
+                        <li>삭제 알림 팝업</li>
+                        <li>시청 기한 완료 알림 팝업</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/my/my-watchlist.html" target='_brank'>my-watchlist.html</a></li>
+                        <li><a href="hv_features/my/my-watchlist.html" target='_brank'>my-watchlist.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li>'최근 본 영상' span으로 싸주세요. 컬러가 들어갑니다</li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>찜한 영상</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>목록</li>
+                        <li>목록 삭제</li>
+                        <li>삭제 알림 팝업</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/my/my-wishlist.html" target='_brank'>my-wishlist.html</a></li>
+                        <li><a href="hv_features/my/my-wishlist.html" target='_brank'>my-wishlist.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li>'찜한 영상' span으로 싸주세요. 컬러가 들어갑니다</li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>최근 둘러본 영상</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>목록</li>
+                        <li>서비스 중지 안내 팝업</li>
+                        <li>목록삭제</li>
+                        <li>삭제 알림 팝업</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/my/my-recently-viewed.html" target='_brank'>my-recently-viewed.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                        <li><a href="hv_features/my/my-recently-viewed.html" target='_brank'>my-recently-viewed.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>'최근 둘러본 영상' span으로 싸주세요. 컬러가 들어갑니다</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>구매한 영상</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>구매 인증</li>
+                        <li>목록(내역없음 포함)</li>
+                        <li>목록 삭제</li>
+                        <li>목록 삭제 팝업</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/my/my-purchased.html" target='_brank'>my-purchased.html</a></li>
+                        <li><a href="hv_features/my/my-purchased.html" target='_brank'>my-purchased.html</a></li>
+                        <li><a href="hv_features/my/my-purchased.html" target='_brank'>my-purchased.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li>'구매한 영상' span으로 싸주세요. 컬러가 들어갑니다</li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>가입한 월정액/채널</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>가입목록</li>
+                        <li>가입내역 없는 경우</li>
+                        <li>서비스 상세 팝업</li>
+                        <li>할인혜택 팝업</li>
+                        <li>해지 완료 팝업</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/my/my-subscription.html" target='_brank'>my-subscription.html</a></li>
+                        <li><a href="hv_features/my/my-subscription.html" target='_brank'>my-subscription.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                        <li><a href="hv_features/common/popup-coupon.html" target='_brank'>popup-coupon.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>쿠폰함</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>목록</li>
+                        <li>상세보기 팝업</li>
+                        <li>쿠폰 없는 경우</li>
+                        <li>쿠폰등록 팝업</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/my/my-couponbox.html" target='_brank'>my-couponbox.html</a></li>
+                        <li><a href="hv_features/common/popup-coupon.html" target='_brank'>popup-coupon.html</a></li>
+                        <li><a href="hv_features/my/my-couponbox.html" target='_brank'>my-couponbox.html</a></li>
+                        <li><a href="hv_features/common/popup-coupon-registration.html" target='_brank'>popup-coupon-registration.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>TV포인트</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>가입 상태</li>
+                        <li>미가입 상태</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/my/my-tvpoint.html" target='_brank'>my-tvpoint.html</a></li>
+                        <li><a href="hv_features/my/my-tvpoint.html" target='_brank'>my-tvpoint.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>TV코인</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>충전 목록</li>
+                        <li>보유코인 내역</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/my/my-buy-coin.html" target='_brank'>my-buy-coin.html</a></li>
+                        <li><a href="hv_features/my/my-coinbox.html" target='_brank'>my-coinbox.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+            </ul>
+        </section> 
+
+        <!-- 설정 -->
+        <section class="list-box">
+            <h3 class="title">설정(setting)</h3>
+            <ul class="list-contents">
+                <li>
+                    <!--분류-->
+                    <h4>공지사항</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>목록</li>
+                        <li>상세 팝업(텍스트형)</li>
+                        <li>상세 팝업(이미지형)</li>
+                        <li>상세보기 팝업2(텍스트형, 이미지형)</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/setting/setting-notice.html" target='_brank'>setting-notice.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                        <li><a href="hv_features/common/popup-setting-notice.html" target='_brank'>popup-setting-notice.html</a></li>
+                        <li><a href="hv_features/common/popup-setting-notice.html" target='_brank'>popup-setting-notice.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>자녀보호 설정</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>진입(사용자 인증번호)</li>
+                        <li>비밀번호 변경</li>
+                        <li> - 사용자 인증번호 변경 팝업</li>
+                        <li> - 구매인증 비밀번호 변경 팝업</li>
+                        <li>VOD간편결제</li>
+                        <li>시청연령 제한</li>
+                        <li>시청시간 제한</li>
+                        <li> - 시간 설정 팝업</li>
+                        <li> - 시간 설정 error case 팝업</li>
+                        <li>시청채널 제한</li>
+                        <li> - 제한 채널 선택 팝업</li>
+                        <li> - 초기화 확인 팝업</li>
+                        <li>성인 콘텐츠 제한</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/setting/setting-parental-control.html" target='_brank'>setting-parental-control.html</a></li>
+                        <li><a href="hv_features/setting/setting-parental-control.html" target='_brank'>setting-parental-control.html</a></li>
+                        <li><a href="hv_features/common/popup-auth.html" target='_brank'>popup-auth.html</a></li>
+                        <li><a href="hv_features/common/popup-auth.html" target='_brank'>popup-auth.html</a></li>
+                        <li><a href="hv_features/setting/setting-parental-control.html" target='_brank'>setting-parental-control.html</a></li>
+                        <li><a href="hv_features/setting/setting-parental-control.html" target='_brank'>setting-parental-control.html</a></li>
+                        <li><a href="hv_features/setting/setting-parental-control.html" target='_brank'>setting-parental-control.html</a></li>
+                        <li><a href="hv_features/common/popup-setting.html" target='_brank'>popup-setting.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                        <li><a href="hv_features/setting/setting-parental-control.html" target='_brank'>setting-parental-control.html</a></li>
+                        <li><a href="hv_features/common/popup-channel-edit.html" target='_brank'>popup-channel-edit.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                        <li><a href="hv_features/common/setting-parental-control.html" target='_brank'>setting-parental-control.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>채널 설정</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>선호채널 편집</li>
+                        <li> - 선호채널편집 팝업</li>
+                        <li>채널 숨김 편집</li>
+                        <li> - 사용자 인증확인 팝업</li>
+                        <li> - 인증 오류 팝업</li>
+                        <li> - 채널숨김편집 팝업</li>
+                        <li> - 개수 초과 팝업</li>
+                        <li>채널 정보 표시</li>
+                        <li>시청각 보조 방송</li>
+                        <li>화면 비율 설정</li>
+                        <li>기본채널 자동이동 설정</li>
+                        <li>퀵메뉴 설정</li>
+                        <li>맞춤형 광고 설정</li>
+                        <li> - 이용약관 팝업</li>
+                        <li> - 맞춤형 광고 새로받기 팝업</li>
+                        <li> - 맞춤형 광고 설정 팝업</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/setting/setting-channel.html" target='_brank'>setting-channel.html</a></li>
+                        <li><a href="hv_features/common/popup-channel-edit.html" target='_brank'>popup-channel-edit.html</a></li>
+                        <li><a href="hv_features/setting/setting-channel.html" target='_brank'>setting-channel.html</a></li>
+                        <li><a href="hv_features/common/popup-auth.html" target='_brank'>popup-auth.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                        <li><a href="hv_features/common/popup-channel-edit.html" target='_brank'>popup-channel-edit.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                        <li><a href="hv_features/setting/setting-channel.html" target='_brank'>setting-channel.html</a></li>
+                        <li><a href="hv_features/setting/setting-channel.html" target='_brank'>setting-channel.html</a></li>
+                        <li><a href="hv_features/setting/setting-channel.html" target='_brank'>setting-channel.html</a></li>
+                        <li><a href="hv_features/setting/setting-channel.html" target='_brank'>setting-channel.html</a></li>
+                        <li><a href="hv_features/setting/setting-channel.html" target='_brank'>setting-channel.html</a></li>
+                        <li><a href="hv_features/setting/setting-channel.html" target='_brank'>setting-channel.html</a></li>
+                        <li><a href="hv_features/common/popup-textbox.html" target='_brank'>popup-textbox.html</a></li>
+                        <li><a href="hv_features/common/popup-setting-id.html" target='_brank'>popup-setting-id.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>시스템 설정</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>알림 설정</li>
+                        <li>리모컨 연결</li>
+                        <li>블루투스 연결</li>
+                        <li>메뉴 음성 안내</li>
+                        <li>취침모드 설정</li>
+                        <li> - 취침모드 실행 알림 팝업</li>
+                        <li>절전모드 설정</li>
+                        <li>구글 설정</li>
+                        <li>시스템 정보</li>
+                        <li>카카오i 연결</li>
+                        <li> - 인증번호</li>
+                        <li> - 인증번호 오류알림 팝업</li>
+                        <li> - 연결 완료</li>
+                        <li>전체 초기화</li>
+                        <li> - 사용자 인증</li>
+                        <li>TV전원동기화</li>
+                        <li> - 알림팝업</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/setting/setting-system.html" target='_brank'>setting-system.html</a></li>
+                        <li><a href="hv_features/setting/setting-system.html" target='_brank'>setting-system.html</a></li>
+                        <li><a href="hv_features/setting/setting-system.html" target='_brank'>setting-system.html</a></li>
+                        <li><a href="hv_features/setting/setting-system.html" target='_brank'>setting-system.html</a></li>
+                        <li><a href="hv_features/setting/setting-system.html" target='_brank'>setting-system.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                        <li><a href="hv_features/setting/setting-system.html" target='_brank'>setting-system.html</a></li>
+                        <li><a href="hv_features/setting/setting-system.html" target='_brank'>setting-system.html</a></li>
+                        <li><a href="hv_features/setting/setting-system.html" target='_brank'>setting-system.html</a></li>
+                        <li><a href="hv_features/setting/setting-system.html" target='_brank'>setting-system.html</a></li>
+                        <li><a href="hv_features/setting/setting-system.html" target='_brank'>setting-system.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                        <li><a href="hv_features/setting/setting-system.html" target='_brank'>setting-system.html</a></li>
+                        <li><a href="hv_features/setting/setting-system.html" target='_brank'>setting-system.html</a></li>
+                        <li><a href="hv_features/setting/setting-system.html" target='_brank'>setting-system.html</a></li>
+                        <li><a href="hv_features/setting/setting-system.html" target='_brank'>setting-system.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li>팝업사이즈 large입니다.</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+            </ul>
+        </section> 
+
+        <!-- 구매 -->
+        <section class="list-box">
+            <h3 class="title">구매(purchase)</h3>
+            <ul class="list-contents">
+                <li>
+                    <!--분류-->
+                    <h4>구매레이어</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>상품선택</li>
+                        <li>할인적용 선택</li>
+                        <li>결제</li>
+                        <li>단체 할인 적용불가</li>
+                        <li>휴대폰 결제 가능화면</li>
+                        <li>구매 비밀번호 설정</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/purchase/purchase.html" target='_brank'>purchase.html</a></li>
+                        <li><a href="#" target='_brank'></a></li>
+                        <li><a href="#" target='_brank'></a></li>
+                        <li><a href="#" target='_brank'></a></li>
+                        <li><a href="#" target='_brank'></a></li>
+                        <li><a href="#" target='_brank'></a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>할인 팝업</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <!-- <li>쿠폰변경 팝업</li> -->
+                        <li>TV코인 충전 팝업</li>
+                        <li>TV코인 인증 팝업</li>
+                        <li>TV코인 충전 완료 팝업</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <!-- <li><a href="hv_features/common/popup-select-coupon.html" target='_brank'>popup-select-coupon.html</a></li> -->
+                        <li><a href="hv_features/common/popup-select-coin.html" target='_brank'>popup-select-coin.html</a></li>
+                        <li><a href="hv_features/common/popup-auth.html" target='_brank'>popup-auth.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <!-- <li>o</li> -->
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <!-- <li></li> -->
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>결제 팝업</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>청구서 결제 팝업</li>
+                        <li> - 비밀번호 오류 팝업</li>
+                        <li> - 결제 취소 팝업</li>
+                        <li>휴대폰 결제 팝업</li>
+                        <li> - 개인정보 수집동의 팝업</li>
+                        <li> - 인증오류 팝업</li>
+                        <li> - 결제화면 휴대폰 전송 팝업</li>
+                        <li> - 구매 실패 팝업</li>
+                        <li>카카오페이 팝업</li>
+                        <li>페이나우 팝업</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/common/popup-auth.html" target='_brank'>popup-auth.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                        <li><a href="hv_features/common/popup-purchase-payment.html" target='_brank'>popup-purchase-payment.html</a></li>
+                        <li><a href="hv_features/common/popup-textbox.html" target='_brank'>popup-textbox.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                        <li><a href="hv_features/common/popup-purchase-payment.html" target='_brank'>popup-purchase-payment.html</a></li>
+                        <li><a href="hv_features/common/popup-purchase-payment.html" target='_brank'>popup-purchase-payment.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li>scroll-popup입니다.</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>월정액</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>상품선택</li>
+                        <li> - 가입안내 팝업</li>
+                        <li>하위상품 가입시 </li>
+                        <li> - 안내 팝업</li>
+                        <li>가입 취소 사유 팝업</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/purchase/purchase-product.html" target='_brank'>purchase-product.html</a></li>
+                        <li><a href="hv_features/common/popup-textbox.html" target='_brank'>popup-textbox.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                        <li><a href="hv_features/common/popup-textbox.html" target='_brank'>popup-textbox.html</a></li>
+                        <li><a href="hv_features/common/popup-select.html" target='_brank'>popup-select.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>패키지, 시리즈</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>상품 선택</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/purchase/purchase.html" target='_brank'>purchase.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>간편결제</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>간편결제 팝업</li>
+                        <li>간편결제 인증 팝업</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                        <li><a href="hv_features/common/popup-auth.html" target='_brank'>popup-auth.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>예약구매</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>예약 알림 팝업</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                    </ul>
+                </li>
+            </ul>
+        </section> 
+
+         <!-- VOD상세 -->
+         <section class="list-box">
+            <h3 class="title">VOD상세(vod)</h3>
+            <ul class="list-contents">
+                <li>
+                    <!--분류-->
+                    <h4>단편</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>기본정보</li>
+                        <li>버튼영역</li>
+                        <li>부가정보</li>
+                        <li>주요장면</li>
+                        <li>함께 많이 본 콘텐츠</li>
+                        <li>찜한 영상에 추가</li>
+                        <li> - 시스템오류 발생시 팝업</li>
+                        <li>이 콘텐츠 평가하기</li>
+                        <li>이벤트 안내팝업</li>
+                        <li>모바일로 보기</li>
+                        <li> - 모바일 이어보기 팝업</li>
+                        <li> - 사용자 선택 팝업</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/vod/vod-detail.html" target='_brank'>vod-detail.html</a></li>
+                        <li><a href="hv_features/vod/vod-detail.html" target='_brank'>vod-detail.html</a></li>
+                        <li><a href="hv_features/vod/vod-moreinfo.html" target='_brank'>vod-moreinfo.html</a></li>
+                        <li><a href="hv_features/vod/vod-scene.html" target='_brank'>vod-scene.html</a></li>
+                        <li><a href="hv_features/vod/vod-most-viewed.html" target='_brank'>vod-most-viewed.html</a></li>
+                        <li><a href="hv_features/vod/vod-detail.html" target='_brank'>vod-detail.html</a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                        <li><a href="hv_features/vod/vod-detail.html" target='_brank'>vod-detail.html</a></li>
+                        <li><a href="hv_features/common/popup-event.html" target='_brank'>popup-event.html</a></li>
+                        <li><a href="#" target='_brank'></a></li>
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                        <li><a href="hv_features/common/popup-mobile-list.html" target='_brank'>popup-mobile-list.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                        <li></li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>시리즈</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>기본정보</li>
+                        <li>버튼 영역</li>
+                        <li>전체 회차 보기</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/vod/vod-detail.html" target='_brank'>vod-detail.html</a></li>
+                        <li><a href="hv_features/vod/vod-detail.html" target='_brank'>vod-detail.html</a></li>
+                        <li><a href="hv_features/vod/vod-episode.html" target='_brank'>vod-episode.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>월정액</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>기본 정보</li>
+                        <li>버튼영역</li>
+                        <li>월정액 콘텐츠</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/vod/vod-subscribe.html" target='_brank'>vod-subscribe.html</a></li>
+                        <li><a href="hv_features/vod/vod-subscribe.html" target='_brank'>vod-subscribe.html</a></li>
+                        <li><a href="hv_features/vod/vod-subscribe.html" target='_brank'>vod-subscribe.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li>콘텐츠리스트 vod-subcribe-list파일 삭제후 vod-subscribe에 합쳤습니다!</li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>패키지</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>기본 정보</li>
+                        <li>버튼영역</li>
+                        <li>패키지 콘텐츠</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/vod/vod-package.html" target='_brank'>vod-package.html</a></li>
+                        <li><a href="hv_features/vod/vod-package.html" target='_brank'>vod-package.html</a></li>
+                        <li><a href="hv_features/vod/vod-package.html" target='_brank'>vod-package.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                        <li>o</li>
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                        <li></li>
+                        <li>콘텐츠리스트 vod-package-list파일 삭제후 vod-package에 합쳤습니다!</li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>상품 옵션 선택</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li></li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/vod/vod-purchase.html" target='_brank'>vod-purchase.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>재생 시 언어 선택</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li></li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/vod/vod-select-language.html" target='_brank'>vod-select-language.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                    </ul>
+                </li>
+                <li>
+                    <!--분류-->
+                    <h4>예약 구매</h4>   
+                    <!--소제목-->
+                    <ul class="subtitle">
+                        <li>예약구매 알림팝업</li>
+                    </ul>
+                    <!--페이지-->
+                    <ul class="page">
+                        <li><a href="hv_features/common/popup-common.html" target='_brank'>popup-common.html</a></li>
+                    </ul>
+                    <!--완료여부/완료될날짜-->
+                    <ul class="complete">
+                        <li>o</li>
+                    </ul>
+                    <!--비고-->
+                    <ul class="note">
+                        <li></li>
+                    </ul>
+                </li>
+            </ul>
+        </section> 
+    </main>
+</body>
+</html>
